@@ -246,28 +246,187 @@
 %------------------
 \subsection{Landingpage}
 
-	\subsubsection{Landingpage}
-	\begin{tabular}{|l|p{.5\linewidth}|}
-	\hline Use Case Nummer & 1.2 \\ 
-	\hline Use Case Name & Landingpage \\ 
-	\hline Initiierender Akteur & Benutzer \\
-	\hline Weitere Akteure & Admin \\
-	\hline Kurzbeschreibung & Der Benutzer kann eine oder mehrere der verf\"ugbaren Aktivit\"aten ausw\"ahlen \\
-	\hline Vorbedingung & Die Aktivit\"atenseite ist im Browser aufgerufen und die Liste von Aktivit\"aten wird angezeigt \\
-	\hline Nachbedingung & Die Aktivit\"atenliste wird angezeigt, die ausgew\"ahlten Aktivit\"aten sind speziell hervorgehoben \\
-	\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
-	\hline Ablauf & \begin{itemize}
-			\item 1. Benutzer w\"ahlt eine oder mehrere Aktivit\"aten aus
-			\item 2. Die ausgew\"ahlten Aktivit\"aten werden als ausgew\"ahlt hervorgehoben
-		\end{itemize} \\
-	\hline Alternativen & - \\
-	\hline Ausnahmen & Die Aktivit\"atenliste ist nicht verf\"ugbar \\
-	\hline Benutzte Use Cases & 1.3.1 Aktivit\"aten ansehen \\
-	\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
-	\hline Spezielle Anforderungen & - \\
-	\hline Annahmen & Der Benutzer w\"ahlt nur Aktivit\"aten aus, die noch nicht ausgew\"ahlt sind \\
-	\hline
-	\end{tabular}
+		\subsubsection{Landingpage}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+			\hline Use Case Nummer & 1.2 \\ 
+			\hline Use Case Name & Landingpage \\ 
+			\hline Initiierender Akteur & Benutzer \\
+			\hline Weitere Akteure & Admin \\
+			\hline Kurzbeschreibung & Die Landingpage ist die Seite direkt nach dem Log-In, auf der der Benutzer Neuigkeiten, seine Teamverwaltung, seine ausgewählten Aktivitäten etc. einsehen kann \\
+			\hline Vorbedingung & Der Benutzer ist eingeloggt und befindet sich auf der Landingpage \\
+			\hline Nachbedingung & Der Benutzer befindet sich auf der Landingpage \\
+			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+			\hline Ablauf & \begin{itemize}
+				\item 1. Benutzer loggt sich ein \\
+				\item 2. Benutzer sieht die Landingpage an \\
+			\end{itemize} \\
+			\hline Alternativen & - \\
+			\hline Ausnahmen & - \\
+			\hline Benutzte Use Cases & - \\
+			\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+			\hline Spezielle Anforderungen & - \\
+			\hline Annahmen & - \\
+			\hline
+		\end{tabular}
+		
+		\subsubsection{Aktivität erledigen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+			\hline Use Case Nummer & 1.2.1 \\ 
+			\hline Use Case Name & Aktivität erledigen \\ 
+			\hline Initiierender Akteur & Benutzer \\
+			\hline Weitere Akteure & Admin \\
+			\hline Kurzbeschreibung & Der Benutzer kann eine ausgewählte Aktivität als erledigt markieren \\
+			\hline Vorbedingung & Der Benutzer befindet sich auf der Landingpage und markiert eine Aktivität als erledigt \\
+			\hline Nachbedingung & Die markierte Aktivität wird als erledigt markiert (ausgegraut, je nach Häufigkeitsattribut) \\
+			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+			\hline Ablauf & \begin{itemize}
+				\item 1. Benutzer wählt erledigte Aktivität aus \\
+				\item 2. Aktivität wird als erledigt markiert \\
+			\end{itemize} \\
+			\hline Alternativen & - \\
+			\hline Ausnahmen & - \\
+			\hline Benutzte Use Cases & - \\
+			\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+			\hline Spezielle Anforderungen & - \\
+			\hline Annahmen & - \\
+			\hline
+		\end{tabular}
+		
+		\subsubsection{Team erstellen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+				\hline Use Case Nummer & 1.2.2 \\ 
+				\hline Use Case Name & Team erstellen \\ 
+				\hline Initiierender Akteur & Benutzer \\
+				\hline Weitere Akteure & Admin \\
+				\hline Kurzbeschreibung & Der Benutzer kann über die entsprechende Schaltfläche ein neues Team erstellen \\
+				\hline Vorbedingung & Der Benutzer ist eingeloggt und befindet sich auf der Landingpage \\
+				\hline Nachbedingung & Das auszufüllende Formular für ein Teamprofil wird angezeigt \\
+				\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+				\hline Ablauf & \begin{itemize}
+					\item 1. Benutzer klickt auf Team erstellen \\
+					\item 2. Teamprofil Formular wird angezeigt \\
+					\item 3. Team wird den eigenen Teams hinzugefügt \\
+				\end{itemize} \\
+				\hline Alternativen & - \\
+				\hline Ausnahmen & - \\
+				\hline Benutzte Use Cases & - \\
+				\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+				\hline Spezielle Anforderungen & - \\
+				\hline Annahmen & - \\
+				\hline
+		\end{tabular}
+			
+		\subsubsection{Teameinladung annehmen}		
+		\begin{tabular}{|l|p{.5\linewidth}|}
+			\hline Use Case Nummer & 1.2.3 \\ 
+			\hline Use Case Name & Teameinladung annehmen \\ 
+			\hline Initiierender Akteur & Benutzer \\
+			\hline Weitere Akteure & Admin \\
+			\hline Kurzbeschreibung & Der Benutzer kann Teameinladungen von anderen Benutzern annehmen \\
+			\hline Vorbedingung & Der Benutzer befindet sich auf der Landingpage \\
+			\hline Nachbedingung & Die Einladung ist aus der Teamübersicht verschwunden und das Team nun bei den Teams des Benutzers aufgeführt \\
+			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+			\hline Ablauf & \begin{itemize}
+				\item 1. Benutzer akzeptiert die Teameinladung in der Teamübersicht \\
+				\item 2. Benutzer ist Mitglied des Teams und das Team wird in seiner Teamübersicht angezeigt \\
+			\end{itemize} \\
+			\hline Alternativen & - \\
+			\hline Ausnahmen & - \\
+			\hline Benutzte Use Cases & - \\
+			\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+			\hline Spezielle Anforderungen & - \\
+			\hline Annahmen & - \\
+			\hline
+		\end{tabular}
+			
+		\subsubsection{Teameinladung ablehnen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+			\hline Use Case Nummer & 1.2.4 \\ 
+			\hline Use Case Name & Teameinladung ablehnen \\ 
+			\hline Initiierender Akteur & Benutzer \\
+			\hline Weitere Akteure & Admin \\
+			\hline Kurzbeschreibung & Der Benutzer kann eine Einladung einem Team beizutreten ablehnen \\
+			\hline Vorbedingung & Der Benutzer ist eingeloggt und befindet sich auf der Landingpage \\
+			\hline Nachbedingung & Die Teameinladung ist auf der Landingpage nicht mehr vorhanden \\
+			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+			\hline Ablauf & \begin{itemize}
+				\item 1. Benutzer lehnt die Teameinladung ab \\
+				\item 2. Teameinladung wird aus Teamübersicht gelöscht \\
+			\end{itemize} \\
+			\hline Alternativen & - \\
+			\hline Ausnahmen & - \\
+			\hline Benutzte Use Cases & - \\
+			\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+			\hline Spezielle Anforderungen & - \\
+			\hline Annahmen & - \\
+			\hline
+		\end{tabular}
+				
+		\subsubsection{Teamprofil ansehen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+			\hline Use Case Nummer & 1.2.5 \\ 
+			\hline Use Case Name & Teamprofil ansehen \\ 
+			\hline Initiierender Akteur & Benutzer \\
+			\hline Weitere Akteure & Admin \\
+			\hline Kurzbeschreibung & Der Benutzer kann durch anklicken eines Teamnamens oder -fotos das Profil des entsprechenden Teams aufrufen \\
+			\hline Vorbedingung & Der Benutzer befindet sich auf der Landingpage und ist Mitglied eines Teams bzw. hat eine Teameinladung vorliegen \\
+			\hline Nachbedingung & Die Teamprofil Ansicht ist geöffnet \\
+			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+			\hline Ablauf & \begin{itemize}
+				\item 1. Benutzer klickt Teamname oder -bild an \\
+				\item 2. Benutzer wird auf Teamprofil geleitet \\
+			\end{itemize} \\
+			\hline Alternativen & - \\
+			\hline Ausnahmen & - \\
+			\hline Benutzte Use Cases & - \\
+			\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+			\hline Spezielle Anforderungen & - \\
+			\hline Annahmen & - \\
+			\hline
+		\end{tabular}
+				
+		\subsubsection{Profil von Teammitglied ansehen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+			\hline Use Case Nummer & 1.2.6 \\ 
+			\hline Use Case Name & Profil von Teammitglied ansehen \\ 
+			\hline Initiierender Akteur & Benutzer \\
+			\hline Weitere Akteure & Admin \\
+			\hline Kurzbeschreibung & Der Benutzer kann sich die Profile seiner Teammitglieder ansehen \\
+			\hline Vorbedingung & Der Benutzer ist Mitglied eines Teams und befindet sich auf der Landingpage \\
+			\hline Nachbedingung & Der Benutzer befindet sich auf der Profilseite des ausgewählten Teammitglieds \\
+			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+			\hline Ablauf & \begin{itemize}
+				\item 1. Benutzer klickt den Namen eines Teammitglieds an \\
+				\item 2. Benutzer wird auf die Profilseite des Teammitglieds weitergeleitet \\
+			\end{itemize} \\
+			\hline Alternativen & - \\
+			\hline Ausnahmen & - \\
+			\hline Benutzte Use Cases & - \\
+			\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+			\hline Spezielle Anforderungen & - \\
+			\hline Annahmen & - \\
+			\hline
+		\end{tabular}
+					
+		\subsubsection{Nachrichten einsehen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+			\hline Use Case Nummer & 1.2.7 \\ 
+			\hline Use Case Name & Nachrichten einsehen \\ 
+			\hline Initiierender Akteur & Benutzer \\
+			\hline Weitere Akteure & Admin \\
+			\hline Kurzbeschreibung & Der Benutzer kann die zuletzt von Teammitgliedern erledigten Aktivitäten / Challenges in einer Newsspalte ansehen \\
+			\hline Vorbedingung & Der Benutzer befindet sich auf der Landingpage \\
+			\hline Nachbedingung & Der Benutzer befindet sich auf der Landingpage %TODO Einzelne Newspage?? \\
+			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+			\hline Ablauf & - \\
+			\hline Alternativen & Es sind noch keine Nachrichten vorhanden, da der Benutzer kein Mitglied eines Teams ist \\
+			\hline Ausnahmen & - \\
+			\hline Benutzte Use Cases & - \\
+			\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+			\hline Spezielle Anforderungen & - \\
+			\hline Annahmen & - \\
+			\hline
+		\end{tabular}
 %-----------------
 \subsection{Aktivit\"aten}
 >>>>>>> a66e7062aa58d82925d423a0aea5a264a3775ae3
