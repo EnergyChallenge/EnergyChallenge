@@ -1,4 +1,4 @@
-﻿\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
@@ -100,18 +100,11 @@
 %------------------------------------------------
 % Produkteinsatz
 %------------------------------------------------
-\section{Produkteinsatz}
-\subsection{Answendungsbereich}
-\subsection{Zielgruppe}
-\subsection{Betriebsbedingungen}
-
+\include{produkteinsatz.tex}
 %------------------------------------------------
 % Produktumgebung
 %------------------------------------------------
-\section{Produktumgebung}
-\subsection{Software}
-\subsection{Hardware}
-\subsection{Orgware}
+\include{produktumgebung.tex}
 
 %------------------------------------------------
 % Produktuebersicht
@@ -516,10 +509,10 @@
 		\hline Vorbedingung & Die Profilseite ist im Browser aufgerufen \\
 		\hline Nachbedingung & Die Profilseite wird mit den vorgenommenen \"Anderungen angezeigt oder ist gel\"oscht worden \\
 		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
-		\hline \hline Ablauf & \begin{itemize}
+		\hline Ablauf & \begin{itemize}
 					\item 1. Der Benutzer w\"ahlt eine Information, die er bearbeiten m\"ochte aus und bearbeitet diese
 					\item 2. Der Benutzer speichert die ge\"anderten Informationen und diese werden ins System \"ubernommen
-				\end{itemize}
+				\end{itemize}\\
 		\hline Alternativen & - \\
 		\hline Ausnahmen & - \\
 		\hline Benuzte Use Cases & - \\
@@ -539,10 +532,10 @@
 		\hline Vorbedingung & Die Profilseite ist im Browser aufgerufen \\
 		\hline Nachbedingung & Die Profilseite wird dem Admin als gesperrt angezeigt \\
 		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
-		\hline \hline Ablauf & \begin{itemize}
+		\hline Ablauf & \begin{itemize}
 					\item 1. Der Admin \"offnet die Profilseite des zu sperrenden Profils
 					\item 2. Der Admin sperrt das entsprechende Profil, welches im Anschluss f\"ur Benutzer nicht mehr sichtbar und verwendbar ist
-				\end{itemize}
+				\end{itemize}\\
 		\hline Alternativen & - \\
 		\hline Ausnahmen & - \\
 		\hline Benuzte Use Cases & - \\
@@ -562,10 +555,10 @@
 		\hline Vorbedingung & Die gesperrte Profilseite ist im Browser aufgerufen \\
 		\hline Nachbedingung & Die Profilseite ist wieder sichtbar \\
 		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
-		\hline \hline Ablauf & \begin{itemize}
+		\hline Ablauf & \begin{itemize}
 					\item 1. Der Admin ruft ein gesperrtes Profil auf
 					\item 2. Der Admin reaktiviert das Profil, sodass es f\"ur alle Benutzer wieder sichtbar ist und der Profilinhaber wieder alle Funktionen nutzen kann
-				\end{itemize}
+				\end{itemize}\\
 		\hline Alternativen & - \\
 		\hline Ausnahmen & - \\
 		\hline Benuzte Use Cases & - \\
@@ -585,10 +578,10 @@
 		\hline Vorbedingung & Die Profilseite ist im Browser aufgerufen \\
 		\hline Nachbedingung & Die Profilseite wird im Browser angezeigt und der Benutzer ist im System als Admin registriert \\
 		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
-		\hline \hline Ablauf & \begin{itemize}
+		\hline  Ablauf & \begin{itemize}
 					\item 1. Der Admin w\"ahlt das Profil des Benutzers aus, den er zum Admin bef\"ordern m\"ochte
 					\item 2. Der Admin bef\"ordert den Benutzer \"uber einen Men\"upunkt zum Administrator
-				\end{itemize}
+				\end{itemize}\\
 		\hline Alternativen & - \\
 		\hline Ausnahmen & - \\
 		\hline Benuzte Use Cases & - \\
@@ -608,10 +601,10 @@
 		\hline Vorbedingung & Die Profilseite ist im Browser aufgerufen \\
 		\hline Nachbedingung & Das Profil ist aus dem System gel\"oscht \\
 		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
-		\hline \hline Ablauf & \begin{itemize}
+		\hline  Ablauf & \begin{itemize}
 					\item 1. Der Admin w\"ahlt das zu löschende Profil aus
 					\item 2. Der Admin l\"oscht das Profil
-				\end{itemize}
+				\end{itemize}\\
 		\hline Alternativen & - \\
 		\hline Ausnahmen & - \\
 		\hline Benuzte Use Cases & - \\
@@ -838,12 +831,12 @@
 %------------------------------------------------
 % Produktdaten
 %------------------------------------------------
-\section{Produktdaten}
+\include{produktdaten.tex}
 
 %------------------------------------------------
 % Produktleistung
 %------------------------------------------------
-\section{Produktleistung}
+\include{produktleistungen.tex}
 
 %------------------------------------------------
 % Benutzeroberflache
@@ -854,7 +847,7 @@
 %------------------------------------------------
 % Qualitaetsanforderung
 %------------------------------------------------
-\section{Qualit\"atsanforderung}
+\include{qualitaetsanforderung.tex}
 
 %------------------------------------------------
 % Entwicklungsumgebung
