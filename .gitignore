@@ -1,5 +1,8 @@
+# latex and latexmk temporay files
 *.toc
 *.synctex.gz
 *.log
 *.aux
+*.dvi
+*.fdb_latexmk
 /.~lock.Produkteinsatz.doc#
