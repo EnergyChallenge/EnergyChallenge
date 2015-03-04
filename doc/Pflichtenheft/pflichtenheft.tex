@@ -1,13 +1,15 @@
 \documentclass[10pt,a4paper]{article}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
 
 
-\author{Grupe 02}
-\title{PflichtenHeft}
+\author{Gruppe 02}
+\title{Pflichtenheft}
 \begin{document}
 % Title Page
 \maketitle
@@ -21,74 +23,78 @@
 	\begin{itemize}
 		\item Webanwendung
 		\begin{itemize}
-			\item Startseite
-			\item am Corporate Design der Universitaet und Klik-Webseite orientiert
-			\item ohne Anmeldung ist nur die Startseite und die Aktivitaetsliste einsehbar
-			\item Registrierung fuer Teilnehmer mit Benutzername, Email-Adresse und Dienststelle/Studiengang erfordert.
-			\item Jeder Teilnehmer und jedes Team hat ein oeffentlich einsehbares Profil (Punkte, Aktivitaeten, Foto,...) %TODO
-			\item Teilnehmer sammeln Punkte, und koennen diese einsehn
-			\item Teilnehmer koennen sich zu Teams zusammenschliessen um gemeinsam Punkte zusammeln, in diese kann eingeladen werden.
-			\item Teilnehmer koennen nur in einem Team Mitglied sein
-			\item Teilnehmer koennen Energiesparvorschlaege einreichen
-			\item Teilnehmer koennen Aktivitaeten auswaehlen und erledigen
-			\item Aktivitaeten haben einen Zeitramen, Heufigkeit, Kategorie und Punkte
-			\item Aktivitaeten muessen nach Auswahl bestaetigt werden
-			\item Es gibt Challenges die Zeitlich begrenzt sind
-			\item An Challenges nimmt jeder automatisch teil
-			
-			\item Es gibt eine Uebersich ueber alle Energiesparvorschlaege
-			\item Energiesparvorschlaege koennen kommentiert werden
-			\item Energiesparvorschlaege koennen bewertet werden
-			\item Es gibt eine Uebersicht ueber alle Teilnehmer und alle Teams (sortiert nach Name / Punkten) %TODO
-			\item Grafische annonymisierte Statistiken:
+			\item Es gibt eine \emph{Startseite}, welche am Corporate Design der Universität und der klik-Webseite orientiert ist.
+                        \item Über die Startseite können sich Benutzer einloggen oder neu registrieren.
+			\item Ohne Anmeldung sind ausschließlich die Startseite und die Liste aller Aktivitäten einsehbar.
+			\item Bei der Registrierung \emph{müssen} Vorname, Nachname, eine Universitäts-Email-Adresse und Studiengang bzw. Dienststelle angegeben werden.
+                        \item Nach jeder Anmeldung werden Benutzer auf ihre \emph{Landingpage} weitergeleitet.
+                        \item Benutzer können ihrem Profil ein individuelles Bild hinzufügen, welches auf der Landingpage und der Profilseite als Avatar angezeigt wird.
+                        \item Benutzer sammeln Punkte, und können diese auf ihrer \emph{Landingpage} einsehen. 
+                        \item Benutzer können über ihre Landingpage neue Teams erstellen um gemeinsam mit anderen Benutzern Punkte zu sammeln.
+                        \item Der Punktestand eines Teams berechnet sich als Mittelwert der Punktestände aller Benutzer des Teams.
+                        \item Jeder Teilnehmer und jedes Team hat eine \emph{Profilseite}, welches von anderen Benutzern eingesehen werden kann.
+                        \item Eine Profilseite zeigt den aktuellen Punktestand, die aktuell ausgewählten Aktivitäten, die abgeschlossenen Aktivitäten und ggf. ein individualisiertes Profilbild (s. Sollkriterien) des Benutzers oder des Teams.
+                        \item Über die Profilseite eines Teams können Benutzer dem Team beitreten.
+                        \item Jeder Benutzer kann höchstens in \emph{einem} Team Mitglied sein.
+                        \item Benutzer können andere Benutzer in \emph{ihr} Team einladen. Einladungen in fremde Teams sind nicht möglich.
+			\item Benutzer können Energiesparvorschläge über eine \emph{Vorschlagsseite} einreichen.
+                        \item Ein Energiesparvorschlag besteht aus einer Bezeichnung.
+                        \item Auf der Vorschlagsseite wird außerdem eine Übersicht über alle von allen Benutzern bisher eingereichten Energiesparvorschläge dargestellt.
+                        \item Über die Vorschlagsseite können Benutzer Energiesparvorschläge kommentieren und/oder mit 1 bis 5 Sternen bewerten.
+			\item Benutzer können Aktivitäten (s. Adminbereich) über eine \emph{Aktivitätsseite} auswählen und als erledigt markieren.
+                        \item Um eine Aktivität als erledigt zu markieren ist eine zusätzliche Bestätigung erforderlich.
+			\item Alle Benutzer nehmen an allen Challenges automatisch teil.
+			\item Es gibt eine nach Punktestand sortiert Übersicht über alle Benutzer oder alle Teams (\emph{Rangliste}). In der Übersicht kann auf einfache Weise zwischen der Anzeige von einzelnen Benutzern oder Teams umgeschaltete werden.
+                        \item Benutzer können über diese Rangliste nach anderen Benutzern oder Gruppen suchen.
+			\item Es gibt eine \emph{Statistikseite}, die von allen Benutzern eingesehen werden kann, mit folgenden grafischen, anonymisierten Statistiken:
 			\begin{itemize}
 				\item Besucherzahl
 				\item gesammelte Punkte
-				\item erledigte Aktivitaeten
-				\item beliebteste Aktivitaeten
+				\item erledigte Aktivitäten
+				\item beliebteste Aktivitäten
 			\end{itemize}
 		\end{itemize}
 		% ----------------------------------------------------------------
 		\item Android-App
 		\begin{itemize}
-			\item Einmaliges login nach registrierung auf der Webseite
-			\item Profilseiten sind einsehbar
-			\item Ranking von Teilnehmern und Teams einsehbar
-			\item Uebersicht aller Aktivitaeten
-			\item Aktivitaeten auswaehlen und erledigen
-			\item Liste der ausgewaehlten Aktiviaeten
-			\item Suchfunktion fuer Teilnehmer, Teams und Aktivitaeten
-			
+			\item Benutzer müssen sich beim ersten Start mit ihrem Account anmelden. Hierfür ist eine bestehende Registrierung (über die Website) erforderlich.
+			\item Benutzer können Profilseiten anderer Benutzer und Teams einsehen.
+			\item Benutzer können ein Ranking von Teilnehmern oder Teams einsehen.
+			\item Benutzer können eine Übersicht über alle von ihnen ausgewählte Aktivitäten einsehen. In dieser Übersicht wird außerdem eine Liste aller Aktivitäten angezeigt, über die Benutzer weitere Aktivitäten auswählen können. Außerdem können Benutzer über diese Ansicht ausgewählte Aktivitäten als erledigt markieren.
+			\item Benutzer können nach anderen Benutzern oder Teams suchen. 
 		\end{itemize}
 		% ----------------------------------------------------------------
-		\item Admin Bereich
+		\item Adminbereich
 		\begin{itemize}
-			\item Challenges erstellen
-			\item Aktivitaeten erstellen und bearbeiten
-			\item Energiesparvorschlaege annehmen
-			\item Emails an alle Teilnehmer
-			\item Teilnehmer und Teams sperren.
+			\item Challenges können erstellt werden.
+                        \item Challenges haben einen Start- und einen Endzeitpunkt.
+			\item Aktivitäten können erstellt und bearbeitet werden.
+                        \item Jede Aktivität hat eine Bezeichnung, einen zeitlichen Rahmen (angegeben als Zeitintervall), eine Häufigkeit, eine Kategorie und Punkte, welche Benutzern bei Erledigung der Aktivität auf ihrem Punktekonto gut geschrieben werden.
+			\item Energiesparvorschläge können angenommen und in Aktivitäten umwandelt werden.
+                        \item Durch Annahme eines Energiesparvorschlags wird der Vorschlag aus der Vorschlagstliste entfernt und ein Dialog zum Erstellen einer neuen Aktivität geöffnet. Die Felder dieses Dialogs werden dabei mit den Informationen aus dem Vorschlag vorbereitet.
+			\item E-Mails an \emph{alle} Teilnehmer senden.
+			\item Teilnehmer können gesperrt werden.
+                        \item Gesperrte Benutzer können sich weder über die Startseite noch über die App einloggen. Bei dem Versuch sich einzuloggen wird gesperrten Benutzern ein Hinweis darauf angezeigt, dass ihr Profil gesperrt wurde.
+                        \item Teams können gelöscht werden.
 		\end{itemize}
 	\end{itemize}
 	\subsection{Sollkriterien}
 	\begin{itemize}
-			\item Profilbild fuer Teilnehmer und Gruppen
-			\item Individueller Gruppen Vorschlag nach Registrierung
-			\item Admin kann Teilnehmer und Teams reaktivieren und loeschen
-			\item Admin kann Teams und Teilnehmer verwarnen
-			\item Challenges in App implementiert
-			\item Einstellbare Benachrichtigungen fuer App, Browser und Emails
+			\item Benutzern wird nach der Registrierung eine Liste von empfohlenen Teams angezeigt. Über diese Liste können die Benutzer direkt die Profilseiten der Teams erreichen (wo sie einem Team beitreten können).
+			\item Administratoren können Benutzer und Teams löschen und gesperrte Benutzer und Teams reaktivieren.
+			\item Einstellbare Benachrichtigungen für App, Browser und E-Mails.
 		\end{itemize}
 	\subsection{Kannkriterien}
 	\begin{itemize}
-			\item Profile lassen personalisieren
-			\item Admin kann Emails an Einzelteilnehmer und Gruppen senden.
-			\item Benutzer wechlsen bei der App
+                        \item Administratoren können Teams und Teilnehmer \emph{verwarnen}. Diese Verwarnung wird für alle Administratoren einsehbar gespeichert. Verwarnte Benutzer erhalten eine Benachrichtung per E-Mail über die Verwarnung, aber keine Anzeige der Verwarnung auf der Website oder in der App.
+			\item Administratoren können E-Mails an einzelne Benutzer oder beliebige Gruppen von Benutzern senden.
+                        \item Benutzer können über die App an Challenges teilnehmen.
+                        \item Benutzer können aus ihrem Team austreten und einem anderen Team (oder auch demselben wieder) beitreten.
 	\end{itemize}
 	\subsection{Differentierungskriterien}
 	\begin{itemize}
-		\item keine direkte Kommunikation unter den Teilnehmern
-		\item keine Popups in App und Browser, statt dessen Benachrichitungen 
+		\item Benutzer können weder über die Website noch über die App direkt mit anderen Benutzern kommunizieren.
+		\item Weder im Browser noch in der App werden Popups im wörtlichen Sinn (also sich neu öffnende Fenster) verwendet. Stattdessen werden in der App \emph{Android Notifications} zur Darstellung von Erinnerungen an ausgewählte, aber nicht erledigte Aktivitäten verwendet. Auf der Website werden Erinnerungen an ausgewählte, aber nicht erledigte Aktivitäten in einem speziellen Info-Bereich auf der Landingpage angezeigt. 
 	\end{itemize}
 
 %------------------------------------------------
