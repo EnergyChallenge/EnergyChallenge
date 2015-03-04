@@ -100,7 +100,10 @@
 %------------------------------------------------
 % Produkteinsatz
 %------------------------------------------------
-\include{produkteinsatz}
+%TODO Zeichenkodierung "produkteinsatz.tex"
+%Kodierung ist noch ISO-...
+%Vorerst auskommentiert, bis Problem gelöst
+%\include{produkteinsatz}
 %------------------------------------------------
 % Produktumgebung
 %------------------------------------------------
@@ -257,8 +260,8 @@
 			\hline Nachbedingung & Der Benutzer befindet sich auf der Landingpage \\
 			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 			\hline Ablauf & \begin{itemize}
-				\item 1. Benutzer loggt sich ein \\
-				\item 2. Benutzer sieht die Landingpage an \\
+				\item 1. Benutzer loggt sich ein
+				\item 2. Benutzer sieht die Landingpage an
 			\end{itemize} \\
 			\hline Alternativen & - \\
 			\hline Ausnahmen & - \\
@@ -280,8 +283,8 @@
 			\hline Nachbedingung & Die markierte Aktivität wird als erledigt markiert (ausgegraut, je nach Häufigkeitsattribut) \\
 			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 			\hline Ablauf & \begin{itemize}
-				\item 1. Benutzer wählt erledigte Aktivität aus \\
-				\item 2. Aktivität wird als erledigt markiert \\
+				\item 1. Benutzer wählt erledigte Aktivität aus
+				\item 2. Aktivität wird als erledigt markiert
 			\end{itemize} \\
 			\hline Alternativen & - \\
 			\hline Ausnahmen & - \\
@@ -303,9 +306,9 @@
 				\hline Nachbedingung & Das auszufüllende Formular für ein Teamprofil wird angezeigt \\
 				\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 				\hline Ablauf & \begin{itemize}
-					\item 1. Benutzer klickt auf Team erstellen \\
-					\item 2. Teamprofil Formular wird angezeigt \\
-					\item 3. Team wird den eigenen Teams hinzugefügt \\
+					\item 1. Benutzer klickt auf Team erstellen
+					\item 2. Teamprofil Formular wird angezeigt
+					\item 3. Team wird den eigenen Teams hinzugefügt
 				\end{itemize} \\
 				\hline Alternativen & - \\
 				\hline Ausnahmen & - \\
@@ -327,8 +330,8 @@
 			\hline Nachbedingung & Die Einladung ist aus der Teamübersicht verschwunden und das Team nun bei den Teams des Benutzers aufgeführt \\
 			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 			\hline Ablauf & \begin{itemize}
-				\item 1. Benutzer akzeptiert die Teameinladung in der Teamübersicht \\
-				\item 2. Benutzer ist Mitglied des Teams und das Team wird in seiner Teamübersicht angezeigt \\
+				\item 1. Benutzer akzeptiert die Teameinladung in der Teamübersicht
+				\item 2. Benutzer ist Mitglied des Teams und das Team wird in seiner Teamübersicht angezeigt
 			\end{itemize} \\
 			\hline Alternativen & - \\
 			\hline Ausnahmen & - \\
@@ -350,8 +353,8 @@
 			\hline Nachbedingung & Die Teameinladung ist auf der Landingpage nicht mehr vorhanden \\
 			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 			\hline Ablauf & \begin{itemize}
-				\item 1. Benutzer lehnt die Teameinladung ab \\
-				\item 2. Teameinladung wird aus Teamübersicht gelöscht \\
+				\item 1. Benutzer lehnt die Teameinladung ab
+				\item 2. Teameinladung wird aus Teamübersicht gelöscht
 			\end{itemize} \\
 			\hline Alternativen & - \\
 			\hline Ausnahmen & - \\
@@ -373,8 +376,8 @@
 			\hline Nachbedingung & Die Teamprofil Ansicht ist geöffnet \\
 			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 			\hline Ablauf & \begin{itemize}
-				\item 1. Benutzer klickt Teamname oder -bild an \\
-				\item 2. Benutzer wird auf Teamprofil geleitet \\
+				\item 1. Benutzer klickt Teamname oder -bild an
+				\item 2. Benutzer wird auf Teamprofil geleitet
 			\end{itemize} \\
 			\hline Alternativen & - \\
 			\hline Ausnahmen & - \\
@@ -396,8 +399,8 @@
 			\hline Nachbedingung & Der Benutzer befindet sich auf der Profilseite des ausgewählten Teammitglieds \\
 			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 			\hline Ablauf & \begin{itemize}
-				\item 1. Benutzer klickt den Namen eines Teammitglieds an \\
-				\item 2. Benutzer wird auf die Profilseite des Teammitglieds weitergeleitet \\
+				\item 1. Benutzer klickt den Namen eines Teammitglieds an
+				\item 2. Benutzer wird auf die Profilseite des Teammitglieds weitergeleitet
 			\end{itemize} \\
 			\hline Alternativen & - \\
 			\hline Ausnahmen & - \\
@@ -416,7 +419,7 @@
 			\hline Weitere Akteure & Admin \\
 			\hline Kurzbeschreibung & Der Benutzer kann die zuletzt von Teammitgliedern erledigten Aktivitäten / Challenges in einer Newsspalte ansehen \\
 			\hline Vorbedingung & Der Benutzer befindet sich auf der Landingpage \\
-			\hline Nachbedingung & Der Benutzer befindet sich auf der Landingpage %TODO Einzelne Newspage?? \\
+			\hline Nachbedingung & Der Benutzer befindet sich auf der Landingpage \\ %TODO Einzelne Newspage??
 			\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 			\hline Ablauf & - \\
 			\hline Alternativen & Es sind noch keine Nachrichten vorhanden, da der Benutzer kein Mitglied eines Teams ist \\
