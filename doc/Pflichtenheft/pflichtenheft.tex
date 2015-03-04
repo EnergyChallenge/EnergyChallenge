@@ -252,6 +252,29 @@
 =======
 %------------------
 \subsection{Landingpage}
+
+	\subsubsection{Landingpage}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.2 \\ 
+	\hline Use Case Name & Landingpage \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure & Admin \\
+	\hline Kurzbeschreibung & Der Benutzer kann eine oder mehrere der verf\"ugbaren Aktivit\"aten ausw\"ahlen \\
+	\hline Vorbedingung & Die Aktivit\"atenseite ist im Browser aufgerufen und die Liste von Aktivit\"aten wird angezeigt \\
+	\hline Nachbedingung & Die Aktivit\"atenliste wird angezeigt, die ausgew\"ahlten Aktivit\"aten sind speziell hervorgehoben \\
+	\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+	\hline Ablauf & \begin{itemize}
+			\item 1. Benutzer w\"ahlt eine oder mehrere Aktivit\"aten aus
+			\item 2. Die ausgew\"ahlten Aktivit\"aten werden als ausgew\"ahlt hervorgehoben
+		\end{itemize} \\
+	\hline Alternativen & - \\
+	\hline Ausnahmen & Die Aktivit\"atenliste ist nicht verf\"ugbar \\
+	\hline Benutzte Use Cases & 1.3.1 Aktivit\"aten ansehen \\
+	\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+	\hline Spezielle Anforderungen & - \\
+	\hline Annahmen & Der Benutzer w\"ahlt nur Aktivit\"aten aus, die noch nicht ausgew\"ahlt sind \\
+	\hline
+	\end{tabular}
 %-----------------
 \subsection{Aktivit\"aten}
 >>>>>>> a66e7062aa58d82925d423a0aea5a264a3775ae3
@@ -491,11 +514,11 @@
 		\hline Weitere Akteure & Admin \\
 		\hline Kurzbeschreibung & Der Benutzer kann verschiedene Informationen seines Profils bearbeiten, wie Profilbild, Passwort, Benachrichtigungseinstellungen oder Fakultät und besitzt die Möglichkeit sein Profil zu löschen \\
 		\hline Vorbedingung & Die Profilseite ist im Browser aufgerufen \\
-		\hline Nachbedingung & Die Profilseite wird mit den vorgenommenen \"Anderungen angezeigt oder ist gelöscht worden \\
+		\hline Nachbedingung & Die Profilseite wird mit den vorgenommenen \"Anderungen angezeigt oder ist gel\"oscht worden \\
 		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 		\hline \hline Ablauf & \begin{itemize}
-					\item 1. Der Benutzer w\"ahlt eine Information, die er bearbeiten möchte aus und bearbeitet diese
-					\item 2. Der Benutzer speichert die geänderten Informationen und diese werden ins System übernommen
+					\item 1. Der Benutzer w\"ahlt eine Information, die er bearbeiten m\"ochte aus und bearbeitet diese
+					\item 2. Der Benutzer speichert die ge\"anderten Informationen und diese werden ins System \"ubernommen
 				\end{itemize}
 		\hline Alternativen & - \\
 		\hline Ausnahmen & - \\
@@ -518,7 +541,7 @@
 		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 		\hline \hline Ablauf & \begin{itemize}
 					\item 1. Der Admin \"offnet die Profilseite des zu sperrenden Profils
-					\item 2. Der Admin sperrt das entsprechende Profil, welches im Anschluss für Benutzer nicht mehr sichtbar und verwendbar ist
+					\item 2. Der Admin sperrt das entsprechende Profil, welches im Anschluss f\"ur Benutzer nicht mehr sichtbar und verwendbar ist
 				\end{itemize}
 		\hline Alternativen & - \\
 		\hline Ausnahmen & - \\
@@ -541,7 +564,7 @@
 		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 		\hline \hline Ablauf & \begin{itemize}
 					\item 1. Der Admin ruft ein gesperrtes Profil auf
-					\item 2. Der Admin reaktiviert das Profil, sodass es für alle Benutzer wieder sichtbar ist und der Profilinhaber wieder alle Funktionen nutzen kann
+					\item 2. Der Admin reaktiviert das Profil, sodass es f\"ur alle Benutzer wieder sichtbar ist und der Profilinhaber wieder alle Funktionen nutzen kann
 				\end{itemize}
 		\hline Alternativen & - \\
 		\hline Ausnahmen & - \\
@@ -558,20 +581,20 @@
 		\hline Use Case Name & Profilinhaber zum Admin bef\"ordern \\ 
 		\hline Initiirender Akteur & Admin \\
 		\hline Weitere Akteure & Benutzer, der zum Admin wird \\
-		\hline Kurzbeschreibung & Ein Admin kann einen Benutzer zum Admin ernennen und ihm so Administratorzugriff gewähren \\
+		\hline Kurzbeschreibung & Ein Admin kann einen Benutzer zum Admin ernennen und ihm so Administratorzugriff gew\"ahren \\
 		\hline Vorbedingung & Die Profilseite ist im Browser aufgerufen \\
 		\hline Nachbedingung & Die Profilseite wird im Browser angezeigt und der Benutzer ist im System als Admin registriert \\
 		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
 		\hline \hline Ablauf & \begin{itemize}
-					\item 1. Der Admin wählt das Profil des Benutzers aus, den er zum Admin befördern möchte
-					\item 2. Der Admin befördert den Benutzer über einen Menüpunkt zum Administrator
+					\item 1. Der Admin w\"ahlt das Profil des Benutzers aus, den er zum Admin bef\"ordern m\"ochte
+					\item 2. Der Admin bef\"ordert den Benutzer \"uber einen Men\"upunkt zum Administrator
 				\end{itemize}
 		\hline Alternativen & - \\
 		\hline Ausnahmen & - \\
 		\hline Benuzte Use Cases & - \\
 		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
 		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen & Das Profil des zu befördernden Benutzers ist nicht gesperrt \\
+		\hline Annahmen & Das Profil des zu bef\"ordernden Benutzers ist nicht gesperrt \\
 		\hline
 		\end{tabular}
 		
