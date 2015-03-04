@@ -122,23 +122,103 @@
 %------------------------------------------------
 \section{Produktfunktion}
 % MUSTER 
-	\subsubsection{title}
+	\subsubsection{Aktivit\"aten ansehen}
 	\begin{tabular}{|l|p{.5\linewidth}|}
-	\hline Use Case Nummer &  \\ 
-	\hline Use Case Name &  \\ 
-	\hline Initiirender Akteur &  \\
-	\hline Weitere Akteure &  \\
-	\hline Kurzbeschreibung &  \\
-	\hline Vorbedingung &  \\
-	\hline Nachbedingung &  \\
+	\hline Use Case Nummer & 1.3.1 \\ 
+	\hline Use Case Name & Aktivit\"aten ansehen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure & Admin \\
+	\hline Kurzbeschreibung & Der Benutzer kann die auf der Seite dargestellte Liste von verf\"ugbaren Aktivit\"aten einsehen \\
+	\hline Vorbedingung & Die Aktivit\"atenseite ist im Browser aufgerufen \\
+	\hline Nachbedingung & Die Aktivit\"atenseite ist im Browser aufgerufen \\
 	\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
-	\hline Ablauf &  \\
-	\hline Alternativen &  \\
-	\hline Ausnahmen &  \\
-	\hline Benuzte Use Cases &  \\
+	\hline Ablauf & 1. Der Benutzer sieht die Liste der Aktivit\"aten an \\
+	\hline Alternativen & - \\
+	\hline Ausnahmen & Die Aktivit\"atenliste ist nicht verf\"ugbar \\
+	\hline Benutzte Use Cases & - \\
 	\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
-	\hline Spezielle Anforderungen &  \\
-	\hline Annahmen &  \\
+	\hline Spezielle Anforderungen & - \\
+	\hline Annahmen & - \\
+	\hline
+	\end{tabular} 
+	
+	\subsubsection{Aktivit\"aten ausw\"ahlen}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.3.2 \\ 
+	\hline Use Case Name & Aktivit\"aten ausw\"ahlen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure & Admin \\
+	\hline Kurzbeschreibung & Der Benutzer kann eine oder mehrere der verf\"ugbaren Aktivit\"aten ausw\"ahlen \\
+	\hline Vorbedingung & Die Aktivit\"atenseite ist im Browser aufgerufen und die Liste von Aktivit\"aten wird angezeigt \\
+	\hline Nachbedingung & Die Aktivit\"atenliste wird angezeigt, die ausgew\"ahlten Aktivit\"aten sind speziell hervorgehoben \\
+	\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+	\hline Ablauf & 1. Der Benutzer sieht die Liste der Aktivit\"aten an 2. Der Benutzer w\"ahlt eine oder mehrere Aktivit\"aten aus 3. Die gew\"ahlten Aktivit\"aten werden besonders hervorgehoben angezeigt \\
+	\hline Alternativen & - \\
+	\hline Ausnahmen & Die Aktivit\"atenliste ist nicht verf\"ugbar \\
+	\hline Benutzte Use Cases & 1.3.1 Aktivit\"aten ansehen \\
+	\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+	\hline Spezielle Anforderungen & - \\
+	\hline Annahmen & Der Benutzer w\"ahlt nur Aktivit\"aten aus, die noch nicht ausgew\"ahlt sind \\
+	\hline
+	\end{tabular}
+	
+	\subsubsection{Aktivit\"aten als erledigt abhaken}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.3.2.1 \\ 
+	\hline Use Case Name & Aktivit\"aten als erledigt abhaken \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure & Admin \\
+	\hline Kurzbeschreibung & Der Benutzer kann ausgew\"ahlte Aktivit\"aten, die er durchgef\"uhrt hat, als erledigt abhaken \\
+	\hline Vorbedingung & Der Benutzer hat bereits eine oder mehrere Aktivit\"aten ausgew\"ahlt \\
+	\hline Nachbedingung & Die abgehakte/n Aktivit\"at/en werden als solche markiert und dem Benutzer die entsprechende Punktzahl gutgeschrieben \\
+	\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+	\hline Ablauf & 1. Der Benutzer hakt eine ausgew\"ahlte Aktivit\"at als erledigt ab 2. Die Aktivit\"at wird als erledigt markiert und dem Benutzer werden die entsprechenden Punkte gutgeschrieben \\
+	\hline Alternativen & - \\
+	\hline Ausnahmen & Die Aktivit\"at ist in dem Zeitraum bzw. derzeit nicht verf\"ugbar \\
+	\hline Benutzte Use Cases & 1.3.1 Aktivit\"aten ansehen \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen & - \\
+	\hline Annahmen & - \\
+	\hline
+	\end{tabular} 
+	
+	\subsubsection{Aktivit\"aten abw\"ahlen}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.3.2.2 \\ 
+	\hline Use Case Name & Aktivit\"aten abw\"ahlen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure & Admin \\
+	\hline Kurzbeschreibung & Der Benutzer kann eine oder mehrere Aktivit\"aten, die er zuvor ausgew\"ahlt hat, wieder abw\"ahlen \\
+	\hline Vorbedingung & Es wurden bereits Aktivit\"aten ausgew\"ahlt und diese werden als solche angezeigt \\
+	\hline Nachbedingung & Die abgew\"ahlten Aktivit\"aten sind nicht mehr als ausgew\"ahlt markiert \\
+	\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+	\hline Ablauf & 1. Der Benutzer w\"ahlt eine ausgew\"ahlte Aktivit\"at ab 2. Die Aktivit\"at wird nicht mehr als ausgew\"ahlt markiert \\
+	\hline Alternativen & - \\
+	\hline Ausnahmen & Die Aktivit\"atenliste ist nicht verf\"ugbar \\
+	\hline Benutzte Use Cases & Aktivit\"aten ansehen \\
+	\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+	\hline Spezielle Anforderungen & - \\
+	\hline Annahmen & - \\
+	\hline
+	\end{tabular} 
+	
+	\subsubsection{Aktivit\"aten bearbeiten}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.3.3 \\ 
+	\hline Use Case Name & Aktivit\"aten bearbeiten \\ 
+	\hline Initiierender Akteur & Admin \\
+	\hline Weitere Akteure & - \\
+	\hline Kurzbeschreibung & Der Admin kann einzelne Aktivit\"aten bearbeiten (Name, Punktzahl, Zeitraum, etc.) \\
+	\hline Vorbedingung & Die Aktivit\"atenseite ist im Browser aufgerufen und eine Aktivit\"at zur Bearbeitung ausgew\"ahlt \\
+	\hline Nachbedingung & Die bearbeitete Aktivit\"at wird in ihrer neuen Form in der Aktivit\"atenliste angezeigt \\
+	\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+	\hline Ablauf & 1. Der Admin w\"ahlt die zu bearbeitende Aktivit\"at aus 2. Der Admin bearbeitet die Aktivit\"at und speichert die \"Anderungen \\
+	\hline Alternativen & Der Admin l\"oscht die Aktivit\"at \\
+	\hline Ausnahmen & Die Aktivit\"atenliste ist nicht verf\"ugbar \\
+	\hline Benutzte Use Cases & 1.3.1 Aktivit\"aten ansehen \\
+	\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+	\hline Spezielle Anforderungen & - \\
+	\hline Annahmen & - \\
 	\hline
 	\end{tabular} 
 
