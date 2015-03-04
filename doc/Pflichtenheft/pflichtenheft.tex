@@ -599,8 +599,198 @@
 		\end{tabular}
 %-----------------------------
 \subsection{Andoid App}
+\begin{figure}[h]
+		\includegraphics[width=\linewidth,]{gfx/androidapp/overview.pdf}
+	\end{figure}
+\subsubsection{Login}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.1 \\ 
+		\hline Use Case Name & Login \\ 
+		\hline Initiirender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Der Benutzer muss sich einmalig anmelden um die App zu nutzen \\
+		\hline Vorbedingung & Benutzer hat sich noch nie in der App angemeldet \\
+		\hline Nachbedingung & Der Benutzer hat zugriff auf die Funktionen der App \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item der Benutzer started die App und muss zun\"acht Email-Adresse und Passwort eingeben
+			\item der Benutzer klickt auf einloggen
+		\end{itemize} \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen & Bei Falschen Login-Daten wird auf die Webseite verwiesen \\
+		\hline Benuzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen & Benutzer hat sich auf der Webseite angemeldet \\
+		\hline
+		\end{tabular}
+\subsubsection{Aktivit\"at erledigen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.2 \\ 
+		\hline Use Case Name & Aktivit\"at erledigen \\ 
+		\hline Initiirender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Der Benutzer kann von der App direckt ausgew\"ahlte Aktivit\"aten erledigen \\
+		\hline Vorbedingung & Benutzer ist eingeloggt \\
+		\hline Nachbedingung & Benutzer hat Aktivit\"at ausgef\"uhrt \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Benutzer klickt auf eine Aktivit\"at
+			\item Benutzer best\"atigt die Aktivit\"at
+		\end{itemize} \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen &  \\
+		\hline Benuzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
 
+\subsubsection{Aktivit\"aten ansehen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.3 \\ 
+		\hline Use Case Name & Aktivi\"aten ansehn \\ 
+		\hline Initiirender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Benutzer kann die ausgew\"ahlten Aktivit\"aten hinzuf\"ugen und entfernen \\
+		\hline Vorbedingung & Benutzer ist eingeloggt \\
+		\hline Nachbedingung & Benutzer sieht Aktivit\"aten \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Benutzer navigiert im Menu zu "Aktivit\"aten"
+			\item Benutzer werden Aktivit\"aten angezeigt
+		\end{itemize} \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen &  \\
+		\hline Benuzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
 
+\subsubsection{Aktivit\"at ausw\"ahlen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.3.1 \\ 
+		\hline Use Case Name & Aktivit\"at ausw\"ahlen \\ 
+		\hline Initiirender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Benutzer f\"ugt eine Aktivit\"at zu seinen Ausgew\"ahlten hinzu und kann sie auch entfernen \\
+		\hline Vorbedingung &  \\
+		\hline Nachbedingung &  \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Benutzer klickt auf "hinzuf\"ugen"
+			\item Aktivit\"at wir den Ausgew\"ahlten hinzugef\"ugt
+		\end{itemize} \\
+		\hline Alternativen & \begin{itemize}
+			\item Benutzer klickt auf "Entfernen"
+			\item Aktivit\"at wird aus den Ausgew\"ahlten entfernt
+		\end{itemize}  \\
+		\hline Ausnahmen &  \\
+		\hline Benuzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen & Benutzer ist eingeloggt \\
+		\hline
+		\end{tabular}
+
+\subsubsection{Rangliste ansehen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.4 \\ 
+		\hline Use Case Name & Rangliste ansehen\\ 
+		\hline Initiirender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Benutzer kann die Aktuelle Rangliste der Benutzer und Teams ansehen \\
+		\hline Vorbedingung & Benutzer ist eingeloggt \\
+		\hline Nachbedingung & Rangliste wird angezeigt \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Benutzer w\"ahlt im Menu "Rangliste"
+			\item die Rangliste wird angezeigt
+		\end{itemize} \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen &  \\
+		\hline Benuzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+
+\subsubsection{Ansicht \"andern}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.4.1 \\ 
+		\hline Use Case Name & Ansicht \"andern \\ 
+		\hline Initiirender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Der Benutzer kann zwischen der Benutzer- und der Team-Ranglisten-Ansicht wechseln \\
+		\hline Vorbedingung & Benutzer ist in Ranglisten Ansicht \\
+		\hline Nachbedingung & Benutzer ist in der Jeweils anderen Ranglisten Ansicht \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Benutzer wischt \"uber den Bildschirm
+			\item Die Ansicht wechselt
+		\end{itemize} \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen &  \\
+		\hline Benuzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+		
+
+\subsubsection{Profil ansehen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.4.2 \\ 
+		\hline Use Case Name & Profil ansehen \\ 
+		\hline Initiirender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Der Benutzer kann die Profile von Benutzern und Team ansehen \\
+		\hline Vorbedingung & Benutzer hat auf ein Benutzer oder Team geklickt \\
+		\hline Nachbedingung & Benutzer sieht Profil \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Benutzer klickt auf ein Benutzer oder Team
+			\item Das Profil des Entspechenden Benutzers oder Teams wird dargestellt
+		\end{itemize} \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen &  \\
+		\hline Benuzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+
+\subsubsection{Suche}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.4.3 \\ 
+		\hline Use Case Name & Suche \\ 
+		\hline Initiirender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Benutzer kann nach anderen Benutzern und Teams suchen \\
+		\hline Vorbedingung &  \\
+		\hline Nachbedingung & Benutzer werden die Suchergebnisse angezeigt \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Benutzer gibt Suchbegriff ein.
+			\item Benutzer klickt auf suchen
+			\item Benutzer werden Suchergebnisse angezeigt
+		\end{itemize} \\
+		\hline Alternativen & Wurden keine Treffer gefunden, so wird das angezeigt \\
+		\hline Ausnahmen &  \\
+		\hline Benuzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Inforamtionen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+%TODO List PROPOSAL,..
+%TODO USER menu
 %TODO Muster:
 \subsubsection{title}
 		\begin{tabular}{|l|p{.5\linewidth}|}
@@ -649,12 +839,23 @@
 \section{Entwicklungsumgebung}
 \subsection{Software}
 \begin{itemize}
-	\item 
-	\item Java 7
+	\item Java 7 (JDK 1.7)
+	\item Eclipse 4.4 mit Grailsplugin
+	\item Grails 2.4.4
 	\item Visual Paradigm Standard Edition 12
+	\item Android Studio 1.1.0
 \end{itemize}
 \subsection{Hardware}
+\begin{itemize}
+	\item Laptop i5-520m und 4gb Ram oder leistungsst\"arker
+\end{itemize}
 \subsection{Orgware}
+\begin{itemize}
+	\item 4 2x1m Writeboard
+	\item 1 Flipchart
+	\item Beamer und Leinwand
+	\item Farbige Karteikarten
+\end{itemize}
 %------------------------------------------------
 % Erganzungen
 %------------------------------------------------
