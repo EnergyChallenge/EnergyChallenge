@@ -476,8 +476,121 @@
 %-----------------------------
 \subsection{AdminBereich}
 %-----------------------------
-\subsection{Profilseite \"andern}
-
+\subsection{Profilseite}
+	\subsubsection{Profilseite \"andern}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 1.8 \\ 
+		\hline Use Case Name & Profilseite \"andern \\ 
+		\hline Initiirender Akteur & Benutzer \\
+		\hline Weitere Akteure & Admin \\
+		\hline Kurzbeschreibung & Der Benutzer kann verschiedene Informationen seines Profils bearbeiten, wie Profilbild, Passwort, Benachrichtigungseinstellungen oder Fakultät und besitzt die Möglichkeit sein Profil zu löschen \\
+		\hline Vorbedingung & Die Profilseite ist im Browser aufgerufen \\
+		\hline Nachbedingung & Die Profilseite wird mit den vorgenommenen \"Anderungen angezeigt oder ist gelöscht worden \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline \hline Ablauf & \begin{itemize}
+					\item 1. Der Benutzer w\"ahlt eine Information, die er bearbeiten möchte aus und bearbeitet diese
+					\item 2. Der Benutzer speichert die geänderten Informationen und diese werden ins System übernommen
+				\end{itemize}
+		\hline Alternativen & - \\
+		\hline Ausnahmen & - \\
+		\hline Benuzte Use Cases & - \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+		
+			\subsubsection{Profil sperren}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 1.8.1 \\ 
+		\hline Use Case Name & Profil sperren \\ 
+		\hline Initiirender Akteur & Admin \\
+		\hline Weitere Akteure & - \\
+		\hline Kurzbeschreibung & Der Admin kann ein Profil sperren, wenn irgendeine Form von Missverhalten vorliegt \\
+		\hline Vorbedingung & Die Profilseite ist im Browser aufgerufen \\
+		\hline Nachbedingung & Die Profilseite wird dem Admin als gesperrt angezeigt \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline \hline Ablauf & \begin{itemize}
+					\item 1. Der Admin \"offnet die Profilseite des zu sperrenden Profils
+					\item 2. Der Admin sperrt das entsprechende Profil, welches im Anschluss für Benutzer nicht mehr sichtbar und verwendbar ist
+				\end{itemize}
+		\hline Alternativen & - \\
+		\hline Ausnahmen & - \\
+		\hline Benuzte Use Cases & - \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+		
+			\subsubsection{Profil reaktivieren}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 1.8.1.1 \\ 
+		\hline Use Case Name & Profil reaktivieren \\ 
+		\hline Initiierender Akteur & Admin \\
+		\hline Weitere Akteure & - \\
+		\hline Kurzbeschreibung & Admin kann ein zuvor gesperrtes Profil reaktivieren \\
+		\hline Vorbedingung & Die gesperrte Profilseite ist im Browser aufgerufen \\
+		\hline Nachbedingung & Die Profilseite ist wieder sichtbar \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline \hline Ablauf & \begin{itemize}
+					\item 1. Der Admin ruft ein gesperrtes Profil auf
+					\item 2. Der Admin reaktiviert das Profil, sodass es für alle Benutzer wieder sichtbar ist und der Profilinhaber wieder alle Funktionen nutzen kann
+				\end{itemize}
+		\hline Alternativen & - \\
+		\hline Ausnahmen & - \\
+		\hline Benuzte Use Cases & - \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+		
+			\subsubsection{Profilinhaber zum Admin bef\"ordern}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 1.8.2 \\ 
+		\hline Use Case Name & Profilinhaber zum Admin bef\"ordern \\ 
+		\hline Initiirender Akteur & Admin \\
+		\hline Weitere Akteure & Benutzer, der zum Admin wird \\
+		\hline Kurzbeschreibung & Ein Admin kann einen Benutzer zum Admin ernennen und ihm so Administratorzugriff gewähren \\
+		\hline Vorbedingung & Die Profilseite ist im Browser aufgerufen \\
+		\hline Nachbedingung & Die Profilseite wird im Browser angezeigt und der Benutzer ist im System als Admin registriert \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline \hline Ablauf & \begin{itemize}
+					\item 1. Der Admin wählt das Profil des Benutzers aus, den er zum Admin befördern möchte
+					\item 2. Der Admin befördert den Benutzer über einen Menüpunkt zum Administrator
+				\end{itemize}
+		\hline Alternativen & - \\
+		\hline Ausnahmen & - \\
+		\hline Benuzte Use Cases & - \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen & Das Profil des zu befördernden Benutzers ist nicht gesperrt \\
+		\hline
+		\end{tabular}
+		
+			\subsubsection{Profil l\"oschen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 1.8.3 \\ 
+		\hline Use Case Name & Profil l\"oschen \\ 
+		\hline Initiirender Akteur & Admin \\
+		\hline Weitere Akteure & - \\
+		\hline Kurzbeschreibung & Der Admin kann ausgew\"ahlte Profile l\"oschen \\
+		\hline Vorbedingung & Die Profilseite ist im Browser aufgerufen \\
+		\hline Nachbedingung & Das Profil ist aus dem System gel\"oscht \\
+		\hline \multicolumn{2}{|c|}{Funktionalitaet des UseCases}\\
+		\hline \hline Ablauf & \begin{itemize}
+					\item 1. Der Admin w\"ahlt das zu löschende Profil aus
+					\item 2. Der Admin l\"oscht das Profil
+				\end{itemize}
+		\hline Alternativen & - \\
+		\hline Ausnahmen & - \\
+		\hline Benuzte Use Cases & - \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen & - \\
+		\hline Annahmen & - \\
+		\hline
+		\end{tabular}
 %-----------------------------
 \subsection{Andoid App}
 
