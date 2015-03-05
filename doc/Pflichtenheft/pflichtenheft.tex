@@ -29,10 +29,10 @@
 			\item Bei der Registrierung \emph{müssen} Vorname, Nachname, eine Universitäts-Email-Adresse und Studiengang bzw. Dienststelle angegeben werden.
                         \item Nach jeder Anmeldung werden Benutzer auf ihre \emph{Landingpage} weitergeleitet. Die Landingpage kann nicht von anderen Benutzern  eingesehen werden (dafür wird eine \emph{Profilseite} verwendet).
                         \item Benutzer können ihrem Profil ein individuelles Bild hinzufügen, welches auf der Landingpage und der Profilseite als Avatar angezeigt wird.
-                        \item Benutzer sammeln Punkte, und können diese auf ihrer \emph{Landingpage} einsehen. 
-                        \item Benutzer können über ihre Landingpage neue Teams erstellen um gemeinsam mit anderen Benutzern Punkte zu sammeln.
-                        \item Der Punktestand eines Teams berechnet sich als Mittelwert der Punktestände aller Benutzer des Teams.
-                        \item Jeder Teilnehmer und jedes Team hat eine \emph{Profilseite}, welches von anderen Benutzern eingesehen werden kann.
+                        \item Benutzer sammeln Punkte und können diese auf ihrer \emph{Landingpage} einsehen. 
+                        \item Benutzer können über ihre Landingpage neue Teams erstellen, um gemeinsam mit anderen Benutzern Punkte zu sammeln.
+                        \item Der Punktestand eines Teams berechnet sich als Mittelwert der Punktestände aller Mitglieder des Teams.
+                        \item Jeder Teilnehmer und jedes Team hat eine \emph{Profilseite}, welche von anderen Benutzern eingesehen werden kann.
                         \item Eine Profilseite zeigt den aktuellen Punktestand, die aktuell ausgewählten Aktivitäten, die abgeschlossenen Aktivitäten und ggf. ein individualisiertes Profilbild (s. Sollkriterien) des Benutzers oder des Teams.
                         \item Über die Profilseite eines Teams können Benutzer dem Team beitreten.
                         \item Jeder Benutzer kann höchstens in \emph{einem} Team Mitglied sein.
@@ -42,9 +42,9 @@
                         \item Auf der Vorschlagsseite wird außerdem eine Übersicht über alle von allen Benutzern bisher eingereichten Energiesparvorschläge dargestellt.
                         \item Über die Vorschlagsseite können Benutzer Energiesparvorschläge kommentieren und/oder mit 1 bis 5 Sternen bewerten.
 			\item Benutzer können Aktivitäten (s. Adminbereich) über eine \emph{Aktivitätsseite} auswählen und als erledigt markieren.
-                        \item Um eine Aktivität als erledigt zu markieren ist eine zusätzliche Bestätigung erforderlich.
+                        \item Um eine Aktivität als erledigt zu markieren, ist eine zusätzliche Bestätigung erforderlich.
 			\item Alle Benutzer nehmen an allen Challenges automatisch teil.
-			\item Es gibt eine nach Punktestand sortiert Übersicht über alle Benutzer oder alle Teams (\emph{Rangliste}). In der Übersicht kann auf einfache Weise zwischen der Anzeige von einzelnen Benutzern oder Teams umgeschaltete werden.
+			\item Es gibt eine nach Punktestand sortierte Übersicht über alle Benutzer oder alle Teams (\emph{Rangliste}). In der Übersicht kann auf einfache Weise zwischen der Anzeige von einzelnen Benutzern oder Teams umgeschaltet werden.
                         \item Benutzer können über diese Rangliste nach anderen Benutzern oder Gruppen suchen.
 			\item Es gibt eine \emph{Statistikseite}, die von allen Benutzern eingesehen werden kann, mit folgenden grafischen, anonymisierten Statistiken:
 			\begin{itemize}
@@ -69,8 +69,8 @@
 			\item Challenges können erstellt werden.
                         \item Challenges haben einen Start- und einen Endzeitpunkt.
 			\item Aktivitäten können erstellt und bearbeitet werden.
-                        \item Jede Aktivität hat eine Bezeichnung, einen zeitlichen Rahmen (angegeben als Zeitintervall), eine Häufigkeit, eine Kategorie und Punkte, welche Benutzern bei Erledigung der Aktivität auf ihrem Punktekonto gut geschrieben werden.
-			\item Energiesparvorschläge können angenommen und in Aktivitäten umwandelt werden.
+                        \item Jede Aktivität hat eine Bezeichnung, einen zeitlichen Rahmen (angegeben als Zeitintervall), eine Häufigkeit, eine Kategorie und Punkte, welche Benutzern bei Erledigung der Aktivität auf ihrem Punktekonto gutgeschrieben werden.
+			\item Energiesparvorschläge können angenommen und in Aktivitäten umgewandelt werden.
                         \item Durch Annahme eines Energiesparvorschlags wird der Vorschlag aus der Vorschlagsliste entfernt und ein Dialog zum Erstellen einer neuen Aktivität geöffnet. Die Felder dieses Dialogs werden dabei mit den Informationen aus dem Vorschlag vorbereitet.
 			\item E-Mails an \emph{alle} Teilnehmer senden.
 			\item Teilnehmer können gesperrt werden.
@@ -894,10 +894,10 @@
 		\hline
 		\end{tabular}
 
-\subsubsection{Ansicht \"andern}
+\subsubsection{Benutzer/Team Ansicht \"andern}
 		\begin{tabular}{|l|p{.5\linewidth}|}
 		\hline Use Case Nummer & 2.4.1 \\ 
-		\hline Use Case Name & Ansicht \"andern \\ 
+		\hline Use Case Name & Benutzer/Team Ansicht \"andern \\ 
 		\hline Initiierender Akteur & Benutzer \\
 		\hline Weitere Akteure &  \\
 		\hline Kurzbeschreibung & Der Benutzer kann zwischen der Benutzer- und der Team-Ranglisten-Ansicht wechseln \\
@@ -964,20 +964,20 @@
 		\hline Annahmen &  \\
 		\hline
 		\end{tabular}
-%TODO List PROPOSAL,..
-%TODO USER menu
-%TODO Muster:
-\subsubsection{title}
+\subsubsection{Vorschl\"age auflisten}
 		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer &  \\ 
-		\hline Use Case Name &  \\ 
-		\hline Initiierender Akteur &  \\
+		\hline Use Case Nummer & 2.5 \\ 
+		\hline Use Case Name & Vorschl\"age aufliste \\ 
+		\hline Initiierender Akteur & Benutzer \\
 		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung &  \\
+		\hline Kurzbeschreibung & Die abgegebenen Vorschl\"age werden dem Benutzer angezeigt \\
 		\hline Vorbedingung &  \\
-		\hline Nachbedingung &  \\
+		\hline Nachbedingung & Benutzer werden die Vorschl\"age angezeigt \\
 		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf &  \\
+		\hline Ablauf & \begin{itemize}
+			\item Benutzer w\"ahlt im Men\"u "Vorschl\"age"
+			\item Benutzer werden Vorschl\"age angezeigt
+		\end{itemize} \\
 		\hline Alternativen &  \\
 		\hline Ausnahmen &  \\
 		\hline Benutzte Use Cases &  \\
@@ -986,6 +986,135 @@
 		\hline Annahmen &  \\
 		\hline
 		\end{tabular}
+\subsubsection{Vorschlag ansehen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.5.1 \\ 
+		\hline Use Case Name & Vorschlag ansehen \\ 
+		\hline Initiierender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Der Benutzer kann sich einzelnen Vorschl\"age ansehen, ihm werden dabei die Kommentare und Bewertungen angezeigt \\
+		\hline Vorbedingung &  \\
+		\hline Nachbedingung &  \\
+		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item der Benutzer klickt auf einen Vorschlag
+			\item dem Benutzer wird der Vorschlag detaillierter angezeigt
+		\end{itemize} \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen &  \\
+		\hline Benutzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+\subsubsection{Vorschlag bewerten}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.5.1.1 \\ 
+		\hline Use Case Name & Vorschlag bewerten \\ 
+		\hline Initiierender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Der Benutzer kann Vorschl\"age mit Ganzzahlige Bewertungen von 1-5 abgeben \\
+		\hline Vorbedingung & Benutzer hat den Vorschlag noch nicht bewertet \\
+		\hline Nachbedingung & Benutzer hat den Vorschlag bewertet \\
+		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Benutzer sieht die Detailansicht eines Vorschlages
+			\item Benutzer w\"ahlt die abzugebene Bewertung
+			\item Benutzer klickt auf "Bewerten"
+		\end{itemize} \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen &  \\
+		\hline Benutzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+\subsubsection{Vorschlag kommentieren}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.5.1.2 \\ 
+		\hline Use Case Name & Vorschlag kommentieren \\ 
+		\hline Initiierender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung &  \\
+		\hline Vorbedingung & Der Benutzer hat den Vorschlag noch nicht kommentiert \\
+		\hline Nachbedingung & Der Benutzer hat den Vorschlag kommentiert \\
+		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item der Benutzer klickt auf "Kommentieren"
+			\item der Benutzer schreibt einen Kommentar in das Textfeld
+			\item der Benutzer klickt auf "Kommentar abgeben
+		\end{itemize} \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen &  \\
+		\hline Benutzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+\subsubsection{Optionen}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.6 \\ 
+		\hline Use Case Name & Optionen \\ 
+		\hline Initiierender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Der Benutzer kann das verhalten von Benachrichtigungen einstellen \\
+		\hline Vorbedingung &  \\
+		\hline Nachbedingung &  \\
+		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item der Benutzer klickt im Menu auf "Optionen"
+			\item dem Benutzer werden die Optionen angezeigt
+		\end{itemize} \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen &  \\
+		\hline Benutzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+\subsubsection{Option \"andern}
+		\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 2.6.1 \\ 
+		\hline Use Case Name & Option \"andern \\ 
+		\hline Initiierender Akteur & Benutzer \\
+		\hline Weitere Akteure &  \\
+		\hline Kurzbeschreibung & Der Benutzer kann die Optionen ein und ausstellen \\
+		\hline Vorbedingung & Option ist in einem Zustand \\
+		\hline Nachbedingung & Option ist in dem andern Zustand \\
+		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+		\hline Ablauf & der Benutzer schaltet eine Option von an auf aus\\
+		\hline Alternativen & der Benutzer schaltet eine Option von aus auf an \\
+		\hline Ausnahmen &  \\
+		\hline Benutzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+		\end{tabular}
+%%Tabellen Muster
+%\subsubsection{title}
+%	\begin{tabular}{|l|p{.5\linewidth}|}
+%	\hline Use Case Nummer &  \\ 
+%	\hline Use Case Name &  \\ 
+%	\hline Initiierender Akteur &  \\
+%	\hline Weitere Akteure &  \\
+%	\hline Kurzbeschreibung &  \\
+%	\hline Vorbedingung &  \\
+%	\hline Nachbedingung &  \\
+%	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+%	\hline Ablauf &  \\
+%	\hline Alternativen &  \\
+%	\hline Ausnahmen &  \\
+%	\hline Benutzte Use Cases &  \\
+%	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+%	\hline Spezielle Anforderungen &  \\
+%	\hline Annahmen &  \\
+%	\hline
+%	\end{tabular}
 
 %------------------------------------------------
 % Produktdaten
