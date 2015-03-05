@@ -1,0 +1,17 @@
+Fragen für das Interview am 6.3.2015
+
+- Gibt es Beschränkungen?
+	- Größe von Teams
+	- Anzahl der Mitgliedschaften eines Benutzers in Teams
+
+- Zugehörigkeit?
+	- Vorauswahl Standardgruppen (Fakultät) oder individuelle Gruppen
+
+- Sonderleistungen?
+	- Gibt es Extrapunkte, wenn Challenges erfolgreich absolviert werden
+	- Gibt es Extrapunkte, wenn Benutzer andere Benutzer dazu bewegen, dass diese Aktivitäten absolvieren (Follow-Funktion)
+
+- Punkteverteilung?
+	- Welche Form der Punkteverteilung stellt man sich für die Teams vor
+	  (Teilung der Punkte durch die Anzahl der Mitglieder)
+	- Soll es spezielle Challenges geben, welche nur von Teams absolviert werden können.
