@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
+\usepackage[section]{placeins}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -563,8 +564,152 @@
 	\hline Annahmen & - \\
 	\hline
 	\end{tabular} 
+<<<<<<< HEAD
+\subsection{Energiespavorschl\"age}
+
+\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 1.4\\ 
+		\hline Use Case Name & Vorschlagsseite \\ 
+		\hline Initiierender Akteur & Benutzer \\
+		\hline Weitere Akteure & Admin \\
+		\hline Kurzbeschreibung & Die vorschlagsseite ist dafür, dass Benutzer Vorschl\"age für neue Aktivit\"aten abgeben, bewerten und kommentieren k\"onnen. Der Admin kann hier Vorschl\"age ind Aktivit\"aten umwandeln.\\
+		\hline Vorbedingung & Der Benutzer ist eingeloggt und befindet sich auf der Vorschlagsseite \\
+		\hline Nachbedingung & Der Benutzer befindet sich auf der Vorschlagsseite \\
+		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+		\hline Ablauf & Der Benutzer/Admin ruft die Vorschlagsseite auf \\
+		\hline Alternativen & - \\
+		\hline Ausnahmen & - \\
+		\hline Benutzte Use Cases & - \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen & - \\
+		\hline Annahmen & - \\
+		\hline
+	\end{tabular}
+
+	\subsubsection{Vorschlagsliste ansehen}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 1.4.1 \\ 
+		\hline Use Case Name & Vorschlagsliste ansehen \\ 
+		\hline Initiierender Akteur & Benutzer \\
+		\hline Weitere Akteure & \\
+		\hline Kurzbeschreibung & Der Benutzer kann die auf der Seite dargestellte Liste von verf\"ugbaren Vorschl\"age einsehen \\
+		\hline Vorbedingung & Die Vorschlagsseite ist im Browser aufgerufen \\
+		\hline Nachbedingung & Die Vorschlagsseite ist im Browser aufgerufen \\
+		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+		\hline Ablauf & Der Benutzer sieht die Liste der Vorschl\"age an\\
+		\hline Alternativen &  \\
+		\hline Ausnahmen & Die Vorschlagsliste ist nicht verf\"ugbar \\
+		\hline Benutzte Use Cases & \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+	\end{tabular}	
+	
+	\subsubsection{Vorschl\"age bewerten}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 1.4.1.1 \\ 
+		\hline Use Case Name & Vorschl\"age bewerten \\ 
+		\hline Initiierender Akteur & User \\
+		\hline Weitere Akteure & Admin\\
+		\hline Kurzbeschreibung & Der Benutzer bewertet Vorschl\"age mit Hilfe von Sternen. \\
+		\hline Vorbedingung & Der Benutzer hat sich einen Vorschlag angesehen. \\
+		\hline Nachbedingung & Die Gesamtbewertung des Vorschlages erscheint aktualisiert neben dem Vorschlag. \\
+		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Der Benutzer bewertet mit Hilfe einer Skala aus Sternen.
+			\item Die durschnittliche Bewertung des Vorschlages wird dem Benutzer angezeigt.
+		\end{itemize} \\ \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen &  \\
+		\hline Benutzte Use Cases & 1.4.1 Vorschlagsliste ansehen \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+	\end{tabular}
+	
+	\subsubsection{Vorschl\"age kommentieren}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 1.4.1.2 \\ 
+		\hline Use Case Name & Vorschl\"age kommentieren \\ 
+		\hline Initiierender Akteur & Benutzer \\
+		\hline Weitere Akteure & Admin \\
+		\hline Kurzbeschreibung & Der Benutzer kommentiert einen Vorschlag. \\
+		\hline Vorbedingung & Der Benutzer hat sich einen Vorschlag angesehen \\
+		\hline Nachbedingung & Der Kommentar wird neben dem Vorschlag angezeigt \\
+		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Der Benutzer schreibt einen Kommentar.
+			\item Der Benutzer \"ubermittelt den Kommentar.
+			\item Der neue Kommentar wird angezeigt.
+		\end{itemize} \\ 
+		\hline Alternativen &  \\
+		\hline Ausnahmen & \begin{itemize}
+			\item Wenn kein Text eingegeben wird, kann der Kommentar nicht \"ubermittelt werden.
+			\item Ist der Kommentar zu lang, dann wird er nicht akzeptiert.
+		\end{itemize} \\
+		\hline Benutzte Use Cases & 1.4.1 Vorschl\"age ansehen\\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+	\end{tabular}
+	
+	\subsubsection{Vorschl\"age zu Aktivit\"aten \"andern}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 1.4.1.3 \\ 
+		\hline Use Case Name & Vorschl\"age zu Aktivit\"aten \"andern \\ 
+		\hline Initiierender Akteur & Admin \\
+		\hline Weitere Akteure & \\
+		\hline Kurzbeschreibung & Der Admin kann über einen Button einen Vorschlag zu einer Aktivit\"at machen und diesen währenddessen editieren. \\
+		\hline Vorbedingung & Der Admin hat sich einen Vorschlag angesehen \\
+		\hline Nachbedingung & Ein Bearbeitungsfeld zur Editierung öffnet sich\\
+		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Der Admin wählt über einen Buttton einen Vorschlag aus der Vorschlagsliste aus.
+			\item Der Admin editiert auf einem Bearbeitungsfeld den Vorschlag.
+			\item Der Admin bestätigt die Editierung und wandelt so den Vorschlag zur Aktivit\"at.
+		\end{itemize} \\ \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen & Die Vorschlagsliste ist nicht verf\"ugbar \\
+		\hline Benutzte Use Cases & 1.4.1 Vorschl\"age ansehen \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+	\end{tabular}
+
+	\subsubsection{Vorschl\"age erstellen}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+		\hline Use Case Nummer & 1.4.2 \\ 
+		\hline Use Case Name & Vorschl\"age erstellen \\ 
+		\hline Initiierender Akteur & Benutzer \\
+		\hline Weitere Akteure & Admin \\
+		\hline Kurzbeschreibung & Der Benutzer gibt in einem Textfeld einen Vorschlag für eine neue Aktivit\"at ein und bestätigt diesen. \\
+		\hline Vorbedingung & Ist als Benutzer eingeloggt und auf der Vorschlagsseite \\
+		\hline Nachbedingung & Der Benutzer ist auf der Vorschlagsseite und der neue Vorschlag wird angezeigt \\
+		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+		\hline Ablauf & \begin{itemize}
+			\item Der Benutzer/Admin gibt seinen Vorschlag ein (Name der Aktivität, welcher selbst erklärend ist, Punkte, Zeitraum)
+			\item Der Benutzer/Admin \"ubermittelt den Vorschlag, welcher anschließend einsehbar ist.
+		\end{itemize} \\ \\
+		\hline Alternativen &  \\
+		\hline Ausnahmen & \begin{itemize}
+			\item Wenn eine der erforderlichen Information fehlt, wird der Vorschlag nicht \"ubermittelt.
+			\item Wenn die vorgeschlagenen Punktzahl keine ganze Zahl ist, wird der Vorschlag abgelehnt.
+			\item Wenn der Zeitraum ungültig ist, wird der Vorschlag abgelehnt.
+		\end{itemize} \\
+		\hline Benutzte Use Cases &  \\
+		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+		\hline Spezielle Anforderungen &  \\
+		\hline Annahmen &  \\
+		\hline
+	\end{tabular}
+=======
         \subsection{Energiespavorschl\"age}
         
+>>>>>>> 4fb9d5bad15d417d5467878fd3dfcb4e8dbfc58a
 %---------------------------------------------
 \subsection{Rangliste}
 	\begin{figure}[h!]
@@ -1218,6 +1363,36 @@ Wenn der Benutzer angemeldet ist, kann er über das Menü zwischen den einzelnen
 	\includegraphics[width=\linewidth]{gfx/guinavigation/GUI-Navigation-Website.pdf}
 \end{figure}
 \subsubsection{GUI-Entwurfsvorschläge}
+Die folgenden Grafiken stellen Entwurfsvorschläge für die Benutzeroberfläche dar. Die in gelb eingezeichneten Nummern sind die IDs der Use Cases, die an dieser Stelle verwendet werden.
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/website-startseite.pdf}
+	\caption{Startbildschirm für unangemeldete Benutzer}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/website-landingpage.pdf}
+		\caption{Startbildschirm für angemeldete Benutzer}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/website-landingpage-admin.pdf}
+			\caption{Startbildschirm für angemeldete Admins}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/website-aktivitaeten.pdf}
+			\caption{Seite zur Verwaltung der eigenen Aktivitäten}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/website-rangliste.pdf}
+	\caption{Seite mit Übersicht über alle Benutzer/Teams.}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/website-vorschlaege.pdf}
+		\caption{Seite für die Energiesparvorschläge}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/website-statistik.pdf}
+	\caption{Seite für die Statistiken}
+\end{figure}
+\FloatBarrier
 \subsection{Android App}
 \subsubsection{Grundlegende Anforderungen}
 Die Benutzeroberfläche der Android-App soll intuitiv aufgebaut und einfach bedienbar sein. Deshalb
@@ -1229,6 +1404,36 @@ Zuerst muss der Benutzer sich in der App anmelden. Nach einer Anmeldung wird ihm
 	\includegraphics[width=\linewidth]{gfx/guinavigation/GUI-Navigation-App.pdf}
 \end{figure}
 \subsubsection{GUI-Entwurfsvorschläge}
+Die folgenden Grafiken stellen Entwurfsvorschläge für die Benutzeroberfläche dar. Die in gelb eingezeichneten Nummern sind die IDs der Use Cases, die an dieser Stelle verwendet werden.
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/app-login.pdf}
+	\caption{Bildschirm zum Anmelden}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/app-main.pdf}
+	\caption{Startbildschirm der App}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/app-navigation.pdf}
+	\caption{Navigationsbildschirm der App}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/app-meinprofil.pdf}
+	\caption{Übersicht über das eigene Profil in der App}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/app-rangliste.pdf}
+	\caption{Ranglistenansicht in der App}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/app-aktivitaeten.pdf}
+	\caption{Aktivitätenansicht in der App}
+\end{figure}
+\begin{figure}[p!]
+	\includegraphics[width=\linewidth]{gfx/mockups/app-vorschlaege.pdf}
+	\caption{Energiesparvorschläge in der App}
+\end{figure}
+\FloatBarrier
 %------------------------------------------------
 % Qualitaetsanforderung
 %------------------------------------------------
