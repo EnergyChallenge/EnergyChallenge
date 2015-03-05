@@ -7,9 +7,13 @@ Fragen für das Interview am 6.3.2015
 - Zugehörigkeit?
 	- Vorauswahl Standardgruppen (Fakultät) oder individuelle Gruppen
 
+- Vorschläge?
+	- Sollen die Namen der Benutzer, welcher Vorschläge einreichen und/oder
+	kommentieren angezeigt werden
 - Sonderleistungen?
 	- Gibt es Extrapunkte, wenn Challenges erfolgreich absolviert werden
-	- Gibt es Extrapunkte, wenn Benutzer andere Benutzer dazu bewegen, dass diese Aktivitäten absolvieren (Follow-Funktion)
+	- Gibt es Extrapunkte, wenn Benutzer andere Benutzer dazu bewegen, dass diese 	Aktivitäten absolvieren (Follow-Funktion)
+	- Gibt es Extrapunkte für eingereichte und angenommene Vorschläge
 
 - Punkteverteilung?
 	- Welche Form der Punkteverteilung stellt man sich für die Teams vor
