@@ -122,19 +122,20 @@
 \section{Produktfunktion}
 \subsection{Webseite}
 
-	\subsubsection{Startseite}
+\subsubsection{Startseite}
 	\begin{figure}[h]
-		\includegraphics[width=\linewidth]{gfx/webseite/startseite.pdf}
+	  \includegraphics[width=\linewidth]{gfx/webseite/startseite.pdf}
+          \caption{Use Case 1.1 Startseite}
 	\end{figure}
 	\begin{tabular}{|l|p{.5\linewidth}|}
 	\hline Use Case Nummer & 1.1 \\ 
 	\hline Use Case Name & Startseite \\ 
 	\hline Initiierender Akteur & Benutzer \\
 	\hline Weitere Akteure &  \\
-	\hline Kurzbeschreibung & der Benutzer ruft die Startseite im Browser auf und hat die M\"oglichkeit sich zu registrieren, einzuloggen und das Passwort neu anzufordern \\
+	\hline Kurzbeschreibung & Der Benutzer ruft die Startseite im Browser auf und hat die M\"oglichkeit sich zu registrieren, einzuloggen und das Passwort neu anzufordern \\
 	\hline Vorbedingung & nicht eingeloggt \\
 	\hline Nachbedingung &  \\
-	\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
 	\hline Ablauf & Benutzer ruft die Webseite auf \\
 	\hline Alternativen &  \\
 	\hline Ausnahmen &  \\
@@ -144,105 +145,105 @@
 	\hline Annahmen &  \\
 	\hline
 	\end{tabular} 
-	\subsubsection{Login}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 1.1.1 \\ 
-		\hline Use Case Name & Login \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure & Admin \\
-		\hline Kurzbeschreibung & Mit dem Login stehen die eigentlichen Funktionen im Browser zur Verf\"ugung \\
-		\hline Vorbedingung & Benutzer ist registriert und nicht nicht eingeloggt \\
-		\hline Nachbedingung & Benutzer ist eingeloggt \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Der Benutzer gibt Email-Adresse und Passwort ein
-			\item Der Benutzer klickt den Login Button
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen & \begin{itemize}
-			\item Das Passwort ist falsch, es wird eine Fehlermeldung angezeigt und die Option Passwort vergessen angeboten
-			\item Die Email-adresse ist noch nicht registriert, es wird eine Fehlermedldung angezeigt, und die Registrierung angeboten
-		\end{itemize} \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+\subsubsection{Login}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.1.1 \\ 
+	\hline Use Case Name & Login \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure & \\
+	\hline Kurzbeschreibung & Mit dem Login stehen die eigentlichen Funktionen im Browser zur Verf\"ugung \\
+	\hline Vorbedingung & Benutzer ist registriert und nicht eingeloggt \\
+	\hline Nachbedingung & Benutzer ist eingeloggt und wurde zu seiner Landingpage weitergeleitet \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer gibt seine E-Mail-Adresse und sein Passwort ein.
+		\item Der Benutzer klickt den Login Button.
+                \item Die Anmeldedaten werden überprüft.
+                \item Der Benutzer wird zu seiner Landingpage weitergeleitet.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen & \begin{itemize}
+		\item Das Passwort ist falsch, es wird eine Fehlermeldung angezeigt und die Option ``Passwort vergessen'' angeboten
+		\item Die E-Mail-Adresse ist noch nicht registriert, es wird eine Fehlermeldung angezeigt, und die Registrierung angeboten
+	\end{itemize} \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
 			 
-	\subsubsection{Registrieren}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 1.1.2 \\ 
-		\hline Use Case Name & Registrieren \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Ein neuer Benutzer kann sich mit seiner Email-Adresse anmelden \\
-		\hline Vorbedingung & Benutzer hat auf Registrieren geklickt \\
-		\hline Nachbedingung & Benutzer ist eingeloggt \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer gibt Email-Adresse und Passwort ein
-			\item Benutzer w\"ahlt Fakult\"at
-			\item Benutzer klickt "jetzt mitmachen"
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen & \begin{itemize}
-			\item Email-adresse ist schon vergeben, es wird eine Fehlermeldung angezeigt
-			\item das Passwort ist zu kurz, es wird eine Fehlermeldung angezeit
-			\item Keine Fakult\"at gewählt, es wir eine Fehlermeldung angezeigt
-		\end{itemize} \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular} 
+\subsubsection{Registrieren}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.1.2 \\ 
+	\hline Use Case Name & Registrieren \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Ein neuer Benutzer kann sich mit seiner E-Mail-Adresse anmelden \\
+	\hline Vorbedingung & Benutzer hat auf Registrieren geklickt \\
+	\hline Nachbedingung & Benutzer ist eingeloggt \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Benutzer gibt E-Mail-Adresse und Passwort ein
+		\item Benutzer w\"ahlt Fakult\"at
+		\item Benutzer klickt "jetzt mitmachen"
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen & \begin{itemize}
+		\item E-Mail-Adresse ist schon vergeben, es wird eine Fehlermeldung angezeigt
+		\item das Passwort ist zu kurz, es wird eine Fehlermeldung angezeigt
+		\item Keine Fakult\"at gewählt, es wir eine Fehlermeldung angezeigt
+	\end{itemize} \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular} 
 		
-	\subsubsection{Passwort vergessen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 1.1.3 \\ 
-		\hline Use Case Name & Passwort vergessen \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Ein Benutzer hat die M\"oglichkeit sein Passwort neu anzufordern \\
-		\hline Vorbedingung & Benutzer ist nicht eingeloggt \\
-		\hline Nachbedingung & Benutzer hat eine Email bekommen \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer gibt seine Email-Adresse an
-			\item Benutzer klickt auf "jetzt Passwort anfordern"
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen & Email-Adresse ist nicht registriert, es wird eine Fehlermeldung angezeigt \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
-	\subsubsection{Fehlermeldung}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 1.1.4 \\ 
-		\hline Use Case Name & Fehlermeldung \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Es wird dem Benutzer eine Fehlermeldung angezeigt und beleibt auf der aktuellen Seite \\
-		\hline Vorbedingung &  \\
-		\hline Nachbedingung & Fehlermeldung wir angezeigt \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & Fehlermeldung wird in die Aktuelle Seite eingebettet \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular} 
-<<<<<<< HEAD
-	 
+\subsubsection{Passwort vergessen}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.1.3 \\ 
+	\hline Use Case Name & Passwort vergessen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Ein Benutzer hat die M\"oglichkeit sein Passwort neu per E-Mail anzufordern \\
+	\hline Vorbedingung & Benutzer ist nicht eingeloggt \\
+	\hline Nachbedingung & Benutzer hat eine E-Mail mit seinem Passwort bekommen \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Benutzer gibt seine E-Mail-Adresse an.
+		\item Benutzer klickt auf ``jetzt Passwort anfordern''.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen & E-Mail-Adresse ist nicht registriert, es wird eine Fehlermeldung angezeigt \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+\end{tabular}
 
-=======
+\subsubsection{Fehlermeldung} % TODO evtl. später Fehlermeldungen differenzierter betrachten
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.1.4 \\ 
+	\hline Use Case Name & Fehlermeldung \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Dem Benutzer wird auf der Startseite eine Fehlermeldung angezeigt \\
+	\hline Vorbedingung &  \\
+	\hline Nachbedingung & Fehlermeldung wurde angezeigt \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & Fehlermeldung wird auf der Startseite angezeigt. \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+                
 %------------------
 \subsection{Landingpage}
 
