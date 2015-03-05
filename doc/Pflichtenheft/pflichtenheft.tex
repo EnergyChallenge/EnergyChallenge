@@ -1,4 +1,4 @@
-﻿\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
@@ -123,7 +123,7 @@
 \subsection{Webseite}
 
 \subsubsection{Startseite}
-	\begin{figure}[h]
+	\begin{figure}[h!]
 	  \includegraphics[width=\linewidth]{gfx/webseite/startseite.pdf}
           \caption{Use Case 1.1 Startseite}
 	\end{figure}
@@ -132,11 +132,11 @@
 	\hline Use Case Name & Startseite \\ 
 	\hline Initiierender Akteur & Benutzer \\
 	\hline Weitere Akteure &  \\
-	\hline Kurzbeschreibung & Der Benutzer ruft die Startseite im Browser auf und hat die M\"oglichkeit sich zu registrieren, einzuloggen und das Passwort neu anzufordern \\
-	\hline Vorbedingung & nicht eingeloggt \\
+	\hline Kurzbeschreibung & Der Benutzer ruft die Startseite im Browser auf und hat die M\"oglichkeit sich zu registrieren, einzuloggen und das Passwort neu anzufordern. \\
+	\hline Vorbedingung & Der Benutzer ist nicht eingeloggt. \\
 	\hline Nachbedingung &  \\
 	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
-	\hline Ablauf & Benutzer ruft die Webseite auf \\
+	\hline Ablauf & Der Benutzer ruft die Webseite auf. \\
 	\hline Alternativen &  \\
 	\hline Ausnahmen &  \\
 	\hline Benutzte Use Cases &  \\
@@ -151,9 +151,9 @@
 	\hline Use Case Name & Login \\ 
 	\hline Initiierender Akteur & Benutzer \\
 	\hline Weitere Akteure & \\
-	\hline Kurzbeschreibung & Mit dem Login stehen die eigentlichen Funktionen im Browser zur Verf\"ugung \\
-	\hline Vorbedingung & Benutzer ist registriert und nicht eingeloggt \\
-	\hline Nachbedingung & Benutzer ist eingeloggt und wurde zu seiner Landingpage weitergeleitet \\
+	\hline Kurzbeschreibung & Mit dem Login stehen die eigentlichen Funktionen im Browser zur Verf\"ugung. \\
+	\hline Vorbedingung & Der Benutzer ist registriert und nicht eingeloggt. \\
+	\hline Nachbedingung & Der Benutzer ist eingeloggt und wurde zu seiner Landingpage weitergeleitet. \\
 	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
 	\hline Ablauf & \begin{itemize}
 		\item Der Benutzer gibt seine E-Mail-Adresse und sein Passwort ein.
@@ -163,8 +163,8 @@
 	\end{itemize} \\
 	\hline Alternativen &  \\
 	\hline Ausnahmen & \begin{itemize}
-		\item Das Passwort ist falsch, es wird eine Fehlermeldung angezeigt und die Option ``Passwort vergessen'' angeboten
-		\item Die E-Mail-Adresse ist noch nicht registriert, es wird eine Fehlermeldung angezeigt, und die Registrierung angeboten
+		\item Das Passwort ist falsch. Es wird eine Fehlermeldung angezeigt und die Option ``Passwort vergessen'' angeboten.
+		\item Die E-Mail-Adresse ist noch nicht registriert. Es wird eine Fehlermeldung angezeigt, und die Registrierung angeboten.
 	\end{itemize} \\
 	\hline Benutzte Use Cases &  \\
 	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
@@ -247,7 +247,7 @@
 %------------------
 \subsection{Landingpage}
 
-		\begin{figure}[h]
+		\begin{figure}[h!]
 			\includegraphics[width=\linewidth]{gfx/webseite/LandingPage.pdf}
 		\end{figure}
 		\subsubsection{Landingpage}
@@ -434,7 +434,7 @@
 %-----------------
 \subsection{Aktivit\"aten}
 
-	\begin{figure}[h]
+	\begin{figure}[h!]
 		\includegraphics[width=\linewidth]{gfx/webseite/Aktivitaetenseite.pdf}
 	\end{figure}
 	\subsubsection{Aktivit\"atenseite}
@@ -563,110 +563,177 @@
 	\hline Annahmen & - \\
 	\hline
 	\end{tabular} 
-\subsection{Energiespavorschl\"age}
+        \subsection{Energiespavorschl\"age}
+        
 %---------------------------------------------
 \subsection{Rangliste}
-	\begin{figure}[h]
+	\begin{figure}[h!]
 		\includegraphics[width=\linewidth]{gfx/webseite/rangliste.pdf}
-	\end{figure}
-	\subsubsection{Rangliste Ansehen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 1.5 \\ 
-		\hline Use Case Name & Rangliste Ansehen \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Der Benutzer kann die Rangliste ansehen \\
-		\hline Vorbedingung & Der Benutzer ist eingeloggt \\
-		\hline Nachbedingung &  \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & Der Benutzer kann die Rangliste ansehen \\
-		\hline Alternativen & Der Benutzer kann Suchen \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
-	\subsubsection{Profil ansehen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 1.5.1 \\ 
-		\hline Use Case Name & Profil ansehen \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Eine Ansicht eines Profils von einem Team oder einem Benutzer \\
-		\hline Vorbedingung & Es wurde ein Profil angeklickt \\
-		\hline Nachbedingung & Das Profil wird angezeigt \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer klickt auf ein Profil
-			\item Benutzer wird Profil angezeigt
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
-	\subsubsection{Benutzer/Team Ansicht wechseln}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 1.5.2 \\ 
-		\hline Use Case Name & Benutzer/Team Ansicht wechseln \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Der Benutzer kann zwischen der Benutzer Rangliste und der Team Rangliste hin und her schalten \\
-		\hline Vorbedingung & Rangliste wird angezeigt \\
-		\hline Nachbedingung & Ansicht wurde umgeschaltet \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer klickt auf "Team"
-			\item Team Ansicht wird angezeigt
-		\end{itemize} \\
-		\hline Alternativen & \begin{itemize}
-					\item Benutzer klickt auf "Benutzer"
-					\item Benutzer Ansicht wird angezeigt
-				\end{itemize} \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+                \caption{Use Case 1.5 Rangliste ansehen}
+        \end{figure}
+
+\subsubsection{Rangliste Ansehen}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.5 \\ 
+	\hline Use Case Name & Rangliste ansehen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann die Rangliste ansehen. \\
+	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
+	\hline Nachbedingung & Die Rangliste wird angezeigt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+                \item Der Benutzer klickt auf ``Rangliste''. 
+                \item Die Rangliste wird angezeigt.
+                \end{itemize}\\
+	\hline Alternativen & \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+        
+\subsubsection{Profil ansehen}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.5.1 \\ 
+	\hline Use Case Name & Profil ansehen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Eine Ansicht eines Profils von einem Team oder einem Benutzer ansehen. \\
+	\hline Vorbedingung & Es wurde ein Profil angeklickt. \\
+	\hline Nachbedingung & Das Profil wird angezeigt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer klickt auf ein Profil.
+		\item Das Profil wird angezeigt.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+
+\subsubsection{Benutzer/Team Ansicht wechseln}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.5.2 \\ 
+	\hline Use Case Name & Benutzer/Team Ansicht wechseln \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann zwischen der Benutzer Ranglite und der Team Rangliste hin und her schalten \\
+	\hline Vorbedingung & Rangliste wird angezeigt \\
+	\hline Nachbedingung & Ansicht wurde umgeschaltet \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Benutzer klickt auf "Team"
+		\item Team Ansicht wird angezeigt
+	\end{itemize} \\
+	\hline Alternativen & \begin{itemize}
+				\item Benutzer klickt auf "Benutzer"
+				\item Benutzer Ansicht wird angezeigt
+			\end{itemize} \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
 		
-		\subsubsection{Suche}
-				\begin{tabular}{|l|p{.5\linewidth}|}
-				\hline Use Case Nummer & 1.5.3 \\ 
-				\hline Use Case Name & Suche \\ 
-				\hline Initiierender Akteur & Benutzer \\
-				\hline Weitere Akteure &  \\
-				\hline Kurzbeschreibung & Der Benutzer kann nach Teams und Benutzern suchen \\
-				\hline Vorbedingung &  \\
-				\hline Nachbedingung & Suchergebnisse werden angezeigt \\
-				\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-				\hline Ablauf & \begin{itemize}
-					\item Benutzer gibt Suchanfrage ein
-					\item Benutzer klickt suchen
-					\item Suchergebnisse werden angezeigt
-				\end{itemize} \\
-				\hline Alternativen &  \\
-				\hline Ausnahmen & Wenn keine Ergebnisse gefunden werden wird dies angezeigt \\
-				\hline Benutzte Use Cases &  \\
-				\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-				\hline Spezielle Anforderungen &  \\
-				\hline Annahmen &  \\
-				\hline
-				\end{tabular}
+\subsubsection{Suche}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.5.3 \\ 
+	\hline Use Case Name & Suche \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann nach Teams und Benutzern suchen. \\
+	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
+	\hline Nachbedingung & Die Suchergebnisse werden angezeigt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer gibt einen Suchbegriff (ein Name eines anderen Benutzers oder eines Teams) ein.
+		\item Der Benutzer klickt auf ``suchen''.
+		\item Die Suchergebnisse werden angezeigt.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen & Wenn keine Benutzer oder Teams mit dem gesuchten Namen gefunden werden, wird ``Ihre Suche lieferte keine Ergebnisse'' angezeigt. \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+
 %-----------------------------
 \subsection{Statistiken}
+
+        \begin{figure}[h]
+	  \includegraphics[width=\linewidth]{gfx/webseite/statistikfunktion.pdf}
+          \caption{Statistiken ansehen und als .csv-Datei exportieren}
+	\end{figure}
+        
+\subsubsection{Statistiken ansehen}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.6.1\\ 
+	\hline Use Case Name & Statistiken ansehen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Benutzer können grafische Statistiken einsehen \\
+	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
+	\hline Nachbedingung &   \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer wählt ``Statistiken anzeigen''.
+		\item Eine Seite mit folgenden Statistiken wird angezeigt:
+                      \begin{itemize}
+                      \item Besucherzahl
+                      \item summierte, gesammelte Punkte
+                      \item summierte, erledigte Aktivitäten
+                      \item beliebteste Aktivitäten
+                      \end{itemize}
+		\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen & \\
+	\hline Benutzte Use Cases & \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+
+\subsubsection{Download CSV-Datei}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 1.6.2 \\ 
+	\hline Use Case Name & Download CSV-Datei \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Benutzer können die Rohdaten der Statistiken als .csv Datei exportieren und auf dem eigenen PC speichern. \\
+	\hline Vorbedingung & Benutzer ist eingeloggt \\
+	\hline Nachbedingung &  \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+                \item Der Benutzer klickt auf einen Download-Link bei einer der angezeigten, grafischen Statistiken.
+                \item Es wird eine .csv-Datei generiert und dem Benutzer zum Download angeboten.
+                \end{itemize}\\
+	\hline Alternativen &  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen & \\
+	\hline
+	\end{tabular}
+        
 %-----------------------------
 \subsection{AdminBereich}
 %-----------------------------
 \subsection{Profilseite}
 
-	\begin{figure}[h]
+	\begin{figure}[h!]
 		\includegraphics[width=\linewidth]{gfx/webseite/Profilseite.pdf}
 	\end{figure}
 	\subsubsection{Profilseite \"andern}
@@ -785,7 +852,7 @@
 		\end{tabular}
 %-----------------------------
 \subsection{Andoid App}
-\begin{figure}[h]
+\begin{figure}[h!]
 		\includegraphics[width=\linewidth]{gfx/androidapp/overview.pdf}
 	\end{figure}
 \subsubsection{Login}
@@ -1146,12 +1213,22 @@
 Die Benutzeroberfläche der Website soll intuitiv aufgebaut und einfach bedienbar sein; aus diesem Grund soll die Website gängigen Layoutkonventionen entsprechen und besteht deshalb aus einer Kopfzeile und einem linksspaltigen Navigationmenü, die beide von jeder Stelle Website aus erreichbar sein sollen. Die Website ist in erster Linie für die Bedienung mit der Maus ausgelegt, soll jedoch auch auf einem Touchscreen bedienbar sein.\\
 Bevor der Benutzer sich angemeldet hat, wird ihm nur das Projekt präsentiert und man gibt ihm die Möglichkeit sich anzumelden oder für das Projekt zu registrieren. \\
 Wenn der Benutzer angemeldet ist, kann er über das Menü zwischen den einzelnen Seiten navigieren. In der Kopfzeile werden ihm stets seine persönlichen Informationen eingeblendet (wie z.B. neue Benachrichtigungen) und es gibt hier die Möglichkeit sich wieder von der Website abzumelden.
+\subsubsection{Navigationsstruktur}
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{gfx/guinavigation/GUI-Navigation-Website.pdf}
+\end{figure}
+\subsubsection{GUI-Entwurfsvorschläge}
 \subsection{Android App}
 \subsubsection{Grundlegende Anforderungen}
 Die Benutzeroberfläche der Android-App soll intuitiv aufgebaut und einfach bedienbar sein. Deshalb
 soll die Gestaltung der App den Android-Design-Empfehlungen weitestgehend entsprechen. Die Bedienung
 der App erfolgt ausschließlich über einen Touchscreen. \\
 Zuerst muss der Benutzer sich in der App anmelden. Nach einer Anmeldung wird ihm eine Startseite angezeigt. Über ein Navigationsmenü soll der Benutzer zwischen den einzelnen Bereichen der App wechseln können, wobei das Navigationsmenü sowohl über eine Schaltfläche als auch über eine Wischgeste vom linken Bildschirmrand aufgerufen werden kann.
+\subsubsection{Navigationsstruktur}
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{gfx/guinavigation/GUI-Navigation-App.pdf}
+\end{figure}
+\subsubsection{GUI-Entwurfsvorschläge}
 %------------------------------------------------
 % Qualitaetsanforderung
 %------------------------------------------------
