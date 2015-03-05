@@ -6,3 +6,6 @@
 *.dvi
 *.fdb_latexmk
 /.~lock.Produkteinsatz.doc#
+
+# visual paradigm temporary files
+*.vpp~*
