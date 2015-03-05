@@ -1,4 +1,4 @@
-﻿\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
@@ -123,7 +123,7 @@
 \subsection{Webseite}
 
 \subsubsection{Startseite}
-	\begin{figure}[h]
+	\begin{figure}[h!]
 	  \includegraphics[width=\linewidth]{gfx/webseite/startseite.pdf}
           \caption{Use Case 1.1 Startseite}
 	\end{figure}
@@ -247,7 +247,7 @@
 %------------------
 \subsection{Landingpage}
 
-		\begin{figure}[h]
+		\begin{figure}[h!]
 			\includegraphics[width=\linewidth]{gfx/webseite/LandingPage.pdf}
 		\end{figure}
 		\subsubsection{Landingpage}
@@ -434,7 +434,7 @@
 %-----------------
 \subsection{Aktivit\"aten}
 
-	\begin{figure}[h]
+	\begin{figure}[h!]
 		\includegraphics[width=\linewidth]{gfx/webseite/Aktivitaetenseite.pdf}
 	\end{figure}
 	\subsubsection{Aktivit\"atenseite}
@@ -567,9 +567,9 @@
         
 %---------------------------------------------
 \subsection{Rangliste}
-	\begin{figure}[h]
+	\begin{figure}[h!]
 		\includegraphics[width=\linewidth]{gfx/webseite/rangliste.pdf}
-                \caption{Use Case 1.5 Rangliste ansehen
+                \caption{Use Case 1.5 Rangliste ansehen}
         \end{figure}
 
 \subsubsection{Rangliste Ansehen}
@@ -584,8 +584,8 @@
 	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
 	\hline Ablauf & \begin{itemize}
                 \item Der Benutzer klickt auf ``Rangliste''. 
-                \item Die Rangliste wird angezeigt. \\
-                \end{itemize}
+                \item Die Rangliste wird angezeigt.
+                \end{itemize}\\
 	\hline Alternativen & \\
 	\hline Ausnahmen &  \\
 	\hline Benutzte Use Cases &  \\
@@ -652,7 +652,7 @@
 	\hline Weitere Akteure &  \\
 	\hline Kurzbeschreibung & Der Benutzer kann nach Teams und Benutzern suchen. \\
 	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
-	\hline Nachbedingung & Die Suchergebnisse werden angezeigt. \
+	\hline Nachbedingung & Die Suchergebnisse werden angezeigt. \\
 	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
 	\hline Ablauf & \begin{itemize}
 		\item Der Benutzer gibt einen Suchbegriff (ein Name eines anderen Benutzers oder eines Teams) ein.
@@ -733,7 +733,7 @@
 %-----------------------------
 \subsection{Profilseite}
 
-	\begin{figure}[h]
+	\begin{figure}[h!]
 		\includegraphics[width=\linewidth]{gfx/webseite/Profilseite.pdf}
 	\end{figure}
 	\subsubsection{Profilseite \"andern}
@@ -852,7 +852,7 @@
 		\end{tabular}
 %-----------------------------
 \subsection{Andoid App}
-\begin{figure}[h]
+\begin{figure}[h!]
 		\includegraphics[width=\linewidth]{gfx/androidapp/overview.pdf}
 	\end{figure}
 \subsubsection{Login}
@@ -1213,12 +1213,16 @@
 Die Benutzeroberfläche der Website soll intuitiv aufgebaut und einfach bedienbar sein; aus diesem Grund soll die Website gängigen Layoutkonventionen entsprechen und besteht deshalb aus einer Kopfzeile und einem linksspaltigen Navigationmenü, die beide von jeder Stelle Website aus erreichbar sein sollen. Die Website ist in erster Linie für die Bedienung mit der Maus ausgelegt, soll jedoch auch auf einem Touchscreen bedienbar sein.\\
 Bevor der Benutzer sich angemeldet hat, wird ihm nur das Projekt präsentiert und man gibt ihm die Möglichkeit sich anzumelden oder für das Projekt zu registrieren. \\
 Wenn der Benutzer angemeldet ist, kann er über das Menü zwischen den einzelnen Seiten navigieren. In der Kopfzeile werden ihm stets seine persönlichen Informationen eingeblendet (wie z.B. neue Benachrichtigungen) und es gibt hier die Möglichkeit sich wieder von der Website abzumelden.
+\subsubsection{Navigationsstruktur}
+\subsubsection{GUI-Entwurfsvorschläge}
 \subsection{Android App}
 \subsubsection{Grundlegende Anforderungen}
 Die Benutzeroberfläche der Android-App soll intuitiv aufgebaut und einfach bedienbar sein. Deshalb
 soll die Gestaltung der App den Android-Design-Empfehlungen weitestgehend entsprechen. Die Bedienung
 der App erfolgt ausschließlich über einen Touchscreen. \\
 Zuerst muss der Benutzer sich in der App anmelden. Nach einer Anmeldung wird ihm eine Startseite angezeigt. Über ein Navigationsmenü soll der Benutzer zwischen den einzelnen Bereichen der App wechseln können, wobei das Navigationsmenü sowohl über eine Schaltfläche als auch über eine Wischgeste vom linken Bildschirmrand aufgerufen werden kann.
+\subsubsection{Navigationsstruktur}
+\subsubsection{GUI-Entwurfsvorschläge}
 %------------------------------------------------
 % Qualitaetsanforderung
 %------------------------------------------------
