@@ -47,8 +47,8 @@
                         \item Auf der Vorschlagsseite wird außerdem eine Übersicht über alle von allen Benutzern bisher eingereichten Energiesparvorschläge dargestellt.
                         \item Über die Vorschlagsseite können Benutzer Energiesparvorschläge kommentieren und/oder mit 1 bis 5 Sternen bewerten.
 			\item Benutzer können Aktivitäten (s. Adminbereich) über eine \emph{Aktivitätsseite} auswählen und als erledigt markieren.
-                        \item Um eine Aktivität als erledigt zu markieren, ist eine zusätzliche Bestätigung erforderlich.
-			\item Alle Benutzer nehmen an allen Challenges automatisch teil.
+                       % \item Um eine Aktivität als erledigt zu markieren, ist eine zusätzliche Bestätigung erforderlich.
+			%\item Alle Benutzer nehmen an allen Challenges automatisch teil.
 			\item Es gibt eine nach Punktestand sortierte Übersicht über alle Benutzer oder alle Teams (\emph{Rangliste}). In der Übersicht kann auf einfache Weise zwischen der Anzeige von einzelnen Benutzern oder Teams umgeschaltet werden.
                         \item Benutzer können über diese Rangliste nach anderen Benutzern oder Gruppen suchen.
 			\item Es gibt eine \emph{Statistikseite}, die von allen Benutzern eingesehen werden kann, mit folgenden grafischen, anonymisierten Statistiken:
@@ -71,10 +71,10 @@
 		% ----------------------------------------------------------------
 		\item Adminbereich
 		\begin{itemize}
-			\item Challenges können erstellt werden.
-                        \item Challenges haben einen Start- und einen Endzeitpunkt.
+			%\item Challenges können erstellt werden.
+             %           \item Challenges haben einen Start- und einen Endzeitpunkt.
 			\item Aktivitäten können erstellt und bearbeitet werden.
-                        \item Jede Aktivität hat eine Bezeichnung, einen zeitlichen Rahmen (angegeben als Zeitintervall), eine Häufigkeit, eine Kategorie und Punkte, welche Benutzern bei Erledigung der Aktivität auf ihrem Punktekonto gutgeschrieben werden.
+                        \item Jede Aktivität hat eine Bezeichnung, eine Häufigkeit, eine Kategorie und Punkte, welche Benutzern bei Erledigung der Aktivität auf ihrem Punktekonto gutgeschrieben werden.
 			\item Energiesparvorschläge können angenommen und in Aktivitäten umgewandelt werden.
                         \item Durch Annahme eines Energiesparvorschlags wird der Vorschlag aus der Vorschlagsliste entfernt und ein Dialog zum Erstellen einer neuen Aktivität geöffnet. Die Felder dieses Dialogs werden dabei mit den Informationen aus dem Vorschlag vorbereitet.
 			\item E-Mails an \emph{alle} Teilnehmer senden.
@@ -93,8 +93,8 @@
 	\begin{itemize}
                         \item Administratoren können Teams und Teilnehmer \emph{verwarnen}. Diese Verwarnung wird für alle Administratoren einsehbar gespeichert. Verwarnte Benutzer erhalten eine Benachrichtigung per E-Mail über die Verwarnung, aber keine Anzeige der Verwarnung auf der Website oder in der App.
 			\item Administratoren können E-Mails an einzelne Benutzer oder beliebige Gruppen von Benutzern senden.
-                        \item Benutzer können über die App an Challenges teilnehmen.
-                        \item Benutzer können aus ihrem Team austreten und einem anderen Team (oder auch demselben wieder) beitreten.
+                    %    \item Benutzer können über die App an Challenges teilnehmen.
+                     %   \item Benutzer können aus ihrem Team austreten und einem anderen Team (oder auch demselben wieder) beitreten.
 	\end{itemize}
 	\subsection{Differenzierungskriterien}
 	\begin{itemize}
@@ -232,7 +232,7 @@
 	\hline
 \end{tabularx}
 
-\subsubsection{Fehlermeldung} % TODO evtl. später Fehlermeldungen differenzierter betrachten
+\subsubsection{Fehlermeldung} %TODO evtl. später Fehlermeldungen differenzierter betrachten
 	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.1.4 \\ 
 	\hline Use Case Name & Fehlermeldung \\ 
@@ -264,8 +264,8 @@
 			\hline Use Case Name & Landingpage \\ 
 			\hline Initiierender Akteur & Benutzer \\
 			\hline Weitere Akteure &  \\
-			\hline Kurzbeschreibung & Die Landingpage ist die Seite direkt nach dem Log-In, auf der der Benutzer Neuigkeiten, seine Teamverwaltung, seine ausgewählten Aktivitäten etc. einsehen kann \\
-			\hline Vorbedingung & Der Benutzer ist eingeloggt und befindet sich auf der Landingpage \\
+			\hline Kurzbeschreibung & Die Landingpage ist die Seite direkt nach dem Log-In, auf der der Benutzer Neuigkeiten, seine Teamverwaltung, seine Aktivitäten etc. einsehen kann \\
+			\hline Vorbedingung & Der Benutzer ist eingeloggt \\
 			\hline Nachbedingung & Der Benutzer befindet sich auf der Landingpage \\
 			\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
 			\hline Ablauf & \begin{itemize}
@@ -428,7 +428,7 @@
 			\hline Weitere Akteure & \\
 			\hline Kurzbeschreibung & Der Benutzer kann die zuletzt von Teammitgliedern erledigten Aktivitäten / Challenges über ein Benachrichtigungsymbol in einem PopUp ansehen \\
 			\hline Vorbedingung & Der Benutzer befindet sich auf der Landingpage \\
-			\hline Nachbedingung & Der Benutzer befindet sich auf der Landingpage und ein PopUp öffnet sich, in welchem die Nachricht enthalten ist \\ %TODO PopUp??
+			\hline Nachbedingung & Der Benutzer befindet sich auf der Landingpage und ein PopUp öffnet sich, in welchem die Nachricht enthalten ist \\
 			\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
 			\hline Ablauf & \\
 			\hline Alternativen & Es sind noch keine Nachrichten vorhanden, da der Benutzer kein Mitglied eines Teams ist \\
@@ -451,7 +451,7 @@
 	\hline Use Case Name & Aktivit\"atenseite \\ 
 	\hline Initiierender Akteur & Benutzer \\
 	\hline Weitere Akteure & \\
-	\hline Kurzbeschreibung & Der Benutzer kann eine Liste von verf\"ugbaren, ausgew\"ahlten und erledigten Aktivit\"aten ansehen, sowie Aktivit\"aten ausw\"ahlen, abw\"ahlen oder als erledigt markieren \\
+	\hline Kurzbeschreibung & Der Benutzer kann eine Liste von verf\"ugbaren Aktivit\"aten ansehen, sowie Aktivit\"aten favorisieren oder als erledigt markieren \\
 	\hline Vorbedingung & Die Aktivit\"atenseite ist im Browser aufgerufen \\
 	\hline Nachbedingung & Die Aktivit\"atenseite ist im Browser aufgerufen \\
 	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
@@ -489,13 +489,13 @@
 	\hline Use Case Name & Aktivit\"aten erledigen \\ 
 	\hline Initiierender Akteur & Benutzer \\
 	\hline Weitere Akteure & \\
-	\hline Kurzbeschreibung & Der Benutzer kann Aktivit\"aten, die er durchgef\"uhrt hat, als erledigt abschließen \\
+	\hline Kurzbeschreibung & Der Benutzer kann Aktivit\"aten erledigen \\
 	\hline Vorbedingung & Der Benutzer befindet sich auf der Aktivit\"atenseite \\
 	\hline Nachbedingung & Die abgeschlossene/n Aktivit\"at/en werden als solche markiert und dem Benutzer die entsprechende Punktzahl gutgeschrieben \\
 	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
 	\hline Ablauf & \begin{itemize}
-			\item Benutzer schliesst durch klicken auf die erledigte Aktivit\"at diese ab
-			\item Die abgeschlossene Aktivit\"at wird als erledigt markiert und dem Benutzer die entsprechenden Punkte gutgeschrieben
+			\item Benutzer klicken auf die Aktivit\"at
+			\item Die Aktivit\"at wird als erledigt markiert und dem Benutzer die entsprechenden Punkte gutgeschrieben
 		\end{itemize} \\
 	\hline Alternativen & \\
 	\hline Ausnahmen & Die Aktivit\"at ist in dem Zeitraum bzw. derzeit nicht verf\"ugbar \\
@@ -1010,7 +1010,7 @@
 	\hline Use Case Name & Aktivit\"at erledigen \\ 
 	\hline Initiierender Akteur & Benutzer \\
 	\hline Weitere Akteure &  \\
-	\hline Kurzbeschreibung & Der Benutzer kann vom Startbildschirm der App aus ausgew\"ahlte Aktivit\"aten erledigen. \\
+	\hline Kurzbeschreibung & Der Benutzer kann vom Startbildschirm der App aus favorisierte Aktivit\"aten erledigen. \\
 	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
 	\hline Nachbedingung & Die gewählte Aktivit\"at wurde als erledigt markiert \\
 	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
@@ -1033,9 +1033,9 @@
 	\hline Use Case Name & Aktivi\"aten ansehen \\ 
 	\hline Initiierender Akteur & Benutzer \\
 	\hline Weitere Akteure &  \\
-	\hline Kurzbeschreibung & Der Benutzer kann eine Liste mit den von ihm ausgew\"ahlten Aktivit\"aten ansehen. \\
+	\hline Kurzbeschreibung & Der Benutzer kann eine Liste mit den von verf\"ugbaren Aktivit\"aten ansehen. \\
 	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
-	\hline Nachbedingung & Eine Liste mit allen ausgewählten Aktitvitäten wird angezeigt. \\
+	\hline Nachbedingung & Eine Liste mit allen Aktitvitäten wird angezeigt. \\
 	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
 	\hline Ablauf & \begin{itemize}
 		\item Der Benutzer drückt im Menü auf "Aktivit\"aten.
@@ -1453,7 +1453,7 @@ Die folgenden Grafiken stellen Entwurfsvorschläge für die Benutzeroberfläche 
 
 \paragraph{Benutzer} Eine Person, welche sich auf der Projektwebsite registriert hat und über ein Profil verfügt.
 
-\paragraph{Besucher} Eine Person, welche die Projektwebsite im Browser aufruft.
+\paragraph{Besucher} Eine Person, welche die Projektwebsite im Browser aufruft. Und nicht eingeloggt ist.
 
 \paragraph{Adminbereich} Weboberfläche, über die ein Administrator Verwaltungsaufgaben (z.B. Teilnehmerverwaltung, Aktivitätsverwaltung) ausführen kann.
 
