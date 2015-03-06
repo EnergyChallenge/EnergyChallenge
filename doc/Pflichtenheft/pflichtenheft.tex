@@ -7,7 +7,8 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\usepackage{svg}
+\usepackage{float}
+\usepackage{tabularx}
 
 
 \author{Gruppe 02}
@@ -115,12 +116,13 @@
 %------------------------------------------------
 \section{Produkt\"ubersicht}
 \begin{figure}[H]
-	\includesvg{gfx/Produktuebersicht}
+	\includegraphics[width=\textwidth]{gfx/Produktuebersicht}
+	 \caption{Produkt\"ubersicht}
 \end{figure}
 %------------------------------------------------
 % Akteure
 %------------------------------------------------
-\section{Akteure}
+\include{Akteure}
 
 %------------------------------------------------
 % Produktfunktion
@@ -129,11 +131,11 @@
 \subsection{Webseite}
 
 \subsubsection{Startseite}
-	\begin{figure}[h!]
+	\begin{figure}[H]
 	  \includegraphics[width=\linewidth]{gfx/webseite/startseite.pdf}
           \caption{Use Case 1.1 Startseite}
 	\end{figure}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.1 \\ 
 	\hline Use Case Name & Startseite \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -150,9 +152,9 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular} 
+	\end{tabularx} 
 \subsubsection{Login}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.1.1 \\ 
 	\hline Use Case Name & Login \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -177,10 +179,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 			 
 \subsubsection{Registrieren}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.1.2 \\ 
 	\hline Use Case Name & Registrieren \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -205,10 +207,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular} 
+	\end{tabularx} 
 		
 \subsubsection{Passwort vergessen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.1.3 \\ 
 	\hline Use Case Name & Passwort vergessen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -228,10 +230,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-\end{tabular}
+\end{tabularx}
 
 \subsubsection{Fehlermeldung} % TODO evtl. später Fehlermeldungen differenzierter betrachten
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.1.4 \\ 
 	\hline Use Case Name & Fehlermeldung \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -248,16 +250,16 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
                 
 %------------------
 \subsection{Landingpage}
 
-		\begin{figure}[h!]
+		\begin{figure}[H]
 			\includegraphics[width=\linewidth]{gfx/webseite/LandingPage.pdf}
 		\end{figure}
 		\subsubsection{Landingpage}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 			\hline Use Case Nummer & 1.2 \\ 
 			\hline Use Case Name & Landingpage \\ 
 			\hline Initiierender Akteur & Benutzer \\
@@ -277,10 +279,10 @@
 			\hline Spezielle Anforderungen & \\
 			\hline Annahmen & \\
 			\hline
-		\end{tabular}
+		\end{tabularx}
 		
 		\subsubsection{Aktivität erledigen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 			\hline Use Case Nummer & 1.2.1 \\ 
 			\hline Use Case Name & Aktivität erledigen \\ 
 			\hline Initiierender Akteur & Benutzer \\
@@ -300,10 +302,10 @@
 			\hline Spezielle Anforderungen & \\
 			\hline Annahmen & \\
 			\hline
-		\end{tabular}
+		\end{tabularx}
 		
 		\subsubsection{Team erstellen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 				\hline Use Case Nummer & 1.2.2 \\ 
 				\hline Use Case Name & Team erstellen \\ 
 				\hline Initiierender Akteur & Benutzer \\
@@ -324,10 +326,10 @@
 				\hline Spezielle Anforderungen & \\
 				\hline Annahmen & \\
 				\hline
-		\end{tabular}
+		\end{tabularx}
 			
 		\subsubsection{Teameinladung annehmen}		
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 			\hline Use Case Nummer & 1.2.3 \\ 
 			\hline Use Case Name & Teameinladung annehmen \\ 
 			\hline Initiierender Akteur & Benutzer \\
@@ -347,10 +349,10 @@
 			\hline Spezielle Anforderungen & \\
 			\hline Annahmen & \\
 			\hline
-		\end{tabular}
+		\end{tabularx}
 			
 		\subsubsection{Teameinladung ablehnen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 			\hline Use Case Nummer & 1.2.4 \\ 
 			\hline Use Case Name & Teameinladung ablehnen \\ 
 			\hline Initiierender Akteur & Benutzer \\
@@ -370,10 +372,10 @@
 			\hline Spezielle Anforderungen & \\
 			\hline Annahmen & \\
 			\hline
-		\end{tabular}
+		\end{tabularx}
 				
 		\subsubsection{Teamprofil ansehen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 			\hline Use Case Nummer & 1.2.5 \\ 
 			\hline Use Case Name & Teamprofil ansehen \\ 
 			\hline Initiierender Akteur & Benutzer \\
@@ -393,10 +395,10 @@
 			\hline Spezielle Anforderungen & \\
 			\hline Annahmen & \\
 			\hline
-		\end{tabular}
+		\end{tabularx}
 				
 		\subsubsection{Profil von Teammitglied ansehen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 			\hline Use Case Nummer & 1.2.6 \\ 
 			\hline Use Case Name & Profil von Teammitglied ansehen \\ 
 			\hline Initiierender Akteur & Benutzer \\
@@ -416,10 +418,10 @@
 			\hline Spezielle Anforderungen & \\
 			\hline Annahmen & \\
 			\hline
-		\end{tabular}
+		\end{tabularx}
 					
 		\subsubsection{Nachrichten einsehen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 			\hline Use Case Nummer & 1.2.7 \\ 
 			\hline Use Case Name & Nachrichten einsehen \\ 
 			\hline Initiierender Akteur & Benutzer \\
@@ -436,15 +438,15 @@
 			\hline Spezielle Anforderungen & \\
 			\hline Annahmen & \\
 			\hline
-		\end{tabular}
+		\end{tabularx}
 %-----------------
 \subsection{Aktivit\"aten}
 
-	\begin{figure}[h!]
+	\begin{figure}[H]
 		\includegraphics[width=\linewidth]{gfx/webseite/Aktivitaetenseite.pdf}
 	\end{figure}
 	\subsubsection{Aktivit\"atenseite}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.3 \\ 
 	\hline Use Case Name & Aktivit\"atenseite \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -461,9 +463,9 @@
 	\hline Spezielle Anforderungen & \\
 	\hline Annahmen & \\
 	\hline
-	\end{tabular} 
+	\end{tabularx} 
 	\subsubsection{Aktivit\"aten ansehen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.3.1 \\ 
 	\hline Use Case Name & Aktivit\"aten ansehen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -480,9 +482,9 @@
 	\hline Spezielle Anforderungen & \\
 	\hline Annahmen & \\
 	\hline
-	\end{tabular} 
+	\end{tabularx} 
 	\subsubsection{Aktivit\"aten erledigen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.3.2\\ 
 	\hline Use Case Name & Aktivit\"aten erledigen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -502,9 +504,9 @@
 	\hline Spezielle Anforderungen & \\
 	\hline Annahmen & \\
 	\hline
-	\end{tabular} 
+	\end{tabularx} 
 	\subsubsection{Aktivit\"aten favorisieren}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.3.3 \\ 
 	\hline Use Case Name & Aktivit\"aten favorisieren \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -521,9 +523,9 @@
 	\hline Spezielle Anforderungen & \\
 	\hline Annahmen & \\
 	\hline
-	\end{tabular} 
+	\end{tabularx} 
 	\subsubsection{Aktivit\"aten bearbeiten}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.3.4 \\ 
 	\hline Use Case Name & Aktivit\"aten bearbeiten \\ 
 	\hline Initiierender Akteur & Admin \\
@@ -543,11 +545,11 @@
 	\hline Spezielle Anforderungen & \\
 	\hline Annahmen & \\
 	\hline
-	\end{tabular} 
+	\end{tabularx} 
 
 \subsection{Energiespavorschl\"age}
 
-\begin{tabular}{|l|p{.5\linewidth}|}
+\begin{tabularx}{\textwidth}{|l|X|}
 		\hline Use Case Nummer & 1.4\\ 
 		\hline Use Case Name & Vorschlagsseite \\ 
 		\hline Initiierender Akteur & Benutzer \\
@@ -564,10 +566,10 @@
 		\hline Spezielle Anforderungen & \\
 		\hline Annahmen & \\
 		\hline
-	\end{tabular}
+	\end{tabularx}
 
 	\subsubsection{Vorschlagsliste ansehen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 		\hline Use Case Nummer & 1.4.1 \\ 
 		\hline Use Case Name & Vorschlagsliste ansehen \\ 
 		\hline Initiierender Akteur & Benutzer \\
@@ -584,10 +586,10 @@
 		\hline Spezielle Anforderungen &  \\
 		\hline Annahmen &  \\
 		\hline
-	\end{tabular}	
+	\end{tabularx}	
 	
 	\subsubsection{Vorschl\"age bewerten}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 		\hline Use Case Nummer & 1.4.1.1 \\ 
 		\hline Use Case Name & Vorschl\"age bewerten \\ 
 		\hline Initiierender Akteur & Benutzer \\
@@ -607,10 +609,10 @@
 		\hline Spezielle Anforderungen &  \\
 		\hline Annahmen &  \\
 		\hline
-	\end{tabular}
+	\end{tabularx}
 	
 	\subsubsection{Vorschl\"age kommentieren}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 		\hline Use Case Nummer & 1.4.1.2 \\ 
 		\hline Use Case Name & Vorschl\"age kommentieren \\ 
 		\hline Initiierender Akteur & Benutzer \\
@@ -634,10 +636,10 @@
 		\hline Spezielle Anforderungen &  \\
 		\hline Annahmen &  \\
 		\hline
-	\end{tabular}
+	\end{tabularx}
 	
 	\subsubsection{Vorschl\"age zu Aktivit\"aten \"andern}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 		\hline Use Case Nummer & 1.4.1.3 \\ 
 		\hline Use Case Name & Vorschl\"age zu Aktivit\"aten \"andern \\ 
 		\hline Initiierender Akteur & Admin \\
@@ -658,10 +660,10 @@
 		\hline Spezielle Anforderungen &  \\
 		\hline Annahmen &  \\
 		\hline
-	\end{tabular}
+	\end{tabularx}
 
 	\subsubsection{Vorschl\"age erstellen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 		\hline Use Case Nummer & 1.4.2 \\ 
 		\hline Use Case Name & Vorschl\"age erstellen \\ 
 		\hline Initiierender Akteur & Benutzer \\
@@ -685,17 +687,17 @@
 		\hline Spezielle Anforderungen &  \\
 		\hline Annahmen &  \\
 		\hline
-	\end{tabular}
+	\end{tabularx}
         
 %---------------------------------------------
 \subsection{Rangliste}
-	\begin{figure}[h!]
+	\begin{figure}[H]
 		\includegraphics[width=\linewidth]{gfx/webseite/rangliste.pdf}
                 \caption{Use Case 1.5 Rangliste ansehen}
         \end{figure}
 
 \subsubsection{Rangliste Ansehen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.5 \\ 
 	\hline Use Case Name & Rangliste ansehen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -715,10 +717,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
         
 \subsubsection{Profil ansehen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.5.1 \\ 
 	\hline Use Case Name & Profil ansehen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -738,10 +740,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Benutzer/Team Ansicht wechseln}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.5.2 \\ 
 	\hline Use Case Name & Benutzer/Team Ansicht wechseln \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -764,10 +766,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 		
 \subsubsection{Suche}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.5.3 \\ 
 	\hline Use Case Name & Suche \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -788,18 +790,18 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 %-----------------------------
 \subsection{Statistiken}
 
-        \begin{figure}[h]
+        \begin{figure}[H]
 	  \includegraphics[width=\linewidth]{gfx/webseite/statistikfunktion.pdf}
           \caption{Statistiken ansehen und als .csv-Datei exportieren}
 	\end{figure}
         
 \subsubsection{Statistiken ansehen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.6.1\\ 
 	\hline Use Case Name & Statistiken ansehen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -825,10 +827,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Download CSV-Datei}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 1.6.2 \\ 
 	\hline Use Case Name & Download CSV-Datei \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -848,18 +850,18 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen & \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
         
 %-----------------------------
 \subsection{AdminBereich}
 %-----------------------------
 \subsection{Profilseite}
 
-	\begin{figure}[h!]
+	\begin{figure}[H]
 		\includegraphics[width=\linewidth]{gfx/webseite/Profilseite.pdf}
 	\end{figure}
 	\subsubsection{Profilseite \"andern}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 		\hline Use Case Nummer & 1.8 \\ 
 		\hline Use Case Name & Profilseite \"andern \\ 
 		\hline Initiierender Akteur & Benutzer \\
@@ -879,10 +881,10 @@
 		\hline Spezielle Anforderungen &  \\
 		\hline Annahmen &  \\
 		\hline
-		\end{tabular}
+		\end{tabularx}
 		
 			\subsubsection{Profil sperren}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 		\hline Use Case Nummer & 1.8.1 \\ 
 		\hline Use Case Name & Profil sperren \\ 
 		\hline Initiierender Akteur & Admin \\
@@ -902,10 +904,10 @@
 		\hline Spezielle Anforderungen &  \\
 		\hline Annahmen &  \\
 		\hline
-		\end{tabular}
+		\end{tabularx}
 		
 			\subsubsection{Profil reaktivieren}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 		\hline Use Case Nummer & 1.8.1.1 \\ 
 		\hline Use Case Name & Profil reaktivieren \\ 
 		\hline Initiierender Akteur & Admin \\
@@ -925,10 +927,10 @@
 		\hline Spezielle Anforderungen &  \\
 		\hline Annahmen &  \\
 		\hline
-		\end{tabular}
+		\end{tabularx}
 		
 			\subsubsection{Profilinhaber zum Admin bef\"ordern}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 		\hline Use Case Nummer & 1.8.2 \\ 
 		\hline Use Case Name & Profilinhaber zum Admin bef\"ordern \\ 
 		\hline Initiierender Akteur & Admin \\
@@ -948,10 +950,10 @@
 		\hline Spezielle Anforderungen &  \\
 		\hline Annahmen & Das Profil des zu bef\"ordernden Benutzers ist nicht gesperrt \\
 		\hline
-		\end{tabular}
+		\end{tabularx}
 		
 			\subsubsection{Profil l\"oschen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
+		\begin{tabularx}{\textwidth}{|l|X|}
 		\hline Use Case Nummer & 1.8.3 \\ 
 		\hline Use Case Name & Profil l\"oschen \\ 
 		\hline Initiierender Akteur & Admin \\
@@ -971,16 +973,16 @@
 		\hline Spezielle Anforderungen & - \\
 		\hline Annahmen & - \\
 		\hline
-		\end{tabular}
+		\end{tabularx}
 
 %-----------------------------
 \subsection{Android App}
-	\begin{figure}[h!]
+	\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/androidapp/overview.pdf}
 	\end{figure}
 
 \subsubsection{Login}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.1 \\ 
 	\hline Use Case Name & Login \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1000,10 +1002,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen & Der Benutzer hat sich auf der Webseite registriert. \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Aktivit\"at erledigen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.2 \\ 
 	\hline Use Case Name & Aktivit\"at erledigen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1023,10 +1025,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Aktivit\"aten ansehen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.3 \\ 
 	\hline Use Case Name & Aktivi\"aten ansehen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1046,10 +1048,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Aktivit\"at ausw\"ahlen/entfernen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.3.1 \\ 
 	\hline Use Case Name & Aktivit\"at ausw\"ahlen/entfernen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1072,10 +1074,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen & \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Rangliste ansehen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.4 \\ 
 	\hline Use Case Name & Rangliste ansehen\\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1095,10 +1097,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Benutzer/Team Ansicht ändern}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.4.1 \\ 
 	\hline Use Case Name & Benutzer/Team Ansicht \"andern \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1121,10 +1123,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Profil ansehen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.4.2 \\ 
 	\hline Use Case Name & Profil ansehen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1144,10 +1146,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Benutzer/Team suchen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.4.3 \\ 
 	\hline Use Case Name & Suche \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1170,10 +1172,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Vorschl\"age auflisten}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.5 \\ 
 	\hline Use Case Name & Vorschl\"age auflisten \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1193,10 +1195,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Vorschlag ansehen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.5.1 \\ 
 	\hline Use Case Name & Vorschlag ansehen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1219,10 +1221,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Vorschlag bewerten}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.5.1.1 \\ 
 	\hline Use Case Name & Vorschlag bewerten \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1246,10 +1248,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Vorschlag kommentieren}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.5.1.2 \\ 
 	\hline Use Case Name & Vorschlag kommentieren \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1275,10 +1277,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Optionen anzeigen}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.6 \\ 
 	\hline Use Case Name & Optionen \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1298,10 +1300,10 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 \subsubsection{Option \"andern}
-	\begin{tabular}{|l|p{.5\linewidth}|}
+	\begin{tabularx}{\textwidth}{|l|X|}
 	\hline Use Case Nummer & 2.6.1 \\ 
 	\hline Use Case Name & Option \"andern \\ 
 	\hline Initiierender Akteur & Benutzer \\
@@ -1318,11 +1320,11 @@
 	\hline Spezielle Anforderungen &  \\
 	\hline Annahmen &  \\
 	\hline
-	\end{tabular}
+	\end{tabularx}
 
 %%Tabellen Muster
 %\subsubsection{title}
-%	\begin{tabular}{|l|p{.5\linewidth}|}
+%	\begin{tabularx}{\textwidth}{|l|X|}
 %	\hline Use Case Nummer &  \\ 
 %	\hline Use Case Name &  \\ 
 %	\hline Initiierender Akteur &  \\
@@ -1339,7 +1341,7 @@
 %	\hline Spezielle Anforderungen &  \\
 %	\hline Annahmen &  \\
 %	\hline
-%	\end{tabular}
+%	\end{tabularx}
 
 %------------------------------------------------
 % Produktdaten
@@ -1361,36 +1363,36 @@ Die Benutzeroberfläche der Website soll intuitiv aufgebaut und einfach bedienba
 Bevor der Benutzer sich angemeldet hat, wird ihm nur das Projekt präsentiert und man gibt ihm die Möglichkeit sich anzumelden oder für das Projekt zu registrieren. \\
 Wenn der Benutzer angemeldet ist, kann er über das Menü zwischen den einzelnen Seiten navigieren. In der Kopfzeile werden ihm stets seine persönlichen Informationen eingeblendet (wie z.B. neue Benachrichtigungen) und es gibt hier die Möglichkeit sich wieder von der Website abzumelden.
 \subsubsection{Navigationsstruktur}
-\begin{figure}[h!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/guinavigation/GUI-Navigation-Website.pdf}
 \end{figure}
 \subsubsection{GUI-Entwurfsvorschläge}
 Die folgenden Grafiken stellen Entwurfsvorschläge für die Benutzeroberfläche dar. Die in gelb eingezeichneten Nummern sind die IDs der Use Cases, die an dieser Stelle verwendet werden.
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-startseite.pdf}
 	\caption{Startbildschirm für unangemeldete Benutzer}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-landingpage.pdf}
 		\caption{Startbildschirm für angemeldete Benutzer}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-landingpage-admin.pdf}
 			\caption{Startbildschirm für angemeldete Admins}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-aktivitaeten.pdf}
 			\caption{Seite zur Verwaltung der eigenen Aktivitäten}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-rangliste.pdf}
 	\caption{Seite mit Übersicht über alle Benutzer/Teams.}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-vorschlaege.pdf}
 		\caption{Seite für die Energiesparvorschläge}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-statistik.pdf}
 	\caption{Seite für die Statistiken}
 \end{figure}
@@ -1402,36 +1404,36 @@ soll die Gestaltung der App den Android-Design-Empfehlungen weitestgehend entspr
 der App erfolgt ausschließlich über einen Touchscreen. \\
 Zuerst muss der Benutzer sich in der App anmelden. Nach einer Anmeldung wird ihm eine Startseite angezeigt. Über ein Navigationsmenü soll der Benutzer zwischen den einzelnen Bereichen der App wechseln können, wobei das Navigationsmenü sowohl über eine Schaltfläche als auch über eine Wischgeste vom linken Bildschirmrand aufgerufen werden kann.
 \subsubsection{Navigationsstruktur}
-\begin{figure}[h!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/guinavigation/GUI-Navigation-App.pdf}
 \end{figure}
 \subsubsection{GUI-Entwurfsvorschläge}
 Die folgenden Grafiken stellen Entwurfsvorschläge für die Benutzeroberfläche dar. Die in gelb eingezeichneten Nummern sind die IDs der Use Cases, die an dieser Stelle verwendet werden.
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-login.pdf}
 	\caption{Bildschirm zum Anmelden}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-main.pdf}
 	\caption{Startbildschirm der App}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-navigation.pdf}
 	\caption{Navigationsbildschirm der App}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-meinprofil.pdf}
 	\caption{Übersicht über das eigene Profil in der App}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-rangliste.pdf}
 	\caption{Ranglistenansicht in der App}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-aktivitaeten.pdf}
 	\caption{Aktivitätenansicht in der App}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-vorschlaege.pdf}
 	\caption{Energiesparvorschläge in der App}
 \end{figure}
