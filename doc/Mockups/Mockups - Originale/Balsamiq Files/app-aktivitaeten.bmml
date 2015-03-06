@@ -55,32 +55,53 @@
         <text>Aktivit%E4ten</text>
       </controlProperties>
     </control>
-    <control controlID="18" controlTypeID="com.balsamiq.mockups::SubTitle" x="177" y="153" w="-1" h="-1" measuredW="159" measuredH="23" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::SubTitle" x="177" y="146" w="-1" h="-1" measuredW="190" measuredH="23" zOrder="14" locked="false" isInGroup="-1">
       <controlProperties>
         <size>20</size>
-        <text>Meine%20Aktivit%E4ten</text>
+        <text>Aktivit%E4ten%20erledigen</text>
       </controlProperties>
     </control>
-    <control controlID="19" controlTypeID="com.balsamiq.mockups::HRule" x="177" y="176" w="250" h="-1" measuredW="100" measuredH="10" zOrder="15" locked="false" isInGroup="-1"/>
-    <control controlID="20" controlTypeID="com.balsamiq.mockups::List" x="171" y="191" w="244" h="158" measuredW="100" measuredH="126" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::HRule" x="177" y="169" w="250" h="-1" measuredW="100" measuredH="10" zOrder="15" locked="false" isInGroup="-1"/>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::List" x="177" y="184" w="244" h="317" measuredW="100" measuredH="405" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>none</borderStyle>
         <size>16</size>
-        <text>Mit%20dem%20Fahrrad%20zur%20Uni%20fahren%0A%20%0AImmer%20das%20Licht%20ausschalten%0A%20%0ARechner%20herunterfahren</text>
+        <text>Sparsam%20drucken%0A%20%0AH%E4ndewaschen%20mit%20kaltem%0AWasser%0A%20%0AK%FChlschrank%20ausschalten%0A%20%0AMit%20dem%20Fahrrad%20zur%20Uni%20%0Afahren%20bis%203km%0A%20%0AMit%20dem%20Fahrrad%20zur%20Uni%20%0Afahren%20bis%205km%0A%20%0AMit%20dem%20Fahrrad%20zur%20Uni%0Afahren%20%FCber%205km%0A%20%0AMobilit%E4t%20auf%20dem%20Campus%20zwischen%20den%20Sektoren%20zu%20Fu%DF%20oder%20mit%20Fahrrad%0A%20%0AFahrgemeinschaft%20zur%20Uni%20in%20Anspruch%20nehmen</text>
+        <verticalScrollbar>false</verticalScrollbar>
       </controlProperties>
     </control>
-    <control controlID="21" controlTypeID="com.balsamiq.mockups::SubTitle" x="177" y="334" w="-1" h="-1" measuredW="196" measuredH="23" zOrder="17" locked="false" isInGroup="-1">
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Icon" x="403" y="184" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="17" locked="false" isInGroup="-1">
       <controlProperties>
-        <size>20</size>
-        <text>Aktivit%E4ten%20ausf%FChren</text>
+        <icon>CheckMarkIcon%7Csmall</icon>
       </controlProperties>
     </control>
-    <control controlID="22" controlTypeID="com.balsamiq.mockups::HRule" x="177" y="364" w="250" h="-1" measuredW="100" measuredH="10" zOrder="18" locked="false" isInGroup="-1"/>
-    <control controlID="23" controlTypeID="com.balsamiq.mockups::List" x="177" y="374" w="244" h="116" measuredW="100" measuredH="126" zOrder="19" locked="false" isInGroup="-1">
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::Icon" x="403" y="233" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="18" locked="false" isInGroup="-1">
       <controlProperties>
-        <borderStyle>none</borderStyle>
-        <size>16</size>
-        <text>Sparsam%20drucken%0A%20%0AH%E4ndewaschen%20mit%20kaltem%20Wasser%0A%20%0AK%FChlschrank%20ausschalten</text>
+        <color>13421772</color>
+        <icon>CheckMarkIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Icon" x="403" y="291" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+        <icon>CheckMarkIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Icon" x="403" y="331" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+        <icon>CheckMarkIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::Icon" x="403" y="395" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>CheckMarkIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::Icon" x="403" y="458" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+        <icon>CheckMarkIcon%7Csmall</icon>
       </controlProperties>
     </control>
   </controls>
