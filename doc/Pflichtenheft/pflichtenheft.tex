@@ -995,329 +995,353 @@
 		\hline Annahmen & - \\
 		\hline
 		\end{tabular}
+
 %-----------------------------
-\subsection{Andoid App}
-\begin{figure}[h!]
-		\includegraphics[width=\linewidth]{gfx/androidapp/overview.pdf}
+\subsection{Android App}
+	\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{gfx/androidapp/overview.pdf}
 	\end{figure}
+
 \subsubsection{Login}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.1 \\ 
-		\hline Use Case Name & Login \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Der Benutzer muss sich einmalig anmelden um die App zu nutzen \\
-		\hline Vorbedingung & Benutzer hat sich noch nie in der App angemeldet \\
-		\hline Nachbedingung & Der Benutzer hat zugriff auf die Funktionen der App \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item der Benutzer startet die App und muss zunächst Email-Adresse und Passwort eingeben
-			\item der Benutzer klickt auf einloggen
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen & Bei Falschen Login-Daten wird auf die Webseite verwiesen \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen & Benutzer hat sich auf der Webseite angemeldet \\
-		\hline
-		\end{tabular}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.1 \\ 
+	\hline Use Case Name & Login \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer muss sich einmalig anmelden um die App nutzen zu können. \\
+	\hline Vorbedingung & Benutzer hat sich noch nie in der App angemeldet. \\
+	\hline Nachbedingung & Der Benutzer hat Zugriff auf die Funktionen der App. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer startet die App und muss zunächst E-Mail-Adresse und Passwort eingeben.
+		\item Der Benutzer drückt auf ``einloggen''.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen & Bei falschen Login-Daten wird auf die Webseite verwiesen. \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen & Der Benutzer hat sich auf der Webseite angemeldet. \\
+	\hline
+	\end{tabular}
+
 \subsubsection{Aktivit\"at erledigen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.2 \\ 
-		\hline Use Case Name & Aktivit\"at erledigen \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Der Benutzer kann von der App direckt ausgew\"ahlte Aktivit\"aten erledigen \\
-		\hline Vorbedingung & Benutzer ist eingeloggt \\
-		\hline Nachbedingung & Benutzer hat Aktivit\"at ausgef\"uhrt \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer klickt auf eine Aktivit\"at
-			\item Benutzer best\"atigt die Aktivit\"at
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.2 \\ 
+	\hline Use Case Name & Aktivit\"at erledigen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann vom Startbildschirm der App aus ausgew\"ahlte Aktivit\"aten erledigen. \\
+	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
+	\hline Nachbedingung & Die gewählte Aktivit\"at wurde als erledigt markiert \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Benutzer drückt auf eine Aktivit\"at.
+		\item Benutzer best\"atigt, dass er die Aktivit\"at als erledigt markieren möchte.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
 
 \subsubsection{Aktivit\"aten ansehen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.3 \\ 
-		\hline Use Case Name & Aktivi\"aten ansehn \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Benutzer kann die ausgew\"ahlten Aktivit\"aten hinzuf\"ugen und entfernen \\
-		\hline Vorbedingung & Benutzer ist eingeloggt \\
-		\hline Nachbedingung & Benutzer sieht Aktivit\"aten \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer navigiert im Menü zu "Aktivit\"aten"
-			\item Benutzer werden Aktivit\"aten angezeigt
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.3 \\ 
+	\hline Use Case Name & Aktivi\"aten ansehen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann eine Liste mit den von ihm ausgew\"ahlten Aktivit\"aten ansehen. \\
+	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
+	\hline Nachbedingung & Eine Liste mit allen ausgewählten Aktitvitäten wird angezeigt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer drückt im Menü auf "Aktivit\"aten.
+		\item Eine Übersicht über alle vom Benutzer gewählten Aktivit\"aten wird angezeigt.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
 
-\subsubsection{Aktivit\"at ausw\"ahlen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.3.1 \\ 
-		\hline Use Case Name & Aktivit\"at ausw\"ahlen \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Benutzer f\"ugt eine Aktivit\"at zu seinen Ausgew\"ahlten hinzu und kann sie auch entfernen \\
-		\hline Vorbedingung &  \\
-		\hline Nachbedingung &  \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer klickt auf "hinzuf\"ugen"
-			\item Aktivit\"at wir den Ausgew\"ahlten hinzugef\"ugt
-		\end{itemize} \\
-		\hline Alternativen & \begin{itemize}
-			\item Benutzer klickt auf "Entfernen"
-			\item Aktivit\"at wird aus den Ausgew\"ahlten entfernt
-		\end{itemize}  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen & Benutzer ist eingeloggt \\
-		\hline
-		\end{tabular}
+\subsubsection{Aktivit\"at ausw\"ahlen/entfernen}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.3.1 \\ 
+	\hline Use Case Name & Aktivit\"at ausw\"ahlen/entfernen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Benutzer f\"ugt eine Aktivit\"at zu seinen ausgewählten Aktivitäten hinzu oder entfernt eine bereits ausgewählte Aktivität. \\
+	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
+	\hline Nachbedingung & Eine Aktivität wurde neu ausgewählt oder eine ausgewählte Aktivität wurde entfernt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer drückt auf "Aktivität hinzuf\"ugen".
+		\item Die entsprechende Aktivit\"at wird den ausgew\"ahlten Aktivitäten des Benutzers hinzufügt.
+	\end{itemize} \\
+	\hline Alternativen & \begin{itemize}
+		\item Der Benutzer drückt auf "Entfernen".
+		\item Die entsprechende Aktivit\"at wird aus den ausgew\"ahlten Aktivitäten des Benutzers entfernt
+	\end{itemize}  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen & \\
+	\hline
+	\end{tabular}
 
 \subsubsection{Rangliste ansehen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.4 \\ 
-		\hline Use Case Name & Rangliste ansehen\\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Benutzer kann die Aktuelle Rangliste der Benutzer und Teams ansehen \\
-		\hline Vorbedingung & Benutzer ist eingeloggt \\
-		\hline Nachbedingung & Rangliste wird angezeigt \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer w\"ahlt im Menü "Rangliste"
-			\item die Rangliste wird angezeigt
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.4 \\ 
+	\hline Use Case Name & Rangliste ansehen\\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann die aktuelle Rangliste der Benutzer und Teams ansehen. \\
+	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
+	\hline Nachbedingung & Die Rangliste wird angezeigt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer drückt im Menü auf "Rangliste".
+		\item Die Rangliste wird angezeigt.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
 
-\subsubsection{Benutzer/Team Ansicht \"andern}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.4.1 \\ 
-		\hline Use Case Name & Benutzer/Team Ansicht \"andern \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Der Benutzer kann zwischen der Benutzer- und der Team-Ranglisten-Ansicht wechseln \\
-		\hline Vorbedingung & Benutzer ist in Ranglisten Ansicht \\
-		\hline Nachbedingung & Benutzer ist in der jeweils anderen Ranglisten Ansicht \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer wischt \"uber den Bildschirm
-			\item Die Ansicht wechselt
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
-		
+\subsubsection{Benutzer/Team Ansicht ändern}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.4.1 \\ 
+	\hline Use Case Name & Benutzer/Team Ansicht \"andern \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann zwischen der Benutzer- und der Team-Ranglisten wechseln \\
+	\hline Vorbedingung & Der Benutzer ist in der Ranglisten Ansicht. \\
+	\hline Nachbedingung & Die Beutzer oder Team Ranglisten wird angezeigt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer wischt in der Team-Rangliste nach rechts über den Bildschirm.
+		\item Die Benutzer-Rangliste wird angezeigt.
+	\end{itemize} \\
+	\hline Alternativen & \begin{itemize}
+		\item Der Benutzer wischt in der Benutzer-Rangliste nach links über den Bildschirm.
+		\item Die Team-Rangliste wird angezeigt.
+                \end{itemize} \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
 
 \subsubsection{Profil ansehen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.4.2 \\ 
-		\hline Use Case Name & Profil ansehen \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Der Benutzer kann die Profile von Benutzern und Team ansehen \\
-		\hline Vorbedingung & Benutzer hat auf ein Benutzer oder Team geklickt \\
-		\hline Nachbedingung & Benutzer sieht Profil \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer klickt auf ein Benutzer oder Team
-			\item Das Profil des entsprechenden Benutzers oder Teams wird dargestellt
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.4.2 \\ 
+	\hline Use Case Name & Profil ansehen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann die Profile von anderen Benutzern und Teams ansehen \\
+	\hline Vorbedingung & Der Benutzer ist eingeloggt und befindet sich in der Ranglistenansicht. \\
+	\hline Nachbedingung & Das ausgewählte Profil wird angezeigt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer drückt auf einen Benutzer oder ein Team.
+		\item Das Profil des entsprechenden Benutzers oder Teams wird angezeigt.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
 
-\subsubsection{Suche}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.4.3 \\ 
-		\hline Use Case Name & Suche \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Benutzer kann nach anderen Benutzern und Teams suchen \\
-		\hline Vorbedingung &  \\
-		\hline Nachbedingung & Benutzer werden die Suchergebnisse angezeigt \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer gibt Suchbegriff ein.
-			\item Benutzer klickt auf suchen
-			\item Benutzer werden Suchergebnisse angezeigt
-		\end{itemize} \\
-		\hline Alternativen & Wurden keine Treffer gefunden, so wird das angezeigt \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+\subsubsection{Benutzer/Team suchen}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.4.3 \\ 
+	\hline Use Case Name & Suche \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Benutzer kann nach anderen Benutzern und Teams suchen. \\
+	\hline Vorbedingung & Benutzer ist eingeloggt. \\
+	\hline Nachbedingung & Die Suchergebnisse werden angezeigt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer drückt auf das Suchsymbol auf der Hauptseite der App.
+                \item Eine Suchzeile zur Eingabe von Suchbegriffen öffnet sich.
+                \item Der Benutzer gibt einen Suchbegriff ein.
+		\item Der Benutzer drückt auf ``Suchen''.
+		\item Die Suchergebnisse werden angezeigt.
+	\end{itemize} \\
+	\hline Alternativen & \\
+	\hline Ausnahmen & Wenn keine Benutzer oder Teams mit dem gesuchten Namen gefunden werden, wird ``Ihre Suche lieferte keine Ergebnisse'' angezeigt. \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+
 \subsubsection{Vorschl\"age auflisten}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.5 \\ 
-		\hline Use Case Name & Vorschl\"age aufliste \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Die abgegebenen Vorschl\"age werden dem Benutzer angezeigt \\
-		\hline Vorbedingung &  \\
-		\hline Nachbedingung & Benutzer werden die Vorschl\"age angezeigt \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer w\"ahlt im Men\"u "Vorschl\"age"
-			\item Benutzer werden Vorschl\"age angezeigt
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.5 \\ 
+	\hline Use Case Name & Vorschl\"age auflisten \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Alle bislang abgegebenen Vorschl\"age werden dem Benutzer angezeigt. \\
+	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
+	\hline Nachbedingung & Die Vorschl\"age werden angezeigt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer drückt im Men\"u auf der Hauptseite der App auf "Vorschl\"age".
+		\item Eine Liste mit allen bislang abgegebenen Vorschlägen wird angezeigt.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+
 \subsubsection{Vorschlag ansehen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.5.1 \\ 
-		\hline Use Case Name & Vorschlag ansehen \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Der Benutzer kann sich einzelnen Vorschl\"age ansehen, ihm werden dabei die Kommentare und Bewertungen angezeigt \\
-		\hline Vorbedingung &  \\
-		\hline Nachbedingung &  \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item der Benutzer klickt auf einen Vorschlag
-			\item dem Benutzer wird der Vorschlag detaillierter angezeigt
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.5.1 \\ 
+	\hline Use Case Name & Vorschlag ansehen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann sich einzelne Vorschl\"age ansehen, ihm werden dabei die Kommentare und Bewertungen zu dem Vorschlage angezeigt. \\
+	\hline Vorbedingung & Benutzer ist eingeloggt und befindet sich in der Vorschlagsansicht. \\
+	\hline Nachbedingung & Der ausgewählt Vorschlag und alle zugehörigen Kommentare und die durchschnittliche Bewertung des Vorschlages werden angezeigt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer drückt in der Liste der Vorschläge auf einen Vorschlag.
+		\item Dem Benutzer wird die Beschreibung des Vorschlags und alle zugehörigen Kommentare, sowie eine durchschnittliche Bewertung angezeigt.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen & \begin{itemize}
+        	\item Wenn zu einem Vorschlag kein Kommentar existiert, wird angezeigt, dass bislang keine Kommentare zu dem Vorschlag exisiteren.
+                \item Wenn zu einem Vorschlag keine Bewertung existiert, wird angezeigt, dass bislang keine Bewertung zu dem Vorschlag existieren. 
+                \end{itemize} \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+
 \subsubsection{Vorschlag bewerten}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.5.1.1 \\ 
-		\hline Use Case Name & Vorschlag bewerten \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Der Benutzer kann Vorschl\"age mit Ganzzahlige Bewertungen von 1-5 abgeben \\
-		\hline Vorbedingung & Benutzer hat den Vorschlag noch nicht bewertet \\
-		\hline Nachbedingung & Benutzer hat den Vorschlag bewertet \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item Benutzer sieht die Detailansicht eines Vorschlages
-			\item Benutzer w\"ahlt die abzugebene Bewertung
-			\item Benutzer klickt auf "Bewerten"
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.5.1.1 \\ 
+	\hline Use Case Name & Vorschlag bewerten \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann Vorschl\"age mit 1 bis 5 Sternen bewerten. \\
+	\hline Vorbedingung & \begin{itemize}
+        	\item Der Benutzer ist eingeloggt.
+                \item Der Benutzer befindet sich in Ansicht des Vorschlags.
+                \item Der Benutzer hat den Vorschlag noch nicht bewertet. \\
+	\hline Nachbedingung & Der Benutzer hat den Vorschlag bewertet. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer w\"ahlt die abzugebende Bewertung in der Ansicht des Vorschlags.
+		\item Der Benutzer klickt auf ``Bewertung abgeben''.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+
 \subsubsection{Vorschlag kommentieren}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.5.1.2 \\ 
-		\hline Use Case Name & Vorschlag kommentieren \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung &  \\
-		\hline Vorbedingung & Der Benutzer hat den Vorschlag noch nicht kommentiert \\
-		\hline Nachbedingung & Der Benutzer hat den Vorschlag kommentiert \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item der Benutzer klickt auf "Kommentieren"
-			\item der Benutzer schreibt einen Kommentar in das Textfeld
-			\item der Benutzer klickt auf "Kommentar abgeben
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
-\subsubsection{Optionen}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.6 \\ 
-		\hline Use Case Name & Optionen \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Der Benutzer kann das verhalten von Benachrichtigungen einstellen \\
-		\hline Vorbedingung &  \\
-		\hline Nachbedingung &  \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & \begin{itemize}
-			\item der Benutzer klickt im Menu auf "Optionen"
-			\item dem Benutzer werden die Optionen angezeigt
-		\end{itemize} \\
-		\hline Alternativen &  \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.5.1.2 \\ 
+	\hline Use Case Name & Vorschlag kommentieren \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann einen Vorschlag kommenieren. \\
+	\hline Vorbedingung & \begin{itemize}
+        	\item Der Benutzer ist eingeloggt.
+                \item Der Benutzer befindet sich in Ansicht des Vorschlags.
+                \item Der Benutzer hat den Vorschlag noch nicht kommentiert.
+                \end{itemize} \\
+	\hline Nachbedingung & Der Benutzer hat den Vorschlag kommentiert. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer drückt auf "Kommentieren".
+                \item Ein Textfeld zur Eingabe des Kommentars erscheint.
+		\item Der Benutzer schreibt einen Kommentar in das Textfeld.
+		\item Der Benutzer drückt auf ``Kommentar abgeben''.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+
+\subsubsection{Optionen anzeigen}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.6 \\ 
+	\hline Use Case Name & Optionen \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann die Einstellungen zum Verhalten von Benachrichtigungen einsehen. \\
+	\hline Vorbedingung & Der Benutzer ist eingeloggt. \\
+	\hline Nachbedingung & Die aktuell gültigen Einstellungen zum Verhalten der Benachrichtigungen werden angezeigt. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & \begin{itemize}
+		\item Der Benutzer drückt im Menü der App auf "Optionen".
+		\item Die aktuell gültigen Einstellungen zum Verhalten der Benachrichtigungen werden angezeigt.
+	\end{itemize} \\
+	\hline Alternativen &  \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+
 \subsubsection{Option \"andern}
-		\begin{tabular}{|l|p{.5\linewidth}|}
-		\hline Use Case Nummer & 2.6.1 \\ 
-		\hline Use Case Name & Option \"andern \\ 
-		\hline Initiierender Akteur & Benutzer \\
-		\hline Weitere Akteure &  \\
-		\hline Kurzbeschreibung & Der Benutzer kann die Optionen ein und ausstellen \\
-		\hline Vorbedingung & Option ist in einem Zustand \\
-		\hline Nachbedingung & Option ist in dem andern Zustand \\
-		\hline \multicolumn{2}{|c|}{Funktionalität des UseCases}\\
-		\hline Ablauf & der Benutzer schaltet eine Option von an auf aus\\
-		\hline Alternativen & der Benutzer schaltet eine Option von aus auf an \\
-		\hline Ausnahmen &  \\
-		\hline Benutzte Use Cases &  \\
-		\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-		\hline Spezielle Anforderungen &  \\
-		\hline Annahmen &  \\
-		\hline
-		\end{tabular}
+	\begin{tabular}{|l|p{.5\linewidth}|}
+	\hline Use Case Nummer & 2.6.1 \\ 
+	\hline Use Case Name & Option \"andern \\ 
+	\hline Initiierender Akteur & Benutzer \\
+	\hline Weitere Akteure &  \\
+	\hline Kurzbeschreibung & Der Benutzer kann das Verhalten der Benachrichtigungen verändern. \\
+	\hline Vorbedingung & Der Benutzer ist eingeloggt und befindet sich in der Optionenansicht der App. \\
+	\hline Nachbedingung & Die Einstellung der Benachrichtigung wurde entsprechend der Auswahl des Benutzer geändert. \\
+	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
+	\hline Ablauf & Der Benutzer aktiviert die Benachrichtigungen über ausgewählte, aber nicht erledigte Aktivitäten. \\
+	\hline Alternativen & Der Benutzer deaktiviert die Benachrichtigungen über ausgewählte, aber nicht erledigte Aktivitäten. \\
+	\hline Ausnahmen &  \\
+	\hline Benutzte Use Cases &  \\
+	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
+	\hline Spezielle Anforderungen &  \\
+	\hline Annahmen &  \\
+	\hline
+	\end{tabular}
+
 %%Tabellen Muster
 %\subsubsection{title}
 %	\begin{tabular}{|l|p{.5\linewidth}|}
