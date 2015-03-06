@@ -1,4 +1,4 @@
-\documentclass[10pt,a4paper]{article}
+﻿\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
@@ -282,7 +282,7 @@
 			\hline Use Case Name & Aktivität erledigen \\ 
 			\hline Initiierender Akteur & Benutzer \\
 			\hline Weitere Akteure & \\
-			\hline Kurzbeschreibung & Der Benutzer kann eine ausgewählte Aktivität als erledigt markieren \\
+			\hline Kurzbeschreibung & Der Benutzer kann eine Aktivität als erledigt markieren \\
 			\hline Vorbedingung & Der Benutzer befindet sich auf der Landingpage und markiert eine Aktivität als erledigt \\
 			\hline Nachbedingung & Die markierte Aktivität wird als erledigt markiert (ausgegraut, je nach Häufigkeitsattribut) \\
 			\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
@@ -478,67 +478,42 @@
 	\hline Annahmen & \\
 	\hline
 	\end{tabular} 
-	\subsubsection{Aktivit\"aten ausw\"ahlen}
+	\subsubsection{Aktivit\"aten erledigen}
 	\begin{tabular}{|l|p{.5\linewidth}|}
-	\hline Use Case Nummer & 1.3.2 \\ 
-	\hline Use Case Name & Aktivit\"aten ausw\"ahlen \\ 
+	\hline Use Case Nummer & 1.3.2\\ 
+	\hline Use Case Name & Aktivit\"aten erledigen \\ 
 	\hline Initiierender Akteur & Benutzer \\
 	\hline Weitere Akteure & \\
-	\hline Kurzbeschreibung & Der Benutzer kann eine oder mehrere der verf\"ugbaren Aktivit\"aten ausw\"ahlen \\
-	\hline Vorbedingung & Die Aktivit\"atenseite ist im Browser aufgerufen und die Liste von Aktivit\"aten wird angezeigt \\
-	\hline Nachbedingung & Die Aktivit\"atenliste wird angezeigt, die ausgew\"ahlten Aktivit\"aten sind speziell hervorgehoben \\
+	\hline Kurzbeschreibung & Der Benutzer kann Aktivit\"aten, die er durchgef\"uhrt hat, als erledigt abschließen \\
+	\hline Vorbedingung & Der Benutzer befindet sich auf der Aktivit\"atenseite \\
+	\hline Nachbedingung & Die abgeschlossene/n Aktivit\"at/en werden als solche markiert und dem Benutzer die entsprechende Punktzahl gutgeschrieben \\
 	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
 	\hline Ablauf & \begin{itemize}
-			\item Benutzer w\"ahlt eine oder mehrere Aktivit\"aten aus
-			\item Die ausgew\"ahlten Aktivit\"aten werden als ausgew\"ahlt hervorgehoben
-		\end{itemize} \\
-	\hline Alternativen & \\
-	\hline Ausnahmen & Die Aktivit\"atenliste ist nicht verf\"ugbar \\
-	\hline Benutzte Use Cases & 1.3.1 Aktivit\"aten ansehen \\
-	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
-	\hline Spezielle Anforderungen & \\
-	\hline Annahmen & Der Benutzer w\"ahlt nur Aktivit\"aten aus, die noch nicht ausgew\"ahlt sind \\
-	\hline
-	\end{tabular}
-	\subsubsection{Aktivit\"aten als erledigt abhaken}
-	\begin{tabular}{|l|p{.5\linewidth}|}
-	\hline Use Case Nummer & 1.3.2.1 \\ 
-	\hline Use Case Name & Aktivit\"aten als erledigt abhaken \\ 
-	\hline Initiierender Akteur & Benutzer \\
-	\hline Weitere Akteure & \\
-	\hline Kurzbeschreibung & Der Benutzer kann ausgew\"ahlte Aktivit\"aten, die er durchgef\"uhrt hat, als erledigt abhaken \\
-	\hline Vorbedingung & Der Benutzer hat bereits eine oder mehrere Aktivit\"aten ausgew\"ahlt \\
-	\hline Nachbedingung & Die abgehakte/n Aktivit\"at/en werden als solche markiert und dem Benutzer die entsprechende Punktzahl gutgeschrieben \\
-	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
-	\hline Ablauf & \begin{itemize}
-			\item Benutzer hakt eine oder mehrere der ausgew\"ahlten Aktivit\"aten als erledigt ab
-			\item Die abgehakten Aktivit\"aten werden als erledigt markiert und dem Benutzer die entsprechenden Punkte gutgeschrieben
+			\item Benutzer schliesst durch klicken auf die erledigte Aktivit\"at diese ab
+			\item Die abgeschlossene Aktivit\"at wird als erledigt markiert und dem Benutzer die entsprechenden Punkte gutgeschrieben
 		\end{itemize} \\
 	\hline Alternativen & \\
 	\hline Ausnahmen & Die Aktivit\"at ist in dem Zeitraum bzw. derzeit nicht verf\"ugbar \\
-	\hline Benutzte Use Cases & 1.3.1 Aktivit\"aten ansehen \\
+	\hline Benutzte Use Cases &  \\
 	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
 	\hline Spezielle Anforderungen & \\
 	\hline Annahmen & \\
 	\hline
 	\end{tabular} 
-	\subsubsection{Aktivit\"aten abw\"ahlen}
+	\subsubsection{Aktivit\"aten favorisieren}
 	\begin{tabular}{|l|p{.5\linewidth}|}
-	\hline Use Case Nummer & 1.3.2.2 \\ 
-	\hline Use Case Name & Aktivit\"aten abw\"ahlen \\ 
+	\hline Use Case Nummer & 1.3.3 \\ 
+	\hline Use Case Name & Aktivit\"aten favorisieren \\ 
 	\hline Initiierender Akteur & Benutzer \\
 	\hline Weitere Akteure & \\
-	\hline Kurzbeschreibung & Der Benutzer kann eine oder mehrere Aktivit\"aten, die er zuvor ausgew\"ahlt hat, wieder abw\"ahlen \\
-	\hline Vorbedingung & Es wurden bereits Aktivit\"aten ausgew\"ahlt und diese werden als solche angezeigt \\
-	\hline Nachbedingung & Die abgew\"ahlten Aktivit\"aten sind nicht mehr als ausgew\"ahlt markiert \\
+	\hline Kurzbeschreibung & Der Benutzer kann eine oder mehrere Aktivit\"aten favorisieren \\
+	\hline Vorbedingung & Der Benutzer befindet sich auf der Aktivit\"atenseite \\
+	\hline Nachbedingung & Die favorisierten Aktivit\"aten erscheinen auf der Landingpage und auf werden außerdem auf der Aktivit\"atenseite als favorisiert angezeigt \\
 	\hline \multicolumn{2}{|c|}{Funktionalität des Use Cases}\\
-	\hline Ablauf & \begin{itemize}
-			\item Benutzer w\"ahlt eine oder mehrere der ausgew\"ahlten Aktivit\"aten ab
-			\item Die abgew\"ahlten Aktivit\"aten werden nicht mehr als ausgew\"ahlt hervorgehoben
-		\end{itemize} \\
+	\hline Ablauf & Benutzer favorisiert über einen Button eine oder mehrere der Aktivit\"aten \\
 	\hline Alternativen & \\
 	\hline Ausnahmen & Die Aktivit\"atenliste ist nicht verf\"ugbar \\
-	\hline Benutzte Use Cases & 1.3.1 Aktivit\"aten ansehen \\
+	\hline Benutzte Use Cases & \\
 	\hline \multicolumn{2}{|c|}{Weitere Informationen} \\
 	\hline Spezielle Anforderungen & \\
 	\hline Annahmen & \\
@@ -546,7 +521,7 @@
 	\end{tabular} 
 	\subsubsection{Aktivit\"aten bearbeiten}
 	\begin{tabular}{|l|p{.5\linewidth}|}
-	\hline Use Case Nummer & 1.3.3 \\ 
+	\hline Use Case Nummer & 1.3.4 \\ 
 	\hline Use Case Name & Aktivit\"aten bearbeiten \\ 
 	\hline Initiierender Akteur & Admin \\
 	\hline Weitere Akteure & \\
