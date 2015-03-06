@@ -1,4 +1,4 @@
-﻿\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[ngerman]{babel}
@@ -7,6 +7,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{float}
 
 
 \author{Gruppe 02}
@@ -117,8 +118,7 @@
 %------------------------------------------------
 % Akteure
 %------------------------------------------------
-\section{Akteure}
-
+\include{Akteure}
 %------------------------------------------------
 % Produktfunktion
 %------------------------------------------------
@@ -126,10 +126,11 @@
 \subsection{Webseite}
 
 \subsubsection{Startseite}
-	\begin{figure}[h!]
+	\begin{figure}[H]
 	  \includegraphics[width=\linewidth]{gfx/webseite/startseite.pdf}
           \caption{Use Case 1.1 Startseite}
 	\end{figure}
+	\FloatBarrier
 	\begin{tabular}{|l|p{.5\linewidth}|}
 	\hline Use Case Nummer & 1.1 \\ 
 	\hline Use Case Name & Startseite \\ 
@@ -250,7 +251,7 @@
 %------------------
 \subsection{Landingpage}
 
-		\begin{figure}[h!]
+		\begin{figure}[H]
 			\includegraphics[width=\linewidth]{gfx/webseite/LandingPage.pdf}
 		\end{figure}
 		\subsubsection{Landingpage}
@@ -437,9 +438,10 @@
 %-----------------
 \subsection{Aktivit\"aten}
 
-	\begin{figure}[h!]
+	\begin{figure}[H]
 		\includegraphics[width=\linewidth]{gfx/webseite/Aktivitaetenseite.pdf}
 	\end{figure}
+	\FloatBarrier
 	\subsubsection{Aktivit\"atenseite}
 	\begin{tabular}{|l|p{.5\linewidth}|}
 	\hline Use Case Nummer & 1.3 \\ 
@@ -686,11 +688,11 @@
         
 %---------------------------------------------
 \subsection{Rangliste}
-	\begin{figure}[h!]
+	\begin{figure}[H]
 		\includegraphics[width=\linewidth]{gfx/webseite/rangliste.pdf}
                 \caption{Use Case 1.5 Rangliste ansehen}
         \end{figure}
-
+\FloatBarrier
 \subsubsection{Rangliste Ansehen}
 	\begin{tabular}{|l|p{.5\linewidth}|}
 	\hline Use Case Nummer & 1.5 \\ 
@@ -790,11 +792,10 @@
 %-----------------------------
 \subsection{Statistiken}
 
-        \begin{figure}[h]
+        \begin{figure}[H]
 	  \includegraphics[width=\linewidth]{gfx/webseite/statistikfunktion.pdf}
           \caption{Statistiken ansehen und als .csv-Datei exportieren}
 	\end{figure}
-        
 \subsubsection{Statistiken ansehen}
 	\begin{tabular}{|l|p{.5\linewidth}|}
 	\hline Use Case Nummer & 1.6.1\\ 
@@ -852,7 +853,7 @@
 %-----------------------------
 \subsection{Profilseite}
 
-	\begin{figure}[h!]
+	\begin{figure}[H]
 		\includegraphics[width=\linewidth]{gfx/webseite/Profilseite.pdf}
 	\end{figure}
 	\subsubsection{Profilseite \"andern}
@@ -972,7 +973,7 @@
 
 %-----------------------------
 \subsection{Android App}
-	\begin{figure}[h!]
+	\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/androidapp/overview.pdf}
 	\end{figure}
 
@@ -1358,36 +1359,36 @@ Die Benutzeroberfläche der Website soll intuitiv aufgebaut und einfach bedienba
 Bevor der Benutzer sich angemeldet hat, wird ihm nur das Projekt präsentiert und man gibt ihm die Möglichkeit sich anzumelden oder für das Projekt zu registrieren. \\
 Wenn der Benutzer angemeldet ist, kann er über das Menü zwischen den einzelnen Seiten navigieren. In der Kopfzeile werden ihm stets seine persönlichen Informationen eingeblendet (wie z.B. neue Benachrichtigungen) und es gibt hier die Möglichkeit sich wieder von der Website abzumelden.
 \subsubsection{Navigationsstruktur}
-\begin{figure}[h!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/guinavigation/GUI-Navigation-Website.pdf}
 \end{figure}
 \subsubsection{GUI-Entwurfsvorschläge}
 Die folgenden Grafiken stellen Entwurfsvorschläge für die Benutzeroberfläche dar. Die in gelb eingezeichneten Nummern sind die IDs der Use Cases, die an dieser Stelle verwendet werden.
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-startseite.pdf}
 	\caption{Startbildschirm für unangemeldete Benutzer}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-landingpage.pdf}
 		\caption{Startbildschirm für angemeldete Benutzer}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-landingpage-admin.pdf}
 			\caption{Startbildschirm für angemeldete Admins}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-aktivitaeten.pdf}
 			\caption{Seite zur Verwaltung der eigenen Aktivitäten}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-rangliste.pdf}
 	\caption{Seite mit Übersicht über alle Benutzer/Teams.}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-vorschlaege.pdf}
 		\caption{Seite für die Energiesparvorschläge}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/website-statistik.pdf}
 	\caption{Seite für die Statistiken}
 \end{figure}
@@ -1399,36 +1400,36 @@ soll die Gestaltung der App den Android-Design-Empfehlungen weitestgehend entspr
 der App erfolgt ausschließlich über einen Touchscreen. \\
 Zuerst muss der Benutzer sich in der App anmelden. Nach einer Anmeldung wird ihm eine Startseite angezeigt. Über ein Navigationsmenü soll der Benutzer zwischen den einzelnen Bereichen der App wechseln können, wobei das Navigationsmenü sowohl über eine Schaltfläche als auch über eine Wischgeste vom linken Bildschirmrand aufgerufen werden kann.
 \subsubsection{Navigationsstruktur}
-\begin{figure}[h!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/guinavigation/GUI-Navigation-App.pdf}
 \end{figure}
 \subsubsection{GUI-Entwurfsvorschläge}
 Die folgenden Grafiken stellen Entwurfsvorschläge für die Benutzeroberfläche dar. Die in gelb eingezeichneten Nummern sind die IDs der Use Cases, die an dieser Stelle verwendet werden.
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-login.pdf}
 	\caption{Bildschirm zum Anmelden}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-main.pdf}
 	\caption{Startbildschirm der App}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-navigation.pdf}
 	\caption{Navigationsbildschirm der App}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-meinprofil.pdf}
 	\caption{Übersicht über das eigene Profil in der App}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-rangliste.pdf}
 	\caption{Ranglistenansicht in der App}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-aktivitaeten.pdf}
 	\caption{Aktivitätenansicht in der App}
 \end{figure}
-\begin{figure}[p!]
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{gfx/mockups/app-vorschlaege.pdf}
 	\caption{Energiesparvorschläge in der App}
 \end{figure}
