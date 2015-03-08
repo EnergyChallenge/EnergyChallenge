@@ -242,7 +242,7 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="66" controlTypeID="com.balsamiq.mockups::CallOut" x="388" y="195" w="61" h="31" measuredW="52" measuredH="43" zOrder="54" locked="false" isInGroup="-1">
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::CallOut" x="397" y="197" w="55" h="35" measuredW="52" measuredH="43" zOrder="54" locked="false" isInGroup="-1">
       <controlProperties>
         <text>2.5.1</text>
       </controlProperties>

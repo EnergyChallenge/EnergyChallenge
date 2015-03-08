@@ -58,12 +58,17 @@
         <text>Mit%20dem%20Fahrrad%20zur%20Uni%20fahren%20bis%203km%2C%205363%20mal%0AH%E4ndewaschen%20mit%20kaltem%20Wasser%2C%202176%20mal%0ASchreibtischlampe%20statt%20Deckenlampe%2C%201301%20mal%0AMit%20dem%20Fahrrad%20zur%20Uni%20fahren%20bis%205km%20%2C%20829%20mal%0AImmer%20das%20Licht%20ausschalten%2C%20363%20mal%0A%7B65L%2C%200R%7D</text>
       </controlProperties>
     </control>
-    <control controlID="24" controlTypeID="com.balsamiq.mockups::CallOut" x="770" y="275" w="58" h="31" measuredW="47" measuredH="39" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::CallOut" x="565" y="54" w="39" h="28" measuredW="39" measuredH="39" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1.1</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::CallOut" x="772" y="276" w="53" h="28" measuredW="47" measuredH="40" zOrder="14" locked="false" isInGroup="-1">
       <controlProperties>
         <text>1.1.1</text>
       </controlProperties>
     </control>
-    <control controlID="25" controlTypeID="com.balsamiq.mockups::CallOut" x="770" y="318" w="63" h="28" measuredW="50" measuredH="40" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::CallOut" x="772" y="318" w="53" h="28" measuredW="50" measuredH="39" zOrder="15" locked="false" isInGroup="-1">
       <controlProperties>
         <text>1.1.2</text>
       </controlProperties>

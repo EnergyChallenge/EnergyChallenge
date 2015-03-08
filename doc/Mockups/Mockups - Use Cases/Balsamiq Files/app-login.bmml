@@ -60,7 +60,7 @@
         <text>Anmelden</text>
       </controlProperties>
     </control>
-    <control controlID="21" controlTypeID="com.balsamiq.mockups::CallOut" x="349" y="333" w="46" h="29" measuredW="42" measuredH="43" zOrder="15" locked="false" isInGroup="-1">
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::CallOut" x="355" y="315" w="45" h="35" measuredW="42" measuredH="43" zOrder="15" locked="false" isInGroup="-1">
       <controlProperties>
         <text>2.1</text>
       </controlProperties>

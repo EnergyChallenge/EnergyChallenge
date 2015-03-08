@@ -55,21 +55,59 @@
         <text>EnergyChallenge</text>
       </controlProperties>
     </control>
-    <control controlID="18" controlTypeID="com.balsamiq.mockups::SubTitle" x="177" y="153" w="-1" h="-1" measuredW="159" measuredH="23" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::SubTitle" x="177" y="153" w="-1" h="-1" measuredW="83" measuredH="23" zOrder="14" locked="false" isInGroup="-1">
       <controlProperties>
         <size>20</size>
-        <text>Meine%20Aktivit%E4ten</text>
+        <text>Favoriten</text>
       </controlProperties>
     </control>
     <control controlID="19" controlTypeID="com.balsamiq.mockups::HRule" x="177" y="176" w="250" h="-1" measuredW="100" measuredH="10" zOrder="15" locked="false" isInGroup="-1"/>
-    <control controlID="20" controlTypeID="com.balsamiq.mockups::List" x="171" y="191" w="244" h="158" measuredW="100" measuredH="126" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::List" x="171" y="191" w="232" h="303" measuredW="100" measuredH="426" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>none</borderStyle>
         <size>16</size>
-        <text>Mit%20dem%20Fahrrad%20zur%20Uni%20fahren%0A%20%0AImmer%20das%20Licht%20ausschalten%0A%20%0ARechner%20herunterfahren</text>
+        <text>Mit%20dem%20Fahrrad%20zur%20Uni%0Afahren%0A%20%0AImmer%20das%20Licht%20ausschalten%0A%20%0ARechner%20herunterfahren%0A%20%0AMobilit%E4t%20auf%20dem%20Campus%0Azwischen%20den%20Sektoren%20zu%0AFu%DF%20oder%20mit%20Fahrrad%0A%20%0AFahrgemeinschaft%20mit%20dem%0Aeigenen%20Auto%20zur%20Uni%20%0Aanbieten%0A%20%0AFahrgemeinschaft%20zur%20Uni%20in%0AAnspruch%20nehmen%0A%20%0AImmer%20das%20Licht%20ausschalten%0Abei%20Verlassen%20des%20Raumes</text>
       </controlProperties>
     </control>
-    <control controlID="21" controlTypeID="com.balsamiq.mockups::CallOut" x="388" y="230" w="54" h="29" measuredW="46" measuredH="43" zOrder="17" locked="false" isInGroup="-1">
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::PointyButton" x="329" y="149" w="-1" h="-1" measuredW="98" measuredH="27" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <direction>left</direction>
+        <newLayout>true</newLayout>
+        <text>Hinzuf%FCgen</text>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::Icon" x="403" y="191" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>0</color>
+        <icon>CheckMarkIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::Icon" x="403" y="254" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+        <icon>CheckMarkIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Icon" x="403" y="296" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>0</color>
+        <icon>CheckMarkIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::Icon" x="403" y="339" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+        <icon>CheckMarkIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Icon" x="403" y="423" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13421772</color>
+        <icon>CheckMarkIcon%7Csmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::CallOut" x="388" y="219" w="47" h="35" measuredW="46" measuredH="39" zOrder="23" locked="false" isInGroup="-1">
       <controlProperties>
         <text>2.2</text>
       </controlProperties>

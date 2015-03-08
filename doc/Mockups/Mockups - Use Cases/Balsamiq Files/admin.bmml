@@ -40,64 +40,65 @@
     </control>
     <control controlID="22" controlTypeID="com.balsamiq.mockups::VRule" x="126" y="174" w="-1" h="353" measuredW="10" measuredH="100" zOrder="9" locked="false" isInGroup="-1"/>
     <control controlID="23" controlTypeID="com.balsamiq.mockups::VRule" x="237" y="174" w="-1" h="353" measuredW="10" measuredH="100" zOrder="10" locked="false" isInGroup="-1"/>
-    <control controlID="24" controlTypeID="com.balsamiq.mockups::SubTitle" x="263" y="382" w="-1" h="-1" measuredW="119" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::SubTitle" x="582" y="343" w="-1" h="-1" measuredW="119" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Mein%20Team</text>
       </controlProperties>
     </control>
-    <control controlID="25" controlTypeID="com.balsamiq.mockups::SubTitle" x="263" y="195" w="-1" h="-1" measuredW="191" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::SubTitle" x="263" y="195" w="-1" h="-1" measuredW="171" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Meine%20Aktivit%E4ten</text>
+        <text>Meine%20Favoriten</text>
       </controlProperties>
     </control>
-    <control controlID="26" controlTypeID="com.balsamiq.mockups::SubTitle" x="523" y="195" w="-1" h="-1" measuredW="148" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::SubTitle" x="582" y="195" w="-1" h="-1" measuredW="148" measuredH="27" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Meine%20Punkte</text>
       </controlProperties>
     </control>
-    <control controlID="27" controlTypeID="com.balsamiq.mockups::HRule" x="263" y="222" w="228" h="-1" measuredW="100" measuredH="10" zOrder="14" locked="false" isInGroup="-1"/>
-    <control controlID="28" controlTypeID="com.balsamiq.mockups::HRule" x="523" y="222" w="244" h="-1" measuredW="100" measuredH="10" zOrder="15" locked="false" isInGroup="-1"/>
-    <control controlID="29" controlTypeID="com.balsamiq.mockups::DataGrid" x="263" y="232" w="228" h="90" measuredW="200" measuredH="95" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::HRule" x="263" y="222" w="291" h="-1" measuredW="100" measuredH="10" zOrder="14" locked="false" isInGroup="-1"/>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::HRule" x="582" y="222" w="185" h="-1" measuredW="100" measuredH="10" zOrder="15" locked="false" isInGroup="-1"/>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::DataGrid" x="263" y="232" w="207" h="90" measuredW="200" measuredH="95" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>none</borderStyle>
         <hasHeader>false</hasHeader>
         <text>Mit%20dem%20Fahrrad%20zur%20Uni%20fahren%0AK%FChlschr%E4nke%20niedrigster%20Wert%0ARechner%20herunterfahren</text>
       </controlProperties>
     </control>
-    <control controlID="30" controlTypeID="com.balsamiq.mockups::Label" x="326" y="322" w="-1" h="-1" measuredW="165" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Label" x="335" y="322" w="-1" h="-1" measuredW="135" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
       <controlProperties>
         <align>right</align>
         <italic>true</italic>
-        <text>Meine%20Aktivit%E4ten%20verwalten</text>
+        <text>+%20Favoriten%20hinzuf%FCgen</text>
         <underline>true</underline>
       </controlProperties>
     </control>
-    <control controlID="31" controlTypeID="com.balsamiq.mockups::HRule" x="263" y="409" w="228" h="-1" measuredW="100" measuredH="10" zOrder="18" locked="false" isInGroup="-1"/>
-    <control controlID="32" controlTypeID="com.balsamiq.mockups::SubTitle" x="621" y="247" w="-1" h="-1" measuredW="144" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::HRule" x="582" y="370" w="228" h="-1" measuredW="100" measuredH="10" zOrder="18" locked="false" isInGroup="-1"/>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::SubTitle" x="707" y="247" w="-1" h="-1" measuredW="60" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
       <controlProperties>
         <align>right</align>
-        <text>2048%20Punkte</text>
+        <text>2048</text>
       </controlProperties>
     </control>
-    <control controlID="33" controlTypeID="com.balsamiq.mockups::DataGrid" x="263" y="419" w="228" h="90" measuredW="126" measuredH="95" zOrder="20" locked="false" isInGroup="-1">
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::DataGrid" x="582" y="380" w="228" h="90" measuredW="142" measuredH="95" zOrder="20" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>none</borderStyle>
         <hasHeader>false</hasHeader>
         <text>1.%2C%20Mesut%20%D6zil%0A2.%2C%20Manuel%20Neuer%0A3.%2C%20Lukas%20Podolski</text>
+        <verticalScrollbar>true</verticalScrollbar>
       </controlProperties>
     </control>
-    <control controlID="34" controlTypeID="com.balsamiq.mockups::SubTitle" x="523" y="247" w="-1" h="-1" measuredW="38" measuredH="27" zOrder="21" locked="false" isInGroup="-1">
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::SubTitle" x="582" y="247" w="-1" h="-1" measuredW="38" measuredH="27" zOrder="21" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Ich%3A</text>
       </controlProperties>
     </control>
-    <control controlID="35" controlTypeID="com.balsamiq.mockups::SubTitle" x="612" y="287" w="-1" h="-1" measuredW="153" measuredH="27" zOrder="22" locked="false" isInGroup="-1">
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::SubTitle" x="697" y="287" w="-1" h="-1" measuredW="70" measuredH="27" zOrder="22" locked="false" isInGroup="-1">
       <controlProperties>
         <align>right</align>
-        <text>16384%20Punkte</text>
+        <text>16384</text>
       </controlProperties>
     </control>
-    <control controlID="36" controlTypeID="com.balsamiq.mockups::SubTitle" x="523" y="287" w="-1" h="-1" measuredW="66" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::SubTitle" x="582" y="287" w="-1" h="-1" measuredW="66" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Team%3A</text>
       </controlProperties>
@@ -109,17 +110,39 @@
         <color>0</color>
       </controlProperties>
     </control>
-    <control controlID="39" controlTypeID="com.balsamiq.mockups::List" x="136" y="322" w="82" h="87" measuredW="100" measuredH="126" zOrder="25" locked="false" isInGroup="-1">
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Button" x="470" y="237" w="-1" h="-1" measuredW="80" measuredH="27" zOrder="25" locked="false" isInGroup="-1">
       <controlProperties>
-        <borderStyle>none</borderStyle>
-        <text>Teilnehmer%0ATeams%0AAktivit%E4ten%0AChallenges</text>
+        <text>erledigen%21</text>
       </controlProperties>
     </control>
-    <control controlID="40" controlTypeID="com.balsamiq.mockups::HRule" x="142" y="314" w="82" h="-1" measuredW="100" measuredH="10" zOrder="26" locked="false" isInGroup="-1"/>
-    <control controlID="41" controlTypeID="com.balsamiq.mockups::Label" x="142" y="293" w="-1" h="-1" measuredW="67" measuredH="21" zOrder="27" locked="false" isInGroup="-1">
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Button" x="470" y="266" w="-1" h="-1" measuredW="80" measuredH="27" zOrder="26" locked="false" isInGroup="-1">
       <controlProperties>
+        <text>erledigen%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Button" x="470" y="295" w="-1" h="-1" measuredW="80" measuredH="27" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>erledigen%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::SearchBox" x="582" y="488" w="228" h="-1" measuredW="165" measuredH="25" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Team/Benutzer%20Suchen</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::HRule" x="582" y="474" w="228" h="-1" measuredW="100" measuredH="10" zOrder="29" locked="false" isInGroup="-1"/>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::SubTitle" x="136" y="302" w="-1" h="-1" measuredW="93" measuredH="21" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>18</size>
         <text>Verwaltung</text>
       </controlProperties>
     </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::List" x="136" y="329" w="101" h="66" measuredW="100" measuredH="126" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>none</borderStyle>
+        <text>Teilnehmer%0ATeams%0AAktivit%E4ten</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::HRule" x="136" y="322" w="93" h="-1" measuredW="100" measuredH="10" zOrder="32" locked="false" isInGroup="-1"/>
   </controls>
 </mockup>

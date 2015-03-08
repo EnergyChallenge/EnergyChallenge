@@ -69,14 +69,14 @@
         <text>CSV%20Export</text>
       </controlProperties>
     </control>
-    <control controlID="79" controlTypeID="com.balsamiq.mockups::CallOut" x="767" y="188" w="60" h="32" measuredW="53" measuredH="40" zOrder="18" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>1.6.2</text>
-      </controlProperties>
-    </control>
-    <control controlID="80" controlTypeID="com.balsamiq.mockups::CallOut" x="445" y="223" w="56" h="38" measuredW="50" measuredH="39" zOrder="19" locked="false" isInGroup="-1">
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::CallOut" x="67" y="254" w="55" h="35" measuredW="50" measuredH="40" zOrder="18" locked="false" isInGroup="-1">
       <controlProperties>
         <text>1.6.1</text>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::CallOut" x="779" y="188" w="55" h="35" measuredW="53" measuredH="39" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>1.6.2</text>
       </controlProperties>
     </control>
   </controls>
