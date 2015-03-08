@@ -5,7 +5,7 @@
 *.aux
 *.dvi
 *.fdb_latexmk
-/.~lock.Produkteinsatz.doc#
+*.out
 
 # visual paradigm temporary files
 *.vpp~*
