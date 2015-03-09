@@ -1,1 +1,39 @@
 \section{System \"Ubersicht}
+
+\subsection{Komponetendiagramm}
+
+\paragraph{Server} Diese Komponente ist das Hauptprogramm, das auf dem physikalischen Server läuft. Hier findet die Datenhaltung, -bereitstellung und die Generierung die Website statt.
+
+\paragraph{Model} Die Modellierung sämtlicher Daten. Dazu gehört das Speichern und der Zugriff auf diese.
+
+\paragraph{Profil Management} Die Modellierung der Profildaten, also der Daten für Benutzer und Teams. Dazu gehört das Speichern und der Zugriff auf diese.
+
+\paragraph{Benutzer Management} Die Modellierung der Benutzerdaten. Dazu gehört das Speichern und der Zugriff auf diese.
+
+\paragraph{Team Management} Die Modellierung der Teamdaten. Dazu gehört das Speichern und der Zugriff auf diese.
+
+\paragraph{Aktivität Management} Die Modellierung der Daten, der Aktivitäten. Dazu gehört das Speichern und der Zugriff auf diese.
+
+\paragraph{Vorschläge Management}  Die Modellierung der Energiesparvorschläge, der Aktivitäten. Dazu gehört das Speichern und der Zugriff auf diese.
+
+\paragraph{Statistiken} Die Modellierung der Statistiken, der Aktivitäten. Dazu gehört das Speichern und der Zugriff auf diese.
+
+\paragraph{Website} Präsentiert die Daten des Models erlaubt Interaktionen.
+
+\paragraph{Controller (Website)} Reagiert auf Benutzereingaben beziehungsweise -anfragen und kümmert sich darum, die benötigten Daten vom Model zu erhalten.
+
+\paragraph{View (Website)} Präsentiert die Daten des Models.
+
+\paragraph{App Controller} Zuständig für die Interaktion der App mit dem Server. Auf eine Anfrage der App werden Daten aus dem Model mithilfe von JSON für die App bereitgestellt.
+
+\paragraph{Android App} Die native Android App, die in erster Linie zur Präsentation von Daten, die auf dem Server liegen, dient.
+
+\paragraph{View (Android App)} Präsentiert die Daten innerhalb der App.
+
+\paragraph{Controller (Android App)} Reagiert auf Benutzereingaben beziehungsweise -anfragen und kümmert sich darum die geforderte Aktion an den Server oder das App-Model weiterzuleiten.
+
+\paragraph{Model (Android App)} Kümmert sich um die Datenhaltung innerhalb der App. Das ist zuerst nur die Information darüber, welcher Benutzer angemeldet ist, kann jedoch später noch um Cacheing-Funktionen erweitert werden, um nicht immer alle Daten vom Server holen zu müssen.
+
+\subsection{Verteilungsdiagramm}
+
+\subsection{Paketdiagramm}
