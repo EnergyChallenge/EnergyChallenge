@@ -16,5 +16,13 @@
 # Eclispe files
 .metadata/
 .recommenders/
+.project
+.classpath
+
 # java Classes
 *.class
+*.jar
+
+# Grails
+target/
+target-eclipse/
