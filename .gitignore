@@ -7,11 +7,16 @@
 *.fdb_latexmk
 *.out
 
+# Tempflies
+*.swp
+
 # visual paradigm temporary files
 *.vpp~*
 
 # Eclispe files
 .metadata/
+.classpath
+.project
 
 # java Classes
 *.class

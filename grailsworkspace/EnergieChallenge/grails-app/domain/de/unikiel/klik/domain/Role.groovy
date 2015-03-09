@@ -1,4 +1,4 @@
-package de.unikiel.klik
+package de.unikiel.klik.domain
 
 class Role {
     String name

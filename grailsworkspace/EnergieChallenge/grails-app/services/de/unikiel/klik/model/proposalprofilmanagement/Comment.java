@@ -2,7 +2,7 @@ package de.unikiel.klik.model.proposalprofilmanagement;
 
 import java.util.Date;
 
-import de.unikiel.klik.User;
+import de.unikiel.klik.domain.User;
 
 public class Comment {
 	
