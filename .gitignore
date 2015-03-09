@@ -31,5 +31,5 @@ reports/
 logs/
 *.war
 plugins/
-web-app/WEB-INF/
+Server/web-app/WEB-INF/
 
