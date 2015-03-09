@@ -1,14 +1,15 @@
 package de.unikiel.klik
 
+
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.authc.AuthenticationException
 import org.apache.shiro.authc.UsernamePasswordToken
 import org.apache.shiro.web.util.SavedRequest
 import org.apache.shiro.web.util.WebUtils
 
-class AuthController {
+class AuthorisationController {
     def shiroSecurityManager
-
+	
     def index = { redirect(action: "login", params: params) }
 
     def login = {
@@ -16,7 +17,7 @@ class AuthController {
     }
 
     def signIn = {
-        def authToken = new UsernamePasswordToken(params.username, params.password as String)
+        UsernamePasswordToken authToken = new UsernamePasswordToken(params.username, params.password as String)
 
         // Support for "remember me"
         if (params.rememberMe) {
