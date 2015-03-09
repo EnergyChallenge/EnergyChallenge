@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">EnergyChallenge</string>
+
+    <string name="action_settings">Settings</string>
+
+    //Navigation
+    <string name="navigation_option1">Energy Challenge</string>
+    <string name="navigation_option2">Mein Profil</string>
+    <string name="navigation_option3">Rangliste</string>
+    <string name="navigation_option4">Activitäten</string>
+    <string name="navigation_option5">Energiesparvorschläge</string>
+    <string name="navigation_option6">Optionen</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    //Login Activity
+    <string name="logIn_emailHint">E-Mail Addresse</string>
+    <string name="logIn_passwordHint">Passwort</string>
+    <string name="logIn_signInButton">Anmelden</string>
+    <string name="title_activity_main">Energy Challenge</string>
+
+    <string name="action_example">Example action</string>
+
+</resources>
