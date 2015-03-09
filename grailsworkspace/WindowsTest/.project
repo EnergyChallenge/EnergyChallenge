@@ -26,7 +26,7 @@
 		<link>
 			<name>.link_to_grails_plugins</name>
 			<type>2</type>
-			<location>C:/Users/Marco Osterloh/Development/EclipseWorkspace/WindowsTest/target/work/plugins</location>
+			<location>/home/lennard/InformatikStudium/SoftwarePraktikum/project/grailsworkspace/WindowsTest/target/work/plugins</location>
 		</link>
 	</linkedResources>
 </projectDescription>
