@@ -9,3 +9,9 @@
 
 # visual paradigm temporary files
 *.vpp~*
+
+# Eclispe files
+.metadata/
+
+# java Classes
+*.class
