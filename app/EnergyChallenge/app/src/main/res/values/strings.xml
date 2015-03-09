@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">EnergyChallenge</string>
 
-    <string name="action_settings">Settings</string>
+    //Action Bar
+    <string name="action_search">Search</string>
 
     //Navigation
     <string name="navigation_option1">Energy Challenge</string>
@@ -20,9 +21,32 @@
     <string name="logIn_signInButton">Anmelden</string>
     <string name="title_activity_main">Energy Challenge</string>
 
-    <string name="action_example">Example action</string>
+    //Main Fragment (Landing Page)
+    <string name="main_title">Energy Challenge</string>
+    <string name="main_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et nisl tristique, rhoncus nulla non, pharetra nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sollicitudin scelerisque metus, eget facilisis odio gravida sed. Suspendisse laoreet rutrum nisi, nec vestibulum felis euismod ut. Pellentesque auctor scelerisque neque, quis suscipit nibh auctor quis. Maecenas mollis pulvinar nunc vel hendrerit. Vestibulum facilisis ac tellus id faucibus. Ut aliquam auctor augue quis rhoncus.</string>
 
-<!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    //My Profile
+    <string name="profile_myName">Samuel Barnes</string>
+    <string name="profile_myTeam">Softwareprojekt Grüppe 2</string>
+    <string name="profile_myFacility">Institut für Informatik</string>
+    <string name="profile_myEmail">up687474@myport.ac.uk</string>
+    <string-array name="profile_myRecentActivities">
+        <item>Mit dem Fahrrad zur Uni fahren</item>
+        <item>Immer das Licht ausschalten</item>
+    </string-array>
+    <string name="profile_recentActivities">Letzte Activitäten</string>
+    <string name="profile_myAvatarDescription">Your avatar</string>
+
+    //Rankings List
+    <string name="rankings_title">Rangliste</string>
+
+    //Activities
+    <string name="activities_title">Activitäten</string>
+
+    //Proposals
+    <string name="proposals_title">Vorschläge</string>
+
+    //Options
+    <string name="options_title">Optionen</string>
 
 </resources>

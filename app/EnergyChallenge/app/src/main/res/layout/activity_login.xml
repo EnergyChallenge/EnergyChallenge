@@ -10,6 +10,7 @@
     android:gravity="center"
     tools:context=".Login">
 
+    <!-- Centralised container for login inputs -->
     <LinearLayout
         android:id="@+id/logInLayout"
         android:layout_width="wrap_content"
@@ -18,28 +19,31 @@
         android:gravity="center"
         android:orientation="vertical" >
 
+        <!-- Username -->
         <EditText
             android:id="@+id/logInUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minEms="12"
-            android:layout_margin="3dip"
+            android:layout_margin="3sp"
             android:inputType="textEmailAddress"
             android:hint="@string/logIn_emailHint"/>
 
+        <!-- Password -->
         <EditText
             android:id="@+id/logInPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minEms="12"
-            android:layout_margin="3dip"
+            android:layout_margin="3sp"
             android:inputType="textPassword"
             android:hint="@string/logIn_passwordHint"/>
 
+        <!-- Login button -->
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dip"
+            android:layout_margin="20sp"
             android:gravity="center"
             android:onClick="logIn"
             android:text="@string/logIn_signInButton"/>
