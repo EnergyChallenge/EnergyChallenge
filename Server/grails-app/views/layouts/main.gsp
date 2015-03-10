@@ -3,7 +3,9 @@
 <%-- <asset:stylesheet src="application.css"/>
 		<asset:javascript src="application.js"/> --%>
 
+<asset:stylesheet src="main.css" />
 <asset:stylesheet src="navigation.css" />
+
 <g:layoutHead />
 
 	</head>
@@ -14,6 +16,7 @@
 		</g:form> 
 	</content>
 	<body>
+	<div class="mainBody">
 		<nav>
 			<ul class="ix">
 				<li><a href="<g:createLink controller="Landing" action="index" />" >Startseite</a></li>
@@ -23,6 +26,9 @@
 				<li><a href="<g:createLink controller="Statistics" action="index" />" >Statistiken</a></li>
 			</ul>
 		</nav>
-		<g:layoutBody />
+		<div class="page-body">
+			<g:layoutBody />
+		</div>
+	</div>
 	</body>
 </g:applyLayout>

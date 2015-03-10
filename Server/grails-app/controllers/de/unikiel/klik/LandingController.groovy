@@ -1,6 +1,6 @@
 package de.unikiel.klik
 
-class LangingController {
+class LandingController {
 
     def index() { }
 }
