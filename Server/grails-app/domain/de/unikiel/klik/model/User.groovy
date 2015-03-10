@@ -2,14 +2,24 @@ package de.unikiel.klik.model
 
 class User extends Profile {
 
-	String name
-	String email
-	ArrayList<CompletedActivity> completedActivities
+	private String email;
+	private ArrayList<CompletedActivity> completedActivities;
 	
     static constraints = {
     }
 	
-	def completeAcitivty(Activity activity) {
-		this.completedActivties.add(activity)
+	public User(String name, String email) {
+		this.name = name;
+		this.email = email;
+		this.completedActivities = new ArrayList<CompletedActivity>();
+	}
+	
+	void completeAcitivityNow(Activity activity) {
+		CompletedActivity completedActivity = new CompletedActivity(activity, new Date())
+		this.completedActivities.add(completedActivity);
+	}
+	
+	public ArrayList<CompletedActivity> getCompletedActivities() {
+		return this.completedActivities;
 	}
 }
