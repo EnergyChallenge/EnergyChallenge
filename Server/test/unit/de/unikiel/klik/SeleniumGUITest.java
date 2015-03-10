@@ -15,20 +15,20 @@ public class SeleniumGUITest {
 	@Before
 	public void setUp() throws Exception {
 		//set the maximum amount of loading time for a website
-		driver.manage().timeouts().pageLoadTimeout(3, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
 		//extend browser window to maximum
 		driver.manage().window().maximize();
 		//open starting page URL
-		driver.get("http://localhost:8080/Server/landing/index");
+		driver.get("http://localhost:8080/Server/");
 	}
 
 	@Test
 	public void test() {
 		
-		String currentUrl = driver.getCurrentUrl();
 		//check if current URL is correct
-		String expectedUrl = "http://localhost:8080/Server/landing/index";
-		assert currentUrl.equals(expectedUrl);
+		String currentUrl = driver.getCurrentUrl();
+		String startExpectedUrl = "http://localhost:8080/Server/";
+		assert currentUrl.equals(startExpectedUrl);
 		
 		//perform a login
 		//first input the name
@@ -38,14 +38,19 @@ public class SeleniumGUITest {
 		driver.findElement(By.name("password")).sendKeys("password");
 		
 		//press login button
-		driver.findElement(By.linkText("Sign in")).click();
+		driver.findElement(By.cssSelector("input[value='Sign in']")).click();
 		
 		//navigate to "Aktivitaeten" page by pressing the button
 		driver.findElement(By.linkText("Aktivitaeten")).click();
 		//check if GUI really redirected to "Aktivitaeten"
 		currentUrl = driver.getCurrentUrl();
-		expectedUrl = "http://localhost:8080/Server/activity/index";
-		assert currentUrl.equals(expectedUrl);
+		String activityExpectedUrl = "http://localhost:8080/Server/activity/index";
+		assert currentUrl.equals(activityExpectedUrl);
+		
+		//perform a logout
+		driver.findElement(By.name("logout")).submit();
+		currentUrl = driver.getCurrentUrl();
+		assert currentUrl.equals(startExpectedUrl);
 	}
 	
 	@After
