@@ -6,7 +6,7 @@
 
 	</head>
 	<content tag="topRight"> 
-	<g:form name="signInForm" url="[action:'signIn',controller:'authorisation']">
+	<g:form name="signInForm" url="[action:'signIn',controller:'auth']">
 		<input type="hidden" name="targetUri" value="${targetUri}" />
 		<table>
 			<tbody>

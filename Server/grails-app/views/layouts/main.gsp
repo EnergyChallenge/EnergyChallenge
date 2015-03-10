@@ -9,7 +9,7 @@
 	</head>
 	<content tag="topRight"> 
 		Informationen zum Benutzer... (Rechts oben)<br>
-		<g:form name="logout" url="[action:'signOut',controller:'authorisation']">
+		<g:form name="logout" url="[action:'signOut',controller:'auth']">
 			<g:submitButton name="logout" value="Logout" />
 		</g:form> 
 	</content>

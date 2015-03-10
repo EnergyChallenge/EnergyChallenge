@@ -1,6 +1,6 @@
 package de.unikiel.klik.model
 
-class User extends Profile {
+class KlikUser extends Profile {
 
 	String name
 	String email
