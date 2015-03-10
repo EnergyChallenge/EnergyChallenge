@@ -11,6 +11,7 @@
     <string name="navigation_option4">Activitäten</string>
     <string name="navigation_option5">Energiesparvorschläge</string>
     <string name="navigation_option6">Optionen</string>
+    <string name="navigation_option7">JSON Test</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -48,5 +49,8 @@
 
     //Options
     <string name="options_title">Optionen</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

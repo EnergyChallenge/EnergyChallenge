@@ -108,6 +108,7 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.navigation_option4),
                         getString(R.string.navigation_option5),
                         getString(R.string.navigation_option6),
+                        "JSON Test"
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
