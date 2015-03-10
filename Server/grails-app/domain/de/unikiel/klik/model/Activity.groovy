@@ -1,15 +1,24 @@
 package de.unikiel.klik.model
 
-import java.time.*
+// TODO implement duration
+//import java.time.*
 
 class Activity {
 
-	String title
-	byte points
+	private String title;
+	private int points;
+	
 	// TODO implement Duration property
 	//Duration duration
 	
 	
     static constraints = {
     }
+	
+	public Activity(String title, int points) {
+		this.title = title;
+		this.points = points;
+	}
+	
+	
 }
