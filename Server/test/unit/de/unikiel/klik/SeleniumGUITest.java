@@ -30,6 +30,16 @@ public class SeleniumGUITest {
 		String expectedUrl = "http://localhost:8080/Server/landing/index";
 		assert currentUrl.equals(expectedUrl);
 		
+		//perform a login
+		//first input the name
+		driver.findElement(By.name("username")).sendKeys("user");
+		
+		//type the password
+		driver.findElement(By.name("password")).sendKeys("password");
+		
+		//press login button
+		driver.findElement(By.linkText("Sign in")).click();
+		
 		//navigate to "Aktivitaeten" page by pressing the button
 		driver.findElement(By.linkText("Aktivitaeten")).click();
 		//check if GUI really redirected to "Aktivitaeten"
