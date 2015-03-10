@@ -1,25 +1,32 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+<g:applyLayout name="base">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title><g:layoutTitle default="Grails"/> - EnergyChallenge</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
-		<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
-		<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
-  		<asset:stylesheet src="application.css"/>
-		<asset:javascript src="application.js"/>
-		<g:layoutHead/>
+
+<asset:stylesheet src="main.css" />
+<asset:stylesheet src="navigation.css" />
+
+<g:layoutHead />
+
 	</head>
+	<content tag="topRight"> 
+		Informationen zum Benutzer... (Rechts oben)<br>
+		<g:form name="logout" url="[action:'signOut',controller:'auth']">
+			<g:submitButton name="logout" value="Logout" />
+		</g:form> 
+	</content>
 	<body>
-		<header id="header">
-			<a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a>
-			<h1>EnergyChallenge (Header)</h1>
-			<div>Informationen zum Benutzer... (Rechts oben)</div>
-		</header>
-		<g:layoutBody/>
-		<footer class="footer" role="contentinfo">Footer</footer>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+	<div class="mainBody">
+		<nav>
+			<ul class="ix">
+				<li><a href="<g:createLink controller="Landing" action="index" />" >Startseite</a></li>
+				<li><a href="<g:createLink controller="Activity" action="index" />" >Aktivitaeten</a></li>
+				<li><a href="<g:createLink controller="Ranking" action="index" />" >Rangliste</a></li>
+				<li><a href="<g:createLink controller="Proposal" action="index" />" >Vorschlaege</a></li>
+				<li><a href="<g:createLink controller="Statistics" action="index" />" >Statistiken</a></li>
+			</ul>
+		</nav>
+		<div class="pageBody">
+			<g:layoutBody />
+		</div>
+	</div>
 	</body>
-</html>
+</g:applyLayout>
