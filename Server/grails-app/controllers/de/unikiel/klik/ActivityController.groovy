@@ -1,6 +1,6 @@
 package de.unikiel.klik
 
-class DummyController {
+class ActivityController {
 
     def index() { }
 }
