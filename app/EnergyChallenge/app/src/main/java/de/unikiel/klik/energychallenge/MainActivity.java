@@ -20,6 +20,9 @@ public class MainActivity extends ActionBarActivity
     // The current title viewable on the activity
     private CharSequence currentTitle;
 
+    // Temp Application context TODO
+    private Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Load the state and initial layout
@@ -90,7 +93,7 @@ public class MainActivity extends ActionBarActivity
                         .commit();
                 break;
             case 7:
-                // JSON Test fragment
+                //Options (settings) fragment
                 currentTitle = getString(R.string.navigation_option7);
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, JsonTestFragment.newInstance())
