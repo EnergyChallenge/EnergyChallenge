@@ -42,27 +42,9 @@ public class JsonTestFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-
-        // START BLABBLABLABLA
         Context context = getActivity().getApplicationContext();
 
-        String stringUrl = "http://headers.jsontest.com/";
-        ConnectivityManager connMgr = (ConnectivityManager)
-                getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
 
-        if (networkInfo != null && networkInfo.isConnected()) {
-
-            new DownloadWebpageTask().execute(stringUrl);
-
-        } else {
-
-            Toast.makeText(context, "No network connection available.", Toast.LENGTH_SHORT).show();
-
-            Log.v("Output:", "No network connection available.");
-        }
-
-        // END BLABBLABA
 
 
 
@@ -96,6 +78,30 @@ public class JsonTestFragment extends Fragment {
 
 
     private void fillTeamRankingList() {
+
+
+        Context context = getActivity().getApplicationContext();
+
+        // START BLABBLABLABLA
+
+        String stringUrl = "http://headers.jsontest.com/";
+        ConnectivityManager connMgr = (ConnectivityManager)
+                getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+        if (networkInfo != null && networkInfo.isConnected()) {
+
+            new DownloadWebpageTask().execute(stringUrl);
+
+        } else {
+
+            Toast.makeText(context, "No network connection available.", Toast.LENGTH_SHORT).show();
+
+            Log.v("Output:", "No network connection available.");
+        }
+
+        // END BLABBLABA
+
         rankingTeamData.add("Team 1");
         rankingTeamData.add("Team 2");
 
