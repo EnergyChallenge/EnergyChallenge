@@ -34,6 +34,7 @@ public class DownloadWebpageTask extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         //Log.v("Result:", result);
+        //Do something
     }
 
     private String downloadUrl(String myurl) throws IOException {

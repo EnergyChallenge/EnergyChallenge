@@ -20,14 +20,16 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import de.unikiel.klik.energychallenge.utils.DownloadWebpageTask;
 
 
 public class JsonTestFragment extends Fragment {
 
-    private List<String> your_array_list = new ArrayList<String>();
-    private ArrayAdapter adapter;
+    private List<String> rankingTeamData = new ArrayList<>();
+
+    private ArrayAdapter rankingTeamAdapter;
 
     public JsonTestFragment() {
     }
@@ -38,11 +40,10 @@ public class JsonTestFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
 
-
+        // START BLABBLABLABLA
         Context context = getActivity().getApplicationContext();
 
         String stringUrl = "http://headers.jsontest.com/";
@@ -61,9 +62,15 @@ public class JsonTestFragment extends Fragment {
             Log.v("Output:", "No network connection available.");
         }
 
+        // END BLABBLABA
+
+
+
+
         //Swap in the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_json_test, container, false);
 
+        // Setting Listeners
         Button button = (Button) view.findViewById(R.id.button_send);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,34 +79,26 @@ public class JsonTestFragment extends Fragment {
             }
         });
 
+        //Setting Adapter for List
+        ListView list = (ListView) view.findViewById(R.id.ranking_team_list);
+        rankingTeamAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, rankingTeamData);
+        list.setAdapter(rankingTeamAdapter);
 
-        your_array_list.add("foo");
-        your_array_list.add("bar");
-
-
-        ListView list = (ListView) view.findViewById(R.id.list);
-        adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, your_array_list);
-        list.setAdapter(adapter);
-
+        //Fill List with Data
+        fillTeamRankingList();
 
         return view;
     }
 
     public void buttonPressed() {
-        Context context = getActivity().getApplicationContext();
-        Toast.makeText(context, "Buttton pressed!.", Toast.LENGTH_SHORT).show();
-
-        your_array_list.add("Moin Moin");
-        your_array_list.add("Was geht ab?");
-        adapter.notifyDataSetChanged();
-
+        fillTeamRankingList();
     }
 
-    private void getDataFromServer() {
-        getDataFromServer("");
-    }
-    private void getDataFromServer(String text) {
 
-    }
+    private void fillTeamRankingList() {
+        rankingTeamData.add("Team 1");
+        rankingTeamData.add("Team 2");
 
+        rankingTeamAdapter.notifyDataSetChanged();
+    }
 }
