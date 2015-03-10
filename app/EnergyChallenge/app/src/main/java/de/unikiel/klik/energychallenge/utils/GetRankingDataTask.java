@@ -2,7 +2,9 @@ package de.unikiel.klik.energychallenge.utils;
 
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -13,17 +15,26 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * Created by Soeren on 10.03.2015.
- */
-public class DownloadWebpageTask extends AsyncTask<String, Void, String> {
+public class GetRankingDataTask extends AsyncTask<String, Void, String> {
+
+    private List<String> rankingTeamData = new ArrayList<>();
+
+    private ArrayAdapter rankingTeamAdapter;
+
+    public GetRankingDataTask(List<String> rankingTeamData, ArrayAdapter rankingTeamAdapter) {
+        this.rankingTeamData = rankingTeamData;
+        this.rankingTeamAdapter = rankingTeamAdapter;
+    }
+
 
     @Override
     protected String doInBackground(String... params) {
 
         try {
-            return downloadUrl(params[0]);
+            return downloadUrl();
         } catch (IOException e) {
             return "Unable to retrieve web page. URL may be invalid.";
         }
@@ -35,16 +46,33 @@ public class DownloadWebpageTask extends AsyncTask<String, Void, String> {
     protected void onPostExecute(String result) {
         //Log.v("Result:", result);
         //Do something
+
+        try {
+            JSONObject resultInJson = new JSONObject(result);
+            JSONArray ranking = resultInJson.getJSONArray("Ranking");
+
+            for(int i = 0; i < ranking.length(); i++) {
+                rankingTeamData.add(ranking.getJSONObject(i).getString("Name"));
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+
+        rankingTeamAdapter.notifyDataSetChanged();
+        Log.v("Task:", "Läuft");
     }
 
-    private String downloadUrl(String myurl) throws IOException {
+    private String downloadUrl() throws IOException {
         InputStream is = null;
         // Only display the first 500 characters of the retrieved
         // web page content.
         int len = 500;
 
         try {
-            URL url = new URL(myurl);
+            URL url = new URL("http://soerenhenning.de/getRankingTeams.json");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(10000 /* milliseconds */);
             conn.setConnectTimeout(15000 /* milliseconds */);
@@ -57,16 +85,6 @@ public class DownloadWebpageTask extends AsyncTask<String, Void, String> {
 
             // Convert the InputStream into a string
             String contentAsString = readIt(is, len);
-            try {
-                JSONObject contentAsJson = new JSONObject(contentAsString);
-                String host = contentAsJson.getString("Host");
-                String userAgent = contentAsJson.getString("User-Agent");
-
-                Log.v("JSON Host:", host);
-                Log.v("JSON User-Agent:", userAgent);
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
 
             return contentAsString;
 
