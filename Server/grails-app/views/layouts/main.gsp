@@ -1,7 +1,5 @@
 <g:applyLayout name="base">
 	<head>
-<%-- <asset:stylesheet src="application.css"/>
-		<asset:javascript src="application.js"/> --%>
 
 <asset:stylesheet src="main.css" />
 <asset:stylesheet src="navigation.css" />

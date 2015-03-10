@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage
 class Profile {
 
 	String name
-	BufferedImage avatar
+	//BufferedImage avatar
 	
     static constraints = {
     }
