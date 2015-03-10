@@ -1,15 +1,18 @@
 @CHARSET "UTF-8";
 
+
 .mainBody {
 	position: relative;
 }
-.nav {
+
+.nav  {
 	position: absolute;
 	top:0px;
 	left:0px;
 }
-.page-Body{
+.pageBody{
 	position: absolute;
 	top:0px;
-	right: 0px;
+	
+	left:200px;
 }

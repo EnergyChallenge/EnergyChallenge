@@ -5,11 +5,11 @@
 		<title>EnergyChallenge</title>
 	</head>
 	<body>
-		<div id="page-body">
-			<h1>Hello from... <em>Landing</em>!</h1>
+		
+			<h1>Hello from... <em>Activity</em>!</h1>
 			<p>
 				Unsere erste Website mit Grails!
 			</p>
-		</div>
+		
 	</body>
 </html>

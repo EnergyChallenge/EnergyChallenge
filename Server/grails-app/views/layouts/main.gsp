@@ -26,7 +26,7 @@
 				<li><a href="<g:createLink controller="Statistics" action="index" />" >Statistiken</a></li>
 			</ul>
 		</nav>
-		<div class="page-body">
+		<div class="pageBody">
 			<g:layoutBody />
 		</div>
 	</div>
