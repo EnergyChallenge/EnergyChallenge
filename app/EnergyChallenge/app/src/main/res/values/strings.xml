@@ -23,7 +23,7 @@
     <string name="title_activity_main">Energy Challenge</string>
 
     //Main Fragment (Landing Page)
-    <string name="main_title">Energy Challenge</string>
+    <string name="main_title">Favoriten</string>
     <string name="main_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et nisl tristique, rhoncus nulla non, pharetra nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sollicitudin scelerisque metus, eget facilisis odio gravida sed. Suspendisse laoreet rutrum nisi, nec vestibulum felis euismod ut. Pellentesque auctor scelerisque neque, quis suscipit nibh auctor quis. Maecenas mollis pulvinar nunc vel hendrerit. Vestibulum facilisis ac tellus id faucibus. Ut aliquam auctor augue quis rhoncus.</string>
 
     //My Profile
@@ -40,6 +40,8 @@
 
     //Rankings List
     <string name="rankings_title">Rangliste</string>
+    <string name="rankings_userTab">Benutzer</string>
+    <string name="rankings_teamsTab">Teams</string>
 
     //Activities
     <string name="activities_title">Activitäten</string>
