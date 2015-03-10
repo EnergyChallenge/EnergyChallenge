@@ -49,6 +49,8 @@
 
     //Options
     <string name="options_title">Optionen</string>
+    <string name="options_notifications">Benachrichtigungen</string>
+    <string name="options_logout">Ausloggen</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
