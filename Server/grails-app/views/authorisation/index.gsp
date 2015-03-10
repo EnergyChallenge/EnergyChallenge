@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta name="layout" content="public"/>
+		<meta name="layout" content="main"/>
 		<title>EnergyChallenge</title>
 	</head>
 	<body>
-		
-			<h1>Hello from... <em>Sören</em>!</h1>
+			<h1>Hello from... <em>Landing</em>!</h1>
 			<p>
 				Unsere erste Website mit Grails!
 			</p>
-		
 	</body>
 </html>
