@@ -8,25 +8,28 @@ import spock.lang.*
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
-//@TestFor(KlikUserController)
+
 @Mock([KlikUser, Activity, CompletedActivity])
 class KlikUserSpec extends Specification {
 
-    def setup() { // executed before each feature method
+    def setupSpec() { // executed before the first feature method
 		// create fixture for all feature methods
     }
 
-    def cleanup() { // executed after each feature method
-    }
-
-    def "completing an activity should add it to completed activities and increase the users points"() {
+	def setup() { // executed before each feature method
+		def user1 = new KlikUser(name: "User1")
+		user1.save(flush: true)
+	}
+    
+	def "completing an activity should add it to completed activities and increase the users points"() {
 		setup: "create a user and an activity"
 		// create fixture for THIS test
-		def testUser = new KlikUser(name: "Wolfgang", email: "wolfgang@mail.uni-kiel.de")
+		def testUser = new KlikUser(name: "Wolfgang")
+		testUser.save(flush: true)
 		def activity = new Activity(title: "Fahrradfahren", points: 3)
 		
 		expect: "new users have no points"
-		testUser.countPoints() == 0
+		testUser.getPoints() == 0
 		
 		when: "user completes activity once"
 		testUser.completeActivityNow(activity)
@@ -36,12 +39,18 @@ class KlikUserSpec extends Specification {
 		testUser.getCompletedActivities().toArray(new CompletedActivity[0])[0].getActivity() == activity
 		
 		and: "activity points are added to the users points"
-		testUser.countPoints() == activity.getPoints()
+		testUser.getPoints() == activity.getPoints()
 		
 		when: "activity is completed twice"
 		testUser.completeActivityNow(activity)
 		
 		then: "users points should double"
-		testUser.countPoints() == 2*activity.getPoints()
+		testUser.getPoints() == 2*activity.getPoints()
     }
+	
+	def "test setupSpec"() {
+		expect:
+		KlikUser.list().size() == 1
+		KlikUser.findByName("User1").getName() == "User1"
+	} 
 }

@@ -13,7 +13,7 @@
 		<thead>
 			<tr>
 				<td>Rang</td>
-				<td>Name</td>
+				<td>${typeprefix}name</td>
 				<td>Punkte</td>
 			</tr>
 		</thead>

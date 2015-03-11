@@ -13,6 +13,8 @@ class KlikUser extends Profile {
 	//team nullabel: true
     }
 	
+	static transients = ['getPoints']
+	
 	
 	def completeActivityNow(Activity activity) {
 		def completedActivity = new CompletedActivity(activity: activity, date: new Date())
@@ -20,11 +22,12 @@ class KlikUser extends Profile {
 	}
 	
 	
-	def int countPoints() {
+	def int getPoints() {
 		int sum = 0
 		for(completedActivity in completedActivities) {
 			sum += completedActivity.getActivity().getPoints()
 		}
 		return(sum)
 	}
+
 }

@@ -6,9 +6,9 @@ class RankingController {
 
     def index() {
 		if(params.view=="team") {
-			[profils:ModelImpl.getInstance().getTeams()]
+			render view: "index", model: [profils:ModelImpl.getInstance().getTeams(), typeprefix: "Team"]
 		}else {
-			[profils:ModelImpl.getInstance().getUsers()]
+			render view: "index", model: [profils:ModelImpl.getInstance().getUsers(), typeprefix: "User"]
 		}
 	}
 	def profil() {
