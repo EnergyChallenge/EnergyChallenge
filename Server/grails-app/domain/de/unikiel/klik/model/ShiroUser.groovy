@@ -1,6 +1,6 @@
 package de.unikiel.klik.model
 
-class ShiroUser {
+class ShiroUser extends KlikUser {
     String username
     String passwordHash
     
