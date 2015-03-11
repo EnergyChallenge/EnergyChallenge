@@ -2,11 +2,11 @@ package de.unikiel.klik.model
 
 class KlikUser extends Profile {
 
-	String email;
+	//String email; // is in ShiroUser
 	static hasMany = [completedActivities: CompletedActivity]
 	
     static constraints = {
-		email nullable: false
+		//email nullable: false
 		completedActivities nullable: true 
     }
 		
