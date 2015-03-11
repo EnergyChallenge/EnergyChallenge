@@ -5,9 +5,10 @@ package de.unikiel.klik.model
 
 class Profile {
 
-	protected String name;
+	String name
 	//protected BufferedImage avatar
 	
     static constraints = {
+		name nullable: false
     }
 }
