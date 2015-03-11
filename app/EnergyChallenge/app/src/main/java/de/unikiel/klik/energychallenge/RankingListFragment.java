@@ -1,18 +1,18 @@
 package de.unikiel.klik.energychallenge;
 
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TabHost;
-import android.widget.TabHost.TabSpec;
 
 
 /* Fragment for viewing team and user rankings */
 public class RankingListFragment extends Fragment {
+
+    private FragmentTabHost rankingsTabHost;
 
     public RankingListFragment() {
     }
@@ -26,27 +26,27 @@ public class RankingListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        //Create the tabhost
-        TabHost rankingsTabHost;
-        rankingsTabHost = (TabHost) container.findViewById(R.id.rankings_tabhost);
+            //Create the tab host
+            rankingsTabHost = new FragmentTabHost(getActivity());
+            rankingsTabHost.setup(getActivity(), getChildFragmentManager(), R.id.rankings_tabs);
 
-        //Set the name and behaviours of the tabs
-        TabSpec tabSpec1 = rankingsTabHost.newTabSpec("firstTab");
-        tabSpec1.setIndicator("Benutzer");
-        tabSpec1.setContent(new Intent(this.getActivity(), UserRankingsTab.class));
+            //Add the tabs
+            rankingsTabHost.addTab(rankingsTabHost.newTabSpec("users").setIndicator("Benutzer"),
+                                   UserRankingsTabFragment.class, null);
+            rankingsTabHost.addTab(rankingsTabHost.newTabSpec("teams").setIndicator("Teams"),
+                                   TeamRankingsTabFragment.class, null);
 
-        TabSpec tabSpec2 = rankingsTabHost.newTabSpec("secondTab");
-        tabSpec2.setIndicator("Teams");
-        tabSpec2.setContent(new Intent(this.getActivity(), TeamRankingsTab.class));
+            //TODO Getting the users and teams and their respective scores from the controller
+            //TODO Populate the layout with the user and team rankings
 
-        //Add the tabs to the tabhost
-        rankingsTabHost.addTab(tabSpec1);
-        rankingsTabHost.addTab(tabSpec2);
-
-        //Swap in the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ranking_list, container, false);
-
-        //TODO Getting the users and teams and their respective scores from the controller
-        //TODO Populate the layout with the user and team rankings
+            return rankingsTabHost;
     }
+
+    /* Destroy the tab host when it is no longer needed */
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        rankingsTabHost = null;
+    }
+
 }
