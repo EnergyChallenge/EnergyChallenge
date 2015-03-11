@@ -8,4 +8,6 @@ class StatisticsController {
 		def pageVisitsLast10Days = [50,300,500,700,1000,800,900,800,950,1042] as grails.converters.JSON;
 		[mostPopularActivitys : mostPopularActivitys, pageVisitsLast10Days: pageVisitsLast10Days];
 	}
+	def test() {
+	}
 }
