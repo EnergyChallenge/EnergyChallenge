@@ -18,7 +18,10 @@ public class SeleniumGUITest {
 	WebDriver driver = new FirefoxDriver();
 	//declare a maximum waiting time for specific elements
 	WebDriverWait driverWait = new WebDriverWait(driver, 5);
+	//declare a default Webelement to access and use different elements from the website
+	WebElement element;
 
+	
 	@Before
 	public void setUp() throws Exception {
 		//set the maximum amount of loading time for a website
@@ -27,48 +30,74 @@ public class SeleniumGUITest {
 		driver.manage().window().maximize();
 	}
 
+	
 	@Test
 	public void test() {
 		
 		//open starting page URL
 		driver.get("http://localhost:8080/Server/");
 		//check if current URL is correct
+		assert verifyUrl("http://localhost:8080/Server/");
+		
+		//perform a login with the username user and the password password
+		login("user", "password");
+		
+		//navigate through the website and check if the redirections work
+		navigateToPageByLinkText("Aktivitaeten");
+		assert verifyUrl("http://localhost:8080/Server/activity/index");
+		navigateToPageByLinkText("Rangliste");
+		assert verifyUrl("http://localhost:8080/Server/ranking/index");
+
+		logout();
+		assert verifyUrl("http://localhost:8080/Server/");
+	}
+	
+	
+	//verifying that the current URL is the expected one
+	public boolean verifyUrl(String expectedUrl){
+		
 		String currentUrl = driver.getCurrentUrl();
-		String startExpectedUrl = "http://localhost:8080/Server/";
-		assert currentUrl.equals(startExpectedUrl);
+		return currentUrl.equals(expectedUrl);
+	}
+	
+	
+	//perform a login by filling the required text fields and clicking the login button
+	public void login(String username, String password) {
 		
-		//perform a login
-		//choose the text input field for the user name if it is available on time and type "user"
-		WebElement element = driverWait.until(ExpectedConditions.presenceOfElementLocated(By.name("username")));
-		element.sendKeys("user");
+		//selecting the text field for user name and filling it in
+		element = driverWait.until(ExpectedConditions.presenceOfElementLocated(By.name("username")));
+		element.sendKeys(username);
 		
-		//select the input field for the password and put in "password"
-		element = driverWait.until(ExpectedConditions.presenceOfElementLocated(By.name("password")));;
-		element.sendKeys("password");
+		//selecting the field for password and filling it in
+		element = driverWait.until(ExpectedConditions.presenceOfElementLocated(By.name("password")));
+		element.sendKeys(password);
 		
-		//select and press the login button
+		//selecting and pressing the login button
 		element = driverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[value='Sign in']")));
 		element.click();
+	}
+	
+	
+	//navigate to a subpage within the web application, given by its link text
+	public void navigateToPageByLinkText(String linkText){
 		
-		//navigate to "Aktivitaeten" page by selecting and pressing the button
-		element = driverWait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Aktivitaeten")));
+		//get the link element specified by the given link text
+		element = driverWait.until(ExpectedConditions.presenceOfElementLocated(By.linkText(linkText)));
 		element.click();
-		//check if GUI really redirected to "Aktivitaeten"
-		currentUrl = driver.getCurrentUrl();
-		String activityExpectedUrl = "http://localhost:8080/Server/activity/index";
-		assert currentUrl.equals(activityExpectedUrl);
+	}
+	
+	
+	//logout by selecting and clicking the logout button
+	public void logout(){
 		
-		//perform a logout
 		element = driverWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[value='Logout']")));
 		element.click();
-		
-		//check if logout worked by checking the current URL
-		currentUrl = driver.getCurrentUrl();
-		assert currentUrl.equals(startExpectedUrl);
 	}
+	
 	
 	@After
 	public void tearDown(){
+		
 		driver.close();
 	}
 }
