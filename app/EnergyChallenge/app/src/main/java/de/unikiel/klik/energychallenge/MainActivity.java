@@ -1,5 +1,6 @@
 package de.unikiel.klik.energychallenge;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -19,6 +20,9 @@ public class MainActivity extends ActionBarActivity
     // The current title viewable on the activity
     private CharSequence currentTitle;
 
+    // Temp Application context TODO
+    private Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //Load the state and initial layout
@@ -33,6 +37,7 @@ public class MainActivity extends ActionBarActivity
         mainNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
     }
 
     public void onSectionAttached(int position) {
@@ -85,6 +90,20 @@ public class MainActivity extends ActionBarActivity
                 currentTitle = getString(R.string.navigation_option6);
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, OptionsFragment.newInstance())
+                        .commit();
+                break;
+            case 7:
+                //JSON Test fragment
+                currentTitle = getString(R.string.navigation_option7);
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, JsonTestFragment.newInstance())
+                        .commit();
+                break;
+            case 8:
+                //UI Example fragment
+                currentTitle = getString(R.string.navigation_option8);
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, ExampleFragment.newInstance())
                         .commit();
                 break;
 

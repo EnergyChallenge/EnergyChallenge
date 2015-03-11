@@ -15,7 +15,7 @@
 	<g:layoutHead />
 </head>
 <body>
-	<header id="header">
+	<header>
 		<!-- Here is the Page head -->
 		<div class="topLeft">
 			<a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a>

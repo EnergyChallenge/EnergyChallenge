@@ -1,11 +1,12 @@
 package de.unikiel.klik.model
 
-import java.awt.image.BufferedImage
+// TODO avatar
+//import java.awt.image.BufferedImage
 
 class Profile {
 
-	String name
-	BufferedImage avatar
+	protected String name;
+	//protected BufferedImage avatar
 	
     static constraints = {
     }
