@@ -45,10 +45,11 @@
     <string name="rankings_teamsTab">Teams</string>
 
     //Activities
-    <string name="activities_title">Activitäten</string>
+    <string name="activities_title">Activitäten Erledigen</string>
 
     //Proposals
     <string name="proposals_title">Vorschläge</string>
+    <string name="proposals_create">Vorschlagen</string>
 
     //Options
     <string name="options_title">Optionen</string>
