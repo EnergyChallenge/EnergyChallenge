@@ -5,17 +5,20 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 import java.util.concurrent.TimeUnit;
 
 public class SeleniumGUITest {
 	
+	//declare a driver to test the grails project in firefox browser
 	WebDriver driver = new FirefoxDriver();
 
 	@Before
 	public void setUp() throws Exception {
 		//set the maximum amount of loading time for a website
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 		//extend browser window to maximum
 		driver.manage().window().maximize();
 		//open starting page URL
@@ -31,24 +34,29 @@ public class SeleniumGUITest {
 		assert currentUrl.equals(startExpectedUrl);
 		
 		//perform a login
-		//first input the name
-		driver.findElement(By.name("username")).sendKeys("user");
+		//choose the text input field for the user name and put in "user"
+		WebElement element = driver.findElement(By.name("username"));
+		element.sendKeys("user");
 		
-		//type the password
-		driver.findElement(By.name("password")).sendKeys("password");
+		//select the input field for the password and put in "password"
+		element = driver.findElement(By.name("password"));
+		element.sendKeys("password");
 		
-		//press login button
-		driver.findElement(By.cssSelector("input[value='Sign in']")).click();
+		//select and press the login button
+		element = driver.findElement(By.cssSelector("input[value='Sign in']"));
+		element.click();
 		
-		//navigate to "Aktivitaeten" page by pressing the button
-		driver.findElement(By.linkText("Aktivitaeten")).click();
+		//navigate to "Aktivitaeten" page by selecting and pressing the button
+		element = driver.findElement(By.linkText("Aktivitaeten"));
+		element.click();
 		//check if GUI really redirected to "Aktivitaeten"
 		currentUrl = driver.getCurrentUrl();
 		String activityExpectedUrl = "http://localhost:8080/Server/activity/index";
 		assert currentUrl.equals(activityExpectedUrl);
 		
 		//perform a logout
-		driver.findElement(By.name("logout")).submit();
+		element = driver.findElement(By.cssSelector("input[value='Logout']"));
+		element.click();
 		currentUrl = driver.getCurrentUrl();
 		assert currentUrl.equals(startExpectedUrl);
 	}
