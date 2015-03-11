@@ -48,7 +48,7 @@ class AuthController {
 			//if (params.targetUri) {
 			//	redirect(uri: targetUri)
 			//}
-			redirect(controller:"landing")
+			redirect(controller: 'landing', action: 'index')
         }
         catch (AuthenticationException ex){
             // Authentication failed, so display the appropriate message
