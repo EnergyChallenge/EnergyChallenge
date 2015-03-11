@@ -3,10 +3,12 @@ package de.unikiel.klik.model
 interface IProfil {
 	public String getName();
 	public getAvatar();
-	int getPoints();
-	int getRank();
-	long getID();
-	// getAllActivitys();
-	// getRecentActivitys(int number);
-	// getActivitys(int from, int to);
+	public int getPoints();
+	public int getRank();
+	public long getID();
+	public ArrayList<IProfil> getLinked();
+	public boolean isUser();
+	public boolean isTeam();
+	ArrayList<ICompletedActivity> getRecentCompletedActivitys(int number);
+	ArrayList<ICompletedActivity> getAllCompletetActivitys();
 }

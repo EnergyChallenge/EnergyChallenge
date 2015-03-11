@@ -1,5 +1,8 @@
 package de.unikiel.klik.model
 
 interface IProposal {
-	//TODO
+	public String getName();
+	public String getDescription();
+	public int getDurationInMinutes();
+	public int getRating();
 }

@@ -50,5 +50,10 @@ $(document).ready(function(){
 </head>
 <body>
 	<div id="chart1" style="height: 300px; width: 375px;"></div>
+	<g:if test="${userName }">
+	<h1>${username }</h1>
+	  
+	</g:if>
+	
 </body>
 </html>

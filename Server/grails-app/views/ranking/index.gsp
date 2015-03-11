@@ -10,23 +10,22 @@
 		Hello from... <em>Ranking</em>!
 	</h1>
 	<table class="ranking">
-			
-	<thead>
-	<tr>
+		<thead>
+			<tr>
 				<td>Rang</td>
 				<td>Name</td>
 				<td>Punkte</td>
 			</tr>
-	</thead>
+		</thead>
 		<tbody>
-			
 			<g:each in="${profils}" var="profil">
+			<%-- TODO Link to Profil --%>
 				<tr onklick="window.location.href = '/';">
 					<td>
 						${profil.getRank()}.
 					</td>
 					<td>
-						${profil.getName()}
+						${profil.getName()} 
 					</td>
 					<td>
 						${profil.getPoints()}

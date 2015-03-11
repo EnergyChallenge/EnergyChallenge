@@ -1,6 +1,7 @@
 package de.unikiel.klik;
 import grails.converters.JSON;
-
+import org.apache.shiro.subject.Subject
+import org.apache.shiro.*
 class StatisticsController {
 
     def index() { 
@@ -9,5 +10,6 @@ class StatisticsController {
 		[mostPopularActivitys : mostPopularActivitys as JSON, pageVisitsLast10Days: pageVisitsLast10Days as JSON];
 	}
 	def test() {
+		[userName: org.apache.shiro.SecurityUtils.getSubject().getPrincipal()]
 	}
 }
