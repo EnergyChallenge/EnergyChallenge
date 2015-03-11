@@ -11,4 +11,7 @@ class RankingController {
 			[profils:ModelImpl.getInstance().getUsers()]
 		}
 	}
+	def profil() {
+		
+	}
 }
