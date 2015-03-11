@@ -5,18 +5,10 @@ import java.util.Date;
 
 class CompletedActivity {
 
-	private Date date;
-	private Activity activity;
+	Date date
+	Activity activity
 	 
     static constraints = {
     }
 	
-	public CompletedActivity(Activity activity, Date date) {
-		this.date = date;
-		this.activity = activity;
-	}
-	
-	public Activity getActivity() {
-		return this.activity;
-	}
 }
