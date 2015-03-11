@@ -20,16 +20,16 @@
 	</thead>
 		<tbody>
 			
-			<g:each in="${users}" var="user">
+			<g:each in="${profils}" var="profil">
 				<tr onklick="window.location.href = '/';">
 					<td>
-						${user.getRank()}.
+						${profil.getRank()}.
 					</td>
 					<td>
-						${user.getName()}
+						${profil.getName()}
 					</td>
 					<td>
-						${user.getPoints()}
+						${profil.getPoints()}
 					</td>
 
 				</tr>
