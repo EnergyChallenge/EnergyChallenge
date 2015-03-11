@@ -1,5 +1,8 @@
 package de.unikiel.klik.model.profilmanager
 
+import java.util.ArrayList;
+
+import de.unikiel.klik.model.ICompletedActivity;
 import de.unikiel.klik.model.IProfil
 
 class Profil implements IProfil {
@@ -36,6 +39,31 @@ class Profil implements IProfil {
 	@Override
 	public int getRank() {
 		return this.rang;
+	}
+	@Override
+	public ArrayList<IProfil> getLinked() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public boolean isUser() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public boolean isTeam() {
+		// TODO Auto-generated method stub
+		return !isUser();
+	}
+	@Override
+	public ArrayList<ICompletedActivity> getRecentCompletedActivitys(int number) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public ArrayList<ICompletedActivity> getAllCompletetActivitys() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
