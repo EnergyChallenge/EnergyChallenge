@@ -14,16 +14,21 @@ import java.util.concurrent.TimeUnit;
 
 public class SeleniumGUITest {
 	
-	//declare a driver to test the grails project in firefox browser
-	WebDriver driver = new FirefoxDriver();
+	//declare a browser driver to test the grails project
+	WebDriver driver;
 	//declare a maximum waiting time for specific elements
-	WebDriverWait driverWait = new WebDriverWait(driver, 5);
+	WebDriverWait driverWait;
 	//declare a default Webelement to access and use different elements from the website
 	WebElement element;
 
 	
 	@Before
 	public void setUp() throws Exception {
+		
+		//initialize the driver for firefox browser
+		driver = new FirefoxDriver();
+		//specify the maximum amount of time the driver should wait for specific elements
+		driverWait = new WebDriverWait(driver, 5);
 		//set the maximum amount of loading time for a website
 		driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 		//extend browser window to maximum
