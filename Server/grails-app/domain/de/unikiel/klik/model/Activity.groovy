@@ -5,20 +5,17 @@ package de.unikiel.klik.model
 
 class Activity {
 
-	private String title;
-	private int points;
+	String title;
+	int points;
 	
 	// TODO implement Duration property
 	//Duration duration
 	
 	
     static constraints = {
+		title nullable: false
+		points nullable: false
     }
-	
-	public Activity(String title, int points) {
-		this.title = title;
-		this.points = points;
-	}
 	
 	
 }
