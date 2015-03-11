@@ -73,6 +73,7 @@ public class GetRankingDataTask extends AsyncTask<String, Void, String> {
 
         try {
             URL url = new URL("http://soerenhenning.de/getRankingTeams.json");
+            //URL url = new URL("http://localhost:8080/Server/App/getRankingTeams");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(10000 /* milliseconds */);
             conn.setConnectTimeout(15000 /* milliseconds */);
