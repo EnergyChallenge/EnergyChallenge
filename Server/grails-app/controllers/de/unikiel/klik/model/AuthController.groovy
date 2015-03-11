@@ -1,12 +1,8 @@
-package de.unikiel.klik
+package de.unikiel.klik.model
 
-import de.unikiel.klik.model.ShiroUser;
-import de.unikiel.klik.model.ShiroRole;
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.authc.AuthenticationException
 import org.apache.shiro.authc.UsernamePasswordToken
-import org.apache.shiro.crypto.SecureRandomNumberGenerator
-import org.apache.shiro.crypto.hash.Sha256Hash
 import org.apache.shiro.web.util.SavedRequest
 import org.apache.shiro.web.util.WebUtils
 
@@ -45,10 +41,7 @@ class AuthController {
             SecurityUtils.subject.login(authToken)
 
             log.info "Redirecting to '${targetUri}'."
-			//if (params.targetUri) {
-			//	redirect(uri: targetUri)
-			//}
-			redirect(controller:"landing")
+            redirect(uri: targetUri)
         }
         catch (AuthenticationException ex){
             // Authentication failed, so display the appropriate message
@@ -69,8 +62,7 @@ class AuthController {
             }
 
             // Now redirect back to the login page.
-            //redirect(action: "login", params: m)
-			redirect(uri: "/")
+            redirect(action: "login", params: m)
         }
     }
 
@@ -82,47 +74,7 @@ class AuthController {
         // For now, redirect back to the home page.
         redirect(uri: "/")
     }
-	def register = {
-		
-	}
-	def signUp = {
-		// Check to see if the username already exists
-		def user = ShiroUser.findByUsername(params.username)
-		if (user) {
-			flash.message = "User already exists with the username '${params.username}'"
-			redirect(action:'register')
-		}
-		// User doesn't exist with username. Let's create one
-		else {
-			// Make sure the passwords match
-			if (params.password != params.password2) {
-				flash.message = "Passwords do not match"
-				redirect(action:'register')
-			}
-			// Passwords match. Let's attempt to save the user
-			else {
-				// Create user
-				def passwordSalt = new SecureRandomNumberGenerator().nextBytes().getBytes()
-				def password=params.password
-				user = new ShiroUser(username:params.username,passwordHash: new Sha256Hash(password).toHex(),passwordSalt:passwordSalt)
-			   //TODO add Facultaet
-				if (user.save()) {
-					// Add USER role to new user
-					def userRole =  ShrioRole.findByName('user') //TODO does not work
-                    user.addToRoles(userRole)
-					user.save()
-					// Login user
-					def authToken = new UsernamePasswordToken(user.username, password)
-					SecurityUtils.subject.login(authToken)
-					
-					redirect(controller: 'landing', action: 'index')
-				}
-				else {
-					//TODO login failed
-				}
-			}
-		}
-	}
+
     def unauthorized = {
         render "You do not have permission to access this page."
     }
