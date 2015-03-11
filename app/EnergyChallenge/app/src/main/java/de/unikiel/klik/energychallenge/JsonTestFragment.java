@@ -16,8 +16,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.unikiel.klik.energychallenge.utils.GetRankingDataTask;
-
 
 public class JsonTestFragment extends Fragment {
 

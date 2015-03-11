@@ -1,4 +1,4 @@
-package de.unikiel.klik.energychallenge.utils;
+package de.unikiel.klik.energychallenge;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -12,6 +12,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import de.unikiel.klik.energychallenge.Config;
+import de.unikiel.klik.energychallenge.utils.IoX;
+import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 // TODO Handle Exceptions
 
