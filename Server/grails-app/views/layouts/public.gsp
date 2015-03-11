@@ -29,10 +29,10 @@
 			</tbody>
 		</table>
 	</g:form> 
-	<g:form name="signInForm" url="[action:'forgotPassword',controller:'authorisation']">
+	<g:form name="forgotPasswordForm" url="[action:'forgotPassword',controller:'auth']">
 		<input type="submit" value="ForgotPassword" />
 	</g:form> 
-	<g:form name="signInForm" url="[action:'register',controller:'authorisation']">
+	<g:form name="registerFrom" url="[action:'register',controller:'auth']">
 		<input type="submit" value="registrieren" />		
 	</g:form> 
 	</content>

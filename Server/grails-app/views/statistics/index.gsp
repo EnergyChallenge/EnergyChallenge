@@ -12,6 +12,7 @@
 <asset:javascript src="jqplot/plugins/jqplot.canvasTextRenderer.min.js" />
 <asset:javascript
 	src="jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js" />
+<asset:javascript src="jqplot/plugins/jqplot.dateAxisRenderer.min.js" />
 <asset:javascript src="jqplot/plugins/jqplot.pieRenderer.min.js" />
 
 <g:javascript>

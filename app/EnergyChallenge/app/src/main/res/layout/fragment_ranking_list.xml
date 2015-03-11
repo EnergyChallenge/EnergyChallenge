@@ -17,18 +17,12 @@
         android:layout_height="fill_parent"
         android:orientation="vertical">
 
+        <!-- Tabs -->
         <TabWidget
             android:id="@+id/rankings_tabs"
             android:layout_height="wrap_content"
             android:layout_width="fill_parent">
         </TabWidget>
-
-        <!-- Rankings list -->
-        <ListView
-            android:id="@+id/rankings_tabcontent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </ListView>
 
     </LinearLayout>
 
