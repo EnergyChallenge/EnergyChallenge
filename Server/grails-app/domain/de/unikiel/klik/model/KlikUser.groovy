@@ -4,6 +4,7 @@ class KlikUser extends Profile {
 
 	//String email; // is in ShiroUser
 	static hasMany = [completedActivities: CompletedActivity]
+	static hasOne = [team: Team]
 	
     static constraints = {
 		//email nullable: false

@@ -4,6 +4,7 @@ import java.util.List;
 
 import de.unikiel.klik.model.IProfil;
 import de.unikiel.klik.model.KlikUser;
+import de.unikiel.klik.model.Team
 
 class ProfilManager {
 	static private ProfilManager instance;
@@ -20,7 +21,14 @@ class ProfilManager {
 	}
 
 	public ArrayList<IProfil> getTeams() {
-		return null;
+		ArrayList<IProfil> profils = new ArrayList<IProfil>();
+		int i = 1;
+		//for(KlikUser user :KlikUser.listOrderByPoints(order: "desc")) {
+		for(Team team :Team.listOrderByName(order: "desc")) {
+			profils.add(new Profil(team,i));
+			i++;
+		}
+		return profils
 	}
 
 	public ArrayList<IProfil> getUsers() {
@@ -29,9 +37,6 @@ class ProfilManager {
 		//for(KlikUser user :KlikUser.listOrderByPoints(order: "desc")) {
 		for(KlikUser user :KlikUser.listOrderByName(order: "desc")) {
 			profils.add(new Profil(user,i));
-			profils.get(0).getRank();
-			profils.get(0).getName();
-			profils.get(0).getPoints();
 			i++;
 		}
 		return profils;
