@@ -3,17 +3,10 @@
     android:layout_height="match_parent"
     tools:context="de.unikiel.klik.energychallenge.JsonTestFragment">
 
-    <GridLayout
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:columnCount="2"
-        android:rowCount="2">
-
-        <EditText android:id="@+id/edit_message"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Input here" />
+        android:orientation="vertical">
 
         <Button android:id="@+id/button_send"
             android:layout_width="wrap_content"
@@ -21,10 +14,10 @@
             android:text="Send" />
 
         <ListView
-            android:id="@+id/list"
+            android:id="@+id/ranking_team_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_columnSpan="2" />
-    </GridLayout>
+    </LinearLayout>
 
 </FrameLayout>

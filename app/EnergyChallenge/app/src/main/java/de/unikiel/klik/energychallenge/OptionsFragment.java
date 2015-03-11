@@ -27,4 +27,8 @@ public class OptionsFragment extends Fragment {
 
         //TODO Alter the layout to the users current settings
     }
+
+    public void logOut() {
+        //TODO Logout Action
+    }
 }

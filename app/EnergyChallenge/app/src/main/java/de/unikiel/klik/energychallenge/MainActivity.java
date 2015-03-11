@@ -93,10 +93,17 @@ public class MainActivity extends ActionBarActivity
                         .commit();
                 break;
             case 7:
-                //Options (settings) fragment
+                //JSON Test fragment
                 currentTitle = getString(R.string.navigation_option7);
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, JsonTestFragment.newInstance())
+                        .commit();
+                break;
+            case 8:
+                //UI Example fragment
+                currentTitle = getString(R.string.navigation_option8);
+                fragmentManager.beginTransaction()
+                        .replace(R.id.container, ExampleFragment.newInstance())
                         .commit();
                 break;
 
