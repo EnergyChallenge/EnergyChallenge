@@ -30,15 +30,16 @@ class UserController {
 	  log.info("File uploaded: $user.avatarType")
 	
 	  // Validation works, will check if the image is too big
-	  if (!user.save()) {
+	  if (!user.save(flush: true)) {
 		render(view:'select_avatar', model:[user:user])
 		return
 	  }
 	  flash.message = "Avatar (${user.avatarType}, ${user.avatar.size()} bytes) uploaded."
+	  //redirect(action:'show',model:[user:user])
 	  redirect(action:'show')
 	}
 	def avatar_image() {
-		def avatarUser = User.get(params.id)
+		def avatarUser = Profile.get(params.id)
 		if (!avatarUser || !avatarUser.avatar || !avatarUser.avatarType) {
 		  response.sendError(404)
 		  return
