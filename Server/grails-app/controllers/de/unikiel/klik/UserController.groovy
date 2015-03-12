@@ -50,6 +50,7 @@ class UserController {
 		out.close()
 	  }
 	def show() {
-		
+		Profile user = ShiroUser.findByUsername(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()); //TODO
+		[user:user]
 	}
 }
