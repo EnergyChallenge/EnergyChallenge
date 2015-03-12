@@ -5,7 +5,7 @@ import android.app.FragmentManager;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.support.v13.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTabHost;
+import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +17,8 @@ public class RankingListFragment extends Fragment {
 
     //private FragmentTabHost rankingsTabHost; Old Tabhost
     private FragmentPagerAdapter adapterViewPager;
+
+    float actionBarElevation;
 
     public RankingListFragment() {
     }
@@ -37,9 +39,18 @@ public class RankingListFragment extends Fragment {
             adapterViewPager = new MyPagerAdapter(getFragmentManager());
             vpPager.setAdapter(adapterViewPager);
 
-
+            actionBarElevation = getActivity().getActionBar().getElevation();
+            getActivity().getActionBar().setElevation(0);
+            PagerTabStrip vpPagerHeader = (PagerTabStrip) view.findViewById(R.id.pager_header);
+            vpPagerHeader.setElevation(actionBarElevation);
 
             return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        getActivity().getActionBar().setElevation(actionBarElevation);
+        super.onDestroyView();
     }
 
     public class MyPagerAdapter extends FragmentPagerAdapter {
