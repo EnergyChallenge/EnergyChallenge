@@ -1,7 +1,7 @@
 package de.unikiel.klik
 
 import de.unikiel.klik.model.Profile;
-import de.unikiel.klik.model.ShiroUser;
+import de.unikiel.klik.model.User;
 //From: https://grails.org/wiki/Simple%20Avatar%20Uploader
 
 class UserController {
@@ -12,7 +12,7 @@ class UserController {
 		
 	}
 	def upload_avatar() {
-	  Profile user = ShiroUser.findByUsername(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()); //TODO
+	  Profile user = User.findByUsername(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()); //TODO
 	  //springSecurityService.currentUser // or however you select the current user
 	  // Get the avatar file from the multi-part request
 	  def f = request.getFile('avatar')
@@ -51,7 +51,7 @@ class UserController {
 		out.close()
 	  }
 	def show() {
-		Profile user = ShiroUser.findByUsername(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()); //TODO
+		Profile user = User.findByUsername(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()); //TODO
 		[user:user]
 	}
 }

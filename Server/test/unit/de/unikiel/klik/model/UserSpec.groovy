@@ -3,11 +3,11 @@ package de.unikiel.klik.model
 import grails.test.mixin.*
 import spock.lang.*
 
-@Mock([KlikUser, Activity, CompletedActivity])
-class KlikUserSpec extends Specification {
+@Mock([User, Activity, CompletedActivity])
+class UserSpec extends Specification {
 	
 	def setup() { // executed before each feature method
-		def user = new KlikUser(name: "User1")
+		def user = new User(name: "User1")
 		user.save(flush: true)
 		def activity = new Activity(title: "Fahrradfahren", points: 3)
 		activity.save(flush: true)

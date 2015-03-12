@@ -8,7 +8,7 @@ import spock.lang.Specification
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
  */
 @TestFor(Team)
-@Mock([KlikUser, Team])
+@Mock([User, Team])
 class TeamSpec extends Specification {
 
     def setup() {
@@ -20,7 +20,7 @@ class TeamSpec extends Specification {
     void "Teams must have at least one member"() {
 		setup:
 		def team = new Team(name: "team1")
-		def user = new KlikUser(name: "user1")
+		def user = new User(name: "user1")
 		
 		expect: "a team without members is invalid"
 		!team.validate()

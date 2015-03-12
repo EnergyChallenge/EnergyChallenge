@@ -13,7 +13,7 @@ import org.apache.shiro.crypto.hash.Sha256Hash
  * See the API for {@link grails.test.mixin.support.GrailsUnitTestMixin} for usage instructions
  */
 @TestFor(AuthController)
-@Mock([ShiroUser, ShiroRole, KlikUser])
+@Mock([User, Role, User])
 class AuthControllerSpec extends Specification {
 
     def setup() {
@@ -25,10 +25,10 @@ class AuthControllerSpec extends Specification {
 	@Ignore // currently not working
     void "test something"() {
 		setup: "create user"
-		def userRole = new ShiroRole(name: "user")
+		def userRole = new Role(name: "user")
 		userRole.addToPermissions("*:*")
 		userRole.save();
-		def user = new ShiroUser(username: "user", passwordHash: new Sha256Hash("password").toHex(), name: "Max Mustermann")
+		def user = new User(username: "user", passwordHash: new Sha256Hash("password").toHex(), name: "Max Mustermann")
 		user.addToRoles(userRole)
 		user.save()
 		

@@ -2,7 +2,7 @@ package de.unikiel.klik.model.profilmanagement
 
 import java.util.List;
 
-import de.unikiel.klik.model.KlikUser;
+import de.unikiel.klik.model.User;
 import de.unikiel.klik.model.Team
 
 class ProfilManager {
@@ -34,7 +34,7 @@ class ProfilManager {
 		ArrayList<IProfil> profils = new ArrayList<IProfil>();
 		int i = 1;
 		//for(KlikUser user :KlikUser.listOrderByPoints(order: "desc")) {
-		for(KlikUser user :KlikUser.listOrderByName(order: "desc")) {
+		for(User user :User.listOrderByName(order: "desc")) {
 			profils.add(new Profil(user,i));
 			i++;
 		}
