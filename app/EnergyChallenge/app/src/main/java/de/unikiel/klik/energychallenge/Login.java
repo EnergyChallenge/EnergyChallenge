@@ -2,12 +2,12 @@ package de.unikiel.klik.energychallenge;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.view.View;
 
 
 /*The initial login activity which is bypassed if the user is already logged in*/
-public class Login extends ActionBarActivity {
+public class Login extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

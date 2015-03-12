@@ -1,9 +1,12 @@
 package de.unikiel.klik.energychallenge;
 
 
+import android.app.FragmentManager;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
+import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +15,8 @@ import android.view.ViewGroup;
 /* Fragment for viewing team and user rankings */
 public class RankingListFragment extends Fragment {
 
-    private FragmentTabHost rankingsTabHost;
+    //private FragmentTabHost rankingsTabHost; Old Tabhost
+    private FragmentPagerAdapter adapterViewPager;
 
     public RankingListFragment() {
     }
@@ -26,27 +30,58 @@ public class RankingListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-            //Create the tab host
-            rankingsTabHost = new FragmentTabHost(getActivity());
-            rankingsTabHost.setup(getActivity(), getChildFragmentManager(), R.id.rankings_tabs);
+            View view = inflater.inflate(R.layout.fragment_ranking_list, container, false);
 
-            //Add the tabs
-            rankingsTabHost.addTab(rankingsTabHost.newTabSpec("users").setIndicator("Benutzer"),
-                                   UserRankingsTabFragment.class, null);
-            rankingsTabHost.addTab(rankingsTabHost.newTabSpec("teams").setIndicator("Teams"),
-                                   TeamRankingsTabFragment.class, null);
+            //TODO Objectnames
+            ViewPager vpPager = (ViewPager) view.findViewById(R.id.vpPager);
+            adapterViewPager = new MyPagerAdapter(getFragmentManager());
+            vpPager.setAdapter(adapterViewPager);
 
-            //TODO Getting the users and teams and their respective scores from the controller
-            //TODO Populate the layout with the user and team rankings
 
-            return rankingsTabHost;
+
+            return view;
     }
 
-    /* Destroy the tab host when it is no longer needed */
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        rankingsTabHost = null;
+    public class MyPagerAdapter extends FragmentPagerAdapter {
+        private int numOfItems = 2;
+
+        public MyPagerAdapter(FragmentManager fragmentManager) {
+            super(fragmentManager);
+
+        }
+
+        // Returns total number of pages
+        @Override
+        public int getCount() {
+            return numOfItems;
+        }
+
+        // Returns the fragment to display for that page
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0: // User ranking fragment
+                    return UserRankingsTabFragment.newInstance();
+                case 1: // Team ranking fragment
+                    return TeamRankingsTabFragment.newInstance();
+                default:
+                    return null;
+            }
+        }
+
+        // Returns the page title for the top indicator
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0: // Title for user ranking
+                    return getString(R.string.rankings_userTab);
+                case 1: // Title for team ranking
+                    return getString(R.string.rankings_teamsTab);
+                default:
+                    return null;
+            }
+        }
+
     }
 
 }

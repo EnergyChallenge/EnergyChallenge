@@ -2,16 +2,16 @@ package de.unikiel.klik.energychallenge;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
+import android.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.app.ActionBar;
+import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
 /* Main app activity */
-public class MainActivity extends ActionBarActivity
+public class MainActivity extends Activity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     // Fragment that manges the behaviour, interaction and appearance of the navigation drawer
@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity
 
         // Set up the navigation drawer
         mainNavigationDrawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+                getFragmentManager().findFragmentById(R.id.navigation_drawer);
         currentTitle = getTitle();
 
         mainNavigationDrawerFragment.setUp(
@@ -45,7 +45,7 @@ public class MainActivity extends ActionBarActivity
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentManager fragmentManager = getFragmentManager();
         //Fragment selectedFragment;
 
         //Swap in a new fragment to match the navigation selection and change the activity title
@@ -112,7 +112,7 @@ public class MainActivity extends ActionBarActivity
 
     //Bring the action bar elements back after the drawer is closed
     public void restoreActionBar() {
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(currentTitle);
