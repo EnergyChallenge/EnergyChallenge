@@ -1,4 +1,6 @@
-package de.unikiel.klik.model
+package de.unikiel.klik.model.profilmanagement
+
+import de.unikiel.klik.model.activitymanagement.ICompletedActivity;
 
 interface IProfil {
 	public String getName();
@@ -6,6 +8,10 @@ interface IProfil {
 	public int getPoints();
 	public int getRank();
 	public long getID();
+	/**
+	 * 
+	 * @return Team if Profil is a User / Members if Profil is a Team
+	 */
 	public ArrayList<IProfil> getLinked();
 	public boolean isUser();
 	public boolean isTeam();

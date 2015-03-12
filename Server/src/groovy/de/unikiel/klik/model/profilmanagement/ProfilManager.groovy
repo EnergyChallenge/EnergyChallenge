@@ -1,8 +1,7 @@
-package de.unikiel.klik.model.profilmanager
+package de.unikiel.klik.model.profilmanagement
 
 import java.util.List;
 
-import de.unikiel.klik.model.IProfil;
 import de.unikiel.klik.model.KlikUser;
 import de.unikiel.klik.model.Team
 
