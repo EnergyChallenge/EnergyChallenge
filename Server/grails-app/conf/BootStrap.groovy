@@ -7,7 +7,7 @@ class BootStrap {
 		def userRole = new ShiroRole(name: "user")
 		userRole.addToPermissions("*:*")
 		userRole.save();
-		def user = new ShiroUser(username: "user", passwordHash: new Sha256Hash("password").toHex())
+		def user = new ShiroUser(username: "user", passwordHash: new Sha256Hash("password").toHex(), name: "Max Mustermann")
         user.addToRoles(userRole)
 		user.save()
     }

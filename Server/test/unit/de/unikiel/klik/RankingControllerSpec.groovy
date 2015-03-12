@@ -1,12 +1,10 @@
 package de.unikiel.klik
 
-import grails.test.mixin.TestFor
-import spock.lang.Specification
+import grails.test.mixin.*
+import spock.lang.*
 
-/**
- * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
- */
 @TestFor(RankingController)
+
 class RankingControllerSpec extends Specification {
 
     def setup() {
@@ -15,6 +13,17 @@ class RankingControllerSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
+    def "in team ranking table title should be Teamname"() {
+		when : "team ranking is chosen"
+		params.view = "team"
+		controller.index()
+		
+		then: "index.gsp is rendered"
+		view == "/ranking/index"
+		
+		and: "tabletitle is Teamname"
+		model.tabletitle == "Teamname"
+		
+		
     }
 }
