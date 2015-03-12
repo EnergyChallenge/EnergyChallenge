@@ -10,7 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -43,12 +45,20 @@ public class JsonTestFragment extends Fragment {
 
         //Setting Adapter for List
         ListView list = (ListView) view.findViewById(R.id.ranking_team_list);
-        rankingTeamAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, rankingTeamData);
+        rankingTeamAdapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, rankingTeamData);
         list.setAdapter(rankingTeamAdapter);
 
         //Fill List with Data
         fillTeamRankingList();
 
+        // Setting Listeners
+        Button button = (Button) view.findViewById(R.id.button_refresh);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               fillTeamRankingList();
+            }
+        });
 
         return view;
     }
@@ -68,4 +78,12 @@ public class JsonTestFragment extends Fragment {
         }
 
     }
+
+
+
+
+
+
+
+
 }
