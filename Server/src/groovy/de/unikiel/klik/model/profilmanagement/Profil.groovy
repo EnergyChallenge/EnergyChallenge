@@ -1,9 +1,8 @@
-package de.unikiel.klik.model.profilmanager
+package de.unikiel.klik.model.profilmanagement
 
 import java.util.ArrayList;
 
-import de.unikiel.klik.model.ICompletedActivity;
-import de.unikiel.klik.model.IProfil
+import de.unikiel.klik.model.activitymanagement.ICompletedActivity;
 
 class Profil implements IProfil {
 	private de.unikiel.klik.model.Profile profil;
