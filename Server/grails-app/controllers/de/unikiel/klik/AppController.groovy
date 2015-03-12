@@ -12,6 +12,11 @@ class AppController {
 	
 	def getRankingTeams() {
 		
+		TimeZone reference = TimeZone.getTimeZone("GMT");
+		Calendar myCal = Calendar.getInstance(reference);
+		def currentTime = myCal.getTime();
+		
+		
 		def team1 = [
 			name : "Team 1",
 			punkte : 2048];
@@ -29,7 +34,7 @@ class AppController {
 			punkte : 256];
 		
 		def team5 = [
-			name : "Team 5",
+			name : "CurrentTime Team - " + currentTime,
 			punkte : 128];
 		
 		def ranking = [team1, team2, team3, team4, team5];

@@ -6,6 +6,7 @@ import de.unikiel.klik.model.exceptions.FacultyNotFoundException;
 import de.unikiel.klik.model.exceptions.InvalidPasswordException;
 import de.unikiel.klik.model.exceptions.InvalidUserNameException;
 
+
 interface IAuthorisation {
 	void register(String emailAdress, String password, String passwordConfirmation, String Faculty) throws InvalidUserNameException,InvalidPasswordException,FacultyNotFoundException,IOException;
 	void login(String emailAdress, String password, boolean rememberMe)throws AuthenticationException;

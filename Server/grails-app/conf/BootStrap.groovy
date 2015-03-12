@@ -1,13 +1,13 @@
-import de.unikiel.klik.model.ShiroRole
-import de.unikiel.klik.model.ShiroUser
+import de.unikiel.klik.model.Role
+import de.unikiel.klik.model.User
 import org.apache.shiro.crypto.hash.Sha256Hash
 class BootStrap {
 
     def init = { servletContext ->
-		def userRole = new ShiroRole(name: "user")
+		def userRole = new Role(name: "user")
 		userRole.addToPermissions("*:*")
 		userRole.save();
-		def user = new ShiroUser(username: "user", passwordHash: new Sha256Hash("password").toHex(), name: "Max Mustermann")
+		def user = new User(username: "user", passwordHash: new Sha256Hash("password").toHex(), name: "Max Mustermann")
         user.addToRoles(userRole)
 		user.save()
     }

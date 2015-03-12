@@ -6,9 +6,13 @@ package de.unikiel.klik.model
 class Profile {
 
 	String name
-	//protected BufferedImage avatar
+	
+	byte[] avatar
+	String avatarType
 	
     static constraints = {
 		name nullable: false
+		avatar(nullable:true, maxSize: 512*1024 /* 512K */)
+		avatarType(nullable:true)
     }
 }

@@ -15,11 +15,11 @@ import java.util.concurrent.TimeUnit;
 public class SeleniumGUITest {
 	
 	//declare a browser driver to test the grails project
-	WebDriver driver;
+	private WebDriver driver;
 	//declare a maximum waiting time for specific elements
-	WebDriverWait driverWait;
+	private WebDriverWait driverWait;
 	//declare a default Webelement to access and use different elements from the website
-	WebElement element;
+	private WebElement element;
 
 	
 	@Before

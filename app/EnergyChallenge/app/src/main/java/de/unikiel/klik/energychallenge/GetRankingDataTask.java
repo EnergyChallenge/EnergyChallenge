@@ -31,11 +31,13 @@ public class GetRankingDataTask extends GetDataFromServerTask {
     @Override
     protected void handleServerResponse(JSONObject response) {
 
+        rankingTeamData.clear();
+
         try {
-            JSONArray ranking = response.getJSONArray("Ranking");
+            JSONArray ranking = response.getJSONArray("ranking");
 
             for(int i = 0; i < ranking.length(); i++) {
-                rankingTeamData.add(ranking.getJSONObject(i).getString("Name"));
+                rankingTeamData.add(ranking.getJSONObject(i).getString("name"));
             }
 
         } catch (JSONException e) {

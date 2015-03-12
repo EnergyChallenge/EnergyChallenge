@@ -8,7 +8,7 @@
 
 	</head>
 	<content tag="topRight"> 
-		Informationen zum Benutzer... (Rechts oben)<br>
+		<h2>Loged in as: ${org.apache.shiro.SecurityUtils.getSubject().getPrincipal() }</h2><br>
 		<g:form name="logoutFrom" url="[action:'signOut',controller:'auth']">
 			<input type="submit" value="Logout" />
 		</g:form> 
