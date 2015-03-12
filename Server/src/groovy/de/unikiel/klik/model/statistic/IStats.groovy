@@ -1,4 +1,4 @@
-package de.unikiel.klik.model
+package de.unikiel.klik.model.statistic
 
 interface IStats {
 	public def getTop10Activitys();
