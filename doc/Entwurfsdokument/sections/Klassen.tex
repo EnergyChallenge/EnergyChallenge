@@ -26,10 +26,15 @@
 \paragraph{ProposalsAdapter} Zuständig für die Anzeige der Energiesparvorschläge. Bei einem Klick auf einen Vorschlag soll eine \emph{ProposalActivity} erstellt werden, in der das angeklickte Team ausgeben wird.
 
 \subsubsection{Tasks}
-\paragraph{AccessServerTask}
-\paragraph{GetTeamProfileTask}
-\paragraph{GetUserProfileTask}
-\paragraph{GetTeamRakingTask}
-\paragraph{GetActivitiesTask}
-\paragraph{GetFavoriteActivitiesTask}
-\paragraph{}
+\paragraph{AccessServerTask} Eine Klasse, die eine abstrakter Serveranfrage darstellt. Alle Serveranfragen-Klassen erben von dieser Klasse und implementieren die abstrakten Methoden \emph{createServerRequest()} und \emph{handleServerResponse()} in welchen eine Server-Anfrage gestellt wird und eine Server-Rückgabe verarbeitet wird. Die Klasse kümmert sich um den Verbindungsaufbau, die Antwort und das Parsen der Daten, so dass die abgeleiteten Methoden sich nicht mehr darum kümmern müssen.
+\paragraph{GetTeamProfileTask} Die Klasse, die dafür zuständig ist, ein Teamprofil vom Server zu laden und in der \emph{TeamProfilActivity} anzuzeigen.
+\paragraph{GetUserProfileTask} Die Klasse, die dafür zuständig ist, ein Benutzerprofil vom Server zu laden und in der \emph{UserProfilActivity} bzw. im \emph{MyProfilFragment} anzuzeigen.
+\paragraph{GetTeamRakingTask} Die Klasse, die dafür zuständig ist, das Team-Ranking vom Server zu holen und an den \emph{TeamRankingsAdapter} weiterzureichen.
+\paragraph{GetUserRakingTask} Die Klasse, die dafür zuständig ist, das Benutzer-Ranking vom Server zu holen und an den \emph{TeamRankingsAdapter} weiterzureichen.
+\paragraph{GetActivitiesTask} Die Klasse, die dafür zuständig ist, die Liste aller Aktivitäten vom Server zu holen und an den \emph{ActivitiesAdapter} weiterzureichen.
+\paragraph{GetFavoriteActivitiesTask} Die Klasse, die dafür zuständig ist, die Liste der favorisierten Aktivitäten vom Server zu holen und im \emph{MainFragment} anzuzeigen.
+\paragraph{GetProposalsTask} Die Klasse, die dafür zuständig ist, die Energiesparvorschläge vom Server zu holen und an den \emph{ProposalsAdapter} weiterzureichen.
+\paragraph{GetProposalTask} Die Klasse, die dafür zuständig ist, einen konkreten Energiesparvorschlag vom Server zu laden und in der \emph{ProposalActivity} anzuzeigen.
+\paragraph{SearchTask} Die Klasse, die dafür zuständig ist, eine Suchanfrage an den Server zu stellen und das Ergebnis in der \emph{SearchActivity} anzuzeigen.
+\paragraph{DoActivityTask} Die Klasse, die dafür zuständig ist, dem Server mitzuteilen, dass ein Benutzer eine Aktivität ausgeführt hat.
+\paragraph{CommentProposalTask} Die Klasse, die dafür zuständig ist, dem Server mitzuteilen, dass ein Benutzer einen Energiesparvorschlag bewertet oder kommentiert hat.
