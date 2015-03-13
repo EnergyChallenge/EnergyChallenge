@@ -1,4 +1,4 @@
-﻿\section{Einführung}
+\section{Einführung}
 \subsection{Überblick}
 Dieses Dokument stellt den Systementwurf des EnergyChallenge-Systems dar. Im Folgenden werden diese Themen behandelt:\\
 \begin{itemize}
@@ -6,33 +6,33 @@ Dieses Dokument stellt den Systementwurf des EnergyChallenge-Systems dar. Im Fol
 \item Beschreibung der beteiligten Komponenten und deren Verteilung auf Hardware\\
 \item Strukturierung des Systems in einzelne Pakete\\
 \item Aufbau und Beschreibung der in den Paketen enthaltenen Klassen\\
-\item Beschreibung des Verhaltens von einzelnen Anwendungsfällen mit Hilfe von Sequenzdiagrammen\\
+\item Beschreibung des Verhaltens von einzelnen Anwendungsf\"allen mit Hilfe von Sequenzdiagrammen\\
 \end{itemize}\\
 \subsection{Technologien}\\
 Das in diesem Dokument beschriebene System verwendet die folgenden Technologien:\\
 Android\\
-Android ist ein auf mobilen Gerüten lauffähgies Betriebssystem sowie eine Software-Plattform fuer z.B. Handys und Tablets , welches auf einer stark abgeänderten Version von Linux basiert. Apps, also Android Applikationen, laufen in einer Dalvik-VM, welche eine abgeänderte Java VM ist.\\
+Android ist ein auf mobilen Ger\"aten lauff\"ahiges Betriebssystem sowie eine Software-Plattform f\"ur z.B. Smartphones und Tablets , welches auf einer stark abgeänderten Version von Linux basiert (es wird ein Linux-Kernel verwendet). Apps, also Android Applikationen, laufen in der Android Runtime, einer Android-eigenen Laufzeitumgebung (ab Android 5.0).\\
 \begin{itemize}\\
 \item http://www.android.com\\
 \end{itemize}\\
 Java\\
-Java ist die Programmiersprache in der dieses Projekt zum größten Teil geschrieben ist. Dabei kommt Java meistens nicht in seiner „natürlichen“ Form vor, sondern wird z.B. durch Android Klassen ergänzt.\\
+Java ist die Programmiersprache, in der dieses Projekt größtenteils geschrieben ist. Dabei kommt Java meistens nicht in seiner „natürlichen“ Form vor, sondern wird z.B. durch Android Klassen ergänzt.\\
 \begin{itemize}
 \item http://java.oracle.com\\
 \end{itemize}\\
 GRAILS\\
-GRAILS ist ein auf der Programmiersprache Groovy aufbauendes Web Application Framework, welches mit relativ geringem Aufwand eine Möglichkeit bietet, Webseiten mit Datenbank Anbindung zu erstellen. Mit GRAILS werden auch sogenannte Groovy Server Pages (GSP), welche Inhalte in sonst statische Webseiten einbinden können.\\
+GRAILS ist ein auf der Programmiersprache Groovy aufbauendes Web Application Framework, welches mit relativ geringem Aufwand die Möglichkeit bietet, Webseiten mit Datenbank Anbindung zu erstellen. Mit GRAILS werden auch sogenannte Groovy Server Pages (GSP) erzeugt, welche Inhalte in sonst statische Webseiten einbinden können.\\
 \begin{itemize}
 \item http://grails.org\\
 \end{itemize}\\
 GORM\\
-GORM oder auch GRAILS Object-Relational Mapping ist GRAILS' integriertes ORM-Tool welches Hibernate 4 zum persistieren von Daten in einer Datenbank erlaubt.\\
+GORM oder auch GRAILS Object-Relational Mapping ist GRAILS' integriertes ORM-Tool welches Hibernate 4 zum persistieren von Daten in einer Datenbank verwendet.\\
 \begin{itemize}
 \item http://grails.org/doc/2.3.x/guide/GORM.html\\
 \item http://www.hibernate.org\\
 \end{itemize}\\
-Shiro\\
-Shiro ist ein Java Security Framework, welches zur Autorisierung und Authentifizierung von Benutzern auf Webseiten verwendet wird. Es wird das Shiro Plugin für Grails verwendet, welches viele Vorgänge automatisiert und vereinfacht.\\
+Apache Shiro\\
+Apache Shiro ist ein Java Security Framework, welches zur Autorisierung und Authentifizierung von Benutzern auf Webseiten verwendet wird. Es wird das Apache Shiro Plugin für Grails verwendet, welches viele Vorgänge automatisiert und vereinfacht.\\
 \begin{itemize}
 \item http://shiro.apache.org\\
 \item http://grails.org/plugin/shiro\\
