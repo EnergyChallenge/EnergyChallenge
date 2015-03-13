@@ -1,3 +1,35 @@
 \section{Klassen}
 \subsection{Webseite}
+
 \subsection{Android App}
+
+\subsubsection{Activities}
+\paragraph{MainActivity} Die \emph{Activity}, die für die Darstellung der Hauptfunktionen zuständig ist. Das bedeutet in ihr wird die Navigation aufgerufen und die meisten Funktionen, die als \emph{Fragment} dargestellt werden.
+\paragraph{LoginActivity} Die \emph{Activity} über die, die Anmeldung erfolgt.
+\paragraph{SearchActivity} Dient zur Ausführung einer Suche und der Anzeige der Ergebnisse.
+\paragraph{ProposalActivity} Dient zur Anzeige eines Energiesparvorschlags inklusive seiner Bewertungen und Kommentare. Ermöglicht außerdem das Bewerten und Kommentieren von Energiesparvorschlags.
+\paragraph{TeamProfilActivity} Zeigt das Profil eines Benutzers an.
+\paragraph{UserProfilActivity} Zeigt das Profil eines Teams an.
+\paragraph{MainFragment} Darstellung des Haupt-\emph{Fragments}.
+\paragraph{MyProfilFragment} Zeigt das eigene Profil an.
+\paragraph{RankinglistFragment} Zeigt das \emph{Fragment} für die Benutzer- bzw. Teamrangliste an.
+\paragraph{TeamRankingsTabFragment} Zeigt die aktuelle Team-Rangliste an.
+\paragraph{UserRankingsTabFragment} Zeigt die aktuelle Benutzer-Rangliste an.
+\paragraph{ProposalFragment} Zeigt alle Energiesparvorschläge an.
+\paragraph{NavigationFragment} Die Navigation innerhalb der Haupt-\emph{Activity}.
+
+\subsubsection{Adapters}
+\paragraph{FavoriteActivitiesAdapter} Zuständig für die Anzeige der favorisierten Aktivitäten. Von hier aus sollen auch Aktivitäten ausgeführt werden können, wenn sie angeklickt werden.
+\paragraph{ActivitiesAdapter} Zuständig für die Anzeige aller Aktivitäten. Bei einem Klick auf eine Aktivität wird diese ausgeführt.
+\paragraph{UserRankingsAdapter} Zuständig für die Anzeige der Benutzer-Rangliste. Bei einem Klick auf einen Benutzer soll eine \emph{UserProfilActivity} erstellt werden, in der der angeklickte Benutzer ausgeben wird.
+\paragraph{TeamRankingsAdapter} Zuständig für die Anzeige der Team-Rangliste. Bei einem Klick auf ein Team soll eine \emph{TeamProfilActivity} erstellt werden, in der das angeklickte Team ausgeben wird.
+\paragraph{ProposalsAdapter} Zuständig für die Anzeige der Energiesparvorschläge. Bei einem Klick auf einen Vorschlag soll eine \emph{ProposalActivity} erstellt werden, in der das angeklickte Team ausgeben wird.
+
+\subsubsection{Tasks}
+\paragraph{AccessServerTask}
+\paragraph{GetTeamProfileTask}
+\paragraph{GetUserProfileTask}
+\paragraph{GetTeamRakingTask}
+\paragraph{GetActivitiesTask}
+\paragraph{GetFavoriteActivitiesTask}
+\paragraph{}
