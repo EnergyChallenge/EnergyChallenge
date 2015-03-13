@@ -1,6 +1,7 @@
 package de.unikiel.klik.energychallenge;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -141,11 +142,18 @@ public class MainActivity extends Activity
         //Execute the appropriate action
         switch (id) {
             case R.id.action_search:
-                //TODO Implement search functionality
+                //Open the search activity
+                openSearch();
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void openSearch() {
+        //Open the search activity
+        Intent searchIntent = new Intent(this, SearchActivity.class);
+        startActivity(searchIntent);
     }
 
 }
