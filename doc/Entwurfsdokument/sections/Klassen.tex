@@ -38,3 +38,7 @@
 \paragraph{SearchTask} Die Klasse, die dafür zuständig ist, eine Suchanfrage an den Server zu stellen und das Ergebnis in der \emph{SearchActivity} anzuzeigen.
 \paragraph{DoActivityTask} Die Klasse, die dafür zuständig ist, dem Server mitzuteilen, dass ein Benutzer eine Aktivität ausgeführt hat.
 \paragraph{CommentProposalTask} Die Klasse, die dafür zuständig ist, dem Server mitzuteilen, dass ein Benutzer einen Energiesparvorschlag bewertet oder kommentiert hat.
+
+\subsubsection{Utils}
+\paragraph{IoX} Klasse, die Methoden für generelles Input/Output bereitstellt. Das ist zum aktuellen Zeitpunkt nur die Methode \emph{readInputStream}, die einen \emph{InputStream} in einen String umwandelt.
+\paragraph{ServerRequest} Klasse, die eine Serveranfrage modelliert. Eine Serveranfrage besteht aus einem Adressaten auf dem Server und aus der eigentlichen Anfrage. Die eigentliche Anfrage ist ein JSON-Objekt.
