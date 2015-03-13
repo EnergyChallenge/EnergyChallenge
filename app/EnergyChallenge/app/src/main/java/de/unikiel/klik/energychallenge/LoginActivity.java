@@ -7,7 +7,7 @@ import android.view.View;
 
 
 /*The initial login activity which is bypassed if the user is already logged in*/
-public class Login extends Activity {
+public class LoginActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
