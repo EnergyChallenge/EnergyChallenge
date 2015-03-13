@@ -1,5 +1,49 @@
 \section{Klassen}
-\subsection{Webseite}
+	\paragraph{Informationen}
+	Generell sind die Klassen aufgeteilt in unterschiedliche Bereiche. Zun\"achst die grobe Unterteilung in Klassen, die in Bezug zur Webseite stehen und Klassen mit Bezug zur Android App, dann weiter verfeinert in
+	\begin{itemize}
+		\item Modellklassen: Klassen, die sich auf die Persistenz beziehen, wie beispielsweise die verschiedenen Objekte, die in der Datenbank gespeichert werden
+		\item Controllerklassen: Klassen, die dazu dienen Nutzeranfragen und Darstellungen zu verwalten, jedoch auf die Datenbank nur lesend zugreifen. Diese Klassen sind zudem daf\"ur verantwortlich die Anzeige (mittels Views) der jeweiligen Daten, auf die sie sich beziehen, zu steuern. (Dieser Umstand trifft auf alle Controllerklassen zu und wird daher in der Beschreibung der einzelnen Klassen nicht jedes Mal explizit erw\"ahnt.)
+		\item Serviceklassen: Klassen, die Methoden enthalten, die die Datenpersistenz beeinflussen, also mit speicherndem und \"anderndem Zugriff. 
+	\end{itemize}
+	
+\subsection{Webseite} %TODO Methoden/Attribute beschreiben?
+
+\subsubsection{Modellklassen}
+	\paragraph{Activity}Enth\"alt alle Informationen \"uber eine Energiesparaktivit\"at, die von Benutzern erledigt werden kann.
+	\paragraph{CompletedActivity}Beinhaltet Informationen \"uber von Benutzern abgeschlossene Aktivit\"aten.
+	\paragraph{Profile}Verwaltet Informationen bez\"uglich der Team und Benutzerprofile.
+	\paragraph{User}Erweitert die Klasse Profile um die pers\"onlichen Informationen eines Benutzers und dient Apache Shiro zur Authentifikation.
+	\paragraph{Team}Erweitert die Klasse Profile und beinhaltet die Informationen eines Teams.
+	\paragraph{Role}Enth\"alt Informationen \"uber die verschiedenen Rollen auf der Webseite, die den Zugriff auf bestimmte Inhalte einschr\"anken.
+	\paragraph{Comment}Enth\"alt Informationen zu Kommentaren bez\"uglich Energiesparvorschl\"agen.
+	\paragraph{Proposal}Beinhaltet Informationen zu einem durch einen Benutzer eingereichten Energiesparvorschlag.
+	\paragraph{Institute}Die Klasse, die Informationen \"uber die Institutszugeh\"origkeit eines Benutzers beinhaltet.
+	\paragraph{Message}Die Klasse, die Informationen \"uber Nachrichten speichert, die an Benutzer gesendet werden können.
+	\paragraph{TeamInvite}Erweitert Message und enth\"alt Informationen bez\"uglich einer Teameinladung f\"ur einen Benutzer.
+	\paragraph{ActivityNotification}Erweitert die Klasse Message und enth\"alt Informationen \"uber eine allgemeine Erinnerungsnachricht an einen Benutzer.
+	\paragraph{SpecificActivityNotification}Erweitert Message und enth\"alt Informationen \"uber eine Erinnerungsnachricht an einen Benutzer, eine spezielle Aktivit\"at betreffend.
+
+\subsubsection{Controllerklassen}
+	\paragraph{AuthController}Verwaltet das An- und Abmelden sowie das Registrieren von Benutzern auf der Webseite.
+	\paragraph{UserController}Die Klasse, die die Einstellungen bez\"uglich eines Benutzerprofils verwaltet.
+	\paragraph{TeamController}Verwaltet die Einstellungen bez\"uglich eines Teamprofils.
+	\paragraph{AdminController}Die Klasse, die s\"amtliche adminspezifische Anfragen erm\"oglicht und verwaltet.
+	\paragraph{AppController}Die Klasse, die f\"ur die Kommunikation zwischen Server und App verantwortlich ist und Anfragen der App verarbeitet.
+	\paragraph{LandingController}Steuert die Benutzung der Landing Page (Hauptseite).
+	\paragraph{RankingController}Die Klasse, die die Benutzung der Ranglistenseite steuert.
+	\paragraph{ActivityController}Verwaltet die Benutzung der Aktivit\"atenseite und erm\"oglicht beispielsweise das erledigen von Aktivit\"aten.
+	\paragraph{ProposalController}Die Klasse, die alle Aktionen rund um Energiesparvorschl\"age und die entsprechende Webseite verwaltet.
+	\paragraph{ProfileController}Verwaltet die Profilseite eines Benutzers oder Teams.
+	\paragraph{StatisticsController}Verwaltet die Auswahl und Erstellung von Statistiken.
+
+\subsubsection{Serviceklassen}
+	\paragraph{ProposalService}Die Klasse, die neue Energiesparvorschl\"age und Kommentare dazu erm\"oglicht.
+	\paragraph{ActivityService}Erm\"oglicht verschiedene Aktionen zu Aktivit\"aten auszuf\"uhren.
+	\paragraph{MessageService}Die Klasse, die das Versenden von Teameinladungen und Erinnerungsnachrichten ausf\"uhrt.
+	\paragraph{SettingsService}Die Klasse, die alle Daten- und Einstellungs\"anderungen eines Benutzers ausf\"uhrt.
+	\paragraph{TeamService}Erm\"oglicht die \"Anderung des Avatars und Namens eines Teams.
+	\paragraph{AdminService}F\"uhrt alle Administrator-spezifischen Operationen aus, die die Datenpersistenz ver\"andern.
 
 \subsection{Android App}
 Die Klassen in \emph{Activities}, \emph{Adapters} sowie die Klasse \emph{AccessServerTask} erweitern vordefinierte Android-Klassen. Hierdurch werden viele Methoden definiert, die die vordefinierten Methoden überschreiben, wie zum Beispiel \emph{onCreate} oder \emph{onDestroyView}. Diese werden im Klassendiagramm und der folgenden Beschreibung nicht explizit aufgeführt.
