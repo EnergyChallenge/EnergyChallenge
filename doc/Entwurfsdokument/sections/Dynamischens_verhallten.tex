@@ -1,11 +1,25 @@
 \section{Dynamisches Verhallten}
 \subsection{Login/Registrierung}
+%TODO Image here
 \subsection{Aktivität erledigen}
+%TODO Image here
 \subsection{Rangliste ansehen}
+%TODO Image here
 \subsection{Team erstellen}
+%TODO Image here
 \subsection{Team blocken}
+%TODO Image here
 \subsection{Vorschlag erstellen}
+%TODO Image here
 \subsection{Vorschlag bewerten}
+%TODO Image here
 \subsection{Statistiken exportieren}
+%TODO Image here
 \subsection{Vorschlag in Aktivität umwandeln}
-\subsection{App: Rangliste ansehen}
+%TODO Image here
+\subsection{App: Benutzerrangliste ansehen}
+Die Serveranfragen in der App funktionieren alle nach dem selben Muster. Benutzerrangliste ansehen steht hier exemplarisch für weitere Anwendungsfälle dieser Art.
+%TODO Image here
+Wenn der Nutzer in der App zur Benutzerrangliste navigiert, wird diese automatisch bei der Erstellung des \emph{Fragments} geladen. Dabei wird auf ein \emph{GetUserRankingTask} die Methode \emph{execute()} aufgerufen. \emph{GetUserRankingTask} erbt von \emph{AccessServerTask}, die wiederum von der Androidklassse \emph{AsyncTask} erbt. In dem \emph{AccessServerTask} wird die Methode \emph{doInBackground()} aufgerufen, die wiederum die Methode \emph{createServerRequest} aufruft, die im \emph{GetUserRankingTask} definiert ist.\\
+Sobald die \emph{doInBackground()}-Methode fertig ausgeführt wurde, wird (vom \emph{AsyncTask}) die Methode \emph{onPostExecute()} aufgerufen, die \emph{handleServerResponse()} des \emph{GetUserRankingTask} ausführt. Hier wird dann die Darstellung im \emph{Fragment} getätigt.\\
+Der Vorteil dieser Art der Implementierung ist, dass nur einmal eine generelle Serverabfrage definiert werden muss, und sich keine weitere Gedanken um dessen Implementierung gemacht werden muss. Deswegen ist die Durchführung der HTTP-Abfrage hier auch nicht weiter aufgeführt.
