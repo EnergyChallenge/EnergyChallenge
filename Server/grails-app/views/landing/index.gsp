@@ -7,7 +7,8 @@
 	<body>
 			<h1>Hello from... <em>Landing</em>!</h1>
 			<p>
-				Unsere erste Website mit Grails!
+				${org.apache.shiro.SecurityUtils.getSubject().getProperties() }
+				${org.apache.shiro.SecurityUtils.getSubject().getSession().getId() }
 			</p>
 	</body>
 </html>

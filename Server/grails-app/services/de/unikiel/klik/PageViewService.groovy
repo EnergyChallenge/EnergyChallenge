@@ -3,9 +3,9 @@ package de.unikiel.klik
 import grails.transaction.Transactional
 
 @Transactional
-class DummyService {
+class PageViewService {
 
-    def serviceMethod() {
+    def viewPage(String url) {
 
     }
 }
