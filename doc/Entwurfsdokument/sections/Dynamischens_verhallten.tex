@@ -1,15 +1,15 @@
-﻿\section{Dynamisches Verhallten}
+\section{Dynamisches Verhallten}
 \subsection{Login/Registrierung}
 %TODO Image here
 \subsection{Aktivität erledigen}
 %TODO Image here
-Der eingeloggte Benutzer gelangt über einen Klick auf „Aktivitäten“ auf die Aktivitätenseite. Auf dieser findet er die Liste mit Aktivitäten. Durch das klicken auf die zu erledigende Aktivität wird dem Benutzer die dazugehörigen Punkte gutgeschrieben und die erledigte Aktivität wird für den Benutzer gesperrt bis die spezifische Sperrphase abgeklungen ist.\\
+Der eingeloggte Benutzer gelangt über einen Klick auf „Aktivitäten“ auf die Aktivitätenseite. Auf dieser findet er die Liste mit Aktivitäten. Durch das Klicken auf die zu erledigende Aktivität werden dem Benutzer die entsprechenden Punkte gutgeschrieben und die erledigte Aktivität wird für den Benutzer gesperrt bis die festgelegte Sperrphase abgelaufen ist.\\
 Alternativ ist das Erledigen von Aktivtäten auch auf der Landingpage ausführbar.\\
 \subsection{Rangliste ansehen}
 %TODO Image here
 \subsection{Team erstellen}
 %TODO Image here
-Der eingeloggte Benutzer, welcher in noch keinem Team ist, kann auf seiner Landingpage über den Link „Team erstellen“ ein neues Team generieren. Der Benutzer gelangt auf eine leere Teamprofilseite, in der er den Teamnamen, ein Teamfoto und eine Beschreibung des Teams eingeben kann. Anschließend bestätigt der Benutzer über einen Klick auf „Team gründen“ sein Team. Mit der Bestätigung ist der Benutzer automatisch dem Team beigetreten. Die Teamprofilseite aktualisiert sich und der Benutzer sieht seine neue Teamprofilseite mit ihm als Mitglied.\\
+Der eingeloggte Benutzer, welcher noch kein Mitglied eines Teams ist, kann auf seiner Landingpage über den Link „Team erstellen“ ein neues Team generieren. Der Benutzer gelangt auf eine leere Teamprofilseite, in der er den Teamnamen, ein Teamfoto und eine Beschreibung des Teams eingeben kann. Anschließend bestätigt der Benutzer über einen Klick auf „Team gründen“ sein Team. Mit der Bestätigung ist der Benutzer automatisch dem Team beigetreten. Die Teamprofilseite aktualisiert sich und der Benutzer sieht seine neue Teamprofilseite mit ihm als Mitglied.\\
 \subsection{Team blocken}
 %TODO Image here
 \subsection{Vorschlag erstellen}
@@ -18,7 +18,7 @@ Der eingeloggte Benutzer, welcher in noch keinem Team ist, kann auf seiner Landi
 %TODO Image here
 \subsection{Statistiken exportieren}
 %TODO Image here
-Der eingeloggte Benutzer klickt auf Statistik und gelangt auf die Statistikseite, wo er auf den Button „Herunterladen“ klickt. Nun wird dem Benutzer ein Download zur Verfügung gestellt, welcher ihm ermöglicht, die Statistiken in einer „*.csv“-Datei herunter zu laden.\\
+Der eingeloggte Benutzer klickt auf Statistik und gelangt auf die Statistikseite, wo er auf den Button „Herunterladen“ klickt. Nun wird dem Benutzer ein Download zur Verfügung gestellt, welcher ihm ermöglicht, die Statistiken in einer „*.csv“-Datei auf dem eigenen Computer zu speichern.\\
 \subsection{Vorschlag in Aktivität umwandeln}
 %TODO Image here
 \subsection{App: Benutzerrangliste ansehen}
@@ -26,4 +26,4 @@ Die Serveranfragen in der App funktionieren alle nach dem selben Muster. Benutze
 %TODO Image here
 Wenn der Nutzer in der App zur Benutzerrangliste navigiert, wird diese automatisch bei der Erstellung des \emph{Fragments} geladen. Dabei wird auf ein \emph{GetUserRankingTask} die Methode \emph{execute()} aufgerufen. \emph{GetUserRankingTask} erbt von \emph{AccessServerTask}, die wiederum von der Androidklassse \emph{AsyncTask} erbt. In dem \emph{AccessServerTask} wird die Methode \emph{doInBackground()} aufgerufen, die wiederum die Methode \emph{createServerRequest} aufruft, die im \emph{GetUserRankingTask} definiert ist.\\
 Sobald die \emph{doInBackground()}-Methode fertig ausgeführt wurde, wird (vom \emph{AsyncTask}) die Methode \emph{onPostExecute()} aufgerufen, die \emph{handleServerResponse()} des \emph{GetUserRankingTask} ausführt. Hier wird dann die Darstellung im \emph{Fragment} getätigt.\\
-Der Vorteil dieser Art der Implementierung ist, dass nur einmal eine generelle Serverabfrage definiert werden muss, und sich keine weitere Gedanken um dessen Implementierung gemacht werden muss. Deswegen ist die Durchführung der HTTP-Abfrage hier auch nicht weiter aufgeführt.
+Der Vorteil dieser Art der Implementierung ist, dass nur einmal eine generelle Serverabfrage definiert werden muss, und sich keine weitere Gedanken um dessen Implementierung gemacht werden m\"ussen. Deswegen ist die Durchführung der HTTP-Abfrage hier auch nicht weiter aufgeführt.
