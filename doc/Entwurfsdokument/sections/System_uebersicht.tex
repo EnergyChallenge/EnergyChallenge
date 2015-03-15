@@ -47,6 +47,7 @@ Benutzer können mit Hilfe eines Computers über einen Webbrowser auf eine Webse
 Der Server stellt die eben erwähnte Webseite bereit. Hier werden gegebenenfalls Datenanfragen von den Android-Geräten verarbeitet.
 
 \subsection{Paketdiagramm}
+Sowohl die Grails-Webanwendung als auch die Android-App befindet sich einem Paket \emph{de.unikiel.klik}.
 
 \subsubsection{Grails Anwendung}
 
@@ -57,6 +58,11 @@ Der Server stellt die eben erwähnte Webseite bereit. Hier werden gegebenenfalls
 \end{figure}
 
 %TODO Beschreibung der Packages
+\paragraph{persistence} In diesem Paket befinden sich die Klassen, die für die Datenhaltung zuständig sind.
+\paragraph{control} In diesem Paket befinden sich die Klassen, die für die Klassen, die Serveranfragen entgegennehmen und diese verarbeiten.
+\paragraph{control.web} Die Klassen, die Anfragen von der Website entgegen nehmen und diese verarbeiten, befinden sich in diesem Paket.
+\paragraph{control.app} Die Klassen, die Anfragen von der Android-App entgegen nehmen und diese verarbeiten, befinden sich in diesem Paket.
+\paragraph{service} In diesem Paket befinden sich Klassen, die als Bindeglied zwischen dem \emph{control}- und dem \emph{persistence}-Paket stehen. Dies sind zum einem einen Klassen, die Änderungen auf den Daten vornehmen, und zum anderen Klassen, die Methoden bereitstellen, die von verschiedenen \emph{[control]}-Klassen verwendet werden.
 
 \subsubsection{Android App}
 
