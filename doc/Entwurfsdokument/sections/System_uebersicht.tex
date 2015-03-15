@@ -4,7 +4,7 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, clip]{gfx/component_diagram}
+  \includegraphics[width=\textwidth, trim=1cm 11cm 4cm 1cm, clip]{gfx/component_diagram}
   \caption{Komponentendiagramm}
 \end{figure}
 
@@ -13,7 +13,7 @@ zentrale Datenbank, die auf dem Server liegt und s\"amtliche Daten
 enth\"alt, auf die \"uber das durch \emph{Grail's Object
   Relational Mapping} (GORM) bereitgestellte Interface zugegriffen werden kann.
 
-\paragraph{Domains} Die Domain Komponente ist die Modell
+\paragraph{Domain} Die Domain Komponente ist die Modell
 Repr\"asentation der Daten in der Datenbank. Der Zugriff erfolgt
 \"uber das IDomain Interface. Die Domain Komponenten ist unterteilt in
 die Subkomponenten \emph{Profile Management}, \emph{Proposal
@@ -31,10 +31,42 @@ Komponente Activity Management ist zuständig für die Verwaltung der Modellrepr
 
 \subsection{Verteilungsdiagramm}
 
-\subsubsection{Android-Gerät}
-Das Android-Gerät ist das Arbeitswerkzeug für die Benutzer. Auf dem Gerät ist eine native Android-Applikation installiert, mit der Daten eingegeben und abgerufen werden können. Der Benutzer muss bereits registriert sein, um die Applikation nutzen zu können.
-\subsubsection{Computer}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, trim=1cm 11cm 4cm 1cm, clip]{gfx/deployment_diagram}
+  \caption{Verteilungsdiagramm}
+\end{figure}
+
+\subsubsection{Android Device}
+Das Android Device ist das Arbeitswerkzeug für die Benutzer. Auf dem
+Gerät ist eine native Android-Applikation installiert, mit der Daten
+eingegeben und abgerufen werden können. Der Benutzer muss bereits
+registriert sein, um die Applikation nutzen zu können.
+
+\subsubsection{Client Computer}
 Benutzer können mit Hilfe eines Computers über einen Webbrowser auf eine Webseite zugreifen, welche, nach erfolgreichem einloggen, verschiedene Funktionen zur Aktivitäts- und Profilverwaltung anbietet.Des Weiteren können hier auch anonymisierte Statistiken angezeigt und diese statistischen Daten exportiert werden.
+
 \subsubsection{Server}
 Der Server stellt die eben erwähnte Webseite bereit. Hier werden gegebenenfalls Datenanfragen von den Android-Geräten verarbeitet.
+
 \subsection{Paketdiagramm}
+
+\subsubsection{Grails Anwendung}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, trim=1cm 11cm 4cm 1cm, clip]{gfx/package_diagram}
+  \caption{Verteilungsdiagramm}
+\end{figure}
+
+% TODO Beschreibung der Packages
+
+\subsubsection{Android App}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, trim=1cm 11cm 4cm 1cm, clip]{gfx/app_package_diagram}
+  \caption{Verteilungsdiagramm}
+\end{figure}
+
+% TODO Beschreibung der Pakete der Android App
