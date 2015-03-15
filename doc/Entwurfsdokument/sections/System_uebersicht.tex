@@ -2,11 +2,28 @@
 
 \subsection{Komponentendiagramm}
 
-\paragraph{Grails Database} Die Grails Database Komponente ist die zentrale Datenbank, die auf dem Server liegt und s\"amtliche Daten enth\"alt, auf die \"uber das IDatabase Interface zugegriffen werden kann.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, clip]{gfx/component_diagram}
+  \caption{Komponentendiagramm}
+\end{figure}
 
-\paragraph{Grails Domain} Die Grails Domain Komponente ist die Modell Repr\"asentation der Daten in der Datenbank. Der Zugriff erfolgt \"uber das IDomain Interface.
+\paragraph{Grails Database} Die Grails Database Komponente ist die
+zentrale Datenbank, die auf dem Server liegt und s\"amtliche Daten
+enth\"alt, auf die \"uber das durch \emph{Grail's Object
+  Relational Mapping} (GORM) bereitgestellte Interface zugegriffen werden kann.
 
-\paragraph{Grails View} Die Grails View Komponente kommuniziert mit dem Grails Controller \"uber das IView Interface und stellt die GSP Dateien zur Verf\"ugung, die das Layout der Webseite spezifizieren.
+\paragraph{Domains} Die Domain Komponente ist die Modell
+Repr\"asentation der Daten in der Datenbank. Der Zugriff erfolgt
+\"uber das IDomain Interface. Die Domain Komponenten ist unterteilt in
+die Subkomponenten \emph{Profile Management}, \emph{Proposal
+  Management} und \emph{Activity Management}. Das Profile Management
+ist zuständig für die Verwaltung der Modellrepräsentation von Team-
+und Benutzerprofilen. Das Proposal Managment ist zuständig für die
+Verwaltung der Modellrepräsentation von (Aktivitäts-) Vorschlägen. Die
+Komponente Activity Management ist zuständig für die Verwaltung der Modellrepräsentation von Aktivitäten.
+
+\paragraph{Grails Web Layer} Die Grails Web Layer Komponente kommuniziert mit dem Grails Controller \"uber das IView Interface und stellt die GSP Dateien zur Verf\"ugung, die das Layout der Webseite spezifizieren.
 
 \paragraph{Grails Controller} Die Controller Komponente besteht aus den einzelnen Controllern f\"ur Webseite und Android App und ist zust\"andig f\"ur die Verarbeitung s\"amtlicher Daten und Anfragen, die \"uber die IApp, IDomain und IView Schnittstellen kommuniziert werden.
 
