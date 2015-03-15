@@ -35,12 +35,11 @@ Landingpage möglich.
 
 \subsection{Rangliste ansehen}
 
-%TODO Sequenzdiagramm überarbeiten und dann hier einbinden:
-%\begin{figure}[H]
-%  \centering
-%  \includegraphics[width=\textwidth, clip]{gfx/rangliste_ansehen}
-%  \caption{Die Rangliste ansehen}
-%\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, clip]{gfx/Ranking_Web}
+  \caption{Die Rangliste ansehen}
+\end{figure}
 
 Der eingeloggte Admin kann ein Team über einen speziellen Button, welcher die Funktion blockTeam(teamId) aufruft, sperren. Dabei wird das Team und nacheinander jedes einzelne Teammitglied gesperrt. Nachdem dies geschehen ist, tauchen auch das Team und deren Mitglieder nicht mehr in der Teilnehmerliste auf.
 
@@ -142,12 +141,11 @@ Die Serveranfragen in der App funktionieren alle nach dem selben
 Muster. Benutzerrangliste ansehen steht hier exemplarisch für weitere
 Anwendungsfälle dieser Art.
 
-%TODO Sequenzdiagramm überarbeiten und dann hier einbinden
-%\begin{figure}[H]
-%  \centering
-%  \includegraphics[width=\textwidth, clip]{gfx/rangliste_ansehen}
-%  \caption{Benutzerrangliste ansehen in der App}
-%\end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, clip]{gfx/Ranking_App}
+  \caption{Benutzerrangliste ansehen in der App}
+\end{figure}
 
 Wenn der Nutzer in der App zur Benutzerrangliste navigiert, wird diese automatisch bei der Erstellung des \emph{Fragments} geladen. Dabei wird auf ein \emph{GetUserRankingTask} die Methode \emph{execute()} aufgerufen. \emph{GetUserRankingTask} erbt von \emph{AccessServerTask}, die wiederum von der Androidklassse \emph{AsyncTask} erbt. In dem \emph{AccessServerTask} wird die Methode \emph{doInBackground()} aufgerufen, die wiederum die Methode \emph{createServerRequest} aufruft, die im \emph{GetUserRankingTask} definiert ist.\\
 Sobald die \emph{doInBackground()}-Methode fertig ausgeführt wurde, wird (vom \emph{AsyncTask}) die Methode \emph{onPostExecute()} aufgerufen, die \emph{handleServerResponse()} des \emph{GetUserRankingTask} ausführt. Hier wird dann die Darstellung im \emph{Fragment} getätigt.\\
