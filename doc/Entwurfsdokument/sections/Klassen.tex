@@ -1,13 +1,13 @@
 \section{Klassen}
 	\paragraph{Informationen}
-	Generell sind die Klassen aufgeteilt in unterschiedliche Bereiche. Zun\"achst die grobe Unterteilung in Klassen, die in Bezug zur Webseite stehen und Klassen mit Bezug zur Android App, dann die Klassen der Webseite weiter verfeinert in
+	Generell sind die Klassen aufgeteilt in unterschiedliche Bereiche. Zun\"achst die grobe Unterteilung in Klassen, die in Bezug zur Website stehen und Klassen mit Bezug zur Android App, dann die Klassen der Website weiter verfeinert in
 	\begin{itemize}
 		\item Modellklassen: Klassen, die sich auf die Persistenz beziehen, wie beispielsweise die verschiedenen Objekte, die in der Datenbank gespeichert werden.
 		\item Controllerklassen: Klassen, die dazu dienen Nutzeranfragen und Darstellungen zu verwalten, jedoch auf die Datenbank nur lesend zugreifen. Diese Klassen sind zudem daf\"ur verantwortlich die Anzeige (mittels index() Methode) der jeweiligen Daten, auf die sie sich beziehen, zu steuern. (Dieser Umstand trifft auf alle Controllerklassen zu und wird daher in der Beschreibung der einzelnen Klassen sowie bei den Methoden nicht jedes Mal explizit erw\"ahnt.)
 		\item Serviceklassen: Klassen, die Methoden enthalten, die die Datenpersistenz beeinflussen, also mit speicherndem und \"anderndem Zugriff. 
 	\end{itemize}
 	
-\subsection{Webseite}
+\subsection{Website}
 %TODO Folgende TODOs bearbeiten!
 
 \subsubsection{Modellklassen}
@@ -49,7 +49,7 @@
 			\end{itemize}
 		\end{itemize}
 	\paragraph{Team}Erweitert die Klasse Profile und beinhaltet die Informationen eines Teams.
-	\paragraph{Role}Enth\"alt Informationen \"uber die verschiedenen Rollen auf der Webseite, die den Zugriff auf bestimmte Inhalte einschr\"anken.
+	\paragraph{Role}Enth\"alt Informationen \"uber die verschiedenen Rollen auf der Website, die den Zugriff auf bestimmte Inhalte einschr\"anken.
 	\paragraph{Comment}Enth\"alt Informationen zu Kommentaren bez\"uglich Energiesparvorschl\"agen.
 		\begin{itemize}
 			\item Attribute:
@@ -79,7 +79,7 @@
 	\paragraph{SpecificActivityNotification}Erweitert Message und enth\"alt Informationen \"uber eine Erinnerungsnachricht an einen Benutzer, eine spezielle Aktivit\"at betreffend.
 
 \subsubsection{Controllerklassen}
-	\paragraph{AuthController}Verwaltet das An- und Abmelden sowie das Registrieren von Benutzern auf der Webseite.
+	\paragraph{AuthController}Verwaltet das An- und Abmelden sowie das Registrieren von Benutzern auf der Website.
 		\begin{itemize}
 			\item Methoden:
 			\begin{itemize}
@@ -146,7 +146,7 @@
 				\item completeActivity(): Die Methode, die eine Aktivit\"at f\"ur einen Benutzer als erledigt markiert und daf\"ur sorgt, dass ihm die entsprechenden Punkte gutgeschrieben werden.
 			\end{itemize}
 		\end{itemize}
-	\paragraph{ProposalController}Die Klasse, die alle Aktionen rund um Energiesparvorschl\"age und die entsprechende Webseite verwaltet.
+	\paragraph{ProposalController}Die Klasse, die alle Aktionen rund um Energiesparvorschl\"age und die entsprechende Website verwaltet.
 		\begin{itemize}
 			\item Methoden:
 			\begin{itemize}
