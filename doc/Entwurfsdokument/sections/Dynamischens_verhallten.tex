@@ -31,7 +31,7 @@ Landingpage möglich.
 
 \subsection{Rangliste ansehen}
 
-% TODO Sequenzdiagramm überarbeiten und dann hier einbinden:
+%TODO Sequenzdiagramm überarbeiten und dann hier einbinden:
 %\begin{figure}[H]
 %  \centering
 %  \includegraphics[width=\textwidth, clip]{gfx/rangliste_ansehen}
@@ -125,18 +125,18 @@ Computer zu speichern.
   \caption{Ein Team erstellen}
 \end{figure}
 
-% TODO Beschreibung
+%TODO Beschreibung
 
 \subsection{App: Benutzerrangliste ansehen}
 Die Serveranfragen in der App funktionieren alle nach dem selben
 Muster. Benutzerrangliste ansehen steht hier exemplarisch für weitere
 Anwendungsfälle dieser Art.
 
-% TODO Sequenzdiagramm überarbeiten und dann hier einbinden
+%TODO Sequenzdiagramm überarbeiten und dann hier einbinden
 %\begin{figure}[H]
 %  \centering
 %  \includegraphics[width=\textwidth, clip]{gfx/rangliste_ansehen}
-%  \caption{Ein Team erstellen}
+%  \caption{Benutzerrangliste ansehen in der App}
 %\end{figure}
 
 Wenn der Nutzer in der App zur Benutzerrangliste navigiert, wird diese automatisch bei der Erstellung des \emph{Fragments} geladen. Dabei wird auf ein \emph{GetUserRankingTask} die Methode \emph{execute()} aufgerufen. \emph{GetUserRankingTask} erbt von \emph{AccessServerTask}, die wiederum von der Androidklassse \emph{AsyncTask} erbt. In dem \emph{AccessServerTask} wird die Methode \emph{doInBackground()} aufgerufen, die wiederum die Methode \emph{createServerRequest} aufruft, die im \emph{GetUserRankingTask} definiert ist.\\
