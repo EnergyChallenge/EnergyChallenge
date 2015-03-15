@@ -34,17 +34,14 @@ Komponente Activity Management ist zuständig für die Verwaltung der Modellrepr
   \caption{Verteilungsdiagramm}
 \end{figure}
 
-\subsubsection{Android Device}
-Das Android Device ist das Arbeitswerkzeug für die Benutzer. Auf dem
-Gerät ist eine native Android-Applikation installiert, mit der Daten
-eingegeben und abgerufen werden können. Der Benutzer muss bereits
-registriert sein, um die Applikation nutzen zu können.
-
-\subsubsection{Client Computer}
+\paragraph{Client Computer}
 Benutzer können mit Hilfe eines Computers über einen Webbrowser auf eine Website zugreifen, welche, nach erfolgreichem einloggen, verschiedene Funktionen zur Aktivitäts- und Profilverwaltung anbietet.Des Weiteren können hier auch anonymisierte Statistiken angezeigt und diese statistischen Daten exportiert werden.
 
-\subsubsection{Server}
-Der Server stellt die eben erwähnte Website bereit. Hier werden gegebenenfalls Datenanfragen von den Android-Geräten verarbeitet.
+\paragraph{Android Device}
+Über ein Android Gerät haben die Benutzer die Möglichkeit an der EnergyChallenge mit ihrem Smartphone oder Tablet teilzunehmen. Auf dem Gerät ist eine Android App installiert, in der sie zum Beispiel Aktivitäten erledigen können. Der Benutzer muss bereits registriert sein, um die Applikation nutzen zu können und hat von hier auch nicht alle Möglichkeiten, die die Website bereitstellt.
+
+\paragraph{Server}
+Der Server ist für die Erzeugung der Website, die Verarbeitung der Benutzeranfragen sowie die Anfragen von der Android-App zuständig. Auf dem Server findet außerdem die gesamte Datenhaltung statt.
 
 \subsection{Paketdiagramm}
 Sowohl die Grails-Webanwendung als auch die Android-App befindet sich einem Paket \emph{de.unikiel.klik}.
