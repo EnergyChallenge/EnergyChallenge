@@ -2,13 +2,17 @@
 
 \subsection{Login/Registrierung}
 
+Ein Login verhält sich so, wie eine Registrierung mit anschließendem Login, nur dass die erstmalige Registrierung wegfällt. Aus diesem Grund ist nachfolgend nur die Registrierung dargestellt.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth, clip]{gfx/registrieren}
-  \caption{Ein Team erstellen}
+  \caption{Sich für die EnergyChallenge registrieren}
 \end{figure}
 
-%TODO Beschreibung des Logins
+Der Benutzer ruft die Website der EnergyChallenge auf, hat aber noch kein Benutzerkonto. Er ruft die Seite zum Registrieren auf und registriert sich mit seiner E-Mail-Adresse, seinem Universitätsinstitut und einer selbstgewählten Passwort, was er zur Sicherheit zweimal eingeben muss. Sofern die Passwörter übereinstimmen und noch kein Benutzer mit dieser E-Mail-Adresse existiert, wird ein neues Benutzerkonto für ihn angelegt und ihm eine Rolle als Standartbenutzer zugewiesen.
+
+Anschließend wird der neue Benutzer automatisch angemeldet anhand seiner gewählten Daten.
 
 \subsection{Aktivität erledigen}
 
@@ -35,7 +39,7 @@ Landingpage möglich.
 %\begin{figure}[H]
 %  \centering
 %  \includegraphics[width=\textwidth, clip]{gfx/rangliste_ansehen}
-%  \caption{Ein Team erstellen}
+%  \caption{Die Rangliste ansehen}
 %\end{figure}
 
 Der eingeloggte Admin kann ein Team über einen speziellen Button, welcher die Funktion blockTeam(teamId) aufruft, sperren. Dabei wird das Team und nacheinander jedes einzelne Teammitglied gesperrt. Nachdem dies geschehen ist, tauchen auch das Team und deren Mitglieder nicht mehr in der Teilnehmerliste auf.
@@ -57,12 +61,12 @@ automatisch dem Team beigetreten. Die Teamprofilseite aktualisiert
 sich und der Benutzer sieht seine neue Teamprofilseite mit ihm als
 Mitglied.\\
 
-\subsection{Team blocken}
+\subsection{Team blockieren}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth, clip]{gfx/team_blockieren}
-  \caption{Ein Team erstellen}
+  \caption{Ein Team blockieren}
 \end{figure}
 
 Der eingeloggte Admin kann ein Team über einen speziellen Button, welcher die Funktion blockTeam(teamId) aufruft, sperren. Dabei wird das Team und nacheinander jedes einzelne Teammitglied gesperrt. Nachdem dies geschehen ist, tauchen auch das Team und deren Mitglieder nicht mehr in der Teilnehmerliste auf.\\
@@ -108,7 +112,7 @@ abgeben kann. Auf dieser Seite kann der Benutzer durch Klick auf
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth, clip]{gfx/statistiken_exportieren}
-  \caption{Ein Team erstellen}
+  \caption{Statistiken exportieren}
 \end{figure}
 
 Der eingeloggte Benutzer klickt auf Statistik und gelangt auf die
@@ -122,10 +126,16 @@ Computer zu speichern.
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth, clip]{gfx/vorschlag_in_aktivitaet_umwandeln}
-  \caption{Ein Team erstellen}
+  \caption{Vorschlag in Aktivität umwandeln}
 \end{figure}
 
-%TODO Beschreibung
+Wenn ein angemeldeter Admin die Admin-Seite für die neuen Energiesparvorschläge aufruft, hat er die Möglichkeit einen Energiesparvorschlag in eine neue Aktivität umzuwandeln.
+
+Dabei wir ihm eine Eingabemaske angezeigt, in der bereits Daten des Vorschlags eingetragen sind. Diese kann er so übernehmen oder nach seinen Wünschen anpassen. In jedem Fall muss er eine Dauer festlegen.
+
+Nachdem die Maske abgeschickt wurde, wird eine Aktivität aus diesem Daten erstellt und der alte Energiesparvorschlag gelöscht. Dem Admin wird dann die Liste aller vorhanden Aktivitäten ausgegeben.
+
+
 
 \subsection{App: Benutzerrangliste ansehen}
 Die Serveranfragen in der App funktionieren alle nach dem selben
