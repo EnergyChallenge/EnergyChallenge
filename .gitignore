@@ -1,4 +1,4 @@
-# latex and latexmk temporay files
+# latex, latexmk and auctex temporary files
 *.toc
 *.synctex.gz
 *.log
@@ -7,7 +7,7 @@
 *.fdb_latexmk
 *.out
 
-# Tempflies
+# Tempfiles
 *.swp
 
 # visual paradigm temporary files
