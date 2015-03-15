@@ -1,7 +1,15 @@
 ﻿\section{Dynamisches Verhalten}
 
 \subsection{Login/Registrierung}
-%TODO Image here
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, clip]{gfx/registrieren}
+  \caption{Ein Team erstellen}
+\end{figure}
+
+%TODO Beschreibung des Logins
+
 \subsection{Aktivität erledigen}
 
 \begin{figure}[H]
@@ -22,7 +30,14 @@ Alternativ ist das Erledigen favorisierter Aktivtäten auch auf der
 Landingpage möglich.
 
 \subsection{Rangliste ansehen}
-%TODO Image here
+
+% TODO Sequenzdiagramm überarbeiten und dann hier einbinden:
+%\begin{figure}[H]
+%  \centering
+%  \includegraphics[width=\textwidth, clip]{gfx/rangliste_ansehen}
+%  \caption{Ein Team erstellen}
+%\end{figure}
+
 Der eingeloggte Admin kann ein Team über einen speziellen Button, welcher die Funktion blockTeam(teamId) aufruft, sperren. Dabei wird das Team und nacheinander jedes einzelne Teammitglied gesperrt. Nachdem dies geschehen ist, tauchen auch das Team und deren Mitglieder nicht mehr in der Teilnehmerliste auf.\\
 
 \subsection{Team erstellen}
@@ -43,10 +58,17 @@ sich und der Benutzer sieht seine neue Teamprofilseite mit ihm als
 Mitglied.\\
 
 \subsection{Team blocken}
-%TODO Image here
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, clip]{gfx/team_blockieren}
+  \caption{Ein Team erstellen}
+\end{figure}
+
 Der eingeloggte Admin kann ein Team über einen speziellen Button, welcher die Funktion blockTeam(teamId) aufruft, sperren. Dabei wird das Team und nacheinander jedes einzelne Teammitglied gesperrt. Nachdem dies geschehen ist, tauchen auch das Team und deren Mitglieder nicht mehr in der Teilnehmerliste auf.\\
 
 \subsection{Vorschlag erstellen}
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth, clip]{gfx/vorschlag_erstellen}
@@ -64,6 +86,7 @@ Seite, auf welcher er eine Beschreibung und eine Punktzahl für seinen Vorschlag
  Vorschlag einesehen kann.
  
 \subsection{Vorschlag bewerten}
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth, clip]{gfx/vorschlag_bewerten}
@@ -81,13 +104,41 @@ abgeben kann. Auf dieser Seite kann der Benutzer durch Klick auf
  
 
 \subsection{Statistiken exportieren}
-%TODO Image here
-Der eingeloggte Benutzer klickt auf Statistik und gelangt auf die Statistikseite, wo er auf den Button „Herunterladen“ klickt. Nun wird dem Benutzer ein Download zur Verfügung gestellt, welcher ihm ermöglicht, die Statistiken in einer „.csv“-Datei auf dem eigenen Computer zu speichern.\\
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, clip]{gfx/statistiken_exportieren}
+  \caption{Ein Team erstellen}
+\end{figure}
+
+Der eingeloggte Benutzer klickt auf Statistik und gelangt auf die
+Statistikseite, wo er auf den Button „Herunterladen“ klickt. Nun wird
+dem Benutzer ein Download zur Verfügung gestellt, welcher ihm
+ermöglicht, die Statistiken in einer „.csv“-Datei auf dem eigenen
+Computer zu speichern.
+
 \subsection{Vorschlag in Aktivität umwandeln}
-%TODO Image here
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth, clip]{gfx/vorschlag_in_aktivitaet_umwandeln}
+  \caption{Ein Team erstellen}
+\end{figure}
+
+% TODO Beschreibung
+
 \subsection{App: Benutzerrangliste ansehen}
-Die Serveranfragen in der App funktionieren alle nach dem selben Muster. Benutzerrangliste ansehen steht hier exemplarisch für weitere Anwendungsfälle dieser Art.
-%TODO Image here
+Die Serveranfragen in der App funktionieren alle nach dem selben
+Muster. Benutzerrangliste ansehen steht hier exemplarisch für weitere
+Anwendungsfälle dieser Art.
+
+% TODO Sequenzdiagramm überarbeiten und dann hier einbinden
+%\begin{figure}[H]
+%  \centering
+%  \includegraphics[width=\textwidth, clip]{gfx/rangliste_ansehen}
+%  \caption{Ein Team erstellen}
+%\end{figure}
+
 Wenn der Nutzer in der App zur Benutzerrangliste navigiert, wird diese automatisch bei der Erstellung des \emph{Fragments} geladen. Dabei wird auf ein \emph{GetUserRankingTask} die Methode \emph{execute()} aufgerufen. \emph{GetUserRankingTask} erbt von \emph{AccessServerTask}, die wiederum von der Androidklassse \emph{AsyncTask} erbt. In dem \emph{AccessServerTask} wird die Methode \emph{doInBackground()} aufgerufen, die wiederum die Methode \emph{createServerRequest} aufruft, die im \emph{GetUserRankingTask} definiert ist.\\
 Sobald die \emph{doInBackground()}-Methode fertig ausgeführt wurde, wird (vom \emph{AsyncTask}) die Methode \emph{onPostExecute()} aufgerufen, die \emph{handleServerResponse()} des \emph{GetUserRankingTask} ausführt. Hier wird dann die Darstellung im \emph{Fragment} getätigt.\\
 Der Vorteil dieser Art der Implementierung ist, dass nur einmal eine generelle Serverabfrage definiert werden muss, und sich keine weitere Gedanken um dessen Implementierung gemacht werden m\"ussen. Deswegen ist die Durchführung der HTTP-Abfrage hier auch nicht weiter aufgeführt.
