@@ -17,7 +17,6 @@
 				\begin{itemize}
 					\item description: Ein String, der die Aktivit\"at beschreibt.
 					\item points: Eine nat\"urliche Zahl von 1 bis 5, die angibt wie viele Punkte die Erledigung der Aktivit\"at wert ist.
-					%TODO wirklich Dauer oder eher Häufigkeit??!!
 					\item duration: Eine Zeitangabe, die angibt, wie lange die Aktivit\"at nach Ausf\"uhrung gesperrt ist, bevor sie wieder erledigt werden kann.
 				\end{itemize}
 		\end{itemize}
@@ -45,7 +44,7 @@
 				\item email: Die E-Mail Adresse eines Benutzers, gespeichert als String.
 				\item passwordHash: Die als String gespeicherte Hash-Repr\"asentation des Passworts eines Benutzers.
 				\item title: Der akademische Titel eines Benutzers als String.
-				\item emailNotification: Ein boolescher Wert, der angibt, ob der Benutzer E-Mail Benachrichtigungen erh\"alten m\"ochte oder nicht.
+				\item emailNotification: Ein boolescher Wert, der angibt, ob der Benutzer E-Mail Benachrichtigungen erhalten m\"ochte oder nicht.
 			\end{itemize}
 		\end{itemize}
 	\paragraph{Team}Erweitert die Klasse Profile und beinhaltet die Informationen eines Teams.
@@ -132,9 +131,11 @@
 		\end{itemize}
 	\paragraph{AppController}Die Klasse, die f\"ur die Kommunikation zwischen Server und App verantwortlich ist und Anfragen der App verarbeitet.
 		\begin{itemize}
-			\item Methoden: %TODO Warum gibt es kein getRankingUsers() ?
+			\item Methoden:
 			\begin{itemize}
+				\item getRankingUsers(): Methode, die die aktuelle Benutzer-Rangliste aus der Datenbank liest und als JSON Objekt an die App sendet.
 				\item getRankingTeams(): Methode, die die aktuelle Team-Rangliste aus der Datenbank liest und als JSON Objekt an die App sendet.
+				%TODO some more
 			\end{itemize}
 		\end{itemize}
 	\paragraph{LandingController}Steuert die Benutzung der Landing Page (Hauptseite).
