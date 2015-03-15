@@ -278,6 +278,14 @@ Die Klassen in \emph{Activities}, \emph{Adapters} sowie die Klasse \emph{AccessS
 
 \subsubsection{Tasks}
 \paragraph{AccessServerTask} Eine Klasse, die eine abstrakter Serveranfrage darstellt. Alle Serveranfragen-Klassen erben von dieser Klasse und implementieren die abstrakten Methoden \emph{createServerRequest()} und \emph{handleServerResponse()} in welchen eine Server-Anfrage gestellt wird und eine Server-Antwort verarbeitet wird. Die Klasse kümmert sich um den Verbindungsaufbau, die Antwort und das Parsen der Daten, so dass die abgeleiteten Methoden sich nicht mehr darum kümmern müssen.
+	\begin{itemize}
+		\item Methoden:
+		\begin{itemize}
+			\item execute(): Führt eine Anfrage an den Server aus.
+			\item createServerRequest(): Muss von Klassen, die von dieser Klasse erben, implementiert werden. Gibt einen \emph{ServerRequest} zurück, das heißt ein Objekt, das aus einem serverseitigen Adressaten und einer Anfrage (JSONObject) besteht.
+			\item handleServerRequest(response : JSONObject): Muss von Klassen, die von dieser Klasse erben, implementiert werden. Erhält als Parameter die Antwort des Server und kann diese beliebig auswerten.
+		\end{itemize}
+	\end{itemize}
 \paragraph{GetTeamProfileTask} Die Klasse, die dafür zuständig ist, ein Teamprofil vom Server zu laden und in der \emph{TeamProfilActivity} anzuzeigen.
 \paragraph{GetUserProfileTask} Die Klasse, die dafür zuständig ist, ein Benutzerprofil vom Server zu laden und in der \emph{UserProfilActivity} bzw. im \emph{MyProfilFragment} anzuzeigen.
 \paragraph{GetTeamRakingTask} Die Klasse, die dafür zuständig ist, das Team-Ranking vom Server zu holen und an den \emph{TeamRankingsAdapter} weiterzureichen.
