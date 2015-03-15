@@ -9,29 +9,32 @@ Dieses Dokument stellt den Systementwurf des EnergyChallenge-Systems dar. Im Fol
 \item Beschreibung des Verhaltens von einzelnen Anwendungsf\"allen mit Hilfe von Sequenzdiagrammen
 \end{itemize}
 \subsection{Technologien}
-Das in diesem Dokument beschriebene System verwendet die folgenden Technologien:
-Android
-Android ist ein auf mobilen Ger\"aten lauff\"ahiges Betriebssystem sowie eine Software-Plattform f\"ur z.B. Smartphones und Tablets , welches auf einer stark abgeänderten Version von Linux basiert (es wird ein Linux-Kernel verwendet). Apps, also Android Applikationen, laufen in der Android Runtime, einer Android-eigenen Laufzeitumgebung (ab Android 5.0).
+Das von uns entworfene und hier beschriebene System verwendet die folgenden Technologien:
+\paragraph{Android}
+Android ist ein Betriebssystem für mobile Ger\"aten, wie Smartphones oder Tablets. Android Anwendungen, kurz Apps, sind in Java geschrieben und laufen in der Android Runtime, einer Android-eigenen Laufzeitumgebung (ab Android 5.0). Android stellt eine Vielzahl von Bibliotheken bereit, deren Verwendung das Entwickeln von Apps vereinfacht und teilweise auch notwendig ist.
 \begin{itemize}
 \item http://www.android.com
 \end{itemize}
-Java
-Java ist die Programmiersprache, in der dieses Projekt größtenteils geschrieben ist. Dabei kommt Java meistens nicht in seiner „urspr\"unglichen“ Form vor, sondern wird z.B. durch Android Klassen ergänzt.
+
+\paragraph{Java}
+Java ist eine objektorientierte Programmiersprache, in der dieses Projekt größtenteils geschrieben ist. Dabei wird Java größtenteils durch Android-Bibliothken und Grooy-Code ergänzt.
 \begin{itemize}
 \item http://java.oracle.com
 \end{itemize}
-GRAILS
-GRAILS ist ein auf der Programmiersprache Groovy aufbauendes Web Application Framework, welches mit relativ geringem Aufwand die Möglichkeit bietet, Websiten mit Datenbank Anbindung zu erstellen. Mit GRAILS werden auch sogenannte Groovy Server Pages (GSP) erzeugt, welche Inhalte in sonst statische Websiten einbinden können.
+
+\paragraph{GRAILS}
+GRAILS ist ein auf der Programmiersprache Groovy aufbauendes Web Application Framework, welches mit relativ geringem Aufwand die Möglichkeit bietet, Websites mit Datenbank Anbindung zu erstellen. Mit GRAILS werden auch sogenannte Groovy Server Pages (GSP) erzeugt, welche Inhalte in sonst statische Websites einbinden können.
 \begin{itemize}
 \item http://grails.org
 \end{itemize}
-GORM
-GORM oder auch GRAILS Object-Relational Mapping ist GRAILS' integriertes ORM-Tool welches Hibernate 4 zum persistieren von Daten in einer Datenbank verwendet.
+\paragraph{GORM}
+GRAILS Object-Relational Mapping (kurz GORM) ist GRAILS' integriertes ORM-Tool welches Hibernate 4 zum dauerhaften Speicheern von Daten in einer Datenbank verwendet.
 \begin{itemize}
 \item http://grails.org/doc/2.3.x/guide/GORM.html
 \item http://www.hibernate.org
 \end{itemize}
-Apache Shiro
+
+\paragraph{Apache Shiro}
 Apache Shiro ist ein Java Security Framework, welches zur Autorisierung und Authentifizierung von Benutzern auf Websiten verwendet wird. Es wird das Apache Shiro Plugin für Grails verwendet, welches viele Vorgänge automatisiert und vereinfacht.
 \begin{itemize}
 \item http://shiro.apache.org
