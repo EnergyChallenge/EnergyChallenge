@@ -4,8 +4,8 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, clip]{gfx/registrieren}
-  \caption{Ein Team erstellen}
+  \includegraphics[width=16cm, trim= 1cm 1cm 1cm 1cm, clip, angle=90]{gfx/registrieren}
+  \caption{Ein Benutzer registriert sich}
 \end{figure}
 
 %TODO Beschreibung des Logins
@@ -14,7 +14,8 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, clip]{gfx/aktivitaet_erledigen}
+  \includegraphics[width=16cm, trim= 1cm 4cm 1cm 1cm, clip,
+  angle=90]{gfx/aktivitaet_erledigen}
   \caption{Eine Aktivität erledigen}
 \end{figure}
 
@@ -35,15 +36,16 @@ Landingpage möglich.
 %\begin{figure}[H]
 %  \centering
 %  \includegraphics[width=\textwidth, clip]{gfx/rangliste_ansehen}
-%  \caption{Ein Team erstellen}
+%  \caption{Die Rangliste}
 %\end{figure}
 
 Der eingeloggte Admin kann ein Team über einen speziellen Button, welcher die Funktion blockTeam(teamId) aufruft, sperren. Dabei wird das Team und nacheinander jedes einzelne Teammitglied gesperrt. Nachdem dies geschehen ist, tauchen auch das Team und deren Mitglieder nicht mehr in der Teilnehmerliste auf.\\
 
 \subsection{Team erstellen}
+
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, clip]{gfx/team_erstellen}
+  \includegraphics[width=16cm, trim= 1cm 3cm 1cm 1cm, clip, angle=90]{gfx/team_erstellen}
   \caption{Ein Team erstellen}
 \end{figure}
 
@@ -55,14 +57,14 @@ eingeben kann. Anschließend bestätigt der Benutzer über einen Klick
 auf „Team gründen“ sein Team. Mit der Bestätigung ist der Benutzer
 automatisch dem Team beigetreten. Die Teamprofilseite aktualisiert
 sich und der Benutzer sieht seine neue Teamprofilseite mit ihm als
-Mitglied.\\
+Mitglied.
 
 \subsection{Team blocken}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, clip]{gfx/team_blockieren}
-  \caption{Ein Team erstellen}
+  \includegraphics[width=16cm, trim= 1cm 1cm 1cm 1cm, clip, angle=90]{gfx/team_blockieren}
+  \caption{Ein Team blockieren}
 \end{figure}
 
 Der eingeloggte Admin kann ein Team über einen speziellen Button, welcher die Funktion blockTeam(teamId) aufruft, sperren. Dabei wird das Team und nacheinander jedes einzelne Teammitglied gesperrt. Nachdem dies geschehen ist, tauchen auch das Team und deren Mitglieder nicht mehr in der Teilnehmerliste auf.\\
@@ -71,7 +73,7 @@ Der eingeloggte Admin kann ein Team über einen speziellen Button, welcher die F
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, clip]{gfx/vorschlag_erstellen}
+  \includegraphics[width=16cm, trim= 2cm 4cm 1cm 1cm, clip, angle=90]{gfx/vorschlag_erstellen}
   \caption{Einen Vorschlag erstellen}
 \end{figure}
 
@@ -89,7 +91,7 @@ Seite, auf welcher er eine Beschreibung und eine Punktzahl für seinen Vorschlag
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, clip]{gfx/vorschlag_bewerten}
+  \includegraphics[width=16cm, trim= 1cm 4cm 1cm 1cm, clip, angle=90]{gfx/vorschlag_bewerten}
   \caption{Einen Vorschlag bewerten}
 \end{figure}
 
@@ -107,8 +109,8 @@ abgeben kann. Auf dieser Seite kann der Benutzer durch Klick auf
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, clip]{gfx/statistiken_exportieren}
-  \caption{Ein Team erstellen}
+  \includegraphics[width=\textwidth, trim= 1cm 12cm 11cm 1cm, clip]{gfx/statistiken_exportieren}
+  \caption{Statistiken exportieren}
 \end{figure}
 
 Der eingeloggte Benutzer klickt auf Statistik und gelangt auf die
@@ -121,8 +123,8 @@ Computer zu speichern.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth, clip]{gfx/vorschlag_in_aktivitaet_umwandeln}
-  \caption{Ein Team erstellen}
+  \includegraphics[width=16cm, trim= 1cm 3cm 1cm 1cm, clip, angle=90]{gfx/vorschlag_in_aktivitaet_umwandeln}
+  \caption{Ein Vorschlag in eine Aktivität umwandeln}
 \end{figure}
 
 % TODO Beschreibung
@@ -136,7 +138,7 @@ Anwendungsfälle dieser Art.
 %\begin{figure}[H]
 %  \centering
 %  \includegraphics[width=\textwidth, clip]{gfx/rangliste_ansehen}
-%  \caption{Ein Team erstellen}
+%  \caption{Die Benutzerangliste mit der App ansehen}
 %\end{figure}
 
 Wenn der Nutzer in der App zur Benutzerrangliste navigiert, wird diese automatisch bei der Erstellung des \emph{Fragments} geladen. Dabei wird auf ein \emph{GetUserRankingTask} die Methode \emph{execute()} aufgerufen. \emph{GetUserRankingTask} erbt von \emph{AccessServerTask}, die wiederum von der Androidklassse \emph{AsyncTask} erbt. In dem \emph{AccessServerTask} wird die Methode \emph{doInBackground()} aufgerufen, die wiederum die Methode \emph{createServerRequest} aufruft, die im \emph{GetUserRankingTask} definiert ist.\\
