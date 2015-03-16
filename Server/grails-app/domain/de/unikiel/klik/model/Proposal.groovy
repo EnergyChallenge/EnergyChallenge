@@ -6,9 +6,8 @@ class Proposal {
 
 	String description
 	int points
-	Date dateCreated // TODO use DateTime class
+	DateTime dateCreated
 	User author
-	
 	static hasMany = [
 		comments: Comment
 	]
@@ -16,9 +15,9 @@ class Proposal {
     static constraints = {
 		description(nullable: false, blank: false)
 		points(nullable: false, min: 1)
-		//submissionTiem(nullable: false) // TODO s.o.
 		author(nullable: false)
 		comments(nullable:true)
+		dateCreated(nullable: false)
     }
 	
 	// TODO implement

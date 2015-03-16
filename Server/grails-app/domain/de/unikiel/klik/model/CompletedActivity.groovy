@@ -4,11 +4,11 @@ import org.joda.time.DateTime;
 
 class CompletedActivity {
 
-	DateTime date
+	DateTime dateCreated
 	Activity activity
 	 
     static constraints = {
-		date(nullable: false)
+		dateCreated(nullable: false)
 		activity(nullable: false)
 		//myDate defaultValue: "now()" // TODO make now() the default date
     }
