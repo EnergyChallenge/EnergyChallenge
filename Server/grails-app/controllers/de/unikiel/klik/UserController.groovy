@@ -12,7 +12,7 @@ class UserController {
 		
 	}
 	def upload_avatar() {
-	  Profile user = User.findByUsername(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()); //TODO
+	  Profile user = User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()); //TODO
 	  //springSecurityService.currentUser // or however you select the current user
 	  // Get the avatar file from the multi-part request
 	  def f = request.getFile('avatar')
@@ -51,7 +51,7 @@ class UserController {
 		out.close()
 	  }
 	def show() {
-		Profile user = User.findByUsername(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()); //TODO
+		Profile user = User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()); //TODO
 		[user:user]
 	}
 }

@@ -12,7 +12,7 @@ import org.apache.shiro.web.util.WebUtils
 
 class AuthController {
     def shiroSecurityManager
-
+	def AuthService
     def index = { redirect(action: "login", params: params) }
 
     def login = {
@@ -20,15 +20,6 @@ class AuthController {
     }
 
     def signIn = {
-        def authToken = new UsernamePasswordToken(params.username, params.password as String)
-
-        // Support for "remember me"
-        if (params.rememberMe) {
-            authToken.rememberMe = true
-        }
-        
-        // If a controller redirected to this page, redirect back
-        // to it. Otherwise redirect to the root URI.
         def targetUri = params.targetUri ?: "/"
         
         // Handle requests saved by Shiro filters.
@@ -39,26 +30,15 @@ class AuthController {
         }
         
         try{
-            // Perform the actual login. An AuthenticationException
-            // will be thrown if the username is unrecognised or the
-            // password is incorrect.
-            SecurityUtils.subject.login(authToken)
-
-            log.info "Redirecting to '${targetUri}'."
-			//if (params.targetUri) {
-			//	redirect(uri: targetUri)
-			//}
+			AuthService.login(params.email, params.password as String ,params.rememberMe as boolean)
 			redirect(controller: 'landing', action: 'index')
         }
         catch (AuthenticationException ex){
-            // Authentication failed, so display the appropriate message
-            // on the login page.
-            log.info "Authentication failure for user '${params.username}'."
             flash.message = message(code: "login.failed")
 
             // Keep the username and "remember me" setting so that the
             // user doesn't have to enter them again.
-            def m = [ username: params.username ]
+            def m = [ email: params.email ]
             if (params.rememberMe) {
                 m["rememberMe"] = true
             }
@@ -75,10 +55,7 @@ class AuthController {
     }
 
     def signOut = {
-        // Log the user out of the application.
-        SecurityUtils.subject?.logout()
-        webRequest.getCurrentRequest().session = null
-
+        AuthService.logout(SecurityUtils.subject)
         // For now, redirect back to the home page.
         redirect(uri: "/")
     }
@@ -86,7 +63,11 @@ class AuthController {
 		
 	}
 	def signUp = {
-		//TODO use Samuls impl.
+		try {
+			AuthService.register()
+		}catch(Exception e){
+		
+		}
 	}
     def unauthorized = {
         render "You do not have permission to access this page."

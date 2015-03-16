@@ -28,7 +28,7 @@ class AuthControllerSpec extends Specification {
 		def userRole = new Role(name: "user")
 		userRole.addToPermissions("*:*")
 		userRole.save();
-		def user = new User(username: "user", passwordHash: new Sha256Hash("password").toHex(), name: "Max Mustermann")
+		def user = new User(email: "user", passwordHash: new Sha256Hash("password").toHex(), name: "Max Mustermann")
 		user.addToRoles(userRole)
 		user.save()
 		

@@ -5,16 +5,14 @@ import org.joda.time.Duration
 
 class Activity {
 
-	String title;
-	int points;
-	
-	// TODO implement Duration property
+	String description
+	int points
 	Duration duration
 	
-	
     static constraints = {
-		title nullable: false
-		points nullable: false
+		title(nullable: false, blank: false)
+		points(nullable: false, min: 1)
+		duration(nullable: false)
     }
 	
 	

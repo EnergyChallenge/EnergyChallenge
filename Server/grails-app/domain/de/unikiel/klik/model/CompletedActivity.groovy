@@ -1,14 +1,16 @@
 package de.unikiel.klik.model
 
-// TODO evtl. bessere Datumsklasse auf JDK 1.8 verwenden
-import java.util.Date;
+import org.joda.time.DateTime;
 
 class CompletedActivity {
 
-	Date date
+	DateTime date
 	Activity activity
 	 
     static constraints = {
+		date(nullable: false)
+		activity(nullable: false)
+		//myDate defaultValue: "now()" // TODO make now() the default date
     }
 	
 }
