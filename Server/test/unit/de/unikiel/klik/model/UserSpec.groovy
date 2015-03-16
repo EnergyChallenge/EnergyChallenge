@@ -1,14 +1,16 @@
 package de.unikiel.klik.model
 
+import de.unikiel.klik.TestService
 import grails.test.mixin.*
 import org.apache.shiro.crypto.hash.Sha256Hash
 import spock.lang.*
 
-@Mock([User, Profile, Institute, Activity, CompletedActivity])
+@Mock([User, Role, Profile, Institute, Activity, CompletedActivity])
 
 class UserSpec extends Specification {
 	
 	def setup() { // executed before each feature method
+		/*
 		def userRole = new Role(name: "user")
 		userRole.addToPermissions("*:*")
 		userRole.save();
@@ -19,6 +21,9 @@ class UserSpec extends Specification {
 		if(!user.save()) {
 			println "saveFailed"
 		}
+		*/
+		//def user = TestService.getExampleUser();
+		//user.save(flush: true)
 	}
 	
 	def cleanup(){ // executed after each feature
@@ -30,6 +35,15 @@ class UserSpec extends Specification {
 //		}
 	}
     
+	def "blocked and emailNotification default to false"() {
+		setup: "create example user"
+		def user = TestService.getExampleUser();
+		
+		expect: "example user should not be blocked"
+		!user.getBlocked()
+		!user.getEmailNotification()
+	}
+	
 	@Ignore
 	def "new  users start with zero points"() {
 	}
