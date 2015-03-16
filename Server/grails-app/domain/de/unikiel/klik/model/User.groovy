@@ -20,7 +20,8 @@ class User extends Profile {
 		roles: Role, 
 		permissions: String,
 		completedActivities: CompletedActivity,
-		favorites: Activity
+		favorites: Activity,
+		messages: Message
 	]
 
     static constraints = {

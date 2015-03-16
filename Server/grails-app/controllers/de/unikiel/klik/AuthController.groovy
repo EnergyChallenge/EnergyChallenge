@@ -64,10 +64,22 @@ class AuthController {
 	}
 	def signUp = {
 		try {
-			AuthService.register()
+			AuthService.register(params.email, params.password, params.password2, params.institude)
 		}catch(Exception e){
-		
+		//Keep params
+		def m = [ email: params.email, institude: params.institude ]
 		}
+	}
+	def forgotPassword = {
+		
+	}
+	def requestPassword = {
+		try {
+			AuthService.requestPasswordChange(params.email)
+		}catch (Exception e) {
+			def m = [ email: params.email]
+		}
+		
 	}
     def unauthorized = {
         render "You do not have permission to access this page."
