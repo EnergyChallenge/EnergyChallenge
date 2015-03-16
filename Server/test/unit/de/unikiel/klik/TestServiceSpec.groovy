@@ -2,6 +2,7 @@ package de.unikiel.klik
 
 import de.unikiel.klik.model.*
 import grails.test.mixin.TestFor
+import grails.test.mixin.Mock
 import spock.lang.Specification
 
 /**
