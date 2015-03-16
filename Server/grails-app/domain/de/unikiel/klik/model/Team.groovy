@@ -7,6 +7,7 @@ class Team extends Profile{
 	static hasMany = [members: User]
 	
     static constraints = {
+		name(nullable: false, blank: false)
 		members(nullable: false, minSize: 1)
     }
 }

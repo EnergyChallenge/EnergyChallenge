@@ -27,6 +27,8 @@ class User extends Profile {
         email(nullable: false, email: true, unique: true)
 		completedActivities(nullable: true)
 		title(nullable: true)
+		firstName(nullable: false, blank: false)
+		lastName(nullable: false, blank: false)
 		team(nullable: true)
 		roles(nullable: false, minSize: 1)
 		institute(nullable: false)
