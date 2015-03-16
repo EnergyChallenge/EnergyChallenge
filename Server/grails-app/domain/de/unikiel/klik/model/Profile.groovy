@@ -3,7 +3,7 @@ package de.unikiel.klik.model
 // TODO avatar
 //import java.awt.image.BufferedImage
 
-class Profile {
+abstract class Profile {
 	
 	byte[] avatar
 	String avatarType
