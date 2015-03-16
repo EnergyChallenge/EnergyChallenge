@@ -11,7 +11,7 @@ class Profile {
 	String avatarType
 	
     static constraints = {
-		name nullable: false
+		name(nullable: false, blank: false)
 		avatar(nullable:true, maxSize: 512*1024 /* 512K */)
 		avatarType(nullable:true)
     }
