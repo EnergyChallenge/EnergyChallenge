@@ -34,13 +34,13 @@ class User extends Profile {
 	
 	
 	
-	//Move
+	// Move to 
 	def completeActivityNow(Activity activity) {
 		def completedActivity = new CompletedActivity(activity: activity, date: new Date())
 		this.addToCompletedActivities(completedActivity)
 	}
 	
-	
+	// TODO look for the way to implement this
 	def int getPoints() {
 		int sum = 0
 		for(completedActivity in completedActivities) {

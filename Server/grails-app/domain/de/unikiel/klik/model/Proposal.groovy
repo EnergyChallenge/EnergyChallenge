@@ -6,7 +6,7 @@ class Proposal {
 
 	String descripion
 	int points
-	DateTime submissionTime // TODO make "now()" default value
+	Date dateCreated // TODO use DateTime class
 	User author
 	
 	static hasMany = [
@@ -16,8 +16,14 @@ class Proposal {
     static constraints = {
 		description(nullable: false, blank: false)
 		points(nullable: false, min: 1)
-		submissionTiem(nullable: false) // TODO make "now()" default value
+		//submissionTiem(nullable: false) // TODO s.o.
 		author(nullable: false)
 		comments(nullable:true)
     }
+	
+	// TODO implement
+	int getRating() {
+		return(0)
+	}
+	
 }
