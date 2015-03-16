@@ -1,13 +1,13 @@
 package de.unikiel.klik.model
 
 class User extends Profile {
-    String username
+	String email
     String passwordHash
     
     static hasMany = [ roles: Role, permissions: String, completedActivities: CompletedActivity ]
 
     static constraints = {
-        username(nullable: false, blank: false, unique: true)
+        email(nullable: false, blank: false, unique: true)
 		completedActivities nullable: true
     }
 	
