@@ -9,7 +9,7 @@ import org.joda.time.Duration
 class TestService {
 
 	static Activity getExampleActivity() {
-		return new Activity(decription: "Example", points: 1, duration: new Duration(60*60*1000))
+		return new Activity(description: "Example", points: 1, duration: new Duration(60*60*1000))
 	}
 	static Institute getExampleInstitute() {
 		return new Institute(name: "Example")
@@ -23,10 +23,15 @@ class TestService {
 	static Team getExampleTeam(String name) {
 		return new Team(name: name, members:[getExampleUser(name+"Member1"),getExampleUser(name+"Member2")])
 	}
+	static Role getExampleRole() {
+		def role = new Role(name: "user")
+		role.addToPermissions("*:*")
+		return role
+	}
     static User getExampleUser() {
 		return getExampleUser("Example")
     }
 	static User getExampleUser(String name) {
-		return new User(email:name.toLowerCase()+"@example.com", passwordHash: new Sha256Hash("password").toHex(), firstName: name, lastName: "Example", institute: getExampleInstitute())
+		return new User(email:name.toLowerCase()+"@example.com", passwordHash: new Sha256Hash("password").toHex(), roles: [getExampleRole()], firstName: name, lastName: "Example", institute: getExampleInstitute(), blocked:false, emailNotification: false)
 	}
 }
