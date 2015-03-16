@@ -5,9 +5,9 @@ package de.unikiel.klik.model
 
 abstract class Profile {
 	
-	protected byte[] avatar
-	protected String avatarType
-	protected Boolean blocked = false
+	byte[] avatar
+	String avatarType
+	Boolean blocked = false
 	
     static constraints = {
 		avatar(nullable:true, maxSize: 512*1024 /* 512K */)
