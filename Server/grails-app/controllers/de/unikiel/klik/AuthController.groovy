@@ -31,7 +31,7 @@ class AuthController {
         
         try{
 			AuthService.login(params.email, params.password as String ,params.rememberMe as boolean)
-			redirect(controller: 'landing', action: 'index')
+			redirect(controller: 'profil', action: 'index')
         }
         catch (AuthenticationException ex){
             flash.message = message(code: "login.failed")

@@ -5,7 +5,7 @@
 		<title>EnergyChallenge</title>
 	</head>
 	<body>
-			<h1>Hello from... <em>Landing</em>!</h1>
+			<h1>Hello from... <em>Profil</em>!</h1>
 			<p>
 				${org.apache.shiro.SecurityUtils.getSubject().getProperties() }
 				${org.apache.shiro.SecurityUtils.getSubject().getSession().getId() }
