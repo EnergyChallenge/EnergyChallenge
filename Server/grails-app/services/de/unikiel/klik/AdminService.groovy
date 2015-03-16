@@ -1,11 +1,11 @@
 package de.unikiel.klik
 
 import grails.transaction.Transactional
-
+import org.joda.time.Duration;
 @Transactional
 class AdminService {
 
-    void createActivity(String descrition, int points, Duration duration) {
+   void createActivity(String descrition, int points, Duration duration) {
 
     }
 	
