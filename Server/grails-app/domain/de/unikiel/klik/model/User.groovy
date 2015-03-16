@@ -14,7 +14,7 @@ class User extends Profile {
 	String firstName
 	String lastName
 	String title	// academic title
-	boolean emailNotification
+	Boolean emailNotification = false
 
 	static hasMany = [
 		roles: Role, 
@@ -34,7 +34,7 @@ class User extends Profile {
 		roles(nullable: false, minSize: 1)
 		institute(nullable: false)
 		favorites(nullable: true)
-		//emailNotification(defaultValue: "false") // TODO test if false is the default value
+		emailNotification(defaultValue: "false") // TODO test if false is the default value
     }
 	
 	//TODO works??

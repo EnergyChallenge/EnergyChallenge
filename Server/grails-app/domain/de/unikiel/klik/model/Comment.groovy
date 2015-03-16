@@ -1,10 +1,13 @@
 package de.unikiel.klik.model
 
+import org.joda.time.DateTime
+
 class Comment {
 
 	String text
 	int rating
 	User author
+	DateTime dateCreated
 
 	static belongsTo = [proposal: Proposal]
 	
@@ -14,5 +17,6 @@ class Comment {
 		proposal(nullable: false)
 		author(nullable: false)
 		proposal(unique: 'author')
+		dateCreated(nullable: false)
     }
 }

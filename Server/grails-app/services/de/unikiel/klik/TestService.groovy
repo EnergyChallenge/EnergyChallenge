@@ -32,6 +32,6 @@ class TestService {
 		return getExampleUser("Example")
     }
 	static User getExampleUser(String name) {
-		return new User(email:name.toLowerCase()+"@example.com", passwordHash: new Sha256Hash("password").toHex(), roles: [getExampleRole()], firstName: name, lastName: "Example", institute: getExampleInstitute(), blocked:false, emailNotification: false)
+		return new User(email:name.toLowerCase()+"@example.com", passwordHash: new Sha256Hash("password").toHex(), roles: [getExampleRole()], firstName: name, lastName: "Example", institute: getExampleInstitute())
 	}
 }
