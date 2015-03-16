@@ -1,6 +1,9 @@
 package de.unikiel.klik
 
+import de.unikiel.klik.model.Institute
+import de.unikiel.klik.model.Role
 import de.unikiel.klik.model.User;
+import org.apache.shiro.crypto.hash.Sha256Hash
 
 class RankingController {
 
@@ -9,6 +12,20 @@ class RankingController {
 	}
 	def users() {
 		
+		//TODO Test
+		//TODO Dieser Test nur solange, wie TestService nicht läuft
+		def userRole = new Role(name: "user")
+		userRole.addToPermissions("*:*")
+		userRole.save();
+		Institute institute = new Institute(name: "none")
+		institute.save()
+		def exampleUser = new User(email:"user@example.com", passwordHash: new Sha256Hash("password").toHex(), firstName: "Max", lastName: "Mustermann", institute: institute)
+		exampleUser.addToRoles(userRole)
+		if(!exampleUser.save()) {
+			println "saveFailed"
+		}
+		
+		/*
 		def user1 = new User(firstName: "Lennard", lastName: "Hammer");
 		def user2 = new User(firstName: "Wolfgang", lastName: "Ramos");
 		def user3 = new User(firstName: "Marco", lastName: "Osterloh");
@@ -17,6 +34,7 @@ class RankingController {
 		user2.save(flush: true);
 		user3.save(flush: true);
 		user4.save(flush: true);
+		*/
 		
 		def ranking =  [];
 		println(User.findAll());
