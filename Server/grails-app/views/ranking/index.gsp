@@ -3,24 +3,24 @@
 <head>
 <meta name="layout" content="main" />
 <title>EnergyChallenge</title>
-<asset:stylesheet src="RankingTable.css" />
 </head>
 <body>
-	<h1>
-		Hello from... <em>Ranking</em>!
-	</h1>
+	<h1>Rangliste</h1>
+	<div class="tabbar">
+		<a href="${createLink(action:'users')}">Benutzer</a>
+		<a href="${createLink(action:'teams')}">Teams</a>
+	</div>
 	<table class="ranking">
 		<thead>
 			<tr>
-				<td>Rang</td>
-				<td>${tabletitle}</td>
-				<td>Punkte</td>
+				<th>Rang</th>
+				<th>${tableTitle}</th>
+				<th>Punkte</th>
 			</tr>
 		</thead>
 		<tbody>
-			<g:each in="${profils}" var="profil">
-			<%-- TODO Link to Profil --%>
-				<tr onklick="window.location.href = '/';">
+			<g:each in="${ranking}" var="profil">
+				<tr>
 					<td>
 						${profil.getRank()}.
 					</td>
@@ -30,7 +30,6 @@
 					<td>
 						${profil.getPoints()}
 					</td>
-
 				</tr>
 			</g:each>
 		</tbody>
