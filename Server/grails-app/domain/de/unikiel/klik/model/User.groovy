@@ -11,6 +11,8 @@ class User extends Profile {
 	Institute institute
     
 	// other
+	String firstName
+	String lastName
 	String title	// academic title
 	Boolean emailNotification = false
 
@@ -32,7 +34,10 @@ class User extends Profile {
 		emailNotification(defaultValue: "false") // TODO test if false is the default value
     }
 	
-	
+	//TODO works??
+	def String getName() {
+		return title + firstName + lastName;
+	}
 	
 	// Move to 
 	def completeActivityNow(Activity activity) {

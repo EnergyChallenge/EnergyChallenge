@@ -4,7 +4,7 @@ import org.joda.time.DateTime
 
 class Proposal {
 
-	String descripion
+	String description
 	int points
 	Date dateCreated // TODO use DateTime class
 	User author

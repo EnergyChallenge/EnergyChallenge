@@ -7,7 +7,7 @@ import spock.lang.*
 class UserSpec extends Specification {
 	
 	def setup() { // executed before each feature method
-		def user = new User(name: "User1")
+		def user = new User(firstName: "User1")
 		user.save(flush: true)
 		def activity = new Activity(title: "Fahrradfahren", points: 3)
 		activity.save(flush: true)
@@ -24,12 +24,12 @@ class UserSpec extends Specification {
     
 	def "new  users start with zero points"() {
 		expect: "new users have zero points"
-		KlikUser.findByName("User1").getPoints() == 0
+		KlikUser.findByFirstName("User1").getPoints() == 0
 	}
 	
 	def "completing an activity should add it to completed activities"() {
 		setup: "create a user and an activity"
-		def user = KlikUser.findByName("User1")
+		def user = KlikUser.findByFirstName("User1")
 		def activity = Activity.findByTitle("Fahrradfahren")
 		
 		when: "user completes activity once"
@@ -44,7 +44,7 @@ class UserSpec extends Specification {
 	def "completing an activty should increase the users points"() {
 		setup:
 		def activity = Activity.findByTitle("Fahrradfahren")
-		def user = KlikUser.findByName("User1")
+		def user = KlikUser.findByFirstName("User1")
 		
 		when: "activity is completed once"
 		user.completeActivityNow(activity)

@@ -10,7 +10,7 @@ class Activity {
 	Duration duration
 	
     static constraints = {
-		title(nullable: false, blank: false)
+		description(nullable: false, blank: false)
 		points(nullable: false, min: 1)
 		duration(nullable: false)
     }

@@ -7,7 +7,11 @@ class RankingController {
 		users();
 	}
 	def users() {
-		def ranking;
+		def allUsers = user.findAll();
+		def ranking =  [];
+		for (user in allUsers) {
+			ranking << [name: user.getName(), points: user.getPoints()];
+		}
 		def model = [tableTitle: "Benutzer", ranking: ranking, action: "users"];
 		showRanking(model);
 	}
