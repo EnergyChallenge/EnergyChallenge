@@ -1,7 +1,7 @@
 package de.unikiel.klik.model
 
 class User extends Profile {
-	
+
 	// credentials
     String email
     String passwordHash

@@ -24,12 +24,12 @@ class ShiroDbRealm {
         // Get the user with the given username. If the user is not
         // found, then they don't have an account and we throw an
         // exception.
-        def user = User.findByUsername(username)
+        def user = User.findByEmail(username)
         if (!user) {
             throw new UnknownAccountException("No account found for user [${username}]")
         }
 
-        log.info "Found user '${user.username}' in DB"
+        log.info "Found user '${user.email}' in DB"
 
         // Now check the user's password against the hashed value stored
         // in the database.
@@ -47,7 +47,7 @@ class ShiroDbRealm {
             roles {
                 eq("name", roleName)
             }
-            eq("username", principal)
+            eq("email", principal)
         }
 
         return roles.size() > 0
@@ -58,7 +58,7 @@ class ShiroDbRealm {
             roles {
                 'in'("name", roles)
             }
-            eq("username", principal)
+            eq("email", principal)
         }
 
         return r.size() == roles.size()
@@ -70,7 +70,7 @@ class ShiroDbRealm {
         //
         // First find all the permissions that the user has that match
         // the required permission's type and project code.
-        def user = User.findByUsername(principal)
+        def user = User.findByEmail(principal)
         def permissions = user.permissions
 
         // Try each of the permissions found and see whether any of
@@ -99,7 +99,7 @@ class ShiroDbRealm {
         // If not, does he gain it through a role?
         //
         // Get the permissions from the roles that the user does have.
-        def results = User.executeQuery("select distinct p from User as user join user.roles as role join role.permissions as p where user.username = '$principal'")
+        def results = User.executeQuery("select distinct p from User as user join user.roles as role join role.permissions as p where user.email = '$principal'")
 
         // There may be some duplicate entries in the results, but
         // at this stage it is not worth trying to remove them. Now,

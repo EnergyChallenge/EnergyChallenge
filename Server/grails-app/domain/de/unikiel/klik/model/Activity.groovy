@@ -1,7 +1,5 @@
 package de.unikiel.klik.model
 
-// TODO implement duration
-//import java.time.*
 
 import org.joda.time.Duration
 
