@@ -1,7 +1,7 @@
 package de.unikiel.klik.model
 
-// TODO implement duration
-//import java.time.*
+
+import org.joda.time.Duration
 
 class Activity {
 
@@ -9,7 +9,7 @@ class Activity {
 	int points;
 	
 	// TODO implement Duration property
-	//Duration duration
+	Duration duration
 	
 	
     static constraints = {
