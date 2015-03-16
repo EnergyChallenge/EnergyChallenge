@@ -22,6 +22,11 @@ class AuthService {
 		//webRequest.getCurrentRequest().session = null
 	}
 	void register (String email, String password, String password2,String institute) {
-		
+		//TODO ask Samuel
+		throw new UnsupportedOperationException();
+	}
+	void requestPasswordChange(String email) {
+		//TODO
+		throw new UnsupportedOperationException();
 	}
 }

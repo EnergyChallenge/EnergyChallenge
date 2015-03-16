@@ -13,8 +13,8 @@
     <table>
       <tbody>
         <tr>
-          <td>Username:</td>
-          <td><input type="text" name="username" value="${username}" /></td>
+          <td>Email:</td>
+          <td><input type="text" name="email" value="${email}" /></td>
         </tr>
         <tr>
           <td>Password:</td>
@@ -26,7 +26,13 @@
         </tr>
         <tr>
           <td>Faculty:</td>
-          <td><input type="text" name="faculty" value="${faculty}" /></td>
+          <td>
+          <td><select name="institude" >
+          <g:each in="${Insitude.findAll()}" var="institude">
+          <option value="${institude.getId()}">${institude.getName()}</option>
+          </g:each>
+          	
+          </select></td>
         </tr>
         <tr>
           <td />
