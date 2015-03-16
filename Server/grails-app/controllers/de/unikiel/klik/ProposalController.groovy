@@ -25,6 +25,8 @@ class ProposalController {
 		[proposal: proposal, comments: comments]
 	}
 	def addComment() {
-		redirect(action = "view", params = "")
+		//TODO
+		render("TODO")
+		//redirect(action = "view", params = "")
 	}
 }

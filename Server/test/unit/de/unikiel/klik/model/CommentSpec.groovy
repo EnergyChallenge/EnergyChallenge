@@ -10,11 +10,15 @@ import spock.lang.Specification
 class CommentSpec extends Specification {
 
     def setup() {
+		User proposalAuthor =  new User();
+		Proposal proposal = new Proposal()
+		proposal.save();
     }
 
     def cleanup() {
     }
 
-    void "test something"() {
+    void "crating vaild Comment"() {
+		
     }
 }
