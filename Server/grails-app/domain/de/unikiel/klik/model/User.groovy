@@ -60,4 +60,5 @@ class User extends Profile {
 		}
 		return(sum)
 	}
+
 }

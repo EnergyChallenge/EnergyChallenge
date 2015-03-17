@@ -36,6 +36,11 @@ class TestServiceSpec extends Specification {
 		then: "Save Shoudl work"
 			TestService.getExampleProposal().save()
 	}
+	void "save example Role"(){
+		when: "getExampleRole"
+		then: "Save Shoudl work"
+			TestService.getExampleRole().save()
+	}
 	
 	void "save example Team"() {
 		when: "getExampleTeam"
@@ -77,5 +82,14 @@ class TestServiceSpec extends Specification {
 			TestService.getExampleUser("User2").save(flush: true)
 		then: "Save Shoudl work"
 			User.count()==2
+	}
+	void "save Example Data"() {
+		when: "getExampleUser"
+			TestService.saveSomeExampleData()
+		then: "Save Shoudl work"
+			User.count()>=2
+			Team.count()>=2
+			Activity.count()>=2
+			Proposal.count()>=2
 	}
 }

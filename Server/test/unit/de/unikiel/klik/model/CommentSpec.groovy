@@ -3,6 +3,7 @@ package de.unikiel.klik.model
 import de.unikiel.klik.TestService
 import grails.test.mixin.TestFor
 import spock.lang.Specification
+import grails.validation.ValidationException
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
@@ -11,17 +12,17 @@ import spock.lang.Specification
 @Mock([Comment,Proposal,User,Role,Profile,Institute])
 class CommentSpec extends Specification {
 	
-	Proposal proposal
-	User user
     def setup() {
-		def TestService = new TestService()
-		
     }
 
     def cleanup() {
+		// clear database
+		for(comment in Comment.list()) {
+			comment.delete()
+		}			
     }
 
-    void "crating vaild Comment"() {
+    void "creating vaild Comment"() {
 		when: "Creating one Comment"
 		User user = TestService.getExampleUser()
 		Proposal proposal = TestService.getExampleProposal()
@@ -34,40 +35,51 @@ class CommentSpec extends Specification {
 		}
 		comment.save(flush: true);
 		then: "There should be one comment more"
-		 Comment.count() == before + 1
+		Comment.count() == before + 1
 		 
     }
-	void "crating vaild Comment with only Text"() {
+	void "creating vaild Comment with only Text"() {
 		when:
 		User user = TestService.getExampleUser()
 		Proposal proposal = TestService.getExampleProposal()
 		int before = Comment.count()
 		Comment comment = new Comment(text: "Example", author: user, proposal: proposal)
-		comment.save();
+		if(!comment.validate()) {
+			comment.errors.allErrors.each{
+				println it
+			}
+		}
+		comment.save(flush: true);
+		
 		then:
-		 Comment.count() == before + 1
+		Comment.count() == before + 1
 	}
-	void "crating vaild Comment with only rating"() {
+	void "creating vaild Comment with only rating"() {
 		when:
 		User user = TestService.getExampleUser()
 		Proposal proposal = TestService.getExampleProposal()
 		int before = Comment.count()
 		Comment comment = new Comment(rating: 1, author: user, proposal: proposal)
 		comment.save();
+		
 		then:
-		 Comment.count() == before + 1
+		Comment.count() == before + 1
 	}
-	void "Commenting on Proposal twise should result in only one Comment"() {
+	void "Commenting on the same proposal twice should not be possible"() {
 		when:
 		User user = TestService.getExampleUser()
+		user.save(flush: true)
 		Proposal proposal = TestService.getExampleProposal()
-		int before = Comment.count()
+		proposal.save(flush: true)
 		Comment comment = new Comment(text: "Example",rating: 1, author: user, proposal: proposal)
-		comment.save();
-		Comment secondcomment = new Comment(text: "otherExample",rating: 1, author: user, proposal: proposal)
-		secondcomment.save();
+		comment.save(flush: true);
+		Comment secondComment = new Comment(text: "otherExample",rating: 1, author: user, proposal: proposal)
+		secondComment.save(failOnError: true)
+		
 		then:
-		 Comment.count() == before + 1
+		thrown(ValidationException)
+		!secondComment.validate()
+		
 	}
 	void "Comment without anything should not save"() {
 		when: "Comment wihout Parameters"
@@ -89,9 +101,10 @@ class CommentSpec extends Specification {
 	then: "Comment should not save"
 		!comment.save()
 	}
-	void "Comment should be in past"(){
+	void "Comment should be in the past"(){
 		when: "Comment created"
 		User user = TestService.getExampleUser();
+		Proposal proposal = TestService.getExampleProposal();
 		Comment comment = new Comment(text: "Example", rating:1, author: user, proposal: proposal);
 		comment.save()
 	then: "Comment should be in the past"

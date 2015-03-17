@@ -3,6 +3,7 @@ package de.unikiel.klik.model
 import grails.test.mixin.TestFor
 import org.joda.time.Duration
 import spock.lang.Specification
+import grails.validation.ValidationException
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions
@@ -18,9 +19,11 @@ class ActivitySpec extends Specification {
 
     void "creating activity with empty description should not save"() {
 		when: "an Empty Activity"
-			Activity activity = new Activity(description: "",points: "1", duration: new Duration(60*60*1000))	
+		Activity activity = new Activity(description: "",points: "1", duration: new Duration(60*60*1000))	
+		activity.save(failOnError: true)
+		
 		then: "Saving should fail"
-			!activity.save()
+		thrown(ValidationException)
     }
 	void "creating activity with negativ Points should not save"() {
 		when: "an Empty Activity"

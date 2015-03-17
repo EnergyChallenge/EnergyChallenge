@@ -9,10 +9,10 @@ class ActivityService {
     void completeActivity(long activityId, Subject subject) {
 
     }
-	void addToFavorits(long activityId, Subject subject) {
+	void addToFavorites(long activityId, Subject subject) {
 		
 	}
-	void removeFromFavorits(long activityId, Subject subject) {
+	void removeFromFavorites(long activityId, Subject subject) {
 		
 	}
 }

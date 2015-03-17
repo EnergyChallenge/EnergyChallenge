@@ -6,7 +6,7 @@ class Proposal {
 
 	String description
 	int points
-	DateTime dateCreated
+	DateTime dateCreated = new DateTime()
 	User author
 	static hasMany = [
 		comments: Comment
@@ -17,7 +17,7 @@ class Proposal {
 		points(nullable: false, min: 1)
 		author(nullable: false)
 		comments(nullable:true)
-		dateCreated(nullable: false)
+		dateCreated(nullable: false, defaultValue: "DateTime.now()")
     }
 	
 	// TODO implement
