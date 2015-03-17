@@ -3,13 +3,14 @@
 <head>
 <meta name="layout" content="main" />
 <title>EnergyChallenge</title>
+<asset:stylesheet src="table.css"/>
 </head>
 <body>
 	<h1>
 		Hello from... <em>Proposal</em>!
 	</h1>
 	<g:form action="add">
-		<table>
+		<table class="table">
 			<tbody>
 				<tr>
 					<td>Beschreibung:</td>
@@ -44,7 +45,7 @@
 						${proposal.getDescription()}
 					</td>
 					<td>
-						${profil.getRating()}
+						${proposal.getPoints()}
 					</td>
 				</tr>
 			</g:each>

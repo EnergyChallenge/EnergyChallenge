@@ -36,7 +36,7 @@ table.list td {
 	font-weight: normal;
 	color: #000000;
 }
-table.list td:FIRST-CHILD{
+table.list td.numeration{
 	width: 20px;
 	text-align: right;
 }

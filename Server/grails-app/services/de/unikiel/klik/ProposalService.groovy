@@ -4,24 +4,27 @@ import de.unikiel.klik.model.User
 import de.unikiel.klik.model.Proposal
 import de.unikiel.klik.model.Comment
 import grails.transaction.Transactional
+import grails.validation.ValidationException
 
+import org.apache.shiro.SecurityUtils
 import org.apache.shiro.subject.Subject
+import org.joda.time.DateTime
 
 @Transactional
 class ProposalService {
 
-    void addComment( String commentText, int rating, Subject author, long proposalId ) {
-		User user = User.findByEmail(author.getPrincipal());
+    void addComment( String commentText, int rating, Subject author, long proposalId ) throws ValidationException {
+		User user = User.findByEmail(author.getPrincipal()); 
 		Proposal proposal =  Proposal.get(proposalId);
 		Comment comment = new Comment(text: commentText, rating: rating, author: user);
-		propsal.addToComments(comment); //TODO Review
-		propsal.save();
+		proposal.addToComments(comment); //TODO Review
+		proposal.save(failOnError: true);
 		
     }
-	def addProposal(String description, int points, Subject author) {
+	def addProposal(String description, int points, Subject author) throws ValidationException {
 		User user = User.findByEmail(author.getPrincipal());
 		Proposal proposal = new Proposal(description: description, points: points, author: user);
-		propsal.save();
+		proposal.save(failOnError: true);
 	}
 	
 }
