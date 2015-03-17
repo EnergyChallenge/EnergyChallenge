@@ -25,16 +25,29 @@
 			</tr>
 		</thead>
 		<tbody>
-			<g:each status="pos" in="${ranking}" var="profil">
+			<g:each status="pos" in="${ranking}" var="profile">
 				<tr>
 					<td>
-						${pos}.
+						${pos + 1}.
 					</td>
 					<td>
-						${profil.name} 
+						<g:if test="${action == 'users'}">
+							<a href="${createLink(controller :'profil',
+													action: 'user',
+													id: profile.id)}">
+								${profile.name}
+							</a>
+						</g:if>
+						<g:else>
+							<a href="${createLink(controller :'profil',
+													action: 'team',
+													id: profile.id)}">
+								${profile.name}
+							</a>
+						</g:else>
 					</td>
 					<td>
-						${profil.points}
+						${profile.points}
 					</td>
 				</tr>
 			</g:each>
