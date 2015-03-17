@@ -1,0 +1,34 @@
+body {
+    color: #444;
+    font: 14px/1.7em "Open Sans",sans-serif;
+}
+
+h1 {
+	margin: 0; /*TODO TEMP*/
+}
+
+input[type="submit"] {
+	padding: 5px 10px;
+	background-color: #cddc39;
+	box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.3);
+    border: 0 none;
+    border-radius: 3px;
+    color: #FFFFFF;
+   
+    
+}
+input[type="text"], input[type="password"], input[type="tel"],
+input[type="email"], input[type="search"], select {
+	padding: 5px;
+	background-color: #ffffff;
+    border: 1px solid #dfdfdf;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
+}
+a {
+	color: #8e217d;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	text-decoration: underline;
+}
