@@ -1,9 +1,11 @@
 package de.unikiel.klik
 
+import de.unikiel.klik.model.User
 import grails.transaction.Transactional
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.authc.AuthenticationException
 import org.apache.shiro.authc.UsernamePasswordToken
+import org.apache.shiro.crypto.hash.Sha256Hash
 import org.apache.shiro.subject.Subject
 
 @Transactional
