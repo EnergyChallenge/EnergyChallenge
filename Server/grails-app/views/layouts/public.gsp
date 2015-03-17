@@ -1,9 +1,7 @@
 <g:applyLayout name="base">
 	<head>
-	<asset:stylesheet src="main.css" />
-	<asset:stylesheet src="navigation.css" />
-	<g:layoutHead />
-
+		<asset:stylesheet src="main.css" />
+		<g:layoutHead />
 	</head>
 	<content tag="topRight"> 
 	<g:form name="signInForm" url="[action:'signIn',controller:'auth']">
@@ -38,20 +36,6 @@
 	</content>
 	<body>
 		<div class="mainBody">
-			<nav>
-				<ul class="ix">
-					<li><a
-						href="<g:createLink controller="Landing" action="index" />">Startseite</a></li>
-					<li><a
-						href="<g:createLink controller="Activity" action="index" />">Aktivitaeten</a></li>
-					<li><a
-						href="<g:createLink controller="Ranking" action="index" />">Rangliste</a></li>
-					<li><a
-						href="<g:createLink controller="Proposal" action="index" />">Vorschlaege</a></li>
-					<li><a
-						href="<g:createLink controller="Statistics" action="index" />">Statistiken</a></li>
-				</ul>
-			</nav>
 			<div class="pageBody">
 				<g:layoutBody />
 			</div>
