@@ -39,6 +39,7 @@ class AdminService {
 	void deleteActivity(long activityId) {
 
         //Find the activity
+        //TODO how can I do this? activity has no id
         Activity deletionActivity = Activity.get(activityId)
 
         //Remove it once found
@@ -48,6 +49,7 @@ class AdminService {
 	void deleteProposal(long proposalId) {
 
         //Find the proposal
+        //TODO how can I do this? proposal has no id
         Proposal deletionProposal = Proposal.get(proposalId)
 
         //Remove it once found
