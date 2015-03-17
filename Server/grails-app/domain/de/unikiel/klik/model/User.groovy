@@ -39,7 +39,11 @@ class User extends Profile {
 	
 	//TODO works??
 	def String getName() {
-		return title + " " + firstName + " " + lastName;
+		String name = firstName + " " + lastName;
+		if (title != null) {
+			name = title + " " + name;
+		}
+		return name;
 	}
 	
 	// Move to 

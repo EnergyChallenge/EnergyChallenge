@@ -14,7 +14,7 @@
 				<div style="width: 100px; height: 100px; background-color: lime;"></div>
 				<h1>${name}</h1>
 				<g:if test="${type == 'user' && teamname != ''}">
-					<h2>${teamname}</h2>
+					<h2>${teamName}</h2>
 				</g:if>
 			</div>
 		</div>
@@ -23,15 +23,16 @@
 				<g:if test="${type == 'user'}">
 					<li>${institute}</li>
 				</g:if>
-				<li>Gesammelte Punkte: 1024</li>
+				<li>Gesammelte Punkte: ${collectedPoints}</li>
 				<li>Position: 78</li><!-- Eventuell Link hier -->
 			</ul>
-			<!-- Falls Team: -->
-			<ul>
-				<li>Teammitglied 1</li><!-- Link hier -->
-				<li>Teammitglied 2</li><!-- Link hier -->
-				<li>Teammitglied 3</li><!-- Link hier -->
-			</ul>
+			<g:if test="${type == 'team'}">
+				<ul>
+					<li>Teammitglied 1</li><!-- Link hier -->
+					<li>Teammitglied 2</li><!-- Link hier -->
+					<li>Teammitglied 3</li><!-- Link hier -->
+				</ul>
+			</g:if>
 		</div>
 		<div class="right">
 			<ul>

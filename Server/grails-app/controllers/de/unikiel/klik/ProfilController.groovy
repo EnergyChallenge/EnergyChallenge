@@ -29,12 +29,13 @@ class ProfilController {
 		   teamname = team.getName(); 
 	   }
 	   def institute = user.getInstitute().getName();
+	   def collectedPoints = user.getPoints();
 	   def isCurrent = (user == User.findByEmail(SecurityUtils.getSubject().getPrincipal()));
 	   
 	   def model = [type: "user", isCurrent: isCurrent, 
-		   			name: name, teamname: teamname, image: "",
+		   			name: name, teamName: teamname, image: "",
 					institute: institute,
-					collectedPoints: "", rankingPosition: "",
+					collectedPoints: collectedPoints, rankingPosition: "",
 					lastActivities: ""
 					]
 	   
@@ -57,11 +58,12 @@ class ProfilController {
 		   }
 	   }
 	   def name = team.getName();
+	   def collectedPoints = team.getPoints();
 	   def isCurrent = (team == User.findByEmail(SecurityUtils.getSubject().getPrincipal()).getTeam());
 	   
 	   def model = [type: "team", isCurrent: isCurrent, 
 		   			name: name, image: "",
-					collectedPoints: "", rankingPosition: "",
+					collectedPoints: collectedPoints, rankingPosition: "",
 					members: "",
 					lastActivities: ""
 		]
