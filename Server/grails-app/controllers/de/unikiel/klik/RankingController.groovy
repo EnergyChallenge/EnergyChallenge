@@ -13,11 +13,11 @@ class RankingController {
 	}
 	def users() {
 		
-		/*
+		
 		User exampleUser = TestService.getExampleUser()
 		println exampleUser
 		exampleUser.save(flush: true, failOnError: true)
-		*/
+		
 		
 		def ranking =  [];
 		for (user in User.findAll()) {

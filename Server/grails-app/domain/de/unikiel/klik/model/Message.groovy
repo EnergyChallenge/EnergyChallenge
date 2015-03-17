@@ -4,11 +4,11 @@ import org.joda.time.DateTime
 
 abstract class Message {
 
-	DateTime dateCreated
+	DateTime dateCreated = new DateTime()
 	static belongsTo = [receiver: User]
 	
     static constraints = {
 		receiver(nullable: false)
-		dateCreated(nullable: false)
+		dateCreated(nullable: false, defaultValue: "DateTime.now()")
     }
 }
