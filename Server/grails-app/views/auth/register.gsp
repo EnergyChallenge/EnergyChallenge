@@ -35,9 +35,9 @@
         <tr>
           <td>Faculty:</td>
           <td>
-          <td><select name="institude" >
-          <g:each in="${Insitude.findAll()}" var="institude">
-          <option value="${institude.getId()}">${institude.getName()}</option>
+          <td><select name="instituteId" >
+          <g:each in="${institutes}" var="institute">
+          <option value="${institute.getId()}">${institute.getName()}</option>
           </g:each>
           	
           </select></td>

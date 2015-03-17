@@ -2,6 +2,7 @@ package de.unikiel.klik
 
 import de.unikiel.klik.model.User;
 import de.unikiel.klik.model.Role;
+import de.unikiel.klik.model.Institute;
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.authc.AuthenticationException
 import org.apache.shiro.authc.UsernamePasswordToken
@@ -31,7 +32,7 @@ class AuthController {
         
         try{
 			AuthService.login(params.email, params.password as String ,params.rememberMe as boolean)
-			redirect(controller: 'profil', action: 'index')
+			redirect(controller: 'landing', action: 'index')
         }
         catch (AuthenticationException ex){
             flash.message = message(code: "login.failed")
@@ -60,15 +61,22 @@ class AuthController {
         redirect(uri: "/")
     }
 	def register = {
-		
+		[institutes: Institute.findAll()]		
 	}
 	def signUp = {
-		try {
-			AuthService.register(params.email, params.password, params.password2, params.institude)
-		}catch(Exception e){
-		//Keep params
-		def m = [ email: params.email, institude: params.institude ]
-		}
+//		try {
+			AuthService.register(params.email, params.firstName, params.lastName, params.password as String, params.password2 as String, params.instituteId as long)
+			forward (controller: "landing", action: "index")
+//		}
+//                catch (AuthenticationException e){
+//                    // Authentication failed, so display the appropriate message
+//                    flash.message = "Registration failed."
+//                }catch(Exception e){
+//            		flash.message = message(code: "login.failed")
+//			//Keep params
+//			def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+//			forward (action: "register", params: m)
+//		}
 	}
 	def forgotPassword = {
 		
