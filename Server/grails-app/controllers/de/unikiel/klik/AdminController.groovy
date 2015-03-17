@@ -1,4 +1,4 @@
-package de.unikiel.klik.control.app
+package de.unikiel.klik
 
 class AdminController {
 
