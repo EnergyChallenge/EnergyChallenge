@@ -3,6 +3,10 @@ body {
     font: 14px/1.7em "Open Sans",sans-serif;
 }
 
+h1 {
+	margin: 0; /*TODO TEMP*/
+}
+
 input[type="submit"] {
 	padding: 5px 10px;
 	background-color: #cddc39;
