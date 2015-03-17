@@ -10,6 +10,9 @@ class ProposalController {
 	def shiroSecurityManager
 	def proposalService = new ProposalService()
 	def index() {
+		if (Proposal.count()<2){
+			TestService.saveSomeExampleData()
+		}
 		int page
 		if(params.page) {
 			page = params.page as int

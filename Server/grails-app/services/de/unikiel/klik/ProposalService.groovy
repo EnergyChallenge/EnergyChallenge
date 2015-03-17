@@ -21,10 +21,10 @@ class ProposalService {
 		proposal.save(failOnError: true);
 		
     }
-	def addProposal(String description, int points, Subject author) throws ValidationException {
-		User user = User.findByEmail(author.getPrincipal());
-		Proposal proposal = new Proposal(description: description, points: points, author: user);
-		proposal.save(failOnError: true);
-	}
+    void addProposal(String description, int points, Subject author) throws ValidationException {
+	User user = User.findByEmail(author.getPrincipal());
+	Proposal proposal = new Proposal(description: description, points: points, author: user);
+	proposal.save(failOnError: true);
+    }
 	
 }
