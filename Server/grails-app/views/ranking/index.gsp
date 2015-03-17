@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="layout" content="main" />
-<title>EnergyChallenge</title>
+	<meta name="layout" content="main" />
+	<title>Rangliste</title>
 </head>
 <body>
 	<h1>Rangliste</h1>

@@ -17,6 +17,14 @@
           <td><input type="text" name="email" value="${email}" /></td>
         </tr>
         <tr>
+          <td>First Name:</td>
+          <td><input type="text" name="firstName" value="${firstName}" /></td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td><input type="text" name="lastName" value="${lastName}" /></td>
+        </tr>
+        <tr>
           <td>Password:</td>
           <td><input type="password" name="password" value="" /></td>
         </tr>
