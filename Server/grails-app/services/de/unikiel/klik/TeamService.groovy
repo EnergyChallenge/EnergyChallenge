@@ -1,5 +1,6 @@
 package de.unikiel.klik
 
+import de.unikiel.klik.model.Team
 import grails.transaction.Transactional
 import org.apache.shiro.subject.Subject
 
