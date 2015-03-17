@@ -63,4 +63,5 @@
 
     //Options
     <string name="search_queryHint">Suchen...</string>
+
 </resources>

@@ -16,5 +16,6 @@ class ProposalSpec extends Specification {
     }
 
     void "test something"() {
+		
     }
 }

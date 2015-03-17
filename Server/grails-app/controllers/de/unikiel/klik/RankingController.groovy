@@ -12,9 +12,16 @@ class RankingController {
 		users();
 	}
 	def users() {
+		
+		/*
+		User exampleUser = TestService.getExampleUser()
+		println exampleUser
+		exampleUser.save(flush: true, failOnError: true)
+		*/
+		
 		def ranking =  [];
 		for (user in User.findAll()) {
-			ranking << [name: user.getName(), points: user.getPoints()];
+			ranking << [name: user.getName(), id: user.id, points: user.getPoints()];
 		}
 		def model = [tableTitle: "Benutzer", ranking: ranking, action: "users"];
 		showRanking(model);
@@ -22,7 +29,7 @@ class RankingController {
 	def teams() {
 		def ranking =  [];
 		for (team in Team.findAll()) {
-			ranking << [name: team.name, points: team.getPoints()];
+			ranking << [name: team.name, id: team.id, points: team.getPoints()];
 		}
 		def model = [tableTitle: "Teams", ranking: ranking, action: "teams"];
 		showRanking(model);
