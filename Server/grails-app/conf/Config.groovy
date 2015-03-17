@@ -34,6 +34,15 @@ grails.mime.types = [ // the first one is the default format
 // URL Mapping Cache Max Size, defaults to 5000
 //grails.urlmapping.cache.maxsize = 1000
 
+
+// TimeStamp as default
+grails.gorm.default.mapping = {
+	autoTimestamp true //or false based on your need
+	//"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentDateTime, class: org.joda.time.DateTime
+	//"user-type" type: org.jadira.usertype.dateandtime.joda.PersistentLocalDate, class: org.joda.time.LocalDate
+	
+}
+
 // Legacy setting for codec used to encode data with ${}
 grails.views.default.codec = "html"
 
