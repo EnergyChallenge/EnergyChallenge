@@ -16,21 +16,21 @@ class ProfilController {
     */
    
    def user() {
-	   def user;
+	   User user;
 	   if (params.id != null) {
 		   user = User.get(params.id);
 	   } else {
 	   		user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
 	   }
-	   def name = user.getName();
-	   def team = user.getTeam();
-	   def teamname = "";
+	   String name = user.getName();
+	   Team team = user.getTeam();
+	   String teamname = "";
 	   if (team != null) {
 		   teamname = team.getName(); 
 	   }
-	   def institute = user.getInstitute().getName();
-	   def collectedPoints = user.getPoints();
-	   def isCurrent = (user == User.findByEmail(SecurityUtils.getSubject().getPrincipal()));
+	   String institute = user.getInstitute().getName();
+	   int collectedPoints = user.getPoints();
+	   boolean isCurrent = (user == User.findByEmail(SecurityUtils.getSubject().getPrincipal()));
 	   
 	   def model = [type: "user", isCurrent: isCurrent, 
 		   			name: name, teamName: teamname, image: "",
@@ -44,7 +44,7 @@ class ProfilController {
    
    def team() {
 
-	   def team;
+	   Team team;
 	   if (params.id != null) {
 		   team = Team.get(params.id);
 	   } else {
@@ -57,9 +57,9 @@ class ProfilController {
 			   return;
 		   }
 	   }
-	   def name = team.getName();
-	   def collectedPoints = team.getPoints();
-	   def isCurrent = (team == User.findByEmail(SecurityUtils.getSubject().getPrincipal()).getTeam());
+	   String name = team.getName();
+	   int collectedPoints = team.getPoints();
+	   boolean isCurrent = (team == User.findByEmail(SecurityUtils.getSubject().getPrincipal()).getTeam());
 	   
 	   def model = [type: "team", isCurrent: isCurrent, 
 		   			name: name, image: "",
