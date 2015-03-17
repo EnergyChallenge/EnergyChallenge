@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main"/>
-		<title>Name hier</title>
+		<title>${name}</title>
 	</head>
 	<body>
 		
@@ -10,13 +10,17 @@
 			<div class="image">
 				<!-- Image here instead of div -->
 				<div style="width: 100px; height: 100px; background-color: lime;"></div>
-				<h1>Name hier</h1>
-				<h2>Team evtl. hier</h2>
+				<h1>${name}</h1>
+				<g:if test="${type == 'user' && teamname != ''}">
+					<h2>${teamname}</h2>
+				</g:if>
 			</div>
 		</div>
 		<div class="left">
 			<ul>
-				<li>Institut eventuell hier</li><!-- Falls User: -->
+				<g:if test="${type == 'user'}">
+					<li>${institute}</li>
+				</g:if>
 				<li>Gesammelte Punkte: 1024</li>
 				<li>Position: 78</li><!-- Eventuell Link hier -->
 			</ul>

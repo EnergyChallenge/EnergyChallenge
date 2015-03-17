@@ -2,6 +2,7 @@ package de.unikiel.klik
 
 import de.unikiel.klik.model.User;
 import de.unikiel.klik.model.Team;
+import de.unikiel.klik.model.Institute;
 
 class ProfilController {
 
@@ -11,27 +12,34 @@ class ProfilController {
    }
    
    def user() {
-	   /*
+	   
 	   def user = User.get(params.id);
 	   def name = user.getName();
-	   def teamname = user.getTeam().getName();
-	   def institute = user.getInstitute;
-	   */
+	   def team = user.getTeam();
+	   def teamname = "";
+	   if (team != null) {
+		   teamname = team.getName(); 
+	   }
+	   def institute = user.getInstitute().getName();
+	   
 	   
 	   def model = [type: "user",
-		   			name: "", teamname: "", image: "",
-					institute: "",
+		   			name: name, teamname: teamname, image: "",
+					institute: institute,
 					collectedPoints: "", rankingPosition: "",
 					lastActivities: ""
 					]
-	   //user User.get(params.id)
 	   
 	   showProfile(model);
    }
    
    def team() {
+	   
+	   def team = Team.get(params.id);
+	   def name = team.getName();
+	   
 	   def model = [type: "team",
-		   			name: "", image: "",
+		   			name: name, image: "",
 					collectedPoints: "", rankingPosition: "",
 					members: "",
 					lastActivities: ""
