@@ -5,6 +5,6 @@ class ProfilController {
    def index(){}
    
    private def viewPage(){
-	   render(view:viewProfile.gsp)
+	   render(view:profile.gsp)
    }
 }

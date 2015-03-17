@@ -2,7 +2,7 @@
 <html><head>
 		<title><g:if env="development">Grails Runtime Exception</g:if><g:else>Error</g:else></title>
 		<meta name="layout" content="main">
-		<g:if env="development"><asset:stylesheet src="main.css"/></g:if>
+		<g:if env="development"><asset:stylesheet src="RankingTable.css"/></g:if>
 	</head>
 	<body>
 	<title> "Profil von <em>${profil.getName()})</em>!" </title>
@@ -14,15 +14,15 @@
 	${profil.getAvatar()}
 	${profil.getPoints()}
 	${profil.getRecentCompletedActivitys()}
+	${profil.getRank()}
 	</p>
 	
 	<g:if test="${profil.isUser()}">
 	Team
 	</g:if>
-	
-	<g:each in="${profil.getLinked()}" var="linked">
-		${linked.getName()}
-	</g:each>
+	<g:if test="${profil.isTeam()}">
+	Members
+	</g:if>
 	
 	<g:each> in="${profil.getRecentCompletedActivitys()}" var="activity">
 		${activity.getName()}
