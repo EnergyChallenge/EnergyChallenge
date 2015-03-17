@@ -16,13 +16,15 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/search_query"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:lines="1"
             android:maxLines="1"
             android:scrollHorizontally="true"
-            android:drawableRight="@drawable/ic_action_search_small" />
+            android:drawableRight="@drawable/ic_action_search_small"
+            android:hint="@string/search_queryHint"/>
 
         <!-- List of search results -->
         <ListView
