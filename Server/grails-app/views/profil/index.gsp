@@ -5,7 +5,9 @@
 		<title>${name}</title>
 	</head>
 	<body>
-		
+		<g:if test="${isCurrent == true}">
+			<div>Bearbeiten</div>
+		</g:if>
 		<div class="head">
 			<div class="image">
 				<!-- Image here instead of div -->
@@ -39,10 +41,5 @@
 			</ul>
 		</div>
 		
-		
-			<p>
-				${org.apache.shiro.SecurityUtils.getSubject().getProperties() }
-				${org.apache.shiro.SecurityUtils.getSubject().getSession().getId() }
-			</p>
 	</body>
 </html>
