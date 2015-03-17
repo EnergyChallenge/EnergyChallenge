@@ -13,11 +13,9 @@
 	<p>
 	${profil.getAvatar()}
 	${profil.getPoints()}
+	${profil.getRecentCompletedActivitys()}
 	</p>
 	
-	<g:if test="${profil.isTeam()}">
-	Members
-	</g:if>
 	<g:if test="${profil.isUser()}">
 	Team
 	</g:if>
