@@ -60,11 +60,18 @@ class ProfilController {
 	   String name = team.getName();
 	   int collectedPoints = team.getPoints();
 	   boolean isCurrent = (team == User.findByEmail(SecurityUtils.getSubject().getPrincipal()).getTeam());
+	   def members = [];
+	   println team.getProperties()
+	   println team.getMembers()
+	   println team.members
+	   for (member in team.getMembers()) {
+		   members << [name: "Thomas", id: member.id];
+	   }
 	   
 	   def model = [type: "team", isCurrent: isCurrent, 
 		   			name: name, image: "",
 					collectedPoints: collectedPoints, rankingPosition: "",
-					members: "",
+					members: members,
 					lastActivities: ""
 		]
 

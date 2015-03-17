@@ -13,6 +13,9 @@ class RankingController {
 	}
 	def users() {
 		
+		TestService.saveSomeExampleData();
+		
+		
 		def ranking =  [];
 			//TODO TEMP Some default users
 			ranking << [name: "Prof. Dr. Sebastian Vettel", id: 9991, points: 123];
@@ -26,7 +29,7 @@ class RankingController {
 		showRanking(model);
 	}
 	def teams() {
-		def ranking =  [];
+		def ranking = [];
 			//TODO TEMP Some default team
 			ranking << [name: "McLaren F1 Team", id: 991, points: 100];
 			ranking << [name: "Scuderia Ferrari", id: 990, points: 150];

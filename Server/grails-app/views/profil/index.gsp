@@ -28,9 +28,9 @@
 			</ul>
 			<g:if test="${type == 'team'}">
 				<ul>
-					<li>Teammitglied 1</li><!-- Link hier -->
-					<li>Teammitglied 2</li><!-- Link hier -->
-					<li>Teammitglied 3</li><!-- Link hier -->
+					<g:each in="${members}" var="member">
+						<li>${member.name}</li><!-- Link hier -->
+					</g:each>
 				</ul>
 			</g:if>
 		</div>
