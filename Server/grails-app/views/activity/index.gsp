@@ -14,17 +14,20 @@
 			</tr>
 			</thead>
 			<tbody>
-			<g:each in="${activities}" var="activity"> 
+			<g:each in="${activities}" var="act"> 
 			<tr>
-				<td>${activity.description}</td>
-				<td>${activity.points}</td>
+				<td>${act.activity.description}</td>
+				<td>${act.activity.points}</td>
 				<td>
-					<g:form name="completeActivityForm" url="[action:'completeActivity',controller:'activity',id: activity.getId()]">
-					<input type="submit" value="Aktivität erledigen" />
+				<g:if test="${act.executable}" >
+					<g:form name="completeActivityForm" url="[action:'completeActivity',controller:'activity',id: act.activity.getId()]">
+						<input type="submit" value="Aktivität erledigen"/>
 					</g:form>
+				</g:if>
+				<g:else>${act.countdown}</g:else>
 				</td>
 				<td>
-					<g:form name="addToFavoritesForm" url="[action:'addToFavorites',controller:'activity',id: activity.getId()]">
+					<g:form name="addToFavoritesForm" url="[action:'addToFavorites',controller:'activity',id: act.activity.getId()]">
 					<input type="submit" value="favorisieren" />
 					</g:form>
 				</td>

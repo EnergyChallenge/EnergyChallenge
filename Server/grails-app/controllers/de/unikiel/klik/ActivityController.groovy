@@ -5,6 +5,10 @@ import java.util.concurrent.TimeUnit
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.subject.Subject
 import org.joda.time.DateTime
+import org.joda.time.Period
+import org.joda.time.PeriodType
+import org.joda.time.format.PeriodFormatter
+import org.joda.time.format.PeriodFormatterBuilder
 
 import de.unikiel.klik.model.Activity
 import de.unikiel.klik.model.User
@@ -17,43 +21,44 @@ class ActivityController {
 	def activity
 
     def index() {
-		def activities = Activity.list()
+		def activities = []
+		for(activity in Activity.findAll()) {
+			activities << [activity: activity, executable: isExecutable(activity), countdown: getActivityCountdown(activity)]
+		}
 		[activities : activities]
 	}
 	
-	//TODO reduce, simplify this method
 	def completeActivity() {
 		activity = Activity.get(params.id)
-		if(isExecutable()) {
+		if(isExecutable(activity)) {
 			ActivityService.completeActivity(activity.id, SecurityUtils.subject)
 			flash.message = "Activity executed"
 			redirect(action: "index")
 		} else {
-			flash.error = "Activity not executable!"
+			flash.message = "Activity not executable!"
 			redirect(action: "index")
 		}
 	}
 	
 	def addToFavorites() {
 		//get the current user and the selected activity
-		subject = SecurityUtils.subject
-		user = User.findByEmail(subject.getPrincipal())
-		def activityId = (long)params.id
+		user = getUser()
 		//TODO Check if if case is necessary
 		//check if activity is yet a favorite
+		def activityId = Activity.get(params.id).id
 		if(user.favorites.contains(activityId)) {
 			flash.message = "Activity already a favorite!"
 			redirect(action: index)
 		} else {
+		//params.id is not a long so this could fail, alternatively do it in another way
 		ActivityService.addToFavorites(activityId, subject)
 		//redirect(action: index)
 		}
 	}	
 	
 	def removeFromFavorites() {
-		subject = SecurityUtils.subject
-		user = User.findByEmail(subject.getPrincipal())
-		def activityId = (long)params.id
+		user = getUser()
+		def activityId = Activity.get(params.id).id
 		if(user.favorites.contains(activityId)) {
 			flash.message = "Activity not a favorite!"
 			redirect(action: index)
@@ -64,15 +69,53 @@ class ActivityController {
 	}
 	
 	//check if an activity can currently be executed by a user
-	def boolean isExecutable() {
-		subject = SecurityUtils.subject
-		user = User.findByEmail(subject.getPrincipal())
-		activity = Activity.get(params.id)
+	def boolean isExecutable(Activity activity) {
+		user = getUser()
 		def recentActivities = user.getCompletedActivities()
-		recentActivities = recentActivities?.findAllWhere(dateCreated.after((new DateTime()) - activity.getDuration()))
-		if(recentActivities.contains(activity)) {
-			return false
+		for(recAct in recentActivities) {
+			if(recAct.id == activity.id) {
+				return false
+			}
 		}
 		return true
+	}
+	//TODO format the period instance!
+	//returns a timer instance that works as a countdown, showing when the activity is available again
+	def String getActivityCountdown(Activity activity) {
+		def currentTime
+		def endOfCountdown
+		def completedActivity
+		def completedActivities = getUser().getCompletedActivities()
+		for(comAct in completedActivities) {
+			if(comAct.getActivity().id == activity.id) {
+				completedActivity = comAct
+				break
+			}
+		}
+		if(isExecutable(activity)) {
+			currentTime = endOfCountdown = 0
+		} else {
+			currentTime = new DateTime()
+			endOfCountdown = new DateTime(completedActivity.getDateCreated() + activity.getDuration())
+		}
+		PeriodFormatter formatter = new PeriodFormatterBuilder()
+			.printZeroAlways()
+			.minimumPrintedDigits(2)
+			.appendHours()
+			.appendSeparator(":")
+			.appendMinutes()
+			.appendSeparator(":")
+			.appendSeconds()
+			.toFormatter()
+		
+		Period period = new Period(currentTime, endOfCountdown)
+		String countdown = formatter.print(period)
+		return countdown
+	}
+	
+	def User getUser() {
+		subject = SecurityUtils.subject
+		user = User.findByEmail(subject.getPrincipal())
+		return user
 	}
 }
