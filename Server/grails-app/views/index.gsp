@@ -7,8 +7,8 @@
 	<body>
 		<div id="left">
 		<style>
-		#login {margin-left:30px;}
-		#register {margin-left:30px;}
+		#login {margin-left:30px; margin-top:30px;}
+		#register {margin-left:30px; margin-top:30px;}
 		</style>
 			<div id="login" >
 				<g:form name="signInForm" url="[action:'signIn',controller:'auth']">
@@ -66,5 +66,6 @@
 			Einzelgewinner im Rahmen einer feierlichen Siegerehrung
 			gekürt.
 		</p>
+		/* TODO "Top5 Ranking der Aktivtäten einbinden" */
 	</body>
 </html>
