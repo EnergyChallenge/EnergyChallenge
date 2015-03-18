@@ -61,7 +61,10 @@ public abstract class GetDataFromServerTask extends AsyncTask<String, Void, Stri
         int length = 1024;
 
         try {
-            URL url = new URL(Config.SERVER_REST_PATH + serverRequest.getReceiverOnServer());
+            URL url = new URL(Config.SERVER_REST_PATH
+                    + serverRequest.getReceiverOnServer()
+                    + Config.SERVER_REST_PATH_END);
+            Log.v("Access URL: ", url.toString());
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(10000 /* milliseconds */);

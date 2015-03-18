@@ -59,7 +59,9 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         int length = 1024;
 
         try {
-            URL url = new URL(Config.SERVER_REST_PATH + serverRequest.getReceiverOnServer());
+            URL url = new URL(Config.SERVER_REST_PATH
+                            + serverRequest.getReceiverOnServer()
+                            + Config.SERVER_REST_PATH_END);
 
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(10000 /* milliseconds */);
