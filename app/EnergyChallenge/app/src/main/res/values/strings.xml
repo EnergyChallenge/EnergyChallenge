@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Energy Challenge</string>
+    <string name="app_name">EnergyChallenge</string>
 
     //Action Bar
     <string name="action_search">Suchen</string>
@@ -23,10 +23,10 @@
     <string name="logIn_signInButton">Anmelden</string>
 
     //Main Activity
-    <string name="title_activity_main">Energy Challenge</string>
+    <string name="title_activity_main">EnergyChallenge</string>
 
     //Search Activity
-    <string name="title_activity_search">Energy Challenge</string>
+    <string name="title_activity_search">EnergyChallenge</string>
 
     //Main Fragment (Landing Page)
     <string name="main_title">Favoriten</string>
