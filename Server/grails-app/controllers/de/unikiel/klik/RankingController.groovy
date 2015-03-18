@@ -13,9 +13,6 @@ class RankingController {
 	}
 	def users() {
 		
-		//TestService.saveSomeExampleData();
-		
-		
 		def ranking =  [];
 			//TODO TEMP Some default users
 			ranking << [name: "Prof. Dr. Sebastian Vettel", id: 9991, points: 123];
