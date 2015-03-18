@@ -22,7 +22,9 @@ class ActivityService {
 		activity = Activity.get(activityId)
 		def completedActivity = new CompletedActivity(activity: activity)
 		user.addToCompletedActivities(completedActivity)
-		completedActivity.save(flush: true, failOnError: true)
+		if(!completedActivity.save(flush: true, failOnError: true)) {
+			completedActivity.errors.allErrors.each { println it }
+		}
 		user.save(flush: true, failOnError: true)
     }
 	
