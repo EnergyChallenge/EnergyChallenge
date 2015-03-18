@@ -35,18 +35,18 @@ class ActivityController {
 		} else {
 			ActivityService.completeActivity(activity.id, subject)
 			flash.message = "Activity executed"
-			redirect(action: index)
+			redirect(action: "index")
 		}
 		//check if activity was done yet
 		if((completedActivity = recentlyCompletedActivities?.find {activity == activity})) {
 			flash.error = "Activity not executable!"
-			redirect(action: index)
+			redirect(action: "index")
 			
 		//if the activity wasn't executed by the user during critical time, just execute it
 		} else {
 			ActivityService.completeActivity(activity.id, subject)
 			flash.message = "Activity executed"
-			redirect(action: index)
+			//redirect(action: "index")
 		}
 	}
 	
