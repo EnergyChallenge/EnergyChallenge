@@ -68,5 +68,6 @@ class TestService {
 		getExampleActivity("Activity2").save()
 		//getExampleProposal("Proposal1").save()
 		//getExampleProposal("Proposal2").save()
+		
 	}
 }
