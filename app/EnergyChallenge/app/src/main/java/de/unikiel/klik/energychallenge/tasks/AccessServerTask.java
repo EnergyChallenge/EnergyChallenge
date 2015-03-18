@@ -1,4 +1,4 @@
-package de.unikiel.klik.energychallenge;
+package de.unikiel.klik.energychallenge.tasks;
 
 import android.os.AsyncTask;
 import android.util.Log;
@@ -15,10 +15,8 @@ import de.unikiel.klik.energychallenge.Config;
 import de.unikiel.klik.energychallenge.utils.IoX;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
-// TODO Handle Exceptions
-// TODO Need
 
-public abstract class GetDataFromServerTask extends AsyncTask<String, Void, String> {
+public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
 
     protected abstract ServerRequest createServerRequest();
 
@@ -75,15 +73,14 @@ public abstract class GetDataFromServerTask extends AsyncTask<String, Void, Stri
 
             // Convert the InputStream into a string
             //return IoX.readInputStream(inputStream, length);
-             return IoX.readInputStream(inputStream, length);
+            return IoX.readInputStream(inputStream, length);
 
-        // Makes sure that the InputStream is closed after the app is
-        // finished using it.
+            // Makes sure that the InputStream is closed after the app is
+            // finished using it.
         } finally {
             if (inputStream != null) {
                 inputStream.close();
             }
         }
     }
-
 }

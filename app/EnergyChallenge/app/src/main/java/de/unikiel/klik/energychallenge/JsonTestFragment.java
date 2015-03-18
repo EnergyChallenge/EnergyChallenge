@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import android.widget.Toast;
@@ -18,12 +19,16 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.unikiel.klik.energychallenge.utils.NetworkX;
+
 
 public class JsonTestFragment extends Fragment {
 
     private List<String> rankingTeamData = new ArrayList<>();
 
     private ArrayAdapter rankingTeamAdapter;
+
+    private LinearLayout linlaHeaderProgress;
 
     public JsonTestFragment() {
     }
@@ -48,6 +53,9 @@ public class JsonTestFragment extends Fragment {
         rankingTeamAdapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, rankingTeamData);
         list.setAdapter(rankingTeamAdapter);
 
+        //Setting up LoadingCircleImage
+        linlaHeaderProgress = (LinearLayout) view.findViewById(R.id.linlaHeaderProgress);
+
         //Fill List with Data
         fillTeamRankingList();
 
@@ -65,14 +73,12 @@ public class JsonTestFragment extends Fragment {
 
     private void fillTeamRankingList() {
 
-        Context context = getActivity().getApplicationContext();
+        Context context = getActivity();
 
-
-        ConnectivityManager connMgr = (ConnectivityManager)
-                getActivity().getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
-        if (networkInfo != null && networkInfo.isConnected()) {
-            new GetRankingDataTask(rankingTeamData, rankingTeamAdapter).execute();
+        if (NetworkX.isAvailable(context)) {
+            new GetRankingDataTask(rankingTeamData,
+                                    rankingTeamAdapter,
+                                    linlaHeaderProgress).execute();
         } else {
             Toast.makeText(context, "No network connection available.", Toast.LENGTH_SHORT).show();
         }
