@@ -62,7 +62,7 @@ class ActivityController {
 			redirect(action: index)
 		} else {
 		ActivityService.addToFavorites(activityId, subject)
-		redirect(action: index)
+		//redirect(action: index)
 		}
 	}	
 	
@@ -70,6 +70,6 @@ class ActivityController {
 		subject = SecurityUtils.subject
 		activityId = params.id
 		ActivityService.removeFromFavorites(activityId, subject)
-		redirect(action: index)
+		//redirect(action: index)
 	}
 }
