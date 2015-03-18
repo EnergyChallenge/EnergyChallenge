@@ -7,4 +7,4 @@
     android:divider="@android:color/transparent"
     android:dividerHeight="0dp"
     android:background="#cccc"
-    tools:context="de.unikiel.klik.energychallenge.NavigationDrawerFragment" />
+    tools:context="de.unikiel.klik.energychallenge.fragments.NavigationDrawerFragment" />

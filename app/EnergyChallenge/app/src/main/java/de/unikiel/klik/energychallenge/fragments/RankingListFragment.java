@@ -1,4 +1,4 @@
-package de.unikiel.klik.energychallenge;
+package de.unikiel.klik.energychallenge.fragments;
 
 
 import android.app.FragmentManager;
@@ -10,6 +10,8 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import de.unikiel.klik.energychallenge.R;
 
 
 /* Fragment for viewing team and user rankings */

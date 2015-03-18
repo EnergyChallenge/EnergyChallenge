@@ -6,7 +6,11 @@
 	</head>
 	<body>
 		<div id="left">
-			<div id="login">
+		<style>
+		#login {margin-left:30px;}
+		#register {margin-left:30px;}
+		</style>
+			<div id="login" >
 				<g:form name="signInForm" url="[action:'signIn',controller:'auth']">
 					<input type="hidden" name="targetUri" value="${targetUri}" />
 					<table>
@@ -34,14 +38,14 @@
 					<input type="submit" value="Passwort vergessen" />
 				</g:form>
 			</div>
-			<div id="register">
+			<div id="register" >
 				<g:form name="registerFrom" url="[action:'register',controller:'auth']">
 					<input type="submit" value="Jetzt registrieren!" />		
 				</g:form>
 			</div>
 		</div>
 		<h1>EnergyChallenge</h1>
-		<p>
+		<p style="text-align:justify;">
 			Die EnergyChallenge richtet sich an alle Studierende
 			und Beschäftigte der CAU, die Spaß daran haben
 			Energiesparmöglichkeiten am Arbeitsplatz auszutesten,
@@ -51,7 +55,7 @@
 			durchgeführt, um energiesparendes Verhalten am
 			Arbeitsplatz zu fördern.
 		</p>
-		<p>
+		<p style="text-align:justify;">
 			Die Teilnahme ist einfach: online anmelden, eine Gruppe
 			aussuchen (dies können Kollegen aus der Arbeitsgruppe
 			sein oder auch willkürliche Zusammensetzungen) und die
