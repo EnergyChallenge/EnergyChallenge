@@ -23,30 +23,14 @@ class ActivityController {
 	
 	//TODO reduce, simplify this method
 	def completeActivity() {
-		subject = SecurityUtils.subject
-		user = User.findByEmail(subject.getPrincipal())
 		activity = Activity.get(params.id)
-		def completedActivity
-		def currentTime = new DateTime()
-		//TODO search only the last completed activities
-		def recentlyCompletedActivities = user.getCompletedActivities()
-		if(recentlyCompletedActivities) {
-			recentlyCompletedActivities = query.list()
-		} else {
-			ActivityService.completeActivity(activity.id, subject)
+		if(isExecutable()) {
+			ActivityService.completeActivity(activity.id, SecurityUtils.subject)
 			flash.message = "Activity executed"
 			redirect(action: "index")
-		}
-		//check if activity was done yet
-		if((completedActivity = recentlyCompletedActivities?.find {activity == activity})) {
+		} else {
 			flash.error = "Activity not executable!"
 			redirect(action: "index")
-			
-		//if the activity wasn't executed by the user during critical time, just execute it
-		} else {
-			ActivityService.completeActivity(activity.id, subject)
-			flash.message = "Activity executed"
-			//redirect(action: "index")
 		}
 	}
 	
@@ -68,8 +52,27 @@ class ActivityController {
 	
 	def removeFromFavorites() {
 		subject = SecurityUtils.subject
-		activityId = params.id
-		ActivityService.removeFromFavorites(activityId, subject)
-		//redirect(action: index)
+		user = User.findByEmail(subject.getPrincipal())
+		def activityId = (long)params.id
+		if(user.favorites.contains(activityId)) {
+			flash.message = "Activity not a favorite!"
+			redirect(action: index)
+		} else {
+			ActivityService.removeFromFavorites(activityId, subject)
+			//redirect(action: index)
+		}
+	}
+	
+	//check if an activity can currently be executed by a user
+	def boolean isExecutable() {
+		subject = SecurityUtils.subject
+		user = User.findByEmail(subject.getPrincipal())
+		activity = Activity.get(params.id)
+		def recentActivities = user.getCompletedActivities()
+		recentActivities = recentActivities?.findAllWhere(dateCreated.after((new DateTime()) - activity.getDuration()))
+		if(recentActivities.contains(activity)) {
+			return false
+		}
+		return true
 	}
 }
