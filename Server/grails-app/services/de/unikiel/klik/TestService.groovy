@@ -58,15 +58,15 @@ class TestService {
 		return new User(email:name.toLowerCase()+"@example.com", passwordHash: new Sha256Hash("password").toHex(), roles: [getExampleRole()], firstName: name, lastName: "Example", institute: getExampleInstitute())
 	}
 	static void saveSomeExampleData(){
-		getExampleInstitute().saveAll()
-		getExampleUser("User1").saveAll()
-		getExampleUser("User2").saveAll()
-		getExampleTeam("Team1").saveAll()
-		getExampleTeam("Team2").saveAll()
-		getExampleTeam("Team3").saveAll()
-		getExampleActivity("Activity1").saveAll()
-		getExampleActivity("Activity2").saveAll()
-		getExampleProposal("Proposal1").saveAll()
-		getExampleProposal("Proposal2").saveAll()
+		getExampleInstitute().save()
+		getExampleUser("User1").save()
+		getExampleUser("User2").save()
+		getExampleTeam("Team1").save()
+		getExampleTeam("Team2").save()
+		getExampleTeam("Team3").save()
+		getExampleActivity("Activity1").save()
+		getExampleActivity("Activity2").save()
+		//getExampleProposal("Proposal1").save()
+		//getExampleProposal("Proposal2").save()
 	}
 }
