@@ -22,7 +22,7 @@ class BootStrap {
 			def user = new User(email:"user@example.com", passwordHash: new Sha256Hash("password").toHex(), firstName: "Max", lastName: "Mustermann", institute: institute)
 			user.addToRoles(userRole)
 			user.save()
-			//TestService.saveSomeExampleData()
+			TestService.saveSomeExampleData()
 			println "Running in Development Mode"
 		} else if (currentEnv == Environment.TEST) {
 			// do custom init for test here
