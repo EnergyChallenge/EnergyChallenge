@@ -1,5 +1,10 @@
 package de.unikiel.klik
 
+import de.unikiel.klik.model.Activity
+import de.unikiel.klik.model.ActivityNotification
+import de.unikiel.klik.model.SpecificActivityNotification
+import de.unikiel.klik.model.TeamInvite
+import de.unikiel.klik.model.User
 import grails.transaction.Transactional
 import org.apache.shiro.subject.Subject
 
