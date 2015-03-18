@@ -1,4 +1,4 @@
-package de.unikiel.klik.energychallenge;
+package de.unikiel.klik.energychallenge.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,17 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import de.unikiel.klik.energychallenge.ExampleFragment;
+import de.unikiel.klik.energychallenge.JsonTestFragment;
+import de.unikiel.klik.energychallenge.R;
+import de.unikiel.klik.energychallenge.fragments.ActivitiesFragment;
+import de.unikiel.klik.energychallenge.fragments.MainFragment;
+import de.unikiel.klik.energychallenge.fragments.MyProfileFragment;
+import de.unikiel.klik.energychallenge.fragments.NavigationDrawerFragment;
+import de.unikiel.klik.energychallenge.fragments.OptionsFragment;
+import de.unikiel.klik.energychallenge.fragments.ProposalsFragment;
+import de.unikiel.klik.energychallenge.fragments.RankingListFragment;
 
 
 /* Main app activity */

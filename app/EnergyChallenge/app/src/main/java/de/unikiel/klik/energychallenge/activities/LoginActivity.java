@@ -1,9 +1,11 @@
-package de.unikiel.klik.energychallenge;
+package de.unikiel.klik.energychallenge.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
+
+import de.unikiel.klik.energychallenge.R;
 
 
 /*The initial login activity which is bypassed if the user is already logged in*/
