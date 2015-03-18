@@ -13,7 +13,7 @@ class RankingController {
 	}
 	def users() {
 		
-		TestService.saveSomeExampleData();
+		//TestService.saveSomeExampleData();
 		
 		
 		def ranking =  [];
