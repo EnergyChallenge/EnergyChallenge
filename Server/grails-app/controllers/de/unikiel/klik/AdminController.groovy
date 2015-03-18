@@ -4,6 +4,10 @@ class AdminController {
 
     def AdminService
 
+    def index(){
+
+    }
+
     def listUsers() {
 
         //Display all users 10 to a page
