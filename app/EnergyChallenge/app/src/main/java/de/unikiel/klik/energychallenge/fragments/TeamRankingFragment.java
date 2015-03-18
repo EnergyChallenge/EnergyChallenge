@@ -1,0 +1,66 @@
+package de.unikiel.klik.energychallenge.fragments;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.app.ListFragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import de.unikiel.klik.energychallenge.R;
+
+import de.unikiel.klik.energychallenge.activities.SearchActivity;
+import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
+import de.unikiel.klik.energychallenge.fragments.dummy.DummyContent;
+
+/**
+ * A fragment representing a list of Items.
+ * <p/>
+ * <p/>
+ * Activities containing this fragment MUST implement the {@link }
+ * interface.
+ */
+public class TeamRankingFragment extends ListFragment {
+
+    /**
+     * Mandatory empty constructor for the fragment manager to instantiate the
+     * fragment (e.g. upon screen orientation changes).
+     */
+    public TeamRankingFragment() {
+    }
+
+    /* Returns an new instance of this fragment */
+    public static TeamRankingFragment newInstance() {
+        return new TeamRankingFragment();
+    }
+
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = super.onCreateView(inflater, container, savedInstanceState);
+
+        // TODO: Change Adapter to display your content
+        setListAdapter(new RankingAdapter(getActivity()));
+        /*
+        setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
+                android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS));
+         */
+
+        return view;
+    }
+
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        //TODO Start ProfilActivity
+        Intent searchIntent = new Intent(getActivity(), SearchActivity.class);
+        startActivity(searchIntent);
+
+    }
+
+}

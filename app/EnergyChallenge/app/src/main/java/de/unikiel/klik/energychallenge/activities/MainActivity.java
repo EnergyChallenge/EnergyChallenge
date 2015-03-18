@@ -20,6 +20,7 @@ import de.unikiel.klik.energychallenge.fragments.NavigationDrawerFragment;
 import de.unikiel.klik.energychallenge.fragments.OptionsFragment;
 import de.unikiel.klik.energychallenge.fragments.ProposalsFragment;
 import de.unikiel.klik.energychallenge.fragments.RankingListFragment;
+import de.unikiel.klik.energychallenge.fragments.TeamRankingFragment;
 
 
 /* Main app activity */
