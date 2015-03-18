@@ -66,6 +66,6 @@
 			Einzelgewinner im Rahmen einer feierlichen Siegerehrung
 			gekürt.
 		</p>
-		/* TODO "Top5 Ranking der Aktivtäten einbinden" */
+		<!-- TODO "Top5 Ranking der Aktivtäten einbinden" */ -->
 	</body>
 </html>
