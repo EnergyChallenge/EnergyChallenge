@@ -7,8 +7,8 @@
 	<body>
 		<div id="left">
 		<style>
-		#login {margin-left:30px; margin-top:30px;}
-		#register {margin-left:30px; margin-top:30px;}
+		#login {margin-left:30px; margin-top:30px;color:black;}
+		#register {margin-left:30px; margin-top:30px;color:black;}
 		</style>
 			<div id="login" >
 				<g:form name="signInForm" url="[action:'signIn',controller:'auth']">
