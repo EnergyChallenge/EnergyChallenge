@@ -1,4 +1,4 @@
-package de.unikiel.klik.energychallenge;
+package de.unikiel.klik.energychallenge.fragments;
 
 
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import de.unikiel.klik.energychallenge.R;
 
 
 /* Fragment for the users own profile page */

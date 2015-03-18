@@ -15,5 +15,10 @@ class Activity {
 		duration(nullable: false)
     }
 	
-	
+	// TODO check db mapping
+	//static mapping = {
+	//	table 'activity'
+	//	id column: 'id'
+	//	points column: 'points'
+	//}
 }

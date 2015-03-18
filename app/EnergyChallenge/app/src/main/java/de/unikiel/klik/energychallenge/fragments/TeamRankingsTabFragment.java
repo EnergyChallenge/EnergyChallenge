@@ -1,23 +1,25 @@
-package de.unikiel.klik.energychallenge;
+package de.unikiel.klik.energychallenge.fragments;
 
 
-import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import de.unikiel.klik.energychallenge.R;
+
 
 /* Fragment for the initial view upon login */
-public class UserRankingsTabFragment extends Fragment {
+public class TeamRankingsTabFragment extends Fragment {
 
-    public UserRankingsTabFragment(){
+    public TeamRankingsTabFragment(){
 
     }
 
     /* Returns an new instance of this fragment */
-    public static UserRankingsTabFragment newInstance() {
-        return new UserRankingsTabFragment();
+    public static TeamRankingsTabFragment newInstance() {
+        return new TeamRankingsTabFragment();
     }
 
     @Override
@@ -30,7 +32,7 @@ public class UserRankingsTabFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         //Swap in the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab_user_rankings, container, false);
+        return inflater.inflate(R.layout.fragment_tab_team_rankings, container, false);
 
     }
 }
