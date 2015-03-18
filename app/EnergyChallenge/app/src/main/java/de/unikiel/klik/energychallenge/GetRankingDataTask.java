@@ -1,6 +1,10 @@
 package de.unikiel.klik.energychallenge;
 
+import android.os.SystemClock;
+import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,9 +21,13 @@ public class GetRankingDataTask extends GetDataFromServerTask {
 
     private ArrayAdapter rankingTeamAdapter;
 
-    public GetRankingDataTask(List<String> rankingTeamData, ArrayAdapter rankingTeamAdapter) {
+    private LinearLayout linlaHeaderProgress;
+
+    public GetRankingDataTask(List<String> rankingTeamData, ArrayAdapter rankingTeamAdapter,
+                              LinearLayout linlaHeaderProgress) {
         this.rankingTeamData = rankingTeamData;
         this.rankingTeamAdapter = rankingTeamAdapter;
+        this.linlaHeaderProgress = linlaHeaderProgress;
     }
 
 
@@ -45,6 +53,18 @@ public class GetRankingDataTask extends GetDataFromServerTask {
         }
 
         rankingTeamAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void doBeforeRequest() {
+        Log.v("Task", "Show LoadingIdicator now!");
+        linlaHeaderProgress.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    protected void doAfterResponse() {
+        Log.v("Task", "Hide LoadingIdicator now!");
+        linlaHeaderProgress.setVisibility(View.GONE);
     }
 
 }

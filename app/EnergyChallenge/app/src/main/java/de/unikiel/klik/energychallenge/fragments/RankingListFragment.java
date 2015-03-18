@@ -74,7 +74,7 @@ public class RankingListFragment extends Fragment {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0: // User ranking fragment
-                    return UserRankingsTabFragment.newInstance();
+                    return TeamRankingFragment.newInstance(); //TODO TEMP
                 case 1: // Team ranking fragment
                     return TeamRankingsTabFragment.newInstance();
                 default:

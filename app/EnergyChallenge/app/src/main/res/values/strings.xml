@@ -61,7 +61,11 @@
     <string name="options_notifications">Benachrichtigungen</string>
     <string name="options_logout">Ausloggen</string>
 
-    //Options
+    //Options/Searc -> Deprecated
     <string name="search_queryHint">Suchen...</string>
+
+    //Options
+    <string name="app_label">EnergyChallenge</string>
+    <string name="search_hint">Suchen</string>
 
 </resources>
