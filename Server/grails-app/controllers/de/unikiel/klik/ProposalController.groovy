@@ -10,9 +10,6 @@ class ProposalController {
 	def shiroSecurityManager
 	def proposalService = new ProposalService()
 	def index() {
-		if (Proposal.count()<2){
-			TestService.saveSomeExampleData()
-		}
 		int page
 		if(params.page) {
 			page = params.page as int
@@ -29,12 +26,12 @@ class ProposalController {
 	 */
 	def add() {
 		Subject subject = SecurityUtils.subject;
-		//try {
+		try {
 			proposalService.addProposal(params.description as String, params.points as int, subject)
-		//}catch(ValidationException e) {
+		}catch(ValidationException e) {
 			
-		//	flash.message = message(e.getMessage())
-		//}
+			flash.message = message(e.getMessage())
+		}
 		redirect (action : "index");
 	}
 	def view() {
@@ -42,7 +39,7 @@ class ProposalController {
 			Proposal proposal = Proposal.get(params.id)
 			def comments = proposal.comments;
 
-			return [proposal: proposal, comments: comments]
+			return [proposal: proposal, comments: comments, id: params.id]
 		} else {
 			redirect (action : index)
 		}
@@ -51,9 +48,8 @@ class ProposalController {
 		try {
 			proposalService.addComment(params.text as String, params.rating as int, SecurityUtils.getSubject(), params.id as long)
 		}catch(ValidationException e) {
-			flash.message = message(code: "login.failed")
+			flash.default = "Ein Fehler ist aufgetreten. Bitte versuchen sie es erneut oder kontaktieren sie den Admin" 
 		}
-		//render("TODO")
-		redirect(action = "view", params = params)
+		redirect (action: "view", params: params);
 	}
 }

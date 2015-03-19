@@ -22,7 +22,7 @@ header {
 }
 header .inside {
 	width: 960px;
-	margin: 0 auto;
+	margin: 30px auto;
     position: relative;
 }
 header .inside .topRight {
@@ -79,7 +79,7 @@ header .inside .topRight {
 footer {
 	height: 50px;
 	background-color: #8e217d;
-    color: #FFFFFF;
+    color: #FFFFFF; 
 }
 footer .inside {
 	width: 960px;
