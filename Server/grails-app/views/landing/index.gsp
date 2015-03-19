@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<h1>EnergyChallenge</h1>
-		<p>
+		<p style="text-align:justify;">
 			Die EnergyChallenge richtet sich an alle Studierende
 			und Beschäftigte der CAU, die Spaß daran haben
 			Energiesparmöglichkeiten am Arbeitsplatz auszutesten,
@@ -16,7 +16,7 @@
 			durchgeführt, um energiesparendes Verhalten am
 			Arbeitsplatz zu fördern.
 		</p>
-		<p>
+		<p style="text-align:justify;">
 			Die Teilnahme ist einfach: online anmelden, eine Gruppe
 			aussuchen (dies können Kollegen aus der Arbeitsgruppe
 			sein oder auch willkürliche Zusammensetzungen) und die
