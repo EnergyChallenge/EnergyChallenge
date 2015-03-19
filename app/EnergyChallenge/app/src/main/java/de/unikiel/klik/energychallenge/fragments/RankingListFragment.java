@@ -17,7 +17,6 @@ import de.unikiel.klik.energychallenge.R;
 /* Fragment for viewing team and user rankings */
 public class RankingListFragment extends Fragment {
 
-    //private FragmentTabHost rankingsTabHost; Old Tabhost
     private FragmentPagerAdapter adapterViewPager;
 
     float actionBarElevation;
@@ -74,9 +73,9 @@ public class RankingListFragment extends Fragment {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0: // User ranking fragment
-                    return TeamRankingFragment.newInstance(); //TODO TEMP
+                    return UserRankingFragment.newInstance();
                 case 1: // Team ranking fragment
-                    return TeamRankingsTabFragment.newInstance();
+                    return TeamRankingFragment.newInstance();
                 default:
                     return null;
             }

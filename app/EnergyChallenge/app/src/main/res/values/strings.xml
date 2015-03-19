@@ -68,4 +68,7 @@
     <string name="app_label">EnergyChallenge</string>
     <string name="search_hint">Suchen</string>
 
+    <string name="no_network_connection">Keine Internetverbindung verfügbar.</string>
+    <string name="error_in_server_communication">Es ist ein Fehler bei der Kommunikation mit dem Server aufgetreten.</string>
+
 </resources>

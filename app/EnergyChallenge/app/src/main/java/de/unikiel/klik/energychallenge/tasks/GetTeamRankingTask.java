@@ -16,7 +16,12 @@ import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
 import de.unikiel.klik.energychallenge.models.RankingItem;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
-public class GetUserRankingTask extends AccessServerTask {
+/* TODO
+ * Merge GetTeamRanking and GetUserRanking to one and extend it
+ */
+
+
+public class GetTeamRankingTask extends AccessServerTask {
 
     private RankingAdapter rankingAdapter;
 
@@ -24,7 +29,7 @@ public class GetUserRankingTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public GetUserRankingTask(RankingAdapter rankingAdapter,
+    public GetTeamRankingTask(RankingAdapter rankingAdapter,
                               LinearLayout progressIndicator,
                               TextView emptyListText) {
         this.rankingAdapter = rankingAdapter;
@@ -34,7 +39,7 @@ public class GetUserRankingTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        return new ServerRequest("getUserRanking");
+        return new ServerRequest("getTeamRanking");
     }
 
     @Override
