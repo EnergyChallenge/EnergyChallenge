@@ -23,8 +23,21 @@ class ProposalService {
     }
     void addProposal(String description, int points, Subject author) throws ValidationException {
 	User user = User.findByEmail(author.getPrincipal());
-	Proposal proposal = new Proposal(description: description, points: points, author: user);
-	proposal.save(failOnError: true);
+	Proposal proposal = Proposal.findByAuthor(user)
+	//TODO this part does not work!!!!!!!
+	Proposal newproposal = new Proposal(description: description, points: points, author: user);
+	if(proposal){
+		proposal = Proposal.get(proposal.getId())
+		proposal.delete(flush: true)
+		try{
+			newproposal.save(failOnError: true);
+		}catch(ValidationException ex){
+			proposal.save()
+			throw ex
+		}
+	}else{
+		newproposal.save(failOnError: true)
+	}
     }
 	
 }
