@@ -41,6 +41,7 @@
 					Vorschlag Beschreibung
 				</td>
 				<td>Punkte</td>
+				<td>Bewertung</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -54,6 +55,9 @@
 					</td>
 					<td>
 						${proposal.getPoints()}
+					</td>
+					<td>
+						${proposal.getRating()}
 					</td>
 				</tr>
 			</g:each>
