@@ -9,11 +9,7 @@
 
 <h1>Create Team</h1>
 
-<g:if test="${flash.message}">
-    <div class="message">${flash.message}</div>
-</g:if>
 <g:form action="newTeam">
-<input type="hidden" name="targetUri" value="${targetUri}" />
     <table>
         <tr>
             <td>Team Name:</td>
