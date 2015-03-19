@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import de.unikiel.klik.energychallenge.R;
+import de.unikiel.klik.energychallenge.activities.ProfileActivity;
 import de.unikiel.klik.energychallenge.activities.SearchActivity;
 import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
 import de.unikiel.klik.energychallenge.tasks.GetTeamRankingTask;
@@ -67,9 +68,10 @@ public class TeamRankingFragment extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        //TODO Start ProfilActivity
-        Intent searchIntent = new Intent(getActivity(), SearchActivity.class);
-        startActivity(searchIntent);
+        Intent profileIntent = new Intent(getActivity(), ProfileActivity.class);
+        profileIntent.putExtra("type", "team");
+        profileIntent.putExtra("id", rankingAdapter.getItem(position).getId());
+        startActivity(profileIntent);
 
     }
 

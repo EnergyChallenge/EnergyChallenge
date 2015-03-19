@@ -9,6 +9,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import de.unikiel.klik.energychallenge.ExampleFragment;
 import de.unikiel.klik.energychallenge.JsonTestFragment;
