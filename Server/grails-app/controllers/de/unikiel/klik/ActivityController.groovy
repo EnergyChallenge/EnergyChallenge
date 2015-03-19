@@ -72,7 +72,7 @@ class ActivityController {
 			redirect(action: "index")
 		}
 	}
-	
+	//TODO move to service
 	//returns a boolean indicating if an activity can currently be executed by a user
 	def boolean isExecutable(Activity activity) {
 		recentActivities = getRecentlyCompletedActivities(activity.duration)
@@ -81,7 +81,7 @@ class ActivityController {
 		}
 		return true
 	}
-	
+	//TODO move to service
 	//returns a boolean indicating if the activity is currently on the favorites list of a user
 	def boolean isFavorite(Activity activity) {
 		currentUser = getCurrentUser()
@@ -90,7 +90,7 @@ class ActivityController {
 		}
 		return false
 	}
-	//TODO format the period instance!
+	//TODO move to Service and format the output type
 	//returns a timer instance that works as a countdown, showing when the activity is available again
 	def String getActivityCountdown(Activity activity) {
 		def currentTime
@@ -124,7 +124,7 @@ class ActivityController {
 		currentUser = User.findByEmail(subject.getPrincipal())
 		return currentUser
 	}
-	
+	//TODO move to service
 	//returns a collection of Activities that were completed during the critical time
 	def getRecentlyCompletedActivities(Duration duration) {
 		currentUser = getCurrentUser()
