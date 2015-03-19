@@ -31,7 +31,7 @@ class ActivityService {
 		user = User.findByEmail(subject.getPrincipal())
 		activity = Activity.get(activityId)
 		//add the activity to the users favorites
-		user.addToFavorites(description: activity.getDescription(), points: activity.getPoints(), duration: activity.getDuration())
+		user.addToFavorites(activity)
 		user.save(flush: true, failOnError: true)
 	}
 	
