@@ -19,6 +19,9 @@ class Proposal {
 		comments(nullable:true)
 		dateCreated(nullable: false, defaultValue: "DateTime.now()")
     }
+    static mapping = {
+	dateCreated column: "DATE_CREATED", sqlType: "VARBINARY(300)"
+    }
 	
 	// TODO implement
 	int getRating() {

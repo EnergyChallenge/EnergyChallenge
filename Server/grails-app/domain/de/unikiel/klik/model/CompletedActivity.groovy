@@ -12,11 +12,16 @@ class CompletedActivity {
 		activity(nullable: false)
 		dateCreated(nullable: false, defaultValue: "DateTime.now()")
     }
+
+    // not persisted fields
+    static transients = ['points']
 	
 	// TODO create point property for completed activities; check db mapping
-	//static mapping = {
-	//		table 'completed_activity'
-	//		activity column: 'activity_id'
-	//		points formula: "(SELECT points FROM Activity a WHERE a.id = activity_id"
-	//}
+    static mapping = {
+      dateCreated sqlType: "VARBINARY(300)"
+    }
+
+    def int getPoints() {
+      return(this.activity.getPoints())
+    }
 }

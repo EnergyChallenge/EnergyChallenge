@@ -7,7 +7,7 @@
 </head>
 <body>
 	<h1>
-		Hello from... <em>Proposal</em>!
+		hier kannst du neue vorschlaege einreichen und wenn sie angenommen werden bekommst du <em>2 Punkte<em/>!
 	</h1>
 	<g:form action="add">
 		<table class="table">
@@ -18,7 +18,13 @@
 				</tr>
 				<tr>
 					<td>Punkte:</td>
-					<td><input type="number" name="points" value="" /></td>
+					<td><select name="points" >
+                                                <option value="1">1 Punkt</option>
+                                                <option value="2">2 Punkte</option>
+                                                <option value="3">3 Punkte</option>
+                                                <option value="4">4 Punkte</option>
+                                                <option value="5">5 Punkte</option>
+                                        </select></td>
 				</tr>
 				<tr>
 					<td />
@@ -42,7 +48,9 @@
 				<%-- TODO Link to Proposal --%>
 				<tr>
 					<td>
-						${proposal.getDescription()}
+                                                <a href="${createLink( action: 'view', id: proposal.id)}">
+                                                                ${proposal.getDescription()}
+                                                </a>
 					</td>
 					<td>
 						${proposal.getPoints()}
