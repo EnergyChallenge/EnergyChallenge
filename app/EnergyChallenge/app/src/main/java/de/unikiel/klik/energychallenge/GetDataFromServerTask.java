@@ -15,6 +15,25 @@ import de.unikiel.klik.energychallenge.Config;
 import de.unikiel.klik.energychallenge.utils.IoX;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
+/**
+ *
+ * ***************************************************
+ *
+ *  !!!!!!!!!!!!!!DEPRECATED!!!!!!!!!!!!!!!!!!!!!!!!1
+ *
+ *
+ *
+ *          Deprectaed! Do not use!
+ *
+ *
+ * Delete later
+ *
+ *
+ */
+
+
+
+
 // TODO Handle Exceptions
 // TODO Need
 

@@ -15,6 +15,24 @@ import java.util.List;
 
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
+/**
+ *
+ * ***************************************************
+ *
+ *  !!!!!!!!!!!!!!DEPRECATED!!!!!!!!!!!!!!!!!!!!!!!!1
+ *
+ *
+ *
+ *          Deprectaed! Do not use!
+ *
+ *
+ * Delete later
+ *
+ *
+ */
+
+
+
 public class GetRankingDataTask extends GetDataFromServerTask {
 
     private List<String> rankingTeamData = new ArrayList<>();
