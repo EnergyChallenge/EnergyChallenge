@@ -34,10 +34,10 @@ class TestService {
 		return getExampleTeam("Example")
 	}
 	static Team getExampleTeam(String name) {
-		return new Team(name: name, members:[
-			getExampleUser(name+"Member1"),
-			getExampleUser(name+"Member2")
-		])
+		Team team =  new Team(name: name)
+		team.addToMembers(getExampleUser(name+"Member1"))
+		team.addToMembers(getExampleUser(name+"Member2"))
+                return team
 	}
 	static Role getExampleRole() {
 		def role
@@ -66,8 +66,6 @@ class TestService {
 		getExampleTeam("Team3").save()
 		getExampleActivity("Activity1").save()
 		getExampleActivity("Activity2").save()
-		//getExampleProposal("Proposal1").save()
-		//getExampleProposal("Proposal2").save()
-		
+		//TODO Example Proposal!	
 	}
 }
