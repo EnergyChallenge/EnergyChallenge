@@ -40,7 +40,7 @@ class ActivityService {
 		user = User.findByEmail(subject.getPrincipal())
 		activity = Activity.get(activityId)
 		//remove the activity from the users favorites
-		user.removeFromFavorites(activity: activity)
+		user.removeFromFavorites(activity)
 		user.save(flush: true, failOnError: true)
 	}
 }
