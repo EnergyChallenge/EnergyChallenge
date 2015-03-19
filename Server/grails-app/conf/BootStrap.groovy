@@ -1,4 +1,5 @@
 import de.unikiel.klik.TestService
+import de.unikiel.klik.InitService
 import de.unikiel.klik.model.Institute
 import de.unikiel.klik.model.Role
 import de.unikiel.klik.model.Team
@@ -23,6 +24,9 @@ class BootStrap {
 			user.addToRoles(userRole)
 			user.save()
 			TestService.saveSomeExampleData()
+			
+			InitService.initKlikActivities()
+			
 			println "Running in Development Mode"
 		} else if (currentEnv == Environment.TEST) {
 			// do custom init for test here
