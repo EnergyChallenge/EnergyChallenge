@@ -63,6 +63,7 @@ grails.project.dependency.resolution = {
         compile ":asset-pipeline:1.9.9"
 		compile ":shiro:1.2.1"
 		compile ":joda-time:1.5"
+                compile ":export:1.6"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.6.1" // or ":hibernate:3.6.10.18"
