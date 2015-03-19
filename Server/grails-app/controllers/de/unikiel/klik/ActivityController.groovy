@@ -24,7 +24,7 @@ class ActivityController {
     def index() {
 		def activities = []
 		for(activity in Activity.findAll()) {
-			activities << [activity: activity, executable: isExecutable(activity), countdown: getActivityCountdown(activity)]
+			activities << [activity: activity, executable: isExecutable(activity), countdown: getActivityCountdown(activity), favorite: isFavorite(activity)]
 		}
 		[activities : activities]
 	}
@@ -79,7 +79,7 @@ class ActivityController {
 	
 	def boolean isFavorite(Activity activity) {
 		currentUser = getCurrentUser()
-		if(currentUser.favorites?.collect().find{a -> a.id == activity.id}) {
+		if(currentUser.favorites?.contains(activity)) {
 			return true
 		}
 		return false

@@ -70,5 +70,8 @@
 
     <string name="no_network_connection">Keine Internetverbindung verfügbar.</string>
     <string name="error_in_server_communication">Es ist ein Fehler bei der Kommunikation mit dem Server aufgetreten.</string>
+    <string name="title_activity_profile">Profil</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

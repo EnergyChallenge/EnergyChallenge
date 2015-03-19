@@ -33,10 +33,12 @@
 				<g:else>${act.countdown}</g:else>
 				</td>
 				<td>
+				<g:if test="${!act.favorite}" >
 					<g:form name="addToFavoritesForm" url="[action:'addToFavorites',controller:'activity',id: act.activity.getId()]">
 					<g:actionSubmitImage value="favorisieren" action="addToFavorites"
                      src="${resource(dir: 'images', file: 'favorite_star.png')}"/> <!-- <input type="submit" value="favorisieren" /> -->
 					</g:form>
+				</g:if>
 				</td>
 			</tr>
 			</g:each>
