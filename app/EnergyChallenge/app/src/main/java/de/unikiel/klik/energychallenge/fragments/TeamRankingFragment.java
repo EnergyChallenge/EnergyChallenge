@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.activities.ProfileActivity;
-import de.unikiel.klik.energychallenge.activities.SearchActivity;
 import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
 import de.unikiel.klik.energychallenge.tasks.GetTeamRankingTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
@@ -49,7 +48,7 @@ public class TeamRankingFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_ranking, container, false);
+        View view = inflater.inflate(R.layout.fragment_list_extended, container, false);
 
         progressIndicator = (LinearLayout) view.findViewById(R.id.progress_container_id);
         emptyListText = (TextView) view.findViewById(R.id.empty_id);
