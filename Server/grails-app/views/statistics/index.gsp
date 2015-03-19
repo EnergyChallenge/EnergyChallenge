@@ -22,54 +22,24 @@
 <g:javascript>
 <g:applyCodec encodeAs="none">
 $(document).ready(function(){
-var data1 = ${pageVisitsLast10Days};
-var plot1 = $.jqplot ('chart1', [data1], {
-      // Give the plot a title.
-      title: 'Plot With Options',
-      // You can specify options for all axes on the plot at once with
-      // the axesDefaults object.  Here, we're using a canvas renderer
-      // to draw the axis label which allows rotated text.
-      axesDefaults: {
-        labelRenderer: $.jqplot.CanvasAxisLabelRenderer
-      },
-      // Likewise, seriesDefaults specifies default options for all
-      // series in a plot.  Options specified in seriesDefaults or
-      // axesDefaults can be overridden by individual series or
-      // axes options.
-      // Here we turn on smoothing for the line.
-      seriesDefaults: {
-          rendererOptions: {
-              smooth: true
-          }
-      },
-      // An axes object holds options for all axes.
-      // Allowable axes are xaxis, x2axis, yaxis, y2axis, y3axis, ...
-      // Up to 9 y axes are supported.
-      axes: {
-        // options for each axis are specified in seperate option objects.
-        xaxis: {
-          label: "X Axis",
-          // Turn off "padding".  This will allow data point to lie on the
-          // edges of the grid.  Default padding is 1.2 and will keep all
-          // points inside the bounds of the grid.
-          pad: 0
-        },
-        yaxis: {
-          label: "Y Axis"
-        }
-      }
-    });
-});
-$(document).ready(function(){
+  var data1 = ${pageVisitsIndex};
+  var plot1 = $.jqplot('chart1',[data1],{
+    axes:{
+      xaxis:{renderer:$.jqplot.DateAxisRenderer,
+        tickOptions:{formatString:'%d.%m'},
+        tickInterval:'1 day'},
+        yaxis:{min:0,pad:2}},
+    series:[{lineWidth:4, markerOptions:{style:'circle'}, label:"Besuche"}],
+    legend: {
+      show: true,location: 'nw', xoffset: 12,yoffset: 12
+    }
+  });
   var data2 = ${mostPopularActivitys };
   var plot2 = jQuery.jqplot ('chart2', [data2], 
     { 
       seriesDefaults: {
-        // Make this a pie chart.
         renderer: jQuery.jqplot.PieRenderer, 
         rendererOptions: {
-          // Put data labels on the pie slices.
-          // By default, labels show the percentage of the slice.
           showDataLabels: true
         }
       },
