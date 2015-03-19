@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.subject.Subject
 import org.joda.time.DateTime
+import org.joda.time.Duration
 import org.joda.time.Period
 import org.joda.time.PeriodType
 import org.joda.time.format.PeriodFormatter
@@ -50,7 +51,6 @@ class ActivityController {
 			flash.message = "Activity already a favorite!"
 			redirect(action: index)
 		} else {
-		//params.id is not a long so this could fail, alternatively do it in another way
 		ActivityService.addToFavorites(activityId, subject)
 		//redirect(action: index)
 		}
@@ -71,12 +71,10 @@ class ActivityController {
 	//check if an activity can currently be executed by a user
 	def boolean isExecutable(Activity activity) {
 		user = getUser()
-		def recentActivities = user.getCompletedActivities()
-		for(recAct in recentActivities) {
-			if(recAct.id == activity.id) {
-				return false
+		def recentActivities = getRecentlyCompletedActivities(activity.duration)
+		if(recentActivities.find{a -> a.activity.id == activity.id}) {
+			return false
 			}
-		}
 		return true
 	}
 	//TODO format the period instance!
@@ -84,14 +82,8 @@ class ActivityController {
 	def String getActivityCountdown(Activity activity) {
 		def currentTime
 		def endOfCountdown
-		def completedActivity
-		def completedActivities = getUser().getCompletedActivities()
-		for(comAct in completedActivities) {
-			if(comAct.getActivity().id == activity.id) {
-				completedActivity = comAct
-				break
-			}
-		}
+		def completedActivities = getRecentlyCompletedActivities(activity.duration)
+		def completedActivity = completedActivities?.find{a -> a.activity.id == activity.id}
 		if(isExecutable(activity)) {
 			currentTime = endOfCountdown = 0
 		} else {
@@ -117,5 +109,14 @@ class ActivityController {
 		subject = SecurityUtils.subject
 		user = User.findByEmail(subject.getPrincipal())
 		return user
+	}
+	
+	def getRecentlyCompletedActivities(Duration duration) {
+		user = getUser()
+		def currentTime = new DateTime()
+		def DateTime criticalPointOfTime = new DateTime(currentTime.minus(duration))
+		def recentlyCompletedActivities = user.completedActivities?.collect().findAll {a -> a.dateCreated.isAfter(criticalPointOfTime)}
+		
+		return recentlyCompletedActivities
 	}
 }
