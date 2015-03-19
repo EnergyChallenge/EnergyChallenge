@@ -4,6 +4,10 @@
 <meta name="layout" content="main" />
 <title>EnergyChallenge</title>
 
+<!-- export module -->
+<r:require module="export"/>
+
+
 <asset:stylesheet src="jqplot/jquery.jqplot.css" />
 <g:javascript library='jquery' />
 <!--[if lt IE 9]><asset:javascript src="jqplot/excanvas.js"/><![endif]-->
@@ -89,6 +93,11 @@ $(document).ready(function(){
 			<h1>Beliebteste Aktivitaeten</h1>
 			<div id="chart2" style="height: 500px; width: 375px;"></div>
 		</div>
+                </div>
+			<export:formats formats="['csv']" />
+		</div> 
 	</div>
+
+	       
 </body>
 </html>

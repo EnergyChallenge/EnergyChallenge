@@ -18,7 +18,7 @@ class ActivityController {
 	
 	def ActivityService
 	def subject
-	def user
+	def currentUser
 	def activity
 
     def index() {
@@ -43,39 +43,46 @@ class ActivityController {
 	
 	def addToFavorites() {
 		//get the current user and the selected activity
-		user = getUser()
+		currentUser = getCurrentUser()
 		//TODO Check if if case is necessary
 		//check if activity is yet a favorite
 		def activityId = Activity.get(params.id).id
-		if(user.favorites.contains(activityId)) {
+		if(isFavorite(activity)) {
 			flash.message = "Activity already a favorite!"
-			redirect(action: index)
+			redirect(action: "index")
 		} else {
-		ActivityService.addToFavorites(activityId, subject)
-		//redirect(action: index)
+			ActivityService.addToFavorites(activityId, subject)
+			redirect(action: "index")
 		}
 	}	
 	
 	def removeFromFavorites() {
-		user = getUser()
+		currentUser = getCurrentUser()
 		def activityId = Activity.get(params.id).id
-		if(user.favorites.contains(activityId)) {
+		if(!isFavorite(activity)) {
 			flash.message = "Activity not a favorite!"
-			redirect(action: index)
+			redirect(action: "index")
 		} else {
 			ActivityService.removeFromFavorites(activityId, subject)
-			//redirect(action: index)
+			redirect(action: "index")
 		}
 	}
 	
 	//check if an activity can currently be executed by a user
 	def boolean isExecutable(Activity activity) {
-		user = getUser()
 		def recentActivities = getRecentlyCompletedActivities(activity.duration)
 		if(recentActivities.find{a -> a.activity.id == activity.id}) {
 			return false
-			}
+		}
 		return true
+	}
+	
+	def boolean isFavorite(Activity activity) {
+		currentUser = getCurrentUser()
+		if(currentUser.favorites?.collect().find{a -> a.id == activity.id}) {
+			return true
+		}
+		return false
 	}
 	//TODO format the period instance!
 	//returns a timer instance that works as a countdown, showing when the activity is available again
@@ -105,17 +112,17 @@ class ActivityController {
 		return countdown
 	}
 	
-	def User getUser() {
+	def User getCurrentUser() {
 		subject = SecurityUtils.subject
-		user = User.findByEmail(subject.getPrincipal())
-		return user
+		currentUser = User.findByEmail(subject.getPrincipal())
+		return currentUser
 	}
 	
 	def getRecentlyCompletedActivities(Duration duration) {
-		user = getUser()
+		currentUser = getCurrentUser()
 		def currentTime = new DateTime()
 		def DateTime criticalPointOfTime = new DateTime(currentTime.minus(duration))
-		def recentlyCompletedActivities = user.completedActivities?.collect().findAll {a -> a.dateCreated.isAfter(criticalPointOfTime)}
+		def recentlyCompletedActivities = currentUser.completedActivities?.collect().findAll {a -> a.dateCreated.isAfter(criticalPointOfTime)}
 		
 		return recentlyCompletedActivities
 	}
