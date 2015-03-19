@@ -6,14 +6,8 @@
     <asset:stylesheet src="table.css"/>
 </head>
 <body>
-
 <h1>Benutzer Bearbeiten</h1>
-
-<g:if test="${flash.message}">
-    <div class="message">${flash.message}</div>
-</g:if>
-<g:form action="edit">
-<input type="hidden" name="targetUri" value="${targetUri}" />
+<g:form action="save">
     <table>
         <tr>
             <td>Title:</td>
@@ -27,21 +21,51 @@
         </tr>
         <tr>
             <td>Vorname:</td>
-            <td><input type="text" name="firstName" value="${firstName}" /></td>
+            <td><input type="text" name="firstName" value="${user.getFirstName()}" /></td>
         </tr>
         <tr>
             <td>Nachname:</td>
-            <td><input type="text" name="lastName" value="${lastName}" /></td>
+            <td><input type="text" name="lastName" value="${user.getLastName()}" /></td>
+        </tr>
+        <tr>
+            <td />
+            <td><input type="submit" value="Speichern" /></td>
+        </tr>
+    </table>
+</g:form>
+<g:form action="changePassword">
+    <table>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" value="${password}" /></td>
+        </tr>
+        <tr>
+            <td>Password (repeat):</td>
+            <td><input type="password" name="password2" value="${password}2" /></td>
         </tr>
         <tr>
             <td />
             <td><input type="submit" value="Save" /></td>
         </tr>
     </table>
+</g:form>
+<g:form action="newTeam">
+    <table>
+        <tr>
+            <td>Team Name:</td>
+            <td><input type="text" name="name" value="${name}" /></td>
+        </tr>
+        <tr>
+            <td />
+            <td><input type="submit" value="Create" /></td>
+        </tr>
+    </table>
+</g:form>
+
     <!-- Test Avatar Uploader -->
-    <!-- <fieldset>
+    <fieldset>
       <legend>Avatar Upload</legend>
-      <g:uploadForm action="upload_avatar">
+      <g:uploadForm action="uploadAvatar">
         <label for="avatar">Avatar (512k)</label>
         <input type="file" name="avatar" id="avatar" />
         <div style="font-size:0.8em; margin: 1.0em;">
@@ -50,8 +74,6 @@
         </div>
         <input type="submit" class="buttons" value="Upload" />
       </g:uploadForm>
-    </fieldset> -->
-
-</g:form>
+    </fieldset>
 </body>
 </html>

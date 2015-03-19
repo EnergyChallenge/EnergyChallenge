@@ -27,16 +27,24 @@
 				<g:if test="${act.executable}" >
 					<g:form name="completeActivityForm" url="[action:'completeActivity',controller:'activity',id: act.activity.getId()]">
 					<g:actionSubmitImage value="Aktivität erledigen" action="completeActivity"
-                     src="${resource(dir: 'images', file: 'energy.png')}"/>	<!--  <input type="submit" value="Aktivität erledigen"/> -->
+                     src="${resource(dir: 'images', file: 'complete.png')}"/>	<!--  <input type="submit" value="Aktivität erledigen"/> -->
 					</g:form>
 				</g:if>
 				<g:else>${act.countdown}</g:else>
 				</td>
 				<td>
+				<g:if test="${!act.favorite}" >
 					<g:form name="addToFavoritesForm" url="[action:'addToFavorites',controller:'activity',id: act.activity.getId()]">
 					<g:actionSubmitImage value="favorisieren" action="addToFavorites"
-                     src="${resource(dir: 'images', file: 'favorite_star.png')}"/> <!-- <input type="submit" value="favorisieren" /> -->
+                     src="${resource(dir: 'images', file: 'nofavorite.png')}"/> <!-- <input type="submit" value="favorisieren" /> -->
 					</g:form>
+				</g:if>
+				<g:else>
+					<g:form name="removeFromFavoritesForm" url="[action:'removeFromFavorites',controller:'activity',id: act.activity.getId()]">
+					<g:actionSubmitImage value="defavorisieren" action="removeFromFavorites"
+                     src="${resource(dir: 'images', file: 'favorite1.png')}"/> <!-- <input type="submit" value="favorisieren" /> -->
+					</g:form>
+				</g:else>
 				</td>
 			</tr>
 			</g:each>
