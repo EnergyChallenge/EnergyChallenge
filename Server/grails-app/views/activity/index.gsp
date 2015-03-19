@@ -28,7 +28,7 @@
 				</td>
 				<td>
 					<g:form name="addToFavoritesForm" url="[action:'addToFavorites',controller:'activity',id: act.activity.getId()]">
-					<input type="submit" value="favorisieren" />
+					<input type="submit" value=<img src="/images/Yellow_star.png" /> />
 					</g:form>
 				</td>
 			</tr>
