@@ -54,6 +54,7 @@ class ActivityController {
 			redirect(action: "index")
 		} else {
 			ActivityService.addToFavorites(activityId, subject)
+			flash.message = "Activity added to favorites!"
 			redirect(action: "index")
 		}
 	}	
@@ -67,6 +68,7 @@ class ActivityController {
 			redirect(action: "index")
 		} else {
 			ActivityService.removeFromFavorites(activityId, subject)
+			flash.message = "Activity removed from favorites"
 			redirect(action: "index")
 		}
 	}
@@ -94,7 +96,7 @@ class ActivityController {
 		def currentTime
 		def endOfCountdown
 		recentActivities = getRecentlyCompletedActivities(activity.duration)
-		def completedActivity = recentActivities?.find{it.id == activity.id}
+		def completedActivity = recentActivities?.find{it.activity.id == activity.id}
 		if(isExecutable(activity)) {
 			currentTime = endOfCountdown = 0
 		} else {
