@@ -57,13 +57,13 @@ public class GetRankingDataTask extends GetDataFromServerTask {
 
     @Override
     protected void doBeforeRequest() {
-        Log.v("Task", "Show LoadingIdicator now!");
+        Log.v("Task", "Show LoadingIdicator now!"); //TODO Remove
         linlaHeaderProgress.setVisibility(View.VISIBLE);
     }
 
     @Override
     protected void doAfterResponse() {
-        Log.v("Task", "Hide LoadingIdicator now!");
+        Log.v("Task", "Hide LoadingIdicator now!"); //TODO Remove
         linlaHeaderProgress.setVisibility(View.GONE);
     }
 

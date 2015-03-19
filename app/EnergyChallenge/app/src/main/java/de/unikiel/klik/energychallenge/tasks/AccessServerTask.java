@@ -18,9 +18,13 @@ import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
 
+    private static final String TAG = "AcessServerTask"; //Tag for Logs
+
     protected abstract ServerRequest createServerRequest();
 
-    protected abstract void handleServerResponse(JSONObject response);
+    protected abstract void handleServerResponse(JSONObject response) throws JSONException;
+
+    protected abstract void  handleResponseError();
 
     protected void doBeforeRequest() {} // Do nothing by default
 
@@ -38,17 +42,24 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         } catch (IOException e) {
             e.printStackTrace(); //TODO Delete this
             Log.w("AcessServerTask", "Could not access Server!");
-            return ""; //TODO Return Error
+            return "Error"; //TODO Return Error
         }
     }
 
     @Override
     protected final void onPostExecute(String result) {
-        //TODO Handle Error
+
+        if (result == "Error") {
+            Log.w(TAG, "Could not access Server!");
+            handleResponseError();
+        }
+
         try {
             handleServerResponse(new JSONObject(result));
         } catch (JSONException e) {
+            Log.e(TAG, "Error in JSON");
             e.printStackTrace();
+            handleResponseError();
         }
 
         doAfterResponse();
