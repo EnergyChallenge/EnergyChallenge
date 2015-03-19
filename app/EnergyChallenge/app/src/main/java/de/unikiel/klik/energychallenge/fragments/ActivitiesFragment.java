@@ -1,24 +1,19 @@
 package de.unikiel.klik.energychallenge.fragments;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import de.unikiel.klik.energychallenge.R;
 
-import de.unikiel.klik.energychallenge.activities.ProfileActivity;
 import de.unikiel.klik.energychallenge.adapters.ActivitiesAdapter;
-import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
 import de.unikiel.klik.energychallenge.tasks.GetActivitiesTask;
-import de.unikiel.klik.energychallenge.tasks.GetUserRankingTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
 
@@ -54,8 +49,7 @@ public class ActivitiesFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //TODO Replace by activit fragment layout or combine list fragments
-        View view = inflater.inflate(R.layout.fragment_ranking, container, false);
+        View view = inflater.inflate(R.layout.fragment_list_extended, container, false);
 
         progressIndicator = (LinearLayout) view.findViewById(R.id.progress_container_id);
         emptyListText = (TextView) view.findViewById(R.id.empty_id);
