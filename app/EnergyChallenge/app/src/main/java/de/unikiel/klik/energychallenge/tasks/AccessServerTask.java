@@ -40,9 +40,8 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         try {
             return performServerRequest(createServerRequest());
         } catch (IOException e) {
-            e.printStackTrace(); //TODO Delete this
-            Log.w("AcessServerTask", "Could not access Server!");
-            return "Error"; //TODO Return Error
+            e.printStackTrace();
+            return "Error";
         }
     }
 

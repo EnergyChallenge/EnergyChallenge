@@ -20,6 +20,7 @@ import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.activities.SearchActivity;
 import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
 import de.unikiel.klik.energychallenge.fragments.dummy.DummyContent;
+import de.unikiel.klik.energychallenge.tasks.GetTeamRankingTask;
 import de.unikiel.klik.energychallenge.tasks.GetUserRankingTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
@@ -53,7 +54,6 @@ public class TeamRankingFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        //View view = super.onCreateView(inflater, container, savedInstanceState); //TODO remove this
         View view = inflater.inflate(R.layout.fragment_ranking, container, false);
 
         progressIndicator = (LinearLayout) view.findViewById(R.id.progress_container_id);
@@ -84,8 +84,7 @@ public class TeamRankingFragment extends ListFragment {
         Context context = getActivity();
 
         if (NetworkX.isAvailable(context)) {
-            //TODO CHnage to TEam
-            new GetUserRankingTask(rankingAdapter, progressIndicator, emptyListText).execute();
+            new GetTeamRankingTask(rankingAdapter, progressIndicator, emptyListText).execute();
         } else {
             emptyListText.setText(R.string.no_network_connection);
             Toast.makeText(context, R.string.no_network_connection, Toast.LENGTH_SHORT).show();
