@@ -39,6 +39,12 @@
                      src="${resource(dir: 'images', file: 'favorite1.png')}"/> <!-- <input type="submit" value="favorisieren" /> -->
 					</g:form>
 				</g:if>
+				<g:else>
+					<g:form name="removeFromFavoritesForm" url="[action:'removeFromFavorites',controller:'activity',id: act.activity.getId()]">
+					<g:actionSubmitImage value="defavorisieren" action="removeFromFavorites"
+                     src="${resource(dir: 'images', file: 'favorite1.png')}"/> <!-- <input type="submit" value="favorisieren" /> -->
+					</g:form>
+				</g:else>
 				</td>
 			</tr>
 			</g:each>
