@@ -1,15 +1,31 @@
 package de.unikiel.klik;
+
+import de.unikiel.klik.model.PageView;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
 import grails.converters.JSON;
 import org.apache.shiro.subject.Subject
 import org.apache.shiro.*
 class StatisticsController {
 
     def index() { 
-		def mostPopularActivitys = [["Haendewaschen mit kaltem Wasser",10],["Mit dem Fahrrad zur Uni fahren bis 3km",20],["Persönlichen CO2-Abdruck berechnen",15],["Treppe statt Fahrstuhl nutzen pro Tag",2],["Mit dem Fahrrad zur Uni fahren bis 5km",12],["Mit dem Fahrrad zur Uni fahren über 5km",7]]
-		def pageVisitsLast10Days = [50,300,500,700,1000,800,900,800,950,1042] 
-		[mostPopularActivitys : mostPopularActivitys as JSON, pageVisitsLast10Days: pageVisitsLast10Days as JSON];
+		def mostPopularActivitys = getMostPopularActivitys();
+		def pageVisitsIndex = getVisitsOf("/",10)  
+		[mostPopularActivitys : mostPopularActivitys as JSON, pageVisitsIndex: pageVisitsIndex as JSON];
 	}
 	def test() {
 		[userName: org.apache.shiro.SecurityUtils.getSubject().getPrincipal()]
 	}
+  private def getMostPopularActivitys(){
+    return null
+  }
+  private def getVisitsOf(String url, int maxData){
+    def rawData = PageView.findAll("from PageView as pageView where pageView.url=? order by pageView.dateCreated", [url], [max:maxData])
+    def data = [];
+    DateTimeFormatter fmt = DateTimeFormat.forPattern("yyyy-MM-dd h:ma");
+    for (PageView pageView : rawData){
+        data += [[fmt.print(pageView.getDateCreated()), pageView.getViews()]]
+    }
+    return data
+  }
 }
