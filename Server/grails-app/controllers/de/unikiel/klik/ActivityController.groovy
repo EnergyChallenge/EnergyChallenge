@@ -48,12 +48,12 @@ class ActivityController {
 		//get the current user and the selected activity
 		currentUser = getCurrentUser()
 		//check if activity is yet a favorite
-		def activityId = Activity.get(params.id).id
+		activity = Activity.get(params.id)
 		if(isFavorite(activity)) {
 			flash.message = "Activity already a favorite!"
 			redirect(action: "index")
 		} else {
-			ActivityService.addToFavorites(activityId, subject)
+			ActivityService.addToFavorites(activity.id, subject)
 			flash.message = "Activity added to favorites!"
 			redirect(action: "index")
 		}
@@ -62,12 +62,12 @@ class ActivityController {
 	//removes a selected activity from the favorites
 	def removeFromFavorites() {
 		currentUser = getCurrentUser()
-		def activityId = Activity.get(params.id).id
-		if(!isFavorite(activity)) {
+		activity = Activity.get(params.id)
+		if(!(isFavorite(activity))) {
 			flash.message = "Activity not a favorite!"
 			redirect(action: "index")
 		} else {
-			ActivityService.removeFromFavorites(activityId, subject)
+			ActivityService.removeFromFavorites(activity.id, subject)
 			flash.message = "Activity removed from favorites"
 			redirect(action: "index")
 		}
@@ -85,7 +85,7 @@ class ActivityController {
 	//returns a boolean indicating if the activity is currently on the favorites list of a user
 	def boolean isFavorite(Activity activity) {
 		currentUser = getCurrentUser()
-		if(currentUser.favorites?.contains(activity)) {
+		if(currentUser.favorites.findAll().contains(activity)) {
 			return true
 		}
 		return false
