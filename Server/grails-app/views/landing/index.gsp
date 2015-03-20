@@ -15,7 +15,9 @@
             <td>
               <g:if test="Aktivitaet erledigbar" >
                 <g:form name="completeActivityForm" url="[action:'completeActivity',controller:'activity',id: activity.getId()]">
-                  <input type="submit" value="Aktivität erledigen"/> <!-- TODO einfügen des Imagebutton -->
+                  <!--  <input type="submit" value="Aktivität erledigen"/> -->
+                  <g:actionSubmitImage value="Aktivität erledigen" action="completeActivity"
+                     src="${resource(dir: 'images', file: 'complete.png')}"/>	<!-- actionsubmitImage creates an imagebutton for the method completeActivity -->
                 </g:form>
               </g:if>
               <g:else>
@@ -24,7 +26,9 @@
             </td>
             <td>
               <g:form name="addToFavoritesForm" url="[action:'removeFromFavorites',controller:'activity',id: activity.getId()]">
-                <input type="submit" value="nicht mehr favoritisieren" /> <!-- TODO einfügen des Imagebutton -->
+              <!--  <input type="submit" value="nicht mehr favoritisieren" /> -->
+              <g:actionSubmitImage value="defavorisieren" action="removeFromFavorites"
+                     src="${resource(dir: 'images', file: 'favorite1.png')}"/>  
               </g:form>
             </td>
           </tr>
