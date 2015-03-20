@@ -53,7 +53,7 @@ class ActivityController {
 			flash.message = "Activity already a favorite!"
 			redirect(action: "index")
 		} else {
-			ActivityService.addToFavorites(activity.id, subject)
+			ActivityService.addToFavorites(activity.id, SecurityUtils.subject)
 			flash.message = "Activity added to favorites!"
 			redirect(action: "index")
 		}
@@ -67,7 +67,7 @@ class ActivityController {
 			flash.message = "Activity not a favorite!"
 			redirect(action: "index")
 		} else {
-			ActivityService.removeFromFavorites(activity.id, subject)
+			ActivityService.removeFromFavorites(activity.id, SecurityUtils.subject)
 			flash.message = "Activity removed from favorites"
 			redirect(action: "index")
 		}
