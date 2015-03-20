@@ -9,16 +9,14 @@
 
 <h1>Edit Activity</h1>
 
-<g:if test="${flash.message}">
-    <div class="message">${flash.message}</div>
-</g:if>
-<g:form action="editActivity">
-    <input type="hidden" name="targetUri" value="${targetUri}" />
+<g:form action="changeActivity">
+    <input type="hidden" name="proposalId" value="${proposalId}" />
+    <input type="hidden" name="activityId" value="${activityId}" />
     <table>
         <tbody>
         <tr>
             <td>Beschreibung:</td>
-            <td><textarea name="description">${description}</textarea></td>
+            <td><textarea name="description" value="${description}">${description}</textarea></td>
         </tr>
         <tr>
             <td>Punkte:</td>
