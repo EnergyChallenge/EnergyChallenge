@@ -25,7 +25,12 @@ class BootStrap {
 			user.save()
 			TestService.saveSomeExampleData()
 			
+			// initialization for productive use
+			InitService.initKlikRoles()
 			InitService.initKlikActivities()
+			InitService.initCauInstitutions()
+			TestService.createAndSaveExampleUsersForExistingInstitutes(10)
+			TestService.createAndSaveCompletedActivitiesForExistingUsersAndActivities(20)
 			
 			println "Running in Development Mode"
 		} else if (currentEnv == Environment.TEST) {

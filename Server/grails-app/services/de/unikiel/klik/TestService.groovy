@@ -4,10 +4,13 @@ import de.unikiel.klik.model.*
 import grails.transaction.Transactional
 import org.apache.shiro.crypto.hash.Sha256Hash
 import org.joda.time.Duration
+import java.util.Random
 
 @Transactional
 class TestService {
 
+	static Random rand = new Random()
+	
 	static Activity getExampleActivity() {
 		return getExampleActivity("Example")
 	}
@@ -67,5 +70,39 @@ class TestService {
 		getExampleActivity("Activity1").save()
 		getExampleActivity("Activity2").save()
 		//TODO Example Proposal!	
+	}
+	
+	// needs predefined institutes
+	static void createAndSaveExampleUsersForExistingInstitutes(int nrOfUsers) {
+		def user_role = Role.findOrSaveByName("user")
+		int nrOfInstitutes = Institute.count()
+		
+		for(int i=1; i <= nrOfUsers; i++) {
+			new User(email:"benutzer" + i +"@example.com", 
+				passwordHash: new Sha256Hash("password").toHex(), 
+				roles: [user_role], 
+				firstName: "Benutzer" + i, 
+				lastName: "Example", 
+				institute: Institute.get(rand.nextInt(nrOfInstitutes) + 1)	// get a random Institute
+				).save(flush: true)
+		}
+	}
+	
+	// needs predefined users and activities
+	static void createAndSaveCompletedActivitiesForExistingUsersAndActivities(int nrOfCompletedActivities) {
+		int nrOfUsers = User.count()
+		int nrOfActivities = Activity.count()
+		//User user
+		//Activity activity
+		//CompletedActivity completedActivity
+		
+		for(int i=1; i <= nrOfCompletedActivities; i++) {
+			def user = User.get(1)			// TODO get a random User
+			def activity = Activity.get(rand.nextInt(nrOfActivities) + 1)	// get a random Activity
+			def completedActivity = new CompletedActivity(activity: activity)
+			completedActivity.save(flush: true, failOnError: true)
+			user.addToCompletedActivities(completedActivity)
+			user.save(flush: true, failOnError: true)
+		}
 	}
 }

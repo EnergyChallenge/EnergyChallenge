@@ -22,6 +22,17 @@ import java.util.List;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
 
+
+/***
+ *  TODO Not used anymore
+ *
+ * Delete later
+ *
+ *
+ */
+
+
+
 public class JsonTestFragment extends Fragment {
 
     private List<String> rankingTeamData = new ArrayList<>();
