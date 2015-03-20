@@ -40,6 +40,7 @@
             <li><a href="${createLink(controller:'Admin', action: 'users')}" >Benutzer verwallten</a></li>
             <li><a href="${createLink(controller:'Admin', action: 'teams')}" >Teams verwallten</a></li>
             <li><a href="${createLink(controller:'Admin', action: 'activities')}" >Aktivitaeten verwallten</a></li>
+            <li><a href="${createLink(controller:'Admin', action: 'proposals')}" >Vorschlaege verwallten</a></li>
           </g:if>
         </ul>
       </nav>
