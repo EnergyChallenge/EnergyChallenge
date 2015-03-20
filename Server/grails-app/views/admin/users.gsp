@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<meta name="layout" content="public"/>
+  	<meta name="layout" content="main"/>
   	<title>EnergyChallenge</title>
   </head>
   <body>
