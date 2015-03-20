@@ -12,6 +12,14 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 
+/***
+ *  TODO Not used anymore
+ *
+ * Delete later
+ *
+ *
+ */
+
 public class ExampleFragment extends Fragment {
 
     public ExampleFragment() {

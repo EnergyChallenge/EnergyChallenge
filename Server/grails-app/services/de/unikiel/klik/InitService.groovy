@@ -2,6 +2,7 @@ package de.unikiel.klik
 
 import grails.transaction.Transactional
 import de.unikiel.klik.model.*
+import java.util.Random
 
 @Transactional
 class InitService {
@@ -83,9 +84,52 @@ class InitService {
 		MIN_DURATION_IN_MS  // 33. TODO give correct duration
 	]
 	
-	static void initKlikActivities(){
-		for(int i=0; i < 33; i++) {
-			new Activity(description: ACTIVITY_DESCRIPTIONS[i], points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i]).save()
+	// CAU Institutions
+	static def INSTITUTES = [
+		// Technische Fakultät
+		"Institut für Elektrotechnik und Informationstechnik",
+		"Institut für Informatik",
+		"Institut für Materialwissenschaft"
+	]
+	
+	static void initKlikActivities() {
+		//println ACTIVITY_DESCRIPTIONS.size()
+		for(int i=0; i < ACTIVITY_DESCRIPTIONS.size(); i++) {
+			new Activity(description: ACTIVITY_DESCRIPTIONS[i], points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i]).save(flush: true)
 		}
 	}
+	
+	// initialize roles "user" and "admin" with corresponding permissions
+	static void initKlikRoles() {
+		// init user role
+		if(Role.findByName("user") == null) {
+			def user_role = new Role(name: "user")
+			user_role.addToPermissions("*:*")
+			user_role.save(flush: true)
+		}
+		
+		// init admin role
+		if(Role.findByName("admin") == null) {
+			def admin_role = new Role(name: "admin")
+			admin_role.addToPermissions("*:*")
+			admin_role.save(flush: true)
+		}
+	}
+	
+	static void initCauInstitutions() {
+		for(int i=0; i < INSTITUTES.size(); i++) {
+			new Institute(name: INSTITUTES[i]).save(flush: true)
+		}
+	}
+	
+	/*
+	static void initUsersWithCompletedActivities(){
+		def max = Activity.count()
+		
+		for(int i=1; i<=max; i++){
+			new User() // TODO
+			Activity.get(i)
+		}
+	}
+	*/
 }

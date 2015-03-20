@@ -15,7 +15,7 @@
       </div>
       <div>
         <div style="float: left">
-          !Bild!
+         <a href="<g:createLink controller="user" action="edit" />"><img src="<g:createLink controller="user" action="avatar" id="${user.getId()}"/>" alt="Image"/></a> 
         </div>
         <div style="float: right">
           ${user.getTitle()} ${user.getFirstName()} ${user.getLastName()}<br>
@@ -34,6 +34,14 @@
           <li><a href="${createLink(controller:'Ranking')}" >Rangliste</a></li>
           <li><a href="${createLink(controller:'Proposal')}" >Energiesparvorschläge</a></li>
           <li><a href="${createLink(controller:'Statistics')}" >Statistiken</a></li>
+          <li><a href="${createLink(controller:'User', action: 'edit')}" >Mein Profil bearbeiten</a></li>
+          <g:if test="true">
+            <li>Admin Bereich</li>
+            <li><a href="${createLink(controller:'Admin', action: 'users')}" >Benutzer verwallten</a></li>
+            <li><a href="${createLink(controller:'Admin', action: 'teams')}" >Teams verwallten</a></li>
+            <li><a href="${createLink(controller:'Admin', action: 'activities')}" >Aktivitaeten verwallten</a></li>
+            <li><a href="${createLink(controller:'Admin', action: 'proposals')}" >Vorschlaege verwallten</a></li>
+          </g:if>
         </ul>
       </nav>
       <div id="content">

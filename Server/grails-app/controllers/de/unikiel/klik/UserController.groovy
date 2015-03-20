@@ -1,11 +1,13 @@
 package de.unikiel.klik
 
-import de.unikiel.klik.model.Profile;
 import de.unikiel.klik.model.User;
+import de.unikiel.klik.model.Team;
+
 import grails.validation.ValidationException
+
 import org.apache.shiro.SecurityUtils
-import org.apache.shiro.crypto.hash.Sha256Hash
 import org.apache.shiro.subject.Subject
+
 import org.codehaus.groovy.grails.core.io.ResourceLocator
 import org.springframework.core.io.Resource
 //From: https://grails.org/wiki/Simple%20Avatar%20Uploader
@@ -13,7 +15,7 @@ import org.springframework.core.io.Resource
 class UserController {
 
   private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
-  
+  def ShiroSecurityManager
   def index() {
     User user = User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal());
     [user:user]
@@ -21,11 +23,14 @@ class UserController {
 
   def edit() {
     User user = User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal());
-    [user:user]
+    Team team = user.getTeam();
+    [user:user, team: team]
   }
   def save(){
-    UserService.setName(params.title, params.firstName, params.lastName, SecurityUtils.getSubject())
-    UserService.setInstitute(params.instituteId, SecurityUtils.subject)
+    Subject subject = SecurityUtils.subject
+	//TODO This doesn't work, even with the as String option, obviously there are no names set for the attributes in the params map
+    UserService.setName(params.title as String, params.firstName as String, params.lastName as String, subject)
+    //UserService.setInstitute(params.instituteId, subject)
     redirect(action: "edit")
   }
 
@@ -75,7 +80,8 @@ ResourceLocator grailsResourceLocator
 
   def changePassword(){
     try{
-            UserService.setPassword(password: params.password, password2: params.password2, SecurityUtils.subject)
+      Subject subject = SecurityUtils.subject
+            UserService.setPassword(params.password as String, params.password2 as String, subject)
             flash.message = "Passwords changed"
             redirect(action = "edit")
     }catch(ValidationException ex){

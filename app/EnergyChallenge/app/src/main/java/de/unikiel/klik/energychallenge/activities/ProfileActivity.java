@@ -17,14 +17,18 @@ public class ProfileActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        //TODO TEMP
+        //Pass parameters from Intent to Fragment
         Intent intent = getIntent();
-        String type = intent.getStringExtra("type");
-        int id = intent.getIntExtra("id", 0);
+        Bundle fragmentArguments = new Bundle();
+        fragmentArguments.putString("type", intent.getStringExtra("type"));
+        fragmentArguments.putInt("id", intent.getIntExtra("id", 0));
+
+        MyProfileFragment profileFragment = new MyProfileFragment();
+        profileFragment.setArguments(fragmentArguments);
 
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
-                    .add(R.id.container, new MyProfileFragment())
+                    .add(R.id.container, profileFragment)
                     .commit();
         }
     }

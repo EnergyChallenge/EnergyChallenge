@@ -7,6 +7,7 @@ import android.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -35,11 +36,11 @@ import de.unikiel.klik.energychallenge.utils.NetworkX;
  */
 public class UserRankingFragment extends ListFragment {
 
-    RankingAdapter rankingAdapter;
+    private RankingAdapter rankingAdapter;
 
-    LinearLayout progressIndicator;
+    private LinearLayout progressIndicator;
 
-    TextView emptyListText;
+    private TextView emptyListText;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the

@@ -23,6 +23,7 @@ class ProfilController {
 	   } else {
 	   		user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
 	   }
+	   boolean isCurrent = (user == User.findByEmail(SecurityUtils.getSubject().getPrincipal()));
 	   String name = user.getName();
 	   Team team = user.getTeam();
 	   String teamname = "";
@@ -31,13 +32,13 @@ class ProfilController {
 	   }
 	   String institute = user.getInstitute().getName();
 	   int collectedPoints = user.getPoints();
-	   boolean isCurrent = (user == User.findByEmail(SecurityUtils.getSubject().getPrincipal()));
-	   
+           int rankingPosition = getPositionOfUser(user);
+	  def recentActivitys = user.getCompletedActivities(); 
 	   def model = [type: "user", isCurrent: isCurrent, 
-		   			name: name, teamName: teamname, image: "",
+		   			name: name, teamName: teamname,
 					institute: institute,
-					collectedPoints: collectedPoints, rankingPosition: "",
-					lastActivities: ""
+					collectedPoints: collectedPoints, rankingPosition: rankingPosition,
+					recentActivities: recentActivitys
 					]
 	   
 	   showProfile(model);
@@ -62,16 +63,17 @@ class ProfilController {
 	   String name = team.getName();
 	   int collectedPoints = team.getPoints();
 	   boolean isCurrent = (team == User.findByEmail(SecurityUtils.getSubject().getPrincipal()).getTeam());
+           int rankingPosition = getPositionOfTeam(team)
 	   def members = [];
 	   for (member in team.getMembers()) {
 		   members << [name: member.getName(), id: member.id];
 	   }
-	   
+	   def lastActivities = team.getCompletedActivitys() 
 	   def model = [type: "team", isCurrent: isCurrent, 
 		   			name: name, image: "",
-					collectedPoints: collectedPoints, rankingPosition: "",
+					collectedPoints: collectedPoints, rankingPosition: rankingPosition,
 					members: members,
-					lastActivities: ""
+					lastActivities: lastActivities
 		]
 
 	   showProfile(model);
@@ -80,4 +82,20 @@ class ProfilController {
    private def showProfile(def model) {
 	   render(view: "index", model: model);
    }
+   private int getPositionOfUser(User user){
+   def ranking =  [];
+                for (u in User.findAll()) {
+                        ranking << [name: u.getName(), id: u.id, points: u.getPoints()];
+                }
+                ranking.sort { -it.points } //Sort DESC
+    return ranking.indexOf([name: user.getName(), id: user.id, points: user.getPoints()])+1
+  }
+   private int getPositionOfTeam(Team team){
+   def ranking =  [];
+                for (t in Team.findAll()) {
+                        ranking << [name: t.getName(), id: t.id, points: t.getPoints()];
+                }
+                ranking.sort { -it.points } //Sort DESC
+    return ranking.indexOf([name: team.getName(), id: team.id, points: team.getPoints()])+1
+  }
 }

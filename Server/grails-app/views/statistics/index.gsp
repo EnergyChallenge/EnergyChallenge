@@ -4,9 +4,6 @@
 <meta name="layout" content="main" />
 <title>EnergyChallenge</title>
 
-<!-- export module -->
-<r:require module="export"/>
-
 
 <asset:stylesheet src="jqplot/jquery.jqplot.css" />
 <g:javascript library='jquery' />

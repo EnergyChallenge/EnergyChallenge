@@ -28,11 +28,11 @@ import de.unikiel.klik.energychallenge.utils.NetworkX;
  */
 public class ActivitiesFragment extends ListFragment {
 
-   ActivitiesAdapter activitiesAdapter;
+    private ActivitiesAdapter activitiesAdapter;
 
-    LinearLayout progressIndicator;
+    private LinearLayout progressIndicator;
 
-    TextView emptyListText;
+    private TextView emptyListText;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the

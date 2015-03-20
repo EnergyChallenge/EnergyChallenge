@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import org.json.JSONObject;
@@ -22,8 +23,11 @@ import de.unikiel.klik.energychallenge.models.RankingItem;
 
 public class ProposalsAdapter extends ArrayAdapter<Proposal> {
 
+    private Context context;
+
     public ProposalsAdapter(Context context) {
         super(context, R.layout.list_ranking);
+        this.context = context;
     }
 
 
@@ -31,15 +35,25 @@ public class ProposalsAdapter extends ArrayAdapter<Proposal> {
         View row = convertView;
 
         LayoutInflater inflater = ((Activity) getContext()).getLayoutInflater();
-        row = inflater.inflate(R.layout.list_ranking, parent, false);
+        row = inflater.inflate(R.layout.list_proposals, parent, false);
 
-        TextView positionView = (TextView)row.findViewById(R.id.ranking_position);
-        TextView titleView = (TextView)row.findViewById(R.id.ranking_title);
-        TextView pointsView = (TextView)row.findViewById(R.id.ranking_points);
+        TextView descriptionView = (TextView)row.findViewById(R.id.proposal_description);
+        TextView authorView = (TextView)row.findViewById(R.id.proposal_author);
+        RatingBar ratingView = (RatingBar)row.findViewById(R.id.proposal_rating);
+        TextView commentsView = (TextView)row.findViewById(R.id.proposal_comments);
 
-        //positionView.setText(Integer.toString(getItem(position).getPosition()) + ".");
-        //titleView.setText(getItem(position).getTitle());
-        //pointsView.setText(Integer.toString(getItem(position).getPoints()));
+        int countComments = getItem(position).getComments().size();
+        String commentsText = Integer.toString(countComments) + " ";
+        if (countComments == 1) {
+            commentsText += context.getString(R.string.comment);
+        } else {
+            commentsText += context.getString(R.string.comments);
+        }
+
+        descriptionView.setText(getItem(position).getDescription());
+        authorView.setText("- " + context.getString(R.string.creator) + ": " + getItem(position).getAuthor());
+        commentsView.setText(commentsText);
+        ratingView.setRating(getItem(position).getRating());
 
         return row;
     }
