@@ -35,6 +35,12 @@
           <li><a href="${createLink(controller:'Proposal')}" >Energiesparvorschläge</a></li>
           <li><a href="${createLink(controller:'Statistics')}" >Statistiken</a></li>
           <li><a href="${createLink(controller:'User', action: 'edit')}" >Mein Profil bearbeiten</a></li>
+          <g:if test="true">
+            <li>Admin Bereich</li>
+            <li><a href="${createLink(controller:'Admin', action: 'users')}" >Benutzer verwallten</a></li>
+            <li><a href="${createLink(controller:'Admin', action: 'teams')}" >Teams verwallten</a></li>
+            <li><a href="${createLink(controller:'Admin', action: 'activities')}" >Aktivitaeten verwallten</a></li>
+          </g:if>
         </ul>
       </nav>
       <div id="content">

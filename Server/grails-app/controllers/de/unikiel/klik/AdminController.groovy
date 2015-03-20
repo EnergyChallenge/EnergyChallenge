@@ -7,6 +7,13 @@ class AdminController {
     def index(){
 
     }
+    def users(){
+    }
+    def teams(){
+    }
+    def activities(){
+    }
+
 
     def listUsers() {
 
