@@ -4,12 +4,14 @@ import de.unikiel.klik.model.User;
 import de.unikiel.klik.model.Team;
 import de.unikiel.klik.model.Institute;
 import grails.transaction.Transactional
+import grails.validation.ValidationException
+import org.apache.shiro.crypto.hash.Sha256Hash
 import org.apache.shiro.subject.Subject
 
 @Transactional
 class UserService {
 
-    void setName(String title, String firstName, String lastName, Subject subject) {
+    void setName(String title, String firstName, String lastName, Subject subject) throws ValidationException {
 
         //Set the users names and title
         User user = User.findByEmail(subject.getPrincipal())
@@ -19,20 +21,35 @@ class UserService {
         user.save()
     }
 
-	void setPassword(String password, String password2, Subject subject) {
-
+	void setPassword(String password, String password2, Subject subject) throws ValidationException {
+	if(password == password2){
         //Set the users password to the hashed input
         User user = User.findByEmail(subject.getPrincipal())
-        user.passwordHash = password
+        user.passwordHash = new Sha256Hash(password).toHex()
         user.save()
+	}else{
+		throw new ValidationException()
+        }
     }
 
-	void setAvatar(def avatar, Subject subject) {
+	void setAvatar(def avatar, Subject subject) throws ValidationException{
+      // List of OK mime-types
+    if (!okcontents.contains(f.getContentType())) {
+    flash.message = "Avatar must be one of: ${okcontents}"
+    render(view:'select_avatar', model:[user:user])
+    return
+    }
 
-		//TODO avatar bitstream saving implimentation
+    // Save the image and mime type
+    user.avatar = f.bytes
+    user.avatarType = f.contentType
+    log.info("File uploaded: $user.avatarType")
+    user.save(flush: true)
+
+
 	}
 
-	void setInstitute(long institutedId, Subject subject) {
+	void setInstitute(long institutedId, Subject subject) throws ValidationException{
 
 		//Set the users institute via the id passed
         Institute institute = Institute.findById(institutedId)
@@ -41,16 +58,16 @@ class UserService {
         user.save()
 	}
 
-	void setTeam(long teamId, Subject subject) {
+	void setTeam(long teamId, Subject subject) throws ValidationException{
 
         //Set the users team via the id passed
         Team team = Team.findById(teamId)
         User user = User.findByEmail(subject.getPrincipal())
-        user.team = team
+        team.addToMembers(user)
         user.save()
 	}
 
-	void setEmailNotification(boolean emailNotification, Subject subject) {
+	void setEmailNotification(boolean emailNotification, Subject subject) throws ValidationException {
 
         //Set the users email notification setting
         User user = User.findByEmail(subject.getPrincipal())
@@ -58,11 +75,12 @@ class UserService {
         user.save()
 	}
 
-	void createTeamAndJoin(String name, Subject subject) {
+	void createTeamAndJoin(String name, Subject subject) throws ValidationException {
 
         //Create a team with the user who created it as the first member
         User user = User.findByEmail(subject.getPrincipal())
-        Team newTeam = new Team(name: name, members: user)
+        Team newTeam = new Team(name: name)
+        newTeam.addToMembers(user)
         newTeam.save()
 	}
 	

@@ -9,11 +9,7 @@
 
 <h1>Passwort Bearbeiten</h1>
 
-<g:if test="${flash.message}">
-    <div class="message">${flash.message}</div>
-</g:if>
 <g:form action="changePassword">
-<input type="hidden" name="targetUri" value="${targetUri}" />
     <table>
         <tr>
             <td>Password:</td>
