@@ -9,6 +9,7 @@
 
 # Tempfiles
 *.swp
+*~
 
 # visual paradigm temporary files
 *.vpp~*
