@@ -48,21 +48,19 @@ public class GetProposalsTask extends AccessServerTask {
 
         for(int i = 0; i < proposals.length(); i++) {
 
-            //TODO
-
             int id = proposals.getJSONObject(i).getInt("id");
             String description = proposals.getJSONObject(i).getString("description");
-            String author = proposals.getJSONObject(i).getString("description");
+            String author = proposals.getJSONObject(i).getString("author");
             int rating = proposals.getJSONObject(i).getInt("rating");
             ArrayList<ProposalComment> comments = new ArrayList<>();
 
             JSONArray commentsInJson = proposals.getJSONObject(i).getJSONArray("comments");
-            for(int j = 0; j < proposals.length(); j++) {
+            for(int j = 0; j < commentsInJson.length(); j++) {
 
-                int commentId = commentsInJson.getJSONObject(i).getInt("id");
-                String commentAuthor = commentsInJson.getJSONObject(i).getString("author");
-                int commentRating = commentsInJson.getJSONObject(i).getInt("rating");
-                String commentText = commentsInJson.getJSONObject(i).getString("text");
+                int commentId = commentsInJson.getJSONObject(j).getInt("id");
+                String commentAuthor = commentsInJson.getJSONObject(j).getString("author");
+                int commentRating = commentsInJson.getJSONObject(j).getInt("rating");
+                String commentText = commentsInJson.getJSONObject(j).getString("text");
 
                 comments.add(new ProposalComment(commentId, commentAuthor, commentRating, commentText));
             }
