@@ -134,4 +134,10 @@ class ActivityController {
 		
 		return recentlyCompletedActivities
 	}
+	
+	//TODO eventually handle this exception more elegant
+	//handles all NullPointerExceptions occurring in this controller
+	def nullPointerException(final NullPointerException exception){
+		log.error("Exception ocurred. ${exception?.message}", exception)
+	}
 }
