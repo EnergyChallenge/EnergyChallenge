@@ -83,4 +83,9 @@
 
     <string name="submit">Absenden</string>
 
+    <string name="point">Punkt</string>
+    <string name="points">Punkte</string>
+
+    <string name="position">Platz</string>
+
 </resources>
