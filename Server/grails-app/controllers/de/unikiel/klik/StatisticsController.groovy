@@ -1,11 +1,8 @@
 package de.unikiel.klik;
 
-<<<<<<< HEAD
-=======
 import de.unikiel.klik.model.PageView;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
->>>>>>> 2db0238af4a259d0dcc7d03626a9c8518c3d9692
 import grails.converters.JSON;
 import org.apache.shiro.subject.Subject
 import org.apache.shiro.*
