@@ -15,7 +15,7 @@
             <td>
               <g:if test="Aktivitaet erledigbar" >
                 <g:form name="completeActivityForm" url="[action:'completeActivity',controller:'activity',id: activity.getId()]">
-                  <input type="submit" value="Aktivität erledigen"/>
+                  <input type="submit" value="Aktivität erledigen"/> <!-- TODO einfügen des Imagebutton -->
                 </g:form>
               </g:if>
               <g:else>
@@ -24,7 +24,7 @@
             </td>
             <td>
               <g:form name="addToFavoritesForm" url="[action:'removeFromFavorites',controller:'activity',id: activity.getId()]">
-                <input type="submit" value="nicht mehr favoritisieren" />
+                <input type="submit" value="nicht mehr favoritisieren" /> <!-- TODO einfügen des Imagebutton -->
               </g:form>
             </td>
           </tr>
