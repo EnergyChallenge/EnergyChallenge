@@ -21,6 +21,10 @@
 .classpath
 .settings
 
+# Intellij files
+.idea/
+*.iml
+
 # java Classes
 *.class
 *.jar
