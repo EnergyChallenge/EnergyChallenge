@@ -11,8 +11,9 @@ class Team extends Profile{
 		members(nullable: false, minSize: 1)
     }
 	
-	// TODO look for the way to implement this
 	int getPoints() {
+        if (members.size == null)
+            return -1
 		int sum = 0;
 		for(member in members) {
 			sum += member.getPoints();
