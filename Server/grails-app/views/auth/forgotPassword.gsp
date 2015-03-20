@@ -8,7 +8,7 @@
   <g:if test="${flash.message}">
     <div class="message">${flash.message}</div>
   </g:if>
-  <g:form action="requesPassword">
+  <g:form action="requestPassword">
     <table>
       <tbody>
         <tr>
