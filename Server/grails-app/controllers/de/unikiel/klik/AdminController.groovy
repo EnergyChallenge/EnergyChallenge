@@ -1,5 +1,10 @@
 package de.unikiel.klik
 
+import de.unikiel.klik.model.User;
+import de.unikiel.klik.model.Team;
+import de.unikiel.klik.model.Proposal;
+import de.unikiel.klik.model.Activity;
+
 class AdminController {
 
     def AdminService
@@ -7,107 +12,85 @@ class AdminController {
     def index(){
 
     }
-
-    def listUsers() {
-
-        //Display all users 10 to a page
-        def users = User.findAll("from User as p order by p.lastName", [max: 10, offset: 10 * params.page])
-        int lastPage = User.count() / 10;
-        [users: users, page: params.page, lastPage: lastPage]
+    def users(){
+        def users = User.findAll("from User as p order by p.lastName")//, [max: 10] , offset: 10 * params.page])
+        //int lastPage = User.count() / 10;
+        [users: users]
+      
     }
-
-    def listTeams() {
-
-        //Display all teams 10 to a page
-        def teams = Team.findAll("from Team as p order by p.name", [max: 10, offset: 10 * params.page])
-        int lastPage = Team.count() / 10;
-        [teams: teams, page: params.page, lastPage: lastPage]
+    def teams(){
+        def teams = Team.findAll("from Team as p order by p.name")//, [max: 10], offset: 10 * params.page])
+        //int lastPage = Team.count() / 10;
+        [teams: teams]
     }
-
-    def listProposals() {
-
-        //Display all proposals 10 to a page
-        def proposals = Proposal.findAll("from Proposal as p order by p.dateCreated", [max: 10, offset: 10 * params.page])
-        int lastPage = Proposal.count() / 10;
-        [proposals: proposals, page: params.page, lastPage: lastPage]
+    def activities(){
+        def activities = Activity.findAll()//([max: 10], offset: 10 * params.page])
+        //int lastPage = Activity.count() / 10;
+        [activities: activities]
     }
-
-    def listActivities() {
-
-        //Display all activities 10 to a page
-        def activities = Activity.findAll("from Activity as p order by p.dateCreated", [max: 10, offset: 10 * params.page])
-        int lastPage = Activity.count() / 10;
-        [activities: activities, page: params.page, lastPage: lastPage]
+    def proposals(){
+        def proposals = Proposal.findAll("from Proposal as p order by p.dateCreated")//, [max: 10], offset: 10 * params.page])
+        //int lastPage = Proposal.count() / 10;
+        [proposals: proposals]
     }
 
     def editActivity() {
 
-        //Get the admin service to edit an activity
-        AdminService.editActivity(params.description, params.points, params.duration, params.id)
-        redirect(action = "admin")
     }
 
-    def editProposal() {
-
-        //Get the admin service to edit a proposal
-        AdminService.editProposal(params.description, params.points)
-        redirect(action = "admin")
-    }
-
-    def editUser() {
-
-        //Get the admin service to edit a user
-        AdminService.editUser(params.title, params.firstName, params.lastName, params.team, params.institute)
-        redirect(action = "admin")
-    }
-
-    def editTeam() {
-
-        //Get the admin service to edit a team
-        AdminService.editTeam(params.name, params.members)
-        redirect(action = "admin")
+    def changeActivity() {
+        if(params.proposalId){
+          AdminService.createActivityFromProposal(params.description, params.points as int, duration,params.proposalId as long)
+          redirect(action: "proposals")
+        }else if(params.activityId){
+          AdminService.editActivity(params.description, params.points as int, duration, params.proposalId as long)
+          redirect(action: "activitys")
+        }else{ 
+          AdminService.createActivity(params.description, params.points as int, duration)
+          redirect(action: "editActivity")
+        }
     }
 
     def blockUser() {
 
         //Get the admin service to block a user
-        AdminService.blockUser(params.userId)
-        redirect(action = "admin")
+        AdminService.blockUser(params.id as long)
+        redirect(action: "users")
     }
 
     def blockTeam() {
 
         //Get the admin service to block a team
-        AdminService.blockTeam(params.teamId)
-        redirect(action = "admin")
+        AdminService.blockTeam(params.id as long)
+        redirect(action: "teams")
     }
 
     def unblockUser() {
 
         //Get the admin service to unblock a user
-        AdminService.unblockUser(params.userId)
-        redirect(action = "admin")
+        AdminService.unblockUser(params.id as long)
+        redirect(action: "users")
     }
 
     def unblockTeam() {
 
         //Get the admin service to unblock a team
-        AdminService.unblockTeams(params.userId)
-        redirect(action = "admin")
+        AdminService.unblockTeams(params.id as long)
+        redirect(action: "teams")
     }
 
     def deleteUser() {
 
         //Get the admin service to remove a user
-        AdminService.unblockUser(params.userId)
-        redirect(action = "admin")
+        AdminService.unblockUser(params.id as long)
+        redirect(action: "users")
     }
 
     def deleteTeam() {
 
         //Get the admin service to remove a team
-        AdminService.unblockTeams(params.userId)
-        redirect(action = "admin")
+        AdminService.unblockTeams(params.id as long)
+        redirect(action: "teams")
     }
 
 }

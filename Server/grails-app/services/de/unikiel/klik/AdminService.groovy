@@ -11,14 +11,14 @@ class AdminService {
 
         //Declare the activity and save it
         def newActivity = new Activity(description: description, points: points, duration: duration)
-        newActivity.save()
+        newActivity.save(failOnError: true)
     }
 	
 	void createActivityFromProposal(String description, int points, Duration duration, long proposalId) {
 
         //Create the new activity from the proposal information
 		def newActivity = new Activity(description: description, points: points, duration: duration)
-        newActivity.save()
+        newActivity.save(failOnError: true)
 
         //Then delete the old proposal
         deleteProposal(proposalId)
@@ -33,7 +33,7 @@ class AdminService {
         modifiedActivity.description = description
         modifiedActivity.points = points
         modifiedActivity.duration = duration
-        modifiedActivity.save()
+        modifiedActivity.save(failOnError: true)
 	}
 
 	void deleteActivity(long activityId) {
@@ -63,17 +63,17 @@ class AdminService {
 
         //Block once found
         blockedUser.blocked = "true"
-        blockedUser.save()
+        blockedUser.save(failOnError: true)
 	}
 
 	void unblockUser(long userId) {
 
         //Find the user
-        User unblockedUser = User.get(userId)
+        User blockedUser = User.get(userId)
 
         //Unblock once found
         blockedUser.blocked = "false"
-        blockedUser.save()
+        blockedUser.save(failOnError: true)
 	}
 	
 	void deleteUser(long userId) {
@@ -92,17 +92,17 @@ class AdminService {
 
         //Block once found
         blockedTeam.blocked = "true"
-        blockedTeam.save()
+        blockedTeam.save(failOnError: true)
 	}
 
 	void unblockTeam(long teamId) {
 
         //Find the team
-        Team unblockedTeam = Team.get(teamId)
+        Team blockedTeam = Team.get(teamId)
 
         //Block once found
-        unblockedTeam.blocked = "false"
-        unblockedTeam.save()
+        blockedTeam.blocked = "false"
+        blockedTeam.save(failOnError: true)
 	}
 
 	void deleteTeam(long teamId) {
