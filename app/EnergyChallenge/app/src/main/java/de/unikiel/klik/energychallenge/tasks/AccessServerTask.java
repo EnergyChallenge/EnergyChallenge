@@ -15,6 +15,14 @@ import de.unikiel.klik.energychallenge.Config;
 import de.unikiel.klik.energychallenge.utils.IoX;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
+/*
+ * TODO
+ *
+ * Rename/-factor doAfterRequest -> handleResponseSuccess
+ * Just call it on Success
+ *
+ */
+
 
 public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
 

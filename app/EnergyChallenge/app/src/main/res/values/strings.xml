@@ -71,7 +71,21 @@
     <string name="no_network_connection">Keine Internetverbindung verfügbar.</string>
     <string name="error_in_server_communication">Es ist ein Fehler bei der Kommunikation mit dem Server aufgetreten.</string>
     <string name="title_activity_profile">Profil</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+
+    <string name="creator">Ersteller</string>
+    <string name="comment">Kommentar</string>
+    <string name="comments">Kommentare</string>
+    <string name="title_activity_proposal">Energiesparvorschlag</string>
+
+    <string name="proposal_from">Vorschlag von</string>
+
+    <string name="your_comment">Ihr Kommentar</string>
+
+    <string name="submit">Absenden</string>
+
+    <string name="point">Punkt</string>
+    <string name="points">Punkte</string>
+
+    <string name="position">Platz</string>
 
 </resources>

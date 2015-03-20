@@ -37,7 +37,7 @@ class InitService {
 		"Nutzung von Ventilatoren einschränken",
 		"Thermokannen zum Warmhalten von Tee und Kaffee nutzen",
 		"Anmeldung beim Campusrad",
-		"Fahrrad für die Fahrt zu Uni einsatzbereit machen",
+		"Fahrrad für die Fahrt zur Uni einsatzbereit machen",
 		"Persönlichen CO2-Abdruck berechnen",
 		"Röhrenmonitore mit Flachbildschirmen ersetzen",
 		"Umweltprämie zum Ersetzen veralteter elektronischer Geräte in Anspruch nehmen"

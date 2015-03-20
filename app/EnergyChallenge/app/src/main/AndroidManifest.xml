@@ -36,6 +36,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="de.unikiel.klik.energychallenge.activities.MainActivity" />
         </activity>
+        <activity
+            android:name=".activities.ProposalActivity"
+            android:label="@string/title_activity_proposal"
+            android:parentActivityName=".activities.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.unikiel.klik.energychallenge.activities.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
