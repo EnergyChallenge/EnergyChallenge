@@ -2,6 +2,7 @@ package de.unikiel.klik.model
 
 import grails.test.mixin.TestFor
 import grails.test.mixin.Mock
+import org.junit.Ignore
 import spock.lang.Specification
 
 /**
@@ -37,5 +38,17 @@ class TeamSpec extends Specification {
 		
 		and: "team can be saved"
 		team.save(flush: true) == team
+    }
+    @Ignore
+    void "Team Point should be the avarage of the Points of the Members"(){
+        //Tested in Gui tests
+    }
+    @Ignore
+    void "Team Completed Activitys should be the activitys of all the Members" (){
+        //Tested in Gui tests
+    }
+    @Ignore
+    void "Deleting a Team should result that the members dont have a team anymore"(){
+        //Tested in Gui tests
     }
 }

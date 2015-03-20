@@ -28,6 +28,7 @@ class UserController {
   }
   def save(){
     Subject subject = SecurityUtils.subject
+	//TODO This doesn't work, even with the as String option, obviously there are no names set for the attributes in the params map
     UserService.setName(params.title as String, params.firstName as String, params.lastName as String, subject)
     //UserService.setInstitute(params.instituteId, subject)
     redirect(action: "edit")
