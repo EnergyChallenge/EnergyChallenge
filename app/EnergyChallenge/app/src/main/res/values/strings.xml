@@ -77,7 +77,10 @@
     <string name="comments">Kommentare</string>
     <string name="title_activity_proposal">Energiesparvorschlag</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
+    <string name="proposal_from">Vorschlag von</string>
+
+    <string name="your_comment">Ihr Kommentar</string>
+
+    <string name="submit">Absenden</string>
 
 </resources>
