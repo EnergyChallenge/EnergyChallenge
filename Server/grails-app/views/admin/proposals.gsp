@@ -18,6 +18,8 @@
         <td>Erstellungsdatum</td>
         <td>Rating</td>
         <td>Kommentare</td>
+        <td></td>
+        <td></td>
     </tr>
     </thead>
     <tbody>
@@ -31,7 +33,7 @@
                 ${proposal.getPoints()}
             </td>
             <td>
-                ${proposal.getAuthor()}
+                ${proposal.getAuthor().getName()}
             </td>
             <td>
                 ${proposal.getDateCreated()}
@@ -41,6 +43,12 @@
             </td>
             <td>
                 ${proposal.getComments()}
+            </td>
+            <td>
+               <a href="<g:createLink action="editActivity" params="[activityId: '${proposal.id}', description: '${proposal.getDescription()}', points: '${proposal.getPoints()}']"/>">umwandeln</a>
+            </td>
+            <td>
+               loeschen
             </td>
         </tr>
     </g:each>
