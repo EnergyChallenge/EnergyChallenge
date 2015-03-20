@@ -1,8 +1,14 @@
 package de.unikiel.klik.energychallenge.models;
 
-import java.util.ArrayList;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Proposal {
+import org.w3c.dom.Comment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Proposal implements Parcelable {
 
     private int id;
 
@@ -10,11 +16,11 @@ public class Proposal {
 
     private String author;
 
-    private int rating;
+    private float rating;
 
-    private ArrayList<ProposalComment> comments;
+    private List<ProposalComment> comments;
 
-    public Proposal(int id, String description, String author, int rating, ArrayList<ProposalComment> comments) {
+    public Proposal(int id, String description, String author, float rating, List<ProposalComment> comments) {
 
         this.id = id;
         this.description = description;
@@ -35,13 +41,46 @@ public class Proposal {
         return author;
     }
 
-    public int getRating() {
+    public float getRating() {
         return rating;
     }
 
-    public ArrayList<ProposalComment> getComments() {
+    public List<ProposalComment> getComments() {
         return comments;
     }
 
 
+    @Override
+    public int describeContents() {
+        return 0; //Not necessary, but required
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(description);
+        dest.writeString(author);
+        dest.writeFloat(rating);
+        dest.writeTypedList(comments);
+    }
+
+    public static final Parcelable.Creator<Proposal> CREATOR = new Parcelable.Creator<Proposal>() {
+        public Proposal createFromParcel(Parcel in) {
+            return new Proposal(in);
+        }
+
+        public Proposal[] newArray(int size) {
+            return new Proposal[size];
+        }
+    };
+
+    private Proposal(Parcel in) {
+        id = in.readInt();
+        description = in.readString();
+        author = in.readString();
+        rating = in.readInt();
+        comments = in.createTypedArrayList(ProposalComment.CREATOR);
+        //in.readTypedList(comments, ProposalComment.CREATOR);
+        //comments = in.readParcelableArray(ProposalComment.class);
+    }
 }
