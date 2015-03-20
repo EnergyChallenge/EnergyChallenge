@@ -8,22 +8,10 @@ import spock.lang.*
 @Mock([User, Role, Profile, Institute, Activity, CompletedActivity])
 
 class UserSpec extends Specification {
-	
-	def setup() { // executed before each feature method
-		/*
-		def userRole = new Role(name: "user")
-		userRole.addToPermissions("*:*")
-		userRole.save();
-		Institute institute = new Institute(name: "none")
-		institute.save()
-		def user = new User(email:"user@example.com", passwordHash: new Sha256Hash("password").toHex(), firstName: "Max", lastName: "Mustermann", institute: institute)
-		user.addToRoles(userRole)
-		if(!user.save()) {
-			println "saveFailed"
-		}
-		*/
-		//def user = TestService.getExampleUser();
-		//user.save(flush: true)
+	User user
+	def setup() { // executed before each feature methoe
+		user = TestService.getExampleUser();
+		user.save(flush: true)
 	}
 	
 	def cleanup(){ // executed after each feature
@@ -36,24 +24,35 @@ class UserSpec extends Specification {
 	}
     
 	def "blocked and emailNotification default to false"() {
-		setup: "create example user"
-		def user = TestService.getExampleUser();
-		
 		expect: "example user should not be blocked"
 		!user.getBlocked()
 		!user.getEmailNotification()
 	}
 	
-	@Ignore
+
 	def "new  users start with zero points"() {
+        expect: "user should start with 0 points"
+           user.getPoints() == 0
 	}
-	
-	@Ignore
+
 	def "completing an activity should add it to completed activities"() {
+        setup:
+            int completedActivitiesBefore = user.getCompletedActivities();
+        when: "completing and Acitivity"
+            user.completeActivityNow(TestService.getExampleActivity())
+        then: "user has one more completed activity"
+            completedActivitiesBefore + 1 == user.getCompletedActivities();
+            user.validate()
     }
-	
-	@Ignore
+
 	def "completing an activty should increase the users points"() {
+        setup:
+        int pointsBefore = user.getPoints();
+        when: "completing and Acitivity"
+        user.completeActivityNow(TestService.getExampleActivity())
+        then: "user has one more completed activity"
+        pointsBefore + TestService.getExampleActivity().getPoints() == user.getPoints();
+        user.validate()
 	}
 	
 }

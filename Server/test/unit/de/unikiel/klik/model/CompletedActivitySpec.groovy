@@ -12,19 +12,24 @@ import de.unikiel.klik.TestService
 @Mock([Activity, CompletedActivity])
 class CompletedActivitySpec extends Specification {
 
+	CompletedActivity completedActivity
+	Activity activity
     def setup() {
+		activity = TestService.getExampleActivity()
+		activity.save()
+		completedActivity = new CompletedActivity(activity: activity)
+
     }
 
     def cleanup() {
     }
 
     void "completed activity should have the same amount of poits as the corresponding activity"() {
-      setup:
-      Activity activity = TestService.getExampleActivity()
-      activity.save()
-      CompletedActivity completedActivity = new CompletedActivity(activity: activity)
-
       expect:
       completedActivity.getPoints() == activity.getPoints()
     }
+	void "dateCreated should not be null"(){
+		expect:
+		completedActivity.getDateCreated() != null
+	}
 }
