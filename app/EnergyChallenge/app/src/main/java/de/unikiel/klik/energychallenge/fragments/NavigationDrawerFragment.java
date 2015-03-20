@@ -29,6 +29,13 @@ import de.unikiel.klik.energychallenge.R;
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
  * design guidelines</a> for a complete explanation of the behaviors implemented here.
  */
+
+
+/*
+TODO Code Style
+Member vars
+ */
+
 public class NavigationDrawerFragment extends Fragment {
 
     /**
@@ -99,6 +106,8 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
+
+        //TODO Code Style
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_activated_1,
@@ -110,8 +119,7 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.navigation_option4),
                         getString(R.string.navigation_option5),
                         getString(R.string.navigation_option6),
-                        getString(R.string.navigation_option7),
-                        getString(R.string.navigation_option8)
+                        getString(R.string.navigation_option7)
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
