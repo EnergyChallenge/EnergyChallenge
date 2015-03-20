@@ -4,13 +4,11 @@ package de.unikiel.klik.energychallenge.fragments;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,8 +21,15 @@ import de.unikiel.klik.energychallenge.tasks.GetProfileTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
 
+/*
+    TODO
+
+    Rename to ProfileFragment
+
+ */
+
 /* Fragment for the users own profile page */
-public class MyProfileFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
     private String type; // Must be 'user' or 'team'
 
@@ -36,12 +41,12 @@ public class MyProfileFragment extends Fragment {
 
     private TextView emptyProfileText;
 
-    public MyProfileFragment() {
+    public ProfileFragment() {
     }
 
     /* Returns an new instance of this fragment */
-    public static MyProfileFragment newInstance() {
-        return new MyProfileFragment();
+    public static ProfileFragment newInstance() {
+        return new ProfileFragment();
     }
 
     @Override

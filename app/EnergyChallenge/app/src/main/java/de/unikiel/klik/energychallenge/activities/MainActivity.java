@@ -9,19 +9,15 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import de.unikiel.klik.energychallenge.ExampleFragment;
-import de.unikiel.klik.energychallenge.JsonTestFragment;
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.fragments.ActivitiesFragment;
 import de.unikiel.klik.energychallenge.fragments.MainFragment;
-import de.unikiel.klik.energychallenge.fragments.MyProfileFragment;
+import de.unikiel.klik.energychallenge.fragments.ProfileFragment;
 import de.unikiel.klik.energychallenge.fragments.NavigationDrawerFragment;
 import de.unikiel.klik.energychallenge.fragments.OptionsFragment;
 import de.unikiel.klik.energychallenge.fragments.ProposalsFragment;
 import de.unikiel.klik.energychallenge.fragments.RankingListFragment;
-import de.unikiel.klik.energychallenge.fragments.TeamRankingFragment;
 
 
 /* Main app activity */
@@ -75,7 +71,7 @@ public class MainActivity extends Activity
                 //My profile fragment
                 currentTitle = getString(R.string.navigation_option2);
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, MyProfileFragment.newInstance())
+                        .replace(R.id.container, ProfileFragment.newInstance())
                         .commit();
                 break;
             case 3:
@@ -104,20 +100,6 @@ public class MainActivity extends Activity
                 currentTitle = getString(R.string.navigation_option6);
                 fragmentManager.beginTransaction()
                         .replace(R.id.container, OptionsFragment.newInstance())
-                        .commit();
-                break;
-            case 7:
-                //JSON Test fragment
-                currentTitle = getString(R.string.navigation_option7);
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, JsonTestFragment.newInstance())
-                        .commit();
-                break;
-            case 8:
-                //UI Example fragment
-                currentTitle = getString(R.string.navigation_option8);
-                fragmentManager.beginTransaction()
-                        .replace(R.id.container, ExampleFragment.newInstance())
                         .commit();
                 break;
 

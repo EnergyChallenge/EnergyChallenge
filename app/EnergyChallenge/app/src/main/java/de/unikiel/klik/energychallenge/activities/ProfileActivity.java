@@ -3,10 +3,9 @@ package de.unikiel.klik.energychallenge.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import de.unikiel.klik.energychallenge.R;
-import de.unikiel.klik.energychallenge.fragments.MyProfileFragment;
+import de.unikiel.klik.energychallenge.fragments.ProfileFragment;
 
 //TODO Maybe Add Searchbar to Profile
 
@@ -23,7 +22,7 @@ public class ProfileActivity extends Activity {
         fragmentArguments.putString("type", intent.getStringExtra("type"));
         fragmentArguments.putInt("id", intent.getIntExtra("id", 0));
 
-        MyProfileFragment profileFragment = new MyProfileFragment();
+        ProfileFragment profileFragment = new ProfileFragment();
         profileFragment.setArguments(fragmentArguments);
 
         if (savedInstanceState == null) {

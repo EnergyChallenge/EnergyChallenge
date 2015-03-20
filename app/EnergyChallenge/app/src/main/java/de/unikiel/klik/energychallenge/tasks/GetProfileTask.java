@@ -1,6 +1,5 @@
 package de.unikiel.klik.energychallenge.tasks;
 
-import android.app.Fragment;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
@@ -9,18 +8,11 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Comment;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import de.unikiel.klik.energychallenge.R;
-import de.unikiel.klik.energychallenge.adapters.ProposalsAdapter;
-import de.unikiel.klik.energychallenge.fragments.MyProfileFragment;
-import de.unikiel.klik.energychallenge.models.ActivitiesItem;
-import de.unikiel.klik.energychallenge.models.Proposal;
-import de.unikiel.klik.energychallenge.models.ProposalComment;
+import de.unikiel.klik.energychallenge.fragments.ProfileFragment;
 import de.unikiel.klik.energychallenge.models.User;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
@@ -33,7 +25,7 @@ import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 public class GetProfileTask extends AccessServerTask {
 
-    private MyProfileFragment profileFragment;
+    private ProfileFragment profileFragment;
 
     private GridLayout profileView;
 
@@ -41,7 +33,7 @@ public class GetProfileTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public GetProfileTask(MyProfileFragment profileFragment,
+    public GetProfileTask(ProfileFragment profileFragment,
                           GridLayout profileView, LinearLayout progressIndicator,
                           TextView emptyListText) {
         this.profileFragment = profileFragment;
