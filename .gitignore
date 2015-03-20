@@ -9,6 +9,7 @@
 
 # Tempfiles
 *.swp
+*~
 
 # visual paradigm temporary files
 *.vpp~*
@@ -19,6 +20,10 @@
 .project
 .classpath
 .settings
+
+# Intellij files
+.idea/
+*.iml
 
 # java Classes
 *.class

@@ -15,6 +15,7 @@ class MessageSpec extends Specification {
     def cleanup() {
     }
 
+	@Ignore //There is nothing to test here
     void "test something"() {
     }
 }

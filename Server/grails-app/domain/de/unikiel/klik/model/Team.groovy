@@ -11,7 +11,6 @@ class Team extends Profile{
 		members(nullable: false, minSize: 1)
     }
 	
-	// TODO look for the way to implement this
 	int getPoints() {
 		int sum = 0;
 		for(member in members) {

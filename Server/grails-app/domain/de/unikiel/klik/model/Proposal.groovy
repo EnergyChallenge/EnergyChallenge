@@ -14,7 +14,7 @@ class Proposal {
 	
     static constraints = {
 		description(nullable: false, blank: false)
-		points(nullable: false, min: 1)
+		points(nullable: false, min: 1, max: 5)
 		author(nullable: false)
 		comments(nullable:true)
 		dateCreated(nullable: false, defaultValue: "DateTime.now()")
