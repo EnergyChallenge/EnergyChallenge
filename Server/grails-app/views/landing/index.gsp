@@ -9,24 +9,26 @@
     <div style="float:left">
       <h2>Meine Favoriten</h2>
       <table>
+      	<style>
+		#td {margin-left: 30px; margin-right: 20px;}
+		</style>
         <g:each in="${favoriteActivitys}" var="activity">
           <tr>
-            <td>${activity.getDescription()}</td>
+            <td> ${activity.getDescription()} </td>
+            <td> ${activity.getPoints()} Punkt(e) </td>
             <td>
-              <g:if test="Aktivitaet erledigbar" >
+              <g:if test="Aktivität erledigbar" >
                 <g:form name="completeActivityForm" url="[action:'completeActivity',controller:'activity',id: activity.getId()]">
-                  <!--  <input type="submit" value="Aktivität erledigen"/> -->
                   <g:actionSubmitImage value="Aktivität erledigen" action="completeActivity"
                      src="${resource(dir: 'images', file: 'complete.png')}"/>	<!-- actionsubmitImage creates an imagebutton for the method completeActivity -->
                 </g:form>
               </g:if>
               <g:else>
-                TODO
+              <!-- TODO Aktivitätencounter anzeigen -->
               </g:else>
             </td>
             <td>
               <g:form name="addToFavoritesForm" url="[action:'removeFromFavorites',controller:'activity',id: activity.getId()]">
-              <!--  <input type="submit" value="nicht mehr favoritisieren" /> -->
               <g:actionSubmitImage value="defavorisieren" action="removeFromFavorites"
                      src="${resource(dir: 'images', file: 'favorite1.png')}"/>  
               </g:form>
@@ -34,7 +36,7 @@
           </tr>
         </g:each>
       </table>
-      <a href="<g:createLink controller="activity" action="index"/>">Weiter Aktivit\"aten</a>
+      <a href="<g:createLink controller="activity" action="index"/>">Weitere Aktivitäten</a>
     </div>
     <div style="float:right">
       <h2>Punkte Stand</h2>
