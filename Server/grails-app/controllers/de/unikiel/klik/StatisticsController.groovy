@@ -53,7 +53,26 @@ class StatisticsController {
 	}
 
 	private def getMostPopularActivities(){
-		return [["Haendewaschen mit kaltem Wasser",10],["Mit dem Fahrrad zur Uni fahren bis 3km",20],["Persönlichen CO2-Abdruck berechnen",15],["Treppe statt Fahrstuhl nutzen pro Tag",2],["Mit dem Fahrrad zur Uni fahren bis 5km",12],["Mit dem Fahrrad zur Uni fahren über 5km",7]]
+		// query
+		groovy.sql.Sql sql = new groovy.sql.Sql(dataSource)
+		log.info(sql)
+		log.info("datasource " + dataSource)
+		def results = sql.rows("SELECT a.description AS description, counts.n AS n\n" +
+		"FROM activity a, (SELECT activity_id, count(*) AS n FROM completed_activity GROUP BY activity_id) counts\n" +
+		"WHERE a.id = counts.activity_id\n" +
+		"ORDER BY n DESC")
+		sql.close()
+		
+		def result_list = []
+		
+		for(int i=0; i < results.size(); i++) {
+			result_list << [results[i].DESCRIPTION, (int) results[i].N]
+		}
+		
+		println result_list
+		
+		return result_list
+		//return [["Haendewaschen mit kaltem Wasser",10],["Mit dem Fahrrad zur Uni fahren bis 3km",20],["Persönlichen CO2-Abdruck berechnen",15],["Treppe statt Fahrstuhl nutzen pro Tag",2],["Mit dem Fahrrad zur Uni fahren bis 5km",12],["Mit dem Fahrrad zur Uni fahren über 5km",7]]
 	}
 	
 	/* TODO fix visit counts
