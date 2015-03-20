@@ -11,6 +11,7 @@ import org.apache.shiro.subject.Subject
 @Transactional
 class UserService {
 
+    static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
     void setName(String title, String firstName, String lastName, Subject subject) throws ValidationException {
 
         //Set the users names and title
@@ -32,22 +33,17 @@ class UserService {
         }
     }
 
-	void setAvatar(def avatar, Subject subject) throws ValidationException{
+  void setAvatar(def avatar, Subject subject) throws ValidationException{
       // List of OK mime-types
     if (!okcontents.contains(f.getContentType())) {
-    flash.message = "Avatar must be one of: ${okcontents}"
-    render(view:'select_avatar', model:[user:user])
-    return
+      throw new ValidationException()
     }
-
     // Save the image and mime type
-    user.avatar = f.bytes
-    user.avatarType = f.contentType
+    user.avatar = avatar.bytes
+    user.avatarType = avatar.contentType
     log.info("File uploaded: $user.avatarType")
-    user.save(flush: true)
-
-
-	}
+    user.save(flush: true, failOnError: true)
+  }
 
 	void setInstitute(long institutedId, Subject subject) throws ValidationException{
 

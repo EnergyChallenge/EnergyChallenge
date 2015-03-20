@@ -12,12 +12,19 @@ class Team extends Profile{
     }
 	
 	// TODO look for the way to implement this
-	def int getPoints() {
+	int getPoints() {
 		int sum = 0;
 		for(member in members) {
 			sum += member.getPoints();
 		}
-		return sum;
+		return sum/members.size();
 	}
-	
+	def getCompletedActivitys(){
+          def completedActivitys = []
+          for(member in members){
+            for(completedActivity in member.getCompletedActivities()){
+              completedActivitys << [member: member, completedActivity: completedActivity]
+            }
+          }
+       }
 }
