@@ -35,6 +35,8 @@ public class ProfileFragment extends Fragment {
 
     private int profileId;
 
+    private boolean isCurrentUser = false;
+
     private GridLayout profileView;
 
     private LinearLayout progressIndicator;
@@ -58,6 +60,7 @@ public class ProfileFragment extends Fragment {
         if (getArguments() == null) {
             type = "user";
             profileId = 1; //TODO Set own user id
+            isCurrentUser = true;
         } else {
             type = getArguments().getString("type");
             profileId = getArguments().getInt("id");

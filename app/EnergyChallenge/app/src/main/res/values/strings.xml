@@ -92,4 +92,8 @@
     <string name="cancel">Abbrechen</string>
 
 
+
+    <string name="inline_preferences" />
+
+
 </resources>

@@ -1,17 +1,23 @@
 package de.unikiel.klik.energychallenge.fragments;
 
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.preference.Preference;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 
 import de.unikiel.klik.energychallenge.R;
-
+import de.unikiel.klik.energychallenge.activities.LoginActivity;
 
 /* Fragment for the options menu */
-public class OptionsFragment extends Fragment {
+public class OptionsFragment extends PreferenceFragment {
+
+    private Context applicationContext;
+
+    private SharedPreferences preferences;
 
     public OptionsFragment() {
     }
@@ -22,15 +28,34 @@ public class OptionsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        //Swap in the layout for this fragment
-        return inflater.inflate(R.layout.fragment_options, container, false);
+    public void onCreate(Bundle savedInstanceState) {
 
-        //TODO Alter the layout to the users current settings
+        super.onCreate(savedInstanceState);
+
+        applicationContext = getActivity().getApplicationContext();
+
+        preferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
+
+        addPreferencesFromResource(R.xml.preferences);
+
+        findPreference("email").setSummary(preferences.getString("email", ""));
+        findPreference("name").setSummary(preferences.getString("name", ""));
+
+        findPreference("logout").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            public boolean onPreferenceClick(Preference preference) {
+
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.commit();
+
+                Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
+                loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(loginIntent);
+
+                return true;
+            }
+        });
+
     }
 
-    public void logOut() {
-        //TODO Logout Action
-    }
 }

@@ -49,8 +49,16 @@ public class LoginActivity extends Activity {
 
     public void logIn(View view) {
 
+        //TODO
         // Change in Config for having Login bypass
         if (!Config.LOGIN_REQUIRED) {
+
+            // Setting up example Settings
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("name", "seabstian.vettel@ferrari.it");
+            editor.putString("email", "Sebastian Vettel");
+            editor.commit();
 
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);

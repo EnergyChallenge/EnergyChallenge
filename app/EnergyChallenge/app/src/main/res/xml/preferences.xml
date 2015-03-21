@@ -1,0 +1,37 @@
+<!--
+TODO
+Put Strings
+
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Einstellungen">
+
+        <CheckBoxPreference
+            android:key="notifications"
+            android:title="Benachrichtigungen"
+            android:summary="Möchten Sie regelmäßig Benachrichtigungen erhalten?"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Benutzerkonto">
+
+        <Preference
+            android:key="name"
+            android:title="Ihr Name" />
+
+        <Preference
+            android:key="email"
+            android:title="Ihre E-Mail Adresse" />
+
+        <Preference
+            android:key="logout"
+            android:title="Abmelden" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
