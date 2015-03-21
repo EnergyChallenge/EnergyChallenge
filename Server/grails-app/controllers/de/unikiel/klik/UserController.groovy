@@ -13,6 +13,8 @@ import org.springframework.core.io.Resource
 //From: https://grails.org/wiki/Simple%20Avatar%20Uploader
 
 class UserController {
+	
+	def UserService
 
   private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
   def ShiroSecurityManager
@@ -28,8 +30,8 @@ class UserController {
   }
   def save(){
     Subject subject = SecurityUtils.subject
-	//TODO This doesn't work, even with the as String option, obviously there are no names set for the attributes in the params map
-    UserService.setName(params.title as String, params.firstName as String, params.lastName as String, subject)
+	//TODO This works now, but still throws an exception to the console (doesn't affect functionality)
+    UserService.setName(params.title, params.firstName, params.lastName, subject)
     //UserService.setInstitute(params.instituteId, subject)
     redirect(action: "edit")
   }

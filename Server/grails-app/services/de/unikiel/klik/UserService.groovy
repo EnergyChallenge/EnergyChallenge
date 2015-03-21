@@ -19,7 +19,7 @@ class UserService {
         user.title = title
         user.firstName = firstName
         user.lastName = lastName
-        user.save()
+        user.save(flush: true)
     }
 
 	void setPassword(String password, String password2, Subject subject) throws ValidationException {
@@ -27,7 +27,7 @@ class UserService {
         //Set the users password to the hashed input
         User user = User.findByEmail(subject.getPrincipal())
         user.passwordHash = new Sha256Hash(password).toHex()
-        user.save()
+        user.save(flush: true)
 	}else{
 		throw new ValidationException()
         }
