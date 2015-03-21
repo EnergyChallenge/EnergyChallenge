@@ -1,6 +1,9 @@
 package de.unikiel.klik.energychallenge.adapters;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.DialogFragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +21,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import de.unikiel.klik.energychallenge.R;
+import de.unikiel.klik.energychallenge.dialogs.CompleteActivityDialog;
 import de.unikiel.klik.energychallenge.models.ActivitiesItem;
 import de.unikiel.klik.energychallenge.models.RankingItem;
 
@@ -43,11 +47,18 @@ public class ActivitiesAdapter extends ArrayAdapter<ActivitiesItem> {
 
         descriptionView.setText(getItem(position).getDescription());
 
+        doButton.setEnabled(getItem(position).isActive());
+
         doButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                //TODO Put onCLick Event here
+                Activity activity = (Activity) context;
+
+                DialogFragment dialog = new CompleteActivityDialog();
+                dialog.show(activity.getFragmentManager(), "CompleteActivityDialog");
+
+                //TODO
 
                 String id = Integer.toString(getItem(position).getId());
                 Toast.makeText(context, "You clicked id: " + id, Toast.LENGTH_SHORT).show();

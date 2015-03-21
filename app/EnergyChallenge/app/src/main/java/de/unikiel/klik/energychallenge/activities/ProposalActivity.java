@@ -37,6 +37,7 @@ public class ProposalActivity extends Activity {
 
         headlineView.setText(getText(R.string.proposal_from) + " " + proposal.getAuthor() + ":");
         ratingView.setRating(proposal.getRating());
+        descriptionView.setText(proposal.getDescription());
         commentsListView.setAdapter(proposalCommentsAdapter);
 
         // TODO Implement own Comment

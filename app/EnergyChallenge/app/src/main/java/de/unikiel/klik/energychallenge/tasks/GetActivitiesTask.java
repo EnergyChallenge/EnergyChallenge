@@ -46,8 +46,9 @@ public class GetActivitiesTask extends AccessServerTask {
         for(int i = 0; i < activities.length(); i++) {
             int id = activities.getJSONObject(i).getInt("id");
             String description = activities.getJSONObject(i).getString("description");
+            boolean active = activities.getJSONObject(i).getBoolean("active");
 
-            activitiesAdapter.add(new ActivitiesItem(id, description));
+            activitiesAdapter.add(new ActivitiesItem(id, description, active));
         }
 
     }

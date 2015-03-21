@@ -85,7 +85,11 @@
 
     <string name="point">Punkt</string>
     <string name="points">Punkte</string>
-
     <string name="position">Platz</string>
+
+    <string name="sure_to_complete">Soll die Aktivität wirklich ausgeführt werden?</string>
+    <string name="complete">Erledigen</string>
+    <string name="cancel">Abbrechen</string>
+
 
 </resources>

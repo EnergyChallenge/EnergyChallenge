@@ -6,9 +6,12 @@ public class ActivitiesItem {
 
     private String description;
 
-    public ActivitiesItem(int id, String description) {
+    private boolean active;
+
+    public ActivitiesItem(int id, String description, boolean active) {
         this.id = id;
         this.description = description;
+        this.active = active;
     }
 
     public int getId() {
@@ -17,5 +20,9 @@ public class ActivitiesItem {
 
     public String getDescription() {
         return description;
+    }
+
+    public boolean isActive() {
+        return active;
     }
 }
