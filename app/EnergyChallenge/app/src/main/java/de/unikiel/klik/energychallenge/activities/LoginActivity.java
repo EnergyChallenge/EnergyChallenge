@@ -51,6 +51,10 @@ public class LoginActivity extends Activity {
 
         // Change in Config for having Login bypass
         if (!Config.LOGIN_REQUIRED) {
+
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+
             return ;
         }
 
