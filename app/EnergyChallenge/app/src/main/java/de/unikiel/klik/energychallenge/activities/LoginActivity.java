@@ -23,6 +23,7 @@ import org.apache.http.message.BasicNameValuePair;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.unikiel.klik.energychallenge.Config;
 import de.unikiel.klik.energychallenge.R;
 
 
@@ -47,6 +48,13 @@ public class LoginActivity extends Activity {
     }
 
     public void logIn(View view) {
+
+        // Change in Config for having Login bypass
+        if (!Config.LOGIN_REQUIRED) {
+            return ;
+        }
+
+
         //TODO change uses of "username" to "email" across the app to avoid confusion
         //Get credential strings
         final String usernameInput = usernameEditText.getText().toString();
