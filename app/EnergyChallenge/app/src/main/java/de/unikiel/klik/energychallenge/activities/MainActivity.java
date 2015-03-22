@@ -1,5 +1,6 @@
 package de.unikiel.klik.energychallenge.activities;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SearchView;
 
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.fragments.ActivitiesFragment;
@@ -123,32 +125,16 @@ public class MainActivity extends Activity
             // decide what to show in the action bar.
             getMenuInflater().inflate(R.menu.main, menu);
             restoreActionBar();
+
+            SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+            SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+            searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
             return true;
         }
         return super.onCreateOptionsMenu(menu);
+
     }
 
-    // Handling action bar clicks
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        //Get the action id
-        int id = item.getItemId();
-
-        //Execute the appropriate action
-        switch (id) {
-            case R.id.action_search:
-                //Open the search activity
-                openSearch();
-                return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void openSearch() {
-        //Open the search activity
-        Intent searchIntent = new Intent(this, SearchActivity.class);
-        startActivity(searchIntent);
-    }
 
 }
