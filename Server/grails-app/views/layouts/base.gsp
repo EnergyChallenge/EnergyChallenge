@@ -16,7 +16,7 @@
 	<asset:stylesheet src="basic.css" />
 	<g:layoutHead />
 </head>
-<body>
+<body class="${pageProperty(name: 'body.class')}">
 	<header>
 		<div class="inside">
 			<!-- TODO Header -->

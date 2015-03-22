@@ -32,8 +32,8 @@
 		</g:if>
 	</content>
 	
-	<body>
-		<div class="mainBody">
+	<body class="${pageProperty(name: 'body.class')}">
+
 			<nav>
 				<ul>
 					<li><a href="${createLink(controller:'Landing')}" >EnergyChallenge</a></li>
@@ -41,7 +41,6 @@
 					<li><a href="${createLink(controller:'Ranking')}" >Rangliste</a></li>
 					<li><a href="${createLink(controller:'Proposal')}" >Energiesparvorschläge</a></li>
 					<li><a href="${createLink(controller:'Statistics')}" >Statistiken</a></li>
-					<li><a href="${createLink(controller:'User', action: 'edit')}" >Mein Profil bearbeiten</a></li>
 				</ul>
 				<!-- TODO Just show if User is Admin -->
 				<g:if test="true">
@@ -55,12 +54,14 @@
 				</g:if>
 			</nav>
 			<div id="content">
-				<g:if test="${flash.message}">
-					<div class="flashmessage">${flash.message}</div>
-				</g:if>
-				<g:layoutBody />
+				<div class="floater">
+					<g:if test="${flash.message}">
+						<div class="flashmessage">${flash.message}</div>
+					</g:if>
+					<g:layoutBody />
+				</div>
+				<div class="clear"></div>
 			</div>
-		</div>
 	</body>
 	
 </g:applyLayout>

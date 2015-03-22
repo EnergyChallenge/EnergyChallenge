@@ -57,6 +57,9 @@ ResourceLocator grailsResourceLocator
     if (!avatarUser || !avatarUser.avatar || !avatarUser.avatarType) {
       //response.sendError(404)
       //return
+		//TODO Warum funktioniert das nicht???!!!
+		//final Resource image = grailsResourceLocator.findResourceForURI('/images/example-avatar.png')
+		//render file: image.inputStream, contentType: 'image/jpeg'
       final Resource image = grailsResourceLocator.findResourceForURI('/images/grails_logo.png')
       render file: image.inputStream, contentType: 'image/png'
     }

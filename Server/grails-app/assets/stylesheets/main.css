@@ -76,8 +76,8 @@ header .inside #userinfo .actions #logoutFrom {
 	float: left;
 	width: 190px;
 	background-color: #eeeeee;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
     min-height: 540px; /*TODO TEMP*/
 }
 #container nav ul {
@@ -91,7 +91,7 @@ header .inside #userinfo .actions #logoutFrom {
 #container nav ul li a {
 	display: block;
 	padding: 10px 20px;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #E2E2E2;
     color: inherit;
 }
 #container nav ul li a:hover,
@@ -101,13 +101,36 @@ header .inside #userinfo .actions #logoutFrom {
     color: #FFFFFF;
     text-decoration: none;
 }
+#container nav h3 {
+	margin: 30px 0 0;
+	padding: 10px 20px;
+	background-color: #E2E2E2;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
 #container #content {
+	position: relative;
 	background-color: #ffffff;
     border-right: 1px solid #DDDDDD;
     margin-left: 192px;
-    padding: 20px 40px;
+    padding: 40px 60px;
     min-height: 500px; /*TODO TEMP */
-} 
+}
+#container #content .floater {
+	float: left;
+	width: 100%;
+}
+#container #content .flashmessage {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 60%;
+	margin: 0 20%;
+	text-align: center;
+	/* TODO Temp */
+	background-color: white;
+	border: 1px solid red;
+}
 
 footer {
 	height: 50px;

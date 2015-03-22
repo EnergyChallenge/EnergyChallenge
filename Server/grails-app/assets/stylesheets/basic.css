@@ -7,16 +7,6 @@ h1 {
 	margin: 0; /*TODO TEMP*/
 }
 
-input[type="submit"] {
-	padding: 5px 10px;
-	background-color: #cddc39;
-	box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.3);
-    border: 0 none;
-    border-radius: 3px;
-    color: #000000;
-   
-    
-}
 input[type="text"], input[type="password"], input[type="tel"],
 input[type="email"], input[type="search"], select {
 	padding: 5px;
@@ -25,10 +15,28 @@ input[type="email"], input[type="search"], select {
     border-radius: 3px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) inset;
 }
+input[type="submit"], a.button {
+	padding: 5px 10px;
+	background-color: #cddc39;
+	box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.3);
+    border: 0 none;
+    border-radius: 3px;
+    color: #000000;
+}
 a {
 	color: #8e217d;
 	text-decoration: none;
 }
 a:hover, a:focus {
 	text-decoration: underline;
+}
+
+.clear {
+	clear: both;
+}
+
+.card {
+	background-color: #FFFFFF;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px #aaa;
 }
