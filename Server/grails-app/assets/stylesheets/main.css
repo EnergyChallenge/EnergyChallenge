@@ -22,14 +22,47 @@ header {
 }
 header .inside {
 	width: 960px;
-	margin: 30px auto;
+	margin: 0 auto;
     position: relative;
 }
-header .inside .topRight {
-	height: 100px;
+header .inside #userinfo {
+	height: 80px;
+	width: 240px;
+	padding: 10px 0;
     position: absolute;
     right: 0;
     top: 0;
+}
+header .inside #userinfo .profile .avatar {
+	display: block;
+	height: 40px;
+	width: 40px;
+	float: left;
+	overflow: hidden;
+	border-radius: 5px;
+	background-color: #FFFFFF;
+}
+header .inside #userinfo .profile .avatar img {
+	display: block;
+	height: 40px;
+}
+header .inside #userinfo .profile .name {
+	margin-left: 60px;
+	line-height: 40px;
+}
+header .inside #userinfo .profile .name a {
+	color: inherit;
+}
+header .inside #userinfo .actions {
+	clear: both;
+	padding-top: 10px;
+}
+header .inside #userinfo .actions .stats {
+	width: 140px;
+	float: left;
+}
+header .inside #userinfo .actions #logoutFrom {
+	text-align: right;
 }
 
 #container {
@@ -43,8 +76,8 @@ header .inside .topRight {
 	float: left;
 	width: 190px;
 	background-color: #eeeeee;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
     min-height: 540px; /*TODO TEMP*/
 }
 #container nav ul {
@@ -58,7 +91,7 @@ header .inside .topRight {
 #container nav ul li a {
 	display: block;
 	padding: 10px 20px;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #E2E2E2;
     color: inherit;
 }
 #container nav ul li a:hover,
@@ -68,13 +101,36 @@ header .inside .topRight {
     color: #FFFFFF;
     text-decoration: none;
 }
+#container nav h3 {
+	margin: 30px 0 0;
+	padding: 10px 20px;
+	background-color: #E2E2E2;
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
 #container #content {
+	position: relative;
 	background-color: #ffffff;
     border-right: 1px solid #DDDDDD;
     margin-left: 192px;
-    padding: 20px 40px;
+    padding: 40px 60px;
     min-height: 500px; /*TODO TEMP */
-} 
+}
+#container #content .floater {
+	float: left;
+	width: 100%;
+}
+#container #content .flashmessage {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 60%;
+	margin: 0 20%;
+	text-align: center;
+	/* TODO Temp */
+	background-color: white;
+	border: 1px solid red;
+}
 
 footer {
 	height: 50px;

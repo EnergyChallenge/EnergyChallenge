@@ -1,0 +1,64 @@
+#content .head {
+	position: relative;
+}
+#content a.button.editprofile {
+	float: right;
+}
+#content .head img {
+    display: block;
+    float: left;
+    height: 200px;
+    width: 200px;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+}
+#content .head hgroup {
+    margin-left: 220px;
+    position: absolute;
+    bottom: 0;
+}
+#content .head hgroup h1 {
+	font-size: 3em;
+    line-height: 1.3em; /*TODO Check with basic*/
+}
+#content .head hgroup h2 {
+	color: #555555;
+    font-size: 2em;
+    line-height: 1.3em;
+}
+#content .maincards {
+	margin: 40px 0;
+}
+#content .maincards .card {
+	float: left;
+	width: 30%;
+	text-align: center;
+}
+body.userprofile #content .maincards .card.points {
+	margin: 0 5%;
+}
+body.teamprofile #content .maincards .card.points {
+	margin: 0 2.5% 0 17.5%;
+}
+body.teamprofile #content .maincards .card.position {
+	margin: 0 17.5% 0 2.5%;
+}
+#content .maincards .card .value {
+	height: 40px;
+    line-height: 20px;
+    padding: 10px 10px 0;
+}
+#content .maincards .card .value.big {
+    line-height: 40px;
+    font-size: 3em;
+    font-weight: bold;
+}
+#content .maincards .card .label {
+	color: #777777;
+	padding: 0 10px;
+}
+	
+	
+	
+	
+}
