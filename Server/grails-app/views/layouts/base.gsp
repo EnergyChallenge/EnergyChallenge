@@ -2,40 +2,37 @@
 <!DOCTYPE html>
 <head>
 	<meta name="layout" content="page"/>
-	<!-- default Grails -->
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!-- TODO Title -->
 	<title><g:layoutTitle default="Grails"/> - EnergyChallenge</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- TODO Favicons -->
 	<link rel="shortcut icon" href="${assetPath(src: 'favicon.ico')}" type="image/x-icon">
 	<link rel="apple-touch-icon" href="${assetPath(src: 'apple-touch-icon.png')}">
 	<link rel="apple-touch-icon" sizes="114x114" href="${assetPath(src: 'apple-touch-icon-retina.png')}">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-	<!--<asset:stylesheet src="base.css" /> DELETE -->
+	<!--<asset:stylesheet src="base.css" /> TODO DELETE -->
 	<asset:stylesheet src="basic.css" />
 	<g:layoutHead />
 </head>
 <body>
 	<header>
 		<div class="inside">
+			<!-- TODO Header -->
 			<div class="topLeft">
 				<!-- <a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a>  -->
 				<h1>EnergyChallenge (Header)</h1>
 			</div>
-			<div class="topRight">
-				<g:pageProperty name="page.topRight"/>
-			</div>
+			<g:pageProperty name="page.userInfo"/>
 		</div>
 	</header>
 	<section id="container" >
-		<div class="inside">
-			<g:if test="${flash.message}">
-	    		<div class="message">${flash.message}</div>
-	  		</g:if>
-	  		
+		<div class="inside">  		
 	  		<g:layoutBody />
   		</div>
 	</section>
+	<!-- TODO role benötigt?! -->
 	<footer class="footer" role="contentinfo">
 		<div class="inside">
 		</div>
