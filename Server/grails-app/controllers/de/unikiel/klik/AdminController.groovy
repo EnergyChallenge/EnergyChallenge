@@ -115,4 +115,15 @@ class AdminController {
 		redirect(action: "activities")
 	}
 
+    def message() {
+
+    }
+
+    def emailMessage() {
+
+        //Get the admin service to send a global email
+        AdminService.sendGlobalEmail(params.subject as String, params.message as String)
+        redirect(action: "admin")
+    }
+
 }

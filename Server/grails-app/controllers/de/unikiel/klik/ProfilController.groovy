@@ -38,6 +38,12 @@ class ProfilController {
 	   int collectedPoints = user.getPoints();
 	   int rankingPosition = getPositionOfUser(user);
 	   def lastActivities = user.getCompletedActivities(); 
+           def recentActivities = lastActivities.sort{-it.getDateCreated().getMillis()}
+           if (recentActivities.size() > 10){
+               lastActivities = recentActivities[0..9]
+           }else{
+               lastActivities = recentActivities
+           }
 	   def model = [id: params.id,type: "user", isCurrent: isCurrent, 
 
 		   			name: name, teamName: teamname,
@@ -76,6 +82,12 @@ class ProfilController {
 		   members << [name: member.getName(), id: member.id];
 	   }
 	   def lastActivities = team.getCompletedActivitys() 
+           def recentActivities = lastActivities.sort{-it.completedActivity.getDateCreated().getMillis()}
+           if (recentActivities.size() > 10){
+               lastActivities = recentActivities[0..9]
+           }else{
+               lastActivities = recentActivities
+           }
 	   def model = [id: params.id,type: "team", isCurrent: isCurrent, 
 		   			name: name, image: "",
 					collectedPoints: collectedPoints, rankingPosition: rankingPosition,
