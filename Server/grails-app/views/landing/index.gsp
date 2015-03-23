@@ -12,23 +12,21 @@
       	<style>
 		#td {margin-left: 30px; margin-right: 20px;}
 		</style>
-        <g:each in="${favoriteActivitys}" var="activity">
+        <g:each in="${favoriteActivities}" var="favorite">
           <tr>
-            <td> ${activity.getDescription()} </td>
-            <td> ${activity.getPoints()} Punkt(e) </td>
+            <td> ${favorite.activity.getDescription()} </td>
+            <td> ${favorite.activity.getPoints()} Punkt(e) </td>
             <td>
-              <g:if test="Aktivität erledigbar" >
-                <g:form name="completeActivityForm" url="[action:'completeActivity',controller:'activity',id: activity.getId()]">
+              <g:if test="${favorite.executable}" >
+                <g:form name="completeActivityForm" url="[action:'completeActivity',controller:'activity',id: favorite.activity.getId()]">
                   <g:actionSubmitImage value="Aktivität erledigen" action="completeActivity"
                      src="${resource(dir: 'images', file: 'complete.png')}"/>	<!-- actionsubmitImage creates an imagebutton for the method completeActivity -->
                 </g:form>
               </g:if>
-              <g:else>
-              <!-- TODO Aktivitätencounter anzeigen -->
-              </g:else>
+              <g:else>${favorite.countdown}</g:else>
             </td>
             <td>
-              <g:form name="addToFavoritesForm" url="[action:'removeFromFavorites',controller:'activity',id: activity.getId()]">
+              <g:form name="addToFavoritesForm" url="[action:'removeFromFavorites',controller:'activity',id: favorite.activity.getId()]">
               <g:actionSubmitImage value="defavorisieren" action="removeFromFavorites"
                      src="${resource(dir: 'images', file: 'favorite1.png')}"/>  
               </g:form>
