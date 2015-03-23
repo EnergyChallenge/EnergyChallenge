@@ -18,13 +18,6 @@ import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
 import de.unikiel.klik.energychallenge.tasks.GetTeamRankingTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
-/**
- * A fragment representing a list of Items.
- * <p/>
- * <p/>
- * Activities containing this fragment MUST implement the {@link }
- * interface.
- */
 public class TeamRankingFragment extends ListFragment {
 
     private RankingAdapter rankingAdapter;
