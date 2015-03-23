@@ -36,8 +36,8 @@ class ProfilController {
 	   }
 	   String institute = user.getInstitute().getName();
 	   int collectedPoints = user.getPoints();
-           int rankingPosition = getPositionOfUser(user);
-	  def lastActivities = user.getCompletedActivities(); 
+	   int rankingPosition = getPositionOfUser(user);
+	   def lastActivities = user.getCompletedActivities(); 
 	   def model = [id: params.id,type: "user", isCurrent: isCurrent, 
 		   			name: name, teamName: teamname,
 					institute: institute,

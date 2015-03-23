@@ -15,12 +15,15 @@ class AppController {
 	}
 	
 	def getUserProfile() {
-		//TODO
 		User user;
 		if (params.id != null) {
 			user = User.get(params.id);
 		} else {
    			user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
+		}
+		if (user == null) {
+			//TODO Error 404
+			return ;
 		}
 		String name = user.getName();
 		Team team = user.getTeam();
@@ -28,10 +31,39 @@ class AppController {
 		String institute = user.getInstitute().getName();
 		int points = user.getPoints();
 		int position = getPositionOfUser(user);
-		def lastActivities = user.getCompletedActivities(); //TODO
-		
-		
-		
+		def lastActivities = [];
+		//TODO Not all! && SORT
+		for (activity in user.getCompletedActivities()) {
+			lastActivities << activity.getActivity().getDescription();
+		}
+		def profile = [name: name, team: teamname, institute: institute,
+						points: points, position: position,
+						lastActivities: lastActivities];
+		outputToJson([profile: profile]);
+	}
+	def getTeamProfile() {
+		Team team = Team.get(params.id);
+		if (team == null) {
+			//TODO 404 Error?
+			return ;
+		}
+		String name = team.getName();
+		int points = team.getPoints();
+		int position = getPositionOfTeam(team);
+		def lastActivities = [];
+		//TODO Not all! && SORT
+		println team.getCompletedActivitys()
+		for (activity in team.getCompletedActivitys()) {
+			println activity
+			lastActivities << activity.completedActivity.getActivity().getDescription();
+		}
+		def members = [];
+		for (member in team.getMembers()) {
+			members << member.getName();
+		}
+		def profile = [name: name, points: points, position: position,
+						lastActivities: lastActivities, members: members];
+		outputToJson([profile: profile]);
 	}
 	
 	def getUserRanking() {
@@ -138,6 +170,27 @@ class AppController {
 	
 	
 	
+	
+	
+	
+	
+	//TODO Merge with ProfilController
+	private int getPositionOfUser(User user){
+		def ranking =  [];
+		for (u in User.findAll()) {
+			ranking << [name: u.getName(), id: u.id, points: u.getPoints()];
+		}
+		ranking.sort { -it.points } //Sort DESC
+		return ranking.indexOf([name: user.getName(), id: user.id, points: user.getPoints()])+1
+   }
+	private int getPositionOfTeam(Team team){
+		def ranking =  [];
+		for (t in Team.findAll()) {
+			ranking << [name: t.getName(), id: t.id, points: t.getPoints()];
+		}
+		ranking.sort { -it.points } //Sort DESC
+		return ranking.indexOf([name: team.getName(), id: team.id, points: team.getPoints()])+1
+	}
 	
 	
 	
