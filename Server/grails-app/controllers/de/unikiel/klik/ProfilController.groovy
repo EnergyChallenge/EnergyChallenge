@@ -2,8 +2,12 @@ package de.unikiel.klik
 
 import de.unikiel.klik.model.User;
 import de.unikiel.klik.model.Team;
+import de.unikiel.klik.model.Profile;
 import de.unikiel.klik.model.Institute;
 import org.apache.shiro.SecurityUtils;
+
+import org.codehaus.groovy.grails.core.io.ResourceLocator
+import org.springframework.core.io.Resource
 
 class ProfilController {
 
@@ -34,7 +38,7 @@ class ProfilController {
 	   int collectedPoints = user.getPoints();
            int rankingPosition = getPositionOfUser(user);
 	  def lastActivities = user.getCompletedActivities(); 
-	   def model = [type: "user", isCurrent: isCurrent, 
+	   def model = [id: params.id,type: "user", isCurrent: isCurrent, 
 		   			name: name, teamName: teamname,
 					institute: institute,
 					collectedPoints: collectedPoints, rankingPosition: rankingPosition,
@@ -69,7 +73,7 @@ class ProfilController {
 		   members << [name: member.getName(), id: member.id];
 	   }
 	   def lastActivities = team.getCompletedActivitys() 
-	   def model = [type: "team", isCurrent: isCurrent, 
+	   def model = [id: params.id,type: "team", isCurrent: isCurrent, 
 		   			name: name, image: "",
 					collectedPoints: collectedPoints, rankingPosition: rankingPosition,
 					members: members,
@@ -97,5 +101,20 @@ class ProfilController {
                 }
                 ranking.sort { -it.points } //Sort DESC
     return ranking.indexOf([name: team.getName(), id: team.id, points: team.getPoints()])+1
+  }
+  ResourceLocator grailsResourceLocator
+  def avatar() {
+    Profile profile = Profile.get(params.id)
+    if (!profile || !profile.avatar || !profile.avatarType) {
+      final Resource image = grailsResourceLocator.findResourceForURI('/images/default_avatar.png')
+      render file: image.inputStream, contentType: 'image/png'
+      //render (file: new File("path to file"), fileName: "avatar.png")
+    }
+    println profile.avatar
+    response.contentType = profile.avatarType
+    response.contentLength = profile.avatar.size()
+    OutputStream out = response.outputStream
+    out.write(profile.avatar)
+    out.close()
   }
 }

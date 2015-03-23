@@ -1,6 +1,7 @@
 package de.unikiel.klik
 
 import de.unikiel.klik.model.Team
+import de.unikiel.klik.model.User
 import grails.transaction.Transactional
 import grails.validation.ValidationException
 import org.apache.shiro.subject.Subject
@@ -9,6 +10,8 @@ import org.apache.shiro.subject.Subject
 @Transactional
 class TeamService {
 
+    static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
+    
     void setAvatar(def avatar, Subject subject) throws ValidationException{
 
         //Get the team
@@ -22,7 +25,7 @@ class TeamService {
     // Save the image and mime type
     modifiedTeam.avatar = avatar.bytes
     modifiedTeam.avatarType = avatar.contentType
-    log.info("File uploaded: $user.avatarType")
+    log.info("File uploaded: $modifiedTeam.avatarType")
     modifiedTeam.save(flush: true, failOnError: true)
     }
 
