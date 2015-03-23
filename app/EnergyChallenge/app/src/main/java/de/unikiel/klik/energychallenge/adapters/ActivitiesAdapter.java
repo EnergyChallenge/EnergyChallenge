@@ -31,7 +31,7 @@ public class ActivitiesAdapter extends ArrayAdapter<ActivitiesItem> {
     private Context context;
 
     public ActivitiesAdapter(Context context) {
-        super(context, R.layout.list_ranking);
+        super(context, R.layout.list_activities);
         this.context = context;
     }
 

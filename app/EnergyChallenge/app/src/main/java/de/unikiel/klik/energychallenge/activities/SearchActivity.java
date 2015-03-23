@@ -6,20 +6,23 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
+import de.unikiel.klik.energychallenge.adapters.SearchResultAdapter;
 import de.unikiel.klik.energychallenge.tasks.PerformSearchTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
 public class SearchActivity extends ListActivity {
 
-    private ArrayAdapter searchAdapter;
+    private SearchResultAdapter searchAdapter;
 
     private LinearLayout progressIndicator;
 
@@ -34,7 +37,7 @@ public class SearchActivity extends ListActivity {
         progressIndicator = (LinearLayout) findViewById(R.id.progress_container_id);
         emptyListText = (TextView) findViewById(R.id.empty_id);
 
-        searchAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1); //TODO Own layout?
+        searchAdapter = new SearchResultAdapter(this);
 
         setListAdapter(searchAdapter);
 
@@ -76,6 +79,17 @@ public class SearchActivity extends ListActivity {
             emptyListText.setText(R.string.no_network_connection);
             Toast.makeText(this, R.string.no_network_connection, Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+
+        Intent profileIntent = new Intent(this, ProfileActivity.class);
+        profileIntent.putExtra("type", searchAdapter.getItem(position).getType());
+        profileIntent.putExtra("id", searchAdapter.getItem(position).getId());
+        startActivity(profileIntent);
 
     }
 

@@ -11,18 +11,20 @@ import org.json.JSONObject;
 
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
+import de.unikiel.klik.energychallenge.adapters.SearchResultAdapter;
 import de.unikiel.klik.energychallenge.models.RankingItem;
+import de.unikiel.klik.energychallenge.models.SearchResultItem;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 public class PerformSearchTask extends AccessServerTask {
 
-    private ArrayAdapter searchAdapter; //TODO Change to other adapter
+    private SearchResultAdapter searchAdapter;
 
     private LinearLayout progressIndicator;
 
     private TextView emptyListText;
 
-    public PerformSearchTask(ArrayAdapter searchAdapter,
+    public PerformSearchTask(SearchResultAdapter searchAdapter,
                               LinearLayout progressIndicator,
                               TextView emptyListText) {
         this.searchAdapter = searchAdapter;
@@ -32,7 +34,7 @@ public class PerformSearchTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        return new ServerRequest("getUserRanking");
+        return new ServerRequest("performSearch");
     }
 
     @Override
@@ -40,13 +42,14 @@ public class PerformSearchTask extends AccessServerTask {
 
         searchAdapter.clear();
 
-        JSONArray ranking = response.getJSONArray("ranking");
+        JSONArray searchResult = response.getJSONArray("searchResult");
 
-        for(int i = 0; i < ranking.length(); i++) {
-            int id = ranking.getJSONObject(i).getInt("id");
-            String title = ranking.getJSONObject(i).getString("title");
+        for(int i = 0; i < searchResult.length(); i++) {
+            int id = searchResult.getJSONObject(i).getInt("id");
+            String name = searchResult.getJSONObject(i).getString("name");
+            String type = searchResult.getJSONObject(i).getString("type");
 
-            searchAdapter.add(title);
+            searchAdapter.add(new SearchResultItem(id, name, type));
         }
 
     }
