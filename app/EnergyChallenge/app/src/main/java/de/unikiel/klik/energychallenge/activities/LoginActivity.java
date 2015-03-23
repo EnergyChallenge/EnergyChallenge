@@ -47,8 +47,8 @@ public class LoginActivity extends Activity {
             // Setting up example Settings
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("name", "seabstian.vettel@ferrari.it");
-            editor.putString("email", "Sebastian Vettel");
+            editor.putString("name", "Sebastian Vettel");
+            editor.putString("email", "seabstian.vettel@ferrari.it");
             editor.commit();
 
             Intent intent = new Intent(this, MainActivity.class);
