@@ -15,41 +15,48 @@ class StatisticsController {
 	// used for SQL Queries
 	def dataSource
 	
-    def index() { 
+	// TODO move the query to the StatisticsController
+	//def statsService = new StatisticsService()
+	
+    def index() {
+		Subject currentUser = SecurityUtils.getSubject();
+		
 		def mostPopularActivities = getMostPopularActivities();
 		def pageVisitsIndex = [1,2,3,4,5]	// TODO fix visitor counts 
-		[mostPopularActivitys : mostPopularActivities as JSON, pageVisitsIndex: pageVisitsIndex as JSON];
+		[authenticatedUser: currentUser.isAuthenticated(), mostPopularActivitys : mostPopularActivities as JSON, pageVisitsIndex: pageVisitsIndex as JSON];
 	}
 
 	def exportCsv() {
-	
-	// query
-	groovy.sql.Sql sql = new groovy.sql.Sql(dataSource)
-	log.info(sql)
-	log.info("datasource " + dataSource)
-	def results = sql.rows("SELECT a.description AS description, counts.n AS n\n" +
-	"FROM activity a, (SELECT activity_id, count(*) AS n FROM completed_activity GROUP BY activity_id) counts\n" +
-	"WHERE a.id = counts.activity_id\n" +
-	"ORDER BY n DESC")
-	sql.close()
-	
-	def sw = new StringWriter()
-	def b = new CSVWriter(sw, {
-		col1:"description" { it.DESCRIPTION }
-		col2:"haeufigkeit" { it.N }
-		})
-	for(int i=0; i < results.size(); i++) {
-		b << results[i]
-	}
+		// query
+		groovy.sql.Sql sql = new groovy.sql.Sql(dataSource)
+		log.info(sql)
+		log.info("datasource " + dataSource)
+		def activityList = sql.rows("SELECT a.description AS description, counts.n AS n\n" +
+		"FROM activity a, (SELECT activity_id, count(*) AS n FROM completed_activity GROUP BY activity_id) counts\n" +
+		"WHERE a.id = counts.activity_id\n" +
+		"ORDER BY n DESC")
+		sql.close()
+		
+		// TODO move the query to the StatisticsController
+		//def activityList = statsService.getActivitiesAndCompletionFrequencies(dataSource)
+		
+		def sw = new StringWriter()
+		def b = new CSVWriter(sw, {
+			col1:"description" { it.DESCRIPTION }
+			col2:"haeufigkeit" { it.N }
+			})
+		for(int i=0; i < activityList.size(); i++) {
+			b << activityList[i]
+		}
 
-	byte[] bytes = b.writer.toString().bytes
+		byte[] bytes = b.writer.toString().bytes
 
-	response.setContentType("text/csv")
-	response.setHeader("Content-disposition", "filename=\"foo.csv\"")
-	response.setContentLength(bytes.size())
-	response.outputStream << bytes
-	
-	render(view: "index")
+		response.setContentType("text/csv")
+		response.setHeader("Content-disposition", "filename=\"klik_activity_popularity.csv\"")
+		response.setContentLength(bytes.size())
+		response.outputStream << bytes
+		
+		render(view: "index")
 	}
 
 	private def getMostPopularActivities(){
@@ -76,14 +83,14 @@ class StatisticsController {
 	}
 	
 	/* TODO fix visit counts
-  private def getVisitsOf(String url, int maxData){
-    def rawData = PageView.findAll("from PageView as pageView where pageView.url=? order by pageView.dateCreated", [url], [max:maxData])
-    def data = [];
-    DateTimeFormatter fmt = DateTimeFormat.forPattern("yyyy-MM-dd h:ma");
-    for (PageView pageView : rawData){
-        data += [[fmt.print(pageView.getDateCreated()), pageView.getViews()]]
-    }
-    return data
-  }
-  */
+	private def getVisitsOf(String url, int maxData){
+		def rawData = PageView.findAll("from PageView as pageView where pageView.url=? order by pageView.dateCreated", [url], [max:maxData])
+		def data = [];
+		DateTimeFormatter fmt = DateTimeFormat.forPattern("yyyy-MM-dd h:ma");
+		for (PageView pageView : rawData){
+		data += [[fmt.print(pageView.getDateCreated()), pageView.getViews()]]
+		}
+		return data
+		}
+	*/
 }
