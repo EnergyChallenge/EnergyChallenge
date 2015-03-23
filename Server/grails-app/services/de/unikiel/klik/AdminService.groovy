@@ -24,7 +24,7 @@ class AdminService {
 		def proposal = Proposal.get(proposalId)
 		def author = proposal.getAuthor()
 		def activity = Activity.findByDescription("Eine neue Klik-Aktivität beisteuern")
-		def completedActivity = new CompletedActivity(activity)
+		def completedActivity = new CompletedActivity(activity: activity)
 		author.completedActivities.add(completedActivity)
 		completedActivity.save(flush: true, failOnError: true)
 		author.save(flush: true, failOnError: true)
