@@ -34,8 +34,9 @@ class UserService {
     }
 
   void setAvatar(def avatar, Subject subject) throws ValidationException{
+        User user = User.findByEmail(subject.getPrincipal())
       // List of OK mime-types
-    if (!okcontents.contains(f.getContentType())) {
+    if (!okcontents.contains(avatar.getContentType())) {
       throw new ValidationException()
     }
     // Save the image and mime type
