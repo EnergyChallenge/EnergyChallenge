@@ -45,7 +45,8 @@
                 ${proposal.getComments()}
             </td>
             <td>
-               <a href="<g:createLink action="editActivity" params="[activityId: '${proposal.id}', description: '${proposal.getDescription()}', points: '${proposal.getPoints()}']"/>">umwandeln</a>
+               <a href="<g:createLink action="editActivity" params="[proposalId: "${proposal.id}", description: "${proposal.getDescription()}", points: "${proposal.getPoints()}"]"/>">umwandeln</a>
+
             </td>
             <td>
                loeschen

@@ -32,7 +32,7 @@
                 ${activity.getDuration()}
             </td>
             <td>
-               <a href="<g:createLink action="editActivity" params="[activityId: '${activity.id}', description: '${activity.getDescription()}', points: '${activity.getPoints()}']"/>">bearbeiten</a> 
+               <a href="<g:createLink action="editActivity" params="[activityId: "${activity.id}", description: "${activity.getDescription()}", points: "${activity.getPoints()}"]"/>">bearbeiten</a> 
             </td>
             <td>
                loeschen
