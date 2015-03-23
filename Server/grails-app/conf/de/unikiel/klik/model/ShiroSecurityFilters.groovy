@@ -11,7 +11,7 @@ class ShiroSecurityFilters {
                 // Ignore direct views (e.g. the default main index page).
                 if (!controllerName) return true
 				if (controllerName == "assets") return true
-				if (controllerName == "app") return true
+				if (controllerName == "startpage") return true
                 // Access control by convention.
                 accessControl()
             }

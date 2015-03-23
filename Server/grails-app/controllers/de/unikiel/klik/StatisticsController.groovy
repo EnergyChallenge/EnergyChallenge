@@ -15,6 +15,8 @@ class StatisticsController {
 	// used for SQL Queries
 	def dataSource
 	
+	def statsService = new StatisticsService()
+	
     def index() { 
 		def mostPopularActivities = getMostPopularActivities();
 		def pageVisitsIndex = [1,2,3,4,5]	// TODO fix visitor counts 
@@ -22,30 +24,33 @@ class StatisticsController {
 	}
 
 	def exportCsv() {
-	
+
 	// query
 	groovy.sql.Sql sql = new groovy.sql.Sql(dataSource)
 	log.info(sql)
 	log.info("datasource " + dataSource)
-	def results = sql.rows("SELECT a.description AS description, counts.n AS n\n" +
+	def activityList = sql.rows("SELECT a.description AS description, counts.n AS n\n" +
 	"FROM activity a, (SELECT activity_id, count(*) AS n FROM completed_activity GROUP BY activity_id) counts\n" +
 	"WHERE a.id = counts.activity_id\n" +
 	"ORDER BY n DESC")
 	sql.close()
+	
+	// TODO move the query to the StatisticsController
+	//def activityList = statsService.getActivitiesAndCompletionFrequencies(dataSource)
 	
 	def sw = new StringWriter()
 	def b = new CSVWriter(sw, {
 		col1:"description" { it.DESCRIPTION }
 		col2:"haeufigkeit" { it.N }
 		})
-	for(int i=0; i < results.size(); i++) {
-		b << results[i]
+	for(int i=0; i < activityList.size(); i++) {
+		b << activityList[i]
 	}
 
 	byte[] bytes = b.writer.toString().bytes
 
 	response.setContentType("text/csv")
-	response.setHeader("Content-disposition", "filename=\"foo.csv\"")
+	response.setHeader("Content-disposition", "filename=\"klik_activity_popularity.csv\"")
 	response.setContentLength(bytes.size())
 	response.outputStream << bytes
 	
