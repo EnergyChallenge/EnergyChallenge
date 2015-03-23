@@ -21,6 +21,13 @@
 					</div>				
 				</div>
 				<div class="actions">
+					<a href="${createLink(controller:'message', action:'index')}" class="inbox">
+						<g:if test="${user.getMessages().size() == 0}">
+							<img src="${resource(dir:'images', file:'empty_inbox.png')}" alt="inbox" />
+						</g:if><g:else>
+							<img src="${resource(dir:'images', file:'filled_inbox.png')}" alt="inbox" />
+						</g:else>
+					</a>
 					<div class="stats">
 						${user.getPoints()} Punkte
 					</div>
