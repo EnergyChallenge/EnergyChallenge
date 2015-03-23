@@ -38,11 +38,10 @@
 				<ul>
 				<g:form action="searchForm">
     				<div class="search">
-    				<!-- TODO: <g:grep in="${}" filter="RankingController.class">
-     				<p>Benutzer: ${}</p> // zum suchen und filtern gedacht, aber noch nicht sinnvoll implementiert-->
+    				
         				<input type="text" name="q" value="${params.q}" />
         				<input type="submit" value="Suche" />
-        			<!--</g:grep>-->
+        		
     				</div>
 				</g:form>
 				</ul>
