@@ -49,7 +49,7 @@
 
             </td>
             <td>
-               loeschen
+               <a href="<g:createLink action="deleteProposal" params="[proposalId: "${proposal.id}"]"/>">loeschen</a>
             </td>
         </tr>
     </g:each>

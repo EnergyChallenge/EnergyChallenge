@@ -58,7 +58,6 @@ class AdminService {
 	void deleteProposal(long proposalId) {
 
         //Find the proposal
-        //TODO how can I do this? proposal has no id
         Proposal deletionProposal = Proposal.get(proposalId)
 
         //Remove it once found

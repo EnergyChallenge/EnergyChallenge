@@ -104,5 +104,10 @@ class AdminController {
         AdminService.deleteTeam(params.id as long)
         redirect(action: "teams")
     }
+	
+	def deleteProposal() {
+		AdminService.deleteProposal(params.proposalId as long)
+		redirect(action: "proposals")
+	}
 
 }
