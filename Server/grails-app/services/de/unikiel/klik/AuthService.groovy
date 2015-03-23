@@ -17,9 +17,14 @@ class AuthService {
 	def shiroSecurityManager
 	
     void login(String email, String password, boolean rememberMe) throws AuthenticationException {
-		def authToken = new UsernamePasswordToken(email, password)
-		authToken.rememberMe = rememberMe
-		SecurityUtils.subject.login(authToken)
+		if(!User.findByEmail(email).blocked){
+		  def authToken = new UsernamePasswordToken(email, password)
+		  authToken.rememberMe = rememberMe
+		  SecurityUtils.subject.login(authToken)
+		}else{
+		  //TODO tell that user is blocked
+		  throw new AuthenticationException()
+		}
     }
     void logout (Subject subject) {
 		// Log the user out of the application.

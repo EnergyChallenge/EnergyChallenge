@@ -18,6 +18,7 @@ class Team extends Profile{
 		}
 		return sum/members.size();
 	}
+	//TODO Refactor to getCompletedActivities
 	def getCompletedActivitys(){
           def completedActivitys = []
           for(member in members){
@@ -25,5 +26,6 @@ class Team extends Profile{
               completedActivitys << [member: member, completedActivity: completedActivity]
             }
           }
+		  return completedActivitys;
        }
 }

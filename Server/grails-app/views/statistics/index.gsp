@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="layout" content="main" />
+
+<g:if test="${authenticatedUser}">
+     <meta name="layout" content="main" />
+</g:if>
+<g:else>
+     <meta name="layout" content="public" />
+</g:else>
+
 <title>EnergyChallenge</title>
 
 

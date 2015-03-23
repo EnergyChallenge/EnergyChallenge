@@ -27,8 +27,10 @@
         android:id="@+id/proposal_rating"
         android:layout_row="3"
         android:layout_column="0"
+        style="?android:attr/ratingBarStyleSmall"
         android:numStars="5"
-        android:isIndicator="true"/>
+        android:stepSize="0.5"
+        android:isIndicator="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -82,14 +82,14 @@ class AdminController {
     def deleteUser() {
 
         //Get the admin service to remove a user
-        AdminService.unblockUser(params.id as long)
+        AdminService.deleteUser(params.id as long)
         redirect(action: "users")
     }
 
     def deleteTeam() {
 
         //Get the admin service to remove a team
-        AdminService.unblockTeams(params.id as long)
+        AdminService.deleteTeam(params.id as long)
         redirect(action: "teams")
     }
 

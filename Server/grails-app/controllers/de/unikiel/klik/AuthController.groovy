@@ -1,5 +1,6 @@
 package de.unikiel.klik
 
+import grails.converters.JSON
 import de.unikiel.klik.model.User;
 import de.unikiel.klik.model.Role;
 import de.unikiel.klik.model.Institute;
@@ -91,5 +92,25 @@ class AuthController {
 	}
     def unauthorized = {
         render "You do not have permission to access this page."
+    }
+
+    def appLogin() {
+
+        //Get credentials
+        def email = params.email
+        def password = params.password
+
+        //Check the credentials
+        try{
+            AuthService.login(email, password ,false)
+            //Login successful
+            def response = [response: true]
+            render response as JSON
+        }
+        catch (AuthenticationException ex){
+            //Login failed
+            def response = [response: false]
+            render response as JSON
+        }
     }
 }
