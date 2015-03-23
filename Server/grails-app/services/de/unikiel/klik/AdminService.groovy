@@ -23,7 +23,7 @@ class AdminService {
 		//reward the author of the proposal with points
 		def proposal = Proposal.get(proposalId)
 		def author = proposal.getAuthor()
-		def activity = Activity.findByDescription("Eine neue Klik-Aktivität beisteuern")
+		def activity = Activity.findByDescription("Eine neue Klik-Aktivitï¿½t beisteuern")
 		def completedActivity = new CompletedActivity(activity: activity)
 		author.completedActivities.add(completedActivity)
 		completedActivity.save(flush: true, failOnError: true)
@@ -126,5 +126,22 @@ class AdminService {
         //Remove once found
         deletionTeam.delete()
 	}
+
+    void sendGlobalEmail(String messageSubject, String message) {
+
+        //Get all users
+        def allUsers = User.getAll();
+
+        //Send an email to each user
+        def i
+        for (i = 0; i < allUsers.size; i++) {
+            sendMail {
+                to allUsers[i].email
+                subject messageSubject
+                body message
+            }
+        }
+
+    }
 	
 }
