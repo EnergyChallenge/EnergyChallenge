@@ -17,27 +17,30 @@ class ProposalService {
 		User user = User.findByEmail(author.getPrincipal()); 
 		Proposal proposal =  Proposal.get(proposalId);
 		Comment comment = new Comment(text: commentText, rating: rating, author: user);
-		proposal.addToComments(comment); //TODO Review
-		proposal.save(failOnError: true);
-		
+		if(proposal != null){
+			Comment oldComment = proposal.comments.find{it.author == user}
+			if(oldComment == null){
+				proposal.addToComments(comment); //TODO Review
+				proposal.save(failOnError: true);
+			}else{
+				//TODO
+				//oldComment.delete(flush: true)
+				try{
+					proposal.addToComments(comment)
+					proposal.save(failOnError:true)
+				}catch(ValidationException ex){
+					proposal = Proposal.get(proposalId)
+					proposal.addToComments(oldComment)
+					proposal.save()
+				}
+			}
+		}
     }
     void addProposal(String description, int points, Subject author) throws ValidationException {
 	User user = User.findByEmail(author.getPrincipal());
-	Proposal proposal = Proposal.findByAuthor(user)
 	//TODO this part does not work!!!!!!!
 	Proposal newproposal = new Proposal(description: description, points: points, author: user);
-	if(proposal){
-		proposal = Proposal.get(proposal.getId())
-		proposal.delete(flush: true)
-		try{
-			newproposal.save(failOnError: true);
-		}catch(ValidationException ex){
-			proposal.save()
-			throw ex
-		}
-	}else{
-		newproposal.save(failOnError: true)
-	}
+	newproposal.save(failOnError: true);
     }
 	
 }
