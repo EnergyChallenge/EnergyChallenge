@@ -11,4 +11,7 @@ abstract class Message {
 		receiver(nullable: false)
 		dateCreated(nullable: false, defaultValue: "DateTime.now()")
     }
+    static mapping = {
+	dateCreated column: "DATE_CREATED", sqlType: "VARBINARY(300)"
+    }
 }

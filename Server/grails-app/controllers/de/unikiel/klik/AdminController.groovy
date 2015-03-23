@@ -4,7 +4,7 @@ import de.unikiel.klik.model.User;
 import de.unikiel.klik.model.Team;
 import de.unikiel.klik.model.Proposal;
 import de.unikiel.klik.model.Activity;
-
+import org.joda.time.Duration
 class AdminController {
 
     def AdminService
@@ -39,12 +39,24 @@ class AdminController {
     }
 
     def changeActivity() {
-        if(params.proposalId){
+        try{
+          params.duration as int
+          params.points as long
+        }catch(java.lang.NumberFormatException ex){
+          return
+        }
+        long durationInSeconds = 60//TODO
+        Duration duration = new Duration(durationInSeconds*1000)
+        if(params.proposalId != ""){
           AdminService.createActivityFromProposal(params.description, params.points as int, duration,params.proposalId as long)
           redirect(action: "proposals")
-        }else if(params.activityId){
-          AdminService.editActivity(params.description, params.points as int, duration, params.proposalId as long)
-          redirect(action: "activitys")
+        }else if(params.activityId != ""){
+          println "Hallo Welt"
+          println "description: " + params.description
+          println params.points
+          println params.activityId
+          AdminService.editActivity(params.description, params.points as int, duration, params.activityId as long)
+          redirect(action: "activities")
         }else{ 
           AdminService.createActivity(params.description, params.points as int, duration)
           redirect(action: "editActivity")
@@ -82,15 +94,36 @@ class AdminController {
     def deleteUser() {
 
         //Get the admin service to remove a user
-        AdminService.unblockUser(params.id as long)
+        AdminService.deleteUser(params.id as long)
         redirect(action: "users")
     }
 
     def deleteTeam() {
 
         //Get the admin service to remove a team
-        AdminService.unblockTeams(params.id as long)
+        AdminService.deleteTeam(params.id as long)
         redirect(action: "teams")
+    }
+	
+	def deleteProposal() {
+		AdminService.deleteProposal(params.proposalId as long)
+		redirect(action: "proposals")
+	}
+	
+	def deleteActivity() {
+		AdminService.deleteActivity(params.activityId as long)
+		redirect(action: "activities")
+	}
+
+    def message() {
+
+    }
+
+    def emailMessage() {
+
+        //Get the admin service to send a global email
+        AdminService.sendGlobalEmail(params.subject as String, params.message as String)
+        redirect(action: "admin")
     }
 
 }

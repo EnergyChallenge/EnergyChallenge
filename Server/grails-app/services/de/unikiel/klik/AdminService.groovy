@@ -19,6 +19,15 @@ class AdminService {
         //Create the new activity from the proposal information
 		def newActivity = new Activity(description: description, points: points, duration: duration)
         newActivity.save(failOnError: true)
+		
+		//reward the author of the proposal with points
+		def proposal = Proposal.get(proposalId)
+		def author = proposal.getAuthor()
+		def activity = Activity.findByDescription("Eine neue Klik-Aktivit�t beisteuern")
+		def completedActivity = new CompletedActivity(activity: activity)
+		author.completedActivities.add(completedActivity)
+		completedActivity.save(flush: true, failOnError: true)
+		author.save(flush: true, failOnError: true)
 
         //Then delete the old proposal
         deleteProposal(proposalId)
@@ -39,7 +48,7 @@ class AdminService {
 	void deleteActivity(long activityId) {
 
         //Find the activity
-        //TODO how can I do this? activity has no id
+        //TODO references must be handled!!!
         Activity deletionActivity = Activity.get(activityId)
 
         //Remove it once found
@@ -49,7 +58,6 @@ class AdminService {
 	void deleteProposal(long proposalId) {
 
         //Find the proposal
-        //TODO how can I do this? proposal has no id
         Proposal deletionProposal = Proposal.get(proposalId)
 
         //Remove it once found
@@ -62,7 +70,7 @@ class AdminService {
         User blockedUser = User.get(userId)
 
         //Block once found
-        blockedUser.blocked = "true"
+        blockedUser.blocked = true
         blockedUser.save(failOnError: true)
 	}
 
@@ -72,7 +80,7 @@ class AdminService {
         User blockedUser = User.get(userId)
 
         //Unblock once found
-        blockedUser.blocked = "false"
+        blockedUser.blocked = false
         blockedUser.save(failOnError: true)
 	}
 	
@@ -91,7 +99,7 @@ class AdminService {
         Team blockedTeam = Team.get(teamId)
 
         //Block once found
-        blockedTeam.blocked = "true"
+        blockedTeam.blocked = true
         blockedTeam.save(failOnError: true)
 	}
 
@@ -101,7 +109,7 @@ class AdminService {
         Team blockedTeam = Team.get(teamId)
 
         //Block once found
-        blockedTeam.blocked = "false"
+        blockedTeam.blocked = false
         blockedTeam.save(failOnError: true)
 	}
 
@@ -109,9 +117,31 @@ class AdminService {
 
         //Find the team
         Team deletionTeam = Team.get(teamId)
+		//delete all references to the team
+		for(member in deletionTeam.members) {
+			member.setTeam(null)
+			member.save(failOnError: true, flush: true)
+		}
 
         //Remove once found
         deletionTeam.delete()
 	}
+
+    void sendGlobalEmail(String messageSubject, String message) {
+
+        //Get all users
+        def allUsers = User.getAll();
+
+        //Send an email to each user
+        def i
+        for (i = 0; i < allUsers.size; i++) {
+            sendMail {
+                to allUsers[i].email
+                subject messageSubject
+                body message
+            }
+        }
+
+    }
 	
 }

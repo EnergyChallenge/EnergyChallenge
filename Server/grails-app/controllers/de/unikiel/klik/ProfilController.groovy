@@ -38,11 +38,19 @@ class ProfilController {
 	   int collectedPoints = user.getPoints();
 	   int rankingPosition = getPositionOfUser(user);
 	   def lastActivities = user.getCompletedActivities(); 
+           def recentActivities = lastActivities.sort{-it.getDateCreated().getMillis()}
+           if (recentActivities.size() > 10){
+               lastActivities = recentActivities[0..9]
+           }else{
+               lastActivities = recentActivities
+           }
 	   def model = [id: params.id,type: "user", isCurrent: isCurrent, 
+
 		   			name: name, teamName: teamname,
 					institute: institute,
 					collectedPoints: collectedPoints, rankingPosition: rankingPosition,
-					lastActivities: lastActivities
+					lastActivities: lastActivities,
+					user: user
 					]
 	   
 	   showProfile(model);
@@ -51,10 +59,11 @@ class ProfilController {
    def team() {
 
 	   Team team;
+	   User user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
 	   if (params.id != null) {
 		   team = Team.get(params.id);
 	   } else {
-	   	   team = User.findByEmail(SecurityUtils.getSubject().getPrincipal()).getTeam();
+	   	   team = user.getTeam();
 		   /* Show current users profile, if current user has no team,
 		    * but tries to see it. (E.g. bad link)
 		    */
@@ -67,17 +76,23 @@ class ProfilController {
 	   String name = team.getName();
 	   int collectedPoints = team.getPoints();
 	   boolean isCurrent = (team == User.findByEmail(SecurityUtils.getSubject().getPrincipal()).getTeam());
-           int rankingPosition = getPositionOfTeam(team)
+           int rankingPosition = getPositionOfTeam(team);
 	   def members = [];
 	   for (member in team.getMembers()) {
 		   members << [name: member.getName(), id: member.id];
 	   }
 	   def lastActivities = team.getCompletedActivitys() 
+           def recentActivities = lastActivities.sort{-it.completedActivity.getDateCreated().getMillis()}
+           if (recentActivities.size() > 10){
+               lastActivities = recentActivities[0..9]
+           }else{
+               lastActivities = recentActivities
+           }
 	   def model = [id: params.id,type: "team", isCurrent: isCurrent, 
 		   			name: name, image: "",
 					collectedPoints: collectedPoints, rankingPosition: rankingPosition,
 					members: members,
-					lastActivities: lastActivities
+					lastActivities: lastActivities, user: user
 		]
 
 	   showProfile(model);
