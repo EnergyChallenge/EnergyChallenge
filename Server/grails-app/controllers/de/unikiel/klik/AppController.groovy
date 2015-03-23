@@ -41,6 +41,7 @@ class AppController {
 						lastActivities: lastActivities];
 		outputToJson([profile: profile]);
 	}
+	
 	def getTeamProfile() {
 		Team team = Team.get(params.id);
 		if (team == null) {
@@ -52,9 +53,7 @@ class AppController {
 		int position = getPositionOfTeam(team);
 		def lastActivities = [];
 		//TODO Not all! && SORT
-		println team.getCompletedActivitys()
 		for (activity in team.getCompletedActivitys()) {
-			println activity
 			lastActivities << activity.completedActivity.getActivity().getDescription();
 		}
 		def members = [];
@@ -87,7 +86,7 @@ class AppController {
 	}
 	
 	def getAllActivities() {
-		def ActivityService
+		def ActivityService 
 		def activities = []
 		for(activity in Activity.findAll()) {
 			activities << [description: activity.getDescription(), points: activity.getPoints(), duration: activity.getDuration(), active: ActivityService.isExecutable(activity, SecurityUtils.subject)]
