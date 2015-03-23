@@ -4,7 +4,9 @@ import de.unikiel.klik.model.User;
 import de.unikiel.klik.model.Team;
 import de.unikiel.klik.model.Proposal;
 import de.unikiel.klik.model.Activity;
+import de.unikiel.klik.model.CompletedActivity;
 import org.joda.time.Duration
+
 class AdminController {
 
     def AdminService
@@ -40,21 +42,18 @@ class AdminController {
 
     def changeActivity() {
         try{
-          params.duration as int
+          params.durationUnits as long
+          params.durationUnitInSeconds as long
           params.points as long
         }catch(java.lang.NumberFormatException ex){
           return
         }
-        long durationInSeconds = 60//TODO
+        long durationInSeconds = ((long)params.durationUnits)* ((long)params.durationUnitInSeconds)
         Duration duration = new Duration(durationInSeconds*1000)
         if(params.proposalId != ""){
           AdminService.createActivityFromProposal(params.description, params.points as int, duration,params.proposalId as long)
           redirect(action: "proposals")
         }else if(params.activityId != ""){
-          println "Hallo Welt"
-          println "description: " + params.description
-          println params.points
-          println params.activityId
           AdminService.editActivity(params.description, params.points as int, duration, params.activityId as long)
           redirect(action: "activities")
         }else{ 
@@ -104,6 +103,13 @@ class AdminController {
         AdminService.deleteTeam(params.id as long)
         redirect(action: "teams")
     }
+    
+    // show all completed activities of a user
+    def completedActivities() {
+		def user = User.get(params.userid)
+        
+        render(view: "completedActivities", model: [fullName: user.getName(), userid: params.userid, completedActivities: user.completedActivities.sort{it.id}])
+	}
 	
 	def deleteProposal() {
 		AdminService.deleteProposal(params.proposalId as long)
@@ -126,4 +132,31 @@ class AdminController {
         redirect(action: "admin")
     }
 
+    // delete ONE completed Activity
+    def deleteCompletedActivity() {
+		def user = User.get(params.userid)
+		def completedActivity = CompletedActivity.get(params.completedActivityId)
+		user.removeFromCompletedActivities(completedActivity)
+		completedActivity.delete()
+		
+        redirect(action: "completedActivities", params: [userid: params.userid])
+    }
+    
+    // delete ALL completed Activities of a user
+    def deleteAllCompletedActivities() {
+		def user = User.get(params.userid)
+		def ids = []
+		
+		for(ca in user.completedActivities) {
+			ids.add(ca.id)
+		}
+		
+		for(id in ids) {
+			def ca = CompletedActivity.get(id)
+			user.removeFromCompletedActivities(ca)
+			ca.delete(flush: true)
+		}
+		
+        redirect(action: "completedActivities", params: [userid: params.userid])
+    }
 }

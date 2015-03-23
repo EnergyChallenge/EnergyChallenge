@@ -16,6 +16,7 @@
               <td>Team</td>
               <td>Institute</td>
               <td>Punkte</td>
+              <td>Aktivitäten verwalten</td>
               <td></td>
               <td></td>
           </tr>
@@ -43,6 +44,9 @@
       
                   <td>
                       ${user.getPoints()}
+                  </td>
+                  <td>
+                      <a href="<g:createLink action="completedActivities" params="[userid:user.id]"/>">Aktivitäten</a>
                   </td>
                   <td>
                      <g:if test="${user.blocked}">

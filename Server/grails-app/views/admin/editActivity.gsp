@@ -24,7 +24,16 @@
         </tr>
         <tr>
             <td>Dauer (tage):</td>
-            <td><input type="number" name="duration" value="${params.duration}" /></td>
+            <td><input type="number" name="durationUnits" value="${params.duration}" />
+                <select name="durationUnitInSeconds" >
+                    <option value="1">Secunden</option>
+                    <option value="60">Minuten</option>
+                    <option value="3600">Stunden</option>
+                    <option value="86400">Tage</option>
+                    <option value="604800">Wochen</option>
+                    <option value="220752000">Jahre</option>
+               </select>
+            </td>
         </tr>
         <tr>
             <td />
