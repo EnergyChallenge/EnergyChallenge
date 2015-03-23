@@ -68,7 +68,8 @@ grails.project.dependency.resolution = {
         compile ':cache:1.1.8'
         compile ":asset-pipeline:1.9.9"
 		compile ":shiro:1.2.1"
-		compile ":joda-time:1.5"        
+		compile ":joda-time:1.5"
+        compile ":mail:1.0.7"
 		//compile ":export:1.6" // TODO delete if not needed
 		compile ":csv:0.3.1"
 		
