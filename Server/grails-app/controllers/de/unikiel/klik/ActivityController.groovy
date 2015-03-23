@@ -11,11 +11,12 @@ import de.unikiel.klik.model.User
 class ActivityController {
 	
 	def ActivityService
+	def activity
 
     def index() {
 		def activities = []
 		for(activity in Activity.findAll()) {
-			activities << [activity: activity, executable: ActivityService.isExecutable(activity, SecurityUtils.subject), countdown: ActivityService.getActivityCountdown(activity, SecurityUtils.subject), favorite: ActivityService.isFavorite(activity, SecurityUtils.subject)]
+			activities << [activity: activity, executable: isExecutable(activity), countdown: getActivityCountdown(activity), favorite: isFavorite(activity)]
 		}
 		[activities : activities]
 	}
@@ -51,5 +52,17 @@ class ActivityController {
 			flash.message = "Activity not a favorite!"
 			redirect(action: "index")
 		}
+	}
+	
+	def isExecutable(activity) {
+		ActivityService.isExecutable(activity, SecurityUtils.subject)
+	}
+	
+	def isFavorite(activity) {
+		ActivityService.isFavorite(activity, SecurityUtils.subject)
+	}
+	
+	def getActivityCountdown(activity) {
+		ActivityService.getActivityCountdown(activity, SecurityUtils.subject)
 	}
 }
