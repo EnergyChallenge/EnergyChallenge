@@ -10,7 +10,9 @@ import org.apache.shiro.SecurityUtils;
 import java.util.ArrayList;
 
 class AppController {
-
+	
+	def ActivityService
+	
     def index() {
 	}
 	
@@ -86,7 +88,7 @@ class AppController {
 	}
 	
 	def getAllActivities() {
-		def ActivityService 
+		
 		def activities = []
 		for(activity in Activity.findAll()) {
 			activities << [description: activity.getDescription(), points: activity.getPoints(), duration: activity.getDuration(), active: ActivityService.isExecutable(activity, SecurityUtils.subject)]
@@ -95,7 +97,7 @@ class AppController {
 	}
 	
 	def getFavoredActivities() {
-		def ActivityService
+		
 		def subject = SecurityUtils.subject
 		def user = User.findByEmail(subject.getPrincipal())
 		def userFavorites = user.favorites.sort {it.id}
@@ -140,6 +142,14 @@ class AppController {
 	}
 	
 	def completeActivity() {
+		if(ActivityService.completeActivity(params.id as long, SecurityUtils.subject)) {
+			outputToJson(["Succes"]) //TODO
+		} else {
+			outputToJson(["Failure"]) //TODO
+		}
+	}
+	
+	def commentProposal() {
 		//TODO
 	}
 	
@@ -173,6 +183,22 @@ class AppController {
 		ranking.sort { -it.points } //Sort DESC
 		return ranking.indexOf([name: team.getName(), id: team.id, points: team.getPoints()])+1
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -306,7 +332,7 @@ class AppController {
         ActivityService.completeActivity(params.activityId, SecurityUtils.getSubject())
     }
 
-    def commentProposal(){
+    def commentProposalOld(){
 
         //Get the proposal service to add the comment
         ProposalService.addComment(params.commentText, params.rating, SecurityUtils.getSubject(), params.proposalId);
