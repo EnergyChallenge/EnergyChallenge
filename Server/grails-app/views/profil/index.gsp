@@ -20,12 +20,7 @@
 		
 		<div class="head">
 			<div class="image">
-				<g:if test="${type == 'user'}">
-					<img src="<g:createLink controller="user" action="avatar" id="${id}"/>" alt="image"/>
-				</g:if>
-				<g:else>
-					<img src="<g:createLink controller="team" action="avatar" id="${id}"/>" alt="image"/>
-				</g:else>
+				<img src="<g:createLink controller="profil" action="avatar" id="${id}"/>" alt="image"/>
 			</div>
 			<hgroup>
 				<h1>${name}</h1>
