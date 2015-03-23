@@ -66,6 +66,18 @@
 			Einzelgewinner im Rahmen einer feierlichen Siegerehrung
 			gekürt.
 		</p>
-		<!-- TODO "Top5 Ranking der Aktivtäten einbinden" */ -->
+		<h1>Beliebteste Aktivitäten:</h1>
+		<p>${foo}</p>
+		<table class="activityTeaser">
+			<tbody>
+				<g:each in="${teaser}" var="activity">
+					<tr>
+						<td>${activity.DESCRIPTION}</td>
+						<td>${activity.N} Mal ausgeführt</td>
+					</tr>
+				</g:each>
+			</tbody>
+		</table>
+		<p><g:link controller="statistics" action="index">Alle Statistiken anzeigen</g:link></p>
 	</body>
 </html>
