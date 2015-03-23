@@ -109,6 +109,7 @@ class ProfilController {
       final Resource image = grailsResourceLocator.findResourceForURI('/images/default_avatar.png')
       render file: image.inputStream, contentType: 'image/png'
       //render (file: new File("path to file"), fileName: "avatar.png")
+	return
     }
     println profile.avatar
     response.contentType = profile.avatarType
@@ -116,5 +117,6 @@ class ProfilController {
     OutputStream out = response.outputStream
     out.write(profile.avatar)
     out.close()
+	return
   }
 }
