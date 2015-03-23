@@ -11,7 +11,7 @@
 			<div id="userinfo">
 				<div class="profile">
 					<a href="${createLink(controller:'user', action:'edit')}" class="avatar">
-						<img src="${createLink(controller:'user', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
+						<img src="${createLink(controller:'profil', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
 					</a>
 					<div class="name">
 						<!-- TODO Change link to profile / not profil -->
