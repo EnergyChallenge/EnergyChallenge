@@ -35,11 +35,16 @@
 	<body class="${pageProperty(name: 'body.class')}">
 
 			<nav>
-				<h3>Suche:</h3>
 				<ul>
-				<input type="text" name="email" value="${username}" />
-				<g:actionSubmitImage value="Suche" action="search"
-                     src="${resource(dir: 'images', file: 'search.png')}"/>
+				<g:form action="searchForm">
+    				<div class="search">
+    				<!-- TODO: <g:grep in="${}" filter="RankingController.class">
+     				<p>Benutzer: ${}</p> // zum suchen und filtern gedacht, aber noch nicht sinnvoll implementiert-->
+        				<input type="text" name="q" value="${params.q}" />
+        				<input type="submit" value="Suche" />
+        			<!--</g:grep>-->
+    				</div>
+				</g:form>
 				</ul>
 				<h3>Navigation</h3>
 				<ul>

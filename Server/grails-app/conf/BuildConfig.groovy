@@ -67,11 +67,11 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
         compile ":asset-pipeline:1.9.9"
-	compile ":shiro:1.2.1"
-	compile ":joda-time:1.5"        
-	//compile ":export:1.6" // TODO delete if not needed
-	compile ":csv:0.3.1"
-
+		compile ":shiro:1.2.1"
+		compile ":joda-time:1.5"        
+		//compile ":export:1.6" // TODO delete if not needed
+		compile ":csv:0.3.1"
+		
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.6.1" // or ":hibernate:3.6.10.18"
         runtime ":database-migration:1.4.0"
@@ -82,5 +82,6 @@ grails.project.dependency.resolution = {
         //compile ":less-asset-pipeline:1.10.0"
         //compile ":coffee-asset-pipeline:1.8.0"
         //compile ":handlebars-asset-pipeline:1.3.0.3"
+		
     }
 }
