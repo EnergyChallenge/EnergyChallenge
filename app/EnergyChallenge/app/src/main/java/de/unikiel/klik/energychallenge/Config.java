@@ -9,6 +9,6 @@ public class Config {
     //public static final String SERVER_REST_PATH_END = "";
     public static final String SERVER_REST_PATH_END = ".json";
 
-    public static final boolean LOGIN_REQUIRED = false;
+    public static final boolean LOGIN_REQUIRED = true;
 
 }
