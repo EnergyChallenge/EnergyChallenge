@@ -19,6 +19,15 @@ class AdminService {
         //Create the new activity from the proposal information
 		def newActivity = new Activity(description: description, points: points, duration: duration)
         newActivity.save(failOnError: true)
+		
+		//reward the author of the proposal with points
+		def proposal = Proposal.get(proposalId)
+		def author = proposal.getAuthor()
+		def activity = Activity.findByDescription("Eine neue Klik-Aktivität beisteuern")
+		def completedActivity = new CompletedActivity(activity)
+		author.completedActivities.add(completedActivity)
+		completedActivity.save(flush: true, failOnError: true)
+		author.save(flush: true, failOnError: true)
 
         //Then delete the old proposal
         deleteProposal(proposalId)
@@ -62,7 +71,7 @@ class AdminService {
         User blockedUser = User.get(userId)
 
         //Block once found
-        blockedUser.blocked = "true"
+        blockedUser.blocked = true
         blockedUser.save(failOnError: true)
 	}
 
@@ -72,7 +81,7 @@ class AdminService {
         User blockedUser = User.get(userId)
 
         //Unblock once found
-        blockedUser.blocked = "false"
+        blockedUser.blocked = false
         blockedUser.save(failOnError: true)
 	}
 	
@@ -109,6 +118,11 @@ class AdminService {
 
         //Find the team
         Team deletionTeam = Team.get(teamId)
+		//delete all references to the team
+		for(member in deletionTeam.members) {
+			member.setTeam(null)
+			member.save(failOnError: true, flush: true)
+		}
 
         //Remove once found
         deletionTeam.delete()
