@@ -13,7 +13,151 @@ class AppController {
 
     def index() {
 	}
-
+	
+	def getUserProfile() {
+		//TODO
+		User user;
+		if (params.id != null) {
+			user = User.get(params.id);
+		} else {
+   			user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
+		}
+		String name = user.getName();
+		Team team = user.getTeam();
+		String teamname = (team != null) ? team.getName() : "";
+		String institute = user.getInstitute().getName();
+		int points = user.getPoints();
+		int position = getPositionOfUser(user);
+		def lastActivities = user.getCompletedActivities(); //TODO
+		
+		
+		
+	}
+	
+	def getUserRanking() {
+		def ranking = [];
+		for (user in User.findAll()) {
+			ranking << [id: user.id, title: user.getName(), points: user.getPoints()];
+		}
+		ranking.sort { -it.points } //Sort DESC
+		
+		outputToJson([ranking: ranking]);
+	}
+	
+	def getTeamRanking() {
+		def ranking = [];
+		for (team in Team.findAll()) {
+			ranking << [id: team.id, title: team.getName(), points: team.getPoints()];
+		}
+		ranking.sort { -it.points } //Sort DESC
+		
+		outputToJson([ranking: ranking]);
+	}
+	
+	def getAllActivities() {
+		//TODO
+		/******* FORM
+			{
+	    	"activities": [
+		        {
+				"id": 991,
+				"description": "Mit dem Fahrrad zur Uni fahren bis 3km ",
+				"active": true
+				},
+				{
+				"id": 992,
+				"description": "Wasserkocher nur mit der benötigten Menge Wasser füllen (z.B. eine Tasse)",
+				"active": true
+				}
+			}
+		********/
+	}
+	
+	def getFavoredActivities() {
+		//TODO
+		/******* FORM
+			{
+			"activities": [
+				{
+				"id": 991,
+				"description": "Mit dem Fahrrad zur Uni fahren bis 3km ",
+				"active": true
+				},
+				{
+				"id": 992,
+				"description": "Wasserkocher nur mit der benötigten Menge Wasser füllen (z.B. eine Tasse)",
+				"active": true
+				}
+			}
+		********/
+	}
+	
+	def getProposals() {
+		//TODO Sort comments and proposals
+		def proposals = [];
+		for (proposal in Proposal.findAll()) {
+			def comments = []
+			for (comment in proposal.getComments()) {
+				
+				boolean isOwn = false;
+				if (comment.getAuthor() == User.findByEmail(SecurityUtils.getSubject().getPrincipal())) {
+					isOwn = true;
+				}
+				
+				comments << [id: comment.getId(),
+							text: comment.getText(),
+							rating: comment.getRating(),
+							author: comment.getAuthor().getName(),
+							isOwn: isOwn];
+			}
+			
+			proposals << [id: proposal.getId(),
+							description: proposal.getDescription(),
+							author: proposal.getAuthor().getName(),
+							rating: proposal.getRating(),
+							comments: comments];
+		}
+		
+		outputToJson([proposals: proposals]);
+	}
+	
+	def performSearch() {
+		//TODO
+	}
+	
+	def completeActivity() {
+		//TODO
+	}
+	
+	
+	
+	private void outputToJson(def data) {
+		render data as JSON;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//TODO
+	
+	/*
+	 * 
+	 * 
+	 * ALL DEPRECATED!!!
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
+	
+	
+	
     def getRankingUsers() {
 
         //Get the appropriate information from the users
@@ -42,7 +186,7 @@ class AppController {
         render rankedTeams as JSON;
 	}
 
-    def getUserProfile(){
+    def getUserProfileOld(){
 
         //Get the user to be returned
         User user;
@@ -56,7 +200,7 @@ class AppController {
         render user as JSON;
     }
 
-    def getTeamProfile(){
+    def getTeamProfileOld(){
 
         //Get the team to be returned
         Team team = Team.get(params.id);
@@ -89,7 +233,7 @@ class AppController {
         render favorites as JSON;
     }
 
-    def getProposals(){
+    def getProposalsOld(){
 
         //Get all the proposals
         def proposals = Proposal.getAll();
@@ -98,7 +242,7 @@ class AppController {
         render proposals as JSON;
     }
 
-    def getProposal(){
+    def getProposalOld(){
 
         //Get the proposal to be returned
         Proposal proposal = Proposal.get(params.id);
