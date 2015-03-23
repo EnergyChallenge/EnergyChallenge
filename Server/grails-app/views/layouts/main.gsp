@@ -21,6 +21,13 @@
 					</div>				
 				</div>
 				<div class="actions">
+					<a href="${createLink(controller:'message', action:'index')}" class="inbox">
+						<g:if test="${user.getMessages().size() == 0}">
+							<img src="${resource(dir:'images', file:'empty_inbox.png')}" alt="inbox" />
+						</g:if><g:else>
+							<img src="${resource(dir:'images', file:'filled_inbox.png')}" alt="inbox" />
+						</g:else>
+					</a>
 					<div class="stats">
 						${user.getPoints()} Punkte
 					</div>
@@ -35,6 +42,17 @@
 	<body class="${pageProperty(name: 'body.class')}">
 
 			<nav>
+				<ul>
+				<g:form action="searchForm">
+    				<div class="search">
+    				
+        				<input type="text" name="q" value="${params.q}" />
+        				<input type="submit" value="Suche" />
+        		
+    				</div>
+				</g:form>
+				</ul>
+				<h3>Navigation</h3>
 				<ul>
 					<li><a href="${createLink(controller:'Landing')}" >EnergyChallenge</a></li>
 					<li><a href="${createLink(controller:'Activity')}" >Aktivitäten</a></li>

@@ -7,7 +7,7 @@ import de.unikiel.klik.model.Team;
 import org.apache.shiro.crypto.hash.Sha256Hash
 
 class RankingController {
-
+	
     def index() {
 		users();
 	}

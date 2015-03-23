@@ -77,7 +77,12 @@
          				</li>
        			</g:each>
      		</ul>
-		</div>
-		
+	</div>
+	<g:if test="${type == 'team' && user.getTeam() == null}">
+		<a href="<g:createLink controller="user" action="joinTeam" id="${id}"/>" > Team beitreten </a>		
+	</g:if>
+	<g:if test="${type == 'user' && user.getTeam() == null && de.unikiel.klik.model.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam() != null}">
+                <a href="<g:createLink controller="message" action="inviteUserToTeam" id="${id}"/>" >zu meinem Team einladen</a>		
+	</g:if>
 	</body>
 </html>

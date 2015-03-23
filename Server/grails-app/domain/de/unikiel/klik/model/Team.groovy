@@ -16,7 +16,11 @@ class Team extends Profile{
 		for(member in members) {
 			sum += member.getPoints();
 		}
-		return sum/members.size();
+		if(members.size() != null){
+			return sum/members.size()
+		}else{
+			return 0;
+		}
 	}
 	//TODO Refactor to getCompletedActivities
 	def getCompletedActivitys(){

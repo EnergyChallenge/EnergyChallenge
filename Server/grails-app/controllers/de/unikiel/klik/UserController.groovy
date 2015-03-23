@@ -19,8 +19,9 @@ class UserController {
   private static final okcontents = ['image/png', 'image/jpeg', 'image/gif']
   def ShiroSecurityManager
   def index() {
-    User user = User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal());
-    [user:user]
+    //User user = User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal());
+    //[user:user]
+	redirect(controller: "profil")
   }
 
   def edit() {
@@ -51,13 +52,13 @@ class UserController {
     }
   }
 
-/* TODO
+
   def joinTeam() {
         //Get the user service to join a team
-        UserService.setTeam(params.teamId, SecurityUtils.subject)
-        redirect(action = "user")
+        UserService.setTeam(params.id as long, SecurityUtils.subject)
+        redirect(controller: "profil", action: "index")
   }
-*/
+
   def newTeam() {
         //Get the user service to create a team
         UserService.createTeamAndJoin(params.name, SecurityUtils.subject)
@@ -69,7 +70,7 @@ class UserController {
       Subject subject = SecurityUtils.subject
             UserService.setPassword(params.password as String, params.password2 as String, subject)
             flash.message = "Passwords changed"
-            redirect(action = "edit")
+            redirect(action: "edit")
     }catch(ValidationException ex){
       flash.message = "Passwords dont Match"
       redirect(action: "edit")
@@ -81,7 +82,7 @@ class UserController {
 
         //Get the user service to change email notification settings
         UserService.setEmailNotification(params.emailNotification, SecurityUtils.subject)
-        redirect(action = "settings")
+        redirect(action: "settings")
     } 
 */
 }
