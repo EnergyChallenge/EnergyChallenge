@@ -23,7 +23,7 @@
             	${favorite.activity.getDescription()}
             	<em>
 	            	(${favorite.activity.getPoints()}
-	            	<g:if test="${favorite.activity.getPoints()} == 1">
+	            	<g:if test="${favorite.activity.getPoints() == 1}">
 	            		Punkt)
 	            	</g:if>
 	            	<g:else>
@@ -48,7 +48,7 @@
     </div>
     <div id="rightside">
     <div class="card">
-      <h2>Punkte Stand</h2>
+      <h3>Punkte Stand</h3>
       <table>
         <tr>
           <td>Meine Punkte:<td>
@@ -64,7 +64,7 @@
      </div>
      <div class="card">
       <g:if test="${team}">
-        <h2>Mein Team</h2>
+        <h3>Mein Team</h3>
         <table>
           <g:each in="${team.getMembers()}" var="member">
             <tr>
