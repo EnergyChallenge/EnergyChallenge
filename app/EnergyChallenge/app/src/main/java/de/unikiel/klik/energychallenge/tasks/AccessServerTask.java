@@ -3,16 +3,18 @@ package de.unikiel.klik.energychallenge.tasks;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.HTTP;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 import de.unikiel.klik.energychallenge.Config;
-import de.unikiel.klik.energychallenge.utils.IoX;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 /*
@@ -72,35 +74,20 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         doAfterResponse();
     }
 
-    private final String performServerRequest(ServerRequest serverRequest) throws IOException{
-        InputStream inputStream = null;
-        int length = 1024;
+    private final String performServerRequest(ServerRequest serverRequest) throws IOException {
 
-        try {
-            URL url = new URL(Config.SERVER_REST_PATH
-                            + serverRequest.getReceiverOnServer()
-                            + Config.SERVER_REST_PATH_END);
+        //TODO Put serverRequest.requestData in http request
 
-            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setReadTimeout(10000 /* milliseconds */);
-            conn.setConnectTimeout(15000 /* milliseconds */);
-            conn.setRequestMethod("GET");
-            conn.setDoInput(true);
-            // Starts the query
-            conn.connect();
-            int response = conn.getResponseCode();
-            inputStream = conn.getInputStream();
 
-            // Convert the InputStream into a string
-            //return IoX.readInputStream(inputStream, length);
-            return IoX.readInputStream(inputStream, length);
+        String requestUrl = Config.SERVER_REST_PATH + serverRequest.getReceiverOnServer() + Config.SERVER_REST_PATH_END;
 
-            // Makes sure that the InputStream is closed after the app is
-            // finished using it.
-        } finally {
-            if (inputStream != null) {
-                inputStream.close();
-            }
-        }
+        DefaultHttpClient client = new DefaultHttpClient();
+        HttpPost post = new HttpPost(requestUrl);
+        HttpResponse httpResponse = client.execute(post);
+        HttpEntity responseEntity = httpResponse.getEntity();
+        String response = EntityUtils.toString(responseEntity, HTTP.UTF_8);
+
+        return response;
+
     }
 }

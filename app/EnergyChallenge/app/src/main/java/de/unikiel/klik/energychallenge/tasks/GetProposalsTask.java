@@ -51,7 +51,7 @@ public class GetProposalsTask extends AccessServerTask {
             int id = proposals.getJSONObject(i).getInt("id");
             String description = proposals.getJSONObject(i).getString("description");
             String author = proposals.getJSONObject(i).getString("author");
-            int rating = proposals.getJSONObject(i).getInt("rating");
+            float rating = (float) proposals.getJSONObject(i).getDouble("rating");
             ArrayList<ProposalComment> comments = new ArrayList<>();
 
             JSONArray commentsInJson = proposals.getJSONObject(i).getJSONArray("comments");
