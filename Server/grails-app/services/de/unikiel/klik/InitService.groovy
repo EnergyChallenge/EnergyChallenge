@@ -8,7 +8,7 @@ import java.util.Random
 class InitService {
 
 	static def ACTIVITY_DESCRIPTIONS = [
-		"Eine neue Klik-Aktivit�t beisteuern",
+		"Eine neue Klik-Aktivität beisteuern",
 		"Mit dem Fahrrad zur Uni fahren bis 3km",
 		"Mit dem Fahrrad zur Uni fahren bis 5km",
 		"Mit dem Fahrrad zur Uni fahren über 5km",
