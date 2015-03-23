@@ -35,7 +35,7 @@
                <a href="<g:createLink action="editActivity" params="[activityId: "${activity.id}", description: "${activity.getDescription()}", points: "${activity.getPoints()}"]"/>">bearbeiten</a> 
             </td>
             <td>
-               loeschen
+               <a href="<g:createLink action="deleteActivity" params="[activityId: "${activity.id}"]"/>">loeschen</a> 
             </td>
 
         </tr>
