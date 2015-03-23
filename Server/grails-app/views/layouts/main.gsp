@@ -35,6 +35,13 @@
 	<body class="${pageProperty(name: 'body.class')}">
 
 			<nav>
+				<h3>Suche:</h3>
+				<ul>
+				<input type="text" name="email" value="${username}" />
+				<g:actionSubmitImage value="Suche" action="search"
+                     src="${resource(dir: 'images', file: 'search.png')}"/>
+				</ul>
+				<h3>Navigation</h3>
 				<ul>
 					<li><a href="${createLink(controller:'Landing')}" >EnergyChallenge</a></li>
 					<li><a href="${createLink(controller:'Activity')}" >Aktivitäten</a></li>

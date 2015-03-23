@@ -15,7 +15,7 @@ class User extends Profile {
 	String lastName
 	String title	// academic title
 	Boolean emailNotification = false
-
+	
 	static hasMany = [
 		roles: Role, 
 		permissions: String,
