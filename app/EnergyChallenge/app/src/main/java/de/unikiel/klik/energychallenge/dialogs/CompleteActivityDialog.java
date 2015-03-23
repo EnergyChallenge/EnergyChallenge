@@ -8,11 +8,15 @@ import android.os.Bundle;
 import android.util.Log;
 
 import de.unikiel.klik.energychallenge.R;
+import de.unikiel.klik.energychallenge.adapters.ActivitiesAdapter;
+import de.unikiel.klik.energychallenge.models.ActivitiesItem;
 
 public class CompleteActivityDialog extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+        final int activityPosition = getArguments().getInt("position");
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
@@ -22,20 +26,28 @@ public class CompleteActivityDialog extends DialogFragment {
 
                 //TODO do action -> delegate to Adapter
 
+                //activitiesAdapter.completeActivity(completedActivity);
+
                 Log.v("Dialog", "Ja called");
+                Log.v("Dialog", "Now call main fragment");
+
+                ((DialogListener) getTargetFragment()).onDialogPositiveClick(activityPosition);
+
+
             }
         });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                // User cancelled the dialog
-
-                //TODO do action -> delegate to Adapter or maybe do nothing
-
-                Log.v("Dialog", "Nein called");
+                //TODO write comment
+                //Cancel - Do nothing
             }
         });
 
         return builder.create();
+    }
+
+    public interface DialogListener {
+        public void onDialogPositiveClick(int activityPosition);
     }
 
 }

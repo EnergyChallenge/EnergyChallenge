@@ -104,12 +104,12 @@ class AuthController {
         try{
             AuthService.login(email, password ,false)
             //Login successful
-            def response = [response: true]
+            def response = [response: "true"]
             render response as JSON
         }
         catch (AuthenticationException ex){
             //Login failed
-            def response = [response: false]
+            def response = [response: "false"]
             render response as JSON
         }
     }

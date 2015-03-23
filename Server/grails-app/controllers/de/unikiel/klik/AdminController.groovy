@@ -5,6 +5,7 @@ import de.unikiel.klik.model.Team;
 import de.unikiel.klik.model.Proposal;
 import de.unikiel.klik.model.Activity;
 import de.unikiel.klik.model.CompletedActivity;
+import org.joda.time.Duration
 
 class AdminController {
 
@@ -40,14 +41,22 @@ class AdminController {
     }
 
     def changeActivity() {
-        if(params.proposalId){
-          AdminService.createActivityFromProposal(params.description, params.points as int, params.duration as int, params.proposalId as long)
+        try{
+          params.duration as int
+          params.points as long
+        }catch(java.lang.NumberFormatException ex){
+          return
+        }
+        long durationInSeconds = 60//TODO
+        Duration duration = new Duration(durationInSeconds*1000)
+        if(params.proposalId != ""){
+          AdminService.createActivityFromProposal(params.description, params.points as int, duration,params.proposalId as long)
           redirect(action: "proposals")
-        }else if(params.activityId){
-          AdminService.editActivity(params.description, params.points as int, params.duration as int, params.proposalId as long)
-          redirect(action: "activitys")
+        }else if(params.activityId != ""){
+          AdminService.editActivity(params.description, params.points as int, duration, params.activityId as long)
+          redirect(action: "activities")
         }else{ 
-          AdminService.createActivity(params.description, params.points as int, params.duration as int)
+          AdminService.createActivity(params.description, params.points as int, duration)
           redirect(action: "editActivity")
         }
     }
@@ -99,6 +108,27 @@ class AdminController {
 		def user = User.get(params.userid)
         
         render(view: "completedActivities", model: [fullName: user.getName(), userid: params.userid, completedActivities: user.completedActivities.sort{it.id}])
+	}
+	
+	def deleteProposal() {
+		AdminService.deleteProposal(params.proposalId as long)
+		redirect(action: "proposals")
+	}
+	
+	def deleteActivity() {
+		AdminService.deleteActivity(params.activityId as long)
+		redirect(action: "activities")
+	}
+
+    def message() {
+
+    }
+
+    def emailMessage() {
+
+        //Get the admin service to send a global email
+        AdminService.sendGlobalEmail(params.subject as String, params.message as String)
+        redirect(action: "admin")
     }
 
     // delete ONE completed Activity

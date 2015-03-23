@@ -23,8 +23,8 @@ class AdminService {
 		//reward the author of the proposal with points
 		def proposal = Proposal.get(proposalId)
 		def author = proposal.getAuthor()
-		def activity = Activity.findByDescription("Eine neue Klik-Aktivität beisteuern")
-		def completedActivity = new CompletedActivity(activity)
+		def activity = Activity.findByDescription("Eine neue Klik-Aktivitï¿½t beisteuern")
+		def completedActivity = new CompletedActivity(activity: activity)
 		author.completedActivities.add(completedActivity)
 		completedActivity.save(flush: true, failOnError: true)
 		author.save(flush: true, failOnError: true)
@@ -48,7 +48,7 @@ class AdminService {
 	void deleteActivity(long activityId) {
 
         //Find the activity
-        //TODO how can I do this? activity has no id
+        //TODO references must be handled!!!
         Activity deletionActivity = Activity.get(activityId)
 
         //Remove it once found
@@ -58,7 +58,6 @@ class AdminService {
 	void deleteProposal(long proposalId) {
 
         //Find the proposal
-        //TODO how can I do this? proposal has no id
         Proposal deletionProposal = Proposal.get(proposalId)
 
         //Remove it once found
@@ -100,7 +99,7 @@ class AdminService {
         Team blockedTeam = Team.get(teamId)
 
         //Block once found
-        blockedTeam.blocked = "true"
+        blockedTeam.blocked = true
         blockedTeam.save(failOnError: true)
 	}
 
@@ -110,7 +109,7 @@ class AdminService {
         Team blockedTeam = Team.get(teamId)
 
         //Block once found
-        blockedTeam.blocked = "false"
+        blockedTeam.blocked = false
         blockedTeam.save(failOnError: true)
 	}
 
@@ -127,5 +126,22 @@ class AdminService {
         //Remove once found
         deletionTeam.delete()
 	}
+
+    void sendGlobalEmail(String messageSubject, String message) {
+
+        //Get all users
+        def allUsers = User.getAll();
+
+        //Send an email to each user
+        def i
+        for (i = 0; i < allUsers.size; i++) {
+            sendMail {
+                to allUsers[i].email
+                subject messageSubject
+                body message
+            }
+        }
+
+    }
 	
 }
