@@ -1,8 +1,10 @@
 package de.unikiel.klik.energychallenge.fragments;
 
+import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +15,13 @@ import android.widget.Toast;
 import de.unikiel.klik.energychallenge.R;
 
 import de.unikiel.klik.energychallenge.adapters.ActivitiesAdapter;
+import de.unikiel.klik.energychallenge.dialogs.CompleteActivityDialog;
+import de.unikiel.klik.energychallenge.models.ActivitiesItem;
+import de.unikiel.klik.energychallenge.tasks.CompleteActivityTask;
 import de.unikiel.klik.energychallenge.tasks.GetActivitiesTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
-
-
-
-/**
- * A fragment representing a list of Items.
- * <p/>
- * <p/>
- * Activities containing this fragment MUST implement the {@link }
- * interface.
- */
-public class ActivitiesFragment extends ListFragment {
+public class ActivitiesFragment extends ListFragment implements CompleteActivityDialog.DialogListener {
 
     private ActivitiesAdapter activitiesAdapter;
 
@@ -54,7 +49,7 @@ public class ActivitiesFragment extends ListFragment {
         progressIndicator = (LinearLayout) view.findViewById(R.id.progress_container_id);
         emptyListText = (TextView) view.findViewById(R.id.empty_id);
 
-        activitiesAdapter = new ActivitiesAdapter(getActivity());
+        activitiesAdapter = new ActivitiesAdapter(getActivity(), this);
 
         setListAdapter(activitiesAdapter);
 
@@ -63,6 +58,7 @@ public class ActivitiesFragment extends ListFragment {
         return view;
     }
 
+    //TODO Rename not Ranking
     private void loadRankingData() {
 
         Context context = getActivity();
@@ -76,4 +72,17 @@ public class ActivitiesFragment extends ListFragment {
 
     }
 
+    @Override
+    public void onDialogPositiveClick(int activityPosition) {
+
+        Context context = getActivity();
+
+        if (NetworkX.isAvailable(context)) {
+            ActivitiesItem activity = activitiesAdapter.getItem(activityPosition);
+            new CompleteActivityTask(context, activitiesAdapter, activity).execute();
+        } else {
+            Toast.makeText(context, R.string.no_network_connection, Toast.LENGTH_SHORT).show();
+        }
+
+    }
 }

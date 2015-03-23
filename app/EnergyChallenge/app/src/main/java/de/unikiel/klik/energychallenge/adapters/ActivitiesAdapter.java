@@ -3,8 +3,10 @@ package de.unikiel.klik.energychallenge.adapters;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DialogFragment;
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,15 +26,21 @@ import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.dialogs.CompleteActivityDialog;
 import de.unikiel.klik.energychallenge.models.ActivitiesItem;
 import de.unikiel.klik.energychallenge.models.RankingItem;
+import de.unikiel.klik.energychallenge.tasks.CompleteActivityTask;
+import de.unikiel.klik.energychallenge.tasks.GetActivitiesTask;
+import de.unikiel.klik.energychallenge.utils.NetworkX;
 
 
 public class ActivitiesAdapter extends ArrayAdapter<ActivitiesItem> {
 
     private Context context;
 
-    public ActivitiesAdapter(Context context) {
+    private Fragment fragment;
+
+    public ActivitiesAdapter(Context context, Fragment fragment) {
         super(context, R.layout.list_activities);
         this.context = context;
+        this.fragment = fragment;
     }
 
 
@@ -56,12 +64,11 @@ public class ActivitiesAdapter extends ArrayAdapter<ActivitiesItem> {
                 Activity activity = (Activity) context;
 
                 DialogFragment dialog = new CompleteActivityDialog();
+                Bundle arguments = new Bundle();
+                arguments.putInt("position", position);
+                dialog.setArguments(arguments);
+                dialog.setTargetFragment(fragment, 0);
                 dialog.show(activity.getFragmentManager(), "CompleteActivityDialog");
-
-                //TODO
-
-                String id = Integer.toString(getItem(position).getId());
-                Toast.makeText(context, "You clicked id: " + id, Toast.LENGTH_SHORT).show();
             }
         });
 
