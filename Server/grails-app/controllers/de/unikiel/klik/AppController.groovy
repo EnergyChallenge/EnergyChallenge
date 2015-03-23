@@ -90,7 +90,7 @@ class AppController {
 	def getAllActivities() {
 		
 		def activities = []
-		for(activity in Activity.findAll()) {
+		for(activity in Activity.findAll{description != "Eine neue Klik-Aktivität beisteuern"}) {
 			activities << [description: activity.getDescription(), points: activity.getPoints(), duration: activity.getDuration(), active: ActivityService.isExecutable(activity, SecurityUtils.subject)]
 		}
 		outputToJson([activities : activities])

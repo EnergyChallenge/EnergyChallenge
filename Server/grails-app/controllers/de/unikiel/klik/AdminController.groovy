@@ -4,6 +4,8 @@ import de.unikiel.klik.model.User;
 import de.unikiel.klik.model.Team;
 import de.unikiel.klik.model.Proposal;
 import de.unikiel.klik.model.Activity;
+import de.unikiel.klik.model.CompletedActivity;
+import org.joda.time.Duration
 
 class AdminController {
 
@@ -39,12 +41,21 @@ class AdminController {
     }
 
     def changeActivity() {
-        if(params.proposalId){
+        try{
+          params.durationUnits as long
+          params.durationUnitInSeconds as long
+          params.points as long
+        }catch(java.lang.NumberFormatException ex){
+          return
+        }
+        long durationInSeconds = (params.durationUnits as long )* (params.durationUnitInSeconds as long)
+        Duration duration = new Duration(durationInSeconds*1000)
+        if(params.proposalId != ""){
           AdminService.createActivityFromProposal(params.description, params.points as int, duration,params.proposalId as long)
           redirect(action: "proposals")
-        }else if(params.activityId){
-          AdminService.editActivity(params.description, params.points as int, duration, params.proposalId as long)
-          redirect(action: "activitys")
+        }else if(params.activityId != ""){
+          AdminService.editActivity(params.description, params.points as int, duration, params.activityId as long)
+          redirect(action: "activities")
         }else{ 
           AdminService.createActivity(params.description, params.points as int, duration)
           redirect(action: "editActivity")
@@ -82,15 +93,70 @@ class AdminController {
     def deleteUser() {
 
         //Get the admin service to remove a user
-        AdminService.unblockUser(params.id as long)
+        AdminService.deleteUser(params.id as long)
         redirect(action: "users")
     }
 
     def deleteTeam() {
 
         //Get the admin service to remove a team
-        AdminService.unblockTeams(params.id as long)
+        AdminService.deleteTeam(params.id as long)
         redirect(action: "teams")
     }
+    
+    // show all completed activities of a user
+    def completedActivities() {
+		def user = User.get(params.userid)
+        
+        render(view: "completedActivities", model: [fullName: user.getName(), userid: params.userid, completedActivities: user.completedActivities.sort{it.id}])
+	}
+	
+	def deleteProposal() {
+		AdminService.deleteProposal(params.proposalId as long)
+		redirect(action: "proposals")
+	}
+	
+	def deleteActivity() {
+		AdminService.deleteActivity(params.activityId as long)
+		redirect(action: "activities")
+	}
 
+    def message() {
+
+    }
+
+    def emailMessage() {
+
+        //Get the admin service to send a global email
+        AdminService.sendGlobalEmail(params.subject as String, params.message as String)
+        redirect(action: "admin")
+    }
+
+    // delete ONE completed Activity
+    def deleteCompletedActivity() {
+		def user = User.get(params.userid)
+		def completedActivity = CompletedActivity.get(params.completedActivityId)
+		user.removeFromCompletedActivities(completedActivity)
+		completedActivity.delete(flush: true)
+		
+        redirect(action: "completedActivities", params: [userid: params.userid])
+    }
+    
+    // delete ALL completed Activities of a user
+    def deleteAllCompletedActivities() {
+		def user = User.get(params.userid)
+		def ids = []
+		
+		for(ca in user.completedActivities) {
+			ids.add(ca.id)
+		}
+		
+		for(id in ids) {
+			def ca = CompletedActivity.get(id)
+			user.removeFromCompletedActivities(ca)
+			ca.delete(flush: true)
+		}
+		
+        redirect(action: "completedActivities", params: [userid: params.userid])
+    }
 }

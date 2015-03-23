@@ -8,6 +8,7 @@ import java.util.Random
 class InitService {
 
 	static def ACTIVITY_DESCRIPTIONS = [
+		"Eine neue Klik-Aktivität beisteuern",
 		"Mit dem Fahrrad zur Uni fahren bis 3km",
 		"Mit dem Fahrrad zur Uni fahren bis 5km",
 		"Mit dem Fahrrad zur Uni fahren über 5km",
@@ -43,12 +44,13 @@ class InitService {
 		"Umweltprämie zum Ersetzen veralteter elektronischer Geräte in Anspruch nehmen"
 	]
 	
-	static def ACTIVITY_POINTS = [2,3,5,2,3,4,1,1,2,3,5,3,4,5,2,2,2,2,3,5,3,4,1,2,3,5,2,2,3,2,3,4,5]
+	static def ACTIVITY_POINTS = [2,2,3,5,2,3,4,1,1,2,3,5,3,4,5,2,2,2,2,3,5,3,4,1,2,3,5,2,2,3,2,3,4,5]
 	
 	static def long MIN_DURATION_IN_MS = 1
 	static def long ONE_DAY_IN_MS = 24*60*60*1000
 	
 	static ACTIVITY_DURATIONS = [
+		MIN_DURATION_IN_MS, // 0.
 		ONE_DAY_IN_MS, // 1.
 		ONE_DAY_IN_MS, // 2.
 		ONE_DAY_IN_MS, // 3.

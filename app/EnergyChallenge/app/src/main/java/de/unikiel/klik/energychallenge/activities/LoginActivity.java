@@ -13,11 +13,13 @@ import android.widget.Toast;
 import de.unikiel.klik.energychallenge.Config;
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.tasks.VerificationTask;
+import de.unikiel.klik.energychallenge.utils.NetworkX;
 
 
 /*The initial login activity which is bypassed if the user is already logged in*/
 public class LoginActivity extends Activity {
 
+    //Elements from the layout
     EditText usernameEditText;
     EditText passwordEditText;
 
@@ -45,8 +47,8 @@ public class LoginActivity extends Activity {
             // Setting up example Settings
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("name", "seabstian.vettel@ferrari.it");
-            editor.putString("email", "Sebastian Vettel");
+            editor.putString("name", "Sebastian Vettel");
+            editor.putString("email", "seabstian.vettel@ferrari.it");
             editor.commit();
 
             Intent intent = new Intent(this, MainActivity.class);
@@ -55,34 +57,47 @@ public class LoginActivity extends Activity {
             return;
         }
 
-        //Get credential strings
-        final String usernameInput = usernameEditText.getText().toString();
-        final String passwordInput = passwordEditText.getText().toString();
-
-        //Save the credentials to the shared preferences (persistent storage)
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("email", usernameInput);
-        editor.putString("password", passwordInput);
-        editor.commit();
-
-        //Get the saved email and password from the shared preferences (persistant data)
-        final String email = preferences.getString("email", "Not found");
-        final String password = preferences.getString("password", "Not found");
-
-        //Use the verification task to check the saved credentials
-        if(VerificationTask.checkCredentials(email, password)){
-
-            //Credentials valid, go to main activity
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }else{
+        //Only proceed if a network connection is available
+        if(!NetworkX.isAvailable(getApplicationContext())) {
 
             //Credentials invalid, display an error
             Context context = getApplicationContext();
-            CharSequence message = "Invalid username/password combination";
+            CharSequence message = "Can't login, your not connected to a network.";
             Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
             toast.show();
+
+        }else{
+
+            //Get credential strings
+            final String usernameInput = usernameEditText.getText().toString();
+            final String passwordInput = passwordEditText.getText().toString();
+
+            //Save the credentials to the shared preferences (persistent storage)
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("email", usernameInput);
+            editor.putString("password", passwordInput);
+            editor.commit();
+
+            //Get the saved email and password from the shared preferences (persistant data)
+            final String email = preferences.getString("email", "Not found");
+            final String password = preferences.getString("password", "Not found");
+
+            //Use the verification task to check the saved credentials
+            if (VerificationTask.checkCredentials(email, password)) {
+
+                //Credentials valid, go to main activity
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+            } else {
+
+                //Credentials invalid, display an error
+                Context context = getApplicationContext();
+                CharSequence message = "Invalid username/password combination";
+                Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+                toast.show();
+            }
+
         }
 
     }
