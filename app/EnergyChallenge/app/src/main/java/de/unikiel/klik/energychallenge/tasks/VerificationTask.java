@@ -9,7 +9,6 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,6 +16,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+
+import de.unikiel.klik.energychallenge.utils.IoX;
 
 public class VerificationTask{
 
@@ -48,17 +49,11 @@ public class VerificationTask{
                     InputStream inputStream = responseEntity.getContent();
 
                     //Convert the response to a useful string
-                    String responseString = convertInputStreamToString(inputStream);
-
-                    Log.v("Response: ", responseString);
-
-                    JSONObject jsonResponse = new JSONObject(responseString);
-                    String response = jsonResponse.getString("response");
-
-                    Log.v("Response: ", response);
+                    String responseString = IoX.readInputStream(inputStream, inputStream.toString().length());
+                    Log.v("Response from server", responseString);
 
                     //Check the response for the result
-                    if(response.toLowerCase().contains("true".toLowerCase())){
+                    if(responseString.contains("true")){
                         //Verification successful
                         verificationSuccessful[0] = true;
                     }else{
