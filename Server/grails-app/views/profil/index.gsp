@@ -70,10 +70,13 @@
      		<ul>
        			<g:each in="${lastActivities}" var="activity">
          				<li>
+						<g:if test ="${type == 'user'}">
          					${activity.getActivity().getDescription()}
-							<g:if test ="${type == 'team'}">
+						</g:if>
+						<g:else>
+         						${activity.completedActivity.getActivity().getDescription()}
 								<em>(${activity.member})</em>
-							</g:if>          					
+						</g:else>          					
          				</li>
        			</g:each>
      		</ul>
