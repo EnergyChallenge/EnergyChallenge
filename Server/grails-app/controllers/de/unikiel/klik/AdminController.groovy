@@ -48,7 +48,7 @@ class AdminController {
         }catch(java.lang.NumberFormatException ex){
           return
         }
-        long durationInSeconds = ((long)params.durationUnits)* ((long)params.durationUnitInSeconds)
+        long durationInSeconds = (params.durationUnits as long )* (params.durationUnitInSeconds as long)
         Duration duration = new Duration(durationInSeconds*1000)
         if(params.proposalId != ""){
           AdminService.createActivityFromProposal(params.description, params.points as int, duration,params.proposalId as long)
