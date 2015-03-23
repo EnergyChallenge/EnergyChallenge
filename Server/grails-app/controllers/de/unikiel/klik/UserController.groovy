@@ -50,25 +50,6 @@ class UserController {
     return
     }
   }
-ResourceLocator grailsResourceLocator
-  def avatar() {
-    
-    User avatarUser = User.get(params.id)
-    if (!avatarUser || !avatarUser.avatar || !avatarUser.avatarType) {
-      //response.sendError(404)
-      //return
-		//TODO Warum funktioniert das nicht???!!!
-		//final Resource image = grailsResourceLocator.findResourceForURI('/images/example-avatar.png')
-		//render file: image.inputStream, contentType: 'image/jpeg'
-      final Resource image = grailsResourceLocator.findResourceForURI('/images/grails_logo.png')
-      render file: image.inputStream, contentType: 'image/png'
-    }
-    response.contentType = avatarUser.avatarType
-    response.contentLength = avatarUser.avatar.size()
-    OutputStream out = response.outputStream
-    out.write(avatarUser.avatar)
-    out.close()
-  }
 
 /* TODO
   def joinTeam() {
