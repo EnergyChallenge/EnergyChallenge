@@ -1,6 +1,7 @@
 package de.unikiel.klik
 
 import de.unikiel.klik.model.TeamInvite
+import de.unikiel.klik.model.ActivityNotification
 import de.unikiel.klik.model.User
 import org.apache.shiro.SecurityUtils
 
