@@ -6,17 +6,31 @@
     <asset:stylesheet src="landing.css"/>
   </head>
   <body>
-    <h1>EnergyChallenge</h1>
+	<h1>EnergyChallenge</h1>
     <div id="leftside">
-      <h2>Meine Favoriten</h2>
-      <table>
-      	<style>
-		#td {margin-left: 30px; margin-right: 20px;}
-		</style>
-        <g:each in="${favoriteActivities}" var="favorite">
-          <tr>
-            <td> ${favorite.activity.getDescription()} </td>
-            <td> ${favorite.activity.getPoints()} Punkt(e) </td>
+    	<div class="card">
+    	<h3>Meine Favoriten</h3>
+    	<table>
+    	<g:each in="${favoriteActivities}" var="favorite">
+    	<tr>
+    		<td>
+    			<g:form name="addToFavoritesForm" url="[action:'removeFromFavorites',controller:'activity',id: favorite.activity.getId()]">
+        	      	<g:actionSubmitImage value="defavorisieren" action="removeFromFavorites"
+        	      						src="${resource(dir: 'images', file: 'favorite1.png')}"/>  
+				</g:form>
+            </td>
+            <td>
+            	${favorite.activity.getDescription()}
+            	<em>
+	            	(${favorite.activity.getPoints()}
+	            	<g:if test="${favorite.activity.getPoints()} == 1">
+	            		Punkt)
+	            	</g:if>
+	            	<g:else>
+	            		Punkte)
+	            	</g:else>
+            	</em>
+            </td>
             <td>
               <g:if test="${favorite.executable}" >
                 <g:form name="completeActivityForm" url="[action:'completeActivity',controller:'activity',id: favorite.activity.getId()]">
@@ -26,18 +40,14 @@
               </g:if>
               <g:else>${favorite.countdown}</g:else>
             </td>
-            <td>
-              <g:form name="addToFavoritesForm" url="[action:'removeFromFavorites',controller:'activity',id: favorite.activity.getId()]">
-              <g:actionSubmitImage value="defavorisieren" action="removeFromFavorites"
-                     src="${resource(dir: 'images', file: 'favorite1.png')}"/>  
-              </g:form>
-            </td>
           </tr>
         </g:each>
       </table>
       <a href="<g:createLink controller="activity" action="index"/>">Weitere Aktivitäten</a>
+      </div>
     </div>
     <div id="rightside">
+    <div class="card">
       <h2>Punkte Stand</h2>
       <table>
         <tr>
@@ -51,6 +61,8 @@
           </tr>
         </g:if>
       </table>
+     </div>
+     <div class="card">
       <g:if test="${team}">
         <h2>Mein Team</h2>
         <table>
@@ -62,6 +74,7 @@
           </g:each>
         </table>
       </g:if>
+      </div>
     </div>
   </body>
 </html>

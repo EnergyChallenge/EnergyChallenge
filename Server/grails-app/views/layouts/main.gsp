@@ -21,15 +21,19 @@
 					</div>				
 				</div>
 				<div class="actions">
-					<a href="${createLink(controller:'message', action:'index')}" class="inbox">
-						<g:if test="${user.getMessages().size() == 0}">
-							<img src="${resource(dir:'images', file:'empty_inbox.png')}" alt="inbox" />
-						</g:if><g:else>
-							<img src="${resource(dir:'images', file:'filled_inbox.png')}" alt="inbox" />
-						</g:else>
-					</a>
 					<div class="stats">
-						${user.getPoints()} Punkte
+						<a href="${createLink(controller:'message', action:'index')}" class="inbox">
+							<i class="fa fa-bell"></i>
+							<span class="value">
+								<g:if test="${user.getMessages().size() != 0}">
+									${user.getMessages().size()}
+								</g:if>
+							</span>
+						</a><!--  No whitespace
+						--><a href="${createLink(controller:'profile')}" class="points">
+							<i class="fa fa-trophy"></i>
+							<span class="value">${user.getPoints()}</span>
+						</a>
 					</div>
 					<g:form name="logoutFrom" url="[action:'signOut',controller:'auth']">
 						<input type="submit" value="Abmelden" />
@@ -42,17 +46,12 @@
 	<body class="${pageProperty(name: 'body.class')}">
 
 			<nav>
-				<ul>
-				<g:form action="searchForm">
-    				<div class="search">
-    				
-        				<input type="text" name="q" value="${params.q}" />
-        				<input type="submit" value="Suche" />
-        		
-    				</div>
-				</g:form>
-				</ul>
-				<h3>Navigation</h3>
+				<div id="search">
+					<g:form action="searchForm">
+	        			<input type="search" name="q" value="${params.q}" placeholder="Suchen" />
+	        			<button class="fa fa-search"></button>
+					</g:form>
+				</div>
 				<ul>
 					<li><a href="${createLink(controller:'Landing')}" >EnergyChallenge</a></li>
 					<li><a href="${createLink(controller:'Activity')}" >Aktivitäten</a></li>

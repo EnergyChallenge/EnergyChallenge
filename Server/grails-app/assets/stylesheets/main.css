@@ -46,19 +46,6 @@ header .inside #userinfo .profile .avatar img {
 	display: block;
 	height: 40px;
 }
-header .inside #userinfo .actions .inbox {
-	display: block;
-	height: 20px;
-	width: 20px;
-	float: left;
-	overflow: hidden;
-	border-radius: 5px;
-	background-color: #FFFFFF;
-}
-header .inside #userinfo .actions .inbox img {
-	display: block;
-	height: 20px;
-}
 header .inside #userinfo .profile .name {
 	margin-left: 60px;
 	line-height: 40px;
@@ -74,6 +61,19 @@ header .inside #userinfo .actions .stats {
 	width: 140px;
 	float: left;
 }
+header .inside #userinfo .actions .stats a {
+	display: inline-block;
+	width: 50px;
+	margin-right: 20px;
+	margin-top: 1px;
+	color:inherit;
+}
+header .inside #userinfo .actions .stats a:hover {
+	text-decoration: none;
+}
+header .inside #userinfo .actions .stats a i.fa {
+	font-size: 25px;
+}
 header .inside #userinfo .actions #logoutFrom {
 	text-align: right;
 }
@@ -84,6 +84,26 @@ header .inside #userinfo .actions #logoutFrom {
 #container .inside {
 	width: 960px;
 	margin: 0 auto;
+}
+#container nav #search {
+    position: relative;
+    padding: 10px 15px;
+    background-color: #E2E2E2;
+	border-bottom: 1px solid #cccccc;
+}
+#container nav #search input[type="search"] {
+    width: 100%;
+}
+#container nav #search button {
+	position: absolute;
+	right: 20px;
+	margin: 0;
+    padding: 4px 0;
+	background-color: transparent;
+	box-shadow: none;
+    border: 0 none;
+    color: #cccccc;
+    font-size: 16px;
 }
 #container nav {
 	float: left;
