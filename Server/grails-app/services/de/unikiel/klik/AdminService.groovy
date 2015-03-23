@@ -48,7 +48,7 @@ class AdminService {
 	void deleteActivity(long activityId) {
 
         //Find the activity
-        //TODO how can I do this? activity has no id
+        //TODO references must be handled!!!
         Activity deletionActivity = Activity.get(activityId)
 
         //Remove it once found
