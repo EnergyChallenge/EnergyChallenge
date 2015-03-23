@@ -55,41 +55,24 @@ class AppController {
 	}
 	
 	def getAllActivities() {
-		//TODO
-		/******* FORM
-			{
-	    	"activities": [
-		        {
-				"id": 991,
-				"description": "Mit dem Fahrrad zur Uni fahren bis 3km ",
-				"active": true
-				},
-				{
-				"id": 992,
-				"description": "Wasserkocher nur mit der benötigten Menge Wasser füllen (z.B. eine Tasse)",
-				"active": true
-				}
-			}
-		********/
+		def ActivityService
+		def activities = []
+		for(activity in Activity.findAll()) {
+			activities << [description: activity.getDescription(), points: activity.getPoints(), duration: activity.getDuration(), active: ActivityService.isExecutable(activity, SecurityUtils.subject)]
+		}
+		outputToJson([activities : activities])
 	}
 	
 	def getFavoredActivities() {
-		//TODO
-		/******* FORM
-			{
-			"activities": [
-				{
-				"id": 991,
-				"description": "Mit dem Fahrrad zur Uni fahren bis 3km ",
-				"active": true
-				},
-				{
-				"id": 992,
-				"description": "Wasserkocher nur mit der benötigten Menge Wasser füllen (z.B. eine Tasse)",
-				"active": true
-				}
-			}
-		********/
+		def ActivityService
+		def subject = SecurityUtils.subject
+		def user = User.findByEmail(subject.getPrincipal())
+		def userFavorites = user.favorites.sort {it.id}
+		def favorites = []
+		for(activity in userFavorites) {
+			favorites << [description: activity.getDescription(), points: activity.getPoints(), duration: activity.getDuration(), active: ActivityService.isExecutable(activity, subject)]
+		}
+		outputToJson([favorites: favorites])
 	}
 	
 	def getProposals() {
