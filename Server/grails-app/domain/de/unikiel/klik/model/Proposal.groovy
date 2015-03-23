@@ -24,8 +24,16 @@ class Proposal {
     }
 	
 	// TODO implement
-	int getRating() {
-		return(0)
+	float getRating() {
+		float rating = 0;
+		for(Comment comment: comments){
+			rating += comment.getRating()
+		}
+		if(rating != 0){
+			return rating/comments.size()
+		}else{
+			return 0
+		}
 	}
 	
 }

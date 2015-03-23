@@ -61,7 +61,7 @@ class UserController {
   def newTeam() {
         //Get the user service to create a team
         UserService.createTeamAndJoin(params.name, SecurityUtils.subject)
-        redirect(action = "edit")
+        redirect(action: "edit")
   }
 
   def changePassword(){
@@ -72,7 +72,7 @@ class UserController {
             redirect(action = "edit")
     }catch(ValidationException ex){
       flash.message = "Passwords dont Match"
-      redirect(action = "edit")
+      redirect(action: "edit")
     }
   }
 
