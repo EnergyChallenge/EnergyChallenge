@@ -100,7 +100,7 @@ class AdminService {
         Team blockedTeam = Team.get(teamId)
 
         //Block once found
-        blockedTeam.blocked = "true"
+        blockedTeam.blocked = true
         blockedTeam.save(failOnError: true)
 	}
 
@@ -110,7 +110,7 @@ class AdminService {
         Team blockedTeam = Team.get(teamId)
 
         //Block once found
-        blockedTeam.blocked = "false"
+        blockedTeam.blocked = false
         blockedTeam.save(failOnError: true)
 	}
 
