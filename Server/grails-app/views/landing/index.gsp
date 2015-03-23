@@ -3,10 +3,11 @@
   <head>
     <meta name="layout" content="main"/>
     <title>EnergyChallenge</title>
+    <asset:stylesheet src="landing.css"/>
   </head>
   <body>
     <h1>EnergyChallenge</h1>
-    <div style="float:left">
+    <div id="leftside">
       <h2>Meine Favoriten</h2>
       <table>
       	<style>
@@ -36,7 +37,7 @@
       </table>
       <a href="<g:createLink controller="activity" action="index"/>">Weitere Aktivitäten</a>
     </div>
-    <div style="float:right">
+    <div id="rightside">
       <h2>Punkte Stand</h2>
       <table>
         <tr>

@@ -137,6 +137,10 @@ class AppController {
 		outputToJson([proposals: proposals]);
 	}
 	
+	def getMessages() {
+		//TODO
+	}
+	
 	def performSearch() {
 		//TODO
 	}

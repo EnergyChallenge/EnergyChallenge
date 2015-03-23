@@ -1,0 +1,10 @@
+#leftside {
+	float: left;
+	width: 45%;
+	padding-right: 5%;
+}
+#rightside {
+	width: 45%;
+	padding-left: 5%;
+	margin-left: 50%;
+}
