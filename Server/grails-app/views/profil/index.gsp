@@ -75,7 +75,13 @@
 						</g:if>
 						<g:else>
          						${activity.completedActivity.getActivity().getDescription()}
-								<em>(${activity.member})</em>
+							<em>
+								(
+								<a href="<g:createLink controller="profil" action="user" id="${activity.member.getId()}"/>">
+								${activity.member.getName()}
+								</a>
+								)
+							</em>
 						</g:else>          					
          				</li>
        			</g:each>

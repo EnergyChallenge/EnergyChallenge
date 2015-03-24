@@ -3,6 +3,7 @@
 <head>
 	<meta name="layout" content="main" />
 	<title>Rangliste</title>
+	<asset:stylesheet src="table.css"/>
 </head>
 <body>
 	<h1>Rangliste</h1>
@@ -16,7 +17,7 @@
 			<span class="active">Teams</span>
 		</g:else>
 	</div>
-	<table class="ranking">
+	<table class="list">
 		<thead>
 			<tr>
 				<th>Rang</th>
@@ -27,7 +28,7 @@
 		<tbody>
 			<g:each status="pos" in="${ranking}" var="profile">
 				<tr>
-					<td>
+					<td class="numeration">
 						${pos + 1}.
 					</td>
 					<td>
