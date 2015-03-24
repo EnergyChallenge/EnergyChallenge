@@ -29,9 +29,9 @@
 				<div class="actions">
 					<div class="stats">
 						<a href="${createLink(controller:'message', action:'index')}" class="inbox">
-							<i class="fa fa-bell"></i>
 							<span class="value">
 								<g:if test="${user.getMessages().size() != 0}">
+									<i class="fa fa-envelope"></i>
 									${user.getMessages().size()}
 								</g:if>
 							</span>
