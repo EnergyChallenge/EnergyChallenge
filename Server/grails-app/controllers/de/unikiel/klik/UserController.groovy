@@ -39,14 +39,14 @@ class UserController {
 
   def uploadAvatar() {
     Subject subject = SecurityUtils.subject
-    User user = User.findByEmail(subject.getPrincipal()); //TODO
+    User user = User.findByEmail(subject.getPrincipal());
     def file = request.getFile('avatar')
     try{
       UserService.setAvatar(file,subject) 
       flash.message = "Avatar (${user.avatarType}, ${user.avatar.size()} bytes) uploaded."
       //redirect(action:'show',model:[user:user])
     }catch(ValidationException ex){
-      //TODO
+      flash.message = "Upload ist fehlgeschlagen"
     }
       redirect(action:'edit')
   }
