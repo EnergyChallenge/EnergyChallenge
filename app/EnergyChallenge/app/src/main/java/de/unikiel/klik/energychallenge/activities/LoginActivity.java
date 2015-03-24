@@ -32,9 +32,19 @@ public class LoginActivity extends Activity {
         String persistentPassword = preferences.getString("password", "");
         if(persistentEmail != "" && persistentPassword != ""){
 
-            //If so go straight to the main activity
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            //Check if the credentials are correct with the server
+            if (VerificationTask.checkCredentials(persistentEmail, persistentPassword)) {
+
+                //Credentials valid, go to main activity
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+            }else{
+                //Saved credentials invalid for some reason, remove them from shared preferences
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.remove("email");
+                editor.remove("password");
+                editor.commit();
+            }
         }
 
         //Load the state and login layout
