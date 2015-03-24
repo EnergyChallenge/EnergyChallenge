@@ -84,28 +84,52 @@ class ActivityService {
 	
 	//returns a timer instance that works as a countdown, showing when the activity is available again
 	def String getActivityCountdown(Activity activity, Subject subject) {
-		def currentTime
+		
 		def endOfCountdown
-		recentActivities = getRecentlyCompletedActivities(activity.duration, subject)
-		def completedActivity = recentActivities?.find{it.activity.id == activity.id}
+		def currentTime
+		def timeInterval
+		def completedActivity
+		String countdown
+		
+		PeriodFormatter formatter = new PeriodFormatterBuilder()
+		.printZeroAlways()
+		.minimumPrintedDigits(2)
+		.appendHours()
+		.appendSeparator(":")
+		.appendMinutes()
+		.appendSeparator(":")
+		.appendSeconds()
+		.toFormatter()
+		
 		if(isExecutable(activity, subject)) {
 			currentTime = endOfCountdown = 0
 		} else {
+			recentActivities = getRecentlyCompletedActivities(activity.duration, subject)
+			completedActivity = recentActivities?.find{it.activity.id == activity.id}
+			timeInterval = getTimeInterval(completedActivity, activity.duration, subject)
 			currentTime = new DateTime()
-			endOfCountdown = new DateTime(completedActivity.getDateCreated() + activity.getDuration())
+			switch(timeInterval) {
+				//TODO handle this more elegant
+				case "once":
+					endOfCountdown = new DateTime(long.MAX_VALUE)
+					break
+				
+				case "hour":
+					endOfCountdown = new DateTime(completedActivity.dateCreated.plus(activity.duration))
+					Period period = new Period(currentTime, endOfCountdown)
+					countdown = formatter.print(period)
+					break
+				
+				case "today":
+					endOfCountdown = new DateTime(completedActivity.dateCreated.plus(activity.duration).withTimeAtStartOfDay())
+					Period period = new Period(currentTime, endOfCountdown)
+					countdown = formatter.print(period)
+					break
+				
+				default:
+					countdown = "> 1 Tag"
+			}
 		}
-		PeriodFormatter formatter = new PeriodFormatterBuilder()
-			.printZeroAlways()
-			.minimumPrintedDigits(2)
-			.appendHours()
-			.appendSeparator(":")
-			.appendMinutes()
-			.appendSeparator(":")
-			.appendSeconds()
-			.toFormatter()
-		
-		Period period = new Period(currentTime, endOfCountdown)
-		String countdown = formatter.print(period)
 		return countdown
 	}
 	
@@ -117,6 +141,23 @@ class ActivityService {
 		def recentlyCompletedActivities = currentUser.completedActivities?.collect().findAll {it.dateCreated.isAfter(criticalPointOfTime)}
 		
 		return recentlyCompletedActivities
+	}
+	
+	//TODO add once executable activities
+	//returns a string indicating how long the time interval is
+	def String getTimeInterval(CompletedActivity completedActivity, Duration duration, Subject subject) {
+		def endPoint = new DateTime(completedActivity.dateCreated.plus(duration))
+		def endPointAsMillis = endPoint.getMillis()
+		def currentTime = new DateTime()
+		def currentTimeAsMillis = currentTime.getMillis()
+		def criticalDuration = new Duration(endPointAsMillis - currentTimeAsMillis)
+		if(duration.getStandardHours() < 24 || endPoint.isBefore(currentTime.plusDays(1).withTimeAtStartOfDay())) {
+			return "hour"
+		} else if(criticalDuration.getStandardHours() < 24) {
+			return "today"
+		} else {
+			return "default"
+		}
 	}
 	
 	//TODO eventually handle this exception more elegant
