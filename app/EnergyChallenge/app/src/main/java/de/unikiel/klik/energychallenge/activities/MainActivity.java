@@ -1,23 +1,21 @@
 package de.unikiel.klik.energychallenge.activities;
 
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.app.FragmentManager;
-import android.support.v4.widget.DrawerLayout;
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.FragmentManager;
+import android.app.SearchManager;
+import android.content.Context;
+import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.SearchView;
 
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.fragments.ActivitiesFragment;
 import de.unikiel.klik.energychallenge.fragments.MainFragment;
-import de.unikiel.klik.energychallenge.fragments.ProfileFragment;
 import de.unikiel.klik.energychallenge.fragments.NavigationDrawerFragment;
 import de.unikiel.klik.energychallenge.fragments.OptionsFragment;
+import de.unikiel.klik.energychallenge.fragments.ProfileFragment;
 import de.unikiel.klik.energychallenge.fragments.ProposalsFragment;
 import de.unikiel.klik.energychallenge.fragments.RankingListFragment;
 

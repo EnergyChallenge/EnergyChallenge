@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import de.unikiel.klik.energychallenge.R;
-import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
 import de.unikiel.klik.energychallenge.adapters.SearchResultAdapter;
 import de.unikiel.klik.energychallenge.tasks.PerformSearchTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;

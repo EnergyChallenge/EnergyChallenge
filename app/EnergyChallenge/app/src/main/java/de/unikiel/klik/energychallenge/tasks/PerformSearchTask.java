@@ -1,7 +1,6 @@
 package de.unikiel.klik.energychallenge.tasks;
 
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -10,9 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import de.unikiel.klik.energychallenge.R;
-import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
 import de.unikiel.klik.energychallenge.adapters.SearchResultAdapter;
-import de.unikiel.klik.energychallenge.models.RankingItem;
 import de.unikiel.klik.energychallenge.models.SearchResultItem;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 

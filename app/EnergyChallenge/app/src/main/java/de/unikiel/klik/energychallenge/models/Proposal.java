@@ -3,9 +3,6 @@ package de.unikiel.klik.energychallenge.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import org.w3c.dom.Comment;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Proposal implements Parcelable {

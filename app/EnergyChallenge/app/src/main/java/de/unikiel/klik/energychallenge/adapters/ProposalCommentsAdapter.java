@@ -6,20 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import de.unikiel.klik.energychallenge.R;
-import de.unikiel.klik.energychallenge.models.Proposal;
 import de.unikiel.klik.energychallenge.models.ProposalComment;
-import de.unikiel.klik.energychallenge.models.RankingItem;
 
 
 public class ProposalCommentsAdapter extends ArrayAdapter<ProposalComment> {

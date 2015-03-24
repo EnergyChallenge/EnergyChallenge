@@ -1,9 +1,9 @@
 package de.unikiel.klik.energychallenge.fragments;
 
+import android.app.ListFragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import de.unikiel.klik.energychallenge.R;
-
-import de.unikiel.klik.energychallenge.activities.ProfileActivity;
 import de.unikiel.klik.energychallenge.activities.ProposalActivity;
-import de.unikiel.klik.energychallenge.activities.SearchActivity;
 import de.unikiel.klik.energychallenge.adapters.ProposalsAdapter;
-import de.unikiel.klik.energychallenge.models.Proposal;
 import de.unikiel.klik.energychallenge.tasks.GetProposalsTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 

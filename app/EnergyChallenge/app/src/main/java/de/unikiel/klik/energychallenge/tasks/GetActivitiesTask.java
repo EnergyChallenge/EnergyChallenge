@@ -10,9 +10,7 @@ import org.json.JSONObject;
 
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.adapters.ActivitiesAdapter;
-import de.unikiel.klik.energychallenge.adapters.RankingAdapter;
 import de.unikiel.klik.energychallenge.models.ActivitiesItem;
-import de.unikiel.klik.energychallenge.models.RankingItem;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 public class GetActivitiesTask extends AccessServerTask {

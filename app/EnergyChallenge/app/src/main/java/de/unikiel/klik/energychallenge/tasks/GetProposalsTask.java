@@ -7,13 +7,11 @@ import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Comment;
 
 import java.util.ArrayList;
 
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.adapters.ProposalsAdapter;
-import de.unikiel.klik.energychallenge.models.ActivitiesItem;
 import de.unikiel.klik.energychallenge.models.Proposal;
 import de.unikiel.klik.energychallenge.models.ProposalComment;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
