@@ -23,14 +23,14 @@ class BootStrap {
 			def user = new User(email:"user@example.com", passwordHash: new Sha256Hash("password").toHex(), firstName: "Max", lastName: "Mustermann", institute: institute)
 			user.addToRoles(userRole)
 			user.save(flush: true)
-			TestService.saveSomeExampleData()
+			//TestService.saveSomeExampleData()
 			
 			// initialization for productive use
 			InitService.initKlikRoles()
 			InitService.initKlikActivities()
 			InitService.initCauInstitutions()
-			TestService.createAndSaveExampleUsersForExistingInstitutes(10)
-			TestService.createAndSaveCompletedActivitiesForExistingUsersAndActivities(20)
+			TestService.createAndSaveExampleUsersForExistingInstitutes(128)
+			TestService.createAndSaveCompletedActivitiesForExistingUsersAndActivities(1024)
 			TestService.createSomePageVisits(7,"/index")	
 			TestService.createSomePageVisits(7,"/auth/signIn")	
 			println "Running in Development Mode"
