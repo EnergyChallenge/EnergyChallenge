@@ -3,6 +3,8 @@
 }
 #content a.button.editprofile {
 	float: right;
+	text-decoration: none;
+	cursor: default;
 }
 #content .head img {
     display: block;
