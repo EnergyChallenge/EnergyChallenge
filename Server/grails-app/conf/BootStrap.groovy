@@ -31,7 +31,8 @@ class BootStrap {
 			InitService.initCauInstitutions()
 			TestService.createAndSaveExampleUsersForExistingInstitutes(10)
 			TestService.createAndSaveCompletedActivitiesForExistingUsersAndActivities(20)
-			
+			TestService.createSomePageVisits(7,"/index")	
+			TestService.createSomePageVisits(7,"/auth/signIn")	
 			println "Running in Development Mode"
 		} else if (currentEnv == Environment.TEST) {
 			// do custom init for test here
