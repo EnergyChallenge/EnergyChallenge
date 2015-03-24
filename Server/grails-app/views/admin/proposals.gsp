@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Vorschlag</h1>
+<h1>Vorschlagsverwaltung</h1>
 
 <table class="list">
     <thead>

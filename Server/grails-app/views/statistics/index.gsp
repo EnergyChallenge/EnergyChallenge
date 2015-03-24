@@ -56,7 +56,7 @@ $(document).ready(function(){
 </head>
 <body>
 	<h1>
-		Statistics
+		Statistiken
 	</h1>
 	<div style="position: relative; height: 700px">
 		<div style="position: absolute; top: 0px; left: 0px;">
