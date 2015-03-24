@@ -68,6 +68,18 @@ grails {
     }
 }
 
+grails {
+    mail {
+        host = "smtp.gmail.com"
+        port = 465
+        username = "xxxxx@gmail.com"
+        password = "xxxxx"
+        props = ["mail.smtp.auth":"true",
+                 "mail.smtp.socketFactory.port":"465",
+                 "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
+                 "mail.smtp.socketFactory.fallback":"false"]
+    }
+}
 
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration
