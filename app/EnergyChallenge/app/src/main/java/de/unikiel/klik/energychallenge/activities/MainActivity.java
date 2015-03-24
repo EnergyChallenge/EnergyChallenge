@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Menu;
@@ -18,6 +19,7 @@ import de.unikiel.klik.energychallenge.fragments.OptionsFragment;
 import de.unikiel.klik.energychallenge.fragments.ProfileFragment;
 import de.unikiel.klik.energychallenge.fragments.ProposalsFragment;
 import de.unikiel.klik.energychallenge.fragments.RankingListFragment;
+import de.unikiel.klik.energychallenge.services.NotificationService;
 
 
 /* Main app activity */
@@ -35,6 +37,7 @@ public class MainActivity extends Activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         //Load the state and initial layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -47,6 +50,11 @@ public class MainActivity extends Activity
         mainNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        //Start the notifications service
+        Intent notificationsIntent = new Intent(this.getApplicationContext(), NotificationService.class);
+        notificationsIntent.putExtra("KEY", "Values to pass to service");
+        this.getApplicationContext().startService(notificationsIntent);
 
     }
 
