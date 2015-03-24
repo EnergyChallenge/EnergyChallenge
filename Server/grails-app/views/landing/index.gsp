@@ -68,7 +68,7 @@
         <table>
           <g:each in="${team.getMembers()}" var="member">
             <tr>
-              <td>${member.getTitle()} ${member.getFirstName()} ${member.getLastName()}</td>
+              <td><a href="<g:createLink controller="profile" action="user" id="${member.getId()}"/>">${member.getName()}</a></td>
               <td>${member.getPoints()}</td>
             </tr>
           </g:each>
