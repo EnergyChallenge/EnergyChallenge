@@ -5,14 +5,19 @@ import android.util.Log;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import de.unikiel.klik.energychallenge.Config;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
@@ -76,18 +81,30 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
 
     private final String performServerRequest(ServerRequest serverRequest) throws IOException {
 
-        //TODO Put serverRequest.requestData in http request
-
-
-        String requestUrl = Config.SERVER_REST_PATH + serverRequest.getReceiverOnServer() + Config.SERVER_REST_PATH_END;
+        String requestUrl = Config.SERVER_REST_PATH + serverRequest.getReceiverOnServer();
+        if (serverRequest.isIdSet()) {
+            requestUrl += "/" + serverRequest.getId();
+        }
 
         DefaultHttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(requestUrl);
+
+        List<NameValuePair> parameters = new ArrayList<NameValuePair>();
+        if (serverRequest.getParameters() != null) {
+            parameters.addAll(serverRequest.getParameters());
+        }
+        if (serverRequest.getRequestData() != null) {
+            parameters.add(new BasicNameValuePair("request", serverRequest.getRequestData().toString()));
+        }
+        parameters.add(new BasicNameValuePair("email", "")); //TODO
+        parameters.add(new BasicNameValuePair("password", "")); //TODO
+        parameters.add(new BasicNameValuePair("JSESSIONID", "")); //TODO
+
+        UrlEncodedFormEntity encodedEntity = new UrlEncodedFormEntity(parameters, "utf-8");
+        post.setEntity(encodedEntity);
         HttpResponse httpResponse = client.execute(post);
         HttpEntity responseEntity = httpResponse.getEntity();
-        String response = EntityUtils.toString(responseEntity, HTTP.UTF_8);
-
-        return response;
+        return EntityUtils.toString(responseEntity, HTTP.UTF_8);
 
     }
 }

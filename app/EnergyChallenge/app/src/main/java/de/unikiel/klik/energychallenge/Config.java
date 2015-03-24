@@ -6,8 +6,9 @@ public class Config {
     //public static final String SERVER_REST_PATH = "http://soerenhenning.de/Softwareprojekt/App/";
     public static final String SERVER_REST_PATH = "http://luedtkegmbh.de/Soeren/Softwareprojekt/App/";
 
-    //public static final String SERVER_REST_PATH_END = "";
-    public static final String SERVER_REST_PATH_END = ".json";
+    //TODO Remove
+    public static final String SERVER_REST_PATH_END = "";
+    //public static final String SERVER_REST_PATH_END = ".json";
 
     public static final boolean LOGIN_REQUIRED = false;
 

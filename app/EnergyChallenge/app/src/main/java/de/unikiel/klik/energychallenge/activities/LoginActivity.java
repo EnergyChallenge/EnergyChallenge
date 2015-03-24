@@ -49,6 +49,7 @@ public class LoginActivity extends Activity {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString("name", "Sebastian Vettel");
             editor.putString("email", "seabstian.vettel@ferrari.it");
+            editor.putString("password", "password");
             editor.commit();
 
             Intent intent = new Intent(this, MainActivity.class);
