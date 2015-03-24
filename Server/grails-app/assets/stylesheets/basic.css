@@ -32,6 +32,9 @@ a {
 a:hover, a:focus {
 	text-decoration: underline;
 }
+figure {
+	margin: 0;
+}
 
 .clear {
 	clear: both;

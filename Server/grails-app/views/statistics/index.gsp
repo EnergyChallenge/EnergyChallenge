@@ -15,7 +15,6 @@
 <asset:stylesheet src="jqplot/jquery.jqplot.css" />
 <g:javascript library='jquery' />
 <!--[if lt IE 9]><asset:javascript src="jqplot/excanvas.js"/><![endif]-->
-<asset:javascript src="jqplot/jquery.min.js" />
 <asset:javascript src="jqplot/jquery.jqplot.min.js" />
 <asset:javascript src="jqplot/plugins/jqplot.canvasTextRenderer.min.js" />
 <asset:javascript

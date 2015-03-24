@@ -18,23 +18,26 @@
 	<g:layoutHead />
 </head>
 <body class="${pageProperty(name: 'body.class')}">
-	<header>
-		<div class="inside">
-			<%-- TODO Header --%>
-			<g:pageProperty name="page.logo"/>
-			<g:pageProperty name="page.userInfo"/>
-		</div>
-	</header>
-	<section id="container" >
-		<div class="inside">  		
-	  		<g:layoutBody />
-  		</div>
-	</section>
-	<!-- TODO role benötigt?! -->
-	<footer class="footer" role="contentinfo">
-		<div class="inside">
-		<p href="http://www.uni-kiel.de/suchen/impressum.shtml">Impressum</p> <%-- Verlinken --%>
-		</div>
-	</footer>
+	<div id="wrapper">
+		<header>
+			<div class="inside">
+				<%-- TODO Header --%>
+				<g:pageProperty name="page.logo"/>
+				<g:pageProperty name="page.userInfo"/>
+			</div>
+		</header>
+		<section id="container" >
+			<div class="inside">  		
+		  		<g:layoutBody />
+	  		</div>
+		</section>
+		<!-- TODO role benötigt?! -->
+		<!-- <footer class="footer" role="contentinfo">  -->
+		<footer>
+			<div class="inside">
+				<a href="http://www.uni-kiel.de/suchen/impressum.shtml">Impressum</a>
+			</div>
+		</footer>
+	</div>
 </body>
 </html>

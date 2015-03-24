@@ -1,7 +1,9 @@
 <g:applyLayout name="base">
 
 	<head>
-		<asset:stylesheet src="main.css" />    
+		<asset:stylesheet src="main.css" />
+		<asset:javascript src="jqplot/jquery.min.js" />
+		<asset:javascript src="fixedNav.js" />    
 		<g:layoutHead />
 	</head>
 	<content tag="logo">
@@ -73,7 +75,7 @@
 						<li><a href="${createLink(controller:'Admin', action: 'teams')}" >Teams verwalten</a></li>
 						<li><a href="${createLink(controller:'Admin', action: 'activities')}" >Aktivitäten verwalten</a></li>
 						<li><a href="${createLink(controller:'Admin', action: 'proposals')}" >Vorschläge verwalten</a></li>
-						<li><a href="${createLink(controller:'Admin', action: 'message')}" >Email Senden</a></li>
+						<li><a href="${createLink(controller:'Admin', action: 'message')}" >E-Mail senden</a></li>
 					</ul>
 				</g:if>
 			</nav>
