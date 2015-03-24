@@ -50,6 +50,26 @@ class AdminService {
         //Find the activity
         //TODO references must be handled!!!
         Activity deletionActivity = Activity.get(activityId)
+		
+		//delete the completed Activities of users
+		def users = User.findAll {completedActivities != null}
+		for(u in users) {
+			u.completedActivities = u.completedActivities.findAll {it.activity.id != activityId}
+			u.save(flush: true)
+		}
+		
+		//delete the favorites of users
+		users = User.findAll {favorites != null}
+		for(u in users) {
+			u.favorites = u.favorites.findAll {it.id != activityId}
+			u.save(flush: true)
+		}
+		
+		//delete the completed activities
+		def completedActivities = CompletedActivity.findAll {activity.id == activityId}
+		for(ca in completedActivities) {
+			ca.delete()
+		}
 
         //Remove it once found
         deletionActivity.delete()
