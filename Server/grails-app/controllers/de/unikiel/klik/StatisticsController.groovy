@@ -98,9 +98,10 @@ class StatisticsController {
 	}
 	private def getVisitsOf(String url){
 		def rawData = PageView.findAll("from PageView as pageView where pageView.url=? order by pageView.dateCreated", [url])
+		def sortedData = rawData.sort{it.getDateCreated().getMillis()}
 		def data = [];
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("yyyy-MM-dd 0:00");
-		for (PageView pageView : rawData){
+		for (PageView pageView : sortedData){
 			data << [fmt.print(pageView.getDateCreated())+"AM", pageView.getViews()]
 		}
 		if (data != []){
@@ -111,11 +112,12 @@ class StatisticsController {
 	}
 	private def getPointsOverDays(){
 		def rawData = CompletedActivity.findAll("from CompletedActivity as ca order by ca.dateCreated")
+		def sortedData = rawData.sort{it.getDateCreated().getMillis()}
 		def data = [];
 		DateTimeFormatter fmt = DateTimeFormat.forPattern("yyyy-MM-dd 0:00");
-		DateTime dateOfFirstCompletedActivity = rawData[0].getDateCreated()
+		DateTime dateOfFirstCompletedActivity = sortedData[0].getDateCreated()
 		data = [[fmt.print(dateOfFirstCompletedActivity)+"AM", 0]]
-		for(completedActivity in rawData){
+		for(completedActivity in sortedData){
 			if(completedActivity.getDateCreated().getDayOfYear() == dateOfFirstCompletedActivity.getDayOfYear()){
 				//incremet the points at the current day
 				data[-1][1] += completedActivity.getPoints()
