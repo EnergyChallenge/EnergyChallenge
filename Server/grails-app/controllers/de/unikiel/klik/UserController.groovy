@@ -45,11 +45,10 @@ class UserController {
       UserService.setAvatar(file,subject) 
       flash.message = "Avatar (${user.avatarType}, ${user.avatar.size()} bytes) uploaded."
       //redirect(action:'show',model:[user:user])
-      redirect(action:'avatar', id: user.id)
     }catch(ValidationException ex){
-    render(view:'select_avatar', model:[user:user])
-    return
+      //TODO
     }
+      redirect(action:'edit')
   }
 
 
@@ -79,7 +78,7 @@ class UserController {
 
 /*
     def changeEmailNotification(){
-
+        //TODO
         //Get the user service to change email notification settings
         UserService.setEmailNotification(params.emailNotification, SecurityUtils.subject)
         redirect(action: "settings")
