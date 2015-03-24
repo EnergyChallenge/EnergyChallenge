@@ -26,7 +26,7 @@
 			<hgroup>
 				<h1>${name}</h1>
 				<g:if test="${type == 'user' && teamname != ''}">
-					<h2>${teamName}</h2>
+					<h2><a href="<g:createLink controller="profile" action="team" id="${user.getTeam().getId()}"/>">${teamName}</a></h2>
 				</g:if>
 			</hgroup>
 			<div class="clear"></div>
