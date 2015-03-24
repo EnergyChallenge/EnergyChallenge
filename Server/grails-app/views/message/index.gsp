@@ -5,7 +5,7 @@
     <title>Inbox</title>
   </head>
   <body>
-    <h1>Team einladungen</h1>
+    <h1>Teameinladungen</h1>
     <table>
       <thead>
         <tr>

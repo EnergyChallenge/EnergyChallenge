@@ -4,6 +4,12 @@
 		<asset:stylesheet src="main.css" />    
 		<g:layoutHead />
 	</head>
+	<content tag="logo">
+	<div class="topLeft">
+				<%-- <a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a>  --%>
+				<figure><asset:image src="klik_Logo.png" alt="klik_Logo" align="left" width="106px" heigth="auto" /></figure>
+				<h1>EnergyChallenge</h1>
+			</div>
 	
 	<content tag="userInfo">
 		<% def user = de.unikiel.klik.model.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal())%>
@@ -47,8 +53,8 @@
 
 			<nav>
 				<div id="search">
-					<g:form action="searchForm">
-	        			<input type="search" name="q" value="${params.q}" placeholder="Suchen" />
+					<g:form action="searchForm" url="[action:'displaySearchResults',controller:'search']">
+	        			<input type="search" name="query" value="${query}" placeholder="Suchen" />
 	        			<button class="fa fa-search"></button>
 					</g:form>
 				</div>
