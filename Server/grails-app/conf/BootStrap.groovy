@@ -22,7 +22,7 @@ class BootStrap {
 			institute.save()
 			def user = new User(email:"user@example.com", passwordHash: new Sha256Hash("password").toHex(), firstName: "Max", lastName: "Mustermann", institute: institute)
 			user.addToRoles(userRole)
-			user.save()
+			user.save(flush: true)
 			TestService.saveSomeExampleData()
 			
 			// initialization for productive use

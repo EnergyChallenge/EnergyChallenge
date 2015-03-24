@@ -13,7 +13,8 @@ class User extends Profile {
 	// other
 	String firstName
 	String lastName
-	String title	// academic title
+	String title		// academic title
+	String searchName	// full name (incl. academic title) for convenient searching
 	Boolean emailNotification = false
 	
 	static hasMany = [
@@ -26,6 +27,7 @@ class User extends Profile {
 
     static constraints = {
         email(nullable: false, email: true, unique: true)
+        searchName(nullable: false)
 		completedActivities(nullable: true)
 		title(nullable: true)
 		firstName(nullable: false, blank: false)
@@ -37,8 +39,32 @@ class User extends Profile {
 		emailNotification(defaultValue: "false") // TODO test if false is the default value
     }
 	
+	// create searchName before insert
+	def beforeInsert() {
+		searchName = createSearchName() //firstName + ' ' + lastName
+	}
+	
+	// keep searchName up to date
+	def beforeUpdate() {
+		searchName = createSearchName() //firstName + ' ' + lastName
+	}
+	
+	// create searchName before validation
+	def beforeValidate() {
+		searchName = createSearchName() //firstName + ' ' + lastName
+	}
+	
 	//TODO works??
 	def String getName() {
+		String name = firstName + " " + lastName;
+		if (title != null) {
+			name = title + " " + name;
+		}
+		return name;
+	}
+	
+	// returns a full name from academic title, firstName and lastName
+	String createSearchName() {
 		String name = firstName + " " + lastName;
 		if (title != null) {
 			name = title + " " + name;
