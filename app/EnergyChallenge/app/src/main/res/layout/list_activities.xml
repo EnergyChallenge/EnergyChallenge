@@ -2,15 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/list_item_vertical_margin"
+    android:paddingLeft="@dimen/list_item_horizontal_margin"
+    android:paddingRight="@dimen/list_item_horizontal_margin"
+    android:paddingTop="@dimen/list_item_vertical_margin"
+    android:baselineAligned="false">
 
     <TextView android:id="@+id/activities_description"
         android:layout_width="0dp"
         android:layout_weight="1"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        style="@android:style/TextAppearance.DeviceDefault.Small"
+        android:paddingTop="4dp"
+        android:paddingRight="4dp"
+        />
 
     <Button android:id="@+id/activities_do_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Erledigen"/>
+        android:text="Erledigen"
+        />
+    <!-- String to Strings -->
 </LinearLayout>

@@ -1,6 +1,7 @@
 package de.unikiel.klik.energychallenge.tasks;
 
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import org.apache.http.HttpEntity;
@@ -85,6 +86,9 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         if (serverRequest.isIdSet()) {
             requestUrl += "/" + serverRequest.getId();
         }
+        requestUrl += "?i=" + "2234567"; //TODO
+
+        Log.v("URL", requestUrl); //TODO
 
         DefaultHttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(requestUrl);
