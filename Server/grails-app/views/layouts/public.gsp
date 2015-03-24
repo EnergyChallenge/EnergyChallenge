@@ -12,10 +12,15 @@
 	</content>
 	
 	<body>
-		<div class="mainBody">
-			<div class="pageBody">
-				<g:layoutBody />
-			</div>
-		</div>
+		<div id="content">
+                                <div class="floater">
+                                        <g:if test="${flash.message}">
+                                                <div class="flashmessage">${flash.message}</div>
+                                        </g:if>
+					<g:layoutBody />
+				</div>
+                               <div class="clear"></div>
+                </div>
+
 	</body>
 </g:applyLayout>
