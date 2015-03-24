@@ -143,6 +143,18 @@ class AppController {
 	
 	def performSearch() {
 		//TODO
+		def result = [];
+		def matchingUsers = User.findAllBySearchNameIlike("%" + params.query + "%")
+		for (user in matchingUsers) {
+			result << [id: user.getId(), name: user.getName(), type: "user"];
+		}
+		def matchingTeams = Team.findAllByNameIlike("%" + params.query + "%")
+		for (team in matchingTeams) {
+			result << [id: team.getId(), name: team.getName(), type: "team"];
+		}
+		result.sort { -it.points } //Sort DESC
+		
+		outputToJson([searchResult: result]);
 	}
 	
 	def completeActivity() {
