@@ -7,16 +7,20 @@ import de.unikiel.klik.model.Activity;
 import de.unikiel.klik.model.Proposal;
 import de.unikiel.klik.model.Institute;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException
 import java.util.ArrayList;
 
 class AppController {
 	
-	def ActivityService
+	def AuthService
 	
     def index() {
 	}
 	
 	def getUserProfile() {
+		
+		login(params.email, params.password);
+		
 		User user;
 		if (params.id != null) {
 			user = User.get(params.id);
@@ -45,6 +49,9 @@ class AppController {
 	}
 	
 	def getTeamProfile() {
+		
+		login(params.email, params.password);
+		
 		Team team = Team.get(params.id);
 		if (team == null) {
 			//TODO 404 Error?
@@ -68,6 +75,9 @@ class AppController {
 	}
 	
 	def getUserRanking() {
+		
+		login(params.email, params.password);
+		
 		def ranking = [];
 		for (user in User.findAll()) {
 			ranking << [id: user.id, title: user.getName(), points: user.getPoints()];
@@ -78,6 +88,9 @@ class AppController {
 	}
 	
 	def getTeamRanking() {
+		
+		login(params.email, params.password);
+		
 		def ranking = [];
 		for (team in Team.findAll()) {
 			ranking << [id: team.id, title: team.getName(), points: team.getPoints()];
@@ -89,6 +102,8 @@ class AppController {
 	
 	def getAllActivities() {
 		
+		login(params.email, params.password);
+		
 		def activities = []
 		for(activity in Activity.findAll{visible == true}) {
 			activities << [description: activity.getDescription(), points: activity.getPoints(), duration: activity.getDuration(), active: ActivityService.isExecutable(activity, SecurityUtils.subject)]
@@ -97,6 +112,8 @@ class AppController {
 	}
 	
 	def getFavoredActivities() {
+		
+		login(params.email, params.password);
 		
 		def subject = SecurityUtils.subject
 		def user = User.findByEmail(subject.getPrincipal())
@@ -109,6 +126,9 @@ class AppController {
 	}
 	
 	def getProposals() {
+		
+		login(params.email, params.password);
+		
 		//TODO Sort comments and proposals
 		def proposals = [];
 		for (proposal in Proposal.findAll()) {
@@ -138,11 +158,16 @@ class AppController {
 	}
 	
 	def getMessages() {
+		
+		login(params.email, params.password);
+		
 		//TODO
 	}
 	
 	def performSearch() {
-		//TODO
+		
+		login(params.email, params.password);
+		
 		def result = [];
 		def matchingUsers = User.findAllBySearchNameIlike("%" + params.query + "%")
 		for (user in matchingUsers) {
@@ -168,6 +193,9 @@ class AppController {
 	}
 	
 	def commentProposal() {
+		
+		login(params.email, params.password);
+		
 		//TODO
 	}
 	
@@ -177,14 +205,25 @@ class AppController {
 		render data as JSON;
 	}
 	
+	private void login(String email, String password) {
+		//TODO set better response
+		try{
+			AuthService.login(email, password ,false)
+			//Login successful
+		}
+		catch (AuthenticationException ex){
+			//Login failed
+			def response = [response: "false"]
+			render response as JSON
+		}
+	}
 	
 	
 	
 	
 	
 	
-	
-	//TODO Merge with ProfilController
+	//TODO Merge with ProfileController
 	private int getPositionOfUser(User user){
 		def ranking =  [];
 		for (u in User.findAll()) {

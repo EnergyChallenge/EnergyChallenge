@@ -14,26 +14,26 @@ Not used anymore! Delete!
 		<g:if env="development"><asset:stylesheet src="RankingTable.css"/></g:if>
 	</head>
 	<body>
-	<title> "Profil von <em>${profil.getName()})</em>!" </title>
+	<title> "Profile von <em>${profile.getName()})</em>!" </title>
 		
 	<g:if env="development">
-	This is only in development env: ID=${profil.getID()}
+	This is only in development env: ID=${profile.getID()}
 	</g:if>
 	<p>
-	${profil.getAvatar()}
-	${profil.getPoints()}
-	${profil.getRecentCompletedActivitys()}
-	${profil.getRank()}
+	${profile.getAvatar()}
+	${profile.getPoints()}
+	${profile.getRecentCompletedActivitys()}
+	${profile.getRank()}
 	</p>
 	
-	<g:if test="${profil.isUser()}">
+	<g:if test="${profile.isUser()}">
 	Team
 	</g:if>
-	<g:if test="${profil.isTeam()}">
+	<g:if test="${profile.isTeam()}">
 	Members
 	</g:if>
 	
-	<g:each> in="${profil.getRecentCompletedActivitys()}" var="activity">
+	<g:each> in="${profile.getRecentCompletedActivitys()}" var="activity">
 		${activity.getName()}
 	</g:each>
 	</body>

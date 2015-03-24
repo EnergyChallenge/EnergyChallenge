@@ -9,7 +9,7 @@ import org.apache.shiro.SecurityUtils;
 import org.codehaus.groovy.grails.core.io.ResourceLocator
 import org.springframework.core.io.Resource
 
-class ProfilController {
+class ProfileController {
 
    def index(){
 	   user()
@@ -26,6 +26,7 @@ class ProfilController {
 		   user = User.get(params.id);
 	   } else {
 	   		user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
+			params.id = user.id
 	   }
 	   boolean isCurrent = (user == User.findByEmail(SecurityUtils.getSubject().getPrincipal()));
 	   String name = user.getName();
@@ -126,7 +127,6 @@ class ProfilController {
       //render (file: new File("path to file"), fileName: "avatar.png")
 	return
     }
-    println profile.avatar
     response.contentType = profile.avatarType
     response.contentLength = profile.avatar.size()
     OutputStream out = response.outputStream

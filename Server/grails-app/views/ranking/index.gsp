@@ -33,14 +33,14 @@
 					</td>
 					<td>
 						<g:if test="${action == 'users'}">
-							<a href="${createLink(controller :'profil',
+							<a href="${createLink(controller :'profile',
 													action: 'user',
 													id: profile.id)}">
 								${profile.name}
 							</a>
 						</g:if>
 						<g:else>
-							<a href="${createLink(controller :'profil',
+							<a href="${createLink(controller :'profile',
 													action: 'team',
 													id: profile.id)}">
 								${profile.name}
