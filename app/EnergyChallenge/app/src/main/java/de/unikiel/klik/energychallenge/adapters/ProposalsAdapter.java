@@ -43,7 +43,7 @@ public class ProposalsAdapter extends ArrayAdapter<Proposal> {
         }
 
         descriptionView.setText(getItem(position).getDescription());
-        authorView.setText("- " + context.getString(R.string.creator) + ": " + getItem(position).getAuthor());
+        authorView.setText(getItem(position).getAuthor() + ":");
         commentsView.setText(commentsText);
         ratingView.setRating(getItem(position).getRating());
 

@@ -7,7 +7,7 @@
 
   </head>
   <body>
-    <h1>Admin Bereich</h1>
+    <h1>Benutzerverwaltung</h1>
       <table class="list">
           <thead>
           <tr>
