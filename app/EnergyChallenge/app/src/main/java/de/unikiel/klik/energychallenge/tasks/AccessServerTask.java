@@ -64,6 +64,10 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
     @Override
     protected final void onPostExecute(String result) {
 
+        //TOODO
+        Log.v("Repsonse", result);
+
+
         if (result == "Error") {
             Log.w(TAG, "Could not access Server!");
             handleResponseError();
@@ -100,8 +104,8 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         if (serverRequest.getRequestData() != null) {
             parameters.add(new BasicNameValuePair("request", serverRequest.getRequestData().toString()));
         }
-        parameters.add(new BasicNameValuePair("email", "")); //TODO
-        parameters.add(new BasicNameValuePair("password", "")); //TODO
+        parameters.add(new BasicNameValuePair("email", "user@example.com")); //TODO
+        parameters.add(new BasicNameValuePair("password", "password")); //TODO
         parameters.add(new BasicNameValuePair("JSESSIONID", "")); //TODO
 
         UrlEncodedFormEntity encodedEntity = new UrlEncodedFormEntity(parameters, "utf-8");
