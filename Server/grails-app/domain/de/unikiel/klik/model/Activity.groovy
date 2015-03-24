@@ -8,6 +8,7 @@ class Activity {
 	String description
 	int points
 	Duration duration
+	boolean visible = true
 	
     static constraints = {
 		description(nullable: false, blank: false)

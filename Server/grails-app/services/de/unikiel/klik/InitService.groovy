@@ -8,7 +8,7 @@ import java.util.Random
 class InitService {
 
 	static def ACTIVITY_DESCRIPTIONS = [
-		"Eine neue Klik-Aktivität beisteuern",
+		"Eine neue Klik-Aktivit�t beisteuern",
 		"Mit dem Fahrrad zur Uni fahren bis 3km",
 		"Mit dem Fahrrad zur Uni fahren bis 5km",
 		"Mit dem Fahrrad zur Uni fahren über 5km",
@@ -86,6 +86,43 @@ class InitService {
 		MIN_DURATION_IN_MS  // 33. TODO give correct duration
 	]
 	
+	static ACTIVITY_VISIBILITY = [
+		false, //0
+		true, //1
+		true, //2
+		true, //3
+		true, //4
+		true, //5
+		true, //6
+		true, //7
+		true, //8
+		true, //9
+		true, //10
+		true, //11
+		true, //12
+		true, //13
+		true, //14
+		true, //15
+		true, //16
+		true, //17
+		true, //18
+		true, //19
+		true, //20
+		true, //21
+		true, //22
+		true, //23
+		true, //24
+		true, //25
+		true, //26
+		true, //27
+		true, //28
+		true, //29
+		true, //30
+		true, //31
+		true, //32
+		true, //33
+		]
+	
 	// CAU Institutions
 	static def INSTITUTES = [
 		// Technische Fakultät
@@ -97,7 +134,7 @@ class InitService {
 	static void initKlikActivities() {
 		//println ACTIVITY_DESCRIPTIONS.size()
 		for(int i=0; i < ACTIVITY_DESCRIPTIONS.size(); i++) {
-			new Activity(description: ACTIVITY_DESCRIPTIONS[i], points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i]).save(flush: true)
+			new Activity(description: ACTIVITY_DESCRIPTIONS[i], points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i], visible: ACTIVITY_VISIBILITY[i]).save(flush: true)
 		}
 	}
 	
