@@ -17,7 +17,20 @@
 			<g:each status="pos" in="${results}" var="res">
 				<tr>
 					<td>
-						${res.getName()}
+						<g:if test="res.type == 'user'">
+							<a href="${createLink(controller :'profil',
+													action: 'user',
+													id: res.id)}">
+								${res.name}
+							</a>
+						</g:if>
+						<g:else>
+							<a href="${createLink(controller :'profil',
+													action: 'team',
+													id: res.id)}">
+								${res.name}
+							</a>
+						</g:else>
 					</td>
 				</tr>
 			</g:each>

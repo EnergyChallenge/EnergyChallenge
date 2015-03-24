@@ -7,18 +7,19 @@
 	</head>
 	<body class="${type}profile">
 	
-		<g:if test="${isCurrent == true && type == 'user'}">
-			<a class="editprofile button" href="${createLink(controller:'User', action: 'edit')}">
-				Bearbeiten
-			</a>
-		</g:if>
-		<g:elseif test="${isCurrent == true && type == 'team'}">
-			<a class="editprofile button" href="${createLink(controller:'Team', action: 'edit')}">
-				Bearbeiten
-			</a>
-		</g:elseif>
-		
 		<div class="head">
+		
+			<g:if test="${isCurrent == true && type == 'user'}">
+				<a class="editprofile button" href="${createLink(controller:'User', action: 'edit')}">
+					Bearbeiten
+				</a>
+			</g:if>
+			<g:elseif test="${isCurrent == true && type == 'team'}">
+				<a class="editprofile button" href="${createLink(controller:'Team', action: 'edit')}">
+					Bearbeiten
+				</a>
+			</g:elseif>
+		
 			<div class="image">
 				<img src="<g:createLink controller="profil" action="avatar" id="${id}"/>" alt="image"/>
 			</div>

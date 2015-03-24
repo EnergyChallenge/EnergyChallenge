@@ -73,6 +73,7 @@
 						<li><a href="${createLink(controller:'Admin', action: 'teams')}" >Teams verwalten</a></li>
 						<li><a href="${createLink(controller:'Admin', action: 'activities')}" >Aktivitäten verwalten</a></li>
 						<li><a href="${createLink(controller:'Admin', action: 'proposals')}" >Vorschläge verwalten</a></li>
+						<li><a href="${createLink(controller:'Admin', action: 'message')}" >Email Senden</a></li>
 					</ul>
 				</g:if>
 			</nav>
