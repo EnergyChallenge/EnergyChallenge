@@ -91,9 +91,7 @@
     <string name="complete">Erledigen</string>
     <string name="cancel">Abbrechen</string>
 
-
-
-    <string name="inline_preferences" />
-
+    //Notification Service
+    <string name="notificationServiceTitle">Notification Service</string>
 
 </resources>

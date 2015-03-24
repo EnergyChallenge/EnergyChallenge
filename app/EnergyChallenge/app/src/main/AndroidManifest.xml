@@ -16,6 +16,7 @@
             android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -32,8 +33,10 @@
             android:parentActivityName=".activities.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
@@ -48,6 +51,14 @@
             android:label="@string/title_activity_proposal"
             android:parentActivityName=".activities.MainActivity" >
         </activity>
+
+        <service
+            android:name=".services.NotificationService"
+            android:enabled="true"
+            android:exported="true"
+            android:icon="@drawable/temp_avatar"
+            android:label="@string/notificationServiceTitle" >
+        </service>
     </application>
 
 </manifest>
