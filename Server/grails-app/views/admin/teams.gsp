@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Teams</h1>
+<h1>Teamverwaltung</h1>
 
 <table class="list">
     <thead>

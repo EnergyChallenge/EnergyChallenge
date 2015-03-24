@@ -20,11 +20,8 @@
 <body class="${pageProperty(name: 'body.class')}">
 	<header>
 		<div class="inside">
-			<!-- TODO Header -->
-			<div class="topLeft">
-				<!-- <a href="http://grails.org"><asset:image src="grails_logo.png" alt="Grails"/></a>  -->
-				<h1>EnergyChallenge (Header)</h1>
-			</div>
+			<%-- TODO Header --%>
+			<g:pageProperty name="page.logo"/>
 			<g:pageProperty name="page.userInfo"/>
 		</div>
 	</header>

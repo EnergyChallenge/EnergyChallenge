@@ -22,6 +22,7 @@ class AuthController {
     }
 
     def signIn = {
+	PageViewService.visitPage("/auth/signIn")
         def targetUri = params.targetUri ?: "/"
         
         // Handle requests saved by Shiro filters.

@@ -12,9 +12,11 @@ class StartpageController {
 
 	// injected by Grails; used for SQL Queries
 	def dataSource
+    def PageViewService
 	
     def index() {
     
+		PageViewService.visitPage("/index")
 		// query
 		groovy.sql.Sql sql = new groovy.sql.Sql(dataSource)
 		log.info(sql)
