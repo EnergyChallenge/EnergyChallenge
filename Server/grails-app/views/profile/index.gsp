@@ -21,7 +21,7 @@
 			</g:elseif>
 		
 			<div class="image">
-				<img src="<g:createLink controller="profil" action="avatar" id="${id}"/>" alt="image"/>
+				<img src="<g:createLink controller="profile" action="avatar" id="${id}"/>" alt="image"/>
 			</div>
 			<hgroup>
 				<h1>${name}</h1>
@@ -78,7 +78,7 @@
          						${activity.completedActivity.getActivity().getDescription()}
 							<em>
 								(
-								<a href="<g:createLink controller="profil" action="user" id="${activity.member.getId()}"/>">
+								<a href="<g:createLink controller="profile" action="user" id="${activity.member.getId()}"/>">
 								${activity.member.getName()}
 								</a>
 								)

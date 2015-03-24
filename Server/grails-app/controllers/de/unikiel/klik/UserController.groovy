@@ -21,7 +21,7 @@ class UserController {
   def index() {
     //User user = User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal());
     //[user:user]
-	redirect(controller: "profil")
+	redirect(controller: "profile")
   }
 
   def edit() {
@@ -55,7 +55,7 @@ class UserController {
   def joinTeam() {
         //Get the user service to join a team
         UserService.setTeam(params.id as long, SecurityUtils.subject)
-        redirect(controller: "profil", action: "index")
+        redirect(controller: "profile", action: "index")
   }
 
   def newTeam() {

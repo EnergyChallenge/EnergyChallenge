@@ -9,7 +9,7 @@ import org.apache.shiro.SecurityUtils;
 import org.codehaus.groovy.grails.core.io.ResourceLocator
 import org.springframework.core.io.Resource
 
-class ProfilController {
+class ProfileController {
 
    def index(){
 	   user()

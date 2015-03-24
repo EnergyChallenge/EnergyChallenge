@@ -3,10 +3,11 @@
   <head>
     <meta name="layout" content="main"/>
     <title>Inbox</title>
+    <asset:stylesheet src="table.css"/>
   </head>
   <body>
     <h1>Teameinladungen</h1>
-    <table>
+    <table class="list">
       <thead>
         <tr>
           <td>Absender</td>

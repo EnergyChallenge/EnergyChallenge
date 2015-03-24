@@ -17,11 +17,11 @@
 			<div id="userinfo">
 				<div class="profile">
 					<a href="${createLink(controller:'user', action:'edit')}" class="avatar">
-						<img src="${createLink(controller:'profil', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
+						<img src="${createLink(controller:'profile', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
 					</a>
 					<div class="name">
-						<!-- TODO Change link to profile / not profil -->
-						<a href="${createLink(controller:'profil')}">
+						<!-- TODO Change link to profile / not profile -->
+						<a href="${createLink(controller:'profile')}">
 							${user.getName()}
 						</a>
 					</div>				
