@@ -23,7 +23,7 @@ class AdminService {
 		//reward the author of the proposal with points
 		def proposal = Proposal.get(proposalId)
 		def author = proposal.getAuthor()
-		def activity = Activity.findByDescription("Eine neue Klik-Aktivit�t beisteuern")
+		def activity = Activity.find{visible == false}
 		def completedActivity = new CompletedActivity(activity: activity)
 		author.completedActivities.add(completedActivity)
 		completedActivity.save(flush: true, failOnError: true)
