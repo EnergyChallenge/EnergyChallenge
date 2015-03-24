@@ -68,18 +68,8 @@ $(document).ready(function(){
 			<div id="chart2" style="height: 500px; width: 375px;"></div>
 		</div>
 		<div style="position: absolute; bottom: 0px; right: 0px;">
-			<g:link action="exportCsv">Als CSV exportieren</g:link>
+			<g:link action="exportCsv"> Statistiken <asset:image src="download1.png" alt="download" /> </g:link>
 		</div>
-		<!-- export plugin link
-		</div>
-			<export:formats formats="['csv']" action="exportToCsv"/>
-		</div> -->
-		<!-- linking created by export plugin
-		<div class='export'>
-			<span class='menuButton'>
-			<a class='csv' href='/Server/statistics/exportToCsv?format=csv&amp;extension=csv'>Als CSV exportieren</a>
-			</span>
-		</div>-->
 
 	</div>
 	       
