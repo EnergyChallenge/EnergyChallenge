@@ -51,6 +51,7 @@ public class VerificationTask{
 
                     //Check the response for the result
                     if(responseString.contains("true")){
+
                         //Verification successful
                         verificationSuccessful[0] = true;
                     }else{

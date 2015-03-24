@@ -45,7 +45,8 @@ public class OptionsFragment extends PreferenceFragment {
             public boolean onPreferenceClick(Preference preference) {
 
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.clear();
+                editor.remove("email");
+                editor.remove("password");
                 editor.commit();
 
                 Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
