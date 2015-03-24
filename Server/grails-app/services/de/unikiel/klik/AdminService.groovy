@@ -7,6 +7,8 @@ import org.joda.time.Duration;
 @Transactional
 class AdminService {
 
+    def mailService
+
     void createActivity(String description, int points, Duration duration) {
 
         //Declare the activity and save it
@@ -135,7 +137,7 @@ class AdminService {
         //Send an email to each user
         def i
         for (i = 0; i < allUsers.size; i++) {
-            sendMail {
+            mailService.sendMail {
                 to allUsers[i].email
                 subject messageSubject
                 body message

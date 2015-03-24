@@ -4,6 +4,7 @@ import de.unikiel.klik.model.*
 import grails.transaction.Transactional
 import org.apache.shiro.crypto.hash.Sha256Hash
 import org.joda.time.Duration
+import org.joda.time.DateTime
 import java.util.Random
 
 @Transactional
@@ -95,14 +96,31 @@ class TestService {
 		//User user
 		//Activity activity
 		//CompletedActivity completedActivity
-		
+		def users = User.findAll()
+		DateTime today = new DateTime()
 		for(int i=1; i <= nrOfCompletedActivities; i++) {
-			def user = User.get(1)			// TODO get a random User
+			//random Date in the passt week
+			DateTime date = today.minus(new Duration(((long)rand.nextInt(7*24))*60L*60L*1000L))
+			def user = users[rand.nextInt(nrOfUsers)]		// get a random User
 			def activity = Activity.get(rand.nextInt(nrOfActivities) + 1)	// get a random Activity
 			def completedActivity = new CompletedActivity(activity: activity)
 			completedActivity.save(flush: true, failOnError: true)
+			completedActivity.dateCreated = date
+			completedActivity.save(flush: true, failOnError: true)
 			user.addToCompletedActivities(completedActivity)
 			user.save(flush: true, failOnError: true)
+		}
+	}
+	static void createSomePageVisits(int numberOfDaysBack, String url){
+		DateTime today = new DateTime()
+		for (long i = 0; i < numberOfDaysBack; i++){
+			DateTime date = today.minus(new Duration(i*24L*60L*60L*1000L))
+			PageView pageView =  new PageView(url: url)
+			pageView.save(flush: true, failOnError: true)
+			pageView.dateCreated = date
+			pageView.save(flush: true, failOnError: true)
+			pageView.views = rand.nextInt(50)
+			pageView.save(flush: true, failOnError: true)
 		}
 	}
 }
