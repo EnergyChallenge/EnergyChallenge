@@ -2,17 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/list_item_vertical_margin"
+    android:paddingLeft="@dimen/list_item_horizontal_margin"
+    android:paddingRight="@dimen/list_item_horizontal_margin"
+    android:paddingTop="@dimen/list_item_vertical_margin">
 
     <TextView android:id="@+id/ranking_position"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_width="0dp"
+        android:layout_weight="0.1"
+        android:layout_height="match_parent"
+        android:gravity="right"
+        android:paddingRight="4dp"
+        style="@android:style/TextAppearance.DeviceDefault.Small" />
 
     <TextView android:id="@+id/ranking_title"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_width="0dp"
+        android:layout_weight="0.7"
+        android:layout_height="match_parent"
+        style="@android:style/TextAppearance.DeviceDefault.Small" />
 
     <TextView android:id="@+id/ranking_points"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_width="0dp"
+        android:layout_weight="0.2"
+        android:layout_height="match_parent"
+        android:gravity="right"
+        style="@android:style/TextAppearance.DeviceDefault.Small"/>
 </LinearLayout>

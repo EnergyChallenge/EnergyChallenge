@@ -42,7 +42,7 @@ public class GetUserRankingTask extends AccessServerTask {
         JSONArray ranking = response.getJSONArray("ranking");
 
         for(int i = 0; i < ranking.length(); i++) {
-            int position = i;
+            int position = i + 1;
             int id = ranking.getJSONObject(i).getInt("id");
             String title = ranking.getJSONObject(i).getString("title");
             int points = ranking.getJSONObject(i).getInt("points");

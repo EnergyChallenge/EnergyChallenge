@@ -20,20 +20,29 @@ import de.unikiel.klik.energychallenge.utils.NetworkX;
 public class LoginActivity extends Activity {
 
     //Elements from the layout
-    EditText usernameEditText;
+    EditText emailEditText;
     EditText passwordEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //TODO Check with the controller if the user is already logged in when they open the app
-        //TODO If the saved login is correct go straight to the main activity
+
+        //Check if credentials are saved in shared preferences
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String persistentEmail = preferences.getString("email", "");
+        String persistentPassword = preferences.getString("password", "");
+        if(persistentEmail != "" && persistentPassword != ""){
+
+            //If so go straight to the main activity
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
 
         //Load the state and login layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         //Credential inputs
-        usernameEditText = (EditText)findViewById(R.id.logInUsername);
+        emailEditText = (EditText)findViewById(R.id.logInEmail);
         passwordEditText = (EditText)findViewById(R.id.logInPassword);
     }
 
@@ -61,7 +70,7 @@ public class LoginActivity extends Activity {
         //Only proceed if a network connection is available
         if(!NetworkX.isAvailable(getApplicationContext())) {
 
-            //Credentials invalid, display an error
+            //No network connection, display an error
             Context context = getApplicationContext();
             CharSequence message = "Can't login, your not connected to a network.";
             Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
@@ -69,23 +78,24 @@ public class LoginActivity extends Activity {
 
         }else{
 
-            //Get credential strings
-            final String usernameInput = usernameEditText.getText().toString();
-            final String passwordInput = passwordEditText.getText().toString();
-
-            //Save the credentials to the shared preferences (persistent storage)
+            //Remove old saved credentials (if any)
             SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             SharedPreferences.Editor editor = preferences.edit();
-            editor.putString("email", usernameInput);
-            editor.putString("password", passwordInput);
+            editor.remove("email");
+            editor.remove("password");
             editor.commit();
 
-            //Get the saved email and password from the shared preferences (persistant data)
-            final String email = preferences.getString("email", "Not found");
-            final String password = preferences.getString("password", "Not found");
+            //Get credential strings
+            final String email = emailEditText.getText().toString();
+            final String password = passwordEditText.getText().toString();
 
             //Use the verification task to check the saved credentials
             if (VerificationTask.checkCredentials(email, password)) {
+
+                //Save the correct credentials to the shared preferences (persistent storage)
+                editor.putString("email", email);
+                editor.putString("password", password);
+                editor.commit();
 
                 //Credentials valid, go to main activity
                 Intent intent = new Intent(this, MainActivity.class);

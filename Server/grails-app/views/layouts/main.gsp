@@ -53,8 +53,8 @@
 
 			<nav>
 				<div id="search">
-					<g:form action="searchForm">
-	        			<input type="search" name="q" value="${params.q}" placeholder="Suchen" />
+					<g:form action="searchForm" url="[action:'displaySearchResults',controller:'search']">
+	        			<input type="search" name="query" value="${query}" placeholder="Suchen" />
 	        			<button class="fa fa-search"></button>
 					</g:form>
 				</div>
