@@ -68,7 +68,7 @@ $(document).ready(function(){
 			<div id="chart2" style="height: 500px; width: 375px;"></div>
 		</div>
 		<div style="position: absolute; bottom: 0px; right: 0px;">
-			<g:link action="exportCsv"> Statistiken <asset:image src="download1.png" alt="download" /> </g:link>
+			<g:link action="exportCsv"> Download <asset:image src="download1.png" alt="download" /> </g:link>
 		</div>
 
 	</div>
