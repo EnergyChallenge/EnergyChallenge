@@ -33,6 +33,7 @@
 	<!-- TODO role benötigt?! -->
 	<footer class="footer" role="contentinfo">
 		<div class="inside">
+		<p href="http://www.uni-kiel.de/suchen/impressum.shtml">Impressum</p> <%-- Verlinken --%>
 		</div>
 	</footer>
 </body>
