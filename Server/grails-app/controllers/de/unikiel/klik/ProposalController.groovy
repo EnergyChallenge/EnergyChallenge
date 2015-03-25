@@ -37,7 +37,8 @@ class ProposalController {
 	def view() {
 		if (params.id) {
 			Proposal proposal = Proposal.get(params.id)
-			def comments = proposal.comments;
+			def comments = proposal.comments.sort {it.dateCreated};
+			comments.reverse(true)
 
 			return [proposal: proposal, comments: comments, id: params.id]
 		} else {
