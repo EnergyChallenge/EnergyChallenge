@@ -32,8 +32,7 @@ public class MainActivity extends Activity
     // The current title viewable on the activity
     private CharSequence currentTitle;
 
-    // Temp Application context TODO
-    private Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +47,9 @@ public class MainActivity extends Activity
         currentTitle = getTitle();
 
         mainNavigationDrawerFragment.setUp(
-                R.id.navigation_drawer,
-                (DrawerLayout) findViewById(R.id.drawer_layout));
+                                    R.id.navigation_drawer,
+                                    (DrawerLayout) findViewById(R.id.drawer_layout));
+
 
         //Start the notifications service
         Intent notificationsIntent = new Intent(this.getApplicationContext(), NotificationService.class);
