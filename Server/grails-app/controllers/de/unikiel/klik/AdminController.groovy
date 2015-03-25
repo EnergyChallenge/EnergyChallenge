@@ -6,6 +6,9 @@ import de.unikiel.klik.model.Proposal;
 import de.unikiel.klik.model.Activity;
 import de.unikiel.klik.model.CompletedActivity;
 import org.joda.time.Duration
+import org.joda.time.DateTime
+import org.joda.time.format.DateTimeFormat
+import org.joda.time.format.DateTimeFormatter
 
 class AdminController {
 
@@ -31,9 +34,9 @@ class AdminController {
         [activities: activities]
     }
     def proposals(){
-        def proposals = Proposal.findAll("from Proposal as p order by p.dateCreated")//, [max: 10], offset: 10 * params.page])
-        //int lastPage = Proposal.count() / 10;
-        [proposals: proposals]
+        def proposals = Proposal.findAll("from Proposal as p order by p.dateCreated")
+        DateTimeFormatter fmt = DateTimeFormat.forPattern("dd.MM.yyyy")
+        [proposals: proposals, fmt:fmt]
     }
 
     def editActivity() {
