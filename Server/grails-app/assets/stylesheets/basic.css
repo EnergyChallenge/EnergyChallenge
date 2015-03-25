@@ -27,6 +27,18 @@ input[type="submit"], a.button, button {
 	text-decoration: none;
 	cursor: default;
 }
+input[type="submit"], a.disabledbutton, button {
+	padding: 5px 10px;
+	background-color: #eaf1ae;
+	box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.3);
+    border: 0 none;
+    border-radius: 3px;
+    color: #000000;
+    box-sizing: border-box;
+	text-decoration: none;
+	cursor: default;
+	disabled: disabled;
+}
 input[type="submit"], a.button:hover, a.button:focus {
 	text-decoration: none;
 }

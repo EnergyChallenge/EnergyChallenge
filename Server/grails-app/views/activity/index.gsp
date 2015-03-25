@@ -44,7 +44,11 @@
 								erledigen
 							</a>
 						</g:if>
-						<g:else>${act.countdown}</g:else>
+						<g:else>
+							<a class="disabledbutton">
+								${act.countdown}
+							</a>
+						</g:else>
 					</td>
 				</tr>
 				</g:each>
