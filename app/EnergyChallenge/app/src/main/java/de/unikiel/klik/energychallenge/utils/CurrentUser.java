@@ -27,6 +27,10 @@ public class CurrentUser {
         return preferences.getString("name", "");
     }
 
+    public int getId() {
+        return preferences.getInt("id", 0);
+    }
+
     public void setEmail(String email) {
         preferences.edit().putString("email", email).commit();
     }
@@ -34,8 +38,13 @@ public class CurrentUser {
     public void setPassword(String password) {
         preferences.edit().putString("password", password).commit();
     }
+
     public void setName(String name) {
         preferences.edit().putString("name", name).commit();
+    }
+
+    public void setId(int id) {
+        preferences.edit().putInt("id", id).commit();
     }
 
 }

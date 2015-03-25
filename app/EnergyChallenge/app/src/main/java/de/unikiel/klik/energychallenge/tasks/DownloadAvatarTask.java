@@ -23,8 +23,7 @@ public class DownloadAvatarTask extends AsyncTask<String, Void, Bitmap> {
 
     @Override
     protected final Bitmap doInBackground(String... params) {
-        //TODO Hardcoded URL
-        String avatarUrl = "http://192.168.0.83:8080/Server/" + "profile/avatar/" + Integer.toString(profileId);
+        String avatarUrl = Config.SERVER_REST_PATH + "avatar/" + Integer.toString(profileId);
         Bitmap avatar = null;
         try {
             InputStream in = new java.net.URL(avatarUrl).openStream();

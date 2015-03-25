@@ -55,6 +55,10 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
 
     protected void doAfterResponse() {} // Do nothing by default
 
+    protected boolean isLoginRequired() {
+        return true; //True by default
+    }
+
     @Override
     protected final void onPreExecute() {
         doBeforeRequest();
@@ -79,7 +83,7 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         }
 
         try {
-            handleServerResponse(new JSONObject(result));
+            handleServerResponse(new JSONObject(result).getJSONObject("result"));
         } catch (JSONException e) {
             Log.e(TAG, "Error in JSON");
             e.printStackTrace();
@@ -105,9 +109,10 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
             parameters.addAll(serverRequest.getParameters());
         }
 
-        parameters.add(new BasicNameValuePair("email", currentUser.getEmail()));
-        parameters.add(new BasicNameValuePair("password", currentUser.getPassword()));
-        //parameters.add(new BasicNameValuePair("JSESSIONID", "")); //TODO
+        if (isLoginRequired()) {
+            parameters.add(new BasicNameValuePair("email", currentUser.getEmail()));
+            parameters.add(new BasicNameValuePair("password", currentUser.getPassword()));
+        }
 
         UrlEncodedFormEntity encodedEntity = new UrlEncodedFormEntity(parameters, "utf-8");
         post.setEntity(encodedEntity);

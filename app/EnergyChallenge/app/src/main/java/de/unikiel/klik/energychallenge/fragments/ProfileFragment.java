@@ -22,9 +22,10 @@ import de.unikiel.klik.energychallenge.models.User;
 import de.unikiel.klik.energychallenge.tasks.DownloadAvatarTask;
 import de.unikiel.klik.energychallenge.tasks.GetTeamProfileTask;
 import de.unikiel.klik.energychallenge.tasks.GetUserProfileTask;
+import de.unikiel.klik.energychallenge.utils.CurrentUser;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
-
+//TODO Layout
 
 /* Fragment for the users own profile page */
 public class ProfileFragment extends Fragment {
@@ -59,7 +60,7 @@ public class ProfileFragment extends Fragment {
 
         if (getArguments() == null) {
             type = "user";
-            profileId = 0; //TODO set to own id!
+            profileId = new CurrentUser(getActivity().getApplicationContext()).getId();
             isCurrentUser = true;
         } else {
             type = getArguments().getString("type");

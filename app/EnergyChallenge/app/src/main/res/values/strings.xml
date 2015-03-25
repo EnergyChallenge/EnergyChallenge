@@ -63,6 +63,7 @@
     <string name="search_hint">Suchen</string>
 
     <string name="no_network_connection">Keine Internetverbindung verfügbar.</string>
+    <string name="invalide_login">Die E-Mail Adresse oder das Passwort ist ungültig.</string>
     <string name="error_in_server_communication">Es ist ein Fehler bei der Kommunikation mit dem Server aufgetreten.</string>
     <string name="title_activity_profile">Profil</string>
 
