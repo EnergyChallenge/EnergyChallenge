@@ -45,9 +45,7 @@
 							</a>
 						</g:if>
 						<g:else>
-							<a class="button" disabled>
-								${act.countdown}
-							</a>
+							${act.countdown}
 						</g:else>
 					</td>
 				</tr>
