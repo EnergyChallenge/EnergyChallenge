@@ -23,9 +23,15 @@ class AppController {
     def index() {
 	}
 	
+	def login() {
+		authenticate(params.email, params.password);
+		User user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
+		outputToJson([user: [id: user.getId, name: user.getName()]]);
+	}
+	
 	def userProfile() {
 		
-		login(params.email, params.password);
+		authenticate(params.email, params.password);
 		
 		User user;
 		println params.id;
@@ -57,7 +63,7 @@ class AppController {
 	
 	def teamProfile() {
 		
-		login(params.email, params.password);
+		authenticate(params.email, params.password);
 		
 		Team team = Team.get(params.id);
 		if (team == null) {
@@ -83,7 +89,7 @@ class AppController {
 	
 	def userRanking() {
 		
-		login(params.email, params.password);
+		authenticate(params.email, params.password);
 		
 		def ranking = [];
 		for (user in User.findAll()) {
@@ -96,7 +102,7 @@ class AppController {
 	
 	def teamRanking() {
 		
-		login(params.email, params.password);
+		authenticate(params.email, params.password);
 		
 		def ranking = [];
 		for (team in Team.findAll()) {
@@ -109,7 +115,7 @@ class AppController {
 	
 	def allActivities() {
 		
-		login(params.email, params.password);
+		authenticate(params.email, params.password);
 		
 		def activities = []
 		for(activity in Activity.findAll{visible == true}) {
@@ -123,7 +129,7 @@ class AppController {
 	
 	def favoredActivities() {
 		
-		login(params.email, params.password);
+		authenticate(params.email, params.password);
 		
 		def subject = SecurityUtils.subject
 		def user = User.findByEmail(subject.getPrincipal())
@@ -140,7 +146,7 @@ class AppController {
 	
 	def proposals() {
 		
-		login(params.email, params.password);
+		authenticate(params.email, params.password);
 		
 		//TODO Sort comments and proposals
 		def proposals = [];
@@ -172,7 +178,7 @@ class AppController {
 	
 	def messages() {
 		
-		login(params.email, params.password);
+		authenticate(params.email, params.password);
 
         def notifications = ActivityNotification.findAll { ActivityNotification.belongsTo = User.findByEmail(params.email) }
 
@@ -181,7 +187,7 @@ class AppController {
 	
 	def search() {
 		
-		login(params.email, params.password);
+		authenticate(params.email, params.password);
 		
 		def result = [];
 		def matchingUsers = User.findAllBySearchNameIlike("%" + params.query + "%")
@@ -201,7 +207,7 @@ class AppController {
 	
 	def completeActivity() {
 		
-		login(params.email, params.password);
+		authenticate(params.email, params.password);
 		
 		if(ActivityService.completeActivity(params.id as long, SecurityUtils.subject)) {
 			outputToJson([completeActivity: [success: true]])
@@ -212,17 +218,14 @@ class AppController {
 	
 	def commentProposal() {
 		
-		login(params.email, params.password);
+		authenticate(params.email, params.password);
 		
 		//TODO
 	}
 	
 	
-	private void outputToJson(def data) {
-		render data as JSON;
-	}
 	
-	private void login(String email, String password) {
+	private void authenticate(String email, String password) {
 		//TODO set better response
 		try{
 			AuthService.login(email, password ,false)
@@ -230,9 +233,13 @@ class AppController {
 		}
 		catch (AuthenticationException ex){
 			//Login failed
-			def response = [response: "false"]
+			def response = [authentication: false]
 			render response as JSON
 		}
+	}
+	
+	private void outputToJson(def data) {
+		render ([authentication: true, result: data]) as JSON;
 	}
 	
 	
