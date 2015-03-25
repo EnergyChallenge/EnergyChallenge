@@ -123,6 +123,7 @@ public class ProfileFragment extends Fragment {
                 android.R.layout.simple_list_item_1,
                 team.getLastActivities()));
         //TODO Change to own Adapter later
+        //TODO Aren't displayed yet
 
     }
 

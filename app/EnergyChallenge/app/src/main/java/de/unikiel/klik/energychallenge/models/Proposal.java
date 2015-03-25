@@ -17,13 +17,19 @@ public class Proposal implements Parcelable {
 
     private List<ProposalComment> comments;
 
-    public Proposal(int id, String description, String author, float rating, List<ProposalComment> comments) {
+    private ProposalComment ownComment;
 
+    public Proposal(int id, String description, String author, float rating, List<ProposalComment> comments) {
         this.id = id;
         this.description = description;
         this.author = author;
         this.rating = rating;
         this.comments = comments;
+    }
+
+    public Proposal(int id, String description, String author, float rating, List<ProposalComment> comments, ProposalComment ownComment) {
+        this(id, description, author, rating, comments);
+        this.ownComment = ownComment;
     }
 
     public int getId() {
@@ -46,6 +52,9 @@ public class Proposal implements Parcelable {
         return comments;
     }
 
+    public ProposalComment getOwnComment() {
+        return ownComment;
+    }
 
     @Override
     public int describeContents() {
@@ -59,6 +68,7 @@ public class Proposal implements Parcelable {
         dest.writeString(author);
         dest.writeFloat(rating);
         dest.writeTypedList(comments);
+        dest.writeParcelable(ownComment, flags);
     }
 
     public static final Parcelable.Creator<Proposal> CREATOR = new Parcelable.Creator<Proposal>() {
@@ -77,7 +87,6 @@ public class Proposal implements Parcelable {
         author = in.readString();
         rating = in.readInt();
         comments = in.createTypedArrayList(ProposalComment.CREATOR);
-        //in.readTypedList(comments, ProposalComment.CREATOR);
-        //comments = in.readParcelableArray(ProposalComment.class);
+        ownComment = (ProposalComment) in.readParcelable(ProposalComment.class.getClassLoader());
     }
 }

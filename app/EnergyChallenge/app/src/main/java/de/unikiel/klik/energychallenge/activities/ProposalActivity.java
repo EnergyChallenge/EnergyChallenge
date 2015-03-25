@@ -3,6 +3,7 @@ package de.unikiel.klik.energychallenge.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Contacts;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,6 +44,8 @@ public class ProposalActivity extends Activity {
         ratingView.setRating(proposal.getRating());
         descriptionView.setText(proposal.getDescription());
 
+        ownCommentDescView.setText(proposal.getOwnComment().getText());
+        ownRatingView.setRating(proposal.getOwnComment().getRating());
 
         commentsListView.addFooterView(ownCommentView);
         commentsListView.setAdapter(proposalCommentsAdapter);

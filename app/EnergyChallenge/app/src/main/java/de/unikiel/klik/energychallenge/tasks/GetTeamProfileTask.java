@@ -70,7 +70,7 @@ public class GetTeamProfileTask extends AccessServerTask {
         }
 
         JSONArray membersInJson = profile.getJSONArray("members");
-        for(int i = 0; i < lastActivitiesInJson.length(); i++) {
+        for(int i = 0; i < membersInJson.length(); i++) {
             members.add(membersInJson.getString(i));
         }
 
