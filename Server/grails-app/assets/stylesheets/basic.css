@@ -27,6 +27,7 @@ input[type="submit"], a.button, button {
 	text-decoration: none;
 	cursor: default;
 }
+
 input[type="submit"], a.button:hover, a.button:focus {
 	text-decoration: none;
 }

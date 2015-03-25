@@ -30,8 +30,8 @@ class ActivityService {
 		if(isExecutable(activity, subject)) {
 			def completedActivity = new CompletedActivity(activity: activity)
 			currentUser.addToCompletedActivities(completedActivity)
-			completedActivity.save(flush: true, failOnError: true)
-			currentUser.save(flush: true, failOnError: true)
+			completedActivity.save(flush: true)
+			currentUser.save(flush: true)
 			return true
 		} else {
 			return false
@@ -45,7 +45,7 @@ class ActivityService {
 		//add the activity to the users favorites
 		if(!(isFavorite(activity, subject))) {
 			currentUser.addToFavorites(activity)
-			currentUser.save(flush: true, failOnError: true)
+			currentUser.save(flush: true)
 			return true
 		} else {
 			return false
@@ -59,7 +59,7 @@ class ActivityService {
 		//remove the activity from the users favorites
 		if(isFavorite(activity, subject)) {
 			currentUser.removeFromFavorites(activity)
-			currentUser.save(flush: true, failOnError: true)
+			currentUser.save(flush: true)
 			return true
 		} else {
 			return false

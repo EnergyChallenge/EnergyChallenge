@@ -54,6 +54,7 @@ public class GetProposalsTask extends AccessServerTask {
             String author = proposals.getJSONObject(i).getString("author");
             float rating = (float) proposals.getJSONObject(i).getDouble("rating");
             ArrayList<ProposalComment> comments = new ArrayList<>();
+            ProposalComment ownComment = null;
 
             JSONArray commentsInJson = proposals.getJSONObject(i).getJSONArray("comments");
             for(int j = 0; j < commentsInJson.length(); j++) {
@@ -62,11 +63,17 @@ public class GetProposalsTask extends AccessServerTask {
                 String commentAuthor = commentsInJson.getJSONObject(j).getString("author");
                 int commentRating = commentsInJson.getJSONObject(j).getInt("rating");
                 String commentText = commentsInJson.getJSONObject(j).getString("text");
+                ProposalComment comment = new ProposalComment(commentId, commentAuthor, commentRating, commentText);
 
-                comments.add(new ProposalComment(commentId, commentAuthor, commentRating, commentText));
+                comments.add(comment);
+
+                if (commentsInJson.getJSONObject(j).getBoolean("isOwn")) {
+                    ownComment = comment;
+                }
+
             }
 
-            proposalsAdapter.add(new Proposal(id, description, author, rating, comments));
+            proposalsAdapter.add(new Proposal(id, description, author, rating, comments, ownComment));
         }
 
     }

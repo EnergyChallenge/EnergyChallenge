@@ -1,6 +1,7 @@
 package de.unikiel.klik
 
 import grails.converters.JSON
+import de.unikiel.klik.model.Profile
 import de.unikiel.klik.model.User;
 import de.unikiel.klik.model.Team;
 import de.unikiel.klik.model.Activity;
@@ -10,10 +11,14 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException
 import java.util.ArrayList;
 
+import org.codehaus.groovy.grails.core.io.ResourceLocator
+import org.springframework.core.io.Resource
+
 class AppController {
 	
 	def AuthService
 	def ActivityService
+	ProfileController profileController = new ProfileController()
 	
     def index() {
 	}
@@ -23,10 +28,11 @@ class AppController {
 		login(params.email, params.password);
 		
 		User user;
-		if (params.id != null || params.identity == 0) {
-			user = User.get(params.id);
+		println params.id;
+		if (params.id == null || params.id == "0") {
+			user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
 		} else {
-   			user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
+   			user = User.get(params.id);
 		}
 		if (user == null) {
 			//TODO Error 404
@@ -208,7 +214,6 @@ class AppController {
 		
 		//TODO
 	}
-	
 	
 	
 	private void outputToJson(def data) {

@@ -76,7 +76,6 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         //TODO - Delete if everythings fine
         Log.v("Repsonse", result);
 
-        //TODO equals right? Not == ?
         if (result.equals("Error")) {
             Log.w(TAG, "Could not access Server!");
             handleResponseError();
@@ -114,20 +113,20 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
             parameters.add(new BasicNameValuePair("request", serverRequest.getRequestData().toString()));
         }
 
-        //TODO
+        //TODO Remove
         Log.v("email",currentUser.getEmail());
         Log.v("paswort",currentUser.getPassword());
 
         parameters.add(new BasicNameValuePair("email", currentUser.getEmail())); //TODO  WORKING?
         parameters.add(new BasicNameValuePair("password", currentUser.getPassword())); //TODO WORKING?
-        //parameters.add(new BasicNameValuePair("email", "post@soeren-henning.de")); //TODO
-        //parameters.add(new BasicNameValuePair("password", "pass")); //TODO
+        //parameters.add(new BasicNameValuePair("email", "post@soeren-henning.de")); //TODO Remove
+        //parameters.add(new BasicNameValuePair("password", "pass")); //TODO Remove
         //parameters.add(new BasicNameValuePair("JSESSIONID", "")); //TODO
 
         UrlEncodedFormEntity encodedEntity = new UrlEncodedFormEntity(parameters, "utf-8");
         Log.v("encodedEntity", IoX.readInputStream(encodedEntity.getContent(), 10000)); //TODO
         post.setEntity(encodedEntity);
-        //Log.v("post", post.); //TODO
+        //Log.v("post", post.); //TODO Remove
         HttpResponse httpResponse = client.execute(post);
         HttpEntity responseEntity = httpResponse.getEntity();
         return EntityUtils.toString(responseEntity, HTTP.UTF_8);
