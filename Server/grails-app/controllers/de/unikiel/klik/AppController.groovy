@@ -26,7 +26,7 @@ class AppController {
 	def login() {
 		authenticate(params.email, params.password);
 		User user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
-		outputToJson({user: [id: user.id, name: user.getName()]});
+		outputToJson([user: [id: user.id, name: user.getName()]]);
 	}
 	
 	def userProfile() {
@@ -223,6 +223,9 @@ class AppController {
 		//TODO
 	}
 	
+	def avatar() {
+		redirect(controller: "profile", action: "avatar", id: params.id)
+	}
 	
 	
 	private void authenticate(String email, String password) {
@@ -233,13 +236,14 @@ class AppController {
 		}
 		catch (AuthenticationException ex){
 			//Login failed
-			def response = [authentication: false]
+			def response = [authentication: false, result: [loginFailed: true]]
 			render response as JSON
 		}
 	}
 	
 	private void outputToJson(def data) {
-		render (authentication: true, result: data) as JSON;
+		def response = [authentication: true, result: data]
+		render response as JSON;
 	}
 	
 	
