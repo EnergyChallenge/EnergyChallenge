@@ -45,7 +45,7 @@
 							</a>
 						</g:if>
 						<g:else>
-							<a class="disabledbutton">
+							<a class="button" disabled>
 								${act.countdown}
 							</a>
 						</g:else>
