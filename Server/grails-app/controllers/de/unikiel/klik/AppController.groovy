@@ -23,7 +23,7 @@ class AppController {
 		login(params.email, params.password);
 		
 		User user;
-		if (params.id != null || params.identity == 0) {
+		if (params.id != null || params.id == 0) {
 			user = User.get(params.id);
 		} else {
    			user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
