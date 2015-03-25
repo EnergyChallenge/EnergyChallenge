@@ -4,6 +4,7 @@ package de.unikiel.klik.energychallenge.fragments;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,16 +18,11 @@ import android.widget.Toast;
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.models.Team;
 import de.unikiel.klik.energychallenge.models.User;
+import de.unikiel.klik.energychallenge.tasks.GetTeamProfileTask;
 import de.unikiel.klik.energychallenge.tasks.GetUserProfileTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
 
-/*
-    TODO
-
-    Rename to ProfileFragment
-
- */
 
 /* Fragment for the users own profile page */
 public class ProfileFragment extends Fragment {
@@ -59,7 +55,7 @@ public class ProfileFragment extends Fragment {
 
         if (getArguments() == null) {
             type = "user";
-            profileId = 1; //TODO Set own user id
+            profileId = 0;
             isCurrentUser = true;
         } else {
             type = getArguments().getString("type");
@@ -121,6 +117,7 @@ public class ProfileFragment extends Fragment {
         teamMembersView.setAdapter(new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1,
                 team.getMembers()));
+        //TODO Change to own Adapter later
 
         lastActivitiesView.setAdapter(new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1,
@@ -134,10 +131,10 @@ public class ProfileFragment extends Fragment {
         Context context = getActivity();
 
         if (NetworkX.isAvailable(context)) {
-            if (type == "user") {
-                new GetUserProfileTask(this, profileView, progressIndicator, emptyProfileText).execute();
-            } else if (type == "team") {
-                //TODO
+            if (type.equals("user")) {
+                new GetUserProfileTask(context.getApplicationContext(), profileId, this, profileView, progressIndicator, emptyProfileText).execute();
+            } else if (type.equals("team")) {
+                new GetTeamProfileTask(context.getApplicationContext(), profileId, this, profileView, progressIndicator, emptyProfileText).execute();
             }
         } else {
             emptyProfileText.setText(R.string.no_network_connection);

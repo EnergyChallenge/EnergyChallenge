@@ -69,7 +69,7 @@ class ActivityService {
 	//returns a boolean indicating if an activity can currently be executed by a user
 	def boolean isExecutable(Activity activity, Subject subject) {
 		recentActivities = getRecentlyCompletedActivities(activity.duration, subject)
-		if(recentActivities.find{it.activity.id == activity.id}) {
+		if(!activity.visible || recentActivities.find{it.activity.id == activity.id}) {
 			return false
 		}
 		return true
@@ -92,7 +92,7 @@ class ActivityService {
 		def regularity
 		def completedActivity
 		String countdown
-		
+		//TODO the current display isn't really good
 		//defines how the countdown is displayed
 		PeriodFormatter formatter = new PeriodFormatterBuilder()
 		.printZeroAlways()
@@ -100,6 +100,8 @@ class ActivityService {
 		.appendHours()
 		.appendSeparator(":")
 		.appendMinutes()
+		.appendSeparator(":")
+		.appendSeconds()
 		.toFormatter()
 		
 		if(isExecutable(activity, subject)) {
@@ -162,11 +164,5 @@ class ActivityService {
 		} else {
 			return "default"
 		}
-	}
-	
-	//TODO eventually handle this exception more elegant
-	//handles all NullPointerExceptions occurring in this controller
-	def nullPointerException(final NullPointerException exception){
-		log.error("Exception ocurred. ${exception?.message}", exception)
 	}
 }

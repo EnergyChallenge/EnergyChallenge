@@ -23,7 +23,7 @@ class AppController {
 		login(params.email, params.password);
 		
 		User user;
-		if (params.id != null) {
+		if (params.id != null || params.identity == 0) {
 			user = User.get(params.id);
 		} else {
    			user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
@@ -49,7 +49,6 @@ class AppController {
 		outputToJson([profile: profile]);
 	}
 	
-	//TODO Not working correctly
 	def teamProfile() {
 		
 		login(params.email, params.password);

@@ -72,7 +72,7 @@ public class TeamRankingFragment extends ListFragment {
         Context context = getActivity();
 
         if (NetworkX.isAvailable(context)) {
-            new GetTeamRankingTask(rankingAdapter, progressIndicator, emptyListText).execute();
+            new GetTeamRankingTask(context.getApplicationContext(), rankingAdapter, progressIndicator, emptyListText).execute();
         } else {
             emptyListText.setText(R.string.no_network_connection);
             Toast.makeText(context, R.string.no_network_connection, Toast.LENGTH_SHORT).show();

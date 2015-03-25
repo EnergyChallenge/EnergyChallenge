@@ -2,7 +2,7 @@ package de.unikiel.klik
 
 import geb.Page
 
-class GebLoginPage extends Page{
+class GebStartPage extends Page{
 	
 	//define relative location
 	static url = ""

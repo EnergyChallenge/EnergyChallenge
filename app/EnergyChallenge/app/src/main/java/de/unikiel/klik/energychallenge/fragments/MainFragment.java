@@ -71,7 +71,7 @@ public class MainFragment extends ListFragment implements CompleteActivityDialog
         Context context = getActivity();
 
         if (NetworkX.isAvailable(context)) {
-            new GetFavoredActivitiesTask(activitiesAdapter, progressIndicator, emptyListText).execute();
+            new GetFavoredActivitiesTask(context.getApplicationContext(), activitiesAdapter, progressIndicator, emptyListText).execute();
         } else {
             emptyListText.setText(R.string.no_network_connection);
             Toast.makeText(context, R.string.no_network_connection, Toast.LENGTH_SHORT).show();

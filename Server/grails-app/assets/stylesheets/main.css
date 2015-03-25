@@ -111,8 +111,9 @@ header .inside #userinfo .actions #logoutFrom {
 #container nav #search button {
 	position: absolute;
 	right: 20px;
+	top: 10px;
 	margin: 0;
-    padding: 4px 0;
+    padding: 0;
 	background-color: transparent;
 	box-shadow: none;
     border: 0 none;
