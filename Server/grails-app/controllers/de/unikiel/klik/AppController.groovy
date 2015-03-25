@@ -26,7 +26,7 @@ class AppController {
 	def login() {
 		authenticate(params.email, params.password);
 		User user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
-		outputToJson([user: [id: user.getId, name: user.getName()]]);
+		outputToJson({user: [id: user.id, name: user.getName()]});
 	}
 	
 	def userProfile() {
@@ -239,7 +239,7 @@ class AppController {
 	}
 	
 	private void outputToJson(def data) {
-		render ([authentication: true, result: data]) as JSON;
+		render (authentication: true, result: data) as JSON;
 	}
 	
 	
