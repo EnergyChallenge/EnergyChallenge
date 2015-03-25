@@ -14,6 +14,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.unikiel.klik.energychallenge.Config;
 import de.unikiel.klik.energychallenge.utils.IoX;
 
 public class VerificationTask{
@@ -38,7 +39,7 @@ public class VerificationTask{
                     params.add(new BasicNameValuePair("email", email));
                     params.add(new BasicNameValuePair("password", password));
                     //TODO use the actual server url for the post
-                    HttpPost post = new HttpPost("http://192.168.0.3:8080/Server/auth/appLogin");
+                    HttpPost post = new HttpPost("http://192.168.0.83:8080/Server/auth/appLogin?r=345667");
                     UrlEncodedFormEntity encodedEntity = new UrlEncodedFormEntity(params, "utf-8");
                     post.setEntity(encodedEntity);
                     HttpResponse httpResponse = client.execute(post);
