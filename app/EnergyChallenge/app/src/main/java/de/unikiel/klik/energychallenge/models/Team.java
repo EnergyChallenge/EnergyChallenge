@@ -17,6 +17,14 @@ public class Team {
     private List<String> lastActivities;
 
     public Team(String name, int points, int position,
+                List<String> lastActivities) {
+        this.name = name;
+        this.points = points;
+        this.position = position;
+        this.lastActivities = lastActivities;
+    }
+
+    public Team(String name, int points, int position,
                 List<String> lastActivities, List<String> members) {
         this.name = name;
         this.points = points;

@@ -61,7 +61,7 @@ public class ActivitiesFragment extends ListFragment implements CompleteActivity
         Context context = getActivity();
 
         if (NetworkX.isAvailable(context)) {
-            new GetActivitiesTask(activitiesAdapter, progressIndicator, emptyListText).execute();
+            new GetActivitiesTask(context.getApplicationContext(), activitiesAdapter, progressIndicator, emptyListText).execute();
         } else {
             emptyListText.setText(R.string.no_network_connection);
             Toast.makeText(context, R.string.no_network_connection, Toast.LENGTH_SHORT).show();

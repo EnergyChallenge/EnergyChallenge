@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.fragments.ProfileFragment;
+import de.unikiel.klik.energychallenge.models.Team;
 import de.unikiel.klik.energychallenge.models.User;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
@@ -23,7 +24,7 @@ import de.unikiel.klik.energychallenge.utils.ServerRequest;
  * Refactor later, maybe combine Team/User
  */
 
-public class GetUserProfileTask extends AccessServerTask {
+public class GetTeamProfileTask extends AccessServerTask {
 
     private int profileId;
 
@@ -35,7 +36,7 @@ public class GetUserProfileTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public GetUserProfileTask(Context applicationContext, int profileId, ProfileFragment profileFragment,
+    public GetTeamProfileTask(Context applicationContext, int profileId, ProfileFragment profileFragment,
                               GridLayout profileView, LinearLayout progressIndicator,
                               TextView emptyListText) {
         super(applicationContext);
@@ -48,8 +49,8 @@ public class GetUserProfileTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        //return new ServerRequest("userProfile", 10); //TODO
         return new ServerRequest("teamProfile", profileId);
+        //return new ServerRequest("userProfile", 10); //TODO
     }
 
     @Override
@@ -58,8 +59,6 @@ public class GetUserProfileTask extends AccessServerTask {
         JSONObject profile = response.getJSONObject("profile");
 
         String name = profile.getString("name");
-        String team = profile.getString("team");
-        String institute = profile.getString("institute");
         int points = profile.getInt("points");
         int position = profile.getInt("position");
         ArrayList<String> lastActivities = new ArrayList<>();
@@ -69,7 +68,7 @@ public class GetUserProfileTask extends AccessServerTask {
             lastActivities.add(lastActivitiesInJson.getString(i));
         }
 
-        profileFragment.buildProfile(new User(name, team, institute, points, position, lastActivities));
+        profileFragment.buildProfile(new Team(name, points, position, lastActivities));
     }
 
     @Override

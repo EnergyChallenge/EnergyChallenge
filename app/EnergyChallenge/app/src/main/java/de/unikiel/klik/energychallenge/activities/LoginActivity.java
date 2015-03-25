@@ -15,6 +15,13 @@ import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.tasks.VerificationTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
+/*
+ * TODO
+ * Use CurrentUser Class
+ *
+ */
+
+
 
 /*The initial login activity which is bypassed if the user is already logged in*/
 public class LoginActivity extends Activity {

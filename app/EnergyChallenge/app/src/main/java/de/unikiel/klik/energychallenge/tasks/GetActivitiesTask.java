@@ -1,5 +1,6 @@
 package de.unikiel.klik.energychallenge.tasks;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,9 +22,9 @@ public class GetActivitiesTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public GetActivitiesTask(ActivitiesAdapter activitiesAdapter,
-                              LinearLayout progressIndicator,
-                              TextView emptyListText) {
+    public GetActivitiesTask(Context applicationContext, ActivitiesAdapter activitiesAdapter,
+                              LinearLayout progressIndicator, TextView emptyListText) {
+        super(applicationContext);
         this.activitiesAdapter = activitiesAdapter;
         this.progressIndicator = progressIndicator;
         this.emptyListText = emptyListText;

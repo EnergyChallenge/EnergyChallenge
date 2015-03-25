@@ -45,6 +45,7 @@ public class VerificationTask{
                     HttpEntity responseEntity = httpResponse.getEntity();
                     InputStream inputStream = responseEntity.getContent();
 
+                    
                     //Convert the response to a useful string
                     String responseString = IoX.readInputStream(inputStream, inputStream.toString().length());
                     Log.v("Response from server", responseString);

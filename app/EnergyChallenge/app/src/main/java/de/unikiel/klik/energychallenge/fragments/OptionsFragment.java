@@ -44,16 +44,16 @@ public class OptionsFragment extends PreferenceFragment {
         findPreference("logout").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
 
-                SharedPreferences.Editor editor = preferences.edit();
-                editor.remove("email");
-                editor.remove("password");
-                editor.commit();
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.remove("email");
+            editor.remove("password");
+            editor.commit();
 
-                Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
-                loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(loginIntent);
+            Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
+            loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(loginIntent);
 
-                return true;
+            return true;
             }
         });
 

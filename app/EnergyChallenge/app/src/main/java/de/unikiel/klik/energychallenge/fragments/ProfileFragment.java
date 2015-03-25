@@ -17,16 +17,11 @@ import android.widget.Toast;
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.models.Team;
 import de.unikiel.klik.energychallenge.models.User;
+import de.unikiel.klik.energychallenge.tasks.GetTeamProfileTask;
 import de.unikiel.klik.energychallenge.tasks.GetUserProfileTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
 
-/*
-    TODO
-
-    Rename to ProfileFragment
-
- */
 
 /* Fragment for the users own profile page */
 public class ProfileFragment extends Fragment {
@@ -135,9 +130,9 @@ public class ProfileFragment extends Fragment {
 
         if (NetworkX.isAvailable(context)) {
             if (type == "user") {
-                new GetUserProfileTask(this, profileView, progressIndicator, emptyProfileText).execute();
+                new GetUserProfileTask(context.getApplicationContext(), profileId, this, profileView, progressIndicator, emptyProfileText).execute();
             } else if (type == "team") {
-                //TODO
+                new GetTeamProfileTask(context.getApplicationContext(), profileId, this, profileView, progressIndicator, emptyProfileText).execute();
             }
         } else {
             emptyProfileText.setText(R.string.no_network_connection);
