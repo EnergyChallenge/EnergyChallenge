@@ -49,7 +49,7 @@
             </td>
         </tr>
         <tr>
-            <td>Faculty:</td>
+            <td>Fakultät:</td>
             <td>
                 <select name="institude" >
                     <g:each in="${Insitude.findAll()}" var="institude">
@@ -60,7 +60,7 @@
         </tr>
         <tr>
             <td />
-            <td><input type="submit" value="Save" /></td>
+            <td><input type="submit" value="bearbeiten" /></td>
         </tr>
         </tbody>
     </table>

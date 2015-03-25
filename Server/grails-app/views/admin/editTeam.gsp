@@ -22,7 +22,7 @@
         </tr>
         <tr>
             <td />
-            <td><input type="submit" value="Save" /></td>
+            <td><input type="submit" value="bearbeiten" /></td>
         </tr>
         </tbody>
     </table>

@@ -31,7 +31,7 @@ public class GetUserRankingTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        return new ServerRequest("getUserRanking");
+        return new ServerRequest("userRanking");
     }
 
     @Override

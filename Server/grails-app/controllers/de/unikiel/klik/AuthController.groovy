@@ -1,9 +1,12 @@
 package de.unikiel.klik
 
 import grails.converters.JSON
+import grails.validation.ValidationException
+
 import de.unikiel.klik.model.User;
 import de.unikiel.klik.model.Role;
 import de.unikiel.klik.model.Institute;
+
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.authc.AuthenticationException
 import org.apache.shiro.authc.UsernamePasswordToken
@@ -66,19 +69,19 @@ class AuthController {
 		[institutes: Institute.findAll()]		
 	}
 	def signUp = {
-//		try {
+		try {
 			AuthService.register(params.email, params.firstName, params.lastName, params.password as String, params.password2 as String, params.instituteId as long)
-			forward (controller: "landing", action: "index")
-//		}
-//                catch (AuthenticationException e){
-//                    // Authentication failed, so display the appropriate message
-//                    flash.message = "Registration failed."
-//                }catch(Exception e){
-//            		flash.message = message(code: "login.failed")
-//			//Keep params
-//			def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
-//			forward (action: "register", params: m)
-//		}
+			redirect (controller: "landing", action: "index")
+		}
+                catch (AuthenticationException e){
+                    // Authentication failed, so display the appropriate message
+                    flash.message = "Login schlug fehl."
+                }catch(Exception e){
+            		flash.message = "Registrierung schlug fehl."
+			//Keep params
+			def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+			forward (action: "register", params: m)
+		}
 	}
 	def forgotPassword = {
 		
@@ -86,10 +89,22 @@ class AuthController {
 	def requestPassword = {
 		try {
 			AuthService.requestPasswordChange(params.email)
+			flash.message = "Email wurde versand"
+			redirect(controller: "startpage", action: "index")
 		}catch (Exception e) {
 			def m = [ email: params.email]
+			flash.message = "Fehler"+e.getMessage()
+			redirect(action: "forgotPassword", model: m)
 		}
 		
+	}
+	def changePassword = {
+		try {
+			AuthService.changePassword(params.token, params.email, params.password, params.password2)
+			redirect(controller: "landing", action: "index")
+		}catch(ValidationException e){
+			redirect(action: "forgotPassword", params: params)
+		}
 	}
     def unauthorized = {
         render "You do not have permission to access this page."

@@ -7,7 +7,7 @@
 <body>
 	<h1>Energiesparvorschläge</h1>
 	<p>
-		Reichen Sie neue Vorschläge zum Erergiesparen ein! Als Belohnung gibt es für einen
+		Reichen Sie neue Vorschläge zum energiesparen ein! Als Belohnung gibt es für einen
 		angenommen Vorschlag <strong>2 Punkte</strong>.
 		<g:form action="add">
 			<table class="table">

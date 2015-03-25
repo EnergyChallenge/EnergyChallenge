@@ -17,16 +17,16 @@
     <table>
         <tbody>
         <tr>
-            <td>Subject:</td>
+            <td>Betreff:</td>
             <td><input type="text" name="subject" value="${subject}" /></td>
         </tr>
         <tr>
-            <td>Message Body:</td>
+            <td>Nachricht:</td>
             <td><textarea name="message">${message}</textarea></td>
         </tr>
         <tr>
             <td />
-            <td><input type="submit" value="Send" /></td>
+            <td><input type="submit" value="Abschicken" /></td>
         </tr>
         </tbody>
     </table>

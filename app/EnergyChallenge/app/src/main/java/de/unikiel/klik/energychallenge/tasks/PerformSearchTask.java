@@ -4,9 +4,14 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.adapters.SearchResultAdapter;
@@ -31,7 +36,9 @@ public class PerformSearchTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        return new ServerRequest("performSearch");
+        BasicNameValuePair[] parameters = {new BasicNameValuePair("query","Max")};//TODO
+        //BasicNameValuePair[] parameters = {new BasicNameValuePair("query","Max")};//TODO
+        return new ServerRequest("search", new ArrayList<BasicNameValuePair>(Arrays.asList(parameters)));
     }
 
     @Override

@@ -123,12 +123,87 @@ class InitService {
 		true, //33
 		]
 	
-	// CAU Institutions
+	// CAU Institute
 	static def INSTITUTES = [
+		// Rechtswissenschaftliche FakultÃ¤t
+		"Hermann Kantorowicz-Institut fÃ¼r juristische Grundlagenforschung",
+		"Walther-SchÃ¼cking-Institut fÃ¼r Internationales Recht",
+		"Institut fÃ¼r Kriminalwissenschaften",
+		"Institut fÃ¼r Osteuropäisches Recht",
+		"Institut fÃ¼r Wirtschafts- und Steuerrecht",
+		"Institut fÃ¼r Europäisches und Internationales Privat- und Verfahrensrecht",
+		"Institut fÃ¼r Sozialrecht und Gesundheitsrecht",
+		"Institut fÃ¼r Öffentliches Wirtschaftsrecht",
+		// Mathematisch-Naturwissenschaftliche FakultÃ¤t
+		"Leibniz-Institut fÃ¼r die Pädagogik der Naturwissenschaften und Mathematik (IPN)",
+		"Mathematisches Seminar",
+		"Institut fÃ¼r Experimentelle und Angewandte Physik (IEAP)",
+		"Institut fÃ¼r Theoretische Physik und Astrophysik (ITAP",
+		"Institut fÃ¼r Anorganische Chemie",
+		"Otto Diels-Institut fÃ¼r Organische Chemie",
+		"Institut fÃ¼r Physikalische Chemie",
+		"Pharmazeutisches Institut",
+		"Botanisches Institut",
+		"Institut fÃ¼r Allgemeine Mikrobiologie",
+		"Zoologische Institut und Zoologisches Museum",
+		"Institut fÃ¼r Polarökologie",
+		"Geographisches Institut",
+		"Institut fÃ¼r Ökosystemforschung",
+		"Institut fÃ¼r Ur- und Frühgeschichte",
+		"Institut fÃ¼r Geowissenschaften",
+		"GEOMAR Helmholtz-Zentrum für Ozeanforschung Kiel",
+		"Der Botanische Garten (Museum)",
+		"Das Zoologische Museum",
+		"Geologischen und Mineralogischen Museum",
+		"Leibniz-Labor fÃ¼r Altersbestimmung und Isotopenforschung",
+		"Zentrum fÃ¼r Biochemie und Molekularbiologie (BiMo)",
+		"Zentrum fÃ¼r Molekulare Biowissenschaften (ZMB)",
+		"Forschungs- und Technologiezentrum WestkÃ¼ste (FTZ)",
+		// Agrar- und ErnÃ¤hrungswissenschaftliche FakultÃ¤t
+		"Institut fÃ¼r Pflanzenernährung und Bodenkunde",
+		"Institut fÃ¼r Pflanzenbau und PflanzenzÃ¼chtung",
+		"Institut fÃ¼r Phytopathologie",
+		"Institut fÃ¼r Tierernährung und Stoffwechselphysiologie",
+		"Institut fÃ¼r Tierzucht und Tierhaltung",
+		"Institut fÃ¼r Landwirtschaftliche Verfahrenstechnik",
+		"Institut fÃ¼r Agrarökonomie",
+		"Institut fÃ¼r HumanernÃ¤hrung und Lebensmittelkunde",
+		"Institut fÃ¼r Ernährungswirtschaft und Verbrauchslehre",
+		"Institut fÃ¼r Natur- und Ressourcenschutz",
+		// Philosophische Fakultät
+		"Institut für Pädagogik",
+		"Philosophisches Seminar",
+		"Institut für Psychologie",
+		"Institut für Sozialwissenschaften",
+		"Institut für Sportwissenschaft",
+		"Englisches Seminar",
+		"Germanistisches Seminar",
+		"Institut für Neuere Deutsche Literatur und Medien",
+		"Institut für Klassische Altertumskunde",
+		"Institut für Skandinavistik, Frisistik und Allgemeine Sprachwissenschaft (ISFAS)",
+		"Romanisches Seminar",
+		"Institut für Slavistik",
+		"Seminar für Europäische Ethnologie/Volkskunde",
+		"Historisches Seminar",
+		"Kunsthistorisches Institut",
+		"Seminar für Orientalistik",
+		"Musikwissenschaftliches Institut",
+		"Zentrum für Schlüsselqualifikationen (ZfS)",
+		"Zentrum für Lehrerbildung (ZfL)",
+		"Zentrum für Asiatische und Afrikanische Studien (ZAAS)",
+		"Zentrum für Osteuropastudien (ZOS)",
+		"Zentrum für Nordamerikastudien (ZNAS)",
+		"Chinazentrum",
+		"Zentrum für Rechtspsychologie, Kriminalwissenschaften und forensische Psychopathologie",
+		"Gustav-Radbruch-Netzwerk für Philosophie und Ethik der Umwelt",
+		// Theologische Fakultät
+		
 		// Technische FakultÃ¤t
 		"Institut fÃ¼r Elektrotechnik und Informationstechnik",
 		"Institut fÃ¼r Informatik",
-		"Institut fÃ¼r Materialwissenschaft"
+		"Institut fÃ¼r Materialwissenschaft",
+	
+		"Anderes",
 	]
 	
 	static void initKlikActivities() {

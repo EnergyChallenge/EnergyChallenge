@@ -77,11 +77,11 @@ $(document).ready(function(){
 			<div id="chart1" style="height: 300px; width: 350px;"></div>
 		</div>
 		<div style="position: absolute; top: 400px; left: -30px;">
-			<h1>Energiespar Punkte</h1>
+			<h1>Gesammelte Energiesparpunkte</h1>
 			<div id="chart3" style="height: 300px; width: 350px;"></div>
 		</div>
 		<div style="position: absolute; top: 0px; right: -30px;">
-			<h1>Beliebteste Aktivitaeten</h1>
+			<h1>Beliebteste Aktivitäten</h1>
 			<div id="chart2" style="height: 750px; width: 350px;"></div>
 		</div>
 		<div style="position: absolute; bottom: 0px; right: 0px;">
