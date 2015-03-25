@@ -231,7 +231,7 @@ class AppController {
 	
 	
 	
-	//TODO Merge with ProfilController
+	//TODO Merge with ProfileController
 	private int getPositionOfUser(User user){
 		def ranking =  [];
 		for (u in User.findAll()) {

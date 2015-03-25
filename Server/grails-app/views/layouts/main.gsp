@@ -1,7 +1,9 @@
 <g:applyLayout name="base">
 
 	<head>
-		<asset:stylesheet src="main.css" />    
+		<asset:stylesheet src="main.css" />
+		<asset:javascript src="jqplot/jquery.min.js" />
+		<asset:javascript src="fixedNav.js" />    
 		<g:layoutHead />
 	</head>
 	<content tag="logo">
@@ -17,11 +19,11 @@
 			<div id="userinfo">
 				<div class="profile">
 					<a href="${createLink(controller:'user', action:'edit')}" class="avatar">
-						<img src="${createLink(controller:'profil', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
+						<img src="${createLink(controller:'profile', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
 					</a>
 					<div class="name">
-						<!-- TODO Change link to profile / not profil -->
-						<a href="${createLink(controller:'profil')}">
+						<!-- TODO Change link to profile / not profile -->
+						<a href="${createLink(controller:'profile')}">
 							${user.getName()}
 						</a>
 					</div>				
@@ -29,9 +31,9 @@
 				<div class="actions">
 					<div class="stats">
 						<a href="${createLink(controller:'message', action:'index')}" class="inbox">
-							<i class="fa fa-bell"></i>
 							<span class="value">
 								<g:if test="${user.getMessages().size() != 0}">
+									<i class="fa fa-envelope"></i>
 									${user.getMessages().size()}
 								</g:if>
 							</span>
@@ -73,7 +75,7 @@
 						<li><a href="${createLink(controller:'Admin', action: 'teams')}" >Teams verwalten</a></li>
 						<li><a href="${createLink(controller:'Admin', action: 'activities')}" >Aktivitäten verwalten</a></li>
 						<li><a href="${createLink(controller:'Admin', action: 'proposals')}" >Vorschläge verwalten</a></li>
-						<li><a href="${createLink(controller:'Admin', action: 'message')}" >Email Senden</a></li>
+						<li><a href="${createLink(controller:'Admin', action: 'message')}" >E-Mail senden</a></li>
 					</ul>
 				</g:if>
 			</nav>

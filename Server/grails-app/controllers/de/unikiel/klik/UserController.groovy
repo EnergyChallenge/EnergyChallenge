@@ -21,7 +21,7 @@ class UserController {
   def index() {
     //User user = User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal());
     //[user:user]
-	redirect(controller: "profil")
+	redirect(controller: "profile")
   }
 
   def edit() {
@@ -39,14 +39,14 @@ class UserController {
 
   def uploadAvatar() {
     Subject subject = SecurityUtils.subject
-    User user = User.findByEmail(subject.getPrincipal()); //TODO
+    User user = User.findByEmail(subject.getPrincipal());
     def file = request.getFile('avatar')
     try{
       UserService.setAvatar(file,subject) 
       flash.message = "Avatar (${user.avatarType}, ${user.avatar.size()} bytes) uploaded."
       //redirect(action:'show',model:[user:user])
     }catch(ValidationException ex){
-      //TODO
+      flash.message = "Upload ist fehlgeschlagen"
     }
       redirect(action:'edit')
   }
@@ -55,7 +55,7 @@ class UserController {
   def joinTeam() {
         //Get the user service to join a team
         UserService.setTeam(params.id as long, SecurityUtils.subject)
-        redirect(controller: "profil", action: "index")
+        redirect(controller: "profile", action: "index")
   }
 
   def newTeam() {

@@ -15,7 +15,6 @@
 <asset:stylesheet src="jqplot/jquery.jqplot.css" />
 <g:javascript library='jquery' />
 <!--[if lt IE 9]><asset:javascript src="jqplot/excanvas.js"/><![endif]-->
-<asset:javascript src="jqplot/jquery.min.js" />
 <asset:javascript src="jqplot/jquery.jqplot.min.js" />
 <asset:javascript src="jqplot/plugins/jqplot.canvasTextRenderer.min.js" />
 <asset:javascript
@@ -86,7 +85,7 @@ $(document).ready(function(){
 			<div id="chart2" style="height: 750px; width: 350px;"></div>
 		</div>
 		<div style="position: absolute; bottom: 0px; right: 0px;">
-			<g:link action="exportCsv"> Download <asset:image src="download1.png" alt="download" /> </g:link>
+			<g:link action="exportCsv"> Download <i class="fa fa-download"></i> </g:link>
 		</div>
 
 	</div>

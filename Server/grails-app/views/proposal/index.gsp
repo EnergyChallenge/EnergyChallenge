@@ -6,9 +6,10 @@
 <asset:stylesheet src="table.css"/>
 </head>
 <body>
-	<h1>
-		Hier kannst du neue Vorschläge einreichen und wenn sie angenommen werden bekommst du <em>2 Punkte<em/>!
-	</h1>
+	<h1>Energiesparvorschläge</h1>
+	<p>
+		Reichen Sie neue Vorschläge zum Erergiesparen ein! Als Belohnung gibt es für einen
+		angenommen Vorschlag <strong>2 Punkte</strong>.
 	<g:form action="add">
 		<table class="table">
 			<tbody>
@@ -28,7 +29,7 @@
 				</tr>
 				<tr>
 					<td />
-					<td><input type="submit" value="add" /></td>
+					<td><input type="submit" value="Einreichen" /></td>
 				</tr>
 			</tbody>
 		</table>
@@ -46,7 +47,6 @@
 		</thead>
 		<tbody>
 			<g:each in="${proposals}" var="proposal">
-				<%-- TODO Link to Proposal --%>
 				<tr>
 					<td>
                                                 <a href="${createLink( action: 'view', id: proposal.id)}">
