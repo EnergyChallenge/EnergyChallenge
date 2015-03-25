@@ -48,7 +48,6 @@ public class GetUserProfileTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        //return new ServerRequest("userProfile", 10); //TODO
         return new ServerRequest("userProfile", profileId);
     }
 

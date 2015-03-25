@@ -31,7 +31,7 @@ DELETE!!!
             android:maxLines="1"
             android:scrollHorizontally="true"
             android:drawableRight="@drawable/ic_action_search_small"
-            android:hint="@string/search_queryHint"/>
+            android:hint="suchen"/>
 
         <!-- List of search results -->
         <ListView
