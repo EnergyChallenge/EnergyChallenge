@@ -57,9 +57,20 @@
             android:name=".services.NotificationService"
             android:enabled="true"
             android:exported="true"
-            android:icon="@drawable/temp_avatar"
             android:label="@string/notificationServiceTitle" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
         </service>
+
+        <receiver
+            android:name=".receivers.NotificationReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="de.unikiel.klik.energychallenge.NotificationReceiver" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
