@@ -82,6 +82,7 @@ class ProfileController {
 	   for (member in team.getMembers()) {
 		   members << [name: member.getName(), id: member.id];
 	   }
+	   members.sort {it.name}
 	   def lastActivities = team.getCompletedActivitys() 
            def recentActivities = lastActivities.sort{-it.completedActivity.getDateCreated().getMillis()}
            if (recentActivities.size() > 10){
