@@ -27,8 +27,8 @@ public class CompleteActivityTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        //return new ServerRequest("completeActivity", activity.getId()); //TODO
-        return new ServerRequest("completeActivity", 3); //TODO
+        return new ServerRequest("completeActivity", activity.getId());
+        //return new ServerRequest("completeActivity", 3); //TODO
     }
 
     @Override

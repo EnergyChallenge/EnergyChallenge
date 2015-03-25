@@ -23,6 +23,7 @@ import java.util.List;
 
 import de.unikiel.klik.energychallenge.Config;
 import de.unikiel.klik.energychallenge.utils.CurrentUser;
+import de.unikiel.klik.energychallenge.utils.IoX;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 /*
@@ -112,12 +113,21 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         if (serverRequest.getRequestData() != null) {
             parameters.add(new BasicNameValuePair("request", serverRequest.getRequestData().toString()));
         }
+
+        //TODO
+        Log.v("email",currentUser.getEmail());
+        Log.v("paswort",currentUser.getPassword());
+
         parameters.add(new BasicNameValuePair("email", currentUser.getEmail())); //TODO  WORKING?
         parameters.add(new BasicNameValuePair("password", currentUser.getPassword())); //TODO WORKING?
+        //parameters.add(new BasicNameValuePair("email", "post@soeren-henning.de")); //TODO
+        //parameters.add(new BasicNameValuePair("password", "pass")); //TODO
         //parameters.add(new BasicNameValuePair("JSESSIONID", "")); //TODO
 
         UrlEncodedFormEntity encodedEntity = new UrlEncodedFormEntity(parameters, "utf-8");
+        Log.v("encodedEntity", IoX.readInputStream(encodedEntity.getContent(), 10000)); //TODO
         post.setEntity(encodedEntity);
+        //Log.v("post", post.); //TODO
         HttpResponse httpResponse = client.execute(post);
         HttpEntity responseEntity = httpResponse.getEntity();
         return EntityUtils.toString(responseEntity, HTTP.UTF_8);

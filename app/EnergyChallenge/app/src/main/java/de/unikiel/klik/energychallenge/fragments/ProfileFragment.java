@@ -4,6 +4,7 @@ package de.unikiel.klik.energychallenge.fragments;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,9 @@ public class ProfileFragment extends Fragment {
             type = getArguments().getString("type");
             profileId = getArguments().getInt("id");
         }
+
+        Log.v("type", type);
+        Log.v("id", Integer.toString(profileId));
 
         profileView = (GridLayout) view.findViewById(R.id.profile_container);
         progressIndicator = (LinearLayout) view.findViewById(R.id.progress_container);
@@ -129,9 +133,9 @@ public class ProfileFragment extends Fragment {
         Context context = getActivity();
 
         if (NetworkX.isAvailable(context)) {
-            if (type == "user") {
+            if (type.equals("user")) {
                 new GetUserProfileTask(context.getApplicationContext(), profileId, this, profileView, progressIndicator, emptyProfileText).execute();
-            } else if (type == "team") {
+            } else if (type.equals("team")) {
                 new GetTeamProfileTask(context.getApplicationContext(), profileId, this, profileView, progressIndicator, emptyProfileText).execute();
             }
         } else {
