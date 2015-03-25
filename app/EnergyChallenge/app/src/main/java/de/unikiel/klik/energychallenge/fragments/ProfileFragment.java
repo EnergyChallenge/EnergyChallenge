@@ -55,15 +55,12 @@ public class ProfileFragment extends Fragment {
 
         if (getArguments() == null) {
             type = "user";
-            profileId = 1; //TODO Set own user id
+            profileId = 0;
             isCurrentUser = true;
         } else {
             type = getArguments().getString("type");
             profileId = getArguments().getInt("id");
         }
-
-        Log.v("type", type);
-        Log.v("id", Integer.toString(profileId));
 
         profileView = (GridLayout) view.findViewById(R.id.profile_container);
         progressIndicator = (LinearLayout) view.findViewById(R.id.progress_container);
@@ -120,6 +117,7 @@ public class ProfileFragment extends Fragment {
         teamMembersView.setAdapter(new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1,
                 team.getMembers()));
+        //TODO Change to own Adapter later
 
         lastActivitiesView.setAdapter(new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1,

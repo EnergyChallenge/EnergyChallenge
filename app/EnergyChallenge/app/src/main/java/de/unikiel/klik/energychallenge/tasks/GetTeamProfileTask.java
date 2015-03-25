@@ -62,13 +62,19 @@ public class GetTeamProfileTask extends AccessServerTask {
         int points = profile.getInt("points");
         int position = profile.getInt("position");
         ArrayList<String> lastActivities = new ArrayList<>();
+        ArrayList<String> members = new ArrayList<>();
 
         JSONArray lastActivitiesInJson = profile.getJSONArray("lastActivities");
         for(int i = 0; i < lastActivitiesInJson.length(); i++) {
             lastActivities.add(lastActivitiesInJson.getString(i));
         }
 
-        profileFragment.buildProfile(new Team(name, points, position, lastActivities));
+        JSONArray membersInJson = profile.getJSONArray("members");
+        for(int i = 0; i < lastActivitiesInJson.length(); i++) {
+            members.add(membersInJson.getString(i));
+        }
+
+        profileFragment.buildProfile(new Team(name, points, position, lastActivities, members));
     }
 
     @Override
