@@ -36,6 +36,10 @@
 		<footer>
 			<div class="inside">
 				<a href="http://www.uni-kiel.de/suchen/impressum.shtml">Impressum</a>
+				 
+				<a href="http://www.uni-kiel.de/suchen/kontakt.shtml">Kontakt</a>
+				 
+				<a href="http://www.uni-kiel.de/suchen/impressum.shtml#datenschutz">Datenschutz</a>
 			</div>
 		</footer>
 	</div>
