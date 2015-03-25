@@ -76,7 +76,7 @@ public class ProposalsFragment extends ListFragment {
         Context context = getActivity();
 
         if (NetworkX.isAvailable(context)) {
-            new GetProposalsTask(proposalsAdapter, progressIndicator, emptyListText).execute();
+            new GetProposalsTask(context.getApplicationContext(), proposalsAdapter, progressIndicator, emptyListText).execute();
         } else {
             emptyListText.setText(R.string.no_network_connection);
             Toast.makeText(context, R.string.no_network_connection, Toast.LENGTH_SHORT).show();

@@ -86,7 +86,7 @@ public class UserRankingFragment extends ListFragment {
         Context context = getActivity();
 
         if (NetworkX.isAvailable(context)) {
-            new GetUserRankingTask(rankingAdapter, progressIndicator, emptyListText).execute();
+            new GetUserRankingTask(context.getApplicationContext(), rankingAdapter, progressIndicator, emptyListText).execute();
         } else {
             emptyListText.setText(R.string.no_network_connection);
             Toast.makeText(context, R.string.no_network_connection, Toast.LENGTH_SHORT).show();

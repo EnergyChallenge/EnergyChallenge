@@ -18,8 +18,8 @@ public class CompleteActivityTask extends AccessServerTask {
 
     private ActivitiesItem activity;
 
-    public CompleteActivityTask(Context context, ActivitiesAdapter activitiesAdapter,
-                                ActivitiesItem activity) {
+    public CompleteActivityTask(Context context, ActivitiesAdapter activitiesAdapter, ActivitiesItem activity) {
+        super(context.getApplicationContext());
         this.context = context;
         this.activitiesAdapter = activitiesAdapter;
         this.activity = activity;
@@ -27,8 +27,8 @@ public class CompleteActivityTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
+        return new ServerRequest("completeActivity", activity.getId());
         //return new ServerRequest("completeActivity", 3); //TODO
-        return new ServerRequest("completeActivity", 3); //TODO
     }
 
     @Override

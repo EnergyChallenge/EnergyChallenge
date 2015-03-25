@@ -1,5 +1,6 @@
 package de.unikiel.klik.energychallenge.tasks;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -21,6 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.unikiel.klik.energychallenge.Config;
+import de.unikiel.klik.energychallenge.utils.CurrentUser;
+import de.unikiel.klik.energychallenge.utils.IoX;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 /*
@@ -34,7 +37,13 @@ import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
 
+    private CurrentUser currentUser;
+
     private static final String TAG = "AcessServerTask"; //Tag for Logs
+
+    public AccessServerTask(Context applicationContext) {
+        currentUser = new CurrentUser(applicationContext);
+    }
 
     protected abstract ServerRequest createServerRequest();
 
@@ -64,11 +73,11 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
     @Override
     protected final void onPostExecute(String result) {
 
-        //TOODO
+        //TODO - Delete if everythings fine
         Log.v("Repsonse", result);
 
-
-        if (result == "Error") {
+        //TODO equals right? Not == ?
+        if (result.equals("Error")) {
             Log.w(TAG, "Could not access Server!");
             handleResponseError();
         }
@@ -90,9 +99,9 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         if (serverRequest.isIdSet()) {
             requestUrl += "/" + serverRequest.getId();
         }
-        requestUrl += "?i=" + Long.toString(System.currentTimeMillis()/1000); //TODO
+        requestUrl += "?i=" + Long.toString(System.currentTimeMillis()/1000); //TODO to utils
 
-        //Log.v("URL", requestUrl); //TODO
+        Log.v("URL", requestUrl); //TODO Delete if everything s fine
 
         DefaultHttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(requestUrl);
@@ -104,12 +113,21 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         if (serverRequest.getRequestData() != null) {
             parameters.add(new BasicNameValuePair("request", serverRequest.getRequestData().toString()));
         }
-        parameters.add(new BasicNameValuePair("email", "user@example.com")); //TODO
-        parameters.add(new BasicNameValuePair("password", "password")); //TODO
-        parameters.add(new BasicNameValuePair("JSESSIONID", "")); //TODO
+
+        //TODO
+        Log.v("email",currentUser.getEmail());
+        Log.v("paswort",currentUser.getPassword());
+
+        parameters.add(new BasicNameValuePair("email", currentUser.getEmail())); //TODO  WORKING?
+        parameters.add(new BasicNameValuePair("password", currentUser.getPassword())); //TODO WORKING?
+        //parameters.add(new BasicNameValuePair("email", "post@soeren-henning.de")); //TODO
+        //parameters.add(new BasicNameValuePair("password", "pass")); //TODO
+        //parameters.add(new BasicNameValuePair("JSESSIONID", "")); //TODO
 
         UrlEncodedFormEntity encodedEntity = new UrlEncodedFormEntity(parameters, "utf-8");
+        Log.v("encodedEntity", IoX.readInputStream(encodedEntity.getContent(), 10000)); //TODO
         post.setEntity(encodedEntity);
+        //Log.v("post", post.); //TODO
         HttpResponse httpResponse = client.execute(post);
         HttpEntity responseEntity = httpResponse.getEntity();
         return EntityUtils.toString(responseEntity, HTTP.UTF_8);
