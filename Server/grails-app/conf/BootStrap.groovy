@@ -18,6 +18,9 @@ class BootStrap {
 			def userRole = new Role(name: "user")
 			userRole.addToPermissions("*:*")
 			userRole.save();
+            def adminRole = new Role(name: "admin")
+            adminRole.addToPermissions("*:*")
+            adminRole.save();
 			Institute institute = new Institute(name: "none")
 			institute.save()
 			def user = new User(email:"user@example.com", passwordHash: new Sha256Hash("password").toHex(), firstName: "Max", lastName: "Mustermann", institute: institute)
