@@ -223,6 +223,9 @@ class AppController {
 		//TODO
 	}
 	
+	def avatar() {
+		redirect(controller: "profile", action: "avatar", id: params.id)
+	}
 	
 	
 	private void authenticate(String email, String password) {
@@ -233,7 +236,7 @@ class AppController {
 		}
 		catch (AuthenticationException ex){
 			//Login failed
-			def response = [authentication: false, result: null]
+			def response = [authentication: false, result: [loginFailed: true]]
 			render response as JSON
 		}
 	}
@@ -265,5 +268,7 @@ class AppController {
 		ranking.sort { -it.points } //Sort DESC
 		return ranking.indexOf([name: team.getName(), id: team.id, points: team.getPoints()])+1
 	}
+	
+	private class Empty {}
 	
 }
