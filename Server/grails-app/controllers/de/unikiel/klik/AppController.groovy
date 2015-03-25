@@ -167,8 +167,10 @@ class AppController {
 	def messages() {
 		
 		login(params.email, params.password);
-		
-		//TODO
+
+        def notifications = ActivityNotification.findAll { ActivityNotification.belongsTo = User.findByEmail(params.email) }
+
+        render notifications as JSON
 	}
 	
 	def search() {
