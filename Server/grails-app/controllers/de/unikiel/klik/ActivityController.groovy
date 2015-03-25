@@ -65,4 +65,11 @@ class ActivityController {
 	def getActivityCountdown(activity) {
 		ActivityService.getActivityCountdown(activity, SecurityUtils.subject)
 	}
+	
+	//TODO eventually handle this exception more elegant
+	//handles all NullPointerExceptions occurring in this controller
+	def nullPointerException(final NullPointerException exception){
+		log.error("Exception ocurred. ${exception?.message}", exception)
+		render view: "error", model: [exception: exception]
+	}
 }

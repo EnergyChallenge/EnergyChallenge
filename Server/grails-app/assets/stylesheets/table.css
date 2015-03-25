@@ -5,13 +5,17 @@ table.list  {
 	width: 100%;
 	height: 100%;
 	box-shadow: 10px 10px 5px #888888;
-	border: 1px solid #000000;
 	border-spacing: 0;
+	text-align: left;
 }
 
-table.list thead tr td {
-	background-color: #ffffff;
-	color: #000000;
+table.list thead tr {
+	background-color: #8e217d;
+	color: #ffffff;
+}
+
+table.list thead th {
+	padding: 6px;
 }
 
 table.list tbody tr:nth-child(odd) {
@@ -21,26 +25,16 @@ table.list tbody tr:nth-child(odd) {
 table.list tbody tr:nth-child(even) {
 	background-color: #ffffff;
 }
-table.list tbody tr:hover {
-	background-color: #999999;
-}
 
 table.list td {
 	vertical-align: middle;
-	border: 1px solid #000000;
-	border-width: 0px 1px 1px 0px;
-	text-align: left;
-	padding: 5px;
-	font-size: 10px;
-	font-family: Arial;
+	/*border-width: 0px 1px 1px 0px;*/
+	padding: 6px;
 	font-weight: normal;
 	color: #000000;
 }
+
 table.list td.numeration{
 	width: 20px;
-	text-align: right;
-}
-table.list td:Last-CHILD{
-	width: 10%;
 	text-align: right;
 }

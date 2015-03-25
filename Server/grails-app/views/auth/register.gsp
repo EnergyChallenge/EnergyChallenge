@@ -17,23 +17,23 @@
           <td><input type="text" name="email" value="${email}" /></td>
         </tr>
         <tr>
-          <td>First Name:</td>
+          <td>Vorname:</td>
           <td><input type="text" name="firstName" value="${firstName}" /></td>
         </tr>
         <tr>
-          <td>Last Name:</td>
+          <td>Nachname:</td>
           <td><input type="text" name="lastName" value="${lastName}" /></td>
         </tr>
         <tr>
-          <td>Password:</td>
+          <td>Passwort:</td>
           <td><input type="password" name="password" value="" /></td>
         </tr>
         <tr>
-          <td>Password:</td>
+          <td>Passwort wiederholen:</td>
           <td><input type="password" name="password2" value="" /></td>
         </tr>
         <tr>
-          <td>Faculty:</td>
+          <td>Fakultät:</td>
           <td>
           <td><select name="instituteId" >
           <g:each in="${institutes}" var="institute">

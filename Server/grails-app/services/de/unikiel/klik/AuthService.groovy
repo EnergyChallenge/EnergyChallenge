@@ -89,10 +89,10 @@ class AuthService {
                 user.save(failOnError: true)
                 login(email,password,false)
             }else{
-                throw new ValidationException()
+                //throw new ValidationException()
             }
        }else{
-            throw new ValidationException()
+            //throw new ValidationException()
        }
    }
 }
