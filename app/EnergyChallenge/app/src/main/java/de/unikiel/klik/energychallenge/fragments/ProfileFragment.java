@@ -17,7 +17,7 @@ import android.widget.Toast;
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.models.Team;
 import de.unikiel.klik.energychallenge.models.User;
-import de.unikiel.klik.energychallenge.tasks.GetProfileTask;
+import de.unikiel.klik.energychallenge.tasks.GetUserProfileTask;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
 
@@ -134,7 +134,11 @@ public class ProfileFragment extends Fragment {
         Context context = getActivity();
 
         if (NetworkX.isAvailable(context)) {
-            new GetProfileTask(this, profileView, progressIndicator, emptyProfileText).execute();
+            if (type == "user") {
+                new GetUserProfileTask(this, profileView, progressIndicator, emptyProfileText).execute();
+            } else if (type == "team") {
+                //TODO
+            }
         } else {
             emptyProfileText.setText(R.string.no_network_connection);
             Toast.makeText(context, R.string.no_network_connection, Toast.LENGTH_SHORT).show();

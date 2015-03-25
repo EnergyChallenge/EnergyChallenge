@@ -8,6 +8,8 @@ import org.apache.shiro.SecurityUtils
 import org.joda.time.DateTime
 import org.joda.time.Duration;
 import org.joda.time.Period
+import org.joda.time.format.DateTimeFormat
+import org.joda.time.format.DateTimeFormatter
 import org.joda.time.format.PeriodFormatter
 import org.joda.time.format.PeriodFormatterBuilder
 
@@ -87,18 +89,17 @@ class ActivityService {
 		
 		def endOfCountdown
 		def currentTime
-		def timeInterval
+		def regularity
 		def completedActivity
 		String countdown
 		
+		//defines how the countdown is displayed
 		PeriodFormatter formatter = new PeriodFormatterBuilder()
 		.printZeroAlways()
 		.minimumPrintedDigits(2)
 		.appendHours()
 		.appendSeparator(":")
 		.appendMinutes()
-		.appendSeparator(":")
-		.appendSeconds()
 		.toFormatter()
 		
 		if(isExecutable(activity, subject)) {
@@ -106,28 +107,26 @@ class ActivityService {
 		} else {
 			recentActivities = getRecentlyCompletedActivities(activity.duration, subject)
 			completedActivity = recentActivities?.find{it.activity.id == activity.id}
-			timeInterval = getTimeInterval(completedActivity, activity.duration, subject)
+			regularity = getRegularity(completedActivity, activity.duration, subject)
 			currentTime = new DateTime()
-			switch(timeInterval) {
-				//TODO handle this more elegant
-				case "once":
-					endOfCountdown = new DateTime(long.MAX_VALUE)
-					break
+			switch(regularity) {
 				
-				case "hour":
+				case "hourly":
 					endOfCountdown = new DateTime(completedActivity.dateCreated.plus(activity.duration))
 					Period period = new Period(currentTime, endOfCountdown)
 					countdown = formatter.print(period)
 					break
 				
-				case "today":
+				case "daily":
 					endOfCountdown = new DateTime(completedActivity.dateCreated.plus(activity.duration).withTimeAtStartOfDay())
 					Period period = new Period(currentTime, endOfCountdown)
 					countdown = formatter.print(period)
 					break
 				
 				default:
-					countdown = "> 1 Tag"
+					endOfCountdown = new DateTime(completedActivity.dateCreated.plus(activity.duration))
+					DateTimeFormatter fmt = DateTimeFormat.forPattern("dd.MM.yyyy")
+					countdown = fmt.print(endOfCountdown)
 			}
 		}
 		return countdown
@@ -136,25 +135,30 @@ class ActivityService {
 	//returns a collection of Activities that were completed during the critical time
 	def getRecentlyCompletedActivities(Duration duration, Subject subject) {
 		currentUser = User.findByEmail(subject.getPrincipal())
+		def DateTime criticalPointOfTime
 		def currentTime = new DateTime()
-		def DateTime criticalPointOfTime = new DateTime(currentTime.minus(duration))
+		if(duration.getStandardHours() < 24) {
+			criticalPointOfTime = new DateTime(currentTime.minus(duration))
+		} else {
+			def days = duration.getStandardDays().toInteger() - 1
+			criticalPointOfTime = new DateTime(currentTime.minusDays(days).withTimeAtStartOfDay())
+		}
 		def recentlyCompletedActivities = currentUser.completedActivities?.collect().findAll {it.dateCreated.isAfter(criticalPointOfTime)}
 		
 		return recentlyCompletedActivities
 	}
 	
-	//TODO add once executable activities
 	//returns a string indicating how long the time interval is
-	def String getTimeInterval(CompletedActivity completedActivity, Duration duration, Subject subject) {
+	def String getRegularity(CompletedActivity completedActivity, Duration duration, Subject subject) {
 		def endPoint = new DateTime(completedActivity.dateCreated.plus(duration))
 		def endPointAsMillis = endPoint.getMillis()
 		def currentTime = new DateTime()
 		def currentTimeAsMillis = currentTime.getMillis()
 		def criticalDuration = new Duration(endPointAsMillis - currentTimeAsMillis)
-		if(duration.getStandardHours() < 24 || endPoint.isBefore(currentTime.plusDays(1).withTimeAtStartOfDay())) {
-			return "hour"
+		if(duration.getStandardHours() < 24) {
+			return "hourly"
 		} else if(criticalDuration.getStandardHours() < 24) {
-			return "today"
+			return "daily"
 		} else {
 			return "default"
 		}

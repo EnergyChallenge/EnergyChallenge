@@ -23,7 +23,7 @@ import de.unikiel.klik.energychallenge.utils.ServerRequest;
  * Refactor later, maybe combine Team/User
  */
 
-public class GetProfileTask extends AccessServerTask {
+public class GetUserProfileTask extends AccessServerTask {
 
     private ProfileFragment profileFragment;
 
@@ -33,9 +33,9 @@ public class GetProfileTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public GetProfileTask(ProfileFragment profileFragment,
-                          GridLayout profileView, LinearLayout progressIndicator,
-                          TextView emptyListText) {
+    public GetUserProfileTask(ProfileFragment profileFragment,
+                              GridLayout profileView, LinearLayout progressIndicator,
+                              TextView emptyListText) {
         this.profileFragment = profileFragment;
         this.profileView = profileView;
         this.progressIndicator = progressIndicator;
@@ -44,7 +44,8 @@ public class GetProfileTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        return new ServerRequest("getProfile");
+        return new ServerRequest("userProfile", 10); //TODO
+        //return new ServerRequest("userProfile", 10);
     }
 
     @Override
@@ -52,7 +53,6 @@ public class GetProfileTask extends AccessServerTask {
 
         JSONObject profile = response.getJSONObject("profile");
 
-        int id = profile.getInt("id");
         String name = profile.getString("name");
         String team = profile.getString("team");
         String institute = profile.getString("institute");
@@ -65,7 +65,7 @@ public class GetProfileTask extends AccessServerTask {
             lastActivities.add(lastActivitiesInJson.getString(i));
         }
 
-        profileFragment.buildProfile(new User(id, name, team, institute, points, position, lastActivities));
+        profileFragment.buildProfile(new User(name, team, institute, points, position, lastActivities));
     }
 
     @Override
