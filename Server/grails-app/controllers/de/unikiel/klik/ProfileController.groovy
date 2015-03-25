@@ -102,6 +102,8 @@ class ProfileController {
    private def showProfile(def model) {
 	   render(view: "index", model: model);
    }
+   
+   
    private int getPositionOfUser(User user){
    def ranking =  [];
                 for (u in User.findAll()) {
@@ -118,6 +120,7 @@ class ProfileController {
                 ranking.sort { -it.points } //Sort DESC
     return ranking.indexOf([name: team.getName(), id: team.id, points: team.getPoints()])+1
   }
+   
   ResourceLocator grailsResourceLocator
   def avatar() {
     Profile profile = Profile.get(params.id)
@@ -125,7 +128,7 @@ class ProfileController {
       final Resource image = grailsResourceLocator.findResourceForURI('/images/default_avatar.png')
       render file: image.inputStream, contentType: 'image/png'
       //render (file: new File("path to file"), fileName: "avatar.png")
-	return
+	  return
     }
     response.contentType = profile.avatarType
     response.contentLength = profile.avatar.size()
