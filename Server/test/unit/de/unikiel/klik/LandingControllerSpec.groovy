@@ -11,7 +11,7 @@ class LandingControllerSpec extends GebSpec {
     def cleanup() {
     }
 
-    void "logout shoudl log you out"() {
+    void "logout should log you out"() {
         expect: "Should start at LandingPage"
           at GebLandingPage
         when: "klick logout"
@@ -19,7 +19,7 @@ class LandingControllerSpec extends GebSpec {
         then: "Land at StartPage"
           at GebStartPage
     }
-    void "logout shoudl log you out"() {
+    void "kliking should the profil image should redirect to the User edit Page"() {
         expect: "Should start at LandingPage"
           at GebLandingPage
         when: "klick ProfilImage"
