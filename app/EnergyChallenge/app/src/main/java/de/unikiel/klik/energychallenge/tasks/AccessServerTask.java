@@ -90,9 +90,9 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         if (serverRequest.isIdSet()) {
             requestUrl += "/" + serverRequest.getId();
         }
-        requestUrl += "?i=" + "2234567"; //TODO
+        requestUrl += "?i=" + Long.toString(System.currentTimeMillis()/1000); //TODO
 
-        Log.v("URL", requestUrl); //TODO
+        //Log.v("URL", requestUrl); //TODO
 
         DefaultHttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(requestUrl);

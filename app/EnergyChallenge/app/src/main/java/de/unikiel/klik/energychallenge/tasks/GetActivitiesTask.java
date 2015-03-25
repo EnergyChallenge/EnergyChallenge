@@ -31,7 +31,7 @@ public class GetActivitiesTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        return new ServerRequest("getActivities"); //TODO Maybe called getAllActivities?
+        return new ServerRequest("allActivities");
     }
 
     @Override

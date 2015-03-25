@@ -16,7 +16,7 @@ public class GetFavoredActivitiesTask  extends GetActivitiesTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        return new ServerRequest("getFavoredActivities");
+        return new ServerRequest("favoredActivities");
     }
 
 }

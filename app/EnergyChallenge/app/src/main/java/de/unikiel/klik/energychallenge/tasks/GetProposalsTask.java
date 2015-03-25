@@ -34,7 +34,7 @@ public class GetProposalsTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        return new ServerRequest("getProposals");
+        return new ServerRequest("proposals");
     }
 
     @Override

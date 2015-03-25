@@ -13,11 +13,12 @@ import java.util.ArrayList;
 class AppController {
 	
 	def AuthService
+	def ActivityService
 	
     def index() {
 	}
 	
-	def getUserProfile() {
+	def userProfile() {
 		
 		login(params.email, params.password);
 		
@@ -48,7 +49,8 @@ class AppController {
 		outputToJson([profile: profile]);
 	}
 	
-	def getTeamProfile() {
+	//TODO Not working correctly
+	def teamProfile() {
 		
 		login(params.email, params.password);
 		
@@ -74,7 +76,7 @@ class AppController {
 		outputToJson([profile: profile]);
 	}
 	
-	def getUserRanking() {
+	def userRanking() {
 		
 		login(params.email, params.password);
 		
@@ -87,7 +89,7 @@ class AppController {
 		outputToJson([ranking: ranking]);
 	}
 	
-	def getTeamRanking() {
+	def teamRanking() {
 		
 		login(params.email, params.password);
 		
@@ -100,18 +102,21 @@ class AppController {
 		outputToJson([ranking: ranking]);
 	}
 	
-	def getAllActivities() {
+	def allActivities() {
 		
 		login(params.email, params.password);
 		
 		def activities = []
 		for(activity in Activity.findAll{visible == true}) {
-			activities << [description: activity.getDescription(), points: activity.getPoints(), duration: activity.getDuration(), active: ActivityService.isExecutable(activity, SecurityUtils.subject)]
+			activities << [id: activity.getId(),
+							description: activity.getDescription(),
+							points: activity.getPoints(),
+							active: ActivityService.isExecutable(activity, SecurityUtils.subject)]
 		}
 		outputToJson([activities : activities])
 	}
 	
-	def getFavoredActivities() {
+	def favoredActivities() {
 		
 		login(params.email, params.password);
 		
@@ -120,12 +125,15 @@ class AppController {
 		def userFavorites = user.favorites.sort {it.id}
 		def favorites = []
 		for(activity in userFavorites) {
-			favorites << [description: activity.getDescription(), points: activity.getPoints(), duration: activity.getDuration(), active: ActivityService.isExecutable(activity, subject)]
+			favorites << [id: activity.getId(),
+						description: activity.getDescription(),
+						points: activity.getPoints(),
+						active: ActivityService.isExecutable(activity, subject)]
 		}
-		outputToJson([favorites: favorites])
+		outputToJson([activities: favorites])
 	}
 	
-	def getProposals() {
+	def proposals() {
 		
 		login(params.email, params.password);
 		
@@ -157,14 +165,14 @@ class AppController {
 		outputToJson([proposals: proposals]);
 	}
 	
-	def getMessages() {
+	def messages() {
 		
 		login(params.email, params.password);
 		
 		//TODO
 	}
 	
-	def performSearch() {
+	def search() {
 		
 		login(params.email, params.password);
 		
@@ -186,9 +194,9 @@ class AppController {
 	
 	def completeActivity() {
 		if(ActivityService.completeActivity(params.id as long, SecurityUtils.subject)) {
-			outputToJson(["Succes"]) //TODO
+			outputToJson([completeActivity: [success: true]])
 		} else {
-			outputToJson(["Failure"]) //TODO
+			outputToJson([completeActivity: [success: false]])
 		}
 	}
 	

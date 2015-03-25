@@ -6,8 +6,6 @@ import java.util.List;
 
 public class Team {
 
-    private int id;
-
     private String name;
 
     private int points;
@@ -18,18 +16,13 @@ public class Team {
 
     private List<String> lastActivities;
 
-    public Team(int id, String name, int points, int position,
+    public Team(String name, int points, int position,
                 List<String> lastActivities, List<String> members) {
-        this.id = id;
         this.name = name;
         this.points = points;
         this.position = position;
         this.lastActivities = lastActivities;
         this.members = members;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {

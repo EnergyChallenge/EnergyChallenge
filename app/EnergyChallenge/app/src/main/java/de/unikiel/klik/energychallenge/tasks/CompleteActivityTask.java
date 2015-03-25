@@ -27,12 +27,13 @@ public class CompleteActivityTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        return new ServerRequest("completeActivity");
+        //return new ServerRequest("completeActivity", 3); //TODO
+        return new ServerRequest("completeActivity", 3); //TODO
     }
 
     @Override
     protected void handleServerResponse(JSONObject response) throws JSONException {
-        if (response.getBoolean("successfull")) {
+        if (response.getJSONObject("completeActivity").getBoolean("success")) {
             //TODO String in Ressource
             Toast.makeText(context, "Die Aktivität wurde erfolgreich ausgeführt.", Toast.LENGTH_SHORT).show();
             activity.setActive(false);
