@@ -59,11 +59,11 @@
 					</g:form>
 				</div>
 				<ul>
-					<li><a href="${createLink(controller:'Landing')}" >EnergyChallenge</a></li>
-					<li><a href="${createLink(controller:'Activity')}" >Aktivitäten</a></li>
-					<li><a href="${createLink(controller:'Ranking')}" >Rangliste</a></li>
-					<li><a href="${createLink(controller:'Proposal')}" >Energiesparvorschläge</a></li>
-					<li><a href="${createLink(controller:'Statistics')}" >Statistiken</a></li>
+					<li><a class="fa fa-home" href="${createLink(controller:'Landing')}" > EnergyChallenge</a></li>
+					<li><a class="fa fa-check-square-o" href="${createLink(controller:'Activity')}" > Aktivitäten</a></li>
+					<li><a class="fa fa-trophy" href="${createLink(controller:'Ranking')}" > Rangliste</a></li>
+					<li><a class="fa fa-plus" href="${createLink(controller:'Proposal')}" > Energiesparvorschläge</a></li>
+					<li><a class="fa fa-area-chart" href="${createLink(controller:'Statistics')}" > Statistiken</a></li>
 				</ul>
 				<!-- Just show if User is Admin -->
                 <g:if test="${org.apache.shiro.SecurityUtils.getSubject().hasRole('admin')}">

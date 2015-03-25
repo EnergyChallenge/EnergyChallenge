@@ -242,7 +242,7 @@ class InitService {
 		"Institut für Informatik",
 		"Institut für Materialwissenschaft",
 	
-		"Andere",
+		"Andere"
 	]
 	
 	static void initKlikActivities() {

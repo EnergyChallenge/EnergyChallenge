@@ -36,16 +36,16 @@
     <g:form action="changePassword">
         <table>
             <tr>
-                <td>Password:</td>
+                <td>Passwort:</td>
                 <td><input type="password" name="password" value="" /></td>
             </tr>
             <tr>
-                <td>Password (repeat):</td>
+                <td>Passwort (wiederholen):</td>
                 <td><input type="password" name="password2" value="" /></td>
             </tr>
             <tr>
                 <td />
-                <td><input type="submit" value="Save" /></td>
+                <td><input type="submit" value="Ändern" /></td>
             </tr>
         </table>
     </g:form>
@@ -75,7 +75,7 @@
             For best results, your avatar should have a width-to-height ratio of 4:5.
             For example, if your image is 80 pixels wide, it should be 100 pixels high.
           </div>
-          <input type="submit" class="buttons" value="Upload" />
+          <input type="submit" class="buttons" value="Hochladen" />
         </g:uploadForm>
       </fieldset>
   </body>

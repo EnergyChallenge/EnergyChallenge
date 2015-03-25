@@ -2,12 +2,13 @@
 <html>
 <head>
 	<meta name="layout" content="main" />
+	<asset:stylesheet src="proposal.css" />
 	<title>EnergyChallenge</title>
 </head>
 <body>
 	<h1>Energiesparvorschläge</h1>
 	<p>
-		Reichen Sie neue Vorschläge zum energiesparen ein! Als Belohnung gibt es für einen
+		Reichen Sie neue Vorschläge zum Energie sparen ein! Als Belohnung gibt es für einen
 		angenommen Vorschlag <strong>2 Punkte</strong>.
 		<g:form action="add">
 			<table class="table">
