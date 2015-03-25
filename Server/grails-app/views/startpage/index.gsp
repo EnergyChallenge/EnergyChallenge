@@ -66,18 +66,23 @@
 			Einzelgewinner im Rahmen einer feierlichen Siegerehrung
 			gekürt.
 		</p>
-		<h1>Beliebteste Aktivitäten:</h1>
-		<p>${foo}</p>
-		<table class="activityTeaser">
-			<tbody>
-				<g:each in="${teaser}" var="activity">
+		<p style="margin-top:50px">
+			<table class="list">
+				<thead>
 					<tr>
-						<td>${activity.DESCRIPTION}</td>
-						<td>${activity.N} Mal ausgeführt</td>
+						<th colspan="2">Beliebteste Aktivitäten</th>
 					</tr>
-				</g:each>
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+					<g:each in="${teaser}" var="activity">
+						<tr>
+							<td>${activity.DESCRIPTION}</td>
+							<td>${activity.N} Mal ausgeführt</td>
+						</tr>
+					</g:each>
+				</tbody>
+			</table>
+		</p>
 		<p><g:link controller="statistics" action="index">Alle Statistiken anzeigen</g:link></p>
 	</body>
 </html>

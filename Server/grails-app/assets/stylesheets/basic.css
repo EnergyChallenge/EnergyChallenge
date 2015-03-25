@@ -24,7 +24,13 @@ input[type="submit"], a.button, button {
     border-radius: 3px;
     color: #000000;
     box-sizing: border-box;
+	text-decoration: none;
+	cursor: default;
 }
+input[type="submit"], a.button:hover, a.button:focus {
+	text-decoration: none;
+}
+
 a {
 	color: #8e217d;
 	text-decoration: none;
@@ -44,4 +50,45 @@ figure {
 	background-color: #FFFFFF;
     border-radius: 3px;
     box-shadow: 0 1px 2px #aaa;
+}
+
+/* LIST TABLE */
+table.list  {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	box-shadow: 10px 10px 5px #888888;
+	border-spacing: 0;
+	text-align: left;
+}
+
+table.list thead tr {
+	background-color: #8e217d;
+	color: #ffffff;
+}
+
+table.list thead th {
+	padding: 6px;
+}
+
+table.list tbody tr:nth-child(odd) {
+	background-color: #f2f2f2;
+}
+
+table.list tbody tr:nth-child(even) {
+	background-color: #ffffff;
+}
+
+table.list td {
+	vertical-align: middle;
+	/*border-width: 0px 1px 1px 0px;*/
+	padding: 6px;
+	font-weight: normal;
+	color: #000000;
+}
+
+table.list td.numeration{
+	width: 20px;
+	text-align: right;
 }
