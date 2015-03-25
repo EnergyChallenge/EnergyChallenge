@@ -1,43 +1,59 @@
 package de.unikiel.klik
 
-import de.unikiel.klik.model.*
-import grails.test.mixin.TestFor
-import grails.test.mixin.Mock
-import grails.test.mixin.TestMixin
-import grails.test.mixin.support.GrailsUnitTestMixin
-import spock.lang.Specification
+import geb.spock.GebSpec
 
-import org.apache.shiro.crypto.hash.Sha256Hash
-
-/**
- * See the API for {@link grails.test.mixin.support.GrailsUnitTestMixin} for usage instructions
- */
-@TestFor(AuthController)
-@Mock([User, Role, User])
-class AuthControllerSpec extends Specification {
+class AuthControllerSpec extends GebSpec {
 
     def setup() {
+        to GebStartPage
     }
 
     def cleanup() {
     }
 
 	@Ignore // currently not working
-    void "test something"() {
-		setup: "create user"
-		def userRole = new Role(name: "user")
-		userRole.addToPermissions("*:*")
-		userRole.save();
-		def user = new User(email: "user", passwordHash: new Sha256Hash("password").toHex(), name: "Max Mustermann")
-		user.addToRoles(userRole)
-		user.save()
-		
-		when: "user logs in with correct username and password"
-		params.username = "user"
-		params.password = "password"
-		controller.signIn()
-		
-		then: "user is redirected to landingpage"
-		response.redirectedUrl == "/landing/index"
+    void "login with valid user should redirect to Landingpage"() {
+		expect: "Visit the HomePage"
+		at GebStartPage
+		when: "entering correct Username and password"
+		login("user@example.com","password",false)
+		then: "should land at landingPage"
+		at GebLandingPage
+    }
+    void "login with invalid user should show error"() {
+		expect: "Visit the HomePage"
+		at GebStartPage
+		when: "entering incorrect Username and password"
+		login("ThisIsNotAnEmail","password",false)
+		then: "should stay on Page"
+		at GebStartPage
+		and: "should see an Error"
+		//TODO
+		and: "Infos should stay reserved"
+		//TODO
+    }
+    void "registering should log you in"(){
+		given: 
+		to GebRegisterPage
+		expect: "RegisterPage"
+		at GebRegisterPage
+		when: "entering correct infos"
+		register("newUser@example.com","FirstName","LastName","password","password",1)
+		then: "should land at landingPage"
+		at GebLandingPage
+    }
+    void "registering a user with a Used Email should fail"() {
+		given: 
+		to GebRegisterPage
+		expect: "Visit the RegisterPage"
+		at GebRegisterPage
+		when: "entering a allredy user Email"
+		register("user@example.com","FirstName","LastName","password","password",1)
+		then: "should stay on Page"
+		at GebRegisterPage
+		and: "should see an Error"
+		//TODO
+		and: "Infos should stay reserved"
+		//TODO
     }
 }
