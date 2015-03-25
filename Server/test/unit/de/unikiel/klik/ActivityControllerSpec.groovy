@@ -1,20 +1,38 @@
 package de.unikiel.klik
 
-import grails.test.mixin.TestFor
-import spock.lang.Specification
+import geb.spock.GebSpec
 
-/**
- * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
- */
-@TestFor(ActivityController)
-class ActivityControllerSpec extends Specification {
+class ActivityControllerSpec extends GebSpec {
 
     def setup() {
+        to GebActivityPage
     }
 
     def cleanup() {
     }
 
-    void "test something"() {
+    void "completing an Activity sould increase Points"() {
+        given: "Points at beginning"
+          //TODO
+        expect: "being at ActivityPage"
+          at GebActivityPage
+        when: "executing a Activity"
+          //TODO
+        then: "Points shoudl increase"
+          //TODO
+        and: "Activity has now a countdown"
     }
+    void "kliking a favorite"(){
+        expect: "being at ActivityPage"
+          at GebActivityPage
+        when: "kliking on favorite"
+          //TODO
+        then: "activity is now a favorite"
+          //TODO
+        when: "kliking again"
+          //TODO
+        then: "activiy is not a favorite anymore"
+          //TODO
+    }
+    
 }
