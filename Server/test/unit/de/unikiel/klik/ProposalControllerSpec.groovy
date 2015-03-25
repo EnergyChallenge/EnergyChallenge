@@ -29,7 +29,7 @@ class ProposalControllerSpec extends GebSpec {
       then: "stay at the Page"
         at GebProposalPage
     }
-    void "Getting to a Proposal view"
+    void "Getting to a Proposal view"(){
       given: "a Proposal"
         //TODO
       expect: "being at Proposal and seeing that proposal"
