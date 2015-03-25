@@ -6,8 +6,6 @@ import java.util.List;
 
 public class User {
 
-    private int id;
-
     private String name;
 
     private String teamName;
@@ -20,18 +18,13 @@ public class User {
 
     private List<String> lastActivities;
 
-    public User(int id, String name, String teamName, String institute, int points, int position, List<String> lastActivities) {
-        this.id = id;
+    public User(String name, String teamName, String institute, int points, int position, List<String> lastActivities) {
         this.name = name;
         this.teamName = teamName;
         this.institute = institute;
         this.points = points;
         this.position = position;
         this.lastActivities = lastActivities;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {

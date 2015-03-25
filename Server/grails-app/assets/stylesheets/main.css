@@ -79,11 +79,25 @@ header .inside #userinfo .actions #logoutFrom {
 }
 
 #container {
-	background-color: #F2F2F2
+	background-color: #F2F2F2;
+	overflow: hidden;
 }
 #container .inside {
 	width: 960px;
 	margin: 0 auto;
+}
+#container nav {
+	float: left;
+	width: 190px;
+	background-color: #eeeeee;
+    border-left: 1px solid #cccccc;
+    border-right: 1px solid #cccccc;
+    padding-bottom: 20040px;
+    margin-bottom: -20000px;
+}
+#container nav.fixed {
+	position: fixed;
+	top: 0;
 }
 #container nav #search {
     position: relative;
@@ -104,14 +118,6 @@ header .inside #userinfo .actions #logoutFrom {
     border: 0 none;
     color: #cccccc;
     font-size: 16px;
-}
-#container nav {
-	float: left;
-	width: 190px;
-	background-color: #eeeeee;
-    border-left: 1px solid #cccccc;
-    border-right: 1px solid #cccccc;
-    min-height: 540px; /*TODO TEMP*/
 }
 #container nav ul {
 	list-style-type: none;
@@ -146,8 +152,8 @@ header .inside #userinfo .actions #logoutFrom {
 	background-color: #ffffff;
     border-right: 1px solid #DDDDDD;
     margin-left: 192px;
-    padding: 40px 60px;
-    min-height: 500px; /*TODO TEMP */
+    padding: 40px 60px 20040px;
+    margin-bottom: -20000px;
 }
 #container #content .floater {
 	float: left;
@@ -166,11 +172,16 @@ header .inside #userinfo .actions #logoutFrom {
 }
 
 footer {
-	height: 50px;
-	background-color: #8e217d;
-    color: #FFFFFF; 
+    position: relative;
+    z-index: 10;
+    height: 50px;
+    background-color: #8e217d;
+    color: #FFFFFF;
 }
 footer .inside {
 	width: 960px;
 	margin: 0 auto;
+}
+footer a {
+	color: white;
 }
