@@ -89,10 +89,11 @@ class ActivityService {
 		
 		def endOfCountdown
 		def currentTime
-		def timeInterval
+		def regularity
 		def completedActivity
 		String countdown
 		
+		//defines how the countdown is displayed
 		PeriodFormatter formatter = new PeriodFormatterBuilder()
 		.printZeroAlways()
 		.minimumPrintedDigits(2)
@@ -106,17 +107,17 @@ class ActivityService {
 		} else {
 			recentActivities = getRecentlyCompletedActivities(activity.duration, subject)
 			completedActivity = recentActivities?.find{it.activity.id == activity.id}
-			timeInterval = getTimeInterval(completedActivity, activity.duration, subject)
+			regularity = getRegularity(completedActivity, activity.duration, subject)
 			currentTime = new DateTime()
-			switch(timeInterval) {
+			switch(regularity) {
 				
-				case "hour":
+				case "hourly":
 					endOfCountdown = new DateTime(completedActivity.dateCreated.plus(activity.duration))
 					Period period = new Period(currentTime, endOfCountdown)
 					countdown = formatter.print(period)
 					break
 				
-				case "today":
+				case "daily":
 					endOfCountdown = new DateTime(completedActivity.dateCreated.plus(activity.duration).withTimeAtStartOfDay())
 					Period period = new Period(currentTime, endOfCountdown)
 					countdown = formatter.print(period)
@@ -148,16 +149,16 @@ class ActivityService {
 	}
 	
 	//returns a string indicating how long the time interval is
-	def String getTimeInterval(CompletedActivity completedActivity, Duration duration, Subject subject) {
+	def String getRegularity(CompletedActivity completedActivity, Duration duration, Subject subject) {
 		def endPoint = new DateTime(completedActivity.dateCreated.plus(duration))
 		def endPointAsMillis = endPoint.getMillis()
 		def currentTime = new DateTime()
 		def currentTimeAsMillis = currentTime.getMillis()
 		def criticalDuration = new Duration(endPointAsMillis - currentTimeAsMillis)
 		if(duration.getStandardHours() < 24) {
-			return "hour"
+			return "hourly"
 		} else if(criticalDuration.getStandardHours() < 24) {
-			return "today"
+			return "daily"
 		} else {
 			return "default"
 		}
