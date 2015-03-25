@@ -44,7 +44,9 @@
 								erledigen
 							</a>
 						</g:if>
-						<g:else>${act.countdown}</g:else>
+						<g:else>
+							${act.countdown}
+						</g:else>
 					</td>
 				</tr>
 				</g:each>
