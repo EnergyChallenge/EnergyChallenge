@@ -104,9 +104,6 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         if (serverRequest.getParameters() != null) {
             parameters.addAll(serverRequest.getParameters());
         }
-        if (serverRequest.getRequestData() != null) {
-            parameters.add(new BasicNameValuePair("request", serverRequest.getRequestData().toString()));
-        }
 
         parameters.add(new BasicNameValuePair("email", currentUser.getEmail()));
         parameters.add(new BasicNameValuePair("password", currentUser.getPassword()));
