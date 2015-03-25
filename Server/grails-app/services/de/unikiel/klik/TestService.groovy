@@ -94,13 +94,12 @@ class TestService {
 		}
 		if(User.count() > 50){
 			def users = User.findAll()
-			int i = 0;
 			Team team1 =  new Team(name: "Peperoni Pizza")
 			Team team2 =  new Team(name: "Salat")
 			Team team3 =  new Team(name: "Nudel Suppe")
 			Team team4 =  new Team(name: "Toast Brot")
 			Team team5 =  new Team(name: "Schokladen Eis mit Baylies")
-			for(;i<User.count()/5;i++){//
+			for(int i = 0;i<10;i++){//
 				team1.addToMembers(users[5*i+0])
 				team2.addToMembers(users[5*i+1])
 				team3.addToMembers(users[5*i+2])
