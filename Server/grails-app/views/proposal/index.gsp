@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta name="layout" content="main" />
+	<asset:stylesheet src="proposal.css" />
 	<title>EnergyChallenge</title>
 </head>
 <body>
