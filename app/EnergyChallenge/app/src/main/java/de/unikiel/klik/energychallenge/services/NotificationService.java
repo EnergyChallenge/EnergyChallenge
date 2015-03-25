@@ -26,7 +26,7 @@ public class NotificationService extends Service {
     public void setNotificationAlarm(){
 
         //Broadcast to the notification receiver should be issued and do so again every 15 minutes
-        //TODO Change this to be every 12 hours after for deployment
+        //TODO Change this to be every 12 hours after testing for final deployment
         Intent notificationIntent = new Intent();
         notificationIntent.setAction("de.unikiel.klik.energychallenge.NotificationReceiver");
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this,
@@ -35,7 +35,7 @@ public class NotificationService extends Service {
         calendar.setTimeInMillis(System.currentTimeMillis());
         AlarmManager alarm = (AlarmManager) this.getSystemService(Context.ALARM_SERVICE);
         alarm.cancel(pendingIntent);
-        alarm.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
+        alarm.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), 15000, pendingIntent);
     }
 
     @Override

@@ -1,7 +1,5 @@
 package de.unikiel.klik.energychallenge.tasks;
 
-import android.util.Log;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -48,7 +46,6 @@ public class VerificationTask{
 
                     //Convert the response to a useful string
                     String responseString = IoX.readInputStream(inputStream, inputStream.toString().length());
-                    Log.v("Response from server", responseString);
 
                     //Check the response for the result
                     if(responseString.contains("true")){
