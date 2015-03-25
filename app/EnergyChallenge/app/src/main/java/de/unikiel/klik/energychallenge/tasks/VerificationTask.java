@@ -36,7 +36,7 @@ public class VerificationTask{
                     params.add(new BasicNameValuePair("email", email));
                     params.add(new BasicNameValuePair("password", password));
                     //TODO use the actual server url for the post
-                    HttpPost post = new HttpPost("http://192.168.0.2:8080/Server/auth/appLogin");
+                    HttpPost post = new HttpPost("http://192.168.0.3:8080/Server/auth/appLogin");
                     UrlEncodedFormEntity encodedEntity = new UrlEncodedFormEntity(params, "utf-8");
                     post.setEntity(encodedEntity);
                     HttpResponse httpResponse = client.execute(post);

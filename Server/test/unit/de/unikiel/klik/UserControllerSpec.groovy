@@ -1,13 +1,8 @@
 package de.unikiel.klik
 
-import grails.test.mixin.TestFor
-import spock.lang.Specification
+import geb.spock.GebSpec
 
-/**
- * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
- */
-@TestFor(UserController)
-class UserControllerSpec extends Specification {
+class UserControllerSpec extends GebSpec {
 
     def setup() {
     }
@@ -15,6 +10,31 @@ class UserControllerSpec extends Specification {
     def cleanup() {
     }
 
-    void "test something"() {
+    void "navigate from User Profil to Team"() {
+      given: "visitig a Profile with a Team"
+        //TODO
+      expect: "Being on the ProfilPage"
+        //TODO
+      and: "Seeing the Users Name"
+        //TODO
+      when: "Klicking the Team of the user"
+        //TODO
+      then: "should be on the Page of the Team"
+        //TODO
+      and: "TeamName should be the name of the Users Team"
+        //TODO
     }
+   
+    void "navigate from Team to one of Its Members"(){
+      given: "visiting a Teams Profil"
+        //TODO
+      expect: "being on the Team Profil Page"
+        //TODO
+      when: "Kliking on a User"
+        //TODO
+      then: "should be at the Users profile"
+        //TODO
+      and: "The Users name is the expected one"
+        //TODO
+     }
 }

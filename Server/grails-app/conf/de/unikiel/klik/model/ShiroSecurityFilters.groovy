@@ -23,6 +23,7 @@ class ShiroSecurityFilters {
                 if (!controllerName) return true
 				if (controllerName == "assets") return true
 				if (controllerName == "app") return true
+				if (controllerName == "profile" && actionName == "avatar" ) return true
 				if (controllerName == "startpage") return true
 				if (controllerName == "statistics") return true
 

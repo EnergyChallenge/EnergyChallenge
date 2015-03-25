@@ -93,3 +93,7 @@ table.list td.numeration{
 	width: 20px;
 	text-align: right;
 }
+
+table.list td.admin{
+	line-height: 250%;
+}
