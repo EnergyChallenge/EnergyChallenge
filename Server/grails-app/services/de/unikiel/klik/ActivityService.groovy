@@ -8,6 +8,8 @@ import org.apache.shiro.SecurityUtils
 import org.joda.time.DateTime
 import org.joda.time.Duration;
 import org.joda.time.Period
+import org.joda.time.format.DateTimeFormat
+import org.joda.time.format.DateTimeFormatter
 import org.joda.time.format.PeriodFormatter
 import org.joda.time.format.PeriodFormatterBuilder
 
@@ -97,8 +99,6 @@ class ActivityService {
 		.appendHours()
 		.appendSeparator(":")
 		.appendMinutes()
-		.appendSeparator(":")
-		.appendSeconds()
 		.toFormatter()
 		
 		if(isExecutable(activity, subject)) {
@@ -109,10 +109,6 @@ class ActivityService {
 			timeInterval = getTimeInterval(completedActivity, activity.duration, subject)
 			currentTime = new DateTime()
 			switch(timeInterval) {
-				//TODO handle this more elegant
-				case "once":
-					endOfCountdown = new DateTime(long.MAX_VALUE)
-					break
 				
 				case "hour":
 					endOfCountdown = new DateTime(completedActivity.dateCreated.plus(activity.duration))
@@ -127,7 +123,9 @@ class ActivityService {
 					break
 				
 				default:
-					countdown = "> 1 Tag"
+					endOfCountdown = new DateTime(completedActivity.dateCreated.plus(activity.duration))
+					DateTimeFormatter fmt = DateTimeFormat.forPattern("dd.MM.yyyy")
+					countdown = fmt.print(endOfCountdown)
 			}
 		}
 		return countdown
@@ -136,14 +134,19 @@ class ActivityService {
 	//returns a collection of Activities that were completed during the critical time
 	def getRecentlyCompletedActivities(Duration duration, Subject subject) {
 		currentUser = User.findByEmail(subject.getPrincipal())
+		def DateTime criticalPointOfTime
 		def currentTime = new DateTime()
-		def DateTime criticalPointOfTime = new DateTime(currentTime.minus(duration))
+		if(duration.getStandardHours() < 24) {
+			criticalPointOfTime = new DateTime(currentTime.minus(duration))
+		} else {
+			def days = duration.getStandardDays().toInteger() - 1
+			criticalPointOfTime = new DateTime(currentTime.minusDays(days).withTimeAtStartOfDay())
+		}
 		def recentlyCompletedActivities = currentUser.completedActivities?.collect().findAll {it.dateCreated.isAfter(criticalPointOfTime)}
 		
 		return recentlyCompletedActivities
 	}
 	
-	//TODO add once executable activities
 	//returns a string indicating how long the time interval is
 	def String getTimeInterval(CompletedActivity completedActivity, Duration duration, Subject subject) {
 		def endPoint = new DateTime(completedActivity.dateCreated.plus(duration))
@@ -151,7 +154,7 @@ class ActivityService {
 		def currentTime = new DateTime()
 		def currentTimeAsMillis = currentTime.getMillis()
 		def criticalDuration = new Duration(endPointAsMillis - currentTimeAsMillis)
-		if(duration.getStandardHours() < 24 || endPoint.isBefore(currentTime.plusDays(1).withTimeAtStartOfDay())) {
+		if(duration.getStandardHours() < 24) {
 			return "hour"
 		} else if(criticalDuration.getStandardHours() < 24) {
 			return "today"
