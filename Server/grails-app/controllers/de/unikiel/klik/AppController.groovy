@@ -193,6 +193,9 @@ class AppController {
 	}
 	
 	def completeActivity() {
+		
+		login(params.email, params.password);
+		
 		if(ActivityService.completeActivity(params.id as long, SecurityUtils.subject)) {
 			outputToJson([completeActivity: [success: true]])
 		} else {
