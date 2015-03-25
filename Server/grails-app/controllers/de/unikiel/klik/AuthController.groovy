@@ -69,19 +69,19 @@ class AuthController {
 		[institutes: Institute.findAll()]		
 	}
 	def signUp = {
-//		try {
+		try {
 			AuthService.register(params.email, params.firstName, params.lastName, params.password as String, params.password2 as String, params.instituteId as long)
-			forward (controller: "landing", action: "index")
-//		}
-//                catch (AuthenticationException e){
-//                    // Authentication failed, so display the appropriate message
-//                    flash.message = "Registration failed."
-//                }catch(Exception e){
-//            		flash.message = message(code: "login.failed")
-//			//Keep params
-//			def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
-//			forward (action: "register", params: m)
-//		}
+			redirect (controller: "landing", action: "index")
+		}
+                catch (AuthenticationException e){
+                    // Authentication failed, so display the appropriate message
+                    flash.message = "Login schlug fehl."
+                }catch(Exception e){
+            		flash.message = "Registrierung schlug fehl."
+			//Keep params
+			def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+			forward (action: "register", params: m)
+		}
 	}
 	def forgotPassword = {
 		
