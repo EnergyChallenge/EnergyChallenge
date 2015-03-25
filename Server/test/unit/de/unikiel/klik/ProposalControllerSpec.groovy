@@ -41,7 +41,7 @@ class ProposalControllerSpec extends GebSpec {
       and: "seing the Description of the klicked Proposal"
         //TODO
     }
-    void "Commenting on a Proposal"
+    void "Commenting on a Proposal"(){
       given: "visiting a Proposal"
         //TODO
       expect: "seeing that Proposal"
