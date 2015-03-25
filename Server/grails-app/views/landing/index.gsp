@@ -48,7 +48,7 @@
     </div>
     <div id="rightside">
     <div class="card">
-      <h3>Punkte Stand</h3>
+      <h3>Punktestand</h3>
       <table>
         <tr>
           <td>Meine Punkte:<td>
