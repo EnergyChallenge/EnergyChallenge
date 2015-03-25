@@ -15,6 +15,7 @@ class User extends Profile {
 	String lastName
 	String title		// academic title
 	String searchName	// full name (incl. academic title) for convenient searching
+	String passwordRequestToken
 	Boolean emailNotification = false
 	
 	static hasMany = [
@@ -37,6 +38,7 @@ class User extends Profile {
 		institute(nullable: false)
 		favorites(nullable: true)
 		emailNotification(defaultValue: "false") // TODO test if false is the default value
+		passwordRequestToken(nullable: true, blank: true)
     }
 	
 	// create searchName before insert

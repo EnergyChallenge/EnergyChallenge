@@ -72,7 +72,7 @@ public class SearchActivity extends ListActivity {
     private void loadSearchData(String query) {
 
         if (NetworkX.isAvailable(this)) {
-            new PerformSearchTask(searchAdapter, progressIndicator, emptyListText).execute();
+            new PerformSearchTask(getApplicationContext(), query, searchAdapter, progressIndicator, emptyListText).execute();
         } else {
             emptyListText.setText(R.string.no_network_connection);
             Toast.makeText(this, R.string.no_network_connection, Toast.LENGTH_SHORT).show();

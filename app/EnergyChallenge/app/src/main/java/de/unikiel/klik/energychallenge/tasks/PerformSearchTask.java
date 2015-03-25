@@ -1,5 +1,6 @@
 package de.unikiel.klik.energychallenge.tasks;
 
+import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -20,15 +21,21 @@ import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 public class PerformSearchTask extends AccessServerTask {
 
+    private String searchQuery;
+
     private SearchResultAdapter searchAdapter;
 
     private LinearLayout progressIndicator;
 
     private TextView emptyListText;
 
-    public PerformSearchTask(SearchResultAdapter searchAdapter,
+    public PerformSearchTask(Context applicationContext,
+                             String searchQuery,
+                             SearchResultAdapter searchAdapter,
                               LinearLayout progressIndicator,
                               TextView emptyListText) {
+        super(applicationContext);
+        this.searchQuery = searchQuery;
         this.searchAdapter = searchAdapter;
         this.progressIndicator = progressIndicator;
         this.emptyListText = emptyListText;
@@ -36,7 +43,7 @@ public class PerformSearchTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        BasicNameValuePair[] parameters = {new BasicNameValuePair("query","Max")};//TODO
+        BasicNameValuePair[] parameters = {new BasicNameValuePair("query", searchQuery)};
         //BasicNameValuePair[] parameters = {new BasicNameValuePair("query","Max")};//TODO
         return new ServerRequest("search", new ArrayList<BasicNameValuePair>(Arrays.asList(parameters)));
     }

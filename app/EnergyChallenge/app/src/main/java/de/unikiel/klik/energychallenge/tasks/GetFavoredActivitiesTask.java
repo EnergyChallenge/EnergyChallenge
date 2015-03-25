@@ -1,5 +1,6 @@
 package de.unikiel.klik.energychallenge.tasks;
 
+import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -8,10 +9,11 @@ import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 public class GetFavoredActivitiesTask  extends GetActivitiesTask {
 
-    public GetFavoredActivitiesTask(ActivitiesAdapter activitiesAdapter,
+    public GetFavoredActivitiesTask(Context applicationContext,
+                                    ActivitiesAdapter activitiesAdapter,
                                     LinearLayout progressIndicator,
                                     TextView emptyListText) {
-        super(activitiesAdapter, progressIndicator, emptyListText);
+        super(applicationContext, activitiesAdapter, progressIndicator, emptyListText);
     }
 
     @Override

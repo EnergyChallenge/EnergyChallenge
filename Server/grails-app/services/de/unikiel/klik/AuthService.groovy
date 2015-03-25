@@ -5,17 +5,22 @@ import de.unikiel.klik.model.Institute
 import de.unikiel.klik.model.Role
 
 import grails.transaction.Transactional
+import grails.validation.ValidationException
+
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.authc.AuthenticationException
 import org.apache.shiro.authc.UsernamePasswordToken
 import org.apache.shiro.crypto.hash.Sha256Hash
 import org.apache.shiro.subject.Subject
 
+import java.security.SecureRandom
+
 @Transactional
 class AuthService {
 
 	def shiroSecurityManager
-	
+	def mailService
+	private SecureRandom random = new SecureRandom() 
     void login(String email, String password, boolean rememberMe) throws AuthenticationException {
 		User user = User.findByEmail(email);
 		if(user == null){
@@ -50,13 +55,44 @@ class AuthService {
                     def newUser = new User(email: email, passwordHash: new Sha256Hash(password).toHex(),
                                            institute: Institute.get(instituteId), firstName: firstName,
                                            lastName: lastName, roles: [Role.findByName("user")])
-                    newUser.save(failOnError: true)
+                    newUser.save(flush: true, failOnError: true)
                 login(email, password, false)
             }
         }
    }
-   void requestPasswordChange(String email) {
+   void requestPasswordChange(String email) throws ValidationException {
 	//TODO
-	throw new UnsupportedOperationException();
+  	User user = User.findByEmail(email)
+	if(user != null){
+		String requestToken = new BigInteger(100,random).toString(32)
+		user.setPasswordRequestToken(requestToken)
+		user.save(flush: true, failOnError: true)
+		mailService.sendMail {
+	                to email
+	                subject "Klik Passwort"
+	                body getPasswordRequestMessage(requestToken)
+	        }
+	}else{
+		throw new ValidationException()
+	}
+   }
+   private String getPasswordRequestMessage(String requestToken){
+	String message = ""+"../auth/forgotPassword?token="+requestToken+" " //TODO
+        return message
+   }
+   void changePassword(String requestToken,String email, String password, String password2) throws ValidationException{
+        User user = User.findByPasswordRequestToken(requestToken)
+        User userByEmail = User.findByEmail(email)
+        if (user != null && user == userByEmail){
+            if (password == password2){
+                user.passwordHash = new Sha256Hash(password).toHex()
+                user.save(failOnError: true)
+                login(email,password,false)
+            }else{
+                //throw new ValidationException()
+            }
+       }else{
+            //throw new ValidationException()
+       }
    }
 }

@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Edit Activity</h1>
+<h1>Aktivität ändern</h1>
 
 <g:form action="changeActivity">
     <input type="hidden" name="proposalId" value="${params.proposalId}" />
@@ -23,21 +23,21 @@
             <td><input type="number" name="points" value="${params.points}" min="1" max="5" /></td>
         </tr>
         <tr>
-            <td>Dauer (tage):</td>
+            <td>Dauer (Tage):</td>
             <td><input type="number" name="durationUnits" value="${params.duration}" />
                 <select name="durationUnitInSeconds" >
-                    <option value="1">Secunden</option>
-                    <option value="60">Minuten</option>
-                    <option value="3600">Stunden</option>
-                    <option value="86400">Tage</option>
-                    <option value="604800">Wochen</option>
-                    <option value="220752000">Jahre</option>
+                    <option value="1">Sekunde(n)</option>
+                    <option value="60">Minute(n)</option>
+                    <option value="3600">Stunde(n)</option>
+                    <option value="86400">Tag(e)</option>
+                    <option value="604800">Woche(n)</option>
+                    <option value="31536000">Jahr(e)</option>
                </select>
             </td>
         </tr>
         <tr>
             <td />
-            <td><input type="submit" value="Save" /></td>
+            <td><input type="submit" value="Ändern" /></td>
         </tr>
         </tbody>
     </table>

@@ -123,12 +123,97 @@ class InitService {
 		true, //33
 		]
 	
-	// CAU Institutions
+	// CAU Institute
 	static def INSTITUTES = [
-		// Technische FakultÃ¤t
-		"Institut fÃ¼r Elektrotechnik und Informationstechnik",
-		"Institut fÃ¼r Informatik",
-		"Institut fÃ¼r Materialwissenschaft"
+		// Rechtswissenschaftliche Fakultät
+		"Hermann Kantorowicz-Institut für juristische Grundlagenforschung",
+		"Walther-Schuuml;cking-Institut für Internationales Recht",
+		"Institut für Kriminalwissenschaften",
+		"Institut für Osteuropäisches Recht",
+		"Institut für Wirtschafts- und Steuerrecht",
+		"Institut für Europäisches und Internationales Privat- und Verfahrensrecht",
+		"Institut für Sozialrecht und Gesundheitsrecht",
+		"Institut für öffentliches Wirtschaftsrecht",
+		// Mathematisch-Naturwissenschaftliche Fakultät
+		"Leibniz-Institut für die Pädagogik der Naturwissenschaften und Mathematik (IPN)",
+		"Mathematisches Seminar",
+		"Institut für Experimentelle und Angewandte Physik (IEAP)",
+		"Institut für Theoretische Physik und Astrophysik (ITAP",
+		"Institut für Anorganische Chemie",
+		"Otto Diels-Institut für Organische Chemie",
+		"Institut für Physikalische Chemie",
+		"Pharmazeutisches Institut",
+		"Botanisches Institut",
+		"Institut für Allgemeine Mikrobiologie",
+		"Zoologische Institut und Zoologisches Museum",
+		"Institut für Polarökologie",
+		"Geographisches Institut",
+		"Institut für ökosystemforschung",
+		"Institut für Ur- und Frühgeschichte",
+		"Institut für Geowissenschaften",
+		"GEOMAR Helmholtz-Zentrum für Ozeanforschung Kiel",
+		"Der Botanische Garten (Museum)",
+		"Das Zoologische Museum",
+		"Geologischen und Mineralogischen Museum",
+		"Leibniz-Labor für Altersbestimmung und Isotopenforschung",
+		"Zentrum für Biochemie und Molekularbiologie (BiMo)",
+		"Zentrum für Molekulare Biowissenschaften (ZMB)",
+		"Forschungs- und Technologiezentrum Westküste (FTZ)",
+		// Agrar- und Ernährungswissenschaftliche Fakultät
+		"Institut für Pflanzenernährung und Bodenkunde",
+		"Institut für Pflanzenbau und Pflanzenzüchtung",
+		"Institut für Phytopathologie",
+		"Institut für Tierernährung und Stoffwechselphysiologie",
+		"Institut für Tierzucht und Tierhaltung",
+		"Institut für Landwirtschaftliche Verfahrenstechnik",
+		"Institut für Agrarökonomie",
+		"Institut für Humanernährung und Lebensmittelkunde",
+		"Institut für Ernährungswirtschaft und Verbrauchslehre",
+		"Institut für Natur- und Ressourcenschutz",
+		// Philosophische Fakultät
+		"Institut für Pädagogik",
+		"Philosophisches Seminar",
+		"Institut für Psychologie",
+		"Institut für Sozialwissenschaften",
+		"Institut für Sportwissenschaft",
+		"Englisches Seminar",
+		"Germanistisches Seminar",
+		"Institut für Neuere Deutsche Literatur und Medien",
+		"Institut für Klassische Altertumskunde",
+		"Institut für Skandinavistik, Frisistik und Allgemeine Sprachwissenschaft (ISFAS)",
+		"Romanisches Seminar",
+		"Institut für Slavistik",
+		"Seminar für Europäische Ethnologie/Volkskunde",
+		"Historisches Seminar",
+		"Kunsthistorisches Institut",
+		"Seminar für Orientalistik",
+		"Musikwissenschaftliches Institut",
+		"Zentrum für Schlüsselqualifikationen (ZfS)",
+		"Zentrum für Lehrerbildung (ZfL)",
+		"Zentrum für Asiatische und Afrikanische Studien (ZAAS)",
+		"Zentrum für Osteuropastudien (ZOS)",
+		"Zentrum für Nordamerikastudien (ZNAS)",
+		"Chinazentrum",
+		"Zentrum für Rechtspsychologie, Kriminalwissenschaften und forensische Psychopathologie",
+		"Gustav-Radbruch-Netzwerk für Philosophie und Ethik der Umwelt",
+		// Theologische Fakultät
+		"Institut für Alttestamentliche Wissenschaft und Biblische Archäologie",
+		"Institut für Neutestamentliche Wissenschaft und Judaistik",
+		"Institut für Kirchengeschichte",
+		"Institut für Systematische Theologie",
+		"Institut für Praktische Theologie",
+		"Gesenius Arbeitsstelle",
+		"Schleiermacher-Forschungsstelle",
+		"KiBiDaNO",
+		"Universitätskirche",
+		// Medizinische Fakultät
+		"Anatomisches Institut",
+		// Technische Fakultät
+		"Institut für Elektrotechnik und Informationstechnik",
+		"Institut für Informatik",
+		"Institut für Materialwissenschaft",
+	
+		"Anderes",
 	]
 	
 	static void initKlikActivities() {

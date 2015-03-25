@@ -15,6 +15,7 @@ class BootStrap {
 
 		if (currentEnv == Environment.DEVELOPMENT) {
 
+			// generate test data
 			def userRole = new Role(name: "user")
 			userRole.addToPermissions("*:*")
 			userRole.save();
@@ -41,7 +42,8 @@ class BootStrap {
 			// do custom init for test here
 
 		} else if (currentEnv == Environment.PRODUCTION) {
-			// do custom init for prod here
+			// generate admin Accounts
+			
 		}
 	}
 	def destroy = {

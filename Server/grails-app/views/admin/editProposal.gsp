@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Edit Proposal</h1>
+<h1>Vorschläge umwandeln</h1>
 
 <g:if test="${flash.message}">
     <div class="message">${flash.message}</div>
@@ -26,7 +26,7 @@
         </tr>
         <tr>
             <td />
-            <td><input type="submit" value="Save" /></td>
+            <td><input type="submit" value="umwandeln" /></td>
         </tr>
         </tbody>
     </table>
