@@ -12,7 +12,10 @@ class LandingController {
     User user = User.findByEmail(SecurityUtils.subject.getPrincipal())
     Team team =  user.getTeam()
     def favoriteActivities = []
-	def userFavorites = user.favorites.sort {it.id}
+	def userFavorites = []
+	if(user.favorites!= null){
+		userFavorites = user.favorites.sort {it.id}
+	}
 	for(activity in userFavorites) {
 		favoriteActivities << [activity: activity, executable: ActivityService.isExecutable(activity, SecurityUtils.subject), countdown: ActivityService.getActivityCountdown(activity, SecurityUtils.subject)]
 	}

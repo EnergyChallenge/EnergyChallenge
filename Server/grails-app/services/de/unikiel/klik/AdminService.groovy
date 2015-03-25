@@ -158,6 +158,7 @@ class AdminService {
         def i
         for (i = 0; i < allUsers.size; i++) {
             mailService.sendMail {
+                async true
                 to allUsers[i].email
                 subject messageSubject
                 body message
