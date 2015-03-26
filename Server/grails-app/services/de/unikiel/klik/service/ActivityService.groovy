@@ -84,7 +84,7 @@ class ActivityService {
 		return false
 	}
 	
-	//returns a timer instance that works as a countdown, showing when the activity is available again
+	//returns a timer instance that works as a countdown or date, showing when the activity is available again
 	def String getActivityCountdown(Activity activity, Subject subject) {
 		
 		def endOfCountdown
@@ -92,7 +92,7 @@ class ActivityService {
 		def regularity
 		def completedActivity
 		String countdown
-		//TODO the current display isn't really good
+		
 		//defines how the countdown is displayed
 		PeriodFormatter formatter = new PeriodFormatterBuilder()
 		.printZeroAlways()
@@ -111,6 +111,7 @@ class ActivityService {
 			completedActivity = recentActivities?.find{it.activity.id == activity.id}
 			regularity = getRegularity(completedActivity, activity.duration, subject)
 			currentTime = new DateTime()
+			//display countdown or date, depending on the duration of the activity
 			switch(regularity) {
 				
 				case "hourly":
