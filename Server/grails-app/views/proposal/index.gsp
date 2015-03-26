@@ -57,19 +57,17 @@
 							${proposal.getPoints()}
 						</td>
 						<td>
-							<g:if test="${proposal.getRating() != 0}">
-								<g:each var="i" in="${ (1..(int) proposal.getRating()) }">
-									<i class="fa fa-star"></i>
-								</g:each>
-								<g:each var="i" in="${ (1..5 - (int) proposal.getRating()) }">
-										<i class="fa fa-star-o"></i>
-								</g:each>
-							</g:if>
-							<g:else>
-								<g:each var="i" in="${ (1..(5 - (int) proposal.getRating())) }">
+							<g:each var="i" in="${ (0..<5)}">
+								<g:if test="${proposal.getRating() <= i}">
 									<i class="fa fa-star-o"></i>
-								</g:each>
-							</g:else>
+								</g:if>
+								<g:elseif test="${proposal.getRating() <= i + 0.5}">
+									<i class="fa fa-star-half-o"></i>
+								</g:elseif>
+								<g:else>
+									<i class="fa fa-star"></i>
+								</g:else>
+							</g:each>
 						</td>
 					</tr>
 				</g:each>
