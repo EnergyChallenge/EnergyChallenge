@@ -21,7 +21,7 @@ class MessageController {
                 teamInvites << teamInvite
             }else if(ActivityNotification.class.isInstance(message)){
                 ActivityNotification activityNotification = (ActivityNotification) message
-                ActivityNotifications << activityNotification
+                activityNotifications << activityNotification
             }
         }
         [teamInvites: teamInvites, activityNotifications: activityNotifications]

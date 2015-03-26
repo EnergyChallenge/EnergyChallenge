@@ -103,7 +103,7 @@
 					</a>		
 				</div>
 			</g:if>
-			<g:if test="${type == 'user' && teamId != 0 && de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam() != null}">
+			<g:if test="${type == 'user' && teamId == 0 && de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam() != null}">
 				<div class="card">
                 	<a href="<g:createLink controller="message" action="inviteUserToTeam" id="${id}"/>"
                 		class="button">
