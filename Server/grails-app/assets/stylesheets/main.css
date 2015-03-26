@@ -134,6 +134,12 @@ header .inside #userinfo .actions #logoutFrom {
 	border-bottom: 1px solid #E2E2E2;
     color: inherit;
 }
+#container nav ul li a i.fa {
+	position: relative;
+	top: 1px;
+	left: -5px;
+	font-size: 20px;
+}
 #container nav ul li a:hover,
 #container nav ul li a:focus {
 	border-bottom: 1px solid #631757;

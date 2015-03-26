@@ -59,11 +59,36 @@
 					</g:form>
 				</div>
 				<ul>
-					<li><a class="fa fa-home" href="${createLink(controller:'Landing')}" > EnergyChallenge</a></li>
-					<li><a class="fa fa-check-square-o" href="${createLink(controller:'Activity')}" > Aktivitäten</a></li>
-					<li><a class="fa fa-trophy" href="${createLink(controller:'Ranking')}" > Rangliste</a></li>
-					<li><a class="fa fa-plus" href="${createLink(controller:'Proposal')}" > Energiesparvorschläge</a></li>
-					<li><a class="fa fa-area-chart" href="${createLink(controller:'Statistics')}" > Statistiken</a></li>
+					<li>
+						<a href="${createLink(controller:'Landing')}" >
+							<i class="fa fa-home"></i>
+							EnergyChallenge
+						</a>
+					</li>
+					<li>
+						<a href="${createLink(controller:'Activity')}" >
+							<i class="fa fa-check-square-o"></i>
+							Aktivitäten
+						</a>
+					</li>
+					<li>
+						<a href="${createLink(controller:'Ranking')}" >
+							<i class="fa fa-trophy"></i>
+							Rangliste
+						</a>
+					</li>
+					<li>
+						<a href="${createLink(controller:'Proposal')}" >
+							<i class="fa fa-plus"></i>
+							Energiesparvorschläge
+						</a>
+					</li>
+					<li>
+						<a href="${createLink(controller:'Statistics')}" >
+							<i class="fa fa-area-chart"></i>
+							Statistiken
+						</a>
+					</li>
 				</ul>
 				<!-- Just show if User is Admin -->
                 <g:if test="${org.apache.shiro.SecurityUtils.getSubject().hasRole('admin')}">
