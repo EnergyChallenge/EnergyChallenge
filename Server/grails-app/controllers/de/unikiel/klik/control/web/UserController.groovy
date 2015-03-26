@@ -43,10 +43,10 @@ class UserController {
     def file = request.getFile('avatar')
     try{
       UserService.setAvatar(file,subject) 
-      flash.message = "Avatar (${user.avatarType}, ${user.avatar.size()} bytes) uploaded."
+      flash.message = "Avatar (${user.avatarType}, ${user.avatar.size()} bytes) hochgeladen!"
       //redirect(action:'show',model:[user:user])
     }catch(ValidationException ex){
-      flash.message = "Upload ist fehlgeschlagen"
+      flash.message = "Das Hochladen ist fehlgeschlagen!"
     }
       redirect(action:'edit')
   }
@@ -68,10 +68,10 @@ class UserController {
     try{
       Subject subject = SecurityUtils.subject
             UserService.setPassword(params.password as String, params.password2 as String, subject)
-            flash.message = "Passwords changed"
+            flash.message = "Passwort geändert!"
             redirect(action: "edit")
     }catch(ValidationException ex){
-      flash.message = "Passwords dont Match"
+      flash.message = "Passwörter stimmen nicht �berein!"
       redirect(action: "edit")
     }
   }

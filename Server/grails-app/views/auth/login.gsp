@@ -13,15 +13,15 @@
     <table>
       <tbody>
         <tr>
-          <td>Username:</td>
+          <td>Benutzername:</td>
           <td><input type="text" name="email" value="${username}" /></td>
         </tr>
         <tr>
-          <td>Password:</td>
+          <td>Passwort:</td>
           <td><input type="password" name="password" value="" /></td>
         </tr>
         <tr>
-          <td>Remember me?:</td>
+          <td>Angemeldet bleiben:</td>
           <td><g:checkBox name="rememberMe" value="${rememberMe}" /></td>
         </tr>
         <tr>

@@ -52,19 +52,23 @@
 			hierfür Punkte zu sammeln und Preise zu gewinnen. Die
 			EnergyChallenge ist ein Teil der Energiesparkampagne,
 			welche von der CAU mit Unterstützung der EKSH
-			durchgeführt, um energiesparendes Verhalten am
+			durchgeführt wird, um energiesparendes Verhalten am
 			Arbeitsplatz zu fördern.
 		</p>
 		<p style="text-align:justify;">
-			Die Teilnahme ist einfach: online anmelden, eine Gruppe
+			Die Teilnahme ist einfach: Online anmelden, eine Gruppe
 			aussuchen (dies können Kollegen aus der Arbeitsgruppe
 			sein oder auch willkürliche Zusammensetzungen) und die
 			energiesparenden Aktivitäten regelmäßig in der
 			Aktivitätenliste abhaken. Die Punkte werden dann
-			automatisch dem Nutzerkonto zugeschrieben und nach vier
+			automatisch dem Benutzerkonto zugeschrieben und nach vier
 			Wochen werden eine Gewinnergruppe und die besten
 			Einzelgewinner im Rahmen einer feierlichen Siegerehrung
 			gekürt.
+		</p>
+		<p style="text-align:justify;">
+			Damit sie ihre Aktivitäten auch komfortabel unterwegs erledigen
+			können, holen sie sich jetzt unsere EnergyChallenge-App.
 		</p>
 		<p style="margin-top:50px">
 			<table class="list">

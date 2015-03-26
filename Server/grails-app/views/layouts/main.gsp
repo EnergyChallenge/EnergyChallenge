@@ -34,10 +34,13 @@
 									<i class="fa fa-envelope"></i>
 									${user.getMessages().size()}
 								</g:if>
+								<g:else>
+									<i class="fa fa-envelope-o"></i>
+								</g:else>
 							</span>
 						</a><!--  No whitespace
 						--><a href="${createLink(controller:'profile')}" class="points">
-							<i class="fa fa-trophy"></i>
+							<i class="fa fa-diamond"></i>
 							<span class="value">${user.getPoints()}</span>
 						</a>
 					</div>
@@ -61,31 +64,31 @@
 				<ul>
 					<li>
 						<a href="${createLink(controller:'Landing')}" >
-							<i class="fa fa-home"></i>
+							<i class="fa fa-home fa-fw"></i>
 							EnergyChallenge
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Activity')}" >
-							<i class="fa fa-check-square-o"></i>
+							<i class="fa fa-check-square-o fa-fw"></i>
 							Aktivitäten
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Ranking')}" >
-							<i class="fa fa-trophy"></i>
+							<i class="fa fa-trophy fa-fw"></i>
 							Rangliste
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Proposal')}" >
-							<i class="fa fa-plus"></i>
+							<i class="fa fa-plus fa-fw"></i>
 							Energiesparvorschläge
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Statistics')}" >
-							<i class="fa fa-area-chart"></i>
+							<i class="fa fa-area-chart fa-fw"></i>
 							Statistiken
 						</a>
 					</li>
@@ -94,11 +97,35 @@
                 <g:if test="${org.apache.shiro.SecurityUtils.getSubject().hasRole('admin')}">
 					<h3>Verwaltung</h3>
 					<ul>
-						<li><a href="${createLink(controller:'Admin', action: 'users')}" >Benutzer verwalten</a></li>
-						<li><a href="${createLink(controller:'Admin', action: 'teams')}" >Teams verwalten</a></li>
-						<li><a href="${createLink(controller:'Admin', action: 'activities')}" >Aktivitäten verwalten</a></li>
-						<li><a href="${createLink(controller:'Admin', action: 'proposals')}" >Vorschläge verwalten</a></li>
-						<li><a href="${createLink(controller:'Admin', action: 'message')}" >Email Senden</a></li>
+						<li>
+							<a href="${createLink(controller:'Admin', action: 'users')}" >
+							<i class="fa fa-user fa-fw"></i>
+							Benutzer verwalten</a>
+						</li>
+						<li>
+							<a href="${createLink(controller:'Admin', action: 'teams')}" >
+							<i class="fa fa-users fa-fw"></i>
+							Teams verwalten
+							</a>
+						</li>
+						<li>
+							<a href="${createLink(controller:'Admin', action: 'activities')}" >
+							<i class="fa fa-scissors fa-fw"></i>
+							Aktivitäten verwalten
+							</a>
+						</li>
+						<li>
+							<a href="${createLink(controller:'Admin', action: 'proposals')}" >
+							<i class="fa fa-paperclip fa-fw"></i>
+							Vorschläge verwalten
+							</a>
+						</li>
+						<li>
+							<a href="${createLink(controller:'Admin', action: 'message')}" >
+							<i class="fa fa-envelope fa-fw"></i>
+							Email Senden
+							</a>
+						</li>
 					</ul>
 				</g:if>
 			</nav>

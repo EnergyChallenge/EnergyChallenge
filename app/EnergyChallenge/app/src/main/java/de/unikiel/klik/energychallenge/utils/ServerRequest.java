@@ -29,6 +29,12 @@ public class ServerRequest {
         this.parameters = parameters;
     }
 
+    public ServerRequest(String receiverOnServer, int id, ArrayList<BasicNameValuePair> parameters) {
+        this.receiverOnServer = receiverOnServer;
+        this.id = id;
+        this.parameters = parameters;
+    }
+
 
     public String getReceiverOnServer() {
         return receiverOnServer;

@@ -7,12 +7,15 @@
 	<body>
 		<h1>Aktivitätsverwaltung</h1>
 		<p>
+			<a class="button" href="${createLink(action: 'editActivity')}">neue Aktivität erstellen</a>
+		</p>
+		<p>
 			<table class="list">
 				<thead>
 					<tr>
 						<th>Beschreibung</th>
 						<th>Punkte</th>
-						<th>Dauer</th>
+						<th>Dauer(Std.)</th>
 						<th>Verwaltung</th>
 					</tr>
 				</thead>
@@ -21,16 +24,16 @@
 						<%-- TODO Link to Activities --%>
 						<tr>
 							<td>
-								${activity.getDescription()}
+								${activity.description}
 							</td>
 							<td>
-								${activity.getPoints()}
+								${activity.points}
 							</td>
 							<td>
-								${activity.getDuration()}
+								${activity.duration}
 							</td>
 							<td class="admin">
-								<a class="button" href="<g:createLink action="editActivity" params="[activityId: "${activity.id}", description: "${activity.getDescription()}", points: "${activity.getPoints()}"]"/>">bearbeiten</a> 
+								<a class="button" href="<g:createLink action="editActivity" params="[activityId: "${activity.id}", description: "${activity.description}", points: "${activity.points}"]"/>">bearbeiten</a> 
 								<a class="button" href="<g:createLink action="deleteActivity" params="[activityId: "${activity.id}"]"/>">loeschen</a> 
 							</td>
 						</tr>

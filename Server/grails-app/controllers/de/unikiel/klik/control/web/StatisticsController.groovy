@@ -34,34 +34,41 @@ class StatisticsController {
 			pointsOverDays: pointsOverDays as JSON,
 			pageVisitsSignIn: pageVisitsSignIn as JSON];
 	}
-
-	def exportCsv() {
-		// query
-		groovy.sql.Sql sql = new groovy.sql.Sql(dataSource)
-		log.info(sql)
-		log.info("datasource " + dataSource)
-		def activityList = sql.rows("SELECT a.description AS description, counts.n AS n\n" +
-		"FROM activity a, (SELECT activity_id, count(*) AS n FROM completed_activity GROUP BY activity_id) counts\n" +
-		"WHERE a.id = counts.activity_id\n" +
-		"ORDER BY n DESC")
-		sql.close()
-		
-		// TODO move the query to the StatisticsController
-		//def activityList = statsService.getActivitiesAndCompletionFrequencies(dataSource)
-		
+	def download(){
 		def sw = new StringWriter()
 		def b = new CSVWriter(sw, {
-			col1:"description" { it.DESCRIPTION }
-			col2:"haeufigkeit" { it.N }
-			})
-		for(int i=0; i < activityList.size(); i++) {
-			b << activityList[i]
+			col1:"Beschreibung" { it.val1 }
+			col2:"Daten" { it.val2 }
+		})
+		if(params.data == "activities"){
+			exportCsv(getMostPopularActivities(),"Aktivitaeten",b)
+		}else if(params.data == "points"){
+			exportCsv(getPointsOverDays(),"Punkte",b)
+		}else if(params.data == "visitsOnIndex"){
+			exportCsv(getVisitsOf("/index"),"BesucheAufStartseite",b)
+		}else if(params.data == "logins"){
+			exportCsv(getVisitsOf("/auth/signIn"),"logins",b)
+		}else{
+			flash.message = "Daten nicht gefunden"
+			redirect(action: "index")
+		}
+	}
+	//This is a realy dirty solution, but for some mystytrious Reason the CSVWriter does not work when it is called from another funktion ?!
+	private void exportCsv(def data, String fileName, def b) {
+		// TODO move the query to the StatisticsController
+		//def activityList = statsService.getActivitiesAndCompletionFrequencies(dataSource)
+		def refactoredData = []
+		for(row in data){
+			refactoredData << [val1: row.get(0), val2: row.get(1)]
+		}
+		for(int i=0; i < refactoredData.size(); i++) {
+			b << refactoredData[i]
 		}
 
 		byte[] bytes = b.writer.toString().bytes
 
 		response.setContentType("text/csv")
-		response.setHeader("Content-disposition", "filename=\"klik_activity_popularity.csv\"")
+		response.setHeader("Content-disposition", "filename=\""+fileName+".csv\"")
 		response.setContentLength(bytes.size())
 		response.outputStream << bytes
 		

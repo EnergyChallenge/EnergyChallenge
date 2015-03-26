@@ -21,13 +21,12 @@ class MessageController {
                 teamInvites << teamInvite
             }else if(ActivityNotification.class.isInstance(message)){
                 ActivityNotification activityNotification = (ActivityNotification) message
-                ActivityNotifications << activityNotification
+                activityNotifications << activityNotification
             }
         }
         [teamInvites: teamInvites, activityNotifications: activityNotifications]
     }
     def delete() {
-      //TODO handle illegal delete trys
       if(!MessageService.deleteMessage(params.id as long, SecurityUtils.subject)){
         
       }

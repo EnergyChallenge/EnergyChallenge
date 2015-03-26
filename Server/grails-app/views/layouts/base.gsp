@@ -21,7 +21,6 @@
 	<div id="wrapper">
 		<header>
 			<div class="inside">
-				<%-- TODO Header --%>
 				<g:pageProperty name="page.logo"/>
 				<g:pageProperty name="page.userInfo"/>
 			</div>

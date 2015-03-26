@@ -20,8 +20,9 @@ class Proposal {
 		dateCreated(nullable: false, defaultValue: "DateTime.now()")
 	}
 
-	static mapping = {
+    static mapping = {
 	dateCreated column: "DATE_CREATED", sqlType: "VARBINARY(300)"
+	comments cascade: 'all-delete-orphan'
     }
 	
 	// TODO implement

@@ -23,12 +23,13 @@ class ProposalService {
 				proposal.addToComments(comment); //TODO Review
 				proposal.save(failOnError: true);
 			}else{
-				//TODO
-				//oldComment.delete(flush: true)
+		
+				proposal.removeFromComments(oldComment)
 				try{
 					proposal.addToComments(comment)
 					proposal.save(failOnError:true)
 				}catch(ValidationException ex){
+					flash.message = "Etwas ist schief gelaufen!"
 					proposal = Proposal.get(proposalId)
 					proposal.addToComments(oldComment)
 					proposal.save()
@@ -36,11 +37,11 @@ class ProposalService {
 			}
 		}
     }
-    void addProposal(String description, int points, Subject author) throws ValidationException {
-	User user = User.findByEmail(author.getPrincipal());
-	//TODO this part does not work!!!!!!!
-	Proposal newproposal = new Proposal(description: description, points: points, author: user);
-	newproposal.save(failOnError: true);
-    }
+	void addProposal(String description, int points, Subject author) throws ValidationException {
+		User user = User.findByEmail(author.getPrincipal());
+		//TODO this part does not work!!!!!!!
+		Proposal newproposal = new Proposal(description: description, points: points, author: user);
+		newproposal.save(failOnError: true);
+	}
 	
 }

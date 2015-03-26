@@ -12,16 +12,16 @@
 <g:form action="changePassword">
     <table>
         <tr>
-            <td>Password:</td>
+            <td>Passwort:</td>
             <td><input type="password" name="password" value="${password}" /></td>
         </tr>
         <tr>
-            <td>Password (repeat):</td>
+            <td>Passwort (wiederholen):</td>
             <td><input type="password" name="password2" value="${password}2" /></td>
         </tr>
         <tr>
             <td />
-            <td><input type="submit" value="Save" /></td>
+            <td><input type="submit" value="Ändern" /></td>
         </tr>
     </table>
 </g:form>
