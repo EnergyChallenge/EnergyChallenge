@@ -25,10 +25,10 @@ class ActivityController {
 	//executes an activity, if execution is possible
 	def completeActivity() {
 		if(ActivityService.completeActivity(params.id as long, SecurityUtils.subject)) {
-			flash.message = "Aktivit‰t erledigt!"
+			flash.message = "Aktivit√§t erledigt!"
 			redirect(action: "index")
 		} else {
-			flash.message = "Aktivit‰t nicht ausf¸hrbar!"
+			flash.message = "Aktivit√§t nicht ausf√ºhrbar!"
 			redirect(action: "index")
 		}
 	}
@@ -36,10 +36,10 @@ class ActivityController {
 	//adds an activity to the favorites if it isn't already
 	def addToFavorites() {
 		if(ActivityService.addToFavorites(params.id as long, SecurityUtils.subject)) {
-			flash.message = "Aktivit‰t zu Favoriten hinzugef¸gt!"
+			flash.message = "Aktivit√§t zu Favoriten hinzugef√ºgt!"
 			redirect(action: "index")
 		} else {
-			flash.message = "Aktivit‰t ist bereits favorisiert!"
+			flash.message = "Aktivit√§t ist bereits favorisiert!"
 			redirect(action: "index")
 		}
 	}	
@@ -47,10 +47,10 @@ class ActivityController {
 	//removes a selected activity from the favorites
 	def removeFromFavorites() {
 		if(ActivityService.removeFromFavorites(params.id as long, SecurityUtils.subject)) {
-			flash.message = "Aktivit‰t aus Favoriten entfernt!"
+			flash.message = "Aktivit√§t aus Favoriten entfernt!"
 			redirect(action: "index")
 		} else {
-			flash.message = "Aktivit‰t ist kein Favorit!"
+			flash.message = "Aktivit√§t ist kein Favorit!"
 			redirect(action: "index")
 		}
 	}
@@ -71,7 +71,7 @@ class ActivityController {
 	//handles all NullPointerExceptions occurring in this controller
 	def nullPointerException(final NullPointerException exception){
 		log.error("Exception occured. ${exception?.message}", exception)
-		flash.message = "Aktivit‰t nicht verf¸gbar!"
+		flash.message = "Aktivit√§t nicht verf√ºgbar!"
 		redirect(action: "index")
 	}
 }
