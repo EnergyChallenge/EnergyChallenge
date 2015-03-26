@@ -8,82 +8,95 @@ import java.util.Random
 class InitService {
 
 	static def ACTIVITY_DESCRIPTIONS = [
-		"Eine neue Klik-Aktivität beisteuern",
-		"Mit dem Fahrrad zur Uni fahren bis 3km",
-		"Mit dem Fahrrad zur Uni fahren bis 5km",
-		"Mit dem Fahrrad zur Uni fahren über 5km",
-		"Mobilität auf dem Campus zwischen den Sektoren zu Fuß oder mit Fahrrad",
-		"Fahrgemeinschaft mit dem eigenen Auto zur Uni anbieten",
-		"Fahrgemeinschaft zur Uni in Anspruch nehmen",
-		"Immer das Licht ausschalten bei Verlassen des Raumes",
-		"Immer den Monitor ausschalten bei Verlassen des Raumes",
-		"Rechner herunterfahren bei Terminen und längeren Pausen",
-		"Rechner herunterfahren bei Feierabend",
-		"Kühltruhen ausmisten und abschalten bei Bedarf",
-		"Kühlschränke auf den niedrigsten Wert stellen",
-		"Nicht genutzte Kühlschränke ausschalten und melden (Fr. Steinwender -4990)",
-		"Lüftungsanlagen in Laborgebäuden optimal einstellen",
-		"Händewaschen mit kaltem Wasser",
-		"Wasserkocher nur mit der benötigten Menge Wasser füllen (z.B. eine Tasse)",
-		"Wenn möglich das Tageslicht statt elektrisches Licht nutzen",
-		"Schreibtischlampe statt Deckenbeleuchtung nutzen",
-		"Warmwasserboiler nur auf max. 60 Grad einstellen",
-		"Energieberatungsangebot der CAU wahrnehmen (Fr. Steinwender -4990)",
-		"Energetische Verbesserungsmaßnahme auf dem Campus melden (Fr. Steinwender -4990)",
-		"Büroeinrichtung so anordnen, dass Heizkörper frei stehen und Tageslicht optimal genutzt werden kann",
-		"Sparsam drucken (doppelseitig, s/w, mehrere Seiten auf einem Blatt)",
-		"Treppe statt Fahrstuhl nutzen pro Tag",
-		"Steckerleisten im Büro für elektronische Geräte nutzen (erhältlich bei Fr. Steinwender unter -4990)",
-		"Herunterfahren von Abzugsanlagen in Laborgebäuden bei Nichtnutzung",
-		"Nutzung von Ventilatoren einschränken",
-		"Thermokannen zum Warmhalten von Tee und Kaffee nutzen",
-		"Anmeldung beim Campusrad",
-		"Fahrrad für die Fahrt zur Uni einsatzbereit machen",
-		"Persönlichen CO2-Abdruck berechnen",
-		"Röhrenmonitore mit Flachbildschirmen ersetzen",
-		"Umweltprämie zum Ersetzen veralteter elektronischer Geräte in Anspruch nehmen"
+		"Eine neue Klik-Aktivität beisteuern", //0
+		//every hour
+		"Immer das Licht ausschalten bei Verlassen des Raumes", //1
+		"Immer den Monitor ausschalten bei Verlassen des Raumes", //2
+		"Rechner herunterfahren bei Terminen und längeren Pausen", //3
+		"Händewaschen mit kaltem Wasser", //4
+		"Wasserkocher nur mit der benötigten Menge Wasser füllen (z.B. eine Tasse)", //5
+		//every day
+		"Mit dem Fahrrad zur Uni fahren bis 3km", //6
+		"Mit dem Fahrrad zur Uni fahren bis 5km", //7
+		"Mit dem Fahrrad zur Uni fahren über 5km", //8
+		"Mobilität auf dem Campus zwischen den Sektoren zu Fuß oder mit Fahrrad", //9
+		"Fahrgemeinschaft mit dem eigenen Auto zur Uni anbieten", //10
+		"Fahrgemeinschaft zur Uni in Anspruch nehmen", //11
+		"Rechner herunterfahren bei Feierabend", //12
+		"Wenn möglich das Tageslicht statt elektrisches Licht nutzen", //13
+		"Schreibtischlampe statt Deckenbeleuchtung nutzen", //14
+		"Sparsam drucken (doppelseitig, s/w, mehrere Seiten auf einem Blatt)", //15
+		"Treppe statt Fahrstuhl nutzen pro Tag", //16
+		"Thermokannen zum Warmhalten von Tee und Kaffee nutzen", //17
+		"Herunterfahren von Abzugsanlagen in Laborgebäuden bei Nichtnutzung", //18
+		"Energetische Verbesserungsmaßnahme auf dem Campus melden (Fr. Steinwender -4990)", //19
+		//every week
+		"Kühltruhen ausmisten und abschalten bei Bedarf", //20
+		"Nicht genutzte Kühlschränke ausschalten und melden (Fr. Steinwender -4990)", //21
+		//every month
+		"Energieberatungsangebot der CAU wahrnehmen (Fr. Steinwender -4990)", //22
+		"Kühlschränke auf den niedrigsten Wert stellen", //23
+		//every half a year
+		"Lüftungsanlagen in Laborgebäuden optimal einstellen", //24
+		"Warmwasserboiler nur auf max. 60 Grad einstellen", //25
+		"Nutzung von Ventilatoren einschränken", //26
+		"Fahrrad für die Fahrt zur Uni einsatzbereit machen", //27
+		"Persönlichen CO2-Abdruck berechnen", //28
+		//every year
+		"Büroeinrichtung so anordnen, dass Heizkörper frei stehen und Tageslicht optimal genutzt werden kann", //29
+		"Steckerleisten im Büro für elektronische Geräte nutzen (erhältlich bei Fr. Steinwender unter -4990)", //30
+		"Umweltprämie zum Ersetzen veralteter elektronischer Geräte in Anspruch nehmen", //31
+		"Bildschirme durch effizientere ersetzen", //32
+		//every 3 years
+		"Anmeldung beim Campusrad" //33
 	]
 	
-	static def ACTIVITY_POINTS = [2,2,3,5,2,3,4,1,1,2,3,5,3,4,5,2,2,2,2,3,5,3,4,1,2,3,5,2,2,3,2,3,4,5]
+	static def ACTIVITY_POINTS = [2,1,1,2,2,2,2,3,5,2,3,4,3,2,2,1,2,2,5,3,5,4,5,3,5,3,2,2,3,4,3,5,4,3]
 	
 	static def long MIN_DURATION_IN_MS = 1
+	static def long ONE_HOUR_IN_MS = 60*60*1000
 	static def long ONE_DAY_IN_MS = 24*60*60*1000
+	static def long ONE_WEEK_IN_MS = 7*24*60*60*1000
+	static def long ONE_MONTH_IN_MS = 30*24*60*60*1000
+	static def long HALF_A_YEAR_IN_MS = 183*24*60*60*1000
+	static def long ONE_YEAR_IN_MS = 365*24*60*60*1000
+	static def long THREE_YEARS_IN_MS = 3*365*24*60*60*1000
 	
 	static ACTIVITY_DURATIONS = [
 		MIN_DURATION_IN_MS, // 0.
-		ONE_DAY_IN_MS, // 1.
-		ONE_DAY_IN_MS, // 2.
-		ONE_DAY_IN_MS, // 3.
-		ONE_DAY_IN_MS, // 4.
-		ONE_DAY_IN_MS, // 5.
+		ONE_HOUR_IN_MS, // 1.
+		ONE_HOUR_IN_MS, // 2.
+		ONE_HOUR_IN_MS, // 3.
+		ONE_HOUR_IN_MS, // 4.
+		ONE_HOUR_IN_MS, // 5.
 		ONE_DAY_IN_MS, // 6.
-		MIN_DURATION_IN_MS, // 7. TODO give correct duration
-		MIN_DURATION_IN_MS, // 8. TODO give correct duration
-		MIN_DURATION_IN_MS, // 9.
-		ONE_DAY_IN_MS,      // 10.
-		MIN_DURATION_IN_MS, // 11. TODO give correct duration
-		MIN_DURATION_IN_MS, // 12. TODO give correct duration
-		MIN_DURATION_IN_MS, // 13.
-		MIN_DURATION_IN_MS, // 14.
-		MIN_DURATION_IN_MS, // 15.
-		MIN_DURATION_IN_MS, // 16.
+		ONE_DAY_IN_MS, // 7.
+		ONE_DAY_IN_MS, // 8.
+		ONE_DAY_IN_MS, // 9.
+		ONE_DAY_IN_MS, // 10.
+		ONE_DAY_IN_MS, // 11.
+		ONE_DAY_IN_MS, // 12.
+		ONE_DAY_IN_MS, // 13.
+		ONE_DAY_IN_MS, // 14.
+		ONE_DAY_IN_MS, // 15.
+		ONE_DAY_IN_MS, // 16.
 		ONE_DAY_IN_MS, // 17.
 		ONE_DAY_IN_MS, // 18.
-		MIN_DURATION_IN_MS, // 19. TODO give correct duration
-		MIN_DURATION_IN_MS, // 20. TODO once in a lifetime?
-		MIN_DURATION_IN_MS, // 21.
-		MIN_DURATION_IN_MS, // 22. TODO once in a lifetime?
-		MIN_DURATION_IN_MS, // 23. TODO give correct duration
-		ONE_DAY_IN_MS,      // 24.
-		MIN_DURATION_IN_MS, // 25. TODO once in a lifetime?
-		MIN_DURATION_IN_MS, // 26. TODO once in a lifetime?
-		MIN_DURATION_IN_MS, // 27. TODO once in a lifetime?
-		MIN_DURATION_IN_MS, // 28. TODO once in a lifetime?
-		MIN_DURATION_IN_MS, // 29. TODO once in a lifetime?
-		MIN_DURATION_IN_MS, // 30. TODO once in a lifetime?
-		MIN_DURATION_IN_MS, // 31. TODO once in a lifetime?
-		MIN_DURATION_IN_MS, // 32. TODO once in a lifetime?
-		MIN_DURATION_IN_MS  // 33. TODO give correct duration
+		ONE_DAY_IN_MS, // 19.
+		ONE_WEEK_IN_MS, // 20.
+		ONE_WEEK_IN_MS, // 21.
+		ONE_MONTH_IN_MS, // 22.
+		ONE_MONTH_IN_MS, // 23.
+		HALF_A_YEAR_IN_MS, // 24.
+		HALF_A_YEAR_IN_MS, // 25.
+		HALF_A_YEAR_IN_MS, // 26.
+		HALF_A_YEAR_IN_MS, // 27.
+		HALF_A_YEAR_IN_MS, // 28.
+		ONE_YEAR_IN_MS, // 29.
+		ONE_YEAR_IN_MS, // 30.
+		ONE_YEAR_IN_MS, // 31.
+		ONE_YEAR_IN_MS, // 32.
+		THREE_YEARS_IN_MS // 33.
 	]
 	
 	static ACTIVITY_VISIBILITY = [
@@ -120,14 +133,14 @@ class InitService {
 		true, //30
 		true, //31
 		true, //32
-		true, //33
+		true //33
 		]
 	
 	// CAU Institute
 	static def INSTITUTES = [
 		// Rechtswissenschaftliche Fakultät
 		"Hermann Kantorowicz-Institut für juristische Grundlagenforschung",
-		"Walther-Schuuml;cking-Institut für Internationales Recht",
+		"Walther-Schücking-Institut für Internationales Recht",
 		"Institut für Kriminalwissenschaften",
 		"Institut für Osteuropäisches Recht",
 		"Institut für Wirtschafts- und Steuerrecht",
@@ -148,7 +161,7 @@ class InitService {
 		"Zoologische Institut und Zoologisches Museum",
 		"Institut für Polarökologie",
 		"Geographisches Institut",
-		"Institut für ökosystemforschung",
+		"Institut für Ökosystemforschung",
 		"Institut für Ur- und Frühgeschichte",
 		"Institut für Geowissenschaften",
 		"GEOMAR Helmholtz-Zentrum für Ozeanforschung Kiel",
@@ -241,14 +254,13 @@ class InitService {
 		"Institut für Elektrotechnik und Informationstechnik",
 		"Institut für Informatik",
 		"Institut für Materialwissenschaft",
-	
 		"Andere"
 	]
 	
 	static void initKlikActivities() {
 		//println ACTIVITY_DESCRIPTIONS.size()
 		for(int i=0; i < ACTIVITY_DESCRIPTIONS.size(); i++) {
-			new Activity(description: ACTIVITY_DESCRIPTIONS[i], points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i], visible: ACTIVITY_VISIBILITY[i]).save(flush: true)
+			new Activity(description: ACTIVITY_DESCRIPTIONS[i], points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i], visible: ACTIVITY_VISIBILITY[i]).save(flush: true, failOnError: true)
 		}
 	}
 	

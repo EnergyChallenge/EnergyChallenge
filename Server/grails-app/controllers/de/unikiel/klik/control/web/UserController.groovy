@@ -68,10 +68,10 @@ class UserController {
     try{
       Subject subject = SecurityUtils.subject
             UserService.setPassword(params.password as String, params.password2 as String, subject)
-            flash.message = "Passwort geändert!"
+            flash.message = "Passwort geÃ¤ndert!"
             redirect(action: "edit")
     }catch(ValidationException ex){
-      flash.message = "Passwörter stimmen nicht überein!"
+      flash.message = "PasswÃ¶rter stimmen nicht überein!"
       redirect(action: "edit")
     }
   }

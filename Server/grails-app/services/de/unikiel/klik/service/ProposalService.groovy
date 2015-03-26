@@ -23,12 +23,13 @@ class ProposalService {
 				proposal.addToComments(comment); //TODO Review
 				proposal.save(failOnError: true);
 			}else{
-				//TODO
-				//oldComment.delete(flush: true)
+		
+				proposal.removeFromComments(oldComment)
 				try{
 					proposal.addToComments(comment)
 					proposal.save(failOnError:true)
 				}catch(ValidationException ex){
+					flash.message = "Etwas ist schief gelaufen!"
 					proposal = Proposal.get(proposalId)
 					proposal.addToComments(oldComment)
 					proposal.save()

@@ -9,13 +9,13 @@ class Comment {
 	User author
 	DateTime dateCreated = new DateTime()
 
-	static belongsTo = [proposal: Proposal]
+	//static belongsTo = [proposal: Proposal]
 	
     static constraints = {
 		text(nullable: true)
 		rating(nullable: true, min:1, max:5) // TODO check size constraints
-		proposal(nullable: false)
-		author(nullable: false, unique: 'proposal')
+		//proposal(nullable: false)
+		author(nullable: false)//, unique: 'proposal')
 		dateCreated(nullable: false, defaultValue: "DateTime.now()")
     }
     
