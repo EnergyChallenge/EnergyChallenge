@@ -34,6 +34,9 @@
 									<i class="fa fa-envelope"></i>
 									${user.getMessages().size()}
 								</g:if>
+								<g:else>
+									<i class="fa fa-envelope-o"></i>
+								</g:else>
 							</span>
 						</a><!--  No whitespace
 						--><a href="${createLink(controller:'profile')}" class="points">

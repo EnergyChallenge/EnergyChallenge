@@ -42,7 +42,7 @@
 				<tr>
 					<th>Beschreibung</th>
 					<th>Punkte</th>
-					<th>&#216;Bewertung</th>
+					<th>&#216;&nbsp;Bewertung</th>
 				</tr>
 			</thead>
 			<tbody>
