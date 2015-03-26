@@ -37,12 +37,40 @@ class AdminController {
 		def activities = []
 		def String duration
 		for(act in rawActivities) {
-			duration = act.duration.getStandardHours().toString()
+			duration = getStringOfDuration(act.duration)
 			activities << [id: act.id, description: act.description, points: act.points, duration: duration]
 		}
         //int lastPage = Activity.count() / 10;
         [activities: activities]
     }
+    private String getStringOfDuration(Duration duration){
+        long durationInMilliSeconds= duration.getMillis() 
+        long milliSecondsInAYear = 1000L*60*60*24*365
+        long milliSecondsInAMonth = 1000L*60*60*24*30
+        long milliSecondsInAWeek = 1000L*60*60*24*7
+        long milliSecondsInADay = 1000L*60*60*24
+        long milliSecondsInAHour = 1000L*60*60
+        long milliSecondsInAMinute = 1000L*60
+        long milliSecondsInASeconds = 1000L
+        if(durationInMilliSeconds > milliSecondsInAYear){
+            return (((float) durationInMilliSeconds) / milliSecondsInAYear).round(2) + " Jahre"
+        }else if(durationInMilliSeconds > milliSecondsInAMonth){
+            return (((float) durationInMilliSeconds) / milliSecondsInAMonth).round(2) + " Monate"
+        }else if(durationInMilliSeconds > milliSecondsInAWeek){
+            return (((float) durationInMilliSeconds) / milliSecondsInAWeek).round(2) + " Woche"
+        }else if(durationInMilliSeconds > milliSecondsInADay){
+            return (((float) durationInMilliSeconds) / milliSecondsInADay).round(2) + " Tage"
+        }else if(durationInMilliSeconds > milliSecondsInAHour){
+            return (((float) durationInMilliSeconds) / milliSecondsInAHour).round(2) + " Studen"
+        }else if(durationInMilliSeconds > milliSecondsInAMinute){
+            return (((float) durationInMilliSeconds) / milliSecondsInAMinute).round(2) + " Minuten"
+        }else if(durationInMilliSeconds > milliSecondsInAHour){
+            return (((float) durationInMilliSeconds) / milliSecondsInASecond).round(2) + " Secunden"
+        }else{
+            return durationInMilliSeconds + " ms"
+        }
+    }
+    
     def proposals(){
         def proposals = Proposal.findAll("from Proposal as p order by p.dateCreated")
         DateTimeFormatter fmt = DateTimeFormat.forPattern("dd.MM.yyyy")

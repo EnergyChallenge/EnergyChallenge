@@ -29,14 +29,14 @@ public class GetUserProfileTask extends AccessServerTask {
 
     private ProfileFragment profileFragment;
 
-    private GridLayout profileView;
+    private LinearLayout profileView;
 
     private LinearLayout progressIndicator;
 
     private TextView emptyListText;
 
     public GetUserProfileTask(Context context, int profileId, ProfileFragment profileFragment,
-                              GridLayout profileView, LinearLayout progressIndicator,
+                              LinearLayout profileView, LinearLayout progressIndicator,
                               TextView emptyListText) {
         super(context);
         this.profileId = profileId;

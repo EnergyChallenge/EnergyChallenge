@@ -53,14 +53,14 @@ class InitService {
 	
 	static def ACTIVITY_POINTS = [2,1,1,2,2,2,2,3,5,2,3,4,3,2,2,1,2,2,5,3,5,4,5,3,5,3,2,2,3,4,3,5,4,3]
 	
-	static def long MIN_DURATION_IN_MS = 1
-	static def long ONE_HOUR_IN_MS = 60*60*1000
-	static def long ONE_DAY_IN_MS = 24*60*60*1000
-	static def long ONE_WEEK_IN_MS = 7*24*60*60*1000
-	static def long ONE_MONTH_IN_MS = 30*24*60*60*1000
-	static def long HALF_A_YEAR_IN_MS = 183*24*60*60*1000
-	static def long ONE_YEAR_IN_MS = 365*24*60*60*1000
-	static def long THREE_YEARS_IN_MS = 3*365*24*60*60*1000
+	static def long MIN_DURATION_IN_MS = 1L
+	static def long ONE_HOUR_IN_MS = 60L*60*1000
+	static def long ONE_DAY_IN_MS = 24L*60*60*1000
+	static def long ONE_WEEK_IN_MS = 7L*24*60*60*1000
+	static def long ONE_MONTH_IN_MS = 30L*24*60*60*1000
+	static def long HALF_A_YEAR_IN_MS = 183L*24*60*60*1000
+	static def long ONE_YEAR_IN_MS = 365L*24*60*60*1000
+	static def long THREE_YEARS_IN_MS = 3L*365*24*60*60*1000
 	
 	static ACTIVITY_DURATIONS = [
 		MIN_DURATION_IN_MS, // 0.

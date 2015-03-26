@@ -77,6 +77,9 @@
 
     <string name="your_comment">Ihr Kommentar</string>
 
+    <string name="comment_proposal_successfull">Die Aktivität wurde erfolgreich ausgeführt.</string>
+    <string name="comment_proposal_failed">Beim Kommentieren ist leider ein Fehler aufgetreten.</string>
+
     <string name="submit">Absenden</string>
 
     <string name="point">Punkt</string>

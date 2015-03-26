@@ -43,7 +43,7 @@ public class CommentProposalTask extends AccessServerTask {
     @Override
     protected void handleServerResponse(JSONObject response) throws JSONException {
         if (response.getJSONObject("commentProposal").getBoolean("success")) {
-            Toast.makeText(context, "Der Vorschlag wurde erfolgreich kommentiert.", Toast.LENGTH_SHORT).show(); //TODO STring
+            Toast.makeText(context, R.string.comment_proposal_successfull, Toast.LENGTH_SHORT).show();
         } else {
             handleCommentError();
         }
@@ -55,7 +55,7 @@ public class CommentProposalTask extends AccessServerTask {
     }
 
     private void handleCommentError() {
-        Toast.makeText(context, "Beim Kommentieren ist leider ein Fehler aufgetreten.", Toast.LENGTH_SHORT).show(); //TODO String
+        Toast.makeText(context, R.string.comment_proposal_failed, Toast.LENGTH_SHORT).show();
     }
 
 }
