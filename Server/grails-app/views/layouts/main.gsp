@@ -1,6 +1,7 @@
 <g:applyLayout name="base">
 
 	<head>
+		<title><g:layoutTitle default="EnergyChallenge"/> - EnergyChallenge</title>
 		<asset:stylesheet src="main.css" />    
 		<asset:javascript src="jqplot/jquery.min.js" />	 
 		<%-- <asset:javascript src="fixedNav.js" /> --%>
