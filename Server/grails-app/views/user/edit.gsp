@@ -11,13 +11,7 @@
         <table>
             <tr>
                 <td>Title:</td>
-                <td>
-                    <select name="title" >
-                        <option value=" ">-</option>
-                        <option value="Prof">Prof.</option>
-                        <option value="Doktor">Dr.</option>
-                    </select>
-                </td>
+                <td><input type="text" name="title" value="${user.getTitle()}" /></td>
             </tr>
             <tr>
                 <td>Vorname:</td>
