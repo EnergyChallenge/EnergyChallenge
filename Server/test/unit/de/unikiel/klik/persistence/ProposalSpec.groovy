@@ -1,10 +1,10 @@
-package de.unikiel.klik.model
+package de.unikiel.klik.persistence
 
-import de.unikiel.klik.model.User
-import de.unikiel.klik.model.Institute
-import de.unikiel.klik.model.Role
-import de.unikiel.klik.model.Proposal
-import de.unikiel.klik.model.Comment
+import de.unikiel.klik.persistence.User
+import de.unikiel.klik.persistence.Institute
+import de.unikiel.klik.persistence.Role
+import de.unikiel.klik.persistence.Proposal
+import de.unikiel.klik.persistence.Comment
 
 import de.unikiel.klik.TestService
 import grails.test.mixin.TestFor

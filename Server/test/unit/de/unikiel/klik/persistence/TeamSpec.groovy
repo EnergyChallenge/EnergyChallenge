@@ -1,4 +1,4 @@
-package de.unikiel.klik.model
+package de.unikiel.klik.persistence
 
 import grails.test.mixin.TestFor
 import grails.test.mixin.Mock

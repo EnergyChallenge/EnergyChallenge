@@ -1,9 +1,9 @@
-package de.unikiel.klik.model
+package de.unikiel.klik.persistence
 
 import grails.test.mixin.TestFor
 import grails.test.mixin.Mock
 import spock.lang.Specification
-import de.unikiel.klik.TestService
+import de.unikiel.klik.service.TestService
 
 /**
  * See the API for {@link grails.test.mixin.domain.DomainClassUnitTestMixin} for usage instructions

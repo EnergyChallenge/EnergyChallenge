@@ -1,6 +1,6 @@
-package de.unikiel.klik.model
+package de.unikiel.klik.persistence
 
-import de.unikiel.klik.TestService
+import de.unikiel.klik.service.TestService
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 import grails.validation.ValidationException

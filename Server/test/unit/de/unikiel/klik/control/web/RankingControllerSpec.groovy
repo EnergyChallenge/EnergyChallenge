@@ -1,4 +1,4 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
 import grails.test.mixin.*
 import spock.lang.*

@@ -1,4 +1,4 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification
@@ -6,8 +6,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(SearchController)
-class SearchControllerSpec extends Specification {
+@TestFor(StartpageController)
+class StartpageControllerSpec extends Specification {
 
     def setup() {
     }
