@@ -1,12 +1,9 @@
-<%-- --%>
 <!DOCTYPE html>
 <head>
 	<meta name="layout" content="page"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<!-- TODO Title -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- TODO Favicons -->
+	<title><g:layoutTitle default="EnergyChallenge"/></title>
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" sizes="57x57" href="${assetPath(src: 'favicons/apple-touch-icon-57x57.png')}">
