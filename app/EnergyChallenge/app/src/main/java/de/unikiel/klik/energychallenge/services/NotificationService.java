@@ -16,6 +16,7 @@ import android.support.v4.app.NotificationCompat;
 import java.util.Calendar;
 
 import de.unikiel.klik.energychallenge.R;
+import de.unikiel.klik.energychallenge.activities.MainActivity;
 
 public class NotificationService extends Service {
 
@@ -54,6 +55,18 @@ public class NotificationService extends Service {
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setContentTitle("Energy Challenge")
                         .setContentText("Sie haben seit einiger Zeit keine Aktivitäten mehr durchgeführt!");
+
+        //Create the notification click behaviour
+        Intent resultIntent = new Intent(context, MainActivity.class);
+        PendingIntent resultPendingIntent =
+                PendingIntent.getActivity(
+                        context,
+                        0,
+                        resultIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                );
+
+        notificationBuilder.setContentIntent(resultPendingIntent);
 
         //Build and issue Notification
         int notificationId = 007;
