@@ -30,6 +30,9 @@
 	<!--<asset:stylesheet src="base.css" /> TODO DELETE -->
 	<asset:stylesheet src="basic.css" />
 	<asset:stylesheet src="fontawesome/css/font-awesome.min.css" />
+	<asset:javascript src="jqplot/jquery.min.js" />
+                <asset:javascript src="fixedNav.js" />
+
 	<g:layoutHead />
 </head>
 <body class="${pageProperty(name: 'body.class')}">
