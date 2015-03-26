@@ -68,8 +68,7 @@
 		</p>
 		<p style="text-align:justify;">
 			Damit sie ihre Aktivitäten auch komfortabel unterwegs erledigen
-			können, holen sie sich jetzt unsere EnergyChallenge-App in
-			ihrem App-Store.
+			können, holen sie sich jetzt unsere EnergyChallenge-App.
 		</p>
 		<p style="margin-top:50px">
 			<table class="list">

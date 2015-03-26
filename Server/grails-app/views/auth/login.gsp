@@ -17,11 +17,11 @@
           <td><input type="text" name="email" value="${username}" /></td>
         </tr>
         <tr>
-          <td>Passworz:</td>
+          <td>Passwort:</td>
           <td><input type="password" name="password" value="" /></td>
         </tr>
         <tr>
-          <td>Merken?:</td>
+          <td>Angemeldet bleiben:</td>
           <td><g:checkBox name="rememberMe" value="${rememberMe}" /></td>
         </tr>
         <tr>
