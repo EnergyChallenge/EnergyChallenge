@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Aktivität ändern</h1>
+<h1>Aktivität Ändern</h1>
 
 <g:form action="changeActivity">
     <input type="hidden" name="proposalId" value="${params.proposalId}" />

@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<h1>Email Versand</h1>
+<h1>E-Mail versenden</h1>
 
 <g:if test="${flash.message}">
     <div class="message">${flash.message}</div>

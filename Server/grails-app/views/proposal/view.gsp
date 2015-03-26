@@ -48,7 +48,7 @@
 					<%-- TODO Link to Proposal --%>
 					<tr>
 						<td>
-													${comment.getText()}
+							${comment.getText()}
 						</td>
 						<td>
 							<g:each var="i" in="${ (0..<5)}">
