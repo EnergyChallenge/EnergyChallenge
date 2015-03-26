@@ -59,9 +59,9 @@ class AppController {
 		int points = user.getPoints();
 		int position = getPositionOfUser(user);
 		def lastActivities = [];
-		//TODO Not all! && SORT
-		for (activity in user.getCompletedActivities()) {
-			lastActivities << activity.getActivity().getDescription();
+		def recentActivities = user.getCompletedActivities.sort{-it.getDateCreated().getMillis()}
+		for (int i = 0; i < 10 && i < recentActivities.size(); i++) {
+			lastActivities << recentActivities[i].getActivity().getDescription();
 		}
 		def profile = [name: name, team: teamname, institute: institute,
 						points: points, position: position,
@@ -82,9 +82,9 @@ class AppController {
 		int points = team.getPoints();
 		int position = getPositionOfTeam(team);
 		def lastActivities = [];
-		//TODO Not all! && SORT
-		for (activity in team.getCompletedActivitys()) {
-			lastActivities << activity.completedActivity.getActivity().getDescription();
+		def recentActivities = team.getCompletedActivitys.sort{-it.getDateCreated().getMillis()}
+		for (int i = 0; i < 10 && i < recentActivities.size(); i++) {
+			lastActivities << recentActivities[i].getActivity().getDescription();
 		}
 		def members = [];
 		for (member in team.getMembers()) {
@@ -156,7 +156,6 @@ class AppController {
 		
 		authenticate(params.email, params.password);
 		
-		//TODO Sort comments and proposals
 		def proposals = [];
 		for (proposal in Proposal.findAll()) {
 			def comments = []
@@ -173,13 +172,16 @@ class AppController {
 							author: comment.getAuthor().getName(),
 							isOwn: isOwn];
 			}
-			
+			def temp = comments.sort{it.id}
+			comments = temp
 			proposals << [id: proposal.getId(),
 							description: proposal.getDescription(),
 							author: proposal.getAuthor().getName(),
 							rating: proposal.getRating(),
 							comments: comments];
 		}
+		def temp = proposals.sort{it.id}
+		proposals = temp
 		
 		outputToJson([proposals: proposals]);
 	}
