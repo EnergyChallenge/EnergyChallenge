@@ -1,4 +1,4 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
 import org.openqa.selenium.firefox.FirefoxDriver
 	

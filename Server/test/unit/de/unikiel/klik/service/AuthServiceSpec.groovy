@@ -1,4 +1,4 @@
-package de.unikiel.klik
+package de.unikiel.klik.service
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification

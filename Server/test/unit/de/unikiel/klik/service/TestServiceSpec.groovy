@@ -1,6 +1,6 @@
-package de.unikiel.klik
+package de.unikiel.klik.service
 
-import de.unikiel.klik.model.*
+import de.unikiel.klik.persistence.*
 import grails.test.mixin.TestFor
 import grails.test.mixin.Mock
 import org.apache.shiro.crypto.hash.Sha256Hash
