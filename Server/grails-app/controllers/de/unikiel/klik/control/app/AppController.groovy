@@ -59,7 +59,7 @@ class AppController {
 		int points = user.getPoints();
 		int position = getPositionOfUser(user);
 		def lastActivities = [];
-		def recentActivities = user.getCompletedActivities.sort{-it.getDateCreated().getMillis()}
+		def recentActivities = user.getCompletedActivities().sort{-it.getDateCreated().getMillis()}
 		for (int i = 0; i < 10 && i < recentActivities.size(); i++) {
 			lastActivities << recentActivities[i].getActivity().getDescription();
 		}
@@ -82,9 +82,8 @@ class AppController {
 		int points = team.getPoints();
 		int position = getPositionOfTeam(team);
 		def lastActivities = [];
-		def recentActivities = team.getCompletedActivitys.sort{-it.getDateCreated().getMillis()}
-		for (int i = 0; i < 10 && i < recentActivities.size(); i++) {
-			lastActivities << recentActivities[i].getActivity().getDescription();
+		for (activity in team.getCompletedActivitys()) {
+			lastActivities << activity.completedActivity.getActivity().getDescription();
 		}
 		def members = [];
 		for (member in team.getMembers()) {
