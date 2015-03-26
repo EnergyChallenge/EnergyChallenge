@@ -8,4 +8,6 @@ public class Config {
 
     public static final boolean LOGIN_REQUIRED = true;
 
+    //Better use averting caching on server side
+    public static final boolean AVERT_SERVER_CACHING = true;
 }
