@@ -92,7 +92,7 @@
 
     <string name="settings">Einstellungen</string>
     <string name="notifications">Benachrichtigungen</string>
-    <string name="settings_notification_summary">Möchten Sie regelmäßig Benachrichtigungen erhalten?</string>
+    <string name="settings_notification_summary">Benachrichtigen bei aktuellen Nachrichten der EnergyChallenge</string>
     <string name="useraccount">Benutzerkonto</string>
     <string name="your_name">Ihr Name</string>
     <string name="your_email">Ihre E-Mail Adresse</string>
