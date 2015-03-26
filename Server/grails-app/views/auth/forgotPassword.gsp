@@ -33,11 +33,11 @@
             <td><input type="text" name="email" value="" /></td>
           </tr>
           <tr>
-            <td>Neues Password:</td>
+            <td>Neues Passwort:</td>
             <td><input type="password" name="password" value="" /></td>
           </tr>
           <tr>
-            <td>Password Wiederholen:</td>
+            <td>Passwort (wiederholen):</td>
             <td><input type="password" name="password2" value="" /></td>
           </tr>
           <tr>

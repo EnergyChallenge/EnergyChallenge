@@ -21,7 +21,7 @@
             <td><input type="text" name="email" value="${email}" /></td>
         </tr>
         <tr>
-            <td>Title:</td>
+            <td>Titel:</td>
             <td>
                 <select name="title" >
                     <option value="">-</option>
