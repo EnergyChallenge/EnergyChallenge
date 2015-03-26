@@ -8,52 +8,51 @@ import java.util.Random
 class InitService {
 
 	static def ACTIVITY_DESCRIPTIONS = [
-		"Eine neue Klik-Aktivität beisteuern", //0
+		"Eine neue Klik-AktivitÃ¤t beisteuern", //0
 		//every hour
 		"Immer das Licht ausschalten bei Verlassen des Raumes", //1
 		"Immer den Monitor ausschalten bei Verlassen des Raumes", //2
-		"Rechner herunterfahren bei Terminen und längeren Pausen", //3
-		"Händewaschen mit kaltem Wasser", //4
-		"Wasserkocher nur mit der benötigten Menge Wasser füllen (z.B. eine Tasse)", //5
+		"Rechner herunterfahren bei Terminen und lÃ¤ngeren Pausen", //3
+		"HÃ¤ndewaschen mit kaltem Wasser", //4
+		"Wasserkocher nur mit der benÃ¶tigten Menge Wasser fÃ¼llen (z.B. eine Tasse)", //5
 		//every day
 		"Mit dem Fahrrad zur Uni fahren bis 3km", //6
 		"Mit dem Fahrrad zur Uni fahren bis 5km", //7
-		"Mit dem Fahrrad zur Uni fahren über 5km", //8
-		"Mobilität auf dem Campus zwischen den Sektoren zu Fuß oder mit Fahrrad", //9
+		"Mit dem Fahrrad zur Uni fahren Ã¼ber 5km", //8
+		"MobilitÃ¤t auf dem Campus zwischen den Sektoren zu FuÃŸ oder mit Fahrrad", //9
 		"Fahrgemeinschaft mit dem eigenen Auto zur Uni anbieten", //10
 		"Fahrgemeinschaft zur Uni in Anspruch nehmen", //11
 		"Rechner herunterfahren bei Feierabend", //12
-		"Wenn möglich das Tageslicht statt elektrisches Licht nutzen", //13
+		"Wenn mÃ¶glich das Tageslicht statt elektrisches Licht nutzen", //13
 		"Schreibtischlampe statt Deckenbeleuchtung nutzen", //14
 		"Sparsam drucken (doppelseitig, s/w, mehrere Seiten auf einem Blatt)", //15
 		"Treppe statt Fahrstuhl nutzen pro Tag", //16
 		"Thermokannen zum Warmhalten von Tee und Kaffee nutzen", //17
-		"Herunterfahren von Abzugsanlagen in Laborgebäuden bei Nichtnutzung", //18
-		"Energetische Verbesserungsmaßnahme auf dem Campus melden (Fr. Steinwender -4990)", //19
+		"Herunterfahren von Abzugsanlagen in LaborgebÃ¤uden bei Nichtnutzung", //18
+		"Energetische VerbesserungsmaÃŸnahme auf dem Campus melden (Fr. Steinwender -4990)", //19
 		//every week
-		"Kühltruhen ausmisten und abschalten bei Bedarf", //20
-		"Nicht genutzte Kühlschränke ausschalten und melden (Fr. Steinwender -4990)", //21
+		"KÃ¼hltruhen ausmisten und abschalten bei Bedarf", //20
+		"Nicht genutzte KÃ¼hlschrÃ¤nke ausschalten und melden (Fr. Steinwender -4990)", //21
 		//every month
 		"Energieberatungsangebot der CAU wahrnehmen (Fr. Steinwender -4990)", //22
-		"Kühlschränke auf den niedrigsten Wert stellen", //23
+		"KÃ¼hlschrÃ¤nke auf den niedrigsten Wert stellen", //23
 		//every half a year
-		"Lüftungsanlagen in Laborgebäuden optimal einstellen", //24
+		"LÃ¼ftungsanlagen in LaborgebÃ¤uden optimal einstellen", //24
 		"Warmwasserboiler nur auf max. 60 Grad einstellen", //25
-		"Nutzung von Ventilatoren einschränken", //26
-		"Fahrrad für die Fahrt zur Uni einsatzbereit machen", //27
-		"Persönlichen CO2-Abdruck berechnen", //28
+		"Nutzung von Ventilatoren einschrÃ¤nken", //26
+		"Fahrrad fÃ¼r die Fahrt zur Uni einsatzbereit machen", //27
+		"PersÃ¶nlichen CO2-Abdruck berechnen", //28
 		//every year
-		"Büroeinrichtung so anordnen, dass Heizkörper frei stehen und Tageslicht optimal genutzt werden kann", //29
-		"Steckerleisten im Büro für elektronische Geräte nutzen (erhältlich bei Fr. Steinwender unter -4990)", //30
-		"Umweltprämie zum Ersetzen veralteter elektronischer Geräte in Anspruch nehmen", //31
+		"BÃ¼roeinrichtung so anordnen, dass HeizkÃ¶rper frei stehen und Tageslicht optimal genutzt werden kann", //29
+		"Steckerleisten im BÃ¼ro fÃ¼r elektronische GerÃ¤te nutzen (erhÃ¤ltlich bei Fr. Steinwender unter -4990)", //30
+		"UmweltprÃ¤mie zum Ersetzen veralteter elektronischer GerÃ¤te in Anspruch nehmen", //31
 		"Bildschirme durch effizientere ersetzen", //32
 		//every 3 years
-		"Anmeldung beim Campusrad", //33
+		"Anmeldung beim Campusrad" //33
 	]
 	
 	static def ACTIVITY_POINTS = [2,1,1,2,2,2,2,3,5,2,3,4,3,2,2,1,2,2,5,3,5,4,5,3,5,3,2,2,3,4,3,5,4,3]
 	
-	static def long MAX_DURATION_IN_MS = long.MAX_VALUE
 	static def long MIN_DURATION_IN_MS = 1
 	static def long ONE_HOUR_IN_MS = 60*60*1000
 	static def long ONE_DAY_IN_MS = 24*60*60*1000
@@ -134,14 +133,14 @@ class InitService {
 		true, //30
 		true, //31
 		true, //32
-		true, //33
+		true //33
 		]
 	
 	// CAU Institute
 	static def INSTITUTES = [
 		// Rechtswissenschaftliche FakultÃ¤t
 		"Hermann Kantorowicz-Institut fÃ¼r juristische Grundlagenforschung",
-		"Walther-Schuuml;cking-Institut fÃ¼r Internationales Recht",
+		"Walther-SchÃ¼cking-Institut fÃ¼r Internationales Recht",
 		"Institut fÃ¼r Kriminalwissenschaften",
 		"Institut fÃ¼r OsteuropÃ¤isches Recht",
 		"Institut fÃ¼r Wirtschafts- und Steuerrecht",
@@ -162,7 +161,7 @@ class InitService {
 		"Zoologische Institut und Zoologisches Museum",
 		"Institut fÃ¼r PolarÃ¶kologie",
 		"Geographisches Institut",
-		"Institut fÃ¼r Ã¶kosystemforschung",
+		"Institut fÃ¼r Ã–kosystemforschung",
 		"Institut fÃ¼r Ur- und FrÃ¼hgeschichte",
 		"Institut fÃ¼r Geowissenschaften",
 		"GEOMAR Helmholtz-Zentrum fÃ¼r Ozeanforschung Kiel",
@@ -255,14 +254,13 @@ class InitService {
 		"Institut fÃ¼r Elektrotechnik und Informationstechnik",
 		"Institut fÃ¼r Informatik",
 		"Institut fÃ¼r Materialwissenschaft",
-	
 		"Andere"
 	]
 	
 	static void initKlikActivities() {
 		//println ACTIVITY_DESCRIPTIONS.size()
 		for(int i=0; i < ACTIVITY_DESCRIPTIONS.size(); i++) {
-			new Activity(description: ACTIVITY_DESCRIPTIONS[i], points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i], visible: ACTIVITY_VISIBILITY[i]).save(flush: true)
+			new Activity(description: ACTIVITY_DESCRIPTIONS[i], points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i], visible: ACTIVITY_VISIBILITY[i]).save(flush: true, failOnError: true)
 		}
 	}
 	
