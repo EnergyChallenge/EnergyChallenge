@@ -19,6 +19,7 @@ class ActivityController {
 		for(activity in Activity.findAll{visible == true}) {
 			activities << [activity: activity, executable: isExecutable(activity), countdown: getActivityCountdown(activity), favorite: isFavorite(activity)]
 		}
+		activities.sort {it.activity.duration}
 		[activities : activities]
 	}
 	

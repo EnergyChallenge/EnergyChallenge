@@ -125,7 +125,7 @@
 						<li>
 							<a href="${createLink(controller:'Admin', action: 'message')}" >
 							<i class="fa fa-envelope fa-fw"></i>
-							Email Senden
+							E-Mail senden
 							</a>
 						</li>
 					</ul>
