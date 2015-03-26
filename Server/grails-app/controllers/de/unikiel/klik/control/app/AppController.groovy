@@ -13,6 +13,7 @@ import de.unikiel.klik.persistence.Proposal;
 import de.unikiel.klik.persistence.Institute;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException
+import de.unikiel.klik.persistence.ActivityNotification
 import java.util.ArrayList;
 
 import org.codehaus.groovy.grails.core.io.ResourceLocator
@@ -184,9 +185,15 @@ class AppController {
 		
 		authenticate(params.email, params.password);
 
-        def notifications = ActivityNotification.findAll { ActivityNotification.belongsTo = User.findByEmail(params.email) }
+        //Check if there are appropriate notifications for the current user and give a response
+        def messages = ActivityNotification.findByReceiver(User.findByEmail(params.email))
 
-        render notifications as JSON
+        if(messages == null){
+            messages = [response: false]
+            outputToJson(response: messages)
+        }
+
+        outputToJson([messages: messages])
 	}
 	
 	def search() {
@@ -237,8 +244,6 @@ class AppController {
 		try{
 			AuthService.login(email, password ,false)
 			//Login successful
-            def response = [response: "true"]
-            render response as JSON
 		}
 		catch (AuthenticationException ex){
 			//Login failed
