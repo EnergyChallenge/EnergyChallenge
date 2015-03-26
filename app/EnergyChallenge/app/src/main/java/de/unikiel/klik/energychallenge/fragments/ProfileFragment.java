@@ -36,7 +36,7 @@ public class ProfileFragment extends Fragment {
 
     private boolean isCurrentUser = false;
 
-    private GridLayout profileView;
+    private LinearLayout profileView;
 
     private ImageView avatarView;
 
@@ -67,7 +67,7 @@ public class ProfileFragment extends Fragment {
             profileId = getArguments().getInt("id");
         }
 
-        profileView = (GridLayout) view.findViewById(R.id.profile_container);
+        profileView = (LinearLayout) view.findViewById(R.id.profile_container);
         progressIndicator = (LinearLayout) view.findViewById(R.id.progress_container);
         emptyProfileText = (TextView) view.findViewById(R.id.empty);
         avatarView = (ImageView) view.findViewById(R.id.profile_image);
