@@ -1,9 +1,9 @@
-import de.unikiel.klik.TestService
-import de.unikiel.klik.InitService
-import de.unikiel.klik.model.Institute
-import de.unikiel.klik.model.Role
-import de.unikiel.klik.model.Team
-import de.unikiel.klik.model.User
+import de.unikiel.klik.service.TestService
+import de.unikiel.klik.service.InitService
+import de.unikiel.klik.persistence.Institute
+import de.unikiel.klik.persistence.Role
+import de.unikiel.klik.persistence.Team
+import de.unikiel.klik.persistence.User
 import org.apache.shiro.crypto.hash.Sha256Hash
 import grails.util.Environment
 
