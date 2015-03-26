@@ -7,7 +7,7 @@
   </head>
   <body>
 	<h1>EnergyChallenge</h1>
-    <div id="leftside">
+    <div id="top">
     	<div class="card">
     	<h3>Meine Favoriten</h3>
     	<table>
@@ -45,7 +45,7 @@
       <a href="<g:createLink controller="activity" action="index"/>" class="button">Weitere Aktivitäten</a>
       </div>
     </div>
-    <div id="rightside">
+    <div id="leftside">
     <div class="card">
       <h3>Punktestand</h3>
       <table>
@@ -61,6 +61,8 @@
         </g:if>
       </table>
      </div>
+     </div>
+     <div id="rightside">
      <div class="card">
       <g:if test="${team}">
         <h3>Mein Team</h3>
@@ -74,6 +76,6 @@
         </table>
       </g:if>
       </div>
-    </div>
+      </div>
   </body>
 </html>

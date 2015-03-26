@@ -138,4 +138,10 @@ class ProfileController {
     out.close()
 	return
   }
+   def nullPointerException(final NullPointerException exception){
+                log.error("Exception occured. ${exception?.message}", exception)
+                flash.error = "Profil ist nicht verfügbar!"
+                redirect(action: "index")
+        }
+
 }
