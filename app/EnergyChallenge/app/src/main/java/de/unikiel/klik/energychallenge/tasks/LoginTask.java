@@ -35,8 +35,6 @@ import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 public class LoginTask  extends AccessServerTask {
 
-    private static final String TAG = "LoginTask"; //Tag for Logs
-
     private Context context;
 
     private String email;
@@ -46,7 +44,7 @@ public class LoginTask  extends AccessServerTask {
     private ProgressDialog dialog;
 
     public LoginTask(Context context, String email, String password) {
-        super(context.getApplicationContext());
+        super(context);
         this.context = context;
         this.email = email;
         this.password = password;

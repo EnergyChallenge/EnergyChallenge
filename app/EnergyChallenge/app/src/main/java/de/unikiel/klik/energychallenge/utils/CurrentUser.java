@@ -47,4 +47,13 @@ public class CurrentUser {
         preferences.edit().putInt("id", id).commit();
     }
 
+    public void clear() {
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.remove("email");
+        editor.remove("password");
+        editor.remove("name");
+        editor.remove("id");
+        editor.commit();
+    }
+
 }

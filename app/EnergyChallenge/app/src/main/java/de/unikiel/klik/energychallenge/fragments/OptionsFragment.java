@@ -11,6 +11,7 @@ import android.preference.PreferenceManager;
 
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.activities.LoginActivity;
+import de.unikiel.klik.energychallenge.utils.CurrentUser;
 
 /* Fragment for the options menu */
 public class OptionsFragment extends PreferenceFragment {
@@ -34,26 +35,30 @@ public class OptionsFragment extends PreferenceFragment {
 
         applicationContext = getActivity().getApplicationContext();
 
-        preferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
+        CurrentUser currentUser = new CurrentUser(applicationContext);
+
+        //preferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
 
         addPreferencesFromResource(R.xml.preferences);
 
-        findPreference("email").setSummary(preferences.getString("email", ""));
-        findPreference("name").setSummary(preferences.getString("name", ""));
+        findPreference("email").setSummary(currentUser.getEmail());
+        findPreference("name").setSummary(currentUser.getName());
 
         findPreference("logout").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
 
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.remove("email");
-            editor.remove("password");
-            editor.commit();
+                //currentUser.clear();
+
+                //SharedPreferences.Editor editor = preferences.edit();
+                //editor.clear();
+                //editor.commit();
 
             Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
             loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(loginIntent);
 
-            return true;
+
+                return true;
             }
         });
 

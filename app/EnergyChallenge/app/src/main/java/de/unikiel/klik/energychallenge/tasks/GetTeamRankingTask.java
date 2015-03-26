@@ -27,11 +27,11 @@ public class GetTeamRankingTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public GetTeamRankingTask(Context applicationContext,
+    public GetTeamRankingTask(Context context,
                               RankingAdapter rankingAdapter,
                               LinearLayout progressIndicator,
                               TextView emptyListText) {
-        super(applicationContext);
+        super(context);
         this.rankingAdapter = rankingAdapter;
         this.progressIndicator = progressIndicator;
         this.emptyListText = emptyListText;
