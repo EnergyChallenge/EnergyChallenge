@@ -25,8 +25,12 @@
 			</div>
 			<hgroup>
 				<h1>${name}</h1>
-				<g:if test="${type == 'user' && teamname != ''}">
-					<h2><a href="<g:createLink controller="profile" action="team" id="${user.getTeam().getId()}"/>">${teamName}</a></h2>
+				<g:if test="${type == 'user' && teamId != 0}">
+					<h2>
+						<a href="<g:createLink controller="profile" action="team" id="${teamId}"/>">
+							${teamName}
+						</a>
+					</h2>
 				</g:if>
 			</hgroup>
 			<div class="clear"></div>
@@ -51,48 +55,62 @@
 		</div>
 		
 		<div class="left">
-			<g:if test="${type == 'team'}">
-				<h2>Teammitglieder</h2>
-				<ul>
-					<g:each in="${members}" var="member">
-						<li>
-							<!-- TODO Not Tag in Tag -->
-							<a href="<g:createLink action="user" id="${member.id}" />">
-								${member.name}
-							</a>
-						</li>
-					</g:each>
-				</ul>
-			</g:if>
+			<div class="card">
+				<g:if test="${type == 'team'}">
+					<h3>Teammitglieder</h3>
+					<ul>
+						<g:each in="${members}" var="member">
+							<li>
+								<!-- TODO Not Tag in Tag -->
+								<a href="<g:createLink action="user" id="${member.id}" />">
+									${member.name}
+								</a>
+							</li>
+						</g:each>
+					</ul>
+				</g:if>
+			</div>
 		</div>
 		
     	<div class="right">
-      		<h2>Zuletzt abgeschlossene Aktivitäten</h2>
-     		<ul>
-       			<g:each in="${lastActivities}" var="activity">
-         				<li>
-						<g:if test ="${type == 'user'}">
-         					${activity.getActivity().getDescription()}
-						</g:if>
-						<g:else>
-         						${activity.completedActivity.getActivity().getDescription()}
-							<em>
-								(
-								<a href="<g:createLink controller="profile" action="user" id="${activity.member.getId()}"/>">
-								${activity.member.getName()}
-								</a>
-								)
-							</em>
-						</g:else>          					
-         				</li>
-       			</g:each>
-     		</ul>
-	</div>
-	<g:if test="${type == 'team' && user.getTeam() == null}">
-		<a href="<g:createLink controller="user" action="joinTeam" id="${id}"/>" > Team beitreten </a>		
-	</g:if>
-	<g:if test="${type == 'user' && user.getTeam() == null && de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam() != null}">
-                <a href="<g:createLink controller="message" action="inviteUserToTeam" id="${id}"/>" >zu meinem Team einladen</a>		
-	</g:if>
+    		<div class="card">
+	      		<h3>Zuletzt abgeschlossene Aktivitäten</h3>
+	     		<ul>
+	       			<g:each in="${lastActivities}" var="activity">
+	         				<li>
+							<g:if test ="${type == 'user'}">
+	         					${activity.getActivity().getDescription()}
+							</g:if>
+							<g:else>
+	         						${activity.completedActivity.getActivity().getDescription()}
+								<em>
+									(
+									<a href="<g:createLink controller="profile" action="user" id="${activity.member.getId()}"/>">
+									${activity.member.getName()}
+									</a>
+									)
+								</em>
+							</g:else>          					
+	         				</li>
+	       			</g:each>
+	     		</ul>
+     		</div>
+			<g:if test="${type == 'team' && teamId != 0}">
+				<div class="card">
+					<a href="<g:createLink controller="user" action="joinTeam" id="${id}"/>"
+						class="button" >
+						Team beitreten
+					</a>		
+				</div>
+			</g:if>
+			<g:if test="${type == 'user' && teamId != 0 && de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam() != null}">
+				<div class="card">
+                	<a href="<g:createLink controller="message" action="inviteUserToTeam" id="${id}"
+                		class="button"/>" >
+                		zu meinem Team einladen
+                	</a>
+                </div>		
+			</g:if>
+		</div>	
 	</body>
 </html>
