@@ -4,6 +4,7 @@ import de.unikiel.klik.persistence.Proposal
 
 import de.unikiel.klik.service.ProposalService
 
+import org.codehaus.groovy.runtime.typehandling.GroovyCastException
 import grails.validation.ValidationException
 import org.apache.shiro.subject.Subject
 import org.apache.shiro.SecurityUtils
@@ -33,7 +34,7 @@ class ProposalController {
 			proposalService.addProposal(params.description as String, params.points as int, subject)
 		}catch(ValidationException e) {
 			
-			flash.message = message(e.getMessage())
+			flash.message = "Es ist ein Fehler beim erstellen Aufgetreten. Bitte versuchen sie es erneut."
 		}
 		redirect (action : "index");
 	}
@@ -53,6 +54,8 @@ class ProposalController {
 			proposalService.addComment(params.text as String, params.rating as int, SecurityUtils.getSubject(), params.id as long)
 		}catch(ValidationException e) {
 			flash.default = "Ein Fehler ist aufgetreten. Bitte versuchen sie es erneut oder kontaktieren sie den Admin" 
+		}catch(GroovyCastException e) {
+			falsh.message = "Ein Fhler ist aufgetreten. Bitte versuchen sie es erneut."
 		}
 		redirect (action: "view", params: params);
 	}

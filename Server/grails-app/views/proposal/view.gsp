@@ -48,10 +48,17 @@
 					<%-- TODO Link to Proposal --%>
 					<tr>
 						<td>
-													${comment.getText()}
+							${comment.getText()}
 						</td>
 						<td>
-							${comment.getRating()}
+							<g:each var="i" in="${ (0..<5)}">
+								<g:if test="${comment.getRating() <= i}">
+									<i class="fa fa-star-o"></i>
+								</g:if>
+								<g:else>
+									<i class="fa fa-star"></i>
+								</g:else>
+							</g:each>
 						</td>
 					</tr>
 				</g:each>

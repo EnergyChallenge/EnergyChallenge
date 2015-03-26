@@ -75,17 +75,18 @@ $(document).ready(function(){
 		<div style="position: absolute; top: 0px; left: -30px;">
 			<h1>Besucher</h1>
 			<div id="chart1" style="height: 300px; width: 350px;"></div>
+			<g:link action="download" params="[data:'visitsOnIndex']"> Download (Besucher) <i class="fa fa-download"></i> </g:link>
+			<g:link action="download" params="[data:'logins']"> Download (Logins) <i class="fa fa-download"></i> </g:link>
 		</div>
 		<div style="position: absolute; top: 400px; left: -30px;">
 			<h1>Gesammelte Energiesparpunkte</h1>
 			<div id="chart3" style="height: 300px; width: 350px;"></div>
+			<g:link action="download" params="[data:'points']"> Download <i class="fa fa-download"></i> </g:link>
 		</div>
 		<div style="position: absolute; top: 0px; right: -30px;">
 			<h1>Beliebteste Aktivitäten</h1>
 			<div id="chart2" style="height: 750px; width: 350px;"></div>
-		</div>
-		<div style="position: absolute; bottom: 0px; right: 0px;">
-			<g:link action="exportCsv"> Download <i class="fa fa-download"></i> </g:link>
+			<g:link action="download" params="[data:'activities']"> Download <i class="fa fa-download"></i> </g:link>
 		</div>
 
 	</div>

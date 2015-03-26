@@ -17,7 +17,7 @@
 	${profile.getPoints()}
 	${profile.getRank()}
 	<g:if test="${profile.isTeam()}">
-	Members
+	Mitglieder
 	</g:if>
 	<g:if test="${profile.isUser()}">
 	Team
