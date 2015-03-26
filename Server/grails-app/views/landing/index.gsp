@@ -10,7 +10,7 @@
     <div id="top">
     	<div class="card">
     	<h3>Meine Favoriten</h3>
-    	<table class="list">
+    	<table class="list" style="width: 97%">
           </tbody>
             <g:each in="${favoriteActivities}" var="favorite">
               <tr>
@@ -32,7 +32,7 @@
     	            	</g:else>
                 	</em>
                 </td>
-                <td>
+                <td style="width: 70px">
                   <g:if test="${favorite.executable}" >
                      <a class="button" href="${createLink(controller:'activity', action:'completeActivity', id: favorite.activity.getId())}">
                        erledigen
