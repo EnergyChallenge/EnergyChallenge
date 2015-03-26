@@ -80,7 +80,7 @@
       <g:else>
 		<h3>Du hast noch kein Team!</h3>
 		<g:if test="${teamProposals.size() > 0}">
-			<h3>Hier einige Vorschläge:</h3>
+			<h4>Hier einige Vorschläge:</h4>
 			<table>
 				<g:each in="${teamProposals}" var="team">
 					<tr>
