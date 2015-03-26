@@ -11,6 +11,9 @@ body {
     margin: 0;
     background-color: #8e217d
 }
+#wrapper {
+	overflow: hidden;
+}
 
 header {
 	height: 100px;
@@ -190,7 +193,6 @@ header .inside #userinfo .actions #logoutFrom {
 	width: 60%;
 	margin: 0 20%;
 	text-align: center;
-	/* TODO Temp */
 	background-color: white;
 	border: 1px solid limegreen;
 }
@@ -208,10 +210,11 @@ header .inside #userinfo .actions #logoutFrom {
 footer {
     position: relative;
     z-index: 10;
-    height: 50px;
     background-color: #8e217d;
     color: #FFFFFF;
     text-align: center;
+    padding-bottom: 1000px;
+    margin-bottom: -1000px;
 }
 footer .inside {
 	width: 960px;

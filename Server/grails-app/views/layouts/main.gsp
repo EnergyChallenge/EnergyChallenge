@@ -4,7 +4,7 @@
 		<title>EnergyChallenge</title>
 		<asset:stylesheet src="main.css" />    
 		<asset:javascript src="jqplot/jquery.min.js" />	 
-		<%-- <asset:javascript src="fixedNav.js" /> --%>
+		<asset:javascript src="fixedNav.js" />
 		<g:layoutHead />
 	</head>
 	
