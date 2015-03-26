@@ -20,7 +20,8 @@ class LandingController {
 	def members = []
 	def teamProposals = []
 	if(team != null){
-		team?.members.sort{it.points}
+		members = team.members.sort{it.points}
+		members.reverse(true)
 	} else {
 		def allTeams = Team.findAll()
 		
@@ -33,7 +34,6 @@ class LandingController {
 				allTeams.remove(t)
 		}
 	}
-	members.reverse(true)
     def favoriteActivities = []
 	def userFavorites = []
 	if(user.favorites!= null){
