@@ -7,8 +7,14 @@
 </head>
 <body>
 
-<h1>Aktivität Ändern</h1>
+<g:if test="${newActivity == 'true'}">
+	<h1>Neue Aktivität anlegen</h1>
+</g:if>
+<g:else>
+	<h1>Aktivität ändern</h1>
+</g:else>
 
+<p>
 <g:form action="changeActivity">
     <input type="hidden" name="proposalId" value="${params.proposalId}" />
     <input type="hidden" name="activityId" value="${params.activityId}" />
@@ -23,7 +29,7 @@
             <td><input type="number" name="points" value="${params.points}" min="1" max="5" /></td>
         </tr>
         <tr>
-            <td>Dauer (Tage):</td>
+            <td>Dauer:</td>
             <td><input type="number" name="durationUnits" value="${params.duration}" />
                 <select name="durationUnitInSeconds" >
                     <option value="1">Sekunde(n)</option>
@@ -42,5 +48,6 @@
         </tbody>
     </table>
 </g:form>
+</p>
 </body>
 </html>
