@@ -25,10 +25,10 @@ class ActivityController {
 	//executes an activity, if execution is possible
 	def completeActivity() {
 		if(ActivityService.completeActivity(params.id as long, SecurityUtils.subject)) {
-			flash.message = "Activity executed"
+			flash.message = "Aktivität erledigt"
 			redirect(action: "index")
 		} else {
-			flash.message = "Activity not executable!"
+			flash.message = "Aktivität nicht ausführbar!"
 			redirect(action: "index")
 		}
 	}
@@ -36,10 +36,10 @@ class ActivityController {
 	//adds an activity to the favorites if it isn't already
 	def addToFavorites() {
 		if(ActivityService.addToFavorites(params.id as long, SecurityUtils.subject)) {
-			flash.message = "Activity added to favorites!"
+			flash.message = "Aktivität zu Favoriten hinzugefügt!"
 			redirect(action: "index")
 		} else {
-			flash.message = "Activity already a favorite!"
+			flash.message = "Aktivität ist bereits favorisiert!"
 			redirect(action: "index")
 		}
 	}	
@@ -47,10 +47,10 @@ class ActivityController {
 	//removes a selected activity from the favorites
 	def removeFromFavorites() {
 		if(ActivityService.removeFromFavorites(params.id as long, SecurityUtils.subject)) {
-			flash.message = "Activity removed from favorites"
+			flash.message = "Aktivität wurde von Favoriten entfernt!"
 			redirect(action: "index")
 		} else {
-			flash.message = "Activity not a favorite!"
+			flash.message = "Aktivität ist kein Favorit!"
 			redirect(action: "index")
 		}
 	}
