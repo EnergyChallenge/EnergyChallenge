@@ -13,6 +13,7 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +26,8 @@ import de.unikiel.klik.energychallenge.tasks.GetUserProfileTask;
 import de.unikiel.klik.energychallenge.utils.CurrentUser;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
-//TODO Layout
+
+// TODO Display User Name in Actionbar
 
 /* Fragment for the users own profile page */
 public class ProfileFragment extends Fragment {
@@ -86,7 +88,11 @@ public class ProfileFragment extends Fragment {
         TextView totalPointsView = (TextView) getView().findViewById(R.id.profil_total_points);
         TextView totalPointsDescriptionView = (TextView) getView().findViewById(R.id.profil_total_points_description);
         TextView rankingPositionView = (TextView) getView().findViewById(R.id.profil_ranking_position);
+        TextView lastActivitiesHeadlineView = (TextView) getView().findViewById(R.id.profile_last_activities_headline);
         ListView lastActivitiesView = (ListView) getView().findViewById(R.id.profile_last_activities);
+
+        lastActivitiesHeadlineView.setVisibility(View.VISIBLE);
+        lastActivitiesView.setVisibility(View.VISIBLE);
 
         nameView.setText(user.getName());
         teamNameView.setText(user.getTeamName());
@@ -108,10 +114,15 @@ public class ProfileFragment extends Fragment {
 
         TextView nameView = (TextView) getView().findViewById(R.id.profil_name);
         TextView totalPointsView = (TextView) getView().findViewById(R.id.profil_total_points);
+        TextView instituteView = (TextView) getView().findViewById(R.id.profil_institute);
         TextView totalPointsDescriptionView = (TextView) getView().findViewById(R.id.profil_total_points_description);
         TextView rankingPositionView = (TextView) getView().findViewById(R.id.profil_ranking_position);
+        TextView teamMembersHeadlineView = (TextView) getView().findViewById(R.id.profil_team_members_headline);
         ListView teamMembersView = (ListView) getView().findViewById(R.id.profil_team_members);
-        ListView lastActivitiesView = (ListView) getView().findViewById(R.id.profile_last_activities);
+
+        instituteView.setLayoutParams(new LinearLayout.LayoutParams(0, 0, 0));
+        teamMembersHeadlineView.setVisibility(View.VISIBLE);
+        teamMembersView.setVisibility(View.VISIBLE);
 
         nameView.setText(team.getName());
         totalPointsView.setText(Integer.toString(team.getPoints()));
@@ -123,11 +134,6 @@ public class ProfileFragment extends Fragment {
                 team.getMembers()));
         //TODO Change to own Adapter later
 
-        lastActivitiesView.setAdapter(new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1,
-                team.getLastActivities()));
-        //TODO Change to own Adapter later
-        //TODO Aren't displayed yet
 
     }
 
