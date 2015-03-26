@@ -72,6 +72,6 @@ class ActivityController {
 	def nullPointerException(final NullPointerException exception){
 		log.error("Exception ocurred. ${exception?.message}", exception)
 		flash.message = "Aktivität nicht verfügbar!"
-		render view: "error", model: [exception: exception]
+		redirect(action: "index")
 	}
 }
