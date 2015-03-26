@@ -2,6 +2,7 @@ package de.unikiel.klik.energychallenge.adapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,8 @@ public class ProposalCommentsAdapter extends ArrayAdapter<ProposalComment> {
         TextView authorView = (TextView)row.findViewById(R.id.proposal_comment_author);
         RatingBar ratingView = (RatingBar)row.findViewById(R.id.proposal_comment_rating);
         TextView textView = (TextView)row.findViewById(R.id.proposal_comment_text);
+
+        ratingView.getProgressDrawable().setTint(Color.parseColor("#B3C833"));
 
         authorView.setText(getItem(position).getAuthor());
         ratingView.setRating(getItem(position).getRating());

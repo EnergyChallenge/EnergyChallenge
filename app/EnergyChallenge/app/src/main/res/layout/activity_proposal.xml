@@ -39,8 +39,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/proposal_rating"
             android:isIndicator="true"
-            android:layout_gravity="center"
-            style="@style/greenRatingBarBig"/>
+            android:layout_gravity="center" />
     </LinearLayout>
 
     <ListView

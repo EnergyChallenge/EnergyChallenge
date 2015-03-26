@@ -20,8 +20,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/proposal_own_rating"
         android:layout_below="@id/proposal_own_comment_text"
-        android:layout_alignParentLeft="true"
-        style="@style/greenRatingBarBig"/>
+        android:layout_alignParentLeft="true" />
 
     <Button
         android:layout_width="wrap_content"
