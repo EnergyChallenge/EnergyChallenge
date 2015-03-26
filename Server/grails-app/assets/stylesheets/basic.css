@@ -111,6 +111,15 @@ table.list td.admin{
 	padding: 10px 20px;
 	margin: 0;
 }
+.card .content {
+	padding: 10px 20px;
+}
+.card .content.rightalign {
+	text-align: right;
+}
+.card .content.centeralign {
+	text-align: center;
+}
 .card table.list {
 	width: 100%;
 	margin: 0;
@@ -122,9 +131,15 @@ table.list td.admin{
 .card table.list td:last-child {
 	padding-right: 20px;
 }
-.card .content {
-	padding: 10px 20px;
+.card ul {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
-.card .content.rightalign {
-	text-align: right;
+.card ul li {
+    border-top: 1px solid #f5f5f5;
+    padding: 5px 20px;
+}
+.card ul li:first-child {
+	border-top: 0 none;
 }

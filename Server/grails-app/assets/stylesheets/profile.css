@@ -48,6 +48,7 @@ body.teamprofile #content .maincards .card.position {
 	height: 40px;
     line-height: 20px;
     padding: 10px 10px 0;
+    overflow: hidden;
 }
 #content .maincards .card .value.big {
     line-height: 40px;
@@ -58,6 +59,18 @@ body.teamprofile #content .maincards .card.position {
 	color: #777777;
 	padding: 0 10px;
 	border-top: 0 none;
+}
+body.teamprofile #leftside {
+	float: left;
+	width: 47.5%;
+	padding-right: 2.5%;
+	padding-top: 10px;
+}
+body.teamprofile #rightside {
+	width: 47.5%;
+	padding-left: 2.5%;
+	margin-left: 50%;
+	padding-top: 10px;
 }
 	
 	

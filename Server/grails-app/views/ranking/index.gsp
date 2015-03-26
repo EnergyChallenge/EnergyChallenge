@@ -3,17 +3,16 @@
 <head>
 	<meta name="layout" content="main" />
 	<title>Rangliste</title>
+	<asset:stylesheet src="ranking.css"/>
 </head>
 <body>
 	<h1>Rangliste</h1>
 	<div class="tabbar">
 		<g:if test="${action == 'users'}">
-     		<span class="active">Benutzer</span>
-			<a href="${createLink(action:'teams')}">Teams</a>
+     		<span class="active">Benutzer</span><a href="${createLink(action:'teams')}">Teams</a>
 		</g:if>
 		<g:else>
-			<a href="${createLink(action:'users')}">Benutzer</a>
-			<span class="active">Teams</span>
+			<a href="${createLink(action:'users')}">Benutzer</a><span class="active">Teams</span>
 		</g:else>
 	</div>
 	<p>

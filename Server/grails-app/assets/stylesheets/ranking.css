@@ -1,0 +1,27 @@
+h1 {
+	float: left;
+}
+.tabbar {
+	border: 1px solid #8e217d;
+    border-radius: 3px;
+    margin: 0 auto;
+    width: 160px;
+}
+.tabbar .active {
+	display: inline-block;
+	padding: 4px 0;
+	width: 80px;
+	background-color: #8e217d;
+	color: #FFFFFF;
+	text-align: center;
+}
+.tabbar a {
+	display: inline-block;
+	padding: 4px 0;
+	width: 80px;
+	text-align: center;
+}
+.tabbar a:hover {
+	background-color: #F2F2F2;
+	text-decoration: none;
+}
