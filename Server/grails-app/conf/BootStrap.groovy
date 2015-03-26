@@ -36,7 +36,8 @@ class BootStrap {
 			TestService.createAndSaveExampleUsersForExistingInstitutes(128)
 			TestService.createAndSaveCompletedActivitiesForExistingUsersAndActivities(1024)
 			TestService.createSomePageVisits(7,"/index")	
-			TestService.createSomePageVisits(7,"/auth/signIn")	
+			TestService.createSomePageVisits(7,"/auth/signIn")
+            TestService.createMessage()
 			println "Running in Development Mode"
 		} else if (currentEnv == Environment.TEST) {
 			// do custom init for test here

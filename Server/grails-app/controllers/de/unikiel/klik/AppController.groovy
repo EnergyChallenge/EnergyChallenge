@@ -227,6 +227,8 @@ class AppController {
 		try{
 			AuthService.login(email, password ,false)
 			//Login successful
+            def response = [response: "true"]
+            render response as JSON
 		}
 		catch (AuthenticationException ex){
 			//Login failed
