@@ -61,11 +61,11 @@ class AdminController {
         }else if(durationInMilliSeconds > milliSecondsInADay){
             return (((float) durationInMilliSeconds) / milliSecondsInADay).round(2) + " Tage"
         }else if(durationInMilliSeconds > milliSecondsInAHour){
-            return (((float) durationInMilliSeconds) / milliSecondsInAHour).round(2) + " Studen"
+            return (((float) durationInMilliSeconds) / milliSecondsInAHour).round(2) + " Stunden"
         }else if(durationInMilliSeconds > milliSecondsInAMinute){
             return (((float) durationInMilliSeconds) / milliSecondsInAMinute).round(2) + " Minuten"
         }else if(durationInMilliSeconds > milliSecondsInAHour){
-            return (((float) durationInMilliSeconds) / milliSecondsInASecond).round(2) + " Secunden"
+            return (((float) durationInMilliSeconds) / milliSecondsInASecond).round(2) + " Sekunden"
         }else{
             return durationInMilliSeconds + " ms"
         }
