@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.subject.Subject
 
+import de.unikiel.klik.service.ActivityService
 import de.unikiel.klik.persistence.Activity
 import de.unikiel.klik.persistence.User
 

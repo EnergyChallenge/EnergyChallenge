@@ -5,6 +5,7 @@ import de.unikiel.klik.persistence.Team;
 import de.unikiel.klik.persistence.Proposal;
 import de.unikiel.klik.persistence.Activity;
 import de.unikiel.klik.persistence.CompletedActivity;
+import de.unikiel.klik.service.AdminService
 import org.joda.time.Duration
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat

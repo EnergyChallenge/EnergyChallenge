@@ -1,5 +1,8 @@
 package de.unikiel.klik.control.web
 
+import de.unikiel.klik.service.PageViewService
+import de.unikiel.klik.service.StatisticsService
+
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.authc.AuthenticationException
 import org.apache.shiro.authc.UsernamePasswordToken

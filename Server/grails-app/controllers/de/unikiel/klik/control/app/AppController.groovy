@@ -1,5 +1,7 @@
 package de.unikiel.klik.control.app
 
+import de.unikiel.klik.service.AuthService
+import de.unikiel.klik.service.ActivityService
 import grails.converters.JSON
 import de.unikiel.klik.persistence.Profile
 import de.unikiel.klik.persistence.User;

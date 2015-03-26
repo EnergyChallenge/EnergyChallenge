@@ -3,6 +3,9 @@ package de.unikiel.klik.control.web
 import de.unikiel.klik.persistence.TeamInvite
 import de.unikiel.klik.persistence.ActivityNotification
 import de.unikiel.klik.persistence.User
+
+import de.unikiel.klik.service.MessageService
+
 import org.apache.shiro.SecurityUtils
 
 class MessageController {

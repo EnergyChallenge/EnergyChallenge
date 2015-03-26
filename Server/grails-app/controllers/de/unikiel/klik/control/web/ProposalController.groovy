@@ -1,6 +1,9 @@
 package de.unikiel.klik.control.web
 
 import de.unikiel.klik.persistence.Proposal
+
+import de.unikiel.klik.service.ProposalService
+
 import grails.validation.ValidationException
 import org.apache.shiro.subject.Subject
 import org.apache.shiro.SecurityUtils

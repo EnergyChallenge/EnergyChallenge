@@ -1,6 +1,9 @@
 package de.unikiel.klik.control.web
 
 import de.unikiel.klik.persistence.*
+
+import de.unikiel.klik.service.StatisticsService
+
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;

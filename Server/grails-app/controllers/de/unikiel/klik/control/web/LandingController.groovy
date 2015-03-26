@@ -2,6 +2,9 @@ package de.unikiel.klik.control.web
 
 import de.unikiel.klik.persistence.Team
 import de.unikiel.klik.persistence.User
+
+import de.unikiel.klik.service.ActivityService
+
 import org.apache.shiro.SecurityUtils
 
 class LandingController {

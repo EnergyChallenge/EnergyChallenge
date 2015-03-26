@@ -3,11 +3,11 @@ package de.unikiel.klik.control.web
 import de.unikiel.klik.persistence.User
 import de.unikiel.klik.persistence.Team
 
-import grails.validation.ValidationException
+import de.unikiel.klik.service.UserService
 
+import grails.validation.ValidationException
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.subject.Subject
-
 import org.codehaus.groovy.grails.core.io.ResourceLocator
 import org.springframework.core.io.Resource
 //From: https://grails.org/wiki/Simple%20Avatar%20Uploader

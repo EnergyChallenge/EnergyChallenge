@@ -7,6 +7,9 @@ import de.unikiel.klik.persistence.User;
 import de.unikiel.klik.persistence.Role;
 import de.unikiel.klik.persistence.Institute;
 
+import de.unikiel.klik.service.AuthService
+import de.unikiel.klik.service.PageViewService
+
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.authc.AuthenticationException
 import org.apache.shiro.authc.UsernamePasswordToken
