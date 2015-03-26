@@ -18,7 +18,7 @@
 			<g:each status="pos" in="${results}" var="res">
 				<tr>
 					<g:if test="${res.type == 'user'}">
-						<td><i class="fa fa-user"></i></td>
+						<td><i class="fa fa-user fa-fw"></i></td>
 						<td>
 							<a href="${createLink(controller :'profile',
 													action: 'user',
@@ -28,7 +28,7 @@
 						</td>
 					</g:if>
 					<g:else>
-						<td><i class="fa fa-users"></i></td>
+						<td><i class="fa fa-users fa-fw"></i></td>
 						<td>
 							<a href="${createLink(controller :'profile',
 													action: 'team',

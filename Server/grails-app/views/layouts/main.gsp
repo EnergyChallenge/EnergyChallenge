@@ -61,31 +61,31 @@
 				<ul>
 					<li>
 						<a href="${createLink(controller:'Landing')}" >
-							<i class="fa fa-home"></i>
+							<i class="fa fa-home fa-fw"></i>
 							EnergyChallenge
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Activity')}" >
-							<i class="fa fa-check-square-o"></i>
+							<i class="fa fa-check-square-o fa-fw"></i>
 							Aktivitäten
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Ranking')}" >
-							<i class="fa fa-trophy"></i>
+							<i class="fa fa-trophy fa-fw"></i>
 							Rangliste
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Proposal')}" >
-							<i class="fa fa-plus"></i>
+							<i class="fa fa-plus fa-fw"></i>
 							Energiesparvorschläge
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Statistics')}" >
-							<i class="fa fa-area-chart"></i>
+							<i class="fa fa-area-chart fa-fw"></i>
 							Statistiken
 						</a>
 					</li>

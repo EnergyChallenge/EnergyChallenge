@@ -46,7 +46,7 @@ public class GetMessagesTask{
                     params.add(new BasicNameValuePair("email", persistentEmail));
                     params.add(new BasicNameValuePair("password", persistentPassword));
                     //TODO use the actual server url for the post
-                    HttpPost post = new HttpPost("http://192.168.0.2:8080/Server/app/messages");
+                    HttpPost post = new HttpPost("http://192.168.0.102:8080/Server/app/messages");
                     UrlEncodedFormEntity encodedEntity = new UrlEncodedFormEntity(params, "utf-8");
                     post.setEntity(encodedEntity);
                     HttpResponse httpResponse = client.execute(post);
