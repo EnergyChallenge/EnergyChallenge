@@ -30,4 +30,8 @@ public class ProfileActivity extends Activity {
         }
     }
 
+    public void setActionBarTitle(String title) {
+        getActionBar().setTitle(title);
+    }
+
 }

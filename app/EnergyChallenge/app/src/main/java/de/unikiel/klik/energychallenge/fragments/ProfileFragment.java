@@ -18,6 +18,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import de.unikiel.klik.energychallenge.R;
+import de.unikiel.klik.energychallenge.activities.ProfileActivity;
+import de.unikiel.klik.energychallenge.adapters.PassiveArrayAdapter;
 import de.unikiel.klik.energychallenge.models.Team;
 import de.unikiel.klik.energychallenge.models.User;
 import de.unikiel.klik.energychallenge.tasks.DownloadAvatarTask;
@@ -25,9 +27,6 @@ import de.unikiel.klik.energychallenge.tasks.GetTeamProfileTask;
 import de.unikiel.klik.energychallenge.tasks.GetUserProfileTask;
 import de.unikiel.klik.energychallenge.utils.CurrentUser;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
-
-
-// TODO Display User Name in Actionbar
 
 /* Fragment for the users own profile page */
 public class ProfileFragment extends Fragment {
@@ -101,13 +100,11 @@ public class ProfileFragment extends Fragment {
         totalPointsDescriptionView.setText(user.getPoints() == 1 ? R.string.point : R.string.points);
         rankingPositionView.setText(Integer.toString(user.getPosition()) + ".");
 
-        lastActivitiesView.setAdapter(new ArrayAdapter<String>(getActivity(),
+        lastActivitiesView.setAdapter(new PassiveArrayAdapter<String>(getActivity(),
                                             android.R.layout.simple_list_item_1,
                                             user.getLastActivities()));
-        //TODO Change to own Adapter later
 
-
-
+        setActionBarTitle(user.getName());
     }
 
     public void buildProfile(Team team) {
@@ -129,12 +126,11 @@ public class ProfileFragment extends Fragment {
         totalPointsDescriptionView.setText(team.getPoints() == 1 ? R.string.point : R.string.points);
         rankingPositionView.setText(Integer.toString(team.getPosition()) + ".");
 
-        teamMembersView.setAdapter(new ArrayAdapter<String>(getActivity(),
-                android.R.layout.simple_list_item_1,
-                team.getMembers()));
-        //TODO Change to own Adapter later
+        teamMembersView.setAdapter(new PassiveArrayAdapter<String>(getActivity(),
+                                        android.R.layout.simple_list_item_1,
+                                        team.getMembers()));
 
-
+        setActionBarTitle(team.getName());
     }
 
     private void loadProfileData() {
@@ -155,4 +151,9 @@ public class ProfileFragment extends Fragment {
 
     }
 
+    private void setActionBarTitle(String title) {
+        if (!isCurrentUser) {
+            ((ProfileActivity) getActivity()).setActionBarTitle(title);
+        }
+    }
 }
