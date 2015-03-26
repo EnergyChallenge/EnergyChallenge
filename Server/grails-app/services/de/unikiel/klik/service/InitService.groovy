@@ -48,12 +48,11 @@ class InitService {
 		"Umweltprämie zum Ersetzen veralteter elektronischer Geräte in Anspruch nehmen", //31
 		"Bildschirme durch effizientere ersetzen", //32
 		//every 3 years
-		"Anmeldung beim Campusrad", //33
+		"Anmeldung beim Campusrad" //33
 	]
 	
 	static def ACTIVITY_POINTS = [2,1,1,2,2,2,2,3,5,2,3,4,3,2,2,1,2,2,5,3,5,4,5,3,5,3,2,2,3,4,3,5,4,3]
 	
-	static def long MAX_DURATION_IN_MS = long.MAX_VALUE
 	static def long MIN_DURATION_IN_MS = 1
 	static def long ONE_HOUR_IN_MS = 60*60*1000
 	static def long ONE_DAY_IN_MS = 24*60*60*1000
@@ -134,7 +133,7 @@ class InitService {
 		true, //30
 		true, //31
 		true, //32
-		true, //33
+		true //33
 		]
 	
 	// CAU Institute
@@ -255,14 +254,13 @@ class InitService {
 		"Institut für Elektrotechnik und Informationstechnik",
 		"Institut für Informatik",
 		"Institut für Materialwissenschaft",
-	
 		"Andere"
 	]
 	
 	static void initKlikActivities() {
 		//println ACTIVITY_DESCRIPTIONS.size()
 		for(int i=0; i < ACTIVITY_DESCRIPTIONS.size(); i++) {
-			new Activity(description: ACTIVITY_DESCRIPTIONS[i], points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i], visible: ACTIVITY_VISIBILITY[i]).save(flush: true)
+			new Activity(description: ACTIVITY_DESCRIPTIONS[i], points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i], visible: ACTIVITY_VISIBILITY[i]).save(flush: true, failOnError: true)
 		}
 	}
 	
