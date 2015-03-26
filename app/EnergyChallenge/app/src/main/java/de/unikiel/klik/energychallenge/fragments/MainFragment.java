@@ -59,13 +59,12 @@ public class MainFragment extends ListFragment implements CompleteActivityDialog
 
         setListAdapter(activitiesAdapter);
 
-        loadRankingData();
+        loadActivityData();
 
         return view;
     }
 
-    //TODO Rename not Ranking
-    private void loadRankingData() {
+    private void loadActivityData() {
 
         Context context = getActivity();
 
