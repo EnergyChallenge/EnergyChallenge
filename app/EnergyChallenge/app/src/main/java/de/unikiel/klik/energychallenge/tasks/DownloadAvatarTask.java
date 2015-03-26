@@ -12,6 +12,8 @@ import de.unikiel.klik.energychallenge.Config;
 
 public class DownloadAvatarTask extends AsyncTask<String, Void, Bitmap> {
 
+    private String TAG = "DownloadAvatarTask";
+
     private int profileId;
 
     private ImageView avatarView;
@@ -29,7 +31,7 @@ public class DownloadAvatarTask extends AsyncTask<String, Void, Bitmap> {
             InputStream in = new java.net.URL(avatarUrl).openStream();
             avatar = BitmapFactory.decodeStream(in);
         } catch (Exception e) {
-            //TODO Handle Error
+            Log.e(TAG, "Couldn't get image from server.");
             e.printStackTrace();
         }
         return avatar;
