@@ -37,7 +37,7 @@
 							</span>
 						</a><!--  No whitespace
 						--><a href="${createLink(controller:'profile')}" class="points">
-							<i class="fa fa-trophy"></i>
+							<i class="fa fa-diamond"></i>
 							<span class="value">${user.getPoints()}</span>
 						</a>
 					</div>
@@ -94,11 +94,35 @@
                 <g:if test="${org.apache.shiro.SecurityUtils.getSubject().hasRole('admin')}">
 					<h3>Verwaltung</h3>
 					<ul>
-						<li><a href="${createLink(controller:'Admin', action: 'users')}" >Benutzer verwalten</a></li>
-						<li><a href="${createLink(controller:'Admin', action: 'teams')}" >Teams verwalten</a></li>
-						<li><a href="${createLink(controller:'Admin', action: 'activities')}" >Aktivitäten verwalten</a></li>
-						<li><a href="${createLink(controller:'Admin', action: 'proposals')}" >Vorschläge verwalten</a></li>
-						<li><a href="${createLink(controller:'Admin', action: 'message')}" >Email Senden</a></li>
+						<li>
+							<a href="${createLink(controller:'Admin', action: 'users')}" >
+							<i class="fa fa-user fa-fw"></i>
+							Benutzer verwalten</a>
+						</li>
+						<li>
+							<a href="${createLink(controller:'Admin', action: 'teams')}" >
+							<i class="fa fa-users fa-fw"></i>
+							Teams verwalten
+							</a>
+						</li>
+						<li>
+							<a href="${createLink(controller:'Admin', action: 'activities')}" >
+							<i class="fa fa-scissors fa-fw"></i>
+							Aktivitäten verwalten
+							</a>
+						</li>
+						<li>
+							<a href="${createLink(controller:'Admin', action: 'proposals')}" >
+							<i class="fa fa-paperclip fa-fw"></i>
+							Vorschläge verwalten
+							</a>
+						</li>
+						<li>
+							<a href="${createLink(controller:'Admin', action: 'message')}" >
+							<i class="fa fa-envelope fa-fw"></i>
+							Email Senden
+							</a>
+						</li>
 					</ul>
 				</g:if>
 			</nav>
