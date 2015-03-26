@@ -54,7 +54,7 @@ public class NotificationService extends Service {
                 new NotificationCompat.Builder(context)
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setContentTitle("Energy Challenge")
-                        .setContentText("Sie haben seit einiger Zeit keine Aktivitäten mehr durchgeführt!");
+                        .setContentText("Sie haben schon lange keine Aktivität ausgeführt");
 
         //Create the notification click behaviour
         Intent resultIntent = new Intent(context, MainActivity.class);

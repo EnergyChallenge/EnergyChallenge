@@ -7,8 +7,6 @@ import android.os.Bundle;
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.fragments.ProfileFragment;
 
-//TODO Maybe Add Searchbar to Profile
-
 public class ProfileActivity extends Activity {
 
     @Override
