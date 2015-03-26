@@ -25,7 +25,7 @@ class ActivityController {
 	//executes an activity, if execution is possible
 	def completeActivity() {
 		if(ActivityService.completeActivity(params.id as long, SecurityUtils.subject)) {
-			flash.message = "Aktivität erledigt"
+			flash.message = "Aktivität erledigt!"
 			redirect(action: "index")
 		} else {
 			flash.message = "Aktivität nicht ausführbar!"
@@ -47,7 +47,7 @@ class ActivityController {
 	//removes a selected activity from the favorites
 	def removeFromFavorites() {
 		if(ActivityService.removeFromFavorites(params.id as long, SecurityUtils.subject)) {
-			flash.message = "Aktivität wurde von Favoriten entfernt!"
+			flash.message = "Aktivität aus Favoriten entfernt!"
 			redirect(action: "index")
 		} else {
 			flash.message = "Aktivität ist kein Favorit!"
@@ -71,6 +71,7 @@ class ActivityController {
 	//handles all NullPointerExceptions occurring in this controller
 	def nullPointerException(final NullPointerException exception){
 		log.error("Exception ocurred. ${exception?.message}", exception)
+		flash.message = "Aktivität nicht verfügbar!"
 		render view: "error", model: [exception: exception]
 	}
 }
