@@ -13,11 +13,11 @@
     	<table>
     	<g:each in="${favoriteActivities}" var="favorite">
     	<tr>
-    		<td>
-    			<g:form name="addToFavoritesForm" url="[action:'removeFromFavorites',controller:'activity',id: favorite.activity.getId()]">
-        	      	<g:actionSubmitImage value="defavorisieren" action="removeFromFavorites"
-        	      						src="${resource(dir: 'images', file: 'favorite1.png')}"/>  
-				</g:form>
+            <td>
+                <a href="${createLink(action:'removeFromFavorites',controller:'activity',id: favorite.activity.getId())}" class="tooltipLeft">
+                  <i class="fa fa-star"></i>
+                  <span>aus Favoriten entfernen</span>
+                </a>
             </td>
             <td>
             	${favorite.activity.getDescription()}
@@ -33,17 +33,16 @@
             </td>
             <td>
               <g:if test="${favorite.executable}" >
-                <g:form name="completeActivityForm" url="[action:'completeActivity',controller:'activity',id: favorite.activity.getId()]">
-                  <g:actionSubmitImage value="Aktivität erledigen" action="completeActivity"
-                     src="${resource(dir: 'images', file: 'complete.png')}"/>	<!-- actionsubmitImage creates an imagebutton for the method completeActivity -->
-                </g:form>
+                 <a class="button" href="${createLink(controller:'activity', action:'completeActivity', id: favorite.activity.getId())}">
+                   erledigen
+                 </a>
               </g:if>
-              <g:else>${favorite.countdown}</g:else>
+              <g:else><i class="fa fa-lock"></i>${favorite.countdown}</g:else>
             </td>
           </tr>
         </g:each>
       </table>
-      <a href="<g:createLink controller="activity" action="index"/>">Weitere Aktivitäten</a>
+      <a href="<g:createLink controller="activity" action="index"/>" class="button">Weitere Aktivitäten</a>
       </div>
     </div>
     <div id="rightside">
