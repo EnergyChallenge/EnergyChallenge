@@ -86,7 +86,7 @@ public class ProposalActivity extends Activity {
         ownRatingView.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                if (ownRatingView.getRating() == 0) {
+                if (ownRatingView.getRating() != 0) {
                     ownSubmitButton.setEnabled(true);
                 }
             }
