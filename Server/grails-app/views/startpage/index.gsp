@@ -5,34 +5,33 @@
 		<title>EnergyChallenge</title>
 	</head>
 	<body>
-		<div id="left">
-		<style>
-		#login {margin-left:30px; margin-top:30px;color:black;}
-		#register {margin-left:30px; margin-top:30px;color:black;}
-		</style>
+		<div id="right">
 			<div id="login" >
 				<g:form name="signInForm" url="[action:'signIn',controller:'auth']">
 					<input type="hidden" name="targetUri" value="${targetUri}" />
 					<table>
 						<tbody>
 							<tr>
-								<td>E-Mail:</td>
-								<td><input type="text" name="email" value="${username}" /></td>
+								<td class="left">E-Mail:</td>
+								<td class="right">
+									<input type="text" name="email" value="${username}" />
+								</td>
 							</tr>
 							<tr>
-								<td>Passwort:</td>
-								<td><input type="password" name="password" value="" /></td>
+								<td class="left">Passwort:</td>
+								<td class="right">
+									<input type="password" name="password" value="" />
+								</td>
 							</tr>
 							<tr>
-								<td>Angemeldet bleiben</td>
-								<td><g:checkBox name="rememberMe" value="${rememberMe}" /></td>
-							</tr>
-							<tr>
-								<td />
-								<td><input type="submit" value="Anmelden" /></td>
+								<td colspan="2" class="both">
+									<g:checkBox name="rememberMe" value="${rememberMe}" />
+									Angemeldet bleiben
+								</td>
 							</tr>
 						</tbody>
 					</table>
+					<input type="submit" value="Anmelden" />
 				</g:form> 
 				<g:form name="forgotPasswordForm" url="[action:'forgotPassword',controller:'auth']">
 					<input type="submit" value="Passwort vergessen" />
@@ -44,33 +43,35 @@
 				</g:form>
 			</div>
 		</div>
-		<h1>EnergyChallenge</h1>
-		<p style="text-align:justify;">
-			Die EnergyChallenge richtet sich an alle Studierende
-			und Beschäftigte der CAU, die Spaß daran haben
-			Energiesparmöglichkeiten am Arbeitsplatz auszutesten,
-			hierfür Punkte zu sammeln und Preise zu gewinnen. Die
-			EnergyChallenge ist ein Teil der Energiesparkampagne,
-			welche von der CAU mit Unterstützung der EKSH
-			durchgeführt wird, um energiesparendes Verhalten am
-			Arbeitsplatz zu fördern.
-		</p>
-		<p style="text-align:justify;">
-			Die Teilnahme ist einfach: Online anmelden, eine Gruppe
-			aussuchen (dies können Kollegen aus der Arbeitsgruppe
-			sein oder auch willkürliche Zusammensetzungen) und die
-			energiesparenden Aktivitäten regelmäßig in der
-			Aktivitätenliste abhaken. Die Punkte werden dann
-			automatisch dem Benutzerkonto zugeschrieben und nach vier
-			Wochen werden eine Gewinnergruppe und die besten
-			Einzelgewinner im Rahmen einer feierlichen Siegerehrung
-			gekürt.
-		</p>
-		<p style="text-align:justify;">
-			Damit sie ihre Aktivitäten auch komfortabel unterwegs erledigen
-			können, holen sie sich jetzt unsere EnergyChallenge-App.
-		</p>
-		<p style="margin-top:50px">
+		<div id="left">
+			<h1>EnergyChallenge</h1>
+			<p>
+				Die EnergyChallenge richtet sich an alle Studierende
+				und Beschäftigte der CAU, die Spaß daran haben
+				Energiesparmöglichkeiten am Arbeitsplatz auszutesten,
+				hierfür Punkte zu sammeln und Preise zu gewinnen. Die
+				EnergyChallenge ist ein Teil der Energiesparkampagne,
+				welche von der CAU mit Unterstützung der EKSH
+				durchgeführt wird, um energiesparendes Verhalten am
+				Arbeitsplatz zu fördern.
+			</p>
+			<p>
+				Die Teilnahme ist einfach: Online anmelden, eine Gruppe
+				aussuchen (dies können Kollegen aus der Arbeitsgruppe
+				sein oder auch willkürliche Zusammensetzungen) und die
+				energiesparenden Aktivitäten regelmäßig in der
+				Aktivitätenliste abhaken. Die Punkte werden dann
+				automatisch dem Benutzerkonto zugeschrieben und nach vier
+				Wochen werden eine Gewinnergruppe und die besten
+				Einzelgewinner im Rahmen einer feierlichen Siegerehrung
+				gekürt.
+			</p>
+			<p>
+				Damit sie ihre Aktivitäten auch komfortabel unterwegs erledigen
+				können, holen sie sich jetzt unsere EnergyChallenge-App.
+			</p>
+		</div>
+		<p style="margin-top:30px">
 			<table class="list">
 				<thead>
 					<tr>
@@ -87,6 +88,8 @@
 				</tbody>
 			</table>
 		</p>
-		<p><g:link controller="statistics" action="index">Alle Statistiken anzeigen</g:link></p>
+		<p style="text-align: right;">
+			<g:link controller="statistics" action="index">Alle Statistiken anzeigen</g:link>
+		</p>
 	</body>
 </html>

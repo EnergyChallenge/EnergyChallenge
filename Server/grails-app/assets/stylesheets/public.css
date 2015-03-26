@@ -1,6 +1,5 @@
 @CHARSET "UTF-8";
 
-/*TODO gleiche Styles aus public.css und main.css vereinen */
 
 html {	
 }
@@ -23,7 +22,8 @@ header {
 }
 header .inside {
 	width: 960px;
-	margin: 30px auto; /* Abstand zum oberen Rand */
+	margin: 0px auto;
+	padding: 30px 0;
     position: relative;
 }
 
@@ -36,9 +36,10 @@ header .inside {
 	padding: 20px 40px;
 }
 
-#left {
+#right {
 	float: right;
 	width: 320px;
+	margin-top: 30px;
 }
 #login {
 	background-color: #f5f5f5;
@@ -48,12 +49,38 @@ header .inside {
     width: 298px;
     margin: 10px 0;
 }
+#login table {
+	width: 100%;
+	padding-bottom: 5px;
+}
+#login table td.left {
+	width: 35%;
+}
+#login table td.right {
+	width: 65%;
+}
+#login table td.right input {
+	width: 100%;
+	margin-bottom: 5px;
+}
+#login table td.both {
+	text-align: right;
+}
+#login #signInForm input[type="submit"] {
+	float: right;
+	margin-right: 5px;
+}
+
 #register input[type="submit"] {
-	font-size: 2em;
+	font-size: 1.5em;
     font-weight: bold;
     margin: 10px 0;
     padding: 5px 0;
     width: 320px;
+}
+#left {
+	margin-right: 360px;
+	text-align: justify;
 }
 
 footer {
