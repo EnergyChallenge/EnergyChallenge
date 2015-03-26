@@ -13,6 +13,8 @@ import de.unikiel.klik.persistence.Proposal;
 import de.unikiel.klik.persistence.Institute;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException
+import org.codehaus.groovy.runtime.typehandling.GroovyCastException
+import grails.validation.ValidationException
 import java.util.ArrayList;
 
 import org.codehaus.groovy.grails.core.io.ResourceLocator
@@ -22,6 +24,7 @@ class AppController {
 	
 	def AuthService
 	def ActivityService
+	def ProposalService
 	ProfileController profileController = new ProfileController()
 	
     def index() {
@@ -224,7 +227,12 @@ class AppController {
 		
 		authenticate(params.email, params.password);
 		
-		//TODO
+		try {
+			ProposalService.addComment(params.comment as String, params.rating as int, SecurityUtils.getSubject(), params.id as long)
+			outputToJson([commentProposal: [success: true]])
+		}catch(Exception e) {
+			outputToJson([commentProposal: [success: false]])
+		}
 	}
 	
 	def avatar() {
@@ -237,8 +245,10 @@ class AppController {
 		try{
 			AuthService.login(email, password ,false)
 			//Login successful
-            def response = [response: "true"]
-            render response as JSON
+			//TODO
+            //def response = [response: "true"] // Thats wrong!
+            //render response as JSON			// No JSON Output here!
+			//Use
 		}
 		catch (AuthenticationException ex){
 			//Login failed
