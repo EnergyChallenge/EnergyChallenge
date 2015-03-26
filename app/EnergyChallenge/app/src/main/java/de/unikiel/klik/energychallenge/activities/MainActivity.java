@@ -18,7 +18,7 @@ import de.unikiel.klik.energychallenge.fragments.NavigationDrawerFragment;
 import de.unikiel.klik.energychallenge.fragments.OptionsFragment;
 import de.unikiel.klik.energychallenge.fragments.ProfileFragment;
 import de.unikiel.klik.energychallenge.fragments.ProposalsFragment;
-import de.unikiel.klik.energychallenge.fragments.RankingListFragment;
+import de.unikiel.klik.energychallenge.fragments.RankingSliderFragment;
 import de.unikiel.klik.energychallenge.services.NotificationService;
 
 
@@ -86,7 +86,7 @@ public class MainActivity extends Activity
                 //Ranking list fragment
                 currentTitle = getString(R.string.navigation_option3);
                 fragmentManager.beginTransaction()
-                        .replace(R.id.container, RankingListFragment.newInstance())
+                        .replace(R.id.container, RankingSliderFragment.newInstance())
                         .commit();
                 break;
             case 4:

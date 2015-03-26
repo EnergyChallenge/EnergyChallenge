@@ -15,25 +15,25 @@ import de.unikiel.klik.energychallenge.R;
 
 
 /* Fragment for viewing team and user rankings */
-public class RankingListFragment extends Fragment {
+public class RankingSliderFragment extends Fragment {
 
     private FragmentPagerAdapter adapterViewPager;
 
     float actionBarElevation;
 
-    public RankingListFragment() {
+    public RankingSliderFragment() {
     }
 
     /* Returns an new instance of this fragment */
-    public static RankingListFragment newInstance() {
-        return new RankingListFragment();
+    public static RankingSliderFragment newInstance() {
+        return new RankingSliderFragment();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-            View view = inflater.inflate(R.layout.fragment_ranking_list, container, false);
+            View view = inflater.inflate(R.layout.fragment_ranking_slider, container, false);
 
             //TODO Objectnames
             ViewPager vpPager = (ViewPager) view.findViewById(R.id.vpPager);
