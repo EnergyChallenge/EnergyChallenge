@@ -1,5 +1,7 @@
 package de.unikiel.klik.control.app
 
+import de.unikiel.klik.control.web.ProfileController
+
 import de.unikiel.klik.service.AuthService
 import de.unikiel.klik.service.ActivityService
 import grails.converters.JSON

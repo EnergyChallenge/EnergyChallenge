@@ -13,7 +13,7 @@
 			</div>
 	
 	<content tag="userInfo">
-		<% def user = de.unikiel.klik.model.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal())%>
+		<% def user = de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal())%>
 		<g:if test="${user}" >
 			<div id="userinfo">
 				<div class="profile">
