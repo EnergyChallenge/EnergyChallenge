@@ -57,8 +57,10 @@ public class ProposalActivity extends Activity {
         commentsListView.addFooterView(ownCommentView);
         commentsListView.setAdapter(proposalCommentsAdapter);
 
-        ownCommentDescView.setText(proposal.getOwnComment().getText());
-        ownRatingView.setRating(proposal.getOwnComment().getRating());
+        if (proposal.getOwnComment() != null) {
+            ownCommentDescView.setText(proposal.getOwnComment().getText());
+            ownRatingView.setRating(proposal.getOwnComment().getRating());
+        }
 
         ownSubmitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,15 +91,6 @@ public class ProposalActivity extends Activity {
                 }
             }
         });
-
-
-
-
-        // TODO Implement own Comment
-        // TODO Get Own Comment data and insert it to fields
-        // TODO implement onCLick Event for Button
-        // TODO Call Task for submitting comment
-        // TODO Then reload Proposal
     }
 
 }
