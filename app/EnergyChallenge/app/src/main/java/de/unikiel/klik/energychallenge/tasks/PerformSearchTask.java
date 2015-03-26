@@ -5,7 +5,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,12 +28,12 @@ public class PerformSearchTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public PerformSearchTask(Context applicationContext,
+    public PerformSearchTask(Context context,
                              String searchQuery,
                              SearchResultAdapter searchAdapter,
                               LinearLayout progressIndicator,
                               TextView emptyListText) {
-        super(applicationContext);
+        super(context);
         this.searchQuery = searchQuery;
         this.searchAdapter = searchAdapter;
         this.progressIndicator = progressIndicator;
@@ -44,8 +43,7 @@ public class PerformSearchTask extends AccessServerTask {
     @Override
     protected ServerRequest createServerRequest() {
         BasicNameValuePair[] parameters = {new BasicNameValuePair("query", searchQuery)};
-        //BasicNameValuePair[] parameters = {new BasicNameValuePair("query","Max")};//TODO
-        return new ServerRequest("search", new ArrayList<BasicNameValuePair>(Arrays.asList(parameters)));
+        return new ServerRequest("search", new ArrayList<>(Arrays.asList(parameters)));
     }
 
     @Override

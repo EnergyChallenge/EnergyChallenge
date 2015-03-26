@@ -9,11 +9,11 @@ import de.unikiel.klik.energychallenge.utils.ServerRequest;
 
 public class GetFavoredActivitiesTask  extends GetActivitiesTask {
 
-    public GetFavoredActivitiesTask(Context applicationContext,
+    public GetFavoredActivitiesTask(Context context,
                                     ActivitiesAdapter activitiesAdapter,
                                     LinearLayout progressIndicator,
                                     TextView emptyListText) {
-        super(applicationContext, activitiesAdapter, progressIndicator, emptyListText);
+        super(context, activitiesAdapter, progressIndicator, emptyListText);
     }
 
     @Override

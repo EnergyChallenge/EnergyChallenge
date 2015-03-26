@@ -6,6 +6,7 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.adapters.ActivitiesAdapter;
 import de.unikiel.klik.energychallenge.models.ActivitiesItem;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
@@ -19,7 +20,7 @@ public class CompleteActivityTask extends AccessServerTask {
     private ActivitiesItem activity;
 
     public CompleteActivityTask(Context context, ActivitiesAdapter activitiesAdapter, ActivitiesItem activity) {
-        super(context.getApplicationContext());
+        super(context);
         this.context = context;
         this.activitiesAdapter = activitiesAdapter;
         this.activity = activity;
@@ -28,14 +29,12 @@ public class CompleteActivityTask extends AccessServerTask {
     @Override
     protected ServerRequest createServerRequest() {
         return new ServerRequest("completeActivity", activity.getId());
-        //return new ServerRequest("completeActivity", 3); //TODO
     }
 
     @Override
     protected void handleServerResponse(JSONObject response) throws JSONException {
         if (response.getJSONObject("completeActivity").getBoolean("success")) {
-            //TODO String in Ressource
-            Toast.makeText(context, "Die Aktivität wurde erfolgreich ausgeführt.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, R.string.complete_activity_successfull, Toast.LENGTH_SHORT).show();
             activity.setActive(false);
             activitiesAdapter.notifyDataSetChanged();
         } else {
@@ -49,8 +48,7 @@ public class CompleteActivityTask extends AccessServerTask {
     }
 
     private void handleCompletionError() {
-        //TODO String in Ressource
-        Toast.makeText(context, "Die Aktivität konnte nicht ausgeführt werden.", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, R.string.complete_activity_failed, Toast.LENGTH_SHORT).show();
     }
 
 }

@@ -1,6 +1,7 @@
 package de.unikiel.klik.energychallenge.tasks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.unikiel.klik.energychallenge.Config;
+import de.unikiel.klik.energychallenge.activities.LoginActivity;
 import de.unikiel.klik.energychallenge.utils.CurrentUser;
 import de.unikiel.klik.energychallenge.utils.IoX;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
@@ -39,10 +41,13 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
 
     private CurrentUser currentUser;
 
+    private Context context;
+
     private static final String TAG = "AcessServerTask"; //Tag for Logs
 
-    public AccessServerTask(Context applicationContext) {
-        currentUser = new CurrentUser(applicationContext);
+    public AccessServerTask(Context context) {
+        this.context = context;
+        currentUser = new CurrentUser(context.getApplicationContext());
     }
 
     protected abstract ServerRequest createServerRequest();
@@ -54,6 +59,10 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
     protected void doBeforeRequest() {} // Do nothing by default
 
     protected void doAfterResponse() {} // Do nothing by default
+
+    protected boolean isLoginRequired() {
+        return true; //True by default
+    }
 
     @Override
     protected final void onPreExecute() {
@@ -73,16 +82,18 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
     @Override
     protected final void onPostExecute(String result) {
 
-        //TODO - Delete if everythings fine
-        Log.v("Repsonse", result);
-
         if (result.equals("Error")) {
             Log.w(TAG, "Could not access Server!");
             handleResponseError();
         }
 
         try {
-            handleServerResponse(new JSONObject(result));
+            JSONObject response = new JSONObject(result);
+            if (isLoginRequired() && !response.getBoolean("authentication")) {
+                logout();
+            } else {
+                handleServerResponse(response.getJSONObject("result"));
+            }
         } catch (JSONException e) {
             Log.e(TAG, "Error in JSON");
             e.printStackTrace();
@@ -98,9 +109,9 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         if (serverRequest.isIdSet()) {
             requestUrl += "/" + serverRequest.getId();
         }
-        requestUrl += "?i=" + Long.toString(System.currentTimeMillis()/1000); //TODO to utils
-
-        Log.v("URL", requestUrl); //TODO Delete if everything s fine
+        if (Config.AVERT_SERVER_CACHING) {
+            requestUrl += "?i=" + Long.toString(System.currentTimeMillis() / 1000);
+        }
 
         DefaultHttpClient client = new DefaultHttpClient();
         HttpPost post = new HttpPost(requestUrl);
@@ -109,27 +120,25 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         if (serverRequest.getParameters() != null) {
             parameters.addAll(serverRequest.getParameters());
         }
-        if (serverRequest.getRequestData() != null) {
-            parameters.add(new BasicNameValuePair("request", serverRequest.getRequestData().toString()));
+
+        if (isLoginRequired()) {
+            parameters.add(new BasicNameValuePair("email", currentUser.getEmail()));
+            parameters.add(new BasicNameValuePair("password", currentUser.getPassword()));
         }
 
-        //TODO Remove
-        Log.v("email",currentUser.getEmail());
-        Log.v("paswort",currentUser.getPassword());
-
-        parameters.add(new BasicNameValuePair("email", currentUser.getEmail())); //TODO  WORKING?
-        parameters.add(new BasicNameValuePair("password", currentUser.getPassword())); //TODO WORKING?
-        //parameters.add(new BasicNameValuePair("email", "post@soeren-henning.de")); //TODO Remove
-        //parameters.add(new BasicNameValuePair("password", "pass")); //TODO Remove
-        //parameters.add(new BasicNameValuePair("JSESSIONID", "")); //TODO
-
         UrlEncodedFormEntity encodedEntity = new UrlEncodedFormEntity(parameters, "utf-8");
-        Log.v("encodedEntity", IoX.readInputStream(encodedEntity.getContent(), 10000)); //TODO
         post.setEntity(encodedEntity);
-        //Log.v("post", post.); //TODO Remove
         HttpResponse httpResponse = client.execute(post);
         HttpEntity responseEntity = httpResponse.getEntity();
         return EntityUtils.toString(responseEntity, HTTP.UTF_8);
 
+    }
+
+    private final void logout() {
+        currentUser.clear();
+
+        Intent loginIntent = new Intent(context, LoginActivity.class);
+        loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        context.startActivity(loginIntent);
     }
 }

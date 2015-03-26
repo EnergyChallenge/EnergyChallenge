@@ -48,7 +48,7 @@
     </div>
     <div id="rightside">
     <div class="card">
-      <h3>Punkte Stand</h3>
+      <h3>Punktestand</h3>
       <table>
         <tr>
           <td>Meine Punkte:<td>
@@ -63,10 +63,10 @@
       </table>
      </div>
      <div class="card">
-      <g:if test="${team}">
+      <g:if test="${members}">
         <h3>Mein Team</h3>
         <table>
-          <g:each in="${team.getMembers()}" var="member">
+          <g:each in="${members}" var="member">
             <tr>
               <td><a href="<g:createLink controller="profile" action="user" id="${member.getId()}"/>">${member.getName()}</a></td>
               <td>${member.getPoints()}</td>

@@ -35,10 +35,10 @@ public class GetUserProfileTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public GetUserProfileTask(Context applicationContext, int profileId, ProfileFragment profileFragment,
+    public GetUserProfileTask(Context context, int profileId, ProfileFragment profileFragment,
                               GridLayout profileView, LinearLayout progressIndicator,
                               TextView emptyListText) {
-        super(applicationContext);
+        super(context);
         this.profileId = profileId;
         this.profileFragment = profileFragment;
         this.profileView = profileView;
@@ -48,7 +48,6 @@ public class GetUserProfileTask extends AccessServerTask {
 
     @Override
     protected ServerRequest createServerRequest() {
-        //return new ServerRequest("userProfile", 10); //TODO
         return new ServerRequest("userProfile", profileId);
     }
 

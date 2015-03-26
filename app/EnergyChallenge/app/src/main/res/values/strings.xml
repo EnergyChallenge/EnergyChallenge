@@ -10,9 +10,7 @@
     <string name="navigation_option3">Rangliste</string>
     <string name="navigation_option4">Aktivitäten</string>
     <string name="navigation_option5">Energiesparvorschläge</string>
-    <string name="navigation_option6">Optionen</string>
-    <string name="navigation_option7">JSON Test</string>
-    <string name="navigation_option8">UI Test</string>
+    <string name="navigation_option6">Einstellungen</string>
 
     <string name="navigation_drawer_open">Navigation öffnen</string>
     <string name="navigation_drawer_close">Navigation schließen</string>
@@ -30,7 +28,6 @@
 
     //Main Fragment (Landing Page)
     <string name="main_title">Favoriten</string>
-    <string name="main_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum et nisl tristique, rhoncus nulla non, pharetra nisl. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed sollicitudin scelerisque metus, eget facilisis odio gravida sed. Suspendisse laoreet rutrum nisi, nec vestibulum felis euismod ut. Pellentesque auctor scelerisque neque, quis suscipit nibh auctor quis. Maecenas mollis pulvinar nunc vel hendrerit. Vestibulum facilisis ac tellus id faucibus. Ut aliquam auctor augue quis rhoncus.</string>
 
     //My Profile
     <string name="profile_myName">Samuel Barnes</string>
@@ -61,14 +58,12 @@
     <string name="options_notifications">Benachrichtigungen</string>
     <string name="options_logout">Ausloggen</string>
 
-    //Options/Searc -> Deprecated
-    <string name="search_queryHint">Suchen...</string>
-
     //Options
     <string name="app_label">EnergyChallenge</string>
     <string name="search_hint">Suchen</string>
 
     <string name="no_network_connection">Keine Internetverbindung verfügbar.</string>
+    <string name="invalide_login">Die E-Mail Adresse oder das Passwort ist ungültig.</string>
     <string name="error_in_server_communication">Es ist ein Fehler bei der Kommunikation mit dem Server aufgetreten.</string>
     <string name="title_activity_profile">Profil</string>
 
@@ -77,7 +72,8 @@
     <string name="comments">Kommentare</string>
     <string name="title_activity_proposal">Energiesparvorschlag</string>
 
-    <string name="proposal_from">Vorschlag von</string>
+    <string name="complete_activity_successfull">Die Aktivität wurde erfolgreich ausgeführt.</string>
+    <string name="complete_activity_failed">Die Aktivität konnte nicht ausgeführt werden.</string>
 
     <string name="your_comment">Ihr Kommentar</string>
 

@@ -22,9 +22,9 @@ public class GetActivitiesTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public GetActivitiesTask(Context applicationContext, ActivitiesAdapter activitiesAdapter,
+    public GetActivitiesTask(Context context, ActivitiesAdapter activitiesAdapter,
                               LinearLayout progressIndicator, TextView emptyListText) {
-        super(applicationContext);
+        super(context);
         this.activitiesAdapter = activitiesAdapter;
         this.progressIndicator = progressIndicator;
         this.emptyListText = emptyListText;

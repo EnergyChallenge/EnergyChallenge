@@ -14,11 +14,9 @@ public class ServerRequest {
 
     private ArrayList<BasicNameValuePair> parameters;
 
-    private JSONObject requestData;
-
 
     public ServerRequest(String receiverOnServer) {
-        this(receiverOnServer, new JSONObject());
+        this.receiverOnServer = receiverOnServer;
     }
 
     public ServerRequest(String receiverOnServer, int id) {
@@ -29,11 +27,6 @@ public class ServerRequest {
     public ServerRequest(String receiverOnServer, ArrayList<BasicNameValuePair> parameters) {
         this.receiverOnServer = receiverOnServer;
         this.parameters = parameters;
-    }
-
-    public ServerRequest(String receiverOnServer, JSONObject requestData) {
-        this.receiverOnServer = receiverOnServer;
-        this.requestData = requestData;
     }
 
 
@@ -63,14 +56,6 @@ public class ServerRequest {
 
     public void setParameters(ArrayList<BasicNameValuePair> parameters) {
         this.parameters = parameters;
-    }
-
-    public JSONObject getRequestData() {
-        return requestData;
-    }
-
-    public void setRequestData(JSONObject requestData) {
-        this.requestData = requestData;
     }
 
 }

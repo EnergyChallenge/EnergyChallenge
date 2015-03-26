@@ -2,12 +2,13 @@
 <html>
 <head>
 	<meta name="layout" content="main" />
+	<asset:stylesheet src="proposal.css" />
 	<title>EnergyChallenge</title>
 </head>
 <body>
 	<h1>Energiesparvorschläge</h1>
 	<p>
-		Reichen Sie neue Vorschläge zum energiesparen ein! Als Belohnung gibt es für einen
+		Reichen Sie neue Vorschläge zum Energie sparen ein! Als Belohnung gibt es für einen
 		angenommen Vorschlag <strong>2 Punkte</strong>.
 		<g:form action="add">
 			<table class="table">
@@ -41,22 +42,34 @@
 				<tr>
 					<th>Beschreibung</th>
 					<th>Punkte</th>
-					<th>Bewertung</th>
+					<th>&#216;Bewertung</th>
 				</tr>
 			</thead>
 			<tbody>
 				<g:each in="${proposals}" var="proposal">
 					<tr>
 						<td>
-													<a href="${createLink( action: 'view', id: proposal.id)}">
-																	${proposal.getDescription()}
-													</a>
+							<a href="${createLink( action: 'view', id: proposal.id)}">
+								${proposal.getDescription()}
+							</a>
 						</td>
 						<td>
 							${proposal.getPoints()}
 						</td>
 						<td>
-							${proposal.getRating()}
+							<g:if test="${proposal.getRating() != 0}">
+								<g:each var="i" in="${ (1..(int) proposal.getRating()) }">
+									<i class="fa fa-star"></i>
+								</g:each>
+								<g:each var="i" in="${ (1..5 - (int) proposal.getRating()) }">
+										<i class="fa fa-star-o"></i>
+								</g:each>
+							</g:if>
+							<g:else>
+								<g:each var="i" in="${ (1..(5 - (int) proposal.getRating())) }">
+									<i class="fa fa-star-o"></i>
+								</g:each>
+							</g:else>
 						</td>
 					</tr>
 				</g:each>

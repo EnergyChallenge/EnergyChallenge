@@ -45,7 +45,7 @@
 							</a>
 						</g:if>
 						<g:else>
-							${act.countdown}
+							<i class="fa fa-lock"></i>${act.countdown}
 						</g:else>
 					</td>
 				</tr>

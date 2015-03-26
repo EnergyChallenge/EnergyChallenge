@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -18,11 +19,13 @@ import android.widget.Toast;
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.models.Team;
 import de.unikiel.klik.energychallenge.models.User;
+import de.unikiel.klik.energychallenge.tasks.DownloadAvatarTask;
 import de.unikiel.klik.energychallenge.tasks.GetTeamProfileTask;
 import de.unikiel.klik.energychallenge.tasks.GetUserProfileTask;
+import de.unikiel.klik.energychallenge.utils.CurrentUser;
 import de.unikiel.klik.energychallenge.utils.NetworkX;
 
-
+//TODO Layout
 
 /* Fragment for the users own profile page */
 public class ProfileFragment extends Fragment {
@@ -34,6 +37,8 @@ public class ProfileFragment extends Fragment {
     private boolean isCurrentUser = false;
 
     private GridLayout profileView;
+
+    private ImageView avatarView;
 
     private LinearLayout progressIndicator;
 
@@ -55,7 +60,7 @@ public class ProfileFragment extends Fragment {
 
         if (getArguments() == null) {
             type = "user";
-            profileId = 0;
+            profileId = new CurrentUser(getActivity().getApplicationContext()).getId();
             isCurrentUser = true;
         } else {
             type = getArguments().getString("type");
@@ -65,11 +70,10 @@ public class ProfileFragment extends Fragment {
         profileView = (GridLayout) view.findViewById(R.id.profile_container);
         progressIndicator = (LinearLayout) view.findViewById(R.id.progress_container);
         emptyProfileText = (TextView) view.findViewById(R.id.empty);
+        avatarView = (ImageView) view.findViewById(R.id.profile_image);
 
 
         loadProfileData();
-
-        //TODO Load Image - in own Task!
 
         return view;
     }
@@ -133,14 +137,16 @@ public class ProfileFragment extends Fragment {
 
         if (NetworkX.isAvailable(context)) {
             if (type.equals("user")) {
-                new GetUserProfileTask(context.getApplicationContext(), profileId, this, profileView, progressIndicator, emptyProfileText).execute();
+                new GetUserProfileTask(context, profileId, this, profileView, progressIndicator, emptyProfileText).execute();
             } else if (type.equals("team")) {
-                new GetTeamProfileTask(context.getApplicationContext(), profileId, this, profileView, progressIndicator, emptyProfileText).execute();
+                new GetTeamProfileTask(context, profileId, this, profileView, progressIndicator, emptyProfileText).execute();
             }
+            new DownloadAvatarTask(profileId, avatarView).execute();
         } else {
             emptyProfileText.setText(R.string.no_network_connection);
             Toast.makeText(context, R.string.no_network_connection, Toast.LENGTH_SHORT).show();
         }
 
     }
+
 }
