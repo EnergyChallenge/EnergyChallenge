@@ -14,6 +14,8 @@ class LandingController {
   def index() {
     User user = User.findByEmail(SecurityUtils.subject.getPrincipal())
     Team team =  user.getTeam()
+	def members = team?.members.sort{it.points}
+	members.reverse(true)
     def favoriteActivities = []
 	def userFavorites = []
 	if(user.favorites!= null){
@@ -23,6 +25,6 @@ class LandingController {
 		favoriteActivities << [activity: activity, executable: ActivityService.isExecutable(activity, SecurityUtils.subject), countdown: ActivityService.getActivityCountdown(activity, SecurityUtils.subject)]
 	}
 
-    [user: user, team: team, favoriteActivities: favoriteActivities ] 
+    [user: user, members: members, favoriteActivities: favoriteActivities ] 
   }
 }

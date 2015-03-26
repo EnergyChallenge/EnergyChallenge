@@ -63,10 +63,10 @@
       </table>
      </div>
      <div class="card">
-      <g:if test="${team}">
+      <g:if test="${members}">
         <h3>Mein Team</h3>
         <table>
-          <g:each in="${team.getMembers()}" var="member">
+          <g:each in="${members}" var="member">
             <tr>
               <td><a href="<g:createLink controller="profile" action="user" id="${member.getId()}"/>">${member.getName()}</a></td>
               <td>${member.getPoints()}</td>
