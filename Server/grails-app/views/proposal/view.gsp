@@ -48,7 +48,7 @@
 					<%-- TODO Link to Proposal --%>
 					<tr>
 						<td>
-													${comment.getText()}
+							${comment.getText()}
 						</td>
 						<td>
 							${comment.getRating()}

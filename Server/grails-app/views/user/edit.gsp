@@ -56,7 +56,7 @@
       <g:form action="newTeam">
           <table>
               <tr>
-                  <td>Team Name:</td>
+                  <td>Teamname:</td>
                   <td><input type="text" name="name" value="" /></td>
               </tr>
               <tr>
@@ -67,7 +67,7 @@
       </g:form>
     </g:else>
       <fieldset>
-        <legend>Avatar Upload</legend>
+        <legend>Avatar Hochladen</legend>
         <g:uploadForm action="uploadAvatar">
           <label for="avatar">Avatar (512k)</label>
           <input type="file" name="avatar" id="avatar" />

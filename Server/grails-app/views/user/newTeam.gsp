@@ -7,12 +7,12 @@
 </head>
 <body>
 
-<h1>Create Team</h1>
+<h1>Team Erstellen</h1>
 
 <g:form action="newTeam">
     <table>
         <tr>
-            <td>Team Name:</td>
+            <td>Teamname:</td>
             <td><input type="text" name="name" value="${name}" /></td>
         </tr>
         <tr>
