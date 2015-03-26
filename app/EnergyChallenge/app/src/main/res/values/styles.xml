@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Material.Light.DarkActionBar">
         <!--   your app branding color for the app bar -->
@@ -10,18 +9,6 @@
         <item name="android:colorPrimaryDark">#6D1A62</item>
         <!--   theme UI controls like checkboxes and text fields -->
         <item name="android:colorAccent">#8D217E</item>
-    </style>
-
-    <style name="greenRatingBar" parent="@android:style/Widget.RatingBar">
-        <item name="android:progressDrawable">@drawable/green_rating_bar_full</item>
-        <item name="android:minHeight">28dip</item>
-        <item name="android:maxHeight">28dip</item>
-    </style>
-
-    <style name="greenRatingBarBig" parent="@android:style/Widget.RatingBar">
-        <item name="android:progressDrawable">@drawable/green_rating_bar_big_full</item>
-        <item name="android:minHeight">76dip</item>
-        <item name="android:maxHeight">76dip</item>
     </style>
 
 </resources>
