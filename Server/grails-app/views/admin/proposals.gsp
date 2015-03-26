@@ -14,7 +14,7 @@
 					<th>Punkte</th>
 					<th>Autor</td>
 					<th>Erstellungsdatum</th>
-					<th>&#216; Bewertung</th>
+					<th>&#216;&nbsp;Bewertung</th>
 					<th>Verwaltung</th>
 				</tr>
 				</thead>

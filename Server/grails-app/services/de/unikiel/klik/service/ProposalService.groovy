@@ -36,11 +36,11 @@ class ProposalService {
 			}
 		}
     }
-    void addProposal(String description, int points, Subject author) throws ValidationException {
-	User user = User.findByEmail(author.getPrincipal());
-	//TODO this part does not work!!!!!!!
-	Proposal newproposal = new Proposal(description: description, points: points, author: user);
-	newproposal.save(failOnError: true);
-    }
+	void addProposal(String description, int points, Subject author) throws ValidationException {
+		User user = User.findByEmail(author.getPrincipal());
+		//TODO this part does not work!!!!!!!
+		Proposal newproposal = new Proposal(description: description, points: points, author: user);
+		newproposal.save(failOnError: true);
+	}
 	
 }
