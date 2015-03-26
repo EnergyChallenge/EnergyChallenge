@@ -10,6 +10,8 @@ import org.joda.time.Duration
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
 import org.joda.time.format.DateTimeFormatter
+import org.joda.time.format.PeriodFormatter
+import org.joda.time.format.PeriodFormatterBuilder
 
 class AdminController {
 
@@ -30,7 +32,14 @@ class AdminController {
         [teams: teams]
     }
     def activities(){
-        def activities = Activity.findAll()//([max: 10], offset: 10 * params.page])
+		
+        def rawActivities = Activity.findAll()//([max: 10], offset: 10 * params.page])
+		def activities = []
+		def String duration
+		for(act in rawActivities) {
+			duration = act.duration.getStandardHours().toString()
+			activities << [id: act.id, description: act.description, points: act.points, duration: duration]
+		}
         //int lastPage = Activity.count() / 10;
         [activities: activities]
     }
