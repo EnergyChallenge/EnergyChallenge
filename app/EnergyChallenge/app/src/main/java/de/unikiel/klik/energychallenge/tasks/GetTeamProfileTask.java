@@ -36,10 +36,10 @@ public class GetTeamProfileTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public GetTeamProfileTask(Context applicationContext, int profileId, ProfileFragment profileFragment,
+    public GetTeamProfileTask(Context context, int profileId, ProfileFragment profileFragment,
                               GridLayout profileView, LinearLayout progressIndicator,
                               TextView emptyListText) {
-        super(applicationContext);
+        super(context);
         this.profileId = profileId;
         this.profileFragment = profileFragment;
         this.profileView = profileView;

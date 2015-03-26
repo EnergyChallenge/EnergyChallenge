@@ -137,9 +137,9 @@ public class ProfileFragment extends Fragment {
 
         if (NetworkX.isAvailable(context)) {
             if (type.equals("user")) {
-                new GetUserProfileTask(context.getApplicationContext(), profileId, this, profileView, progressIndicator, emptyProfileText).execute();
+                new GetUserProfileTask(context, profileId, this, profileView, progressIndicator, emptyProfileText).execute();
             } else if (type.equals("team")) {
-                new GetTeamProfileTask(context.getApplicationContext(), profileId, this, profileView, progressIndicator, emptyProfileText).execute();
+                new GetTeamProfileTask(context, profileId, this, profileView, progressIndicator, emptyProfileText).execute();
             }
             new DownloadAvatarTask(profileId, avatarView).execute();
         } else {

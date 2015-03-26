@@ -55,7 +55,6 @@ public class MainFragment extends ListFragment implements CompleteActivityDialog
         progressIndicator = (LinearLayout) view.findViewById(R.id.progress_container_id);
         emptyListText = (TextView) view.findViewById(R.id.empty_id);
 
-        //activitiesAdapter = new ActivitiesAdapter(getActivity()); TODO
         activitiesAdapter = new ActivitiesAdapter(getActivity(), this);
 
         setListAdapter(activitiesAdapter);
@@ -71,7 +70,7 @@ public class MainFragment extends ListFragment implements CompleteActivityDialog
         Context context = getActivity();
 
         if (NetworkX.isAvailable(context)) {
-            new GetFavoredActivitiesTask(context.getApplicationContext(), activitiesAdapter, progressIndicator, emptyListText).execute();
+            new GetFavoredActivitiesTask(context, activitiesAdapter, progressIndicator, emptyListText).execute();
         } else {
             emptyListText.setText(R.string.no_network_connection);
             Toast.makeText(context, R.string.no_network_connection, Toast.LENGTH_SHORT).show();

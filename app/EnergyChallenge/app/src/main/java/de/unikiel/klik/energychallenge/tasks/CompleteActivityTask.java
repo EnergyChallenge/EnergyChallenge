@@ -19,7 +19,7 @@ public class CompleteActivityTask extends AccessServerTask {
     private ActivitiesItem activity;
 
     public CompleteActivityTask(Context context, ActivitiesAdapter activitiesAdapter, ActivitiesItem activity) {
-        super(context.getApplicationContext());
+        super(context);
         this.context = context;
         this.activitiesAdapter = activitiesAdapter;
         this.activity = activity;

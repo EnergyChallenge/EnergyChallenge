@@ -1,6 +1,7 @@
 package de.unikiel.klik.energychallenge.tasks;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.unikiel.klik.energychallenge.Config;
+import de.unikiel.klik.energychallenge.activities.LoginActivity;
 import de.unikiel.klik.energychallenge.utils.CurrentUser;
 import de.unikiel.klik.energychallenge.utils.IoX;
 import de.unikiel.klik.energychallenge.utils.ServerRequest;
@@ -39,10 +41,13 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
 
     private CurrentUser currentUser;
 
+    private Context context;
+
     private static final String TAG = "AcessServerTask"; //Tag for Logs
 
-    public AccessServerTask(Context applicationContext) {
-        currentUser = new CurrentUser(applicationContext);
+    public AccessServerTask(Context context) {
+        this.context = context;
+        currentUser = new CurrentUser(context.getApplicationContext());
     }
 
     protected abstract ServerRequest createServerRequest();
@@ -83,7 +88,12 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         }
 
         try {
-            handleServerResponse(new JSONObject(result).getJSONObject("result"));
+            JSONObject response = new JSONObject(result);
+            if (isLoginRequired() && !response.getBoolean("authentication")) {
+                logout();
+            } else {
+                handleServerResponse(response.getJSONObject("result"));
+            }
         } catch (JSONException e) {
             Log.e(TAG, "Error in JSON");
             e.printStackTrace();
@@ -120,5 +130,13 @@ public abstract class AccessServerTask extends AsyncTask<String, Void, String> {
         HttpEntity responseEntity = httpResponse.getEntity();
         return EntityUtils.toString(responseEntity, HTTP.UTF_8);
 
+    }
+
+    private final void logout() {
+        currentUser.clear();
+
+        Intent loginIntent = new Intent(context, LoginActivity.class);
+        loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        context.startActivity(loginIntent);
     }
 }

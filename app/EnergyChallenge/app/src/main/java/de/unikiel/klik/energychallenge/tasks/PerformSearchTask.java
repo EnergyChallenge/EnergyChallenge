@@ -28,12 +28,12 @@ public class PerformSearchTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public PerformSearchTask(Context applicationContext,
+    public PerformSearchTask(Context context,
                              String searchQuery,
                              SearchResultAdapter searchAdapter,
                               LinearLayout progressIndicator,
                               TextView emptyListText) {
-        super(applicationContext);
+        super(context);
         this.searchQuery = searchQuery;
         this.searchAdapter = searchAdapter;
         this.progressIndicator = progressIndicator;

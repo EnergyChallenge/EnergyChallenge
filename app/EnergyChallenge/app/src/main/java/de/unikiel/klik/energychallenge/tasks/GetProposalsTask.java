@@ -25,11 +25,11 @@ public class GetProposalsTask extends AccessServerTask {
 
     private TextView emptyListText;
 
-    public GetProposalsTask(Context applicationContext,
+    public GetProposalsTask(Context context,
                             ProposalsAdapter proposalsAdapter,
                              LinearLayout progressIndicator,
                              TextView emptyListText) {
-        super(applicationContext);
+        super(context);
         this.proposalsAdapter = proposalsAdapter;
         this.progressIndicator = progressIndicator;
         this.emptyListText = emptyListText;
