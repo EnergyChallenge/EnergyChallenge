@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import de.unikiel.klik.energychallenge.tasks.GetMessagesTask;
+import de.unikiel.klik.energychallenge.utils.NetworkX;
 
 public class NotificationReceiver extends BroadcastReceiver {
     public NotificationReceiver() {
@@ -13,7 +14,13 @@ public class NotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        //If there is at least one message, create a notification for one
-        GetMessagesTask.checkForNotifications(context);
+        //Get the messages and if there is at least on create a notification
+        if (NetworkX.isAvailable(context)) {
+
+            //There is a network connection, invoke the messages task
+            new GetMessagesTask(context).execute();
+        } else {
+            //Do nothing as there is no network connection
+        }
     }
 }

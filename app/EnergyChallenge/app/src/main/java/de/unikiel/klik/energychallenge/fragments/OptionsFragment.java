@@ -1,13 +1,10 @@
 package de.unikiel.klik.energychallenge.fragments;
 
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 
 import de.unikiel.klik.energychallenge.R;
 import de.unikiel.klik.energychallenge.activities.LoginActivity;
@@ -39,13 +36,13 @@ public class OptionsFragment extends PreferenceFragment {
         findPreference("logout").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
 
-                currentUser.clear();
+            currentUser.clear();
 
-                Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
-                loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(loginIntent);
+            Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
+            loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(loginIntent);
 
-                return true;
+            return true;
             }
         });
 
