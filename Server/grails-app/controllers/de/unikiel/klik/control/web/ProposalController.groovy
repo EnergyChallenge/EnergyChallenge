@@ -60,5 +60,11 @@ class ProposalController {
 		}
 		redirect (action: "view", params: params);
 	}
+   def nullPointerException(final NullPointerException exception){
+                log.error("Exception occured. ${exception?.message}", exception)
+                flash.error = "Vorschlag ist nicht verfügbar!"
+                redirect(action: "index")
+        }
+
 	
 }
