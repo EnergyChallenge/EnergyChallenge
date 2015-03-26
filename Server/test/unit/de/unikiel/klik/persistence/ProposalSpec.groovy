@@ -6,7 +6,7 @@ import de.unikiel.klik.persistence.Role
 import de.unikiel.klik.persistence.Proposal
 import de.unikiel.klik.persistence.Comment
 
-import de.unikiel.klik.TestService
+import de.unikiel.klik.service.TestService
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
