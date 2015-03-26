@@ -5,11 +5,13 @@
 	float: left;
 	width: 47.5%;
 	padding-right: 2.5%;
+	padding-top: 10px;
 }
 #rightside {
 	width: 47.5%;
 	padding-left: 2.5%;
 	margin-left: 50%;
+	padding-top: 10px;
 }
 a.tooltipLeft {
   position: relative;

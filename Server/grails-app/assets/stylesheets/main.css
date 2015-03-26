@@ -25,6 +25,22 @@ header .inside {
 	margin: 0 auto;
     position: relative;
 }
+header .inside .logo {
+	width: 220px;
+	float: left;
+	text-align: center;
+}
+header .inside .logo img {
+	display: block;
+    height: 92px;
+    width: auto;
+    margin: 0 auto;
+    padding: 4px;
+}
+header h1 {
+	margin-left: 220px;
+	padding-top: 35px;
+}
 header .inside #userinfo {
 	height: 80px;
 	width: 240px;

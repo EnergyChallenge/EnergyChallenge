@@ -10,7 +10,7 @@
     <div id="top">
     	<div class="card">
     	<h3>Meine Favoriten</h3>
-    	<table class="list" style="width: 97%">
+    	<table class="list">
           </tbody>
             <g:each in="${favoriteActivities}" var="favorite">
               <tr>
@@ -23,16 +23,15 @@
                 <td>
                 	${favorite.activity.getDescription()}
                 	<em>
-    	            	(${favorite.activity.getPoints()}
     	            	<g:if test="${favorite.activity.getPoints() == 1}">
-    	            		Punkt)
+    	            		(${favorite.activity.getPoints()}&nbsp;Punkt)
     	            	</g:if>
     	            	<g:else>
-    	            		Punkte)
+    	            		(${favorite.activity.getPoints()}&nbsp;Punkte)
     	            	</g:else>
                 	</em>
                 </td>
-                <td style="width: 70px">
+                <td style="width: 85px; text-align: right;">
                   <g:if test="${favorite.executable}" >
                      <a class="button" href="${createLink(controller:'activity', action:'completeActivity', id: favorite.activity.getId())}">
                        erledigen
@@ -44,15 +43,19 @@
             </g:each>
           </tbody>
         </table>
-        <a href="<g:createLink controller="activity" action="index"/>" class="button">Weitere Aktivitäten</a>
+        <div class="content rightalign">
+	        <a href="<g:createLink controller="activity" action="index"/>">
+	        	<em>Weitere Aktivitäten</em>
+	        </a>
+        </div>
       </div>
     </div>
     <div id="leftside">
     <div class="card">
       <h3>Punktestand</h3>
-      <table>
+      <table class="list">
         <tr>
-          <td>Meine Punkte:<td>
+          <td>Meine Punkte:</td>
           <td>${user.getPoints()}</td>
         </tr>
         <g:if test="${team}">
@@ -67,11 +70,15 @@
      <div id="rightside">
      <div class="card">
       <g:if test="${team}">
-        <h3>Team ${team.getName()}</h3>
-        <table>
+        <h3>Team <em>${team.getName()}</em></h3>
+        <table class="list">
           <g:each in="${team.getMembers()}" var="member">
             <tr>
-              <td><a href="<g:createLink controller="profile" action="user" id="${member.getId()}"/>">${member.getName()}</a></td>
+              <td>
+              	<a href="<g:createLink controller="profile" action="user" id="${member.getId()}"/>">
+              		${member.getName()}
+              	</a>
+              </td>
               <td>${member.getPoints()}</td>
             </tr>
           </g:each>

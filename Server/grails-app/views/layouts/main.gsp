@@ -9,10 +9,11 @@
 	</head>
 	
 	<content tag="logo">
-	<div class="topLeft">
-				<a href="https://www.klik.uni-kiel.de/de"><asset:image src="klik_Logo.png" alt="klik_Logo" align="left" width="106px" heigth="auto" /></a>
-				<h1>EnergyChallenge</h1>
-			</div>
+		<a href="https://www.klik.uni-kiel.de/de" class="logo">
+			<asset:image src="klik_Logo.png" alt="klik_Logo" />
+		</a>
+		<h1>EnergyChallenge</h1>
+	</content>
 	
 	<content tag="userInfo">
 		<% def user = de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal())%>

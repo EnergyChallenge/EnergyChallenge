@@ -33,6 +33,7 @@
 	float: left;
 	width: 30%;
 	text-align: center;
+	margin: 0;
 }
 body.userprofile #content .maincards .card.points {
 	margin: 0 5%;
@@ -56,6 +57,7 @@ body.teamprofile #content .maincards .card.position {
 #content .maincards .card .label {
 	color: #777777;
 	padding: 0 10px;
+	border-top: 0 none;
 }
 	
 	
