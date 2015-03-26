@@ -46,7 +46,7 @@ class AdminController {
     private String getStringOfDuration(Duration duration){
         long durationInMilliSeconds= duration.getMillis() 
         long milliSecondsInAYear = 1000L*60*60*24*365
-        long milliSecondsInAMonth = 1000L*60*60*24*30
+        long milliSecondsInAMonth = 1000L*60*60*24*365/12 ///Average
         long milliSecondsInAWeek = 1000L*60*60*24*7
         long milliSecondsInADay = 1000L*60*60*24
         long milliSecondsInAHour = 1000L*60*60
