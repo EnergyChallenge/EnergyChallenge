@@ -16,10 +16,6 @@ import de.unikiel.klik.energychallenge.utils.CurrentUser;
 /* Fragment for the options menu */
 public class OptionsFragment extends PreferenceFragment {
 
-    private Context applicationContext;
-
-    private SharedPreferences preferences;
-
     public OptionsFragment() {
     }
 
@@ -33,11 +29,7 @@ public class OptionsFragment extends PreferenceFragment {
 
         super.onCreate(savedInstanceState);
 
-        applicationContext = getActivity().getApplicationContext();
-
-        CurrentUser currentUser = new CurrentUser(applicationContext);
-
-        //preferences = PreferenceManager.getDefaultSharedPreferences(applicationContext);
+        final CurrentUser currentUser = new CurrentUser(getActivity().getApplicationContext());
 
         addPreferencesFromResource(R.xml.preferences);
 
@@ -47,16 +39,11 @@ public class OptionsFragment extends PreferenceFragment {
         findPreference("logout").setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
 
-                //currentUser.clear();
+                currentUser.clear();
 
-                //SharedPreferences.Editor editor = preferences.edit();
-                //editor.clear();
-                //editor.commit();
-
-            Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
-            loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(loginIntent);
-
+                Intent loginIntent = new Intent(getActivity(), LoginActivity.class);
+                loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(loginIntent);
 
                 return true;
             }
