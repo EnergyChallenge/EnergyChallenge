@@ -46,7 +46,7 @@ class AdminController {
     private String getStringOfDuration(Duration duration){
         long durationInMilliSeconds= duration.getMillis() 
         long milliSecondsInAYear = 1000L*60*60*24*365
-        long milliSecondsInAMonth = 1000L*60*60*24*30
+        long milliSecondsInAMonth = 1000L*60*60*24*365/12 ///Average
         long milliSecondsInAWeek = 1000L*60*60*24*7
         long milliSecondsInADay = 1000L*60*60*24
         long milliSecondsInAHour = 1000L*60*60
@@ -61,11 +61,11 @@ class AdminController {
         }else if(durationInMilliSeconds > milliSecondsInADay){
             return (((float) durationInMilliSeconds) / milliSecondsInADay).round(2) + " Tage"
         }else if(durationInMilliSeconds > milliSecondsInAHour){
-            return (((float) durationInMilliSeconds) / milliSecondsInAHour).round(2) + " Studen"
+            return (((float) durationInMilliSeconds) / milliSecondsInAHour).round(2) + " Stunden"
         }else if(durationInMilliSeconds > milliSecondsInAMinute){
             return (((float) durationInMilliSeconds) / milliSecondsInAMinute).round(2) + " Minuten"
         }else if(durationInMilliSeconds > milliSecondsInAHour){
-            return (((float) durationInMilliSeconds) / milliSecondsInASecond).round(2) + " Secunden"
+            return (((float) durationInMilliSeconds) / milliSecondsInASecond).round(2) + " Sekunden"
         }else{
             return durationInMilliSeconds + " ms"
         }
@@ -78,7 +78,7 @@ class AdminController {
     }
 
     def editActivity() {
-
+		render(view: "editActivity", model: [newActivity: params.newActivity])
     }
 
     def changeActivity() {
@@ -91,16 +91,21 @@ class AdminController {
         }
         long durationInSeconds = (params.durationUnits as long )* (params.durationUnitInSeconds as long)
         Duration duration = new Duration(durationInSeconds*1000)
-        if(params.proposalId != ""){
-          AdminService.createActivityFromProposal(params.description, params.points as int, duration,params.proposalId as long)
-          redirect(action: "proposals")
-        }else if(params.activityId != ""){
-          AdminService.editActivity(params.description, params.points as int, duration, params.activityId as long)
-          redirect(action: "activities")
-        }else{ 
-          AdminService.createActivity(params.description, params.points as int, duration)
-          redirect(action: "editActivity")
-        }
+        try{
+			if(params.proposalId != ""){
+			AdminService.createActivityFromProposal(params.description, params.points as int, duration,params.proposalId as long)
+			redirect(action: "proposals")
+			}else if(params.activityId != ""){
+			AdminService.editActivity(params.description, params.points as int, duration, params.activityId as long)
+			redirect(action: "activities")
+			}else{ 
+			AdminService.createActivity(params.description, params.points as int, duration)
+			redirect(action: "activities")
+			}
+		} catch(Exception e) {
+			redirect(action: "activities")
+			flash.message = "Die Beschreibung muss zwischen 1 und 255 Zeichen lang sein! Bitte versuchen Sie es erneut."
+		}
     }
 
     def blockUser() {

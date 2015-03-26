@@ -7,7 +7,7 @@
 	<body>
 		<h1>Aktivitätsverwaltung</h1>
 		<p>
-			<a class="button" href="${createLink(action: 'editActivity')}">neue Aktivität erstellen</a>
+			<a class="button" href="${createLink(action: 'editActivity', params:[newActivity: 'true'])}">neue Aktivität erstellen</a>
 		</p>
 		<p>
 			<table class="list">
@@ -33,8 +33,8 @@
 								${activity.duration}
 							</td>
 							<td class="admin">
-								<a class="button" href="<g:createLink action="editActivity" params="[activityId: "${activity.id}", description: "${activity.description}", points: "${activity.points}"]"/>">bearbeiten</a> 
-								<a class="button" href="<g:createLink action="deleteActivity" params="[activityId: "${activity.id}"]"/>">loeschen</a> 
+								<a class="button" href="<g:createLink action="editActivity" params="[activityId: "${activity.id}", description: "${activity.description}", points: "${activity.points}", newActivity: 'false']"/>">bearbeiten</a> 
+								<a class="button" href="<g:createLink action="deleteActivity" params="[activityId: "${activity.id}"]"/>">löschen</a> 
 							</td>
 						</tr>
 					</g:each>

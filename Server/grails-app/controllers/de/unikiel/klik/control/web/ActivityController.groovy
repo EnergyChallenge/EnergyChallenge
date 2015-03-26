@@ -28,7 +28,7 @@ class ActivityController {
 			flash.message = "Aktivität erledigt!"
 			redirect(action: "index")
 		} else {
-			flash.message = "Aktivität nicht ausführbar!"
+			flash.error = "Aktivität nicht ausführbar!"
 			redirect(action: "index")
 		}
 	}
@@ -39,7 +39,7 @@ class ActivityController {
 			flash.message = "Aktivität zu Favoriten hinzugefügt!"
 			redirect(action: "index")
 		} else {
-			flash.message = "Aktivität ist bereits favorisiert!"
+			flash.error = "Aktivität ist bereits favorisiert!"
 			redirect(action: "index")
 		}
 	}	
@@ -50,7 +50,7 @@ class ActivityController {
 			flash.message = "Aktivität aus Favoriten entfernt!"
 			redirect(action: "index")
 		} else {
-			flash.message = "Aktivität ist kein Favorit!"
+			flash.error = "Aktivität ist kein Favorit!"
 			redirect(action: "index")
 		}
 	}
@@ -71,7 +71,7 @@ class ActivityController {
 	//handles all NullPointerExceptions occurring in this controller
 	def nullPointerException(final NullPointerException exception){
 		log.error("Exception occured. ${exception?.message}", exception)
-		flash.message = "Aktivität nicht verfügbar!"
+		flash.error = "Aktivität nicht verfügbar!"
 		redirect(action: "index")
 	}
 }

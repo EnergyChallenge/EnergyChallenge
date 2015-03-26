@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="layout" content="main"/>
-    <title>Inbox</title>
+    <title>Benachrichtigung</title>
     <asset:stylesheet src="table.css"/>
   </head>
   <body>
@@ -37,8 +37,8 @@
           <tbody>
             <g:each in="${activityNotifications}" var="activityNotification">
               <tr>
-                <td>Du hast schon lange keine Aktivitaet ausgefuert</td>
-                <td><a href="<g:createLink action="delete" id="${activityNotification.getId()}"/>">loeschen</a></td>
+                <td>Sie haben schon lange keine Aktivität ausgeführt</td>
+                <td><a href="<g:createLink action="delete" id="${activityNotification.getId()}"/>">löschen</a></td>
               </tr>
             </g:each>
           </tbody>

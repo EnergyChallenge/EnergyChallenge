@@ -3,7 +3,7 @@
 	<head>
 		<asset:stylesheet src="main.css" />    
 		<asset:javascript src="jqplot/jquery.min.js" />	 
-		<asset:javascript src="fixedNav.js" /> 
+		<%-- <asset:javascript src="fixedNav.js" /> --%>
 		<g:layoutHead />
 	</head>
 	<content tag="logo">
@@ -134,7 +134,10 @@
 					<g:if test="${flash.message}">
 						<div class="flashmessage">${flash.message}</div>
 					</g:if>
-					<g:javascript>setTimeout(function() {$(".flashmessage").fadeOut('slow');}, 2000);</g:javascript>
+					<g:elseif test="${flash.error}">
+						<div class="flasherror">${flash.error}</div>
+					</g:elseif>
+					<g:javascript>setTimeout(function() {$(".flashmessage,.flasherror").fadeOut('slow');}, 2000);</g:javascript>
 					<g:layoutBody />
 				</div>
 				<div class="clear"></div>
