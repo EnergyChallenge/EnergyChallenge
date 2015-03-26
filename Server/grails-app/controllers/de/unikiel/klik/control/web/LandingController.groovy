@@ -7,6 +7,7 @@ import de.unikiel.klik.service.ActivityService
 
 import org.apache.shiro.SecurityUtils
 import java.util.Random
+import java.lang.Math
 
 class LandingController {
 	
@@ -20,12 +21,16 @@ class LandingController {
 	def teamProposals = []
 	if(team != null){
 		team?.members.sort{it.points}
-	} else {	// generate team proposals
+	} else {
 		def allTeams = Team.findAll()
-		for(int i = 0; i < 5; i++) {
-			def t = allTeams.get(rand.nextInt(allTeams.size()))
-			teamProposals << t
-			allTeams.remove(t)
+		
+		// generate up to 5 team proposals
+		def proposalNr = Math.min(allTeams.size(), 5)
+		
+		for(int i = 0; i < proposalNr; i++) {
+				def t = allTeams.get(rand.nextInt(allTeams.size()))
+				teamProposals << t
+				allTeams.remove(t)
 		}
 	}
 	members.reverse(true)

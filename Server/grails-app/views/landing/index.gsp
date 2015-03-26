@@ -67,7 +67,7 @@
      <div id="rightside">
      <div class="card">
       <g:if test="${team}">
-        <h3>Mein Team</h3>
+        <h3>Team ${team.getName()}</h3>
         <table>
           <g:each in="${team.getMembers()}" var="member">
             <tr>
@@ -78,14 +78,17 @@
         </table>
       </g:if>
       <g:else>
-		<h3>Du hast noch kein Team. Hier einige Vorschläge:</h3>
-        <table>
-          <g:each in="${teamProposals}" var="team">
-            <tr>
-              <td>${team.getName()}</td>
-            </tr>
-          </g:each>
-        </table>
+		<h3>Du hast noch kein Team!</h3>
+		<g:if test="${teamProposals.size() > 0}">
+			<h3>Hier einige Vorschläge:</h3>
+			<table>
+				<g:each in="${teamProposals}" var="team">
+					<tr>
+					<td><a href="${createLink(controller:'profile', action: 'team', id:team.id)}">${team.getName()}</a></td>
+					</tr>
+				</g:each>
+			</table>
+		</g:if>
       </g:else>
       </div>
       </div>
