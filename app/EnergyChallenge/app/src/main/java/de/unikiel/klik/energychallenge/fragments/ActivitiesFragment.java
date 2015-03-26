@@ -50,13 +50,12 @@ public class ActivitiesFragment extends ListFragment implements CompleteActivity
 
         setListAdapter(activitiesAdapter);
 
-        loadRankingData();
+        loadActivityData();
 
         return view;
     }
 
-    //TODO Rename not Ranking
-    private void loadRankingData() {
+    private void loadActivityData() {
 
         Context context = getActivity();
 

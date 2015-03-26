@@ -35,22 +35,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:id="@+id/profile_container">
-            <!-- TODO visibilty -->
+            android:id="@+id/profile_container"
+            android:visibility="gone">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
+                    android:layout_alignParentTop="true"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:layout_marginEnd="4dp"
                     android:id="@+id/profile_image" />
                 <TextView
+                    android:layout_toEndOf="@+id/profile_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/profil_name" />
                 <TextView
+                    android:layout_toEndOf="@+id/profile_image"
+                    android:layout_below="@+id/profil_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -60,62 +65,82 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:id="@+id/profil_institute" />
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/profil_institute"
-                        android:text="Institut für Materialwissenschaften" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
                         android:id="@+id/profil_total_points"
-                        android:text="2048" />
+                        android:gravity="center"
+                        android:textAppearance="?android:textAppearanceLarge" />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center|top"
                         android:id="@+id/profil_total_points_description"
                         android:text="Punkte"/>
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_weight="1">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
                         android:id="@+id/profil_ranking_position"
-                        android:text="103."/>
+                        android:gravity="center"
+                        android:textAppearance="?android:textAppearanceLarge" />
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
                         android:id="@+id/profil_ranking_position_description"
-                        android:text="Platz"/>
+                        android:gravity="center|top"
+                        android:text="Platz" />
                 </LinearLayout>
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:id="@+id/profil_team_members_headline"
+                android:text="Teammitglieder"
+                android:visibility="gone"/>
             <ListView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/profil_team_members" />
+                android:id="@+id/profil_team_members"
+                android:visibility="gone"/>
 
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:id="@+id/profile_last_activities_headline"
+                android:text="Letzte Aktivitäten"
+                android:visibility="gone"/>
             <ListView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/profile_last_activities" />
+                android:id="@+id/profile_last_activities"
+                android:visibility="gone"/>
 
         </LinearLayout>
 

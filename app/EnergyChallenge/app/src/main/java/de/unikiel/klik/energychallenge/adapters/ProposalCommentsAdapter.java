@@ -42,7 +42,6 @@ public class ProposalCommentsAdapter extends ArrayAdapter<ProposalComment> {
 
     @Override
     public boolean isEnabled(int position) {
-        //TODO This hides the list seperators too
         return false;
     }
 }

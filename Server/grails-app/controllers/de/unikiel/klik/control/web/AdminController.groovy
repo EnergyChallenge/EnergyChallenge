@@ -78,7 +78,7 @@ class AdminController {
     }
 
     def editActivity() {
-
+		render(view: "editActivity", model: [newActivity: params.newActivity])
     }
 
     def changeActivity() {
@@ -91,16 +91,21 @@ class AdminController {
         }
         long durationInSeconds = (params.durationUnits as long )* (params.durationUnitInSeconds as long)
         Duration duration = new Duration(durationInSeconds*1000)
-        if(params.proposalId != ""){
-          AdminService.createActivityFromProposal(params.description, params.points as int, duration,params.proposalId as long)
-          redirect(action: "proposals")
-        }else if(params.activityId != ""){
-          AdminService.editActivity(params.description, params.points as int, duration, params.activityId as long)
-          redirect(action: "activities")
-        }else{ 
-          AdminService.createActivity(params.description, params.points as int, duration)
-          redirect(action: "editActivity")
-        }
+        try{
+			if(params.proposalId != ""){
+			AdminService.createActivityFromProposal(params.description, params.points as int, duration,params.proposalId as long)
+			redirect(action: "proposals")
+			}else if(params.activityId != ""){
+			AdminService.editActivity(params.description, params.points as int, duration, params.activityId as long)
+			redirect(action: "activities")
+			}else{ 
+			AdminService.createActivity(params.description, params.points as int, duration)
+			redirect(action: "activities")
+			}
+		} catch(Exception e) {
+			redirect(action: "activities")
+			flash.message = "Die Beschreibung muss zwischen 1 und 255 Zeichen lang sein! Bitte versuchen Sie es erneut."
+		}
     }
 
     def blockUser() {
