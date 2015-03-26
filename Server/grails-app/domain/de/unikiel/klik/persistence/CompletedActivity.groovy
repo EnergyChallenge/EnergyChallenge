@@ -1,4 +1,4 @@
-package de.unikiel.klik.model
+package de.unikiel.klik.persistence
 
 import org.joda.time.DateTime;
 
@@ -16,7 +16,6 @@ class CompletedActivity {
     // not persisted fields
     static transients = ['points']
 	
-	// TODO create point property for completed activities; check db mapping
     static mapping = {
       dateCreated sqlType: "VARBINARY(300)"
     }

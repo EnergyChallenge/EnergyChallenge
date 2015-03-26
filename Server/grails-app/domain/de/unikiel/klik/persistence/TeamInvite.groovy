@@ -1,4 +1,4 @@
-package de.unikiel.klik.model
+package de.unikiel.klik.persistence
 
 class TeamInvite extends Message {
 

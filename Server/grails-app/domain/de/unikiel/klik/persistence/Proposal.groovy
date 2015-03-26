@@ -1,4 +1,4 @@
-package de.unikiel.klik.model
+package de.unikiel.klik.persistence
 
 import org.joda.time.DateTime
 
@@ -18,8 +18,9 @@ class Proposal {
 		author(nullable: false)
 		comments(nullable:true)
 		dateCreated(nullable: false, defaultValue: "DateTime.now()")
-    }
-    static mapping = {
+	}
+
+	static mapping = {
 	dateCreated column: "DATE_CREATED", sqlType: "VARBINARY(300)"
     }
 	

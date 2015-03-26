@@ -1,4 +1,4 @@
-package de.unikiel.klik.model
+package de.unikiel.klik.persistence
 
 class User extends Profile {
 
@@ -56,7 +56,6 @@ class User extends Profile {
 		searchName = createSearchName() //firstName + ' ' + lastName
 	}
 	
-	//TODO works??
 	def String getName() {
 		String name = firstName + " " + lastName;
 		if (title != null) {

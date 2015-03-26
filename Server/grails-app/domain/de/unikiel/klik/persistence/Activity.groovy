@@ -1,5 +1,4 @@
-package de.unikiel.klik.model
-
+package de.unikiel.klik.persistence
 
 import org.joda.time.Duration
 
@@ -16,10 +15,4 @@ class Activity {
 		duration(nullable: false)
     }
 	
-	// TODO check db mapping
-	//static mapping = {
-	//	table 'activity'
-	//	id column: 'id'
-	//	points column: 'points'
-	//}
 }
