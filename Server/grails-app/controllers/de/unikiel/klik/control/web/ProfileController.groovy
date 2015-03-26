@@ -32,8 +32,10 @@ class ProfileController {
 	   String name = user.getName();
 	   Team team = user.getTeam();
 	   String teamname = "";
+	   int teamId = 0;
 	   if (team != null) {
-		   teamname = team.getName(); 
+		   teamname = team.getName();
+		   teamId = team.getId();
 	   }
 	   String institute = user.getInstitute().getName();
 	   int collectedPoints = user.getPoints();
@@ -46,12 +48,10 @@ class ProfileController {
                lastActivities = recentActivities
            }
 	   def model = [id: params.id,type: "user", isCurrent: isCurrent, 
-
-		   			name: name, teamName: teamname,
+		   			name: name, teamName: teamname, teamId: teamId,
 					institute: institute,
 					collectedPoints: collectedPoints, rankingPosition: rankingPosition,
-					lastActivities: lastActivities,
-					user: user
+					lastActivities: lastActivities
 					]
 	   
 	   showProfile(model);
