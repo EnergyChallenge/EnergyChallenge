@@ -177,6 +177,7 @@ header .inside #userinfo .actions #logoutFrom {
     margin-left: 220px;
     padding: 40px 60px 20040px;
     margin-bottom: -20000px;
+    min-height: 500px;
 }
 #container #content .floater {
 	float: left;
@@ -210,11 +211,13 @@ footer {
     height: 50px;
     background-color: #8e217d;
     color: #FFFFFF;
+    text-align: center;
 }
 footer .inside {
 	width: 960px;
 	margin: 0 auto;
+	padding: 30px 0;
 }
 footer a {
-	color: white;
+	color: #FFFFFF;
 }

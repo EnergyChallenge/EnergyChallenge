@@ -13,7 +13,7 @@
 					<th>Beschreibung</th>
 					<th>Punkte</th>
 					<th>Autor</td>
-					<th>Erstellungsdatum</th>
+					<th>Datum</th>
 					<th>&#216;&nbsp;Bewertung</th>
 					<th>Verwaltung</th>
 				</tr>
@@ -34,7 +34,7 @@
 						<td>
 							${fmt.print(proposal.getDateCreated())}
 						</td>
-						<td>
+						<td style="padding: 7px 5px; text-align: center;">
 							<g:each var="i" in="${ (0..<5)}">
 								<g:if test="${proposal.getRating() <= i}">
 									<i class="fa fa-star-o"></i>

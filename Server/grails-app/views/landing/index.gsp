@@ -85,16 +85,16 @@
         </table>
       </g:if>
       <g:else>
-		<h3>Du hast noch kein Team!</h3>
+		<h3>Sie haben noch kein Team!</h3>
 		<g:if test="${teamProposals.size() > 0}">
-			<h4>Hier einige Vorschläge:</h4>
-			<table>
+			<div class="content"><strong>Hier einige Vorschläge:</strong></div>
+			<ul>
 				<g:each in="${teamProposals}" var="team">
-					<tr>
-					<td><a href="${createLink(controller:'profile', action: 'team', id:team.id)}">${team.getName()}</a></td>
-					</tr>
+					<li>
+						<a href="${createLink(controller:'profile', action: 'team', id:team.id)}">${team.getName()}</a>
+					</li>
 				</g:each>
-			</table>
+			</ul>
 		</g:if>
       </g:else>
       </div>

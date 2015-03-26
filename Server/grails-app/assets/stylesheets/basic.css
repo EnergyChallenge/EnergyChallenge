@@ -19,18 +19,22 @@ input[type="email"], input[type="search"], select {
 input[type="submit"], a.button, button {
 	padding: 5px 10px;
 	background-color: #cddc39;
-	box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.2);
     border: 0 none;
     border-radius: 3px;
     color: #222222;
     box-sizing: border-box;
 	text-decoration: none;
-	cursor: default;
+	cursor: pointer;
 }
 
-input[type="submit"], a.button:hover, a.button:focus {
+input[type="submit"]:hover, a.button:hover, button:hover,
+input[type="submit"]:focus, a.button:focus, button:focus {
 	text-decoration: none;
+	background-color: #C4CE37;
+	box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.3);
 }
+
 
 a {
 	color: #8e217d;
