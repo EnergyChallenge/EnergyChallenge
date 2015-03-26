@@ -52,6 +52,9 @@ class AdminService {
         //Find the activity
         //TODO references must be handled!!!
         Activity deletionActivity = Activity.get(activityId)
+	if(!deletionActivity.visible){
+		return
+	}
 		
 		//delete the completed Activities of users
 		def users = User.findAll {completedActivities != null}
@@ -100,6 +103,9 @@ class AdminService {
 
         //Find the user
         User blockedUser = User.get(userId)
+	if(blockedUser.getRoles().contains(Role.findByName("admin"))){
+		return
+	}
 
         //Unblock once found
         blockedUser.blocked = false
@@ -110,7 +116,9 @@ class AdminService {
 
         //Find the user
         User deletionUser = User.get(userId)
-
+	if(deletionUser.getRoles().contains(Role.findByName("admin"))){
+		return
+	}
         //Remove once found
         deletionUser.delete()
 	}
