@@ -42,7 +42,6 @@ public class OptionsFragment extends PreferenceFragment {
             String packageName = getActivity().getPackageName();
             PackageInfo packageInfo = getActivity().getPackageManager().getPackageInfo(packageName, 0);
             String buildVersion = packageInfo.versionName;
-            Log.v("Test", buildVersion); //TODO
             findPreference("version").setSummary(buildVersion);
         } catch (PackageManager.NameNotFoundException e) {
             Log.e(TAG, "Couldn't get version name from manifest");
