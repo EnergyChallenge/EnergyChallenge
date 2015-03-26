@@ -175,6 +175,16 @@ header .inside #userinfo .actions #logoutFrom {
 	text-align: center;
 	/* TODO Temp */
 	background-color: white;
+	border: 1px solid limegreen;
+}
+#container #content .flasherror {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 60%;
+	margin: 0 20%;
+	text-align: center;
+	background-color: white;
 	border: 1px solid red;
 }
 

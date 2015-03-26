@@ -28,6 +28,6 @@ class LandingController {
 		favoriteActivities << [activity: activity, executable: ActivityService.isExecutable(activity, SecurityUtils.subject), countdown: ActivityService.getActivityCountdown(activity, SecurityUtils.subject)]
 	}
 
-    [user: user, members: members, favoriteActivities: favoriteActivities ] 
+    [user: user, members: members, favoriteActivities: favoriteActivities, team:team ] 
   }
 }
