@@ -72,7 +72,8 @@
     <string name="comments">Kommentare</string>
     <string name="title_activity_proposal">Energiesparvorschlag</string>
 
-    <string name="proposal_from">Vorschlag von</string>
+    <string name="complete_activity_successfull">Die Aktivität wurde erfolgreich ausgeführt.</string>
+    <string name="complete_activity_failed">Die Aktivität konnte nicht ausgeführt werden.</string>
 
     <string name="your_comment">Ihr Kommentar</string>
 
