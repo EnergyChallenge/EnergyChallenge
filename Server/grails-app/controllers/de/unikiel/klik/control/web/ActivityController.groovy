@@ -70,7 +70,7 @@ class ActivityController {
 	//TODO eventually handle this exception more elegant
 	//handles all NullPointerExceptions occurring in this controller
 	def nullPointerException(final NullPointerException exception){
-		log.error("Exception ocurred. ${exception?.message}", exception)
+		log.error("Exception occured. ${exception?.message}", exception)
 		flash.message = "Aktivität nicht verfügbar!"
 		redirect(action: "index")
 	}

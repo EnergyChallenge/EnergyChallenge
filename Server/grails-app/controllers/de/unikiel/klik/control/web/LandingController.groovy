@@ -14,7 +14,10 @@ class LandingController {
   def index() {
     User user = User.findByEmail(SecurityUtils.subject.getPrincipal())
     Team team =  user.getTeam()
-	def members = team?.members.sort{it.points}
+	def members = []
+	if(team != null){
+		team?.members.sort{it.points}
+	}
 	members.reverse(true)
     def favoriteActivities = []
 	def userFavorites = []
