@@ -1,6 +1,6 @@
-package de.unikiel.klik
+package de.unikiel.klik.service
 
-import de.unikiel.klik.model.PageView
+import de.unikiel.klik.persistence.PageView
 import org.joda.time.DateTime
 import org.joda.time.LocalDate
 

@@ -1,7 +1,7 @@
-package de.unikiel.klik
+package de.unikiel.klik.service
 
-import de.unikiel.klik.model.Team
-import de.unikiel.klik.model.User
+import de.unikiel.klik.persistence.Team
+import de.unikiel.klik.persistence.User
 import grails.transaction.Transactional
 import grails.validation.ValidationException
 import org.apache.shiro.subject.Subject

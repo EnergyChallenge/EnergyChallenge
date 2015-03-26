@@ -1,6 +1,6 @@
-package de.unikiel.klik
+package de.unikiel.klik.service
 
-import de.unikiel.klik.model.*
+import de.unikiel.klik.persistence.*
 import grails.transaction.Transactional
 //import grails.util.GrailsUtil
 //import groovy.sql.Sql

@@ -1,6 +1,6 @@
-package de.unikiel.klik
+package de.unikiel.klik.service
 
-import de.unikiel.klik.model.*
+import de.unikiel.klik.persistence.*
 import grails.transaction.Transactional
 import org.apache.shiro.crypto.hash.Sha256Hash
 import org.joda.time.Duration

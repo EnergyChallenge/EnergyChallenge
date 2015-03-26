@@ -1,7 +1,7 @@
-package de.unikiel.klik
+package de.unikiel.klik.service
 
 import grails.transaction.Transactional
-import de.unikiel.klik.model.*
+import de.unikiel.klik.persistence.*
 import java.util.Random
 
 @Transactional

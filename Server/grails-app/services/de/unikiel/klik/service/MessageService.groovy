@@ -1,11 +1,11 @@
-package de.unikiel.klik
+package de.unikiel.klik.service
 
-import de.unikiel.klik.model.Activity
-import de.unikiel.klik.model.ActivityNotification
-import de.unikiel.klik.model.SpecificActivityNotification
-import de.unikiel.klik.model.TeamInvite
-import de.unikiel.klik.model.Message
-import de.unikiel.klik.model.User
+import de.unikiel.klik.persistence.Activity
+import de.unikiel.klik.persistence.ActivityNotification
+import de.unikiel.klik.persistence.SpecificActivityNotification
+import de.unikiel.klik.persistence.TeamInvite
+import de.unikiel.klik.persistence.Message
+import de.unikiel.klik.persistence.User
 import grails.transaction.Transactional
 import org.apache.shiro.subject.Subject
 

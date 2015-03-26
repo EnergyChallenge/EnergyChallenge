@@ -1,8 +1,8 @@
-package de.unikiel.klik
+package de.unikiel.klik.service
 
-import de.unikiel.klik.model.User
-import de.unikiel.klik.model.Proposal
-import de.unikiel.klik.model.Comment
+import de.unikiel.klik.persistence.User
+import de.unikiel.klik.persistence.Proposal
+import de.unikiel.klik.persistence.Comment
 import grails.transaction.Transactional
 import grails.validation.ValidationException
 

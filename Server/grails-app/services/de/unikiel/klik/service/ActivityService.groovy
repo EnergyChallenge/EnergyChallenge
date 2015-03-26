@@ -1,4 +1,4 @@
-package de.unikiel.klik
+package de.unikiel.klik.service
 
 import grails.transaction.Transactional
 import grails.validation.ValidationException
@@ -13,9 +13,9 @@ import org.joda.time.format.DateTimeFormatter
 import org.joda.time.format.PeriodFormatter
 import org.joda.time.format.PeriodFormatterBuilder
 
-import de.unikiel.klik.model.CompletedActivity
-import de.unikiel.klik.model.User
-import de.unikiel.klik.model.Activity
+import de.unikiel.klik.persistence.CompletedActivity
+import de.unikiel.klik.persistence.User
+import de.unikiel.klik.persistence.Activity
 
 @Transactional
 class ActivityService {
