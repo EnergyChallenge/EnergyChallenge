@@ -73,6 +73,16 @@
           </g:each>
         </table>
       </g:if>
+      <g:else>
+		<h3>Du hast noch kein Team. Hier einige Vorschläge:</h3>
+        <table>
+          <g:each in="${teamProposals}" var="team">
+            <tr>
+              <td>${team.getName()}</td>
+            </tr>
+          </g:each>
+        </table>
+      </g:else>
       </div>
     </div>
   </body>
