@@ -97,6 +97,8 @@
     <string name="your_name">Ihr Name</string>
     <string name="your_email">Ihre E-Mail Adresse</string>
     <string name="logout">Abmelden</string>
+    <string name="info">Info</string>
+    <string name="buildVersion">Build-Version</string>
 
     //Notification Service
     <string name="notificationServiceTitle">Notification Service</string>

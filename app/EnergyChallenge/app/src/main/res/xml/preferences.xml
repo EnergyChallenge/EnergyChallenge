@@ -27,5 +27,14 @@
             android:title="@string/logout" />
 
     </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/info">
+
+        <Preference
+            android:key="version"
+            android:title="@string/buildVersion" />
+
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
