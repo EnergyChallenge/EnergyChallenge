@@ -1,6 +1,6 @@
-package de.unikiel.klik;
+package de.unikiel.klik.control.web
 
-import de.unikiel.klik.model.*
+import de.unikiel.klik.persistence.*
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
@@ -8,7 +8,6 @@ import grails.converters.JSON;
 import org.apache.shiro.subject.Subject
 import org.apache.shiro.*
 import grails.util.GrailsUtil
-//import au.com.bytecode.opencsv.CSVWriter
 import org.grails.plugins.csv.CSVWriter
 
 class StatisticsController {

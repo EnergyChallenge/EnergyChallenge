@@ -1,7 +1,7 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
-import de.unikiel.klik.model.Team
-import de.unikiel.klik.model.User
+import de.unikiel.klik.persistence.Team
+import de.unikiel.klik.persistence.User
 import org.apache.shiro.SecurityUtils
 
 class LandingController {

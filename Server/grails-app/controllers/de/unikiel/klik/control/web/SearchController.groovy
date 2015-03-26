@@ -1,6 +1,6 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
-import de.unikiel.klik.model.*
+import de.unikiel.klik.persistence.*
 
 class SearchController {
 

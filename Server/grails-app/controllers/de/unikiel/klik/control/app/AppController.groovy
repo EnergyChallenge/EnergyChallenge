@@ -1,12 +1,12 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.app
 
 import grails.converters.JSON
-import de.unikiel.klik.model.Profile
-import de.unikiel.klik.model.User;
-import de.unikiel.klik.model.Team;
-import de.unikiel.klik.model.Activity;
-import de.unikiel.klik.model.Proposal;
-import de.unikiel.klik.model.Institute;
+import de.unikiel.klik.persistence.Profile
+import de.unikiel.klik.persistence.User;
+import de.unikiel.klik.persistence.Team;
+import de.unikiel.klik.persistence.Activity;
+import de.unikiel.klik.persistence.Proposal;
+import de.unikiel.klik.persistence.Institute;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException
 import java.util.ArrayList;

@@ -1,6 +1,6 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
-import de.unikiel.klik.model.Team
+import de.unikiel.klik.persistence.Team
 
 import grails.validation.ValidationException
 import org.apache.shiro.SecurityUtils

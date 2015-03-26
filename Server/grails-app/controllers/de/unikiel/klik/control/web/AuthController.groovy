@@ -1,11 +1,11 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
 import grails.converters.JSON
 import grails.validation.ValidationException
 
-import de.unikiel.klik.model.User;
-import de.unikiel.klik.model.Role;
-import de.unikiel.klik.model.Institute;
+import de.unikiel.klik.persistence.User;
+import de.unikiel.klik.persistence.Role;
+import de.unikiel.klik.persistence.Institute;
 
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.authc.AuthenticationException

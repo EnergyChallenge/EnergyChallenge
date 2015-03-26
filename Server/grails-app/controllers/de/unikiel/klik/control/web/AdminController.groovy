@@ -1,10 +1,10 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
-import de.unikiel.klik.model.User;
-import de.unikiel.klik.model.Team;
-import de.unikiel.klik.model.Proposal;
-import de.unikiel.klik.model.Activity;
-import de.unikiel.klik.model.CompletedActivity;
+import de.unikiel.klik.persistence.User;
+import de.unikiel.klik.persistence.Team;
+import de.unikiel.klik.persistence.Proposal;
+import de.unikiel.klik.persistence.Activity;
+import de.unikiel.klik.persistence.CompletedActivity;
 import org.joda.time.Duration
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat

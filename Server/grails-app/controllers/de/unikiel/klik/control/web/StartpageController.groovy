@@ -1,4 +1,4 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.authc.AuthenticationException

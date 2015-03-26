@@ -1,12 +1,12 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
 import java.util.concurrent.TimeUnit
 
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.subject.Subject
 
-import de.unikiel.klik.model.Activity
-import de.unikiel.klik.model.User
+import de.unikiel.klik.persistence.Activity
+import de.unikiel.klik.persistence.User
 
 class ActivityController {
 	

@@ -1,9 +1,9 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
-import de.unikiel.klik.model.Institute
-import de.unikiel.klik.model.Role
-import de.unikiel.klik.model.User;
-import de.unikiel.klik.model.Team;
+import de.unikiel.klik.persistence.Institute
+import de.unikiel.klik.persistence.Role
+import de.unikiel.klik.persistence.User;
+import de.unikiel.klik.persistence.Team;
 import org.apache.shiro.crypto.hash.Sha256Hash
 
 class RankingController {

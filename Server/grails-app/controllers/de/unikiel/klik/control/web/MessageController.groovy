@@ -1,8 +1,8 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
-import de.unikiel.klik.model.TeamInvite
-import de.unikiel.klik.model.ActivityNotification
-import de.unikiel.klik.model.User
+import de.unikiel.klik.persistence.TeamInvite
+import de.unikiel.klik.persistence.ActivityNotification
+import de.unikiel.klik.persistence.User
 import org.apache.shiro.SecurityUtils
 
 class MessageController {

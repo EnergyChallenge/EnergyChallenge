@@ -1,9 +1,9 @@
-package de.unikiel.klik
+package de.unikiel.klik.control.web
 
-import de.unikiel.klik.model.User;
-import de.unikiel.klik.model.Team;
-import de.unikiel.klik.model.Profile;
-import de.unikiel.klik.model.Institute;
+import de.unikiel.klik.persistence.User;
+import de.unikiel.klik.persistence.Team;
+import de.unikiel.klik.persistence.Profile;
+import de.unikiel.klik.persistence.Institute;
 import org.apache.shiro.SecurityUtils;
 
 import org.codehaus.groovy.grails.core.io.ResourceLocator
