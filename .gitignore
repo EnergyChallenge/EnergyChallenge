@@ -38,7 +38,7 @@ target/
 target-eclipse/
 reports/
 logs/
-*.war
+Server*.war
 plugins/
 Server/web-app/WEB-INF/
 
