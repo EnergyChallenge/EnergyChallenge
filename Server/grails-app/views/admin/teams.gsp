@@ -25,7 +25,7 @@
 						<td>
 							<ul>
 							<g:each in="${team.getMembers().sort { it.id }}" var="member">
-								<li><a href="${createLink(controller :'profile', action: 'user', id: member.getId())}">${member.getName()}</a></li>
+								<i class="fa fa-user"></i> <a href="${createLink(controller :'profile', action: 'user', id: member.getId())}">${member.getName()}</a><br />
 							</g:each>
 							</ul>
 						</td>

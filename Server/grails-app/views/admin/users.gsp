@@ -23,7 +23,7 @@
 								<a href="${createLink(controller :'profile', action: 'user', id: user.id)}">${user.getName()}</a>
 								<br />(<i>${user.getEmail()}</i>)
 								<br /><g:if test="${user.getTeam()}">
-									Team: <a href="${createLink(controller :'profile', action: 'team', id: user.getTeam().getId())}"><i>${user.getTeam().getName()}</i></a>
+									<i class="fa fa-users"></i> <a href="${createLink(controller :'profile', action: 'team', id: user.getTeam().getId())}"><i>${user.getTeam().getName()}</i></a>
 									</g:if>
 							<td>
 								${user.getInstitute().getName()}

@@ -6,8 +6,8 @@
 	</head>
 	<body>
 		<h1>Aktivitätsverwaltung</h1>
-		<p>
-			<a class="button" href="${createLink(action: 'editActivity', params:[newActivity: 'true'])}">neue Aktivität erstellen</a>
+		<p style="text-align:center">
+			<a class="button" href="${createLink(action: 'editActivity', params:[newActivity: 'true'])}">Eine neue Aktivität erstellen</a>
 		</p>
 		<p>
 			<table class="list">
