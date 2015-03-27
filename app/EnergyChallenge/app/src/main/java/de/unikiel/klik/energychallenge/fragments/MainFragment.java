@@ -23,10 +23,7 @@ import de.unikiel.klik.energychallenge.utils.NetworkX;
  * TODO
  * - Extend Layout with other layout, e.g. for draw a headline
  *   and salutation for the user
- *
  */
-
-
 public class MainFragment extends ListFragment implements CompleteActivityDialog.DialogListener {
 
     private ActivitiesAdapter activitiesAdapter;

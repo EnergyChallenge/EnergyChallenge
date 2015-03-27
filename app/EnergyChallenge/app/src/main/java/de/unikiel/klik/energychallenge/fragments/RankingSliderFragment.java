@@ -13,6 +13,9 @@ import android.view.ViewGroup;
 
 import de.unikiel.klik.energychallenge.R;
 
+/* TODO
+ * Refactor names
+ */
 
 /* Fragment for viewing team and user rankings */
 public class RankingSliderFragment extends Fragment {
@@ -35,7 +38,6 @@ public class RankingSliderFragment extends Fragment {
 
             View view = inflater.inflate(R.layout.fragment_ranking_slider, container, false);
 
-            //TODO Objectnames
             ViewPager vpPager = (ViewPager) view.findViewById(R.id.vpPager);
             adapterViewPager = new MyPagerAdapter(getFragmentManager());
             vpPager.setAdapter(adapterViewPager);

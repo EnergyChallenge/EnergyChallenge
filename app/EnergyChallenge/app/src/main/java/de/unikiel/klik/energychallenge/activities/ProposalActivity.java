@@ -2,6 +2,8 @@ package de.unikiel.klik.energychallenge.activities;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.provider.Contacts;
 import android.text.Editable;
@@ -53,6 +55,9 @@ public class ProposalActivity extends Activity {
         headlineView.setText(proposal.getAuthor() + ":");
         ratingView.setRating(proposal.getRating());
         descriptionView.setText(proposal.getDescription());
+
+        ratingView.getProgressDrawable().setTint(Color.parseColor("#B3C833"));
+        ownRatingView.getProgressDrawable().setTint(Color.parseColor("#B3C833"));
 
         commentsListView.addFooterView(ownCommentView);
         commentsListView.setAdapter(proposalCommentsAdapter);

@@ -7,8 +7,8 @@ android {
         applicationId "de.unikiel.klik.energychallenge"
         minSdkVersion 21
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0.0"
+        versionCode 5
+        versionName "1.0.4"
     }
     buildTypes {
         release {
