@@ -33,7 +33,7 @@ $(document).ready(function(){
         tickOptions:{formatString:'%d.%m'},
         tickInterval:'1 day'},
         yaxis:{min:0,pad:2}},
-    series:[{lineWidth:4, markerOptions:{style:'circle'}, label:"Index"},
+    series:[{lineWidth:4, markerOptions:{style:'circle'}, label:"Besucher"},
             {lineWidth:4, markerOptions:{style:'circle'}, label:"Logins"}],
     legend: {
       show: true,location: 'nw', xoffset: 12,yoffset: 12

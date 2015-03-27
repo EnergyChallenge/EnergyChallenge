@@ -12,10 +12,11 @@
     	<h3>Meine Favoriten</h3>
     	<table class="list">
           </tbody>
-            <g:each in="${favoriteActivities}" var="favorite">
+	    <g:if test="${favoriteActivities.size() > 0}">
+	      <g:each in="${favoriteActivities}" var="favorite">
               <tr>
                 <td>
-                    <a href="${createLink(action:'removeFromFavorites',controller:'activity',id: favorite.activity.getId())}" class="tooltipLeft">
+                    <a href="${createLink(action:'removeFromFavorites',controller:'activity', params:[id: favorite.activity.getId(), origin:'landing'])}" class="tooltipLeft">
                       <i class="fa fa-star"></i>
                       <span>aus Favoriten entfernen</span>
                     </a>
@@ -33,7 +34,7 @@
                 </td>
                 <td style="width: 85px; text-align: right;">
                   <g:if test="${favorite.executable}" >
-                     <a class="button" href="${createLink(controller:'activity', action:'completeActivity', id: favorite.activity.getId())}">
+                     <a class="button" href="${createLink(controller:'activity', action:'completeActivity', params:[id: favorite.activity.getId(), origin:'landing'])}">
                        erledigen
                      </a>
                   </g:if>
@@ -41,6 +42,12 @@
                 </td>
               </tr>
             </g:each>
+            </g:if>
+            <g:else>
+	      <tr>
+		<td style="font-style:italic">Sie haben momentan keine favorisieren Aktivitäten.</td>
+	      </tr>
+            </g:else>
           </tbody>
         </table>
         <div class="content rightalign">

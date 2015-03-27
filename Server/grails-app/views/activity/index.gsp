@@ -24,13 +24,13 @@
 				<tr>
 					<td>
 						<g:if test="${!act.favorite}" >
-							<a href="${createLink(controller:'activity', action:'addToFavorites', id: act.activity.getId())}" class="tooltipLeft">
+							<a href="${createLink(controller:'activity', action:'addToFavorites', params:[id: act.activity.getId(), origin:'activity'])}" class="tooltipLeft">
 								<i class="fa fa-star-o"></i>
 								<span>zu Favoriten hinzufügen</span>
 							</a>
 						</g:if>
 						<g:else>
-							<a href="${createLink(controller:'activity', action:'removeFromFavorites', id: act.activity.getId())}" class="tooltipLeft">
+							<a href="${createLink(controller:'activity', action:'removeFromFavorites', params:[id: act.activity.getId(), origin:'activity'])}" class="tooltipLeft">
 								<i class="fa fa-star"></i>
 								<span>aus Favoriten entfernen</span>
 							</a>
@@ -40,7 +40,7 @@
 					<td style="text-align:center">${act.activity.points}</td>
 					<td style="width:90px; text-align:center">
 						<g:if test="${act.executable}" >
-							<a class="button" href="${createLink(controller:'activity', action:'completeActivity', id: act.activity.getId())}">
+							<a class="button" href="${createLink(controller:'activity', action:'completeActivity', params:[id: act.activity.getId(), origin:'activity'])}">
 								erledigen
 							</a>
 						</g:if>
