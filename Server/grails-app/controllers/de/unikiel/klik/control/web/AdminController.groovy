@@ -132,7 +132,7 @@ class AdminController {
     def unblockTeam() {
 
         //Get the admin service to unblock a team
-        AdminService.unblockTeams(params.id as long)
+        AdminService.unblockTeam(params.id as long)
         redirect(action: "teams")
     }
 

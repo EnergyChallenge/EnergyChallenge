@@ -11,7 +11,6 @@
 				<thead>
 					<tr>
 						<th>Benutzer</th>
-						<th>Team</th>
 						<th>Institut</th>
 						<th>Punkte</th>
 						<th>Verwaltung</th>
@@ -19,16 +18,13 @@
 				</thead>
 				<tbody>
 					<g:each in="${users}" var="user">
-						<%-- TODO Link to Users --%>
 						<tr>
 							<td>
-								${user.getName()}<br />(${user.getEmail()})
-							</td>
-							<td>
-								<g:if test="${user.getTeam()}">
-									${user.getTeam().getName()}
-								</g:if>
-							</td>
+								<a href="${createLink(controller :'profile', action: 'user', id: user.id)}">${user.getName()}</a>
+								<br />(<i>${user.getEmail()}</i>)
+								<br /><g:if test="${user.getTeam()}">
+									Team: <a href="${createLink(controller :'profile', action: 'team', id: user.getTeam().getId())}"><i>${user.getTeam().getName()}</i></a>
+									</g:if>
 							<td>
 								${user.getInstitute().getName()}
 							</td>

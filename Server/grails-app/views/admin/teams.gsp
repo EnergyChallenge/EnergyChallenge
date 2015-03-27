@@ -18,15 +18,14 @@
 				</thead>
 				<tbody>
 				<g:each in="${teams}" var="team">
-					<%-- TODO Link to Teams --%>
 					<tr>
 						<td>
-							${team.getName()}
+							<a href="${createLink(controller :'profile', action: 'team', id: team.getId())}">${team.getName()}</a>
 						</td>
 						<td>
 							<ul>
-							<g:each in="${team.getMembers()}" var="member">
-								<li>${member.getName()}</li>
+							<g:each in="${team.getMembers().sort { it.id }}" var="member">
+								<li><a href="${createLink(controller :'profile', action: 'user', id: member.getId())}">${member.getName()}</a></li>
 							</g:each>
 							</ul>
 						</td>
