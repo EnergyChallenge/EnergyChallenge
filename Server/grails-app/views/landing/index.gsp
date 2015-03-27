@@ -45,7 +45,7 @@
             </g:if>
             <g:else>
 	      <tr>
-		<td style="font-style:italic">Sie haben momentan keine favorisieren Aktivitäten.</td>
+		<td style="font-style:italic">Sie haben momentan keine favorisierten Aktivitäten.</td>
 	      </tr>
             </g:else>
           </tbody>
