@@ -1,6 +1,6 @@
 # README #
 
-## How do I get set up? ##
+## Setup ##
 
 Zum Ausprobieren des Logins über das Webinterface können die folgende Dummy-Anmeldeinformationen (Username [UN] und Passwort [PW]) genutzt werden:
 
