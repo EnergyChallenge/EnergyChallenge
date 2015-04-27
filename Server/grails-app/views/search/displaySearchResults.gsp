@@ -10,8 +10,9 @@
 	<table class="list">
 		<thead>
 			<tr>
-				<th style="width:10px"></th>
+				<th style="width:10px" title="User oder Team">&nbsp;</th>
 				<th>Name</th>
+				<th title="Platz in der Rangliste">Platz</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -26,6 +27,9 @@
 								${res.name}
 							</a>
 						</td>
+						<td>
+							${res.rankingPosition}
+						</td>
 					</g:if>
 					<g:else>
 						<td><i class="fa fa-users fa-fw"></i></td>
@@ -35,6 +39,9 @@
 													id: res.id)}">
 								${res.name}
 							</a>
+						</td>
+						<td>
+							${res.rankingPosition}
 						</td>
 					</g:else>
 				</tr>

@@ -4,23 +4,24 @@ import de.unikiel.klik.persistence.User;
 import de.unikiel.klik.persistence.Team;
 import de.unikiel.klik.persistence.Profile;
 import de.unikiel.klik.persistence.Institute;
+import de.unikiel.klik.service.RankingService;
 import org.apache.shiro.SecurityUtils;
 
 import org.codehaus.groovy.grails.core.io.ResourceLocator
 import org.springframework.core.io.Resource
 
 class ProfileController {
-
-   def index(){
+	def RankingService;
+	def index(){
 	   user()
-   }
+	}
    
    /* TODO
     * - Handle invalid id param
     * - implement get last activities
     */
    
-   def user() {
+	def user() {
 	   User user;
 	   if (params.id != null) {
 		   user = User.get(params.id);
@@ -39,7 +40,7 @@ class ProfileController {
 	   }
 	   String institute = user.getInstitute().getName();
 	   int collectedPoints = user.getPoints();
-	   int rankingPosition = getPositionOfUser(user);
+	   int rankingPosition = RankingService.getPositionOfUser(user);
 	   def lastActivities = user.getCompletedActivities(); 
            def recentActivities = lastActivities.sort{-it.getDateCreated().getMillis()}
            if (recentActivities.size() > 10){
@@ -55,9 +56,9 @@ class ProfileController {
 					]
 	   
 	   showProfile(model);
-   }
+	}
    
-   def team() {
+	def team() {
 
 	   Team team;
 	   User user = User.findByEmail(SecurityUtils.getSubject().getPrincipal());
@@ -77,7 +78,7 @@ class ProfileController {
 	   String name = team.getName();
 	   int collectedPoints = team.getPoints();
 	   boolean isCurrent = (team == User.findByEmail(SecurityUtils.getSubject().getPrincipal()).getTeam());
-           int rankingPosition = getPositionOfTeam(team);
+           int rankingPosition = RankingService.getPositionOfTeam(team);
 	   def members = [];
 	   for (member in team.getMembers()) {
 		   members << [name: member.getName(), id: member.id];
@@ -98,50 +99,33 @@ class ProfileController {
 		]
 
 	   showProfile(model);
-   }
+	}
    
-   private def showProfile(def model) {
+	private def showProfile(def model) {
 	   render(view: "index", model: model);
-   }
+	}
    
-   
-   private int getPositionOfUser(User user){
-   def ranking =  [];
-                for (u in User.findAll()) {
-                        ranking << [name: u.getName(), id: u.id, points: u.getPoints()];
-                }
-                ranking.sort { -it.points } //Sort DESC
-    return ranking.indexOf([name: user.getName(), id: user.id, points: user.getPoints()])+1
-  }
-   private int getPositionOfTeam(Team team){
-   def ranking =  [];
-                for (t in Team.findAll()) {
-                        ranking << [name: t.getName(), id: t.id, points: t.getPoints()];
-                }
-                ranking.sort { -it.points } //Sort DESC
-    return ranking.indexOf([name: team.getName(), id: team.id, points: team.getPoints()])+1
-  }
-   
-  ResourceLocator grailsResourceLocator
-  def avatar() {
-    Profile profile = Profile.get(params.id)
-    if (!profile || !profile.avatar || !profile.avatarType) {
-      final Resource image = grailsResourceLocator.findResourceForURI('/images/default_avatar.png')
-      render file: image.inputStream, contentType: 'image/png'
-      //render (file: new File("path to file"), fileName: "avatar.png")
-	  return
+	ResourceLocator grailsResourceLocator
+	def avatar() {
+		Profile profile = Profile.get(params.id)
+		if (!profile || !profile.avatar || !profile.avatarType) {
+		  final Resource image = grailsResourceLocator.findResourceForURI('/images/default_avatar.png')
+		  render file: image.inputStream, contentType: 'image/png'
+		  //render (file: new File("path to file"), fileName: "avatar.png")
+		  return
+		}
+		response.contentType = profile.avatarType
+		response.contentLength = profile.avatar.size()
+		OutputStream out = response.outputStream
+		out.write(profile.avatar)
+		out.close()
+		return
+	}
+
+	def nullPointerException(final NullPointerException exception){
+            log.error("Exception occured. ${exception?.message}", exception)
+            flash.error = "Profil ist nicht verfügbar!"
+            redirect(action: "index")
     }
-    response.contentType = profile.avatarType
-    response.contentLength = profile.avatar.size()
-    OutputStream out = response.outputStream
-    out.write(profile.avatar)
-    out.close()
-	return
-  }
-   def nullPointerException(final NullPointerException exception){
-                log.error("Exception occured. ${exception?.message}", exception)
-                flash.error = "Profil ist nicht verfügbar!"
-                redirect(action: "index")
-        }
 
 }
