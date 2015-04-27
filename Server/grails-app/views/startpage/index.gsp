@@ -39,7 +39,7 @@
 				<script>
 					$(function() {
 						$('#signInFormEmail').focus().change(function() {
-						  // TODO: check validity
+						  <%-- TODO: check validity --%>
 						});
 						$("#signInForm").submit(function (e) {
 							if($('#signInFormPassword').val()==""){
