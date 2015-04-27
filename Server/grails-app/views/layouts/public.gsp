@@ -13,8 +13,13 @@
 	<body>
 		<div id="content">
 			<div class="floater">
-				<g:if test="${flash.message}">
-					<div class="flashmessage">${flash.message}</div>
+				<g:if test="${flash.error}">
+					<div class="flasherror">${flash.error}</div>
+					<g:javascript>
+						$(".flasherror").hide();
+						$(".flasherror").slideDown('slow');
+						setTimeout(function() {$(".flasherror").fadeOut('slow');}, 2000);
+					</g:javascript>
 				</g:if>
 				<g:layoutBody />
 			</div>

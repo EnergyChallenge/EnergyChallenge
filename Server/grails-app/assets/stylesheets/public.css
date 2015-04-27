@@ -107,3 +107,18 @@ footer .inside {
 footer a {
 	color: white;
 }
+
+#container #content {
+	position: relative;
+}
+
+#container #content .flasherror {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 60%;
+	margin: 0 20%;
+	text-align: center;
+	background-color: white;
+	border: 1px solid red;
+}

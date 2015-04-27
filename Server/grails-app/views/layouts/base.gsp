@@ -26,6 +26,8 @@
 	<asset:stylesheet src="basic.css" />
 	<asset:stylesheet src="fontawesome/css/font-awesome.min.css" />
 	<asset:javascript src="jqplot/jquery.min.js" />
+	<g:javascript library='jquery' />
+	
 	<g:layoutHead />
 </head>
 <body class="${pageProperty(name: 'body.class')}">

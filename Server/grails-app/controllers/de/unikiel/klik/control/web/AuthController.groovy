@@ -43,7 +43,8 @@ class AuthController {
 			redirect(controller: 'landing', action: 'index')
         }
         catch (AuthenticationException ex){
-            flash.message = "Der Login ist falsch oder geblockt"
+            //flash.message = "Der Login ist falsch oder geblockt"
+            flash.error = "Der Login ist falsch oder geblockt!"
 
             // Keep the username and "remember me" setting so that the
             // user doesn't have to enter them again.
