@@ -26,7 +26,7 @@
 							<tr>
 								<td colspan="2" class="both">
 									<g:checkBox name="rememberMe" value="${rememberMe}" />
-									Angemeldet bleiben
+									<label for="rememberMe">Angemeldet bleiben</label>
 								</td>
 							</tr>
 						</tbody>
