@@ -55,6 +55,7 @@ class UserController {
   def joinTeam() {
         //Get the user service to join a team
         UserService.setTeam(params.id as long, SecurityUtils.subject)
+        flash.message = "Du bist jetzt ein Mitglied des Teams"
         redirect(controller: "profile", action: "index")
   }
 
@@ -71,7 +72,7 @@ class UserController {
             flash.message = "Passwort geändert!"
             redirect(action: "edit")
     }catch(ValidationException ex){
-      flash.message = "Passwörter stimmen nicht �berein!"
+      flash.message = "Passwörter stimmen nicht �berein!"
       redirect(action: "edit")
     }
   }
