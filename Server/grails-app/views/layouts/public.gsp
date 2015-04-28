@@ -7,7 +7,7 @@
 		<a href="https://www.klik.uni-kiel.de/de" class="logo">
 			<asset:image src="klik_Logo.png" alt="klik_Logo" />
 		</a>
-		<h1>EnergyChallenge</h1>
+		<h1 class="logofont">Energy | Challenge</h1>
 	</content>
 	
 	<body>

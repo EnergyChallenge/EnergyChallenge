@@ -1,7 +1,7 @@
 <g:applyLayout name="base">
 
 	<head>
-		<title>EnergyChallenge</title>
+		<title>Energy | Challenge</title>
 		<asset:stylesheet src="main.css" />    
 		<asset:javascript src="jqplot/jquery.min.js" />	 
 		<asset:javascript src="fixedNav.js" />
@@ -12,7 +12,7 @@
 		<a href="https://www.klik.uni-kiel.de/de" class="logo">
 			<asset:image src="klik_Logo.png" alt="klik_Logo" />
 		</a>
-		<h1>EnergyChallenge</h1>
+		<h1 class="logofont">Energy | Challenge</h1>
 	</content>
 	
 	<content tag="userInfo">

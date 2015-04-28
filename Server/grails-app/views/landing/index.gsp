@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="layout" content="main"/>
-    <title>EnergyChallenge</title>
+    <title>Energy | Challenge</title>
     <asset:stylesheet src="landing.css"/>
   </head>
   <body>

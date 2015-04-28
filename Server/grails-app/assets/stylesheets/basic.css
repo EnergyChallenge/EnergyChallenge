@@ -1,3 +1,10 @@
+@font-face {
+	font-family: 'Arvo';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: local('Arvo'), url(/Server/assets/googlefonts/Arvo.woff2) format('woff2'), url(/Server/assets/googlefonts/Arvo.woff) format('woff');
+}
+
 body {
     color: #444;
     font: 14px/1.7em "Open Sans",sans-serif;
@@ -5,6 +12,16 @@ body {
 
 h1 {
 	margin: 0; /*TODO TEMP*/
+	text-transform: uppercase;
+	font-family: Arvo;
+	font-size: 21px;
+	font-style: normal;
+	font-weight: bold;
+	line-height: 26.4px;
+}
+
+h1.logofont{
+	font-size: 26px;
 }
 
 input[type="text"], input[type="password"], input[type="tel"],
