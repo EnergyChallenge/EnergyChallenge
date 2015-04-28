@@ -22,15 +22,11 @@ class UserService {
         user.save(flush: true)
     }
 
-	void setPassword(String password, String password2, Subject subject) throws ValidationException {
-	if(password == password2){
+	void setPassword(String password, Subject subject) throws ValidationException {
         //Set the users password to the hashed input
         User user = User.findByEmail(subject.getPrincipal())
         user.passwordHash = new Sha256Hash(password).toHex()
         user.save(flush: true)
-	}else{
-		throw new ValidationException()
-        }
     }
 
   void setAvatar(def avatar, Subject subject) throws ValidationException{

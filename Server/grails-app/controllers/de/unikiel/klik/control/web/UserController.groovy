@@ -68,9 +68,14 @@ class UserController {
   def changePassword(){
     try{
       Subject subject = SecurityUtils.subject
-            UserService.setPassword(params.password as String, params.password2 as String, subject)
-            flash.message = "Passwort geändert!"
-            redirect(action: "edit")
+      if(params.password == params.password2) {
+          UserService.setPassword(params.password as String, subject)
+          flash.message = "Passwort geändert!"
+          redirect(action: "edit")
+      }else{
+          flash.message = "Passwörter stimmen nicht �berein!"
+          redirect(action: "edit")
+      }
     }catch(ValidationException ex){
       flash.message = "Passwörter stimmen nicht �berein!"
       redirect(action: "edit")
