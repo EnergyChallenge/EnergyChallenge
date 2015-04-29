@@ -21,12 +21,12 @@
           <td><input type="password" name="password" value="" /></td>
         </tr>
         <tr>
-          <td>Angemeldet bleiben:</td>
+          <td><label for="rememberMe">Angemeldet bleiben:</label></td>
           <td><g:checkBox name="rememberMe" value="${rememberMe}" /></td>
         </tr>
         <tr>
           <td />
-          <td><input type="submit" value="Sign in" /></td>
+          <td><input type="submit" value="Anmelden" /></td>
         </tr>
       </tbody>
     </table>
