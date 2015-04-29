@@ -65,6 +65,8 @@ header .inside #userinfo .profile .avatar {
 header .inside #userinfo .profile .avatar img {
 	display: block;
 	height: 40px;
+	width: 40px;
+	object-fit: cover;
 }
 header .inside #userinfo .profile .name {
 	margin-left: 60px;
