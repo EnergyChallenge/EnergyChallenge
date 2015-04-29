@@ -75,7 +75,12 @@ body.teamprofile #rightside {
 	padding-top: 10px;
 }
 	
-	
-	
-	
+@media screen and (max-width: 600px) {
+	#content .head img{
+		width:140px;
+		height:140px;
+	}
+	#content .head hgroup {
+		margin: -44px 155px;
+	}
 }

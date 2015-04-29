@@ -1,10 +1,12 @@
 @CHARSET "UTF-8";
 
-html {	
+html {
+	height:100%;
 }
 
 body {
     width: 100%;
+	height:100%;
     min-width: 320px;
     padding: 0;
     margin: 0;
@@ -111,8 +113,8 @@ header .inside #userinfo .actions #logoutFrom {
 	background-color: #eeeeee;
     border-left: 1px solid #cccccc;
     border-right: 1px solid #cccccc;
-    padding-bottom: 20040px;
-    margin-bottom: -20000px;
+	padding-bottom: 20040px;
+	margin-bottom: -20000px;
 }
 #container nav.fixed {
 	position: fixed;
@@ -142,7 +144,7 @@ header .inside #userinfo .actions #logoutFrom {
 #container nav ul {
 	list-style-type: none;
     margin: 0;
-    padding: 0;
+	padding: 0;
 }
 #container nav ul li {
 	display: block;
@@ -208,6 +210,25 @@ header .inside #userinfo .actions #logoutFrom {
 	border: 1px solid red;
 }
 
+footer {
+	position: relative;
+	z-index: 10;
+	background-color: #8e217d;
+	color: #FFFFFF;
+	text-align: center;
+	padding-bottom: 1000px;
+	margin-bottom: -1000px;
+	height:40px;
+}
+footer .inside {
+	max-width: 960px;
+	margin: 0 auto;
+	padding: 6px 0;
+}
+footer a {
+	color: #FFFFFF;
+}
+
 @media screen and (max-width: 800px) {
 	h1.logofont{
 		font-size:12px;
@@ -221,6 +242,10 @@ header .inside #userinfo .actions #logoutFrom {
 	}
 	#container nav ul li a {
 		padding: 5px 4px 4px 6px;
+	}
+	#container nav ,#container nav ul{
+		padding-bottom: 400px;
+		margin-bottom: 0px;
 	}
 	#container nav ul li{
 		height:32px;
@@ -241,6 +266,9 @@ header .inside #userinfo .actions #logoutFrom {
 		position: absolute;
 		margin-left: 95px;
 	}
+	#container .inside {
+		overflow:auto;
+	}
 }
 @media screen and (max-width: 490px) {
 	h1.logofont{
@@ -249,22 +277,4 @@ header .inside #userinfo .actions #logoutFrom {
 	#container #content {
 		padding: 9px 5px 0px 8px;
 	}
-}
-
-footer {
-    position: relative;
-    z-index: 10;
-    background-color: #8e217d;
-    color: #FFFFFF;
-    text-align: center;
-    padding-bottom: 1000px;
-    margin-bottom: -1000px;
-}
-footer .inside {
-	max-width: 960px;
-	margin: 0 auto;
-	padding: 30px 0;
-}
-footer a {
-	color: #FFFFFF;
 }
