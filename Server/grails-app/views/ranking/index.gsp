@@ -28,7 +28,7 @@
 				<g:each status="pos" in="${ranking}" var="profile">
 					<tr>
 						<td class="numeration">
-							${pos + 1}.
+							${profile.rank}.
 						</td>
 						<td>
 							<g:if test="${action == 'users'}">
@@ -54,5 +54,6 @@
 			</tbody>
 		</table>
 	</p>
+	<g:paginate controller="ranking" action="${action}" total="${count}" max="50" />
 </body>
 </html>
