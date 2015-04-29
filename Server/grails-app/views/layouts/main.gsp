@@ -27,7 +27,7 @@
 						<a href="${createLink(controller:'profile')}">
 							${user.getName()}
 						</a>
-					</div>				
+					</div>
 				</div>
 				<div class="actions">
 					<div class="stats">

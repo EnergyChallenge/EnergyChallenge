@@ -81,7 +81,11 @@
 						<g:if test="${de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam() != null && de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getPointsCollectedForTeam() == 0}">
                         		<a href="<g:createLink controller="user" action="leaveTeam" id="${id}"/>"
 								class="button" >
-								Team verlassen
+								${de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam().getName()} verlassen
+							</a>
+						</g:if>
+						<g:if test="${de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam() != null && de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getPointsCollectedForTeam() != 0}">
+								Ihr Team ist ${de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam().getName()}
 							</a>
 						</g:if>
 					</div>
