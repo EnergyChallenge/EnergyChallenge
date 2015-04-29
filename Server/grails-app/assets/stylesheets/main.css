@@ -1,12 +1,11 @@
 @CHARSET "UTF-8";
 
-
 html {	
 }
 
 body {
     width: 100%;
-    min-width: 960px;
+    min-width: 320px;
     padding: 0;
     margin: 0;
     background-color: #8e217d
@@ -24,7 +23,7 @@ header {
     color: #FFFFFF;
 }
 header .inside {
-	width: 960px;
+	max-width: 960px;
 	margin: 0 auto;
     position: relative;
 }
@@ -75,6 +74,7 @@ header .inside #userinfo .profile .name a {
 header .inside #userinfo .actions {
 	clear: both;
 	padding-top: 10px;
+	padding-right: 10px;
 }
 header .inside #userinfo .actions .stats {
 	width: 140px;
@@ -102,7 +102,7 @@ header .inside #userinfo .actions #logoutFrom {
 	overflow: hidden;
 }
 #container .inside {
-	width: 960px;
+	max-width: 960px;
 	margin: 0 auto;
 }
 #container nav {
@@ -120,7 +120,7 @@ header .inside #userinfo .actions #logoutFrom {
 }
 #container nav #search {
     position: relative;
-    padding: 10px 15px;
+    padding: 10px 15px 10px 15px;
     background-color: #E2E2E2;
 	border-bottom: 1px solid #cccccc;
 }
@@ -130,7 +130,7 @@ header .inside #userinfo .actions #logoutFrom {
 #container nav #search button {
 	position: absolute;
 	right: 20px;
-	top: 10px;
+	top: 14px;
 	margin: 0;
     padding: 0;
 	background-color: transparent;
@@ -173,6 +173,7 @@ header .inside #userinfo .actions #logoutFrom {
 	border-top: 1px solid #cccccc;
 	border-bottom: 1px solid #cccccc;
 }
+
 #container #content {
 	position: relative;
 	background-color: #ffffff;
@@ -207,6 +208,49 @@ header .inside #userinfo .actions #logoutFrom {
 	border: 1px solid red;
 }
 
+@media screen and (max-width: 800px) {
+	h1.logofont{
+		font-size:12px;
+		position: absolute;
+		margin-left: 175px;
+	}
+}
+@media screen and (max-width: 600px) {
+	#container nav {
+		width: 28px;
+	}
+	#container nav ul li a {
+		padding: 5px 4px 4px 6px;
+	}
+	#container nav ul li{
+		height:32px;
+		overflow:hidden;
+	}
+	#container #content {
+		margin-left: 30px;
+		padding: 19px 15px 0px 19px;
+	}
+	#container nav #search {
+		padding: 4px 16px 13px 28px;
+	}
+	header .inside .logo {
+		width: 20px;
+	}	
+	h1.logofont{
+		font-size:12px;
+		position: absolute;
+		margin-left: 95px;
+	}
+}
+@media screen and (max-width: 490px) {
+	h1.logofont{
+		display:none;
+	}
+	#container #content {
+		padding: 9px 5px 0px 8px;
+	}
+}
+
 footer {
     position: relative;
     z-index: 10;
@@ -217,7 +261,7 @@ footer {
     margin-bottom: -1000px;
 }
 footer .inside {
-	width: 960px;
+	max-width: 960px;
 	margin: 0 auto;
 	padding: 30px 0;
 }
