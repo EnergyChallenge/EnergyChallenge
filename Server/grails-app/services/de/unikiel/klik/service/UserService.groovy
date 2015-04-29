@@ -29,18 +29,18 @@ class UserService {
         user.save(flush: true)
     }
 
-  void setAvatar(def avatar, Subject subject) throws ValidationException{
-        User user = User.findByEmail(subject.getPrincipal())
-      // List of OK mime-types
-    if (!okcontents.contains(avatar.getContentType())) {
-      throw new ValidationException()
-    }
-    // Save the image and mime type
-    user.avatar = avatar.bytes
-    user.avatarType = avatar.contentType
-    log.info("File uploaded: $user.avatarType")
-    user.save(flush: true, failOnError: true)
-  }
+	void setAvatar(def avatar, Subject subject) throws ValidationException{
+		User user = User.findByEmail(subject.getPrincipal())
+		// List of OK mime-types
+		if (!okcontents.contains(avatar.getContentType())) {
+			throw new Exception("upload failed")
+		}
+		// Save the image and mime type
+		user.avatar = avatar.bytes
+		user.avatarType = avatar.contentType
+		log.info("File uploaded: $user.avatarType")
+		user.save(flush: true, failOnError: true)
+	}
 
 	void setInstitute(long institutedId, Subject subject) throws ValidationException{
 

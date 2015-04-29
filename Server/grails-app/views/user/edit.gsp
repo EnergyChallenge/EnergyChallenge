@@ -65,6 +65,10 @@
         <g:uploadForm action="uploadAvatar">
           <label for="avatar">Avatar (512k)</label>
           <input type="file" name="avatar" id="avatar" />
+            <div style="font-size:0.8em; margin: 1.0em;">
+            Zulässige Formate: <b>.jpg</b>, <b>.jpeg</b>, <b>.png</b> und <b>.gif</b>.<br />
+            Für eine unverzerrte Darstellung muss das Bild ein <b>quadratisches Format</b> haben.
+          </div>
           <input type="submit" class="buttons" value="Hochladen" />
         </g:uploadForm>
       </fieldset>

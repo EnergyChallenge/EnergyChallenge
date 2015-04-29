@@ -10,7 +10,6 @@ import org.apache.shiro.SecurityUtils
 import org.apache.shiro.subject.Subject
 import org.codehaus.groovy.grails.core.io.ResourceLocator
 import org.springframework.core.io.Resource
-//From: https://grails.org/wiki/Simple%20Avatar%20Uploader
 
 class UserController {
 	
@@ -43,10 +42,10 @@ class UserController {
     def file = request.getFile('avatar')
     try{
       UserService.setAvatar(file,subject) 
-      flash.message = "Avatar (${user.avatarType}, ${user.avatar.size()} bytes) hochgeladen!"
+      flash.message = "Avatar wurde hochgeladen!"
       //redirect(action:'show',model:[user:user])
-    }catch(ValidationException ex){
-      flash.message = "Das Hochladen ist fehlgeschlagen!"
+    }catch(Exception ex){
+      flash.error = "Das Hochladen ist fehlgeschlagen!"
     }
       redirect(action:'edit')
   }

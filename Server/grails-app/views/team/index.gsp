@@ -7,34 +7,33 @@
   </head>
   <body>
   
-    <h1>Team Name Bearbeiten</h1>
+    <h1>Team Bearbeiten</h1>
     
     <g:form action="edit">
         <input type="hidden" name="targetUri" value="${targetUri}" />
         <table>
             <tbody>
             <tr>
-                <td>Name:</td>
+                <td>Team Name:</td>
                 <td><input type="text" name="name" value="${name}" /></td>
             </tr>
             <tr>
                 <td />
-                <td><input type="submit" value="Save" /></td>
+                <td><input type="submit" value="Speichern" /></td>
             </tr>
             </tbody>
         </table>
     </g:form>
-    <h2>TODO invite User</h2>
     <fieldset>
-        <legend>Avatar Upload</legend>
+        <legend>Avatar Hochladen</legend>
         <g:uploadForm action="uploadAvatar">
           <label for="avatar">Avatar (512k)</label>
           <input type="file" name="avatar" id="avatar" />
           <div style="font-size:0.8em; margin: 1.0em;">
-            For best results, your avatar should have a width-to-height ratio of 4:5.
-            For example, if your image is 80 pixels wide, it should be 100 pixels high.
+            Zulässige Formate: <b>.jpg</b>, <b>.jpeg</b>, <b>.png</b> und <b>.gif</b>.<br />
+            Für eine unverzerrte Darstellung muss das Bild ein <b>quadratisches Format</b> haben.
           </div>
-          <input type="submit" class="buttons" value="Upload" />
+          <input type="submit" class="buttons" value="Hochladen" />
         </g:uploadForm>
       </fieldset>
   </body>
