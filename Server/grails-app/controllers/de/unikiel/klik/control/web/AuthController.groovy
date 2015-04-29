@@ -73,19 +73,50 @@ class AuthController {
 		[institutes: Institute.findAll()]		
 	}
 	def signUp = {
-		try {
-			AuthService.register(params.email, params.firstName, params.lastName, params.password as String, params.password2 as String, params.instituteId as long)
-			redirect (controller: "landing", action: "index")
-		}
-                catch (AuthenticationException e){
-                    // Authentication failed, so display the appropriate message
-                    flash.message = "Login schlug fehl."
-                }catch(Exception e){
-            		flash.message = "Registrierung schlug fehl."
-			//Keep params
-			def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
-			forward (action: "register", params: m)
-		}
+		//Check if the parameters are valid for user creation
+        //TODO convert these messages to German
+        def user = User.findByEmail(params.email)
+        if(user){
+            flash.message = "That email is already in use."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            forward (action: "register", params: m)
+
+        }else if(params.firstName.length() > 25){
+            flash.message = "First names are limited to 25 characters."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            forward (action: "register", params: m)
+
+        }else if(params.lastName.length() > 25){
+            flash.message = "Last names are limited to 25 characters."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            forward (action: "register", params: m)
+
+        }else if(params.password != params.password2){
+            flash.message = "The passwords don't match."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            forward (action: "register", params: m)
+
+        }else if(params.password.length() == 0 || params.password2.length() == 0){
+            flash.message = "You must enter a password."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            forward (action: "register", params: m)
+
+        }else{
+            //Create a new user and login
+            try {
+                AuthService.register(params.email, params.firstName, params.lastName, params.password as String, params.password2 as String, params.instituteId as long)
+                redirect (controller: "landing", action: "index")
+            }
+            catch (AuthenticationException e){
+                // Authentication failed, so display the appropriate message
+                flash.message = "Login schlug fehl."
+            }catch(Exception e){
+                flash.message = "Registrierung schlug fehl."
+                //Keep params
+                def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+                forward (action: "register", params: m)
+            }
+        }
 	}
 	def forgotPassword = {
 		
