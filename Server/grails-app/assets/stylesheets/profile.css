@@ -2,7 +2,9 @@
 	position: relative;
 }
 #content a.button.editprofile {
+	position: relative;
 	float: right;
+	z-index: 1;
 }
 #content .head img {
     display: block;
