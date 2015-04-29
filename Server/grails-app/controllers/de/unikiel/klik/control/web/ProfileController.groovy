@@ -16,11 +16,6 @@ class ProfileController {
 	   user()
 	}
    
-   /* TODO
-    * - Handle invalid id param
-    * - implement get last activities
-    */
-   
 	def user() {
 	   User user;
 	   if (params.id != null) {

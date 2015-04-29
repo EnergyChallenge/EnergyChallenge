@@ -60,6 +60,15 @@ class UserService {
         user.save()
 	}
 
+    void unsetTeam(long teamId, Subject subject) throws ValidationException{
+
+        //Unset the users team via the id passed
+        Team team = Team.findById(teamId)
+        User user = User.findByEmail(subject.getPrincipal())
+        team.removeFromMembers(user)
+        user.save()
+    }
+
 	void setEmailNotification(boolean emailNotification, Subject subject) throws ValidationException {
 
         //Set the users email notification setting

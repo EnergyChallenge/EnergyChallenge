@@ -30,6 +30,7 @@ class ActivityService {
 		if(isExecutable(activity, subject)) {
 			def completedActivity = new CompletedActivity(activity: activity)
 			currentUser.addToCompletedActivities(completedActivity)
+			currentUser.attemptToAddToTeamContribution(activity.getPoints())
 			completedActivity.save(flush: true)
 			currentUser.save(flush: true)
 			return true

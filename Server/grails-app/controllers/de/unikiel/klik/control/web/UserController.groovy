@@ -58,6 +58,13 @@ class UserController {
         redirect(controller: "profile", action: "index")
   }
 
+    def leaveTeam() {
+        //Get the user service to leave a team
+        UserService.unsetTeam(params.id as long, SecurityUtils.subject)
+        flash.message = "You have left the team"
+        redirect(controller: "profile", action: "index")
+    }
+
   def newTeam() {
         //Get the user service to create a team
         UserService.createTeamAndJoin(params.name, SecurityUtils.subject)

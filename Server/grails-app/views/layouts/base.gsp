@@ -24,6 +24,7 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-TileImage" content="${assetPath(src: 'favicons/mstile-144x144.png')}">
 	<meta name="theme-color" content="#ffffff">
+	<meta name="viewport" content="width=device-width, initial-scale=.5, user-scalable=yes" />
 	<asset:stylesheet src="basic.css" />
 	<asset:stylesheet src="fontawesome/css/font-awesome.min.css" />
 	<asset:javascript src="jqplot/jquery.min.js" />

@@ -22,6 +22,7 @@ class Team extends Profile{
 			return 0;
 		}
 	}
+
 	//TODO Refactor to getCompletedActivities
 	def getCompletedActivitys(){
           def completedActivitys = []

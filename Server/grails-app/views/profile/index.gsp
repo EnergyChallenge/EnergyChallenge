@@ -72,10 +72,22 @@
 			<g:if test="${type == 'team' && teamId != 0}">
 				<div class="card">
 					<div class="content centeralign">
-						<a href="<g:createLink controller="user" action="joinTeam" id="${id}"/>"
-							class="button" >
-							Team beitreten
-						</a>
+						<g:if test="${de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam() == null}">
+							<a href="<g:createLink controller="user" action="joinTeam" id="${id}"/>"
+								class="button" >
+								Team beitreten
+							</a>
+						</g:if>
+						<g:if test="${de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam() != null && de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getPointsCollectedForTeam() == 0}">
+                        		<a href="<g:createLink controller="user" action="leaveTeam" id="${id}"/>"
+								class="button" >
+								${de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam().getName()} verlassen
+							</a>
+						</g:if>
+						<g:if test="${de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam() != null && de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getPointsCollectedForTeam() != 0}">
+								Ihr Team ist ${de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal()).getTeam().getName()}
+							</a>
+						</g:if>
 					</div>
 				</div>
 			</g:if>

@@ -9,6 +9,7 @@ class User extends Profile {
 	// affiliation
 	Team team
 	Institute institute
+	int pointsCollectedForTeam
     
 	// other
 	String firstName
@@ -36,6 +37,7 @@ class User extends Profile {
 		team(nullable: true)
 		roles(nullable: false, minSize: 1)
 		institute(nullable: false)
+		pointsCollectedForTeam(defaultValue: 0)
 		favorites(nullable: true)
 		emailNotification(defaultValue: "false") // TODO test if false is the default value
 		passwordRequestToken(nullable: true, blank: true)
@@ -86,6 +88,12 @@ class User extends Profile {
 			sum += completedActivity.getActivity().getPoints()
 		}
 		return(sum)
+	}
+
+	def void attemptToAddToTeamContribution(int points) {
+		if(team != null){
+			pointsCollectedForTeam += points
+		}
 	}
 
 }

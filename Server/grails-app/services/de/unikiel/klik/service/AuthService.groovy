@@ -44,12 +44,12 @@ class AuthService {
         def user = User.findByEmail(email)
         if (user) {
             //flash.message = "A user is already registered under the email '${params.email}'"
-		throw new Exception();
+		    throw new Exception();
         }else{
             // Check the passwords match
             if (password != password2) {
                 //flash.message = "Passwords do not match"
-		throw new Exception();
+		        throw new Exception();
             }else{
                     //Try to actually create the user
                     def newUser = new User(email: email, passwordHash: new Sha256Hash(password).toHex(),

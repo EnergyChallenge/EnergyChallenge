@@ -18,7 +18,6 @@ class TeamController {
     def edit() {
 
         //Get the team service to edit the team
-        //TODO can anything beside name be changed?
       try{
         TeamService.setName(params.name, SecurityUtils.subject)
         redirect(action: "index")
