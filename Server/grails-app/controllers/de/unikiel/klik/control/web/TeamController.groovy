@@ -1,6 +1,7 @@
 package de.unikiel.klik.control.web
 
 import de.unikiel.klik.persistence.Team
+import de.unikiel.klik.persistence.User
 
 import de.unikiel.klik.service.TeamService
 
@@ -11,8 +12,13 @@ import org.springframework.core.io.Resource
 
 class TeamController {
     def TeamService
+	def UserService
+	def ShiroSecurityManager
+	
     def index() {
-
+		User user = User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal());
+		Team team = user.getTeam();
+		[team:team]
     }
 
     def edit() {
