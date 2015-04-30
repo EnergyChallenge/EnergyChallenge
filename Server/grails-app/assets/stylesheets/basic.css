@@ -24,6 +24,10 @@ h1.logofont{
 	font-size: 26px;
 }
 
+h2, h3, h4 {
+	margin: 0.25em;
+}
+
 input[type="text"], input[type="password"], input[type="tel"],
 input[type="email"], input[type="search"], select {
 	padding: 5px;

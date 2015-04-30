@@ -6,7 +6,7 @@
 	<title>Suche</title>
 </head>
 <body>
-	<h1>Ihre Suche nach "${query}" ergab folgende Treffer:</h1>
+	<h2>Ihre Suche nach "${query}" ergab folgende Treffer:</h2>
 	<table class="list">
 		<thead>
 			<tr>
