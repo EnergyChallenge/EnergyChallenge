@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		<div id="right">
+			<%-- TODO: create an include of the login form --%>
 			<div id="login" >
 				<g:form id="signInForm" name="signInForm" url="[action:'signIn',controller:'auth']">
 					<input type="hidden" name="targetUri" value="${targetUri}" />
@@ -36,7 +37,7 @@
 				<g:form name="forgotPasswordForm" url="[action:'forgotPassword',controller:'auth']">
 					<input type="submit" value="Passwort vergessen" />
 				</g:form>
-				<script>
+				<g:javascript>
 					$(function() {
 						$('#signInFormEmail').focus().change(function() {
 						  <%-- TODO: check validity --%>
@@ -48,13 +49,14 @@
 							}
 						});
 					});
-				</script>
+				</g:javascript>
 			</div>
 			<div id="register" >
 				<g:form name="registerFrom" url="[action:'register',controller:'auth']">
 					<input type="submit" value="Jetzt registrieren!" />		
 				</g:form>
 			</div>
+			<%-- TODO: create an include of the login form --%>
 		</div>
 		<div id="left">
 			<h1>EnergyChallenge</h1>
