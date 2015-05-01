@@ -1,9 +1,9 @@
 apt-get update
-apt-get install -y openjdk-6-jdk groovy unzip
+apt-get install -y openjdk-6-jdk groovy curl unzip
 
 echo "You have to login to vagrant at this point
 vagrant ssh
-wget -q -O - http://get.gvmtool.net | bash
+curl -s http://get.gvmtool.net | bash
 source "/home/vagrant/.gvm/bin/gvm-init.sh"
 gvm install grails 2.4.4
 cd /vagrant/Server
