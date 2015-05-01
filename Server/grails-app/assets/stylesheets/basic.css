@@ -2,7 +2,7 @@
 	font-family: 'Arvo';
 		  font-style: normal;
 		  font-weight: 400;
-		  src: local('Arvo'), url(/Server/assets/googlefonts/Arvo.woff2) format('woff2'), url(/Server/assets/googlefonts/Arvo.woff) format('woff');
+		  src: local('Arvo'), url(/assets/googlefonts/Arvo.woff2) format('woff2'), url(/assets/googlefonts/Arvo.woff) format('woff');
 }
 
 body {
