@@ -12,6 +12,7 @@
 *~
 .~*
 Server/.gradle/*
+.vagrant/*
 
 # visual paradigm temporary files
 *.vpp~*
