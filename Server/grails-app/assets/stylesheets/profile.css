@@ -77,11 +77,24 @@ body.teamprofile #rightside {
 }
 	
 @media screen and (max-width: 600px) {
-	#content .head img{
+	#content > div.floater > div.head > hgroup > h1 {
+		font-size: 28px;
+	}
+	#content > div.floater > div.head > hgroup > h2 {
+		white-space: nowrap;
+		font-size: 24px;
+	}
+    #content .head img{
 		width:140px;
 		height:140px;
-	}
+    }
+}
+
+@media screen and (max-width: 875px) {
 	#content .head hgroup {
-		margin: -44px 155px;
+		margin: -44px 155px 5px;
 	}
+	#content .maincards .card {
+    	height: 100px;
+    }
 }
