@@ -20,6 +20,7 @@ c) Administration
 a) Voraussetzung
 b) Installation über den App-Store
 c) Installation über die Webseite
+d) Installieren in Virtualbox mit vagrant
 
 1. Hinweis
 
@@ -50,3 +51,12 @@ Gehen sie mit Hilfe von „Google Play Store“ in den App-Store und suchen sie 
 c) Installation über die Webseite
 Schalten sie ihr Endgerät ein und öffnen sie einen Internetbrowser ihrer Wahl. Geben sie nun folgenden Link in der Adresszeile ihres Browsers ein: https://www.klik.uni-kiel.de/de/energiesparkampagne/EnergyChallenge/EnergyChallenge.apk
 Bestätigen sie nun, das sie der Webseite vertrauen und das sie die Datei herunterladen möchten. Nach Abschluss des Downloads, öffnen sie das Fenster "Downloads" und klicken sie auf "EnergyChallenge.apk". Falls ihr Gerät an dieser Stelle eine Warnung anzeigt, klicken sie auf "Einstellungen". Aktivieren sie hier "Unbekannte Herkunft" und bestätigen sie mit "OK". Navigieren sie nun wieder zu ihren Downloads und klicken sie erneut auf "EnergyChallenge.apk". Wählen sie nun einfach "installieren" und warten sie den Vorgang ab. Anschließend ist die App einsatzbereit.
+
+d) Installieren in Virtualbox mit vagrant
+
+Unter Ubuntu die neueste version von Vagrant ist nötig von https://www.vagrantup.com/downloads.html, dann diese befehle eingeben:
+
+    vagrant box add hashicorp/precise32
+    vagrant up
+
+Dies startet die VM und führt das script `bootstrap.sh`
