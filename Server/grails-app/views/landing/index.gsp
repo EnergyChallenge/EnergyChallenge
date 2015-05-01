@@ -38,7 +38,12 @@
                        erledigen
                      </a>
                   </g:if>
-                  <g:else><i class="fa fa-lock"></i>${favorite.countdown}</g:else>
+                  <g:else>
+                   	<i class="fa fa-lock"></i>&nbsp;
+                   	<span class="countdown">
+                   		${favorite.countdown}
+                   	</span>
+                  </g:else>
                 </td>
               </tr>
             </g:each>

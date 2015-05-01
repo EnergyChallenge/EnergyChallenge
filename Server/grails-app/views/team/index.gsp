@@ -15,7 +15,7 @@
             <tbody>
             <tr>
                 <td>Team Name:</td>
-                <td><input type="text" name="name" value="${name}" /></td>
+                <td><input type="text" name="name" value="${team.getName()}" /></td>
             </tr>
             <tr>
                 <td />

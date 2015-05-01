@@ -45,8 +45,6 @@
 		  		<g:layoutBody />
 	  		</div>
 		</section>
-		<!-- TODO role benötigt?! -->
-		<!-- <footer class="footer" role="contentinfo">  -->
 		<footer>
 			<div class="inside">
 				<a href="http://www.uni-kiel.de/suchen/impressum.shtml">Impressum</a>

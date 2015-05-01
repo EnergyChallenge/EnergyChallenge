@@ -6,6 +6,7 @@
 		<asset:javascript src="jqplot/jquery.min.js" />	 
 		<asset:javascript src="fixedNav.js" />
 		<asset:javascript src="mobileSearch.js" />
+		<asset:javascript src="countdown.js" />
 		<g:layoutHead />
 	</head>
 	
