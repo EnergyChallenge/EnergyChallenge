@@ -10,29 +10,24 @@
 	<p>
 		Reichen Sie neue Vorschläge zum Energiesparen ein! Als Belohnung gibt es für einen
 		angenommen Vorschlag <strong>2 Punkte</strong>.
-		<g:form action="add">
-			<table class="table">
-				<tbody>
-					<tr>
-						<td>Beschreibung:</td>
-						<td><input type="text" name="description" value="" /></td>
-					</tr>
-					<tr>
-						<td>Punkte:</td>
-						<td><select name="points" >
-													<option value="1">1 Punkt</option>
-													<option value="2">2 Punkte</option>
-													<option value="3">3 Punkte</option>
-													<option value="4">4 Punkte</option>
-													<option value="5">5 Punkte</option>
-											</select></td>
-					</tr>
-					<tr>
-						<td />
-						<td><input type="submit" value="Einreichen" /></td>
-					</tr>
-				</tbody>
-			</table>
+		<g:form action="add" class="addproposal">
+			<div class="proposaltext">
+				<input type="text" name="description" value="" placeholder="Ihr Vorschlag..." />
+			</div>
+			<div class="proposalpoints">
+				Punktevorschlag:
+				<select name="points" >
+					<option value="1">1 Punkt</option>
+					<option value="2">2 Punkte</option>
+					<option value="3">3 Punkte</option>
+					<option value="4">4 Punkte</option>
+					<option value="5">5 Punkte</option>
+				</select>
+			</div>
+			<div class="proposalsubmit">
+				<input type="submit" value="Vorschlag einreichen" />
+			</div>
+			<div class="clear"></div>
 		</g:form>
 	</p>
 	<h1>Vorhandene Vorschläge</h1>

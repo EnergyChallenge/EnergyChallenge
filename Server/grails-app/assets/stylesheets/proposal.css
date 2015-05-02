@@ -1,5 +1,48 @@
 @CHARSET "UTF-8";
 
+.addproposal {
+    margin: 20px 40px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    background-color: #eeeeee;
+}
+.addproposal .proposaltext {
+	padding: 0 0 10px;
+}
+.addproposal .proposaltext input {
+	width: 100%;
+}
+.addproposal .proposalpoints {
+	float: left;
+}
+.addproposal .proposalsubmit {
+	float: right;
+}
+@media (max-width: 840px) {
+	.addproposal {
+		margin: 20px 0;
+	}
+}
+@media (max-width: 760px) and (min-width: 600px) {
+	.addproposal .proposalpoints {
+		float: none;
+		padding-bottom: 10px;
+	}
+	.addproposal .proposalsubmit {
+		float: none;
+	}
+}
+@media (max-width: 460px)  {
+	.addproposal .proposalpoints {
+		float: none;
+		padding-bottom: 10px;
+	}
+	.addproposal .proposalsubmit {
+		float: none;
+	}
+}
+
+
 .rating {
     float:left;
 }
