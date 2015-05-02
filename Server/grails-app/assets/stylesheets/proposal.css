@@ -42,6 +42,45 @@
 	}
 }
 
+a.button.allproposals {
+	float: right;
+	margin-bottom: 10px;
+}
+
+p.proposaltext {
+	font-size: 1.5em;
+	line-height: 1.3em;
+}
+
+.addcomment {
+    margin: 20px 40px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    background-color: #eeeeee;
+}
+.addcomment .commenttext {
+	padding: 0 0 10px;
+}
+.addcomment .commenttext input {
+	width: 100%;
+}
+.addcomment .commentrating {
+	float: left;
+}
+.addcomment .commentsubmit {
+	float: right;
+}
+@media (max-width: 760px) and (min-width: 600px) {
+	.addcomment {
+		margin: 20px 0;
+	}
+}
+@media (max-width: 480px) {
+	.addcomment {
+		margin: 20px 0;
+	}
+}
+
 
 .rating {
     float:left;
