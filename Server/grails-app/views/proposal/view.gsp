@@ -20,18 +20,19 @@
 			</g:else>
 		</em>
 	</p>
+	
 	<g:form action="addComment" class="addcomment">
 		<input type="hidden" name="id" value="${id}" />
 		<div class="commenttext">
-			<input type="text" name="text" value="" placeholder="Ihr Kommentar"/>
+			<input type="text" name="text" value="${(ownComment != null) ? ownComment.getText() : ""}" placeholder="Ihr Kommentar"/>
 		</div>
 		<div class="commentrating">
 			<div class="rating">
-			    <input type="radio" id="star5" name="rating" value="5" /><label for="star5" ></label>
-			    <input type="radio" id="star4" name="rating" value="4" /><label for="star4" ></label>
-			    <input type="radio" id="star3" name="rating" value="3" /><label for="star3" ></label>
-			    <input type="radio" id="star2" name="rating" value="2" /><label for="star2" ></label>
-			    <input type="radio" id="star1" name="rating" value="1" /><label for="star1" ></label>
+			    <input type="radio" id="star5" name="rating" value="5" ${(ownComment != null && ownComment.getRating() == 5) ? 'checked="checked"' : ''} /><label for="star5" ></label>
+			    <input type="radio" id="star4" name="rating" value="4" ${(ownComment != null && ownComment.getRating() == 4) ? 'checked="checked"' : ''} /><label for="star4" ></label>
+			    <input type="radio" id="star3" name="rating" value="3" ${(ownComment != null && ownComment.getRating() == 3) ? 'checked="checked"' : ''} /><label for="star3" ></label>
+			    <input type="radio" id="star2" name="rating" value="2" ${(ownComment != null && ownComment.getRating() == 2) ? 'checked="checked"' : ''} /><label for="star2" ></label>
+			    <input type="radio" id="star1" name="rating" value="1" ${(ownComment != null && ownComment.getRating() == 1) ? 'checked="checked"' : ''} /><label for="star1" ></label>
 			</div>
 		</div>
 		<div class="commentsubmit">

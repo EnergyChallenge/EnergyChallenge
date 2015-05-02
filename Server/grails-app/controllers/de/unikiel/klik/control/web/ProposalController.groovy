@@ -1,6 +1,7 @@
 package de.unikiel.klik.control.web
 
 import de.unikiel.klik.persistence.Proposal
+import de.unikiel.klik.persistence.User
 
 import de.unikiel.klik.service.ProposalService
 
@@ -45,7 +46,16 @@ class ProposalController {
 			def comments = proposal.comments.sort {it.dateCreated};
 			comments.reverse(true)
 
-			return [proposal: proposal, comments: comments, id: params.id]
+			def ownComment = null;
+			User user = User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal());
+			for (comment in comments) {
+				if (comment.author == user) {
+					ownComment = comment;
+					break;	
+				}
+			}
+			
+			return [proposal: proposal, comments: comments, ownComment: ownComment, id: params.id]
 		} else {
 			redirect (action : index)
 		}
