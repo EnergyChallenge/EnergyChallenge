@@ -11,7 +11,7 @@
 	</head>
 	
 	<content tag="logo">
-		<a href="https://www.klik.uni-kiel.de/de" class="logo">
+		<a href="/" class="logo">
 			<asset:image src="klik_Logo.png" alt="klik_Logo" />
 		</a>
 		<h1 class="logofont">Energy | Challenge</h1>
