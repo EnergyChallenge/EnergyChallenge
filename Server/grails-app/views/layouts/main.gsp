@@ -62,7 +62,7 @@
 			<nav>
 				<div id="search">
 					<g:form action="searchForm" url="[action:'displaySearchResults',controller:'search']">
-	        			<input type="search" name="query" value="${query}" placeholder="Suchen" />
+	        			<input type="search" name="query" value="${query.replaceAll(/_/,"*")}" placeholder="Suchen" />
 	        			<button class="fa fa-search"></button>
 					</g:form>
 				</div>

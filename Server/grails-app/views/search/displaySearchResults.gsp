@@ -13,7 +13,7 @@
 		</g:form>
 	</g:if>
 	<g:else>
-		<h2>Ihre Suche nach "${query}" ergab folgende Treffer:</h2>
+		<h2>Ihre Suche nach "${query.replaceAll(/_/,"*")}" ergab folgende Treffer:</h2>
 		<table class="list">
 			<thead>
 				<tr>
