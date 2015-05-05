@@ -11,50 +11,46 @@
 	</head>
 	
 	<content tag="logo">
-		<a href="/" class="logo">
-			<asset:image src="klik_Logo.png" alt="klik_Logo" />
-		</a>
-		<h1 class="logofont">Energy | Challenge</h1>
-	</content>
-	
-	<content tag="userInfo">
-		<% def user = de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal())%>
-		<g:if test="${user}" >
-			<div id="userinfo">
-				<div class="profile">
-					<a href="${createLink(controller:'user', action:'edit')}" class="avatar">
-						<img src="${createLink(controller:'profile', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
-					</a>
-					<div class="name">
-						<a href="${createLink(controller:'profile')}">
-							${user.getName()}
-						</a>
-					</div>
-				</div>
-				<div class="actions">
-					<div class="stats">
-						<a href="${createLink(controller:'message', action:'index')}" class="inbox">
-							<span class="value">
-								<g:if test="${user.getMessages().size() != 0}">
+		<div class="headertitle">
+			<a href="/" class="logo">
+				<asset:image src="klik_logo.png" alt="klik logo" />
+			</a>
+			<h1 class="logofont">Energy | Challenge</h1>
+
+			<content tag="userInfo">
+				<% def user = de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal())%>
+				<g:if test="${user}" >
+					<div id="userinfo">
+						<div class="actions">
+							<div class="stats">
+								<a href="${createLink(controller:'message', action:'index')}" class="inbox">
 									<i class="fa fa-envelope"></i>
-									${user.getMessages().size()}
-								</g:if>
-								<g:else>
-									<i class="fa fa-envelope-o"></i>
-								</g:else>
-							</span>
-						</a><!--  No whitespace
-						--><a href="${createLink(controller:'profile')}" class="points">
-							<i class="fa fa-diamond"></i>
-							<span class="value">${user.getPoints()}</span>
-						</a>
+									<div class="value-circle">
+										${user.getMessages().size()}
+									</div>
+								</a>
+								<a href="${createLink(controller:'profile')}" class="points">
+									<i class="fa fa-leaf"></i>
+									<div class="value-circle">
+										${user.getPoints()}
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="profile">
+							<a href="${createLink(controller:'user', action:'edit')}" class="avatar">
+								<img src="${createLink(controller:'profile', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
+							</a>
+						</div>
+						<g:form name="logoutFrom" url="[action:'signOut',controller:'auth']">
+							<input type="submit" value="Abmelden" />
+						</g:form>
 					</div>
-					<g:form name="logoutFrom" url="[action:'signOut',controller:'auth']">
-						<input type="submit" value="Abmelden" />
-					</g:form>	
-				</div>
-			</div>
-		</g:if>
+				</g:if>
+			</content>
+		</div>
+
+
 	</content>
 	
 	<body class="${pageProperty(name: 'body.class')}">
@@ -62,7 +58,7 @@
 			<nav>
 				<div id="search">
 					<g:form action="searchForm" url="[action:'displaySearchResults',controller:'search']">
-	        			<input type="search" name="query" value="${query?query.replaceAll(/_/,"*"):''}" placeholder="Suchen" />
+	        			<input type="search" name="query" value="${query}" placeholder="Suchen" />
 	        			<button class="fa fa-search"></button>
 					</g:form>
 				</div>

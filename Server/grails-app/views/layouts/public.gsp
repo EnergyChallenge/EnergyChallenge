@@ -5,7 +5,7 @@
 	</head>
 	<content tag="logo">
 		<a href="/" class="logo">
-			<asset:image src="klik_Logo.png" alt="klik_Logo" />
+			<asset:image src="klik_logo.png" alt="klik logo" />
 		</a>
 		<h1 class="logofont">Energy | Challenge</h1>
 	</content>

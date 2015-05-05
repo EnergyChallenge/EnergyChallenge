@@ -9,12 +9,12 @@ body {
     min-width: 960px;
     padding: 0;
     margin: 0;
-    background-color: #8e217d
+    background-color: #FFFFFF;
 }
 
 header {
 	height: 200px;
-	background-color: #8e217d;
+	background-color: #FFFFFF;
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     color: #FFFFFF;
 }
@@ -96,8 +96,8 @@ header h1 {
 
 footer {
 	height: 50px;
-	background-color: #8e217d;
-    color: #FFFFFF;
+	background-color: #FFFFFF;
+    color: #000000;
 }
 footer .inside {
 	width: 960px;
@@ -105,7 +105,7 @@ footer .inside {
 }
 
 footer a {
-	color: white;
+	color: #8e217d;
 }
 
 #container #content {
