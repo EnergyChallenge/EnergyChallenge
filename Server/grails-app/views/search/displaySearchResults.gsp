@@ -2,8 +2,32 @@
 <html>
 <head>
 	<meta name="layout" content="main" />
-	<asset:stylesheet src="table.css" />
 	<title>Suche</title>
+	<asset:stylesheet src="search.css"/>
+	<script>
+		$(document).ready(function() {
+			$('#showAll').click(function() {
+				$(this).siblings().removeClass('active');
+				$(this).addClass('active');
+				$('#searchResult tr.user, #searchResult tr.team').show();
+				return false;
+			});
+			$('#showUser').click(function() {
+				$(this).siblings().removeClass('active');
+				$(this).addClass('active');
+				$('#searchResult tr.user').show();
+				$('#searchResult tr.team').hide();
+				return false;
+			});
+			$('#showTeams').click(function() {
+				$(this).siblings().removeClass('active');
+				$(this).addClass('active');
+				$('#searchResult tr.user').hide();
+				$('#searchResult tr.team').show();
+				return false;
+			});
+		});
+	</script>
 </head>
 <body>
 	<g:if test="${query == ''}">
@@ -13,18 +37,24 @@
 		</g:form>
 	</g:if>
 	<g:else>
-		<h2>Ihre Suche nach "${query.replaceAll(/_/,"*")}" ergab folgende Treffer:</h2>
-		<table class="list">
+	
+		<h1>Suche</h1>
+		<div class="tabbar">
+			<a id="showAll" href="#" class="active">Alle</a><a id="showUser" href="#">Benutzer</a><a id="showTeams" href="#">Teams</a>
+		</div>
+		
+		<p>Ihre Suche nach <em>${query.replaceAll(/_/,"*")}</em> ergab folgende Treffer:</h2>
+		<table id="searchResult" class="list">
 			<thead>
 				<tr>
 					<th style="width:10px" title="User oder Team">&nbsp;</th>
 					<th>Name</th>
-					<th title="Platz in der Rangliste">Platz</th>
+					<th class="position" title="Platz in der Rangliste">Platz</th>
 				</tr>
 			</thead>
 			<tbody>
 				<g:each status="pos" in="${results}" var="res">
-					<tr>
+					<tr class="${res.type == 'user' ? 'user' : 'team'}">
 						<g:if test="${res.type == 'user'}">
 							<td><i class="fa fa-user fa-fw"></i></td>
 							<td>
@@ -34,7 +64,7 @@
 									${res.name}
 								</a>
 							</td>
-							<td>
+							<td class="position">
 								${res.rankingPosition}
 							</td>
 						</g:if>
@@ -47,7 +77,7 @@
 									${res.name}
 								</a>
 							</td>
-							<td>
+							<td class="position">
 								${res.rankingPosition}
 							</td>
 						</g:else>

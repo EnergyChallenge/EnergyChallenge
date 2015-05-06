@@ -1,0 +1,52 @@
+#content > div.floater > h1 {
+	float: left;
+}
+.tabbar {
+	border: 1px solid #8e217d;
+    border-radius: 3px;
+    margin: 0 auto;
+    width: 240px;
+}
+.tabbar a {
+	display: inline-block;
+	padding: 4px 0;
+	width: 80px;
+	text-align: center;
+}
+.tabbar a:hover {
+	background-color: #F2F2F2;
+	text-decoration: none;
+}
+.tabbar a:focus,
+.tabbar .active,
+.tabbar a.active:hover {
+	display: inline-block;
+	padding: 4px 0;
+	width: 80px;
+	background-color: #8e217d;
+	color: #FFFFFF;
+	text-align: center;
+	text-decoration: none;
+}
+
+#searchResult .position {
+	padding-right: 3em;
+	padding-left: 3em;
+	text-align: right;
+}
+
+@media (min-width: 580px) and (max-width: 700px) {
+	#searchResult .position {
+		padding-right: 6px;
+		padding-left: 6px;
+	}
+}
+@media (max-width: 400px) {
+	#searchResult .position {
+		padding-right: 6px;
+		padding-left: 6px;
+	}
+}
+	
+}	
+	
