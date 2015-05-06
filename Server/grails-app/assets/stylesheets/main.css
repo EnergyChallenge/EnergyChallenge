@@ -17,7 +17,7 @@ body {
 }
 
 header {
-	height: 135px;
+	height: 158px;
 	position: relative;
     z-index: 1;
 	background-color: #FFFFFF;
@@ -33,6 +33,7 @@ header .inside .logo {
 	width: 220px;
 	float: left;
 	text-align: center;
+	padding: 21px 0px 25px 25px;
 }
 header .inside .logo img {
 	display: block;
@@ -40,27 +41,35 @@ header .inside .logo img {
     width: auto;
     padding: 4px;
 }
-header .inside .headertitle {
+header .inside .headerbackground {
 	float: left;
 	height: 135px;
 	width: 100%;
-	background-image: url(../images/header_image.png);
-    background-size: 100% 100%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	position:absolute;
+	z-index:-1;
+}
+header .inside .headerbackground >img {
+	width: 100%;
+	margin-top:-23px;
 }
 header h1 {
-	padding-top: 15px;
+	padding-top: 11px;
 }
 header .inside #userinfo {
 	width: 300px;
-	padding: 30px 160px;
+	padding: 30px 186px;
     position: absolute;
     right: 0;
 }
+header .inside #userinfo .profile{
+	float:left;
+}
 header .inside #userinfo .profile .avatar {
 	display: block;
-	height: 40px;
-	width: 40px;
-	float: left;
+	height: 50px;
+	width: 50px;
 	overflow: hidden;
 	border-radius: 50px;
 	background-color: #FFFFFF;
@@ -70,17 +79,17 @@ header .inside #userinfo .profile .avatar {
 }
 header .inside #userinfo .profile .avatar img {
 	display: block;
-	height: 40px;
-	width: 40px;
+	height: 50px;
+	width: 50px;
 	object-fit: cover;
 }
 header .inside #userinfo .actions {
-	clear: both;
 	padding-top: 10px;
 	padding-right: 10px;
 }
 header .inside #userinfo .actions .stats {
 	float: left;
+	margin-top: 13px;
 }
 header .inside #userinfo .actions .stats a {
 	display: inline-block;
@@ -130,6 +139,9 @@ header .inside #userinfo .actions .stats a i.fa {
 	text-align: center;
 	margin: -13px 23px;
 	position: relative;
+}
+#userinfo > div.actions > div > a.points > div:nth-child(2){
+	margin: -17px 17px;
 }
 
 #container {
@@ -272,9 +284,12 @@ footer a {
     	padding: 70px 95px;
     }
 }
-@media screen and (max-width: 665px) {
-	h1.logofont{
-		display:none;
+@media screen and (max-width: 735px) {
+	h1.logofont {
+		font-size: 16px;
+		text-align: center;
+		width: 100%;
+		margin: 30px 62px;
 	}
 }
 @media screen and (max-width: 600px) {
@@ -301,11 +316,13 @@ footer a {
 	}
 	header .inside .logo {
 		width: 20px;
+		padding: 0px;
 	}
 	h1.logofont{
-		font-size:12px;
-		position: absolute;
-		margin-left: 95px;
+		font-size: 16px;
+		text-align: center;
+		width: 100%;
+		margin: 27px 49px;
 	}
 	header .inside #userinfo {
     	padding: 70px 0px;
@@ -316,6 +333,14 @@ footer a {
 }
 @media screen and (max-width: 490px) {
 	#container #content {
-		padding: 9px 5px 0px 8px;
+	padding: 9px 5px 0px 8px;
+	}
+	header .inside #userinfo {
+		padding: 83px 0px;
+	}
+}
+@media screen and (max-width: 360px) {
+	header .inside .logo img {
+		height: 72px;
 	}
 }
