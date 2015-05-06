@@ -15,12 +15,17 @@
 			<a href="/" class="logo">
 				<asset:image src="klik_logo.png" alt="klik logo" />
 			</a>
+			<div class="headerbackground"><asset:image src="header_image.png"/></div>
 			<h1 class="logofont">Energy | Challenge</h1>
-
 			<content tag="userInfo">
 				<% def user = de.unikiel.klik.persistence.User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal())%>
 				<g:if test="${user}" >
 					<div id="userinfo">
+						<div class="profile">
+							<a href="${createLink(controller:'user', action:'edit')}" class="avatar">
+								<img src="${createLink(controller:'profile', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
+							</a>
+						</div>
 						<div class="actions">
 							<div class="stats">
 								<a href="${createLink(controller:'message', action:'index')}" class="inbox">
@@ -36,11 +41,6 @@
 									</div>
 								</a>
 							</div>
-						</div>
-						<div class="profile">
-							<a href="${createLink(controller:'user', action:'edit')}" class="avatar">
-								<img src="${createLink(controller:'profile', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
-							</a>
 						</div>
 						<g:form name="logoutFrom" url="[action:'signOut',controller:'auth']">
 							<input type="submit" value="Abmelden" />

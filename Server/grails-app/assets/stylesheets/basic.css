@@ -10,6 +10,9 @@ body {
     font: 14px/1.7em "Open Sans",sans-serif;
 }
 
+#wrapper{
+	min-width:320px;
+}
 h1 {
 	margin: 0; /*TODO TEMP*/
 	text-transform: uppercase;
@@ -21,7 +24,7 @@ h1 {
 }
 
 h1.logofont{
-	font-size: 26px;
+	font-size: 20px;
 	color: #000000;
 }
 
