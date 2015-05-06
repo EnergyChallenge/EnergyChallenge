@@ -1,4 +1,4 @@
-h1 {
+#content > div.floater > h1 {
 	float: left;
 }
 .tabbar {
