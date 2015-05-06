@@ -48,7 +48,7 @@ class ProposalController {
 	def view() {
 		if (params.id) {
 			int offset = 0;
-			int max = 5;
+			int max = 50;
 
 			if(params.offset != null) offset = Integer.parseInt(params.offset);
 			if(params.max != null) max = Integer.parseInt(params.max);
