@@ -59,10 +59,15 @@ class UserController {
   }
 
     def leaveTeam() {
-        //Get the user service to leave a team
-        UserService.unsetTeam(params.id as long, SecurityUtils.subject)
-        flash.message = "You have left the team"
-        redirect(controller: "profile", action: "index")
+		User user = User.findByEmail(org.apache.shiro.SecurityUtils.getSubject().getPrincipal());
+
+		// save old team name to display it in a message
+		def name = user.getTeam().getName();
+
+		//Get the user service to leave a team
+		UserService.unsetTeam(params.id as long, SecurityUtils.subject)
+		flash.message = "Du hast das Team " + name + " verlassen"
+		redirect(controller: "profile", action: "index")
     }
 
   def newTeam() {
