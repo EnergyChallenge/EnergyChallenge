@@ -16,15 +16,19 @@ class ProposalController {
 	def shiroSecurityManager
 	def proposalService = new ProposalService()
 	def index() {
-		int page
-		if(params.page) {
-			page = params.page as int
-		}else {
-			page = 1
+		int offset = 0;
+		int max = 50;
+	
+		if(params.offset != null) offset = Integer.parseInt(params.offset);
+		if(params.max != null) max = Integer.parseInt(params.max);
+
+		def c = Proposal.createCriteria()
+		def proposals = c.list(max: max, offset: offset) {
+			order("dateCreated", "desc")
 		}
-		def proposals = Proposal.findAll("from Proposal as p order by p.dateCreated", [max: 10, offset: 10*(page-1)])
-		int lastPage = Proposal.count()/10;
-		[proposals: proposals, page: page, lastPage: lastPage]
+	
+		//def proposals = Proposal.findAll("from Proposal as p order by p.dateCreated", [max: max, offset: offset])
+		[proposals: proposals, count: proposals.totalCount]
 	}
 	/**
 	 * Adds Proposal
@@ -36,7 +40,7 @@ class ProposalController {
 			proposalService.addProposal(params.description as String, params.points as int, subject)
 		}catch(Exception e) {
 			
-			flash.error = "Ein Vorschlag muss zwischen 1 und 255 Zeichen lang sein! Bitte versuchen Sie es erneut."
+			flash.error = "Ein Vorschlag muss zwischen 1 und 255 Zeichen lang sein! Bitte versuche es erneut."
 		}
 		redirect (action : "index");
 	}
