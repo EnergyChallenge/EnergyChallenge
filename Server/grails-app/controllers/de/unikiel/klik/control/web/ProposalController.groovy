@@ -75,12 +75,23 @@ class ProposalController {
 				}
 			}
 
+			
+			//Auskommentiert von Sören
 			// paginate
 			// keep index of last element within the bounds of the list
+			/*
 			int start = offset
 			int end = offset + (max - 1) < (comments.size()-1) ? (offset + max - 1) : (comments.size() - 1);
-					
-			return [proposal: proposal, comments: comments[start..end], ownComment: ownComment, id: params.id, count: comments.size()]
+			*/
+				
+			
+			//return [proposal: proposal, comments: comments[start..end], ownComment: ownComment, id: params.id, count: comments.size()]
+			
+			
+			
+			return [proposal: proposal, comments: comments, ownComment: ownComment, id: params.id]
+			
+			
 		} else {
 			redirect (action: "index")
 		}

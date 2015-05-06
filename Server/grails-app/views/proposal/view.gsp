@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<div class="commentsubmit">
-			<input type="submit" value="Kommentieren" />
+			<input type="submit" value="${(ownComment != null) ? 'Kommentar ändern' : 'Kommentieren'}" />
 		</div>
 		<div class="clear"></div>
 	</g:form>
@@ -59,6 +59,9 @@
 			</g:each>
 		</tbody>
 	</table>
-	<g:paginate controller="proposal" action="view" total="${count}" max="50" id="${id}" />
+	<%--
+		Auskommentiert von Sören
+		<g:paginate controller="proposal" action="view" total="${count}" max="50" id="${id}" />
+	--%>
 </body>
 </html>
