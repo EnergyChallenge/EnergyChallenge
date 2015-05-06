@@ -10,15 +10,7 @@
 	</a>
 	<h1>Energiesparvorschlag</h1>
 	<p class="proposaltext">
-		${proposal.getDescription()}
-		<em>- 
-			<g:if test="${proposal.getPoints()} == 1">
-				1 Punkt
-			</g:if>
-			<g:else>
-				${proposal.getPoints()} Punkte				
-			</g:else>
-		</em>
+		${proposal.getDescription()} <em>- ${proposal.getPoints()} Punkte</em>
 	</p>
 	
 	<g:form action="addComment" class="addcomment">
