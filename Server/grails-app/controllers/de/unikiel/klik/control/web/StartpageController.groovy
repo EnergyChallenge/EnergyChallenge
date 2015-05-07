@@ -10,6 +10,8 @@ import org.apache.shiro.crypto.SecureRandomNumberGenerator
 import org.apache.shiro.crypto.hash.Sha256Hash
 import org.apache.shiro.web.util.SavedRequest
 import org.apache.shiro.web.util.WebUtils
+import org.joda.time.DateTime
+import org.joda.time.Period
 
 class StartpageController {
 
@@ -19,6 +21,35 @@ class StartpageController {
 	
     def index() {
     
+		
+		//Check if EnergyChallenge should be available
+		
+		DateTime startTime = new DateTime(2015, 06, 01, 0, 0, 0, 0);
+		DateTime endTime = new DateTime(2015, 07, 01, 0, 0, 0, 0);
+		
+		def countdown = null;
+		def showCountdown = false;
+		def challengeIsOver = false;
+		def enableLogin = false;
+		
+		if (startTime.isAfterNow()) {
+			showCountdown = true;
+			
+			Period diff = new Period(DateTime.now(), startTime);
+			
+			countdown = [seconds: diff.getSeconds(),
+						minutes : diff.getMinutes(),
+						hours: diff.getHours(),
+						days : diff.toStandardDays().getDays(),
+						dataSeconds: diff.toStandardSeconds().getSeconds()]
+		} else if (endTime.isBeforeNow()) {
+			challengeIsOver = true;
+		} else {
+			enableLogin = true;
+		}
+		
+		
+		
 		PageViewService.visitPage("/index")
 		// query
 		groovy.sql.Sql sql = new groovy.sql.Sql(dataSource)
@@ -38,6 +69,10 @@ class StartpageController {
 		for(int i = 0; i < 5; i++) {
 			teaser << activityList[i]
 		}
-		render(view:"index", model: [teaser: teaser])
+		render(view:"index", model: [teaser: teaser,
+									showCountdown : showCountdown,
+									challengeIsOver : challengeIsOver,
+									enableLogin : enableLogin,
+									countdown: countdown])
     }
 }
