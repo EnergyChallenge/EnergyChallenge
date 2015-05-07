@@ -21,6 +21,10 @@ $.fn.countdown = function() {
         		if (seconds > 0) {	
 	        		element.text(secondsTimeSpanToHMS(seconds));
 	        		element.data("seconds", (seconds - 1));
+	        	} else {
+	        		element.parent().html('<a class="reload" href="#"><i class="fa fa-refresh"></i> Neuladen</a>').click(function() {
+	        			location.reload();
+	        		});
 	        	}
         		
         	}, 1000);
@@ -42,4 +46,8 @@ function secondsTimeSpanToHMS(s) {
 
 $(document).ready(function() {
 	$(".countdown").countdown();
+	$('a.reload').click(function() {
+		location.reload();
+		return false;
+	});
 });
