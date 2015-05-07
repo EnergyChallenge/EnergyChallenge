@@ -26,7 +26,7 @@ class StartpageController {
 		
 		DateTime startTime = new DateTime(2015, 06, 01, 0, 0, 0, 0);
 		DateTime endTime = new DateTime(2015, 07, 01, 0, 0, 0, 0);
-		DateTime startRegTime = new DateTime(2015, 06, 18, 0, 0, 0, 0);
+		DateTime startRegTime = new DateTime(2015, 05, 18, 0, 0, 0, 0);
 		
 		def countdown = null;
 		def showCountdown = false;

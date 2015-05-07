@@ -77,7 +77,7 @@
 			<g:elseif test="${challengeIsOver}">
 				Das war's! Challenge ist vorbei :(
 			</g:elseif>
-			<g:if test="${enableLogin}">
+			<g:if test="${enableReg}">
 				<div id="register" >
 					<g:form name="registerFrom" url="[action:'register',controller:'auth']">
 						<input type="submit" value="Jetzt registrieren!" />		
