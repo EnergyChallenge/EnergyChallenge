@@ -24,6 +24,9 @@ class AuthController {
     def index = { redirect(action: "login", params: params) }
 
     def login = {
+		if (params.id != "27032014") {
+			response.sendError(404)
+		}
         return [ username: params.username, rememberMe: (params.rememberMe != null), targetUri: params.targetUri ]
     }
 
@@ -70,6 +73,9 @@ class AuthController {
         redirect(uri: "/")
     }
 	def register = {
+		if (params.id != "27032014") {
+			response.sendError(404)
+		}
 		[institutes: Institute.findAll()]		
 	}
 	def signUp = {

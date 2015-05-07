@@ -7,55 +7,83 @@
 	<body>
 		<div id="right">
 			<%-- TODO: create an include of the login form --%>
-			<div id="login" >
-				<g:form id="signInForm" name="signInForm" url="[action:'signIn',controller:'auth']">
-					<input type="hidden" name="targetUri" value="${targetUri}" />
-					<table>
-						<tbody>
-							<tr>
-								<td class="left">E-Mail:</td>
-								<td class="right">
-									<input id="signInFormEmail" type="email" name="email" value="${username}" />
-								</td>
-							</tr>
-							<tr>
-								<td class="left">Passwort:</td>
-								<td class="right">
-									<input id="signInFormPassword"  type="password" name="password" value="" />
-								</td>
-							</tr>
-							<tr>
-								<td colspan="2" class="both">
-									<g:checkBox name="rememberMe" value="${rememberMe}" />
-									<label for="rememberMe">Angemeldet bleiben</label>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-					<input type="submit" value="Anmelden" />
-				</g:form> 
-				<g:form name="forgotPasswordForm" url="[action:'forgotPassword',controller:'auth']">
-					<input type="submit" value="Passwort vergessen" />
-				</g:form>
-				<g:javascript>
-					$(function() {
-						$('#signInFormEmail').focus().change(function() {
-						  <%-- TODO: check validity --%>
+			<g:if test="${enableLogin}">
+				<div id="login" >
+					<g:form id="signInForm" name="signInForm" url="[action:'signIn',controller:'auth']">
+						<input type="hidden" name="targetUri" value="${targetUri}" />
+						<table>
+							<tbody>
+								<tr>
+									<td class="left">E-Mail:</td>
+									<td class="right">
+										<input id="signInFormEmail" type="email" name="email" value="${username}" />
+									</td>
+								</tr>
+								<tr>
+									<td class="left">Passwort:</td>
+									<td class="right">
+										<input id="signInFormPassword"  type="password" name="password" value="" />
+									</td>
+								</tr>
+								<tr>
+									<td colspan="2" class="both">
+										<g:checkBox name="rememberMe" value="${rememberMe}" />
+										<label for="rememberMe">Angemeldet bleiben</label>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<input type="submit" value="Anmelden" />
+					</g:form> 
+					<g:form name="forgotPasswordForm" url="[action:'forgotPassword',controller:'auth']">
+						<input type="submit" value="Passwort vergessen" />
+					</g:form>
+					<g:javascript>
+						$(function() {
+							$('#signInFormEmail').focus().change(function() {
+							  <%-- TODO: check validity --%>
+							});
+							$("#signInForm").submit(function (e) {
+								if($('#signInFormPassword').val()==""){
+									  $('#signInFormPassword').focus();
+									  return false;
+								}
+							});
 						});
-						$("#signInForm").submit(function (e) {
-							if($('#signInFormPassword').val()==""){
-								  $('#signInFormPassword').focus();
-								  return false;
-							}
-						});
-					});
-				</g:javascript>
-			</div>
-			<div id="register" >
-				<g:form name="registerFrom" url="[action:'register',controller:'auth']">
-					<input type="submit" value="Jetzt registrieren!" />		
-				</g:form>
-			</div>
+					</g:javascript>
+				</div>
+			</g:if>
+			<g:elseif test="${showCountdown}">
+				<div data-seconds="${countdown.dataSeconds}">
+					Die Energy|Challenge startet in
+					<span>
+						<span>${countdown.days}</span>
+						Tagen
+					</span>
+					<span>
+						<span>${countdown.hours}</span>
+						Stunden
+					</span>
+					<span>
+						<span>${countdown.minutes}</span>
+						Minuten
+					</span>
+					<span>
+						<span>${countdown.seconds}</span>
+						Sekunden
+					</span>
+				</div>
+			</g:elseif>
+			<g:elseif test="${challengeIsOver}">
+				Das war's! Challenge ist vorbei :(
+			</g:elseif>
+			<g:if test="${enableReg}">
+				<div id="register" >
+					<g:form name="registerFrom" url="[action:'register',controller:'auth']">
+						<input type="submit" value="Jetzt registrieren!" />		
+					</g:form>
+				</div>
+			</g:if>
 			<%-- TODO: create an include of the login form --%>
 		</div>
 		<div id="left">
