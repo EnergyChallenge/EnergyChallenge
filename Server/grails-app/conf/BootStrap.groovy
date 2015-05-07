@@ -13,7 +13,7 @@ class BootStrap {
 	def init = { servletContext ->
 		def currentEnv = Environment.current
 		//define the user and admin role
-	    	def userRole = new Role(name: "user")
+	    	def userRole = new Role(name: "benutzer")
 	    	userRole.addToPermissions("*:*")
 	    	userRole.save(flush: true, failOnError: true);
             	def adminRole = new Role(name: "admin")

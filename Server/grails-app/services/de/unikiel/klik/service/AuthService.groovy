@@ -54,7 +54,7 @@ class AuthService {
                     //Try to actually create the user
                     def newUser = new User(email: email, passwordHash: new Sha256Hash(password).toHex(),
                                            institute: Institute.get(instituteId), firstName: firstName,
-                                           lastName: lastName, roles: [Role.findByName("user")])
+                                           lastName: lastName, roles: [Role.findByName("benutzer")])
                     newUser.save(flush: true, failOnError: true)
                 login(email, password, false)
             }
