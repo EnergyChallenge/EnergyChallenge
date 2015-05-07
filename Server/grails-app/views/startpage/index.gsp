@@ -77,11 +77,13 @@
 			<g:elseif test="${challengeIsOver}">
 				Das war's! Challenge ist vorbei :(
 			</g:elseif>
-			<div id="register" >
-				<g:form name="registerFrom" url="[action:'register',controller:'auth']">
-					<input type="submit" value="Jetzt registrieren!" />		
-				</g:form>
-			</div>
+			<g:if test="${enableLogin}">
+				<div id="register" >
+					<g:form name="registerFrom" url="[action:'register',controller:'auth']">
+						<input type="submit" value="Jetzt registrieren!" />		
+					</g:form>
+				</div>
+			</g:if>
 			<%-- TODO: create an include of the login form --%>
 		</div>
 		<div id="left">

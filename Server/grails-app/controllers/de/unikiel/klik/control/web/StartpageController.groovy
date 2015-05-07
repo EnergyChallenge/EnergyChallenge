@@ -26,11 +26,14 @@ class StartpageController {
 		
 		DateTime startTime = new DateTime(2015, 06, 01, 0, 0, 0, 0);
 		DateTime endTime = new DateTime(2015, 07, 01, 0, 0, 0, 0);
+		DateTime startRegTime = new DateTime(2015, 06, 18, 0, 0, 0, 0);
 		
 		def countdown = null;
 		def showCountdown = false;
 		def challengeIsOver = false;
 		def enableLogin = false;
+		
+		def enableReg = startRegTime.isBeforeNow() && endTime.isAfterNow();
 		
 		if (startTime.isAfterNow()) {
 			showCountdown = true;
@@ -73,6 +76,7 @@ class StartpageController {
 									showCountdown : showCountdown,
 									challengeIsOver : challengeIsOver,
 									enableLogin : enableLogin,
+									enableReg : enableReg,
 									countdown: countdown])
     }
 }
