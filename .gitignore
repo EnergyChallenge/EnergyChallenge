@@ -12,6 +12,7 @@
 *~
 .~*
 Server/.gradle/*
+Server/prodDb*.db
 .vagrant/*
 
 # visual paradigm temporary files
