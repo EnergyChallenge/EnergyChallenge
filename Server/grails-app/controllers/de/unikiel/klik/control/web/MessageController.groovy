@@ -37,7 +37,7 @@ class MessageController {
       MessageService.inviteUserToTeam(params.id as long, SecurityUtils.subject)
 
       def invitee = User.get(params.id as long);
-      flash.message = invitee.getName() + " hat eine Einladung in dein Team erhalten"
+      flash.message = invitee.getName() + " hat eine Einladung in Ihr Team erhalten."
       def targetUri = params.targetUri ?: "/"
       redirect(uri: targetUri)
     }
