@@ -80,30 +80,29 @@ class AuthController {
 	}
 	def signUp = {
 		//Check if the parameters are valid for user creation
-        //TODO convert these messages to German
         def user = User.findByEmail(params.email)
         if(user){
-            flash.message = "That email is already in use."
+            flash.message = "Diese E-Mail-Adresse wird bereits verwendet."
             def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
             forward (action: "register", params: m)
 
         }else if(params.firstName.length() > 25){
-            flash.message = "First names are limited to 25 characters."
+            flash.message = "Vornamen dürfen nicht länger als 25 Zeichen sein."
             def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
             forward (action: "register", params: m)
 
         }else if(params.lastName.length() > 25){
-            flash.message = "Last names are limited to 25 characters."
+            flash.message = "Nachnamen dürfen nicht länger als 25 Zeichen."
             def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
             forward (action: "register", params: m)
 
         }else if(params.password != params.password2){
-            flash.message = "The passwords don't match."
+            flash.message = "Die eingegebenen Passwörter stimmen nicht überein."
             def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
             forward (action: "register", params: m)
 
         }else if(params.password.length() == 0 || params.password2.length() == 0){
-            flash.message = "You must enter a password."
+            flash.message = "Bitte geben Sie ein Passwort ein."
             def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
             forward (action: "register", params: m)
 
@@ -117,7 +116,7 @@ class AuthController {
                 // Authentication failed, so display the appropriate message
                 flash.message = "Login schlug fehl."
             }catch(Exception e){
-                flash.message = "Registrierung schlug fehl."
+                flash.message = "Die Registrierung schlug fehl."
                 //Keep params
                 def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
                 forward (action: "register", params: m)
