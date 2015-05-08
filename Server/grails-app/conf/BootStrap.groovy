@@ -15,10 +15,10 @@ class BootStrap {
 		//define the user and admin role
 	    	def userRole = new Role(name: "benutzer")
 	    	userRole.addToPermissions("*:*")
-	    	userRole.save(flush: true, failOnError: true);
+	    	userRole.save(flush: true);
             	def adminRole = new Role(name: "admin")
             	adminRole.addToPermissions("*:*")
-            	adminRole.save(flush: true, failOnError: true);
+            	adminRole.save(flush: true);
 
 		// initialization for productive use
 		InitService.initKlikRoles()
@@ -38,11 +38,11 @@ class BootStrap {
 
 			//TestService.saveSomeExampleData()
 			
-			TestService.createAndSaveExampleUsersForExistingInstitutes(128)
-			TestService.createAndSaveCompletedActivitiesForExistingUsersAndActivities(1024)
-			TestService.createSomePageVisits(7,"/index")	
-			TestService.createSomePageVisits(7,"/auth/signIn")
-            TestService.createMessage()
+			//TestService.createAndSaveExampleUsersForExistingInstitutes(128)
+			//TestService.createAndSaveCompletedActivitiesForExistingUsersAndActivities(1024)
+			//TestService.createSomePageVisits(7,"/index")	
+			//TestService.createSomePageVisits(7,"/auth/signIn")
+            //TestService.createMessage()
 			println "Running in Development Mode"
 		} else if (currentEnv == Environment.TEST) {
 			// do custom init for test here
@@ -57,12 +57,12 @@ class BootStrap {
 
 		} else if (currentEnv == Environment.PRODUCTION) {
 			// generate admin Accounts
-			Institute institute = Institute.get(0) //TODO find the right Institute
+			Institute institute = new Institute(name: "Klick")
 			institute.save()
 			def admin = new User(email:"admin@example.com", passwordHash: new Sha256Hash("password").toHex(), firstName: "Matilda", lastName: "Mustermann", institute: institute)
 			admin.addToRoles(adminRole)
 			admin.save(flush: true)
-			
+			println "Running in Production Mode"
 		}
 	}
 	def destroy = {
