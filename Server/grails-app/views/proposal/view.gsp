@@ -43,8 +43,12 @@
 			<g:each in="${comments}" var="comment">
 				<tr>
 					<td>
-						${comment.getText()}
+						${comment.getText()}<br />
+						- <a href="${createLink(controller :'profile', action: 'user', id: comment.getAuthor().id)}">
+							<em>${comment.getAuthor().getName()}</em>
+						</a>
 					</td>
+					
 					<td>
 						<g:each var="i" in="${ (0..<5)}">
 							<g:if test="${comment.getRating() <= i}">
