@@ -22,7 +22,7 @@
 				<g:if test="${user}" >
 					<div id="userinfo">
 						<div class="profile">
-							<a href="${createLink(controller:'user', action:'edit')}" class="avatar">
+							<a href="${createLink(controller:'profile')}" class="avatar">
 								<img src="${createLink(controller:'profile', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
 							</a>
 						</div>
