@@ -41,7 +41,7 @@ class ProposalController {
 			proposalService.addProposal(params.description as String, params.points as int, subject)
 		}catch(Exception e) {
 			
-			flash.error = "Ein Vorschlag muss zwischen 1 und 255 Zeichen lang sein! Bitte versuche es erneut."
+			flash.error = "Ein Vorschlag muss zwischen 1 und 255 Zeichen lang sein! Bitte versuchen Sie es erneut."
 		}
 		redirect (action : "index");
 	}
@@ -100,7 +100,7 @@ class ProposalController {
 		try {
 			proposalService.addComment(params.text as String, params.rating as int, SecurityUtils.getSubject(), params.id as long)
 		}catch(ValidationException e) {
-			flash.default = "Ein Fehler ist aufgetreten. Bitte versuchen sie es erneut oder kontaktieren sie den Admin" 
+			flash.default = "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie einen Administrator." 
 		}catch(GroovyCastException e) {
 			flash.error = "Es muss mindestens eine Bewertung abgegeben werden."
 		}
