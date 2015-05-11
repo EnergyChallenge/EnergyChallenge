@@ -10,7 +10,7 @@ class SearchController {
     def displaySearchResults() {
 		
 		def results = [];
-		if(params.query != ""){
+		if(params.query != null && params.query != "") {
 			params.query=params.query.replaceAll(/\*/,"_")
 			def matchingUsers = User.findAllBySearchNameIlike("%" + params.query + "%")
 			for (user in matchingUsers) {
