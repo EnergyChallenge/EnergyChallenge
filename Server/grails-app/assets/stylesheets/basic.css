@@ -173,3 +173,31 @@ table.list td.admin{
 .card ul li:first-child {
 	border-top: 0 none;
 }
+
+.paginate {
+	margin: 1em auto;
+	text-align: center;
+}
+.paginate .prevLink,
+.paginate .nextLink,
+.paginate .step,
+.paginate .currentStep {
+	border: 1px solid;
+    border-radius: 3px;
+    display: inline-block;
+    margin: 3px 5px;
+    padding: 1px 5px;
+    text-align: center;
+    min-width: 1.5em;
+}
+.paginate .prevLink:hover,
+.paginate .nextLink:hover,
+.paginate .step:hover,
+.paginate .prevLink:focus,
+.paginate .nextLink:focus,
+.paginate .step:focus,
+.paginate .currentStep {
+	background-color: #8e217d;
+    color: #fff;
+    text-decoration: none;
+}

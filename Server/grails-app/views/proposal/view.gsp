@@ -65,7 +65,9 @@
 	</table>
 	<%--
 		Auskommentiert von Sören
-		<g:paginate controller="proposal" action="view" total="${count}" max="50" id="${id}" />
+		<div class="paginate">
+			<g:paginate controller="proposal" action="view" total="${count}" max="50" id="${id}" />
+		</div>
 	--%>
 </body>
 </html>
