@@ -66,31 +66,31 @@
 					<li>
 						<a href="${createLink(controller:'Landing')}" >
 							<i class="fa fa-home fa-fw"></i>
-							EnergyChallenge
+							<span class="title">EnergyChallenge</span>
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Activity')}" >
 							<i class="fa fa-check-square-o fa-fw"></i>
-							Aktivitäten
+							<span class="title">Aktivitäten</span>
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Ranking')}" >
 							<i class="fa fa-trophy fa-fw"></i>
-							Rangliste
+							<span class="title">Rangliste</span>
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Proposal')}" >
 							<i class="fa fa-plus fa-fw"></i>
-							Energiesparvorschläge
+							<span class="title">Energiesparvorschläge</span>
 						</a>
 					</li>
 					<li>
 						<a href="${createLink(controller:'Statistics')}" >
 							<i class="fa fa-area-chart fa-fw"></i>
-							Statistiken
+							<span class="title">Statistiken</span>
 						</a>
 					</li>
 				</ul>
@@ -100,58 +100,69 @@
 					<ul>
 						<li>
 							<a href="${createLink(controller:'Admin', action: 'users')}" >
-							<i class="fa fa-user fa-fw"></i>
-							Benutzer verwalten</a>
+								<i class="fa fa-user fa-fw"></i>
+								<span class="title">Benutzer verwalten</span>
+							</a>
 						</li>
 						<li>
 							<a href="${createLink(controller:'Admin', action: 'teams')}" >
 							<i class="fa fa-users fa-fw"></i>
-							Teams verwalten
+							<span class="title">Teams verwalten</span>
 							</a>
 						</li>
 						<li>
 							<a href="${createLink(controller:'Admin', action: 'activities')}" >
 							<i class="fa fa-scissors fa-fw"></i>
-							Aktivitäten verwalten
+							<span class="title">Aktivitäten verwalten</span>
 							</a>
 						</li>
 						<li>
 							<a href="${createLink(controller:'Admin', action: 'proposals')}" >
 							<i class="fa fa-paperclip fa-fw"></i>
-							Vorschläge verwalten
+							<span class="title">Vorschläge verwalten</span>
 							</a>
 						</li>
 						<li>
 							<a href="${createLink(controller:'Admin', action: 'message')}" >
 							<i class="fa fa-envelope fa-fw"></i>
-							E-Mail senden
+							<span class="title">E-Mail senden</span>
 							</a>
 						</li>
 					</ul>
 				</g:if>
 			</nav>
-			<div id="content">
-				<div class="floater">
-					<g:if test="${flash.message}">
-						<div class="flashmessage">${flash.message}</div>
-						<g:javascript>
-							$(".flashmessage").hide();
-							$(".flashmessage").slideDown('slow');
-							setTimeout(function() {$(".flashmessage").fadeOut('slow');}, 2000);
-						</g:javascript>
-					</g:if>
-					<g:elseif test="${flash.error}">
-						<div class="flasherror">${flash.error}</div>
-						<g:javascript>
-							$(".flasherror").hide();
-							$(".flasherror").slideDown('slow');
-							setTimeout(function() {$(".flasherror").fadeOut('slow');}, 2000);
-						</g:javascript>
-					</g:elseif>
-					<g:javascript>setTimeout(function() {$(".flashmessage,.flasherror").fadeOut('slow');}, 2000);</g:javascript>
-					<g:layoutBody />
+			<div id="main">
+				<div id="content">
+					<div class="floater">
+						<g:if test="${flash.message}">
+							<div class="flashmessage">${flash.message}</div>
+							<g:javascript>
+								$(".flashmessage").hide();
+								$(".flashmessage").slideDown('slow');
+								setTimeout(function() {$(".flashmessage").fadeOut('slow');}, 2000);
+							</g:javascript>
+						</g:if>
+						<g:elseif test="${flash.error}">
+							<div class="flasherror">${flash.error}</div>
+							<g:javascript>
+								$(".flasherror").hide();
+								$(".flasherror").slideDown('slow');
+								setTimeout(function() {$(".flasherror").fadeOut('slow');}, 2000);
+							</g:javascript>
+						</g:elseif>
+						<g:javascript>setTimeout(function() {$(".flashmessage,.flasherror").fadeOut('slow');}, 2000);</g:javascript>
+						<g:layoutBody />
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
 				</div>
-				<div class="clear"></div>
+				<footer class="clear">
+					<a href="http://www.uni-kiel.de/suchen/impressum.shtml">Impressum</a>
+					 &bull;
+					<a href="http://www.uni-kiel.de/suchen/kontakt.shtml">Kontakt</a>
+					 &bull;
+					<a href="http://www.uni-kiel.de/suchen/impressum.shtml#datenschutz">Datenschutz</a>
+				</footer>
 			</div>
 	</body>
 	

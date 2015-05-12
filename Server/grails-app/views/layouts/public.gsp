@@ -25,6 +25,12 @@
 			</div>
 			<div class="clear"></div>
 		</div>
-
+		<footer class="clear">
+			<a href="http://www.uni-kiel.de/suchen/impressum.shtml">Impressum</a>
+			 &bull;
+			<a href="http://www.uni-kiel.de/suchen/kontakt.shtml">Kontakt</a>
+			 &bull;
+			<a href="http://www.uni-kiel.de/suchen/impressum.shtml#datenschutz">Datenschutz</a>
+		</footer>
 	</body>
 </g:applyLayout>

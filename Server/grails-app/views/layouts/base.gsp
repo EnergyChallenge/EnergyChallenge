@@ -45,26 +45,6 @@
 		  		<g:layoutBody />
 	  		</div>
 		</section>
-		<footer>
-			<div class="inside">
-				<div id="footerBackgroundLeft">
-					<img src="/energy-challenge/assets/footer_image_left.png">
-				</div>
-				<div id="footerBackgroundRight">
-					<img src="/energy-challenge/assets/footer_image_right.png">
-				</div>
-				<div id="footerBackgroundSmall">
-					<img src="/energy-challenge/assets/footer_image_small.png">
-				</div>
-				<div id="footerLinks">
-					<a href="http://www.uni-kiel.de/suchen/impressum.shtml">Impressum</a>
-					 &bull;
-					<a href="http://www.uni-kiel.de/suchen/kontakt.shtml">Kontakt</a>
-					 &bull;
-					<a href="http://www.uni-kiel.de/suchen/impressum.shtml#datenschutz">Datenschutz</a>
-				</div>
-			</div>
-		</footer>
 	</div>
 </body>
 </html>
