@@ -10,7 +10,7 @@ body {
     min-width: 320px;
     padding: 0;
     margin: 0;
-    background-color: #8e217d
+    background-color: #FFFFFF;
 }
 #wrapper {
 	overflow: hidden;
@@ -259,20 +259,48 @@ header .inside #userinfo .actions .stats a i.fa {
 footer {
 	position: relative;
 	z-index: 10;
-	background-color: #8e217d;
+	background-color: #FFFFFF;
 	color: #FFFFFF;
-	text-align: center;
-	padding-bottom: 1000px;
-	margin-bottom: -1000px;
-	height:40px;
+	height:125px;
 }
 footer .inside {
 	max-width: 960px;
 	margin: 0 auto;
 	padding: 6px 0;
 }
-footer a {
-	color: #FFFFFF;
+footer #footerBackgroundLeft {
+	max-height: 125px;
+	float: left;
+	z-index: -1;
+}
+#footerBackgroundLeft > img {
+	max-height: 125px;
+}
+footer #footerBackgroundRight {
+	max-height: 125px;
+	float: right;
+	z-index: -1;
+}
+#footerBackgroundRight > img {
+	max-height: 125px;
+}
+footer #footerBackgroundSmall {
+	max-height: 125px;
+	float: left;
+	z-index: -1;
+}
+#footerBackgroundSmall > img {
+	max-height: 125px;
+	display: none;
+}
+footer #footerLinks {
+	color: #000000;
+    position: absolute;
+    bottom: 0;
+    margin: 10px;
+}
+footer #footerLinks a {
+	color: #000000;
 }
 
 @media screen and (max-width: 800px) {
@@ -291,6 +319,26 @@ footer a {
 		text-align: center;
 		width: 100%;
 		margin: 30px 62px;
+	}
+}
+@media screen and (max-width: 605px) {
+	footer #footerBackgroundLeft {
+		display: none;
+	}
+	#footerBackgroundLeft > img {
+		display: none;
+	}
+	footer #footerBackgroundRight {
+		display: none;
+	}
+	#footerBackgroundRight > img {
+		display: none;
+	}
+	footer #footerBackgroundSmall {
+		display: block;
+	}
+	#footerBackgroundSmall > img {
+		display: block;
 	}
 }
 @media screen and (max-width: 600px) {
