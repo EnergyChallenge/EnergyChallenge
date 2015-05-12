@@ -71,10 +71,10 @@ grails {
 //MailSetting
 grails {
     mail {
-        host = "smtp.gmail.com"
+        host = "smtp.mail.uni-kiel.de"
         port = 465
-        username = "echallenge2015@gmail.com"
-        password = "lichtwerk"
+        username = "suver041"
+        password = "smycys90"
         props = ["mail.smtp.auth":"true",
                  "mail.smtp.socketFactory.port":"465",
                  "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
