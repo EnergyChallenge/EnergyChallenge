@@ -3,6 +3,7 @@
 	<head>
 		<meta name="layout" content="public"/>
 		<title>EnergyChallenge</title>
+		<asset:javascript src="countdownStart.js" />
 	</head>
 	<body>
 		<div id="right">
@@ -54,22 +55,50 @@
 				</div>
 			</g:if>
 			<g:elseif test="${showCountdown}">
-				<div data-seconds="${countdown.dataSeconds}">
-					Die Energy|Challenge startet in
-					<span>
-						<span>${countdown.days}</span>
+				<div id="countdown" data-seconds="${countdown.dataSeconds}">
+					<p>Die Energy|Challenge startet in</p>
+					<span class="entity days">
+						<span class="value">
+							<g:if test="${countdown.days < 10}">
+								0${countdown.days}
+							</g:if>
+							<g:else>
+								${countdown.days}
+							</g:else>
+						</span>
 						Tagen
 					</span>
-					<span>
-						<span>${countdown.hours}</span>
+					<span class="entity hours">
+						<span class="value">
+							<g:if test="${countdown.hours < 10}">
+								0${countdown.hours}
+							</g:if>
+							<g:else>
+								${countdown.hours}
+							</g:else>
+						</span>
 						Stunden
 					</span>
-					<span>
-						<span>${countdown.minutes}</span>
+					<span class="entity minutes">
+						<span class="value">
+							<g:if test="${countdown.minutes < 10}">
+								0${countdown.minutes}
+							</g:if>
+							<g:else>
+								${countdown.minutes}
+							</g:else>
+						</span>
 						Minuten
 					</span>
-					<span>
-						<span>${countdown.seconds}</span>
+					<span class="entity seconds">
+						<span class="value">
+							<g:if test="${countdown.seconds < 10}">
+								0${countdown.seconds}
+							</g:if>
+							<g:else>
+								${countdown.seconds}
+							</g:else>
+						</span>
 						Sekunden
 					</span>
 				</div>
