@@ -26,3 +26,12 @@
 	background-color: #F2F2F2;
 	text-decoration: none;
 }
+@media (max-width: 900px) {
+	.tabbar {
+		float: right;
+	}
+}
+
+table.list {
+	clear: both;
+}

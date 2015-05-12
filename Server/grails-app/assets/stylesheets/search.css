@@ -28,6 +28,15 @@
 	text-align: center;
 	text-decoration: none;
 }
+@media (max-width: 900px) {
+	.tabbar {
+		float: right;
+	}
+}
+
+p{
+	clear: both;
+}
 
 #searchResult .position {
 	padding-right: 3em;
@@ -48,5 +57,5 @@
 	}
 }
 	
-}	
+
 	
