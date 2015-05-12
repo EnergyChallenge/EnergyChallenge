@@ -111,6 +111,7 @@ header .inside #userinfo .actions .stats a i.fa {
 
 #logoutFrom > input[type="submit"] {
 	color: #FFFFFF;
+    margin-top:10px;
 }
 
 #userinfo > div.actions > div > a.inbox > i {
