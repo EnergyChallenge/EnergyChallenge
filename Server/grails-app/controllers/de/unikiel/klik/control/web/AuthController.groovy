@@ -17,14 +17,20 @@ import org.apache.shiro.crypto.SecureRandomNumberGenerator
 import org.apache.shiro.crypto.hash.Sha256Hash
 import org.apache.shiro.web.util.SavedRequest
 import org.apache.shiro.web.util.WebUtils
+import org.joda.time.DateTime
 
 class AuthController {
     def shiroSecurityManager
 	def AuthService
     def index = { redirect(action: "login", params: params) }
+	
+	
+	DateTime ENERGYCHALLENGE_START_TIME = new DateTime(2015, 05, 01, 0, 0, 0, 0);
+	DateTime ENERGYCHALLENGE_END_TIME = new DateTime(2015, 07, 01, 0, 0, 0, 0);
+	DateTime ENERGYCHALLENGE_REG_START_TIME = new DateTime(2015, 05, 18, 0, 0, 0, 0);
 
     def login = {
-		if (params.id != "27032014") {
+		if (params.id != "27032014" && (ENERGYCHALLENGE_START_TIME.isAfterNow() || ENERGYCHALLENGE_END_TIME.isBeforeNow())) {
 			response.sendError(404)
 		}
         return [ username: params.username, rememberMe: (params.rememberMe != null), targetUri: params.targetUri ]
@@ -73,7 +79,7 @@ class AuthController {
         redirect(uri: "/")
     }
 	def register = {
-		if (params.id != "27032014") {
+		if (params.id != "27032014" && (ENERGYCHALLENGE_REG_START_TIME.isAfterNow() || ENERGYCHALLENGE_END_TIME.isBeforeNow())) {
 			response.sendError(404)
 		}
 		[institutes: Institute.findAll()]		

@@ -23,6 +23,11 @@ class StartpageController {
     
 		
 		//Check if EnergyChallenge should be available
+		
+		DateTime ENERGYCHALLENGE_START_TIME = new DateTime(2015, 06, 01, 0, 0, 0, 0);
+		DateTime ENERGYCHALLENGE_END_TIME = new DateTime(2015, 07, 01, 0, 0, 0, 0);
+		DateTime ENERGYCHALLENGE_REG_START_TIME = new DateTime(2015, 05, 18, 0, 0, 0, 0);
+		
 		def countdown = null;
 		def showCountdown = false;
 		def challengeIsOver = false;
