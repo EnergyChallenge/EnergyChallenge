@@ -1,3 +1,5 @@
+import org.joda.time.DateTime
+
 grails.app.context = "/energy-challenge" // this is the current path defined in the university
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
@@ -71,10 +73,10 @@ grails {
 //MailSetting
 grails {
     mail {
-        host = "smtp.gmail.com"
+        host = "smtp.mail.uni-kiel.de"
         port = 465
-        username = "echallenge2015@gmail.com"
-        password = "lichtwerk"
+        username = "suver041"
+        password = "smycys90"
         props = ["mail.smtp.auth":"true",
                  "mail.smtp.socketFactory.port":"465",
                  "mail.smtp.socketFactory.class":"javax.net.ssl.SSLSocketFactory",
@@ -106,6 +108,7 @@ grails.hibernate.cache.queries = false
 grails.hibernate.pass.readonly = false
 // configure passing read-only to OSIV session by default, requires "singleSession = false" OSIV mode
 grails.hibernate.osiv.readonly = false
+
 
 environments {
     development {

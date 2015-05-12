@@ -54,7 +54,7 @@ class UserController {
   def joinTeam() {
         //Get the user service to join a team
         UserService.setTeam(params.id as long, SecurityUtils.subject)
-        flash.message = "Du bist jetzt ein Mitglied des Teams"
+        flash.message = "Sie sind jetzt ein Mitglied des Teams"
         redirect(controller: "profile", action: "index")
   }
 
@@ -66,7 +66,7 @@ class UserController {
 
 		//Get the user service to leave a team
 		UserService.unsetTeam(params.id as long, SecurityUtils.subject)
-		flash.message = "Du hast das Team " + name + " verlassen"
+		flash.message = "Sie haben das Team " + name + " verlassen"
 		redirect(controller: "profile", action: "index")
     }
 

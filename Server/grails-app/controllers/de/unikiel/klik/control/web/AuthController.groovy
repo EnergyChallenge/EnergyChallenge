@@ -17,14 +17,20 @@ import org.apache.shiro.crypto.SecureRandomNumberGenerator
 import org.apache.shiro.crypto.hash.Sha256Hash
 import org.apache.shiro.web.util.SavedRequest
 import org.apache.shiro.web.util.WebUtils
+import org.joda.time.DateTime
 
 class AuthController {
     def shiroSecurityManager
 	def AuthService
     def index = { redirect(action: "login", params: params) }
+	
+	
+	DateTime ENERGYCHALLENGE_START_TIME = new DateTime(2015, 05, 01, 0, 0, 0, 0);
+	DateTime ENERGYCHALLENGE_END_TIME = new DateTime(2015, 07, 01, 0, 0, 0, 0);
+	DateTime ENERGYCHALLENGE_REG_START_TIME = new DateTime(2015, 05, 18, 0, 0, 0, 0);
 
     def login = {
-		if (params.id != "27032014") {
+		if (params.id != "27032014" && (ENERGYCHALLENGE_START_TIME.isAfterNow() || ENERGYCHALLENGE_END_TIME.isBeforeNow())) {
 			response.sendError(404)
 		}
         return [ username: params.username, rememberMe: (params.rememberMe != null), targetUri: params.targetUri ]
@@ -73,41 +79,45 @@ class AuthController {
         redirect(uri: "/")
     }
 	def register = {
-		if (params.id != "27032014") {
+		if (params.id != "27032014" && (ENERGYCHALLENGE_REG_START_TIME.isAfterNow() || ENERGYCHALLENGE_END_TIME.isBeforeNow())) {
 			response.sendError(404)
 		}
 		[institutes: Institute.findAll()]		
 	}
 	def signUp = {
 		//Check if the parameters are valid for user creation
-        //TODO convert these messages to German
         def user = User.findByEmail(params.email)
         if(user){
-            flash.message = "That email is already in use."
-            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            flash.message = "Diese E-Mail-Adresse wird bereits verwendet."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
             forward (action: "register", params: m)
 
         }else if(params.firstName.length() > 25){
-            flash.message = "First names are limited to 25 characters."
-            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            flash.message = "Vornamen dürfen nicht länger als 25 Zeichen sein."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
             forward (action: "register", params: m)
 
         }else if(params.lastName.length() > 25){
-            flash.message = "Last names are limited to 25 characters."
-            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            flash.message = "Nachnamen dürfen nicht länger als 25 Zeichen."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
             forward (action: "register", params: m)
 
         }else if(params.password != params.password2){
-            flash.message = "The passwords don't match."
-            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            flash.message = "Die eingegebenen Passwörter stimmen nicht überein."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
             forward (action: "register", params: m)
 
         }else if(params.password.length() == 0 || params.password2.length() == 0){
-            flash.message = "You must enter a password."
-            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            flash.message = "Bitte geben Sie ein Passwort ein."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
             forward (action: "register", params: m)
 
-        }else{
+        } else if(params.agreeRules != "1"){
+            flash.message = "Bitte akzeptieren Sie das Regelwerk."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
+            forward (action: "register", params: m)
+
+        } else{
             //Create a new user and login
             try {
                 AuthService.register(params.email, params.firstName, params.lastName, params.password as String, params.password2 as String, params.instituteId as long)
@@ -117,7 +127,7 @@ class AuthController {
                 // Authentication failed, so display the appropriate message
                 flash.message = "Login schlug fehl."
             }catch(Exception e){
-                flash.message = "Registrierung schlug fehl."
+                flash.message = "Die Registrierung schlug fehl."
                 //Keep params
                 def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
                 forward (action: "register", params: m)

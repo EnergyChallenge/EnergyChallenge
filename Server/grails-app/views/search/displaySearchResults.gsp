@@ -30,7 +30,7 @@
 	</script>
 </head>
 <body>
-	<g:if test="${query == ''}">
+	<g:if test="${query == '' || query == null}">
 		<g:form action="searchForm" url="[action:'displaySearchResults',controller:'search']">
 			<input type="search" name="query" value="${query}" placeholder="Suchen" />
 			<button class="fa fa-search"></button>

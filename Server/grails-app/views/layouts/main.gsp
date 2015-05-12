@@ -22,7 +22,7 @@
 				<g:if test="${user}" >
 					<div id="userinfo">
 						<div class="profile">
-							<a href="${createLink(controller:'user', action:'edit')}" class="avatar">
+							<a href="${createLink(controller:'profile')}" class="avatar">
 								<img src="${createLink(controller:'profile', action:'avatar', id: user.getId())}" alt="${user.getName()}" />
 							</a>
 						</div>
@@ -59,7 +59,7 @@
 				<div id="search">
 					<g:form action="searchForm" url="[action:'displaySearchResults',controller:'search']">
 	        			<input type="search" name="query" value="${query}" placeholder="Suchen" />
-	        			<button class="fa fa-search"></button>
+	        			<button id="searchglass" class="fa fa-search"></button>
 					</g:form>
 				</div>
 				<ul>

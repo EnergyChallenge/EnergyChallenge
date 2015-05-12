@@ -8,21 +8,21 @@
   <g:if test="${flash.message}">
     <div class="message">${flash.message}</div>
   </g:if>
-  <g:form action="signUp">
+  <g:form action="signUp" params="[id: params.id]">
     <input type="hidden" name="targetUri" value="${targetUri}" />
     <table>
       <tbody>
         <tr>
           <td>Email:</td>
-          <td><input type="text" name="email" value="${email}" /></td>
+          <td><input type="text" name="email" value="${params.email}" /></td>
         </tr>
         <tr>
           <td>Vorname:</td>
-          <td><input type="text" name="firstName" value="${firstName}" /></td>
+          <td><input type="text" name="firstName" value="${params.firstName}" /></td>
         </tr>
         <tr>
           <td>Nachname:</td>
-          <td><input type="text" name="lastName" value="${lastName}" /></td>
+          <td><input type="text" name="lastName" value="${params.lastName}" /></td>
         </tr>
         <tr>
           <td>Passwort:</td>
@@ -34,7 +34,6 @@
         </tr>
         <tr>
           <td>Fakultät:</td>
-          <td>
           <td><select name="instituteId" >
           <g:each in="${institutes}" var="institute">
           <option value="${institute.getId()}">${institute.getName()}</option>
@@ -43,7 +42,14 @@
           </select></td>
         </tr>
         <tr>
-          <td />
+        	<td colspan="2">
+        		<textarea>
+        			Regeln folgen hier...
+        		</textarea>
+        	</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" name="agreeRules" value="1" /> Ich akzeptiere die Regeln...</td>
           <td><input type="submit" value="Registrieren" /></td>
         </tr>
       </tbody>
