@@ -123,10 +123,12 @@
 				</thead>
 				<tbody>
 					<g:each in="${teaser}" var="activity">
+						<g:if test="${activity != null}">
 						<tr>
 							<td>${activity.DESCRIPTION}</td>
 							<td>${activity.N} Mal ausgeführt</td>
 						</tr>
+						</g:if>
 					</g:each>
 				</tbody>
 			</table>
