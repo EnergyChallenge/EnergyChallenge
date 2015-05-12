@@ -195,6 +195,7 @@ header .inside #userinfo .actions .stats a i.fa {
 }
 #container nav ul li {
 	display: block;
+    width:101%;
 }
 #container nav ul li a {
 	display: block;
