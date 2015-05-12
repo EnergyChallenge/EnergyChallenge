@@ -55,7 +55,7 @@
               </tr>
               <tr>
                   <td />
-                  <td><input type="submit" value="Create" /></td>
+                  <td><input type="submit" value="Team erstellen" /></td>
               </tr>
           </table>
       </g:form>
