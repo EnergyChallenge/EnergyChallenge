@@ -23,29 +23,24 @@ class StartpageController {
     
 		
 		//Check if EnergyChallenge should be available
-		
-		DateTime startTime = new DateTime(2015, 06, 01, 0, 0, 0, 0);
-		DateTime endTime = new DateTime(2015, 07, 01, 0, 0, 0, 0);
-		DateTime startRegTime = new DateTime(2015, 05, 18, 0, 0, 0, 0);
-		
 		def countdown = null;
 		def showCountdown = false;
 		def challengeIsOver = false;
 		def enableLogin = false;
 		
-		def enableReg = startRegTime.isBeforeNow() && endTime.isAfterNow();
+		def enableReg = ENERGYCHALLENGE_REG_START_TIME.isBeforeNow() && ENERGYCHALLENGE_END_TIME.isAfterNow();
 		
-		if (startTime.isAfterNow()) {
+		if (ENERGYCHALLENGE_START_TIME.isAfterNow()) {
 			showCountdown = true;
 			
-			Period diff = new Period(DateTime.now(), startTime);
+			Period diff = new Period(DateTime.now(), ENERGYCHALLENGE_START_TIME);
 			
 			countdown = [seconds: diff.getSeconds(),
 						minutes : diff.getMinutes(),
 						hours: diff.getHours(),
 						days : diff.toStandardDays().getDays(),
 						dataSeconds: diff.toStandardSeconds().getSeconds()]
-		} else if (endTime.isBeforeNow()) {
+		} else if (ENERGYCHALLENGE_END_TIME.isBeforeNow()) {
 			challengeIsOver = true;
 		} else {
 			enableLogin = true;

@@ -83,30 +83,35 @@ class AuthController {
         def user = User.findByEmail(params.email)
         if(user){
             flash.message = "Diese E-Mail-Adresse wird bereits verwendet."
-            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
             forward (action: "register", params: m)
 
         }else if(params.firstName.length() > 25){
             flash.message = "Vornamen dürfen nicht länger als 25 Zeichen sein."
-            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
             forward (action: "register", params: m)
 
         }else if(params.lastName.length() > 25){
             flash.message = "Nachnamen dürfen nicht länger als 25 Zeichen."
-            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
             forward (action: "register", params: m)
 
         }else if(params.password != params.password2){
             flash.message = "Die eingegebenen Passwörter stimmen nicht überein."
-            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
             forward (action: "register", params: m)
 
         }else if(params.password.length() == 0 || params.password2.length() == 0){
             flash.message = "Bitte geben Sie ein Passwort ein."
-            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
             forward (action: "register", params: m)
 
-        }else{
+        } else if(params.agreeRules != "1"){
+            flash.message = "Bitte akzeptieren Sie das Regelwerk."
+            def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
+            forward (action: "register", params: m)
+
+        } else{
             //Create a new user and login
             try {
                 AuthService.register(params.email, params.firstName, params.lastName, params.password as String, params.password2 as String, params.instituteId as long)

@@ -1,3 +1,5 @@
+import org.joda.time.DateTime
+
 grails.app.context = "/energy-challenge" // this is the current path defined in the university
 // locations to search for config files that get merged into the main config;
 // config files can be ConfigSlurper scripts, Java properties files, or classes
@@ -106,6 +108,15 @@ grails.hibernate.cache.queries = false
 grails.hibernate.pass.readonly = false
 // configure passing read-only to OSIV session by default, requires "singleSession = false" OSIV mode
 grails.hibernate.osiv.readonly = false
+
+
+//GLOBALS
+//Could be placed for the specific environments
+DateTime ENERGYCHALLENGE_START_TIME = new DateTime(2015, 06, 01, 0, 0, 0, 0);
+DateTime ENERGYCHALLENGE_END_TIME = new DateTime(2015, 07, 01, 0, 0, 0, 0);
+DateTime ENERGYCHALLENGE_REG_START_TIME = new DateTime(2015, 05, 18, 0, 0, 0, 0);
+
+
 
 environments {
     development {
