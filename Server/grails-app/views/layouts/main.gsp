@@ -59,7 +59,7 @@
 				<div id="search">
 					<g:form action="searchForm" url="[action:'displaySearchResults',controller:'search']">
 	        			<input type="search" name="query" value="${query}" placeholder="Suchen" />
-	        			<button class="fa fa-search"></button>
+	        			<button id="searchglass" class="fa fa-search"></button>
 					</g:form>
 				</div>
 				<ul>

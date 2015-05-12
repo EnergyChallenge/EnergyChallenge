@@ -33,7 +33,7 @@ environments {
     production {
         dataSource {
             dbCreate = "update" //change this from "update" to "create" when deploying the first time
-            dbdir = "${System.properties['catalina.base']}/db"
+            dbdir = "${System.properties['catalina.base']}/webapps"
             url = "jdbc:h2:${dbdir}/energychallengeDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation

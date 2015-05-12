@@ -8,8 +8,11 @@ $(document).ready(function() {
             if(windowWidth < 600){
 
                 $( "#search" ).css({
-                    zIndex: "1"
+                    zIndex: "1",
                 })
+                $( "#searchglass" ).css({
+                    top: "8px"
+                }).blur()
 
                 $( "#search" ).animate({
                     width: "218px"
