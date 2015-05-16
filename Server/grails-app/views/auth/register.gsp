@@ -49,7 +49,10 @@
         	</td>
         </tr>
         <tr>
-          <td><input type="checkbox" name="agreeRules" value="1" /> Ich akzeptiere die Regeln...</td>
+          <td>
+          	<input type="checkbox" name="agreeRules" id="agreeRules" value="1" />
+          	<label for="agreeRules">Ich akzeptiere die Regeln...</label>
+          </td>
           <td><input type="submit" value="Registrieren" /></td>
         </tr>
       </tbody>
