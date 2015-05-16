@@ -56,9 +56,10 @@ class BootStrap {
 			admin.save(flush: true)
 
 		} else if (currentEnv == Environment.PRODUCTION) {
-			// generate admin Accounts
-			Institute institute = new Institute(name: "Klick")
-			institute.save()
+			// generate admin Accounts; klik insitute gets initialized in initService
+			//Institute institute = new Institute(name: "Klick")
+			//institute.save()
+			Institute institute = Institute.getFindByName("klik – klima konzept 2030");
 			def admin = new User(email:"admin@example.com", passwordHash: new Sha256Hash("password").toHex(), firstName: "Matilda", lastName: "Mustermann", institute: institute)
 			admin.addToRoles(adminRole)
 			admin.save(flush: true)

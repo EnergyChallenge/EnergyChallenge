@@ -137,8 +137,11 @@ class InitService {
 		]
 	
 	// CAU Institute
+	// Stand: 15.05.
 	static def INSTITUTES = [
+		
 		// Rechtswissenschaftliche Fakultät
+		"Rechtswissenschaftliche Fakultät",
 		"Hermann Kantorowicz-Institut für juristische Grundlagenforschung",
 		"Walther-Schücking-Institut für Internationales Recht",
 		"Institut für Kriminalwissenschaften",
@@ -147,7 +150,9 @@ class InitService {
 		"Institut für Europäisches und Internationales Privat- und Verfahrensrecht",
 		"Institut für Sozialrecht und Gesundheitsrecht",
 		"Institut für öffentliches Wirtschaftsrecht",
+
 		// Mathematisch-Naturwissenschaftliche Fakultät
+		"Mathematisch- Naturwissenschaftliche Fakultät",
 		"Leibniz-Institut für die Pädagogik der Naturwissenschaften und Mathematik (IPN)",
 		"Mathematisches Seminar",
 		"Institut für Experimentelle und Angewandte Physik (IEAP)",
@@ -165,14 +170,16 @@ class InitService {
 		"Institut für Ur- und Frühgeschichte",
 		"Institut für Geowissenschaften",
 		"GEOMAR Helmholtz-Zentrum für Ozeanforschung Kiel",
-		"Der Botanische Garten (Museum)",
-		"Das Zoologische Museum",
+		"Botanischer Garten",
+		"Zoologisches Museum",
 		"Geologischen und Mineralogischen Museum",
 		"Leibniz-Labor für Altersbestimmung und Isotopenforschung",
 		"Zentrum für Biochemie und Molekularbiologie (BiMo)",
 		"Zentrum für Molekulare Biowissenschaften (ZMB)",
 		"Forschungs- und Technologiezentrum Westküste (FTZ)",
+
 		// Agrar- und Ernährungswissenschaftliche Fakultät
+		"Agrar- und Ernährungswissenschaftliche Fakultät",
 		"Institut für Pflanzenernährung und Bodenkunde",
 		"Institut für Pflanzenbau und Pflanzenzüchtung",
 		"Institut für Phytopathologie",
@@ -183,7 +190,9 @@ class InitService {
 		"Institut für Humanernährung und Lebensmittelkunde",
 		"Institut für Ernährungswirtschaft und Verbrauchslehre",
 		"Institut für Natur- und Ressourcenschutz",
+
 		// Philosophische Fakultät
+		"Philosophische Fakultät",
 		"Institut für Pädagogik",
 		"Philosophisches Seminar",
 		"Institut für Psychologie",
@@ -209,7 +218,9 @@ class InitService {
 		"Chinazentrum",
 		"Zentrum für Rechtspsychologie, Kriminalwissenschaften und forensische Psychopathologie",
 		"Gustav-Radbruch-Netzwerk für Philosophie und Ethik der Umwelt",
+
 		// Theologische Fakultät
+		"Theologische Fakultät",
 		"Institut für Alttestamentliche Wissenschaft und Biblische Archäologie",
 		"Institut für Neutestamentliche Wissenschaft und Judaistik",
 		"Institut für Kirchengeschichte",
@@ -219,7 +230,9 @@ class InitService {
 		"Schleiermacher-Forschungsstelle",
 		"KiBiDaNO",
 		"Universitätskirche",
+
 		// Medizinische Fakultät
+		"Medizinische Fakultät",
 		"Anatomisches Institut",
 		"Biochemisches Institut",
 		"Physiologisches Institut",
@@ -240,7 +253,9 @@ class InitService {
 		"Institut für Rechtsmedizin",
 		"Institut für Sexualmedizin und forensische Psychiatrie und Psychotherapie",
 		"Institut für Toxikologie und Pharmakologie für Naturwissenschaftler",
+
 		// Wirtschats- und Sozialwissenschaftliche Fakultät
+		"Wirtschafts- und Sozialwissenschaftliche Fakultät",
 		"Institut für Betriebswirtschaftslehre",
 		"Institut für Volkswirtschaftslehre",
 		"Institut für Statistik und Ökonometrie",
@@ -250,11 +265,25 @@ class InitService {
 		"Institut für Sozialwissenschaften",
 		"Institut für Weltwirtschaft",
 		"Deutsche Zentralbibliothek für Wirtschaftswissenschaften",
+
 		// Technische Fakultät
+		"Technische Fakultät",
 		"Institut für Elektrotechnik und Informationstechnik",
 		"Institut für Informatik",
 		"Institut für Materialwissenschaft",
-		"Andere"
+
+		// Andere
+		"Forschungs- und Technologiezentrum Westküste",
+		"Graduiertenzentrum",
+		"Interdisziplinäres Zentrum Multimedia",
+		"Rechenzentrum",
+		"Sportzentrum",
+		"Universitätsbibliothek",
+		"klik – klima konzept 2030",
+
+		// Kategorielose
+		"Externe Einrichtungen",
+		"Andere Einrichtungen"
 	]
 	
 	static void initKlikActivities() {

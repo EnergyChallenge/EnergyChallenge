@@ -82,7 +82,13 @@ class AuthController {
 		if (params.id != "27032014" && (ENERGYCHALLENGE_REG_START_TIME.isAfterNow() || ENERGYCHALLENGE_END_TIME.isBeforeNow())) {
 			response.sendError(404)
 		}
-		[institutes: Institute.findAll()]		
+
+		// alphabetically sort institutes
+		def c = Institute.createCriteria();
+		def institutes = c.list {
+			order("name", "asc")
+		}
+		[institutes: institutes]		
 	}
 	def signUp = {
 		//Check if the parameters are valid for user creation
