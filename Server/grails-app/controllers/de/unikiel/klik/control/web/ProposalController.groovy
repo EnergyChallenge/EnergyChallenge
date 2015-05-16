@@ -52,15 +52,6 @@ class ProposalController {
 
 			if(params.offset != null) offset = Integer.parseInt(params.offset);
 			if(params.max != null) max = Integer.parseInt(params.max);
-
-			// criteria -> would work, if comments would still have a property proposal
-			/*
-			def c = Comment.createCriteria()
-			def comments = c.list(max: max, offset: offset) {
-				eq("proposal", params.id)
-				order("dateCreated", "desc")
-			}
-			*/
 			
 			Proposal proposal = Proposal.get(params.id)
 			def comments = proposal.comments.sort {it.dateCreated};
@@ -74,23 +65,21 @@ class ProposalController {
 					break;	
 				}
 			}
-
 			
-			//Auskommentiert von Sören
 			// paginate
 			// keep index of last element within the bounds of the list
-			/*
 			int start = offset
 			int end = offset + (max - 1) < (comments.size()-1) ? (offset + max - 1) : (comments.size() - 1);
-			*/
-				
+			int totalSize = comments.size()
+			if(comments.size() > 0) {
+				comments = comments[start..end]
+			}
 			
-			//return [proposal: proposal, comments: comments[start..end], ownComment: ownComment, id: params.id, count: comments.size()]
-			
-			
-			
-			return [proposal: proposal, comments: comments, ownComment: ownComment, id: params.id]
-			
+			return [proposal: proposal,
+				comments: comments,
+				ownComment: ownComment,
+				id: params.id,
+				count: totalSize]
 			
 		} else {
 			redirect (action: "index")

@@ -32,6 +32,7 @@
 		</div>
 		<div class="clear"></div>
 	</g:form>
+	<g:if test="${comments.size() > 0}">
 	<table class="list">
 		<thead>
 			<tr>
@@ -63,11 +64,14 @@
 			</g:each>
 		</tbody>
 	</table>
-	<%--
-		Auskommentiert von Sören
-		<div class="paginate">
-			<g:paginate controller="proposal" action="view" total="${count}" max="50" id="${id}" />
-		</div>
-	--%>
+	</g:if>
+	<g:else>
+		<p style="text-align:center">
+			<em>Zu diesem Vorschlag liegen noch keine Kommentare vor.<br /> Geben Sie den ersten Kommentar ab.</em>
+		</p>
+	</g:else>
+	<div class="paginate">
+		<g:paginate controller="proposal" action="view" total="${count}" max="50" id="${id}" />
+	</div>
 </body>
 </html>
