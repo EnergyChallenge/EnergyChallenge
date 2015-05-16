@@ -5,8 +5,6 @@ html {
 }
 
 body {
-    width: 100%;
-    min-width: 960px;
     padding: 0;
     margin: 0;
     background-color: #FFFFFF;
@@ -43,6 +41,17 @@ header h1 {
 
 #content {
 	padding: 40px 0;
+}
+
+#content .flasherror {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 60%;
+	margin: 0 20%;
+	text-align: center;
+	background-color: white;
+	border: 1px solid red;
 }
 
 #content #right {
@@ -138,13 +147,144 @@ footer {
 }
 
 
-#content .flasherror {
-	position: absolute;
-	left: 0;
-	top: 10px;
-	width: 60%;
-	margin: 0 20%;
-	text-align: center;
-	background-color: white;
-	border: 1px solid red;
+@media screen and (max-width: 960px) {
+	#wrapper {
+		width: 100%;
+	}
+	header {
+		background-size: 780px auto;
+		height: 200px;
+	}
+	header #logo img {
+	    padding: 40px 0 0 10px;
+	    width: 160px;
+	    height: auto;
+	}
+	header h1 {
+		font-size: 2.5em;
+	}
+	#content {
+    	padding: 20px 10px;
+	}
+	footer {
+    	background-position: 5% top, 60% center, right bottom;
+    	padding: 150px 200px 10px 20px;
+	}
 }
+
+@media screen and (max-width: 900px) {
+	header {
+		background-size: 700px auto;
+	}
+}
+@media screen and (max-width: 820px) {
+	header {
+		background-size: 600px auto;
+		height: 160px;
+	}
+	header #logo img {
+		padding-top: 30px;
+	}
+	header h1 {
+		padding: 20px 0;
+	}
+}
+@media screen and (max-width: 760px) {
+	header h1 {
+		margin-left: 200px;
+	}
+}
+@media screen and (max-width: 720px) {
+	header {
+		background-size: 560px auto;
+	}
+}
+@media screen and (max-width: 680px) {
+	header {
+		background-size: 500px auto;
+		height: 140px;
+	}
+	header h1 {
+		font-size: 2em;
+	}
+	header #logo img {
+		padding-top: 10px;
+	}
+	footer {
+    	background-size: 250px auto, 180px auto, auto auto;
+    	padding: 100px 200px 10px 20px;
+	}
+}
+@media screen and (max-width: 640px) {
+	header {
+		background-size: 400px 120px;
+	}
+	header h1 {
+		text-align: right;
+		padding-right: 50px;
+		margin-left: 0;
+	}
+	#content #right {
+		margin: 0 auto;
+		float: none;
+	}
+	#content #left {
+		margin-right: 0;
+	}
+}
+@media screen and (max-width: 560px) {
+	header {
+		background-size: 350px 120px;
+	}
+	header h1 {
+		font-size: 1.5em;
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+	footer {
+		background-image: url("footer_left.png"), url("footer_right.png");
+		background-position: 10% top, right bottom;
+	}
+}
+@media screen and (max-width: 500px) {
+	header {
+		background-size: 300px 120px;
+	}
+	header h1 {
+		padding-right: 40px;
+	}
+}
+@media screen and (max-width: 460px) {
+	header {
+		background-size: 250px 120px;
+	}
+	header #logo img {
+		width: 140px;
+	}
+	header h1 {
+		font-size: 1.25em;
+		padding-right: 30px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+	footer {
+		background-position: left top, right bottom;
+		padding: 80px 200px 10px 20px;
+		height: 40px;
+	}
+}
+@media screen and (max-width: 400px) {
+	header {
+		background-size: 190px 120px;
+	}
+	header h1 {
+		margin-left: 160px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+		padding-right: 40px;
+	}
+	footer {
+		height: 60px;
+	}
+}
+
