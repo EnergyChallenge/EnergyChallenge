@@ -140,9 +140,33 @@ class InitService {
 	// CAU Institute
 	// Stand: 15.05.
 	static def INSTITUTES = [
-		
-		// Rechtswissenschaftliche Fakultät
+
+		"Agrar- und Ernähungswissenschaftliche Fakultät",
+		"Mathematisch- Naturwissenschaftliche Fakultät",
+		"Medizinische Fakultät",
+		"Philosophische Fakultät",
 		"Rechtswissenschaftliche Fakultät",
+		"Technische Fakultät",
+		"Theologische Fakultät",
+		"Wirtschafts- und Sozialwissenschaftliche Fakultät",
+
+		// angeschlossene Institute
+		"GEOMAR",
+		"IPN",
+
+		// administratorische Bereiche
+		"andere Einrichtungen",
+		"Botanischer Garten",
+		"Forschungs- und Technologiezentrum Westküste",
+		"Graduiertenzentrum",
+		"Interdisziplinäres Zentrum Multimedia",
+		"Rechenzentrum",
+		"Sportzentrum",
+		"Universitätsbibliothek",
+		"Externe Einrichtungen"
+
+		/* OLD
+		// Rechtswissenschaftliche Fakultät
 		"Hermann Kantorowicz-Institut für juristische Grundlagenforschung",
 		"Walther-Schücking-Institut für Internationales Recht",
 		"Institut für Kriminalwissenschaften",
@@ -153,7 +177,6 @@ class InitService {
 		"Institut für öffentliches Wirtschaftsrecht",
 
 		// Mathematisch-Naturwissenschaftliche Fakultät
-		"Mathematisch- Naturwissenschaftliche Fakultät",
 		"Leibniz-Institut für die Pädagogik der Naturwissenschaften und Mathematik (IPN)",
 		"Mathematisches Seminar",
 		"Institut für Experimentelle und Angewandte Physik (IEAP)",
@@ -180,7 +203,6 @@ class InitService {
 		"Forschungs- und Technologiezentrum Westküste (FTZ)",
 
 		// Agrar- und Ernährungswissenschaftliche Fakultät
-		"Agrar- und Ernährungswissenschaftliche Fakultät",
 		"Institut für Pflanzenernährung und Bodenkunde",
 		"Institut für Pflanzenbau und Pflanzenzüchtung",
 		"Institut für Phytopathologie",
@@ -193,7 +215,6 @@ class InitService {
 		"Institut für Natur- und Ressourcenschutz",
 
 		// Philosophische Fakultät
-		"Philosophische Fakultät",
 		"Institut für Pädagogik",
 		"Philosophisches Seminar",
 		"Institut für Psychologie",
@@ -221,7 +242,6 @@ class InitService {
 		"Gustav-Radbruch-Netzwerk für Philosophie und Ethik der Umwelt",
 
 		// Theologische Fakultät
-		"Theologische Fakultät",
 		"Institut für Alttestamentliche Wissenschaft und Biblische Archäologie",
 		"Institut für Neutestamentliche Wissenschaft und Judaistik",
 		"Institut für Kirchengeschichte",
@@ -233,7 +253,6 @@ class InitService {
 		"Universitätskirche",
 
 		// Medizinische Fakultät
-		"Medizinische Fakultät",
 		"Anatomisches Institut",
 		"Biochemisches Institut",
 		"Physiologisches Institut",
@@ -256,7 +275,6 @@ class InitService {
 		"Institut für Toxikologie und Pharmakologie für Naturwissenschaftler",
 
 		// Wirtschats- und Sozialwissenschaftliche Fakultät
-		"Wirtschafts- und Sozialwissenschaftliche Fakultät",
 		"Institut für Betriebswirtschaftslehre",
 		"Institut für Volkswirtschaftslehre",
 		"Institut für Statistik und Ökonometrie",
@@ -268,23 +286,10 @@ class InitService {
 		"Deutsche Zentralbibliothek für Wirtschaftswissenschaften",
 
 		// Technische Fakultät
-		"Technische Fakultät",
 		"Institut für Elektrotechnik und Informationstechnik",
 		"Institut für Informatik",
 		"Institut für Materialwissenschaft",
-
-		// Andere
-		"Forschungs- und Technologiezentrum Westküste",
-		"Graduiertenzentrum",
-		"Interdisziplinäres Zentrum Multimedia",
-		"Rechenzentrum",
-		"Sportzentrum",
-		"Universitätsbibliothek",
-		"klik – klima konzept 2030",
-
-		// Kategorielose
-		"Externe Einrichtungen",
-		"Andere Einrichtungen"
+		*/
 	]
 		
 	static void initKlikActivities() {
@@ -318,7 +323,7 @@ class InitService {
 	}
 
 	static void initKlikAdmins() {
-		String instituteName = "klik – klima konzept 2030"
+		String instituteName = "andere Einrichtungen"
 
 		// create klik institute if it doesn't exist yet
 		if(Institute.findByName(instituteName) == null) {
@@ -334,8 +339,13 @@ class InitService {
 		
 		Role adminRole = Role.findByName("admin");
 		Institute institute = Institute.findByName(instituteName);
-		def admin = new User(email:"admin@example.com", passwordHash: new Sha256Hash("glimmlampe").toHex(), firstName: "Matilda", lastName: "Mustermann", institute: institute)
-		admin.addToRoles(adminRole)
-		admin.save(flush: true)
+		
+		def nora = new User(email:"nnording@uv.uni-kiel.de", passwordHash: new Sha256Hash("glimmlampe").toHex(), firstName: "Nora", lastName: "Nording", institute: institute)
+		nora.addToRoles(adminRole)
+		nora.save(flush: true)
+
+		def sebastian = new User(email:"sstarzynski@uv.uni-kiel.de", passwordHash: new Sha256Hash("glimmlampe").toHex(), firstName: "Sebastian", lastName: "Starzynski", institute: institute)
+		sebastian.addToRoles(adminRole)
+		sebastian.save(flush: true)
 	}
 }
