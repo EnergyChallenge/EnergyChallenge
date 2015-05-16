@@ -56,7 +56,7 @@ header h1 {
 
 #content #center {
 	margin: 0 auto;
-	width: 540px;
+	max-width: 540px;
 }
 
 #content #right {
