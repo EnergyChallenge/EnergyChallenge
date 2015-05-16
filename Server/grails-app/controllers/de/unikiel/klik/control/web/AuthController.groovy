@@ -25,9 +25,9 @@ class AuthController {
     def index = { redirect(action: "login", params: params) }
 	
 	
-	DateTime ENERGYCHALLENGE_START_TIME = new DateTime(2015, 05, 01, 0, 0, 0, 0);
-	DateTime ENERGYCHALLENGE_END_TIME = new DateTime(2015, 07, 01, 0, 0, 0, 0);
-	DateTime ENERGYCHALLENGE_REG_START_TIME = new DateTime(2015, 05, 18, 0, 0, 0, 0);
+	DateTime ENERGYCHALLENGE_START_TIME = new DateTime(2015, 06, 01, 0, 0, 0, 0); //1.6.
+	DateTime ENERGYCHALLENGE_END_TIME = new DateTime(2015, 07, 01, 0, 0, 0, 0); //1.7.
+	DateTime ENERGYCHALLENGE_REG_START_TIME = new DateTime(2015, 05, 18, 0, 0, 0, 0); //18.5.
 
     def login = {
 		if (params.id != "27032014" && (ENERGYCHALLENGE_START_TIME.isAfterNow() || ENERGYCHALLENGE_END_TIME.isBeforeNow())) {
@@ -96,8 +96,8 @@ class AuthController {
         if(user){
             flash.message = "Diese E-Mail-Adresse wird bereits verwendet."
             def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
-            forward (action: "register", params: m)
-
+           	forward (action: "register", params: m)
+			   
         }else if(params.firstName.length() > 25){
             flash.message = "Vornamen dürfen nicht länger als 25 Zeichen sein."
             def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId, id: params.id ]
@@ -127,7 +127,12 @@ class AuthController {
             //Create a new user and login
             try {
                 AuthService.register(params.email, params.firstName, params.lastName, params.password as String, params.password2 as String, params.instituteId as long)
-                redirect (controller: "landing", action: "index")
+				if (params.id != "27032014" && (ENERGYCHALLENGE_START_TIME.isAfterNow() || ENERGYCHALLENGE_END_TIME.isBeforeNow())) {
+					redirect (controller: "startpage", action: "index")
+				} else {
+					redirect (controller: "landing", action: "index")
+				}
+				
             }
             catch (AuthenticationException e){
                 // Authentication failed, so display the appropriate message
