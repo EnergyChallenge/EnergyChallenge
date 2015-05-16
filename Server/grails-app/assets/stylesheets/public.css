@@ -12,48 +12,46 @@ body {
     background-color: #FFFFFF;
 }
 
-header {
-	height: 200px;
-	background-color: #FFFFFF;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    color: #FFFFFF;
-}
-header .inside {
+#wrapper {
 	width: 960px;
-	margin: 0px auto;
+	margin: 0 auto;
 }
-header .logo {
+
+header {
+	height: 250px;
+    background: url("header.png") right top no-repeat transparent;
+}
+
+header #logo {
 	display: block;
 	float: left;
 }
-header .logo img {
+header #logo img {
 	display: block;
-	height: 160px;
-	width: auto;
-	padding: 20px 10px;
+    height: 200px;
+    padding: 40px 0 0;
+    width: auto;
 }
 header h1 {
-	font-size: 3em;
-    margin-left: 200px;
-    padding: 120px 0;
+    color: #000000;
+    font-size: 3em;
+    font-weight: bold;
+    line-height: 1.3em;
+    margin: 0 0 0 250px;
+    padding: 30px 0;
 }
 
-#container {
-	background-color: #FFFFFF;
-}
-#container .inside {
-	width: 920px;
-	margin: 0 auto;
-	padding: 20px 40px;
+#content {
+	padding: 40px 0;
 }
 
-#right {
+#content #right {
 	float: right;
 	width: 320px;
 	margin-top: 30px;
 }
 
-#login {
+#content #login {
 	background-color: #f5f5f5;
     border: 1px solid #e5e5e5;
     border-radius: 5px;
@@ -61,29 +59,29 @@ header h1 {
     width: 298px;
     margin: 10px 0;
 }
-#login table {
+#content #login table {
 	width: 100%;
 	padding-bottom: 5px;
 }
-#login table td.left {
+#content #login table td.left {
 	width: 35%;
 }
-#login table td.right {
+#content #login table td.right {
 	width: 65%;
 }
-#login table td.right input {
+#content #login table td.right input {
 	width: 100%;
 	margin-bottom: 5px;
 }
-#login table td.both {
+#content #login table td.both {
 	text-align: right;
 }
-#login #signInForm input[type="submit"] {
+#content #login #signInForm input[type="submit"] {
 	float: right;
 	margin-right: 5px;
 }
 
-#register input[type="submit"] {
+#content #register input[type="submit"] {
 	font-size: 1.5em;
     font-weight: bold;
     margin: 10px 0;
@@ -91,7 +89,7 @@ header h1 {
     width: 320px;
 }
 
-#countdown {
+#content #countdown {
 	background-color: #f5f5f5;
     border: 1px solid #e5e5e5;
     border-radius: 5px;
@@ -100,18 +98,18 @@ header h1 {
     margin: 10px 0;
     text-align: center;
 }
-#countdown p {
+#content #countdown p {
 	font-size: 1.2em;
     font-weight: bold;
     color: #333;
     text-align: center;
 }
-#countdown .entity {
+#content #countdown .entity {
 	display: inline-block;
 	margin: 5px;
     width: 60px;
 }
-#countdown .entity .value {
+#content #countdown .entity .value {
 	background-color: #ffffff;
 	color: #333;
     border: 1px solid #eee;
@@ -124,11 +122,12 @@ header h1 {
     text-align: center;
 }
 
-#left {
+#content #left {
 	margin-right: 360px;
 }
 
 footer {
+	clear: both;
     padding: 120px 60px 10px;
     height: 20px;
     background-image: url("footer_right.png"); /*Old Browsers*/
@@ -138,11 +137,8 @@ footer {
     background-repeat: no-repeat;
 }
 
-#container #content {
-	position: relative;
-}
 
-#container #content .flasherror {
+#content .flasherror {
 	position: absolute;
 	left: 0;
 	top: 10px;
