@@ -8,12 +8,13 @@
   <g:if test="${flash.message}">
     <div class="message">${flash.message}</div>
   </g:if>
+  <h1>Jetzt registrieren!</h1>
   <g:form action="signUp" params="[id: params.id]">
     <input type="hidden" name="targetUri" value="${targetUri}" />
     <table>
       <tbody>
         <tr>
-          <td>Email:</td>
+          <td>E-Mail:</td>
           <td><input type="text" name="email" value="${params.email}" /></td>
         </tr>
         <tr>
@@ -33,7 +34,7 @@
           <td><input type="password" name="password2" value="" /></td>
         </tr>
         <tr>
-          <td>Fakultät:</td>
+          <td>Fakultät/Institut:</td>
           <td><select name="instituteId" >
           <g:each in="${institutes}" var="institute">
           <option value="${institute.getId()}">${institute.getName()}</option>
