@@ -8,10 +8,6 @@
 <body>
 
 <h1>E-Mail versenden</h1>
-
-<g:if test="${flash.message}">
-    <div class="message">${flash.message}</div>
-</g:if>
 <g:form action="emailMessage">
     <input type="hidden" name="targetUri" value="${targetUri}" />
     <table style="width: 100%;">
@@ -28,9 +24,7 @@
             	Nachricht:
             </td>
             <td>
-            	<textarea name="message" style="width: 100%; height: 300px;">
-            		${message}
-            	</textarea>
+            	<textarea name="message" style="width: 100%; height: 300px;">${message}</textarea>
             </td>
         </tr>
         <tr>

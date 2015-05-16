@@ -9,6 +9,8 @@ import de.unikiel.klik.service.ActivityService
 import de.unikiel.klik.persistence.Activity
 import de.unikiel.klik.persistence.User
 
+import org.hibernate.HibernateException
+
 class ActivityController {
 	
 	def ActivityService
@@ -25,11 +27,16 @@ class ActivityController {
 	
 	//executes an activity, if execution is possible
 	def completeActivity() {
-		if(ActivityService.completeActivity(params.id as long, SecurityUtils.subject)) {
-			flash.message = "Aktivität erledigt!"
-			redirect(controller: params.origin, action: "index")
-		} else {
-			flash.error = "Aktivität nicht ausführbar!"
+		try{
+			if(ActivityService.completeActivity(params.id as long, SecurityUtils.subject)) {
+				flash.message = "Aktivität erledigt!"
+				redirect(controller: params.origin, action: "index")
+			} else {
+				flash.error = "Aktivität nicht ausführbar!"
+				redirect(controller: params.origin, action: "index")
+			}
+		} catch(Exception e) {
+			flash.error = "Bitte nicht mehrfach auf Aktivität erledigen klicken! Es wurden nicht alle Aktivitäten ausgeführt"
 			redirect(controller: params.origin, action: "index")
 		}
 	}

@@ -16,6 +16,7 @@ import org.joda.time.format.PeriodFormatterBuilder
 import de.unikiel.klik.persistence.CompletedActivity
 import de.unikiel.klik.persistence.User
 import de.unikiel.klik.persistence.Activity
+import org.hibernate.NonUniqueObjectException
 
 @Transactional
 class ActivityService {
@@ -24,7 +25,7 @@ class ActivityService {
 	def activity
 	def recentActivities
 	
-    def boolean completeActivity(long activityId, Subject subject) throws ValidationException {
+	def boolean completeActivity(long activityId, Subject subject) throws ValidationException {
 		currentUser = User.findByEmail(subject.getPrincipal())
 		activity = Activity.get(activityId)
 		if(isExecutable(activity, subject)) {
@@ -37,7 +38,7 @@ class ActivityService {
 		} else {
 			return false
 		}
-    }
+	}
 	
 	def boolean addToFavorites(long activityId, Subject subject) {
 		//identify the given user and activity

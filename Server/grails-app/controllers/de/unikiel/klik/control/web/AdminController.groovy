@@ -175,6 +175,7 @@ class AdminController {
 
         //Get the admin service to send a global email
         AdminService.sendGlobalEmail(params.subject as String, params.message as String)
+	flash.message ="Nachricht wurde verschickt"
         redirect(action: "message")
     }
 
