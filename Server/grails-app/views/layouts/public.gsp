@@ -38,7 +38,7 @@
 		<div id="wrapper">
 			<header>
 				<a id="logo">
-					<asset:image src="klik_logo.png" alt="klik logo" />
+					<asset:image src="klik_logo_public.png" alt="CAU klik - klima konzept 2030" />
 				</a>
 				<h1>Energy | Challenge</h1>
 			</header>
