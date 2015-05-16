@@ -51,7 +51,7 @@ header .inside .headerbackground {
 	position:absolute;
 	z-index:-1;
 }
-header .inside .headerbackground >img {
+header .inside .headerbackground > img {
 	width: 100%;
 	margin-top:-23px;
 }
@@ -60,7 +60,7 @@ header h1 {
 }
 header .inside #userinfo {
 	width: 300px;
-	padding: 30px 186px;
+	padding: 45px 140px;
     position: absolute;
     right: 0;
 }
