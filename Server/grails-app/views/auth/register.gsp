@@ -2,12 +2,12 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="layout" content="public" />
-  <title>Login</title>
 </head>
 <body>
   <g:if test="${flash.message}">
     <div class="message">${flash.message}</div>
   </g:if>
+  <div id="center">
   <h1>Jetzt registrieren!</h1>
   <g:form action="signUp" params="[id: params.id]">
     <input type="hidden" name="targetUri" value="${targetUri}" />
@@ -59,5 +59,6 @@
       </tbody>
     </table>
   </g:form>
+  </div>
 </body>
 </html>

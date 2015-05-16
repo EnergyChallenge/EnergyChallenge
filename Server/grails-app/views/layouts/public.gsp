@@ -37,7 +37,7 @@
 	<body class="${pageProperty(name: 'body.class')}">
 		<div id="wrapper">
 			<header>
-				<a id="logo">
+				<a id="logo" href="/">
 					<asset:image src="klik_logo_public.png" alt="CAU klik - klima konzept 2030" />
 				</a>
 				<h1>Energy | Challenge</h1>

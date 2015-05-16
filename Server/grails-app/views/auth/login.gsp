@@ -2,12 +2,12 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="layout" content="public" />
-  <title>Login</title>
 </head>
 <body>
   <g:if test="${flash.message}">
     <div class="message">${flash.message}</div>
   </g:if>
+  	<div id="center">
 		<%-- TODO: create an include of the login form --%>
 			  <div id="login" >
 				<g:form id="signInForm" name="signInForm" url="[action:'signIn',controller:'auth']">
@@ -59,5 +59,6 @@
 				</g:form>
 			</div>
 		<%-- TODO: create an include of the login form --%>
+	</div>
 </body>
 </html>

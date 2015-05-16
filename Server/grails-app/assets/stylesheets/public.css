@@ -54,6 +54,11 @@ header h1 {
 	border: 1px solid red;
 }
 
+#content #center {
+	margin: 0 auto;
+	width: 540px;
+}
+
 #content #right {
 	float: right;
 	width: 320px;
