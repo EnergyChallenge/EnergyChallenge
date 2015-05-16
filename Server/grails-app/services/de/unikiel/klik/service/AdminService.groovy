@@ -167,6 +167,7 @@ class AdminService {
         for (i = 0; i < allUsers.size; i++) {
             mailService.sendMail {
                 async true
+		from "admin@energy-challenge.uni-kiel.de"
                 to allUsers[i].email
                 subject messageSubject
                 body message

@@ -3,6 +3,7 @@ package de.unikiel.klik.service
 import grails.transaction.Transactional
 import de.unikiel.klik.persistence.*
 import java.util.Random
+import org.apache.shiro.crypto.hash.Sha256Hash
 
 @Transactional
 class InitService {
@@ -285,7 +286,7 @@ class InitService {
 		"Externe Einrichtungen",
 		"Andere Einrichtungen"
 	]
-	
+		
 	static void initKlikActivities() {
 		//println ACTIVITY_DESCRIPTIONS.size()
 		for(int i=0; i < ACTIVITY_DESCRIPTIONS.size(); i++) {
@@ -296,17 +297,17 @@ class InitService {
 	// initialize roles "user" and "admin" with corresponding permissions
 	static void initKlikRoles() {
 		// init user role
-		if(Role.findByName("user") == null) {
-			def user_role = new Role(name: "user")
-			user_role.addToPermissions("*:*")
-			user_role.save(flush: true)
+		if(Role.findByName("benutzer") == null) {
+			def userRole = new Role(name: "benutzer")
+			userRole.addToPermissions("*:*")
+			userRole.save(flush: true)
 		}
 		
 		// init admin role
 		if(Role.findByName("admin") == null) {
-			def admin_role = new Role(name: "admin")
-			admin_role.addToPermissions("*:*")
-			admin_role.save(flush: true)
+			def adminRole = new Role(name: "admin")
+			adminRole.addToPermissions("*:*")
+			adminRole.save(flush: true)
 		}
 	}
 	
@@ -315,15 +316,26 @@ class InitService {
 			new Institute(name: INSTITUTES[i]).save(flush: true)
 		}
 	}
-	
-	/*
-	static void initUsersWithCompletedActivities(){
-		def max = Activity.count()
-		
-		for(int i=1; i<=max; i++){
-			new User() // TODO
-			Activity.get(i)
+
+	static void initKlikAdmins() {
+		String instituteName = "klik – klima konzept 2030"
+
+		// create klik institute if it doesn't exist yet
+		if(Institute.findByName(instituteName) == null) {
+			new Institute(name: instituteName).save(flush: true)
 		}
+		
+		// create admin role if it doesn't exist yet
+		if(Role.findByName("admin") == null) {
+			def adminRole = new Role(name: "admin")
+			adminRole.addToPermissions("*:*")
+			adminRole.save(flush: true)
+		}
+		
+		Role adminRole = Role.findByName("admin");
+		Institute institute = Institute.findByName(instituteName);
+		def admin = new User(email:"admin@example.com", passwordHash: new Sha256Hash("glimmlampe").toHex(), firstName: "Matilda", lastName: "Mustermann", institute: institute)
+		admin.addToRoles(adminRole)
+		admin.save(flush: true)
 	}
-	*/
 }

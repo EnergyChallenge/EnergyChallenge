@@ -70,6 +70,21 @@ grails {
         // filteringCodecForContentType.'text/html' = 'html'
     }
 }
+
+//MailSetting
+grails {
+    mail {
+        host = "smtps.mail.uni-kiel.de"
+        port = 25
+        username = "suver041"
+        password = "smycys90"
+        props = ["mail.smtp.starttls.enable":"true",
+		 "mail.smtp.auth":"true",
+                 "mail.smtp.port":"25"]
+    }
+}
+
+/* OLD
 //MailSetting
 grails {
     mail {
@@ -83,6 +98,7 @@ grails {
                  "mail.smtp.socketFactory.fallback":"false"]
     }
 }
+*/
 
 grails.converters.encoding = "UTF-8"
 // scaffolding templates configuration
