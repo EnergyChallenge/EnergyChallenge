@@ -68,7 +68,9 @@
 				</g:each>
 			</tbody>
 		</table>
-		<g:paginate controller="proposal" action="index" total="${count}" max="50" />
+		<div class="paginate">
+			<g:paginate controller="proposal" action="index" total="${count}" max="${paginateMax}" />
+		</div
 	</p>
 </body>
 </html>

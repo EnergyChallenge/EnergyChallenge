@@ -53,7 +53,7 @@
 		</tbody>
 	</table>
 	<div class="paginate">
-		<g:paginate controller="ranking" action="${action}" total="${count}" max="50" />
+		<g:paginate controller="ranking" action="${action}" total="${count}" max="${paginateMax}" />
 	</div>
 </body>
 </html>

@@ -14,22 +14,21 @@ import org.h2.jdbc.JdbcSQLException
 
 class ProposalController {
 
+	// maximum number of results to display on one page
+	static int PAGINATE_COMMENTS_MAX = 30;
+	static int PAGINATE_PROPOSALS_MAX = 20;
+	
 	def shiroSecurityManager
 	def proposalService = new ProposalService()
 	def index() {
-		int offset = 0;
-		int max = 50;
-	
-		if(params.offset != null) offset = Integer.parseInt(params.offset);
-		if(params.max != null) max = Integer.parseInt(params.max);
+		int offset = params.offset == null ? 0 : Integer.parseInt(params.offset);
 
 		def c = Proposal.createCriteria()
-		def proposals = c.list(max: max, offset: offset) {
+		def proposals = c.list(max: PAGINATE_PROPOSALS_MAX, offset: offset) {
 			order("dateCreated", "desc")
 		}
 	
-		//def proposals = Proposal.findAll("from Proposal as p order by p.dateCreated", [max: max, offset: offset])
-		[proposals: proposals, count: proposals.totalCount]
+		[proposals: proposals, count: proposals.totalCount, paginateMax: PAGINATE_PROPOSALS_MAX]
 	}
 	/**
 	 * Adds Proposal
@@ -47,11 +46,7 @@ class ProposalController {
 	}
 	def view() {
 		if (params.id) {
-			int offset = 0;
-			int max = 50;
-
-			if(params.offset != null) offset = Integer.parseInt(params.offset);
-			if(params.max != null) max = Integer.parseInt(params.max);
+			int offset = params.offset == null ? 0 : Integer.parseInt(params.offset);
 			
 			Proposal proposal = Proposal.get(params.id)
 			def comments = proposal.comments.sort {it.dateCreated};
@@ -69,7 +64,7 @@ class ProposalController {
 			// paginate
 			// keep index of last element within the bounds of the list
 			int start = offset
-			int end = offset + (max - 1) < (comments.size()-1) ? (offset + max - 1) : (comments.size() - 1);
+			int end = offset + (PAGINATE_COMMENTS_MAX - 1) < (comments.size() - 1) ? (offset + PAGINATE_COMMENTS_MAX - 1) : (comments.size() - 1);
 			int totalSize = comments.size()
 			if(comments.size() > 0) {
 				comments = comments[start..end]
@@ -79,7 +74,8 @@ class ProposalController {
 				comments: comments,
 				ownComment: ownComment,
 				id: params.id,
-				count: totalSize]
+				count: totalSize,
+				paginateMax: PAGINATE_COMMENTS_MAX]
 			
 		} else {
 			redirect (action: "index")

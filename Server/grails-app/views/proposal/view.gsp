@@ -71,7 +71,7 @@
 		</p>
 	</g:else>
 	<div class="paginate">
-		<g:paginate controller="proposal" action="view" total="${count}" max="50" id="${id}" />
+		<g:paginate controller="proposal" action="view" total="${count}" max="${paginateMax}" id="${id}" />
 	</div>
 </body>
 </html>
