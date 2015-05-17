@@ -11,48 +11,83 @@ class InitService {
 	static def ACTIVITY_DESCRIPTIONS = [
 		"Eine neue Klik-Aktivität beisteuern", //0
 		//every hour
-		"Immer das Licht ausschalten bei Verlassen des Raumes", //1
-		"Immer den Monitor ausschalten bei Verlassen des Raumes", //2
-		"Rechner herunterfahren bei Terminen und längeren Pausen", //3
-		"Händewaschen mit kaltem Wasser", //4
-		"Wasserkocher nur mit der benötigten Menge Wasser füllen (z.B. eine Tasse)", //5
+		"Ich habe das Licht beim Verlassen des Raumes ausgeschaltet.", //1
+		//"Immer das Licht ausschalten bei Verlassen des Raumes", //1
+		"Ich habe den Monitor beim Verlassen des Raumes ausgeschaltet.", //2
+		//"Immer den Monitor ausschalten bei Verlassen des Raumes", //2
+		"Ich habe den Rechner bei einem Termin/ einer längeren Pause heruntergefahren.", //3
+		//"Rechner herunterfahren bei Terminen und längeren Pausen", //3
+		"Ich habe mir mit kaltem Wasser die Hände gewaschen" , //4
+		//"Händewaschen mit kaltem Wasser", //4
+		"Ich habe den Wasserkocher nur mit der tatsächlich benötigten Wassermenge befüllt.", //5
+		//"Wasserkocher nur mit der benötigten Menge Wasser füllen (z.B. eine Tasse)", //5
 		//every day
-		"Mit dem Fahrrad zur Uni fahren bis 3km", //6
-		"Mit dem Fahrrad zur Uni fahren bis 5km", //7
-		"Mit dem Fahrrad zur Uni fahren über 5km", //8
-		"Mobilität auf dem Campus zwischen den Sektoren zu Fuß oder mit Fahrrad", //9
-		"Fahrgemeinschaft mit dem eigenen Auto zur Uni anbieten", //10
-		"Fahrgemeinschaft zur Uni in Anspruch nehmen", //11
-		"Rechner herunterfahren bei Feierabend", //12
-		"Wenn möglich das Tageslicht statt elektrisches Licht nutzen", //13
-		"Schreibtischlampe statt Deckenbeleuchtung nutzen", //14
-		"Sparsam drucken (doppelseitig, s/w, mehrere Seiten auf einem Blatt)", //15
-		"Treppe statt Fahrstuhl nutzen pro Tag", //16
-		"Thermokannen zum Warmhalten von Tee und Kaffee nutzen", //17
-		"Herunterfahren von Abzugsanlagen in Laborgebäuden bei Nichtnutzung", //18
-		"Energetische Verbesserungsmaßnahme auf dem Campus melden (Fr. Steinwender -4990)", //19
+		"Ich bin bis zu 3km mit dem Fahrrad zur Uni gefahren", //6
+		//"Mit dem Fahrrad zur Uni fahren bis 3km", //6
+		"Ich bin bis zu 5km mit dem Fahrrad zur Uni gefahren", //7
+		//"Mit dem Fahrrad zur Uni fahren bis 5km", //7
+		"Ich bin über 5km mit dem Fahrrad zur Uni gefahren.", //8
+		//"Mit dem Fahrrad zur Uni fahren über 5km", //8
+		"Ich habe einen Weg zwischen den Universitätssektoren mit dem Fahrrad oder zu Fuß zurück gelegt", //9
+		//"Mobilität auf dem Campus zwischen den Sektoren zu Fuß oder mit Fahrrad", //9
+		"Ich biete eine genutzte Fahrgemeinschaft (mind. 1 Mitfahrer) zur Universität an.", //10
+		//"Fahrgemeinschaft mit dem eigenen Auto zur Uni anbieten", //10
+		"Ich nehme eine Fahrgemeinschaft, zur Universität, in Anspruch.", //11
+		//"Fahrgemeinschaft zur Uni in Anspruch nehmen", //11
+		"Ich habe den Rechner nach Feierabend herunter gefahren.", //12
+		//"Rechner herunterfahren bei Feierabend", //12
+		"Ich habe, wenn möglich, das Tageslicht anstatt elektrisches Licht genutzt.", //13
+		//"Wenn möglich das Tageslicht statt elektrisches Licht nutzen", //13
+		"Ich habe die Schreibtischlampe, statt der Deckenlampe genutzt.", //14
+		//"Schreibtischlampe statt Deckenbeleuchtung nutzen", //14
+		"Ich habe einmal sparsam gedruckt (doppelseitig, s/w, mehrere Seiten auf ein Blatt).", //15
+		//"Ich habe darauf verzichtet, allgemeine E-Mails auszudrucken.",
+		//"Sparsam drucken (doppelseitig, s/w, mehrere Seiten auf einem Blatt)", //15
+		//"Ich habe Treppen anstelle des Aufzuges genutzt für 1-2 Stockwerke.",
+		//"Ich habe Treppen anstelle des Aufzuges genutzt für 3-5 Stockwerke.",
+		"Ich habe Treppen anstelle des Aufzuges genutzt.", //16
+		//"Treppe statt Fahrstuhl nutzen pro Tag", //16
+		//"Thermokannen zum Warmhalten von Tee und Kaffee nutzen", //17 Punkte: 2, Kategorie: Mobilität
+		"Ich habe die Abzugsanlagen im Labor, bei Nichtnutzung, abgeschaltet.", //18
+		//"Herunterfahren von Abzugsanlagen in Laborgebäuden bei Nichtnutzung", //18
+		"Ich habe energetische Verbesserungsmaß nahmen auf dem Campus gemeldet. (bei Frau Steinwender, -4990)", //19
+		//"Energetische Verbesserungsmaßnahme auf dem Campus melden (Fr. Steinwender -4990)", //19
 		//every week
-		"Kühltruhen ausmisten und abschalten bei Bedarf", //20
-		"Nicht genutzte Kühlschränke ausschalten und melden (Fr. Steinwender -4990)", //21
+		"Ich habe die Kühltruhe ausgemistet und bei Bedarf abgeschaltet.", //20
+		//"Kühltruhen ausmisten und abschalten bei Bedarf", //20
+		"Ich habe einen nicht genutzten Kühlschrank ausgeschaltet und gemeldet. (bei Frau Steinwender, -4990)", //21
+		//"Nicht genutzte Kühlschränke ausschalten und melden (Fr. Steinwender -4990)", //21
 		//every month
-		"Energieberatungsangebot der CAU wahrnehmen (Fr. Steinwender -4990)", //22
-		"Kühlschränke auf den niedrigsten Wert stellen", //23
+		"Ich habe die Energieberatung der CAU wahrgenommen (bei Frau Steinwender, -4990)", //22
+		//"Energieberatungsangebot der CAU wahrnehmen (Fr. Steinwender -4990)", //22
+		"Ich habe den Kühlschrank auf die niedrigste Stufe gestellt", //23
+		//"Kühlschränke auf den niedrigsten Wert stellen", //23
 		//every half a year
-		"Lüftungsanlagen in Laborgebäuden optimal einstellen", //24
-		"Warmwasserboiler nur auf max. 60 Grad einstellen", //25
-		"Nutzung von Ventilatoren einschränken", //26
-		"Fahrrad für die Fahrt zur Uni einsatzbereit machen", //27
-		"Persönlichen CO2-Abdruck berechnen", //28
+		"Ich habe die Lüftungsanlagen in Laborgebäuden optimal eingestellt", //24
+		//"Lüftungsanlagen in Laborgebäuden optimal einstellen", //24
+		"Ich habe den Warmwasserboiler auf max. 60 Grad eingestellt." , //25
+		//"Warmwasserboiler nur auf max. 60 Grad einstellen", //25
+		"Ich habe die Nutzung von Ventilatoren eingeschränkt.", //26
+		//"Nutzung von Ventilatoren einschränken", //26
+		"Ich habe mein Fahrrad verkehrstauglich gemacht.", //27
+		//"Fahrrad für die Fahrt zur Uni einsatzbereit machen", //27
+		"Ich habe meinen persönlichen CO2- Abdruck berechnet", //28
+		//"Persönlichen CO2-Abdruck berechnen", //28
 		//every year
-		"Büroeinrichtung so anordnen, dass Heizkörper frei stehen und Tageslicht optimal genutzt werden kann", //29
-		"Steckerleisten im Büro für elektronische Geräte nutzen (erhältlich bei Fr. Steinwender unter -4990)", //30
-		"Umweltprämie zum Ersetzen veralteter elektronischer Geräte in Anspruch nehmen", //31
-		"Bildschirme durch effizientere ersetzen", //32
+		"Ich habe die Büroeinrichtung so angeordnet, dass Heizkörper frei stehen und dass das Tageslicht optimal genutzt wird.", //29
+		//"Büroeinrichtung so anordnen, dass Heizkörper frei stehen und Tageslicht optimal genutzt werden kann", //29
+		"Ich nutzte schaltbare Steckerleisten im Büro, für elektrische Geräte.", //30
+		//"Steckerleisten im Büro für elektronische Geräte nutzen (erhältlich bei Fr. Steinwender unter -4990)", //30
+		"Ich nehme die Umweltprämie zum Ersetzen veralteter elektronischer Geräte in Anspruch.", //31
+		//"Umweltprämie zum Ersetzen veralteter elektronischer Geräte in Anspruch nehmen", //31
+		"Ich habe meinen Bildschirm durch einen effizienteren ersetzt.", //32
+		//"Bildschirme durch effizientere ersetzen", //32
 		//every 3 years
-		"Anmeldung beim Campusrad" //33
+		"Ich habe mich beim Campusrad angemeldet." //33
+		//"Anmeldung beim Campusrad" //33
 	]
 	
-	static def ACTIVITY_POINTS = [2,1,1,2,2,2,2,3,5,2,3,4,3,2,2,1,2,2,5,3,5,4,5,3,5,3,2,2,3,4,3,5,4,3]
+	static def ACTIVITY_POINTS = [2,1,1,2,2,2,2,3,5,2,3,4,3,2,2,1,2,5,3,5,4,5,3,5,3,2,2,3,4,3,5,4,3]
 
 	/* Andere = 0
 	   Licht = 1
@@ -64,7 +99,7 @@ class InitService {
 	   Energie im Labor = 7
 	   Energie in der Küche = 8
 	*/
-	static def ACTIVITY_CATEGORIES = [0,1,6,6,2,2,3,3,3,3,3,3,6,1,1,4,3,2,7,5,8,5,5,8,7,8,7,3,5,6,6,5,6,3]
+	static def ACTIVITY_CATEGORIES = [0,1,6,6,2,2,3,3,3,3,3,3,6,1,1,4,2,7,5,8,5,5,8,7,8,7,3,5,6,6,5,6,3]
 	
 	static def long MIN_DURATION_IN_MS = 1L
 	static def long ONE_HOUR_IN_MS = 60L*60*1000
@@ -93,7 +128,7 @@ class InitService {
 		ONE_DAY_IN_MS, // 14.
 		ONE_DAY_IN_MS, // 15.
 		ONE_DAY_IN_MS, // 16.
-		ONE_DAY_IN_MS, // 17.
+		//ONE_DAY_IN_MS, // 17.
 		ONE_DAY_IN_MS, // 18.
 		ONE_DAY_IN_MS, // 19.
 		ONE_WEEK_IN_MS, // 20.
@@ -130,7 +165,7 @@ class InitService {
 		true, //14
 		true, //15
 		true, //16
-		true, //17
+		//true, //17
 		true, //18
 		true, //19
 		true, //20
