@@ -53,6 +53,18 @@ class InitService {
 	]
 	
 	static def ACTIVITY_POINTS = [2,1,1,2,2,2,2,3,5,2,3,4,3,2,2,1,2,2,5,3,5,4,5,3,5,3,2,2,3,4,3,5,4,3]
+
+	/* Andere = 0
+	   Licht = 1
+	   Wasser = 2
+	   Mobilität = 3
+	   Papier = 4
+	   Information = 5
+	   Energie im Büro = 6
+	   Energie im Labor = 7
+	   Energie in der Küche = 8
+	*/
+	static def ACTIVITY_CATEGORIES = [0,1,6,6,2,2,3,3,3,3,3,3,6,1,1,4,3,2,7,5,8,5,5,8,7,8,7,3,5,6,6,5,6,3]
 	
 	static def long MIN_DURATION_IN_MS = 1L
 	static def long ONE_HOUR_IN_MS = 60L*60*1000
@@ -295,7 +307,7 @@ class InitService {
 	static void initKlikActivities() {
 		//println ACTIVITY_DESCRIPTIONS.size()
 		for(int i=0; i < ACTIVITY_DESCRIPTIONS.size(); i++) {
-			new Activity(description: ACTIVITY_DESCRIPTIONS[i], points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i], visible: ACTIVITY_VISIBILITY[i]).save(flush: true, failOnError: true)
+		  new Activity(description: ACTIVITY_DESCRIPTIONS[i], category: ACTIVITY_CATEGORIES[i] ,points: ACTIVITY_POINTS[i], duration: (long) ACTIVITY_DURATIONS[i], visible: ACTIVITY_VISIBILITY[i]).save(flush: true, failOnError: true)
 		}
 	}
 	
