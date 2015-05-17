@@ -79,4 +79,8 @@ class StartpageController {
 									enableReg : enableReg,
 									countdown: countdown])
     }
+
+	def hints() {
+		render(view:"hints")
+	}
 }

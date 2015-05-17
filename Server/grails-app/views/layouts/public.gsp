@@ -56,6 +56,8 @@
 				<g:layoutBody />
 			</section>
 			<footer>
+				<a href="${createLink(controller: 'startpage', action: 'hints')}">Spieltipps</a>
+				 &bull;
 				<a href="http://www.uni-kiel.de/suchen/impressum.shtml">Impressum</a>
 				 &bull;
 				<a href="http://www.uni-kiel.de/suchen/kontakt.shtml">Kontakt</a>
