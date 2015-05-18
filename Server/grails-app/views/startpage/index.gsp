@@ -104,7 +104,7 @@
 				</div>
 			</g:elseif>
 			<g:elseif test="${challengeIsOver}">
-				Das war's! Challenge ist vorbei :(
+				<%-- Meldung, wenn der ganze Spaß vorbei ist --%>
 			</g:elseif>
 			<g:if test="${enableReg}">
 				<div id="register" >
@@ -114,6 +114,10 @@
 				</div>
 			</g:if>
 			<%-- TODO: create an include of the login form --%>
+			<div id="sponsor">
+				<h3>Mit Untersützung der:</h3>
+				<asset:image src="EKSH-logo.jpg" alt="EKSH" />
+			</div>
 		</div>
 		<div id="left">
 			<h1>Ideenpower für smarte Energienutzung</h1>
@@ -169,5 +173,9 @@
 		<p style="text-align: right;">
 			<g:link controller="statistics" action="index">Alle Statistiken anzeigen</g:link>
 		</p>
+		<div id="sponsorMobile">
+				<h3>Mit Untersützung der:</h3>
+				<asset:image src="EKSH-logo.jpg" alt="EKSH" />
+			</div>
 	</body>
 </html>

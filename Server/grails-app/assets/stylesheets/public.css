@@ -140,6 +140,14 @@ header h1 {
     text-align: center;
 }
 
+#content #sponsor {
+	padding-top: 30px;
+	text-align: center;
+}
+#content #sponsorMobile {
+	display: none;
+}
+
 #content #registerform table {
 	width: 100%;
 }
@@ -264,6 +272,15 @@ footer {
 	#content #left {
 		margin-right: 0;
 	}
+		
+	#content #sponsor {
+		display: none;;
+	}
+	#content #sponsorMobile {
+		display: block;
+		text-align: center;
+	}
+
 }
 @media screen and (max-width: 560px) {
 	header {
