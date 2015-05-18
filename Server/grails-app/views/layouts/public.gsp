@@ -58,9 +58,9 @@
 			<footer>
 				<a href="${createLink(controller: 'startpage', action: 'hints')}">Spieltipps</a>
 				 &bull;
-				<a href="http://www.uni-kiel.de/suchen/impressum.shtml">Impressum</a>
+				 <a href="${createLink(controller: 'startpage', action: 'contact')}"">Kontakt</a>
 				 &bull;
-				<a href="http://www.uni-kiel.de/suchen/kontakt.shtml">Kontakt</a>
+				<a href="http://www.uni-kiel.de/suchen/impressum.shtml">Impressum</a>
 				 &bull;
 				<a href="http://www.uni-kiel.de/suchen/impressum.shtml#datenschutz">Datenschutz</a>
 			</footer>

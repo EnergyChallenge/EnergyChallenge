@@ -83,4 +83,8 @@ class StartpageController {
 	def hints() {
 		render(view:"hints")
 	}
+	
+	def contact() {
+		render(view:"contact")
+	}
 }
