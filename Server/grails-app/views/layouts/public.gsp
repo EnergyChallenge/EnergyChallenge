@@ -45,14 +45,23 @@
 				<h1>Energy | Challenge</h1>
 			</header>
 			<section id="content" >
-				<g:if test="${flash.error}">
+				<g:if test="${flash.message}">
+					<div class="flashmessage">${flash.message}</div>
+					<g:javascript>
+						$(".flashmessage").hide();
+						$(".flashmessage").slideDown('slow');
+						setTimeout(function() {$(".flashmessage").fadeOut('slow');}, 2000);
+					</g:javascript>
+				</g:if>
+				<g:elseif test="${flash.error}">
 					<div class="flasherror">${flash.error}</div>
 					<g:javascript>
 						$(".flasherror").hide();
 						$(".flasherror").slideDown('slow');
 						setTimeout(function() {$(".flasherror").fadeOut('slow');}, 2000);
 					</g:javascript>
-				</g:if>
+				</g:elseif>
+				<g:javascript>setTimeout(function() {$(".flashmessage,.flasherror").fadeOut('slow');}, 2000);</g:javascript>
 				<g:layoutBody />
 			</section>
 			<footer>

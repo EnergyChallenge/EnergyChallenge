@@ -134,7 +134,8 @@ class AuthController {
 					"Lieber EnergyChallenge-Teilnehmer,\nliebe EnergyChallenge-Teilnehmerin,\n\nvielen Dank, für Ihre Anmeldung bei der EnergyChallenge. Sie haben mit Ihrer Teilnahme allen Spielregeln des Regelwerks zugestimmt.\n Ab dem 1. Juni können Sie sich unter www.energy-challenge.uni-kiel.de wieder einloggen und Punkte sammeln.\n\n Wir freuen uns über Ihre Teilnahme und wünschen viel Spaß\n Nora Nording und Sebastian Starzynski")
 				
 				if (params.id != "27032014" && (ENERGYCHALLENGE_START_TIME.isAfterNow() || ENERGYCHALLENGE_END_TIME.isBeforeNow())) {
-					redirect (controller: "startpage", action: "index")
+					flash.message = "Vielen Dank für Ihre Registrierung. Ab dem 1. Juni können sich Sie sich anmelden und teilnehmen."
+					redirect (controller: "startpage", action: "index", params: [regSuccessBeforeStart: 1])
 				} else {
 					redirect (controller: "landing", action: "index")
 				}

@@ -41,8 +41,19 @@ header h1 {
 
 #content {
 	padding: 40px 0;
+	position: relative;
 }
 
+#content .flashmessage {
+	position: absolute;
+	left: 0;
+	top: 10px;
+	width: 60%;
+	margin: 0 20%;
+	text-align: center;
+	background-color: white;
+	border: 1px solid limegreen;
+}
 #content .flasherror {
 	position: absolute;
 	left: 0;
