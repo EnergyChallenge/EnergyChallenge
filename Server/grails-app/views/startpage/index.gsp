@@ -116,31 +116,35 @@
 			<%-- TODO: create an include of the login form --%>
 		</div>
 		<div id="left">
-			<h1>EnergyChallenge</h1>
+			<h1>Ideenpower für smarte Energienutzung</h1>
 			<p>
-				Die EnergyChallenge richtet sich an alle Studierende
-				und Beschäftigte der CAU, die Spaß daran haben
-				Energiesparmöglichkeiten am Arbeitsplatz auszutesten,
-				hierfür Punkte zu sammeln und Preise zu gewinnen. Die
-				EnergyChallenge ist ein Teil der Energiesparkampagne,
-				welche von der CAU mit Unterstützung der EKSH
-				durchgeführt wird, um energiesparendes Verhalten am
-				Arbeitsplatz zu fördern.
+				Die EnergyChallenge richtet sich an alle Studierende und Beschäftigte
+				der CAU, die Spaß daran haben Energiesparmöglichkeiten am Arbeitsplatz
+				auszutesten, hierfür Punkte zu sammeln und Preise zu gewinnen.
 			</p>
 			<p>
-				Die Teilnahme ist einfach: Online anmelden, eine Gruppe
-				aussuchen (dies können Kollegen aus der Arbeitsgruppe
-				sein oder auch willkürliche Zusammensetzungen) und die
-				energiesparenden Aktivitäten regelmäßig in der
-				Aktivitätenliste abhaken. Die Punkte werden dann
-				automatisch dem Benutzerkonto zugeschrieben und nach vier
-				Wochen werden eine Gewinnergruppe und die besten
-				Einzelgewinner im Rahmen einer feierlichen Siegerehrung
-				gekürt.
+				Die EnergyChallenge ist ein Teil der Energiesparkampagne, welche von der
+				CAU mit Unterstützung der EKSH durchgeführt wird, um energiesparendes
+				Verhalten am Arbeitsplatz zu fördern. Jede/r Mitarbeiter/in hat täglich
+				die Möglichkeit in vielfältiger Weise Energie einzusparen. Das Ziel der
+				EnergyChallenge ist es, das Durchführen von energiesparenden Aktivitäten
+				genauso zu fördern, wie neue Ideenimpulse.
 			</p>
 			<p>
-				Damit sie ihre Aktivitäten auch komfortabel unterwegs erledigen
-				können, holen sie sich jetzt unsere EnergyChallenge-App.
+				Die Teilnahme ist einfach: Online anmelden, eine Gruppe aussuchen
+				(dies können Kollegen aus der Arbeitsgruppe sein oder auch willkürliche
+				Zusammensetzungen) und die energiesparenden Aktivitäten regelmäßig in der
+				Aktivitätenliste abhaken. Die Punkte werden dann automatisch dem
+				Benutzerkonto zugeschrieben.
+			</p>
+			<p>
+				Nach Ablauf der EnergyChallenge am 30. Juni werden Gewinnergruppen,
+				die besten Einzelteilnehmer und herausragende Energiesparvorschläge
+				im Rahmen einer Preisverleihung am 2. Juli prämiert. Es stehen Preise
+				im Gesamtwert von 10.000 Euro zur Verfügung.
+			</p>
+			<p>
+				Wir freuen uns über Ihre Teilnahme und wünschen Ihnen viel Spaß!
 			</p>
 		</div>
 		<p style="margin-top:30px">
