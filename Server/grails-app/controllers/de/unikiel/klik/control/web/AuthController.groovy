@@ -9,6 +9,7 @@ import de.unikiel.klik.persistence.Institute;
 
 import de.unikiel.klik.service.AuthService
 import de.unikiel.klik.service.PageViewService
+import de.unikiel.klik.service.AdminService
 
 import org.apache.shiro.SecurityUtils
 import org.apache.shiro.authc.AuthenticationException
@@ -22,6 +23,7 @@ import org.joda.time.DateTime
 class AuthController {
     def shiroSecurityManager
 	def AuthService
+	def AdminService
     def index = { redirect(action: "login", params: params) }
 	
 	
@@ -127,6 +129,10 @@ class AuthController {
             //Create a new user and login
             try {
                 AuthService.register(params.email, params.firstName, params.lastName, params.password as String, params.password2 as String, params.instituteId as long)
+				AdminService.sendSingleEmail(params.email as String,
+					"Registrierung EnergyChallenge",
+					"Lieber EnergyChallenge-Teilnehmer,\nliebe EnergyChallenge-Teilnehmerin,\n\nvielen Dank, für Ihre Anmeldung bei der EnergyChallenge. Sie haben mit Ihrer Teilnahme allen Spielregeln des Regelwerks zugestimmt.\n Ab dem 1. Juni können Sie sich unter www.energy-challenge.uni-kiel.de wieder einloggen und Punkte sammeln.\n\n Wir freuen uns über Ihre Teilnahme und wünschen viel Spaß\n Nora Nording und Sebastian Starzynski")
+				
 				if (params.id != "27032014" && (ENERGYCHALLENGE_START_TIME.isAfterNow() || ENERGYCHALLENGE_END_TIME.isBeforeNow())) {
 					redirect (controller: "startpage", action: "index")
 				} else {
@@ -138,6 +144,7 @@ class AuthController {
                 // Authentication failed, so display the appropriate message
                 flash.message = "Login schlug fehl."
             }catch(Exception e){
+				println e
                 flash.message = "Die Registrierung schlug fehl."
                 //Keep params
                 def m = [ email: params.email, firstName: params.firstName, lastName: params.lastName, instituteId: params.institudeId ]

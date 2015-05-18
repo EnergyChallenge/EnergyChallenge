@@ -176,4 +176,15 @@ class AdminService {
 	
     }
 	
+	void sendSingleEmail(String receiver, String messageSubject, String message) {
+
+		mailService.sendMail {
+			async true
+			from "admin@energy-challenge.uni-kiel.de"
+			to receiver
+			subject messageSubject
+			body message
+		}
+	}
+	
 }
