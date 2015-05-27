@@ -1,6 +1,7 @@
 package de.unikiel.klik.service
 
 import de.unikiel.klik.persistence.User
+import de.unikiel.klik.persistence.Role
 import de.unikiel.klik.persistence.Proposal
 import de.unikiel.klik.persistence.Comment
 import grails.transaction.Transactional
@@ -13,6 +14,8 @@ import org.joda.time.DateTime
 @Transactional
 class ProposalService {
 
+	def mailService
+	
     void addComment( String commentText, int rating, Subject author, long proposalId ) throws ValidationException {
 		User user = User.findByEmail(author.getPrincipal()); 
 		Proposal proposal =  Proposal.get(proposalId);
@@ -42,6 +45,23 @@ class ProposalService {
 		//TODO this part does not work!!!!!!!
 		Proposal newproposal = new Proposal(description: description, points: points, author: user);
 		newproposal.save(failOnError: true);
+		
+		//Create E-Mail for Admins
+		def admins = User.createCriteria().list{
+			roles{
+				eq('name', 'admin')
+			}
+		}
+		def i
+		for (i = 0; i < admins.size; i++) {
+			mailService.sendMail {
+				async true
+				from "admin@energy-challenge.uni-kiel.de"
+				to admins[i].email
+				subject "EnergyChallenge: Neuer Energiesparvorschlag"
+				body "Es wurde ein neuer Vorschlag erstellt:\n\nBeschreibung: " + description + "\nPunkte: " + points + "\n\n Zum Vorschlag: http://www.energy-challenge.uni-kiel.de/energy-challenge/admin/proposals"
+			}
+		}
 	}
 	
 }
