@@ -394,5 +394,9 @@ class InitService {
 		def sebastian = new User(email:"sstarzynski@uv.uni-kiel.de", passwordHash: new Sha256Hash("glimmlampe").toHex(), firstName: "Sebastian", lastName: "Starzynski", institute: institute)
 		sebastian.addToRoles(adminRole)
 		sebastian.save(flush: true)
+
+		def wolfgang = new User(email:"wolfgang.ramos@gmail.com", passwordHash: new Sha256Hash("grails").toHex(), firstName: "W.", lastName: "R.", institute: institute)
+		wolfgang.addToRoles(adminRole)
+		wolfgang.save(flush: true)
 	}
 }
