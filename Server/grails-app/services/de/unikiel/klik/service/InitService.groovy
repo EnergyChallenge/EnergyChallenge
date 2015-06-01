@@ -210,7 +210,8 @@ class InitService {
 		"Rechenzentrum",
 		"Sportzentrum",
 		"Universitätsbibliothek",
-		"Externe Einrichtungen"
+		"Externe Einrichtungen",
+		"Zentrale Verwaltung"
 
 		/* OLD
 		// Rechtswissenschaftliche Fakultät
