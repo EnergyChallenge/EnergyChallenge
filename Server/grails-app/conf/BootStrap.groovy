@@ -14,19 +14,19 @@ class BootStrap {
 		def currentEnv = Environment.current
 
 		// initialization for productive use
-		InitService.initKlikRoles()
-		InitService.initKlikActivities()
-		InitService.initCauInstitutions()
+		//InitService.initKlikRoles()
+		//InitService.initKlikActivities()
+		//InitService.initCauInstitutions()
 
 		//define the user and admin role
 		//def userRole = new Role(name: "benutzer")
 		//userRole.addToPermissions("*:*")
 		//userRole.save(flush: true);
-		def userRole = Role.findByName("benutzer")
+		//def userRole = Role.findByName("benutzer")
 		//def adminRole = new Role(name: "admin")
 		//adminRole.addToPermissions("*:*")
 		//adminRole.save(flush: true);
-		def adminRole = Role.findByName("admin")
+		//def adminRole = Role.findByName("admin")
 		
 		if (currentEnv == Environment.DEVELOPMENT) {
 
@@ -62,7 +62,8 @@ class BootStrap {
 
 		} else if (currentEnv == Environment.PRODUCTION) {
 			// generate admin Accounts
-			InitService.initKlikAdmins()
+			//InitService.initKlikAdmins()
+			//new Institute(name: "Zentrale Verwaltung").save(flush: true)
 			
 			println "Running in Production Mode"
 		}
