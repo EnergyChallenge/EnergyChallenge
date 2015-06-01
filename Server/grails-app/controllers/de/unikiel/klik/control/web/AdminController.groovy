@@ -6,6 +6,7 @@ import de.unikiel.klik.persistence.Proposal;
 import de.unikiel.klik.persistence.Activity;
 import de.unikiel.klik.persistence.CompletedActivity;
 import de.unikiel.klik.service.AdminService
+import grails.plugin.mail.GrailsMailException
 import org.joda.time.Duration
 import org.joda.time.DateTime
 import org.joda.time.format.DateTimeFormat
@@ -174,9 +175,14 @@ class AdminController {
     def emailMessage() {
 
         //Get the admin service to send a global email
-        AdminService.sendGlobalEmail(params.subject as String, params.message as String)
-	flash.message ="Nachricht wurde verschickt"
-        redirect(action: "message")
+		try {
+			AdminService.sendGlobalEmail(params.subject as String, params.message as String)
+			flash.message ="Nachricht wurde verschickt"
+		} catch (GrailsMailException e) {
+			flash.error = "Ein Fehler ist aufgreten. Ist der Inhalt der E-Mail eventuell leer?"
+		}
+		redirect(action: "message")
+        
     }
 
     // delete ONE completed Activity
