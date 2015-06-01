@@ -159,7 +159,7 @@ class AuthController {
 	def requestPassword = {
 		try {
 			AuthService.requestPasswordChange(params.email)
-			flash.message = "Email wurde versand"
+			flash.message = "Sie erhalten eine E-Mail, um sich ein neues Passwort zu erstellen."
 			redirect(controller: "startpage", action: "index")
 		}catch (Exception e) {
 			def m = [ email: params.email]

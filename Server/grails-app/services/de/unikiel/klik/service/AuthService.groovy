@@ -67,11 +67,19 @@ class AuthService {
 		String requestToken = new BigInteger(100,random).toString(32)
 		user.setPasswordRequestToken(requestToken)
 		user.save(flush: true, failOnError: true)
+		
+		//TODO
+		//ATTENZIONE!
+		//URL is hard coded: http://www.energy-challenge.uni-kiel.de/energy-challenge
+		
 		mailService.sendMail {
-	                to email
-	                subject "Klik Passwort"
-	                body getPasswordRequestMessage(requestToken)
-	        }
+			async true
+			from "admin@energy-challenge.uni-kiel.de"
+			to email
+			subject "EnergyChallenge: Ihr neues Passwort"
+			body "Hallo,\n\nSie haben uns mitgeteilt, dass Sie Ihr Passwort vergessen haben. Über den folgenden Link können Sie sich ein neues erstellen:\nhttp://www.energy-challenge.uni-kiel.de/energy-challenge/auth/forgotPassword?token=" + requestToken;
+			
+		}
 	}else{
 		throw new ValidationException()
 	}
