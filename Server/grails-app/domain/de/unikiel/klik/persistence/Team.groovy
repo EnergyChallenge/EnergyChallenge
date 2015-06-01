@@ -16,7 +16,7 @@ class Team extends Profile{
 		for(member in members) {
 			sum += member.getPoints();
 		}
-		if(members.size() != null){
+		if(members.size() != null && members.size() != 0){
 			return sum/members.size()
 		}else{
 			return 0;
