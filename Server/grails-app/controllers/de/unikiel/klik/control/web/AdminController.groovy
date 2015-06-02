@@ -169,7 +169,9 @@ class AdminController {
 	}
 
     def message() {
-
+		def model = [
+			allUser: User.getAll()];
+		render(view: "message", model: model);
     }
 
     def emailMessage() {
@@ -178,8 +180,10 @@ class AdminController {
 		try {
 			AdminService.sendGlobalEmail(params.subject as String, params.message as String)
 			flash.message ="Nachricht wurde verschickt"
-		} catch (GrailsMailException e) {
+		} catch (Exception e) {
+			//GrailsMailException instead of Exception
 			flash.error = "Ein Fehler ist aufgreten. Ist der Inhalt der E-Mail eventuell leer?"
+			flash.error = e
 		}
 		redirect(action: "message")
         
