@@ -51,7 +51,7 @@
 						<td>
 							${proposal.getPoints()}
 						</td>
-						<td>
+						<td style="width: 6em;">
 							<g:each var="i" in="${ (0..<5)}">
 								<g:if test="${proposal.getRating() <= i}">
 									<i class="fa fa-star-o"></i>
