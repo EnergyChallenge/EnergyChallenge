@@ -17,7 +17,7 @@ import org.joda.time.format.PeriodFormatterBuilder
 class AdminController {
 
     def AdminService
-	def mailService //TODO TEMP
+
 
     def index(){
 
