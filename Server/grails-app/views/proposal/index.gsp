@@ -8,28 +8,36 @@
 <body>
 	<h1>Energiesparvorschläge</h1>
 	<p>
-		Reichen Sie neue Vorschläge zum Energiesparen ein! Als Belohnung gibt es für einen
-		angenommen Vorschlag <strong>2 Punkte</strong>.
-		<g:form action="add" class="addproposal">
-			<div class="proposaltext">
-				<input type="text" name="description" value="" placeholder="Ihr Vorschlag..." />
-			</div>
-			<div class="proposalpoints">
-				Punktevorschlag:
-				<select name="points" >
-					<option value="1">1 Punkt</option>
-					<option value="2">2 Punkte</option>
-					<option value="3">3 Punkte</option>
-					<option value="4">4 Punkte</option>
-					<option value="5">5 Punkte</option>
-				</select>
-			</div>
-			<div class="proposalsubmit">
-				<input type="submit" value="Vorschlag einreichen" />
-			</div>
-			<div class="clear"></div>
-		</g:form>
+		Reichen Sie neue Vorschläge zum Energiesparen ein! Als Belohnung gibt es
+		für einen angenommen Vorschlag <strong>2 Punkte</strong>.
+	<p>
+		<em>
+			Es werden nur Vorschläge übernommen die an der CAU und im Rahmen der
+			EnergyChallenge umgesetzt werden können. Alle anderen Vorschläge
+			werden automatisch gelöscht. Damit Ideen gewertet und freigeschaltet
+			werden könne, müssen Sie im Zeitraum der EnergyChallenge durchgesetzt
+			werden und das Individuelle Verhalten betreffen.
+		</em>
 	</p>
+	<g:form action="add" class="addproposal">
+		<div class="proposaltext">
+			<input type="text" name="description" value="" placeholder="Ihr Vorschlag..." />
+		</div>
+		<div class="proposalpoints">
+			Punktevorschlag:
+			<select name="points" >
+				<option value="1">1 Punkt</option>
+				<option value="2">2 Punkte</option>
+				<option value="3">3 Punkte</option>
+				<option value="4">4 Punkte</option>
+				<option value="5">5 Punkte</option>
+			</select>
+		</div>
+		<div class="proposalsubmit">
+			<input type="submit" value="Vorschlag einreichen" />
+		</div>
+		<div class="clear"></div>
+	</g:form>
 	<h1>Vorhandene Vorschläge</h1>
 	<p>
 		<table class="list">

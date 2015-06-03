@@ -33,6 +33,7 @@
         </tr>
         </tbody>
     </table>
+
 </g:form>
 <h3>Liste aller E-Mail Adressen</h3>
 <textarea style="height: 10em;"><g:each var="user" in="${allUser}">${user.email}&#10;</g:each></textarea>

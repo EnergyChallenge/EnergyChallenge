@@ -132,7 +132,9 @@
 			<p>
 				Alle ausgewählten Aktivitäten des Wettbewerbs müssen am Arbeits-
 				bzw. Studienplatz an der CAU umgesetzt werden, damit diese in die
-				Gesamtbewertung eines Nutzers oder Teams eingehen können.
+				Gesamtbewertung eines Nutzers oder Teams eingehen können. Außerdem
+				zählen nur Aktivitäten, die im Zeitraum der EnergyChallenge vom
+				01.06.2015 bis zum 30.06.2015, erledigt wurden.
 			</p>
 			<p>
 				<strong>Verpflichtungen</strong>
