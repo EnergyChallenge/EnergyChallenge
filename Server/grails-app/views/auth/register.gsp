@@ -83,7 +83,8 @@
 				darf sich nur einmal anmelden und ein Nutzerprofil erstellen.
 				Die Mitgliedschaft in einem Team ist auf ein Team begrenzt.
 				Die Teammitgliedschaft kann nur so lange gewechselt werden, solange
-				keine Aktivitäten durchgeführt worden sind.
+				keine Aktivitäten durchgeführt worden sind. Ein Team muss aus mindestens
+				2 Personen bestehen
 			</p> 
 			<p>
 				Alle anderen Interessierten möchten wir herzlich bitten, sich
