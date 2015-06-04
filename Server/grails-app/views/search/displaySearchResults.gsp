@@ -65,7 +65,7 @@
 								</a>
 							</td>
 							<td class="position">
-								${res.rankingPosition}
+								<%-- ${res.rankingPosition} --%>
 							</td>
 						</g:if>
 						<g:else>
@@ -78,7 +78,7 @@
 								</a>
 							</td>
 							<td class="position">
-								${res.rankingPosition}
+								<%-- ${res.${res.rankingPosition}} --%>
 							</td>
 						</g:else>
 					</tr>

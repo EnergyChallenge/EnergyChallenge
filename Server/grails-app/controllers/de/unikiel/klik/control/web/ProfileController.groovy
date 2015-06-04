@@ -35,7 +35,7 @@ class ProfileController {
 	   }
 	   String institute = user.getInstitute().getName();
 	   int collectedPoints = user.getPoints();
-	   int rankingPosition = RankingService.getPositionOfUser(user);
+	   //int rankingPosition = RankingService.getPositionOfUser(user);
 	   def lastActivities = user.getCompletedActivities(); 
            def recentActivities = lastActivities.sort{-it.getDateCreated().getMillis()}
            if (recentActivities.size() > 10){
@@ -46,7 +46,7 @@ class ProfileController {
 	   def model = [id: params.id,type: "user", isCurrent: isCurrent, 
 		   			name: name, teamName: teamname, teamId: teamId,
 					institute: institute,
-					collectedPoints: collectedPoints, rankingPosition: rankingPosition,
+					collectedPoints: collectedPoints, /*rankingPosition: rankingPosition,*/
 					lastActivities: lastActivities
 					]
 	   
@@ -73,7 +73,7 @@ class ProfileController {
 	   String name = team.getName();
 	   int collectedPoints = team.getPoints();
 	   boolean isCurrent = (team == User.findByEmail(SecurityUtils.getSubject().getPrincipal()).getTeam());
-           int rankingPosition = RankingService.getPositionOfTeam(team);
+       //int rankingPosition = RankingService.getPositionOfTeam(team);
 	   def members = [];
 	   for (member in team.getMembers()) {
 		   members << [name: member.getName(), id: member.id];
@@ -88,7 +88,7 @@ class ProfileController {
            }
 	   def model = [id: params.id,type: "team", isCurrent: isCurrent, 
 		   			name: name, image: "",
-					collectedPoints: collectedPoints, rankingPosition: rankingPosition,
+					collectedPoints: collectedPoints, /*rankingPosition: rankingPosition,*/
 					members: members,
 					lastActivities: lastActivities, user: user
 		]
