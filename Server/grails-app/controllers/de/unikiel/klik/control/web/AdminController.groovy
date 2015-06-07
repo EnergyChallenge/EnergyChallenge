@@ -195,6 +195,7 @@ class AdminController {
 		def user = User.get(params.userid)
 		def completedActivity = CompletedActivity.get(params.completedActivityId)
 		user.removeFromCompletedActivities(completedActivity)
+		user.calculatePoints()
 		completedActivity.delete(flush: true)
 		
         redirect(action: "completedActivities", params: [userid: params.userid])
@@ -214,6 +215,8 @@ class AdminController {
 			user.removeFromCompletedActivities(ca)
 			ca.delete(flush: true)
 		}
+		
+		user.calculatePoints()
 		
         redirect(action: "completedActivities", params: [userid: params.userid])
     }

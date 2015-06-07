@@ -61,6 +61,7 @@ class AdminService {
 		for(u in users) {
 			u.completedActivities = u.completedActivities.findAll {it.activity.id != activityId}
 			u.save(flush: true)
+			u.calculatePoints();
 		}
 		
 		//delete the favorites of users

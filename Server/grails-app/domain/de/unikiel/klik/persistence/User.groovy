@@ -79,13 +79,14 @@ class User extends Profile {
 	
 	// Move to 
 	def completeActivityNow(Activity activity) {
-		def completedActivity = new CompletedActivity(activity: activity, date: new Date())
-		this.addToCompletedActivities(completedActivity)
+		def completedActivity = new CompletedActivity(activity: activity, date: new Date());
+		this.addToCompletedActivities(completedActivity);
+		calculatePoints();
 	}
 
 
 	def int getPoints() {
-		calculatePoints() //Remove later
+		//calculatePoints() //TODO Remove later
 		return cachedPoints;
 	}
 	
