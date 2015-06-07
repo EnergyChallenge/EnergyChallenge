@@ -85,11 +85,17 @@ class User extends Profile {
 
 
 	def int getPoints() {
-		int sum = 0
+		calculatePoints() //Remove later
+		return cachedPoints;
+	}
+	
+	def calculatePoints() {
+		int sum = 0;
 		for(completedActivity in completedActivities) {
-			sum += completedActivity.getActivity().getPoints()
+			sum += completedActivity.getActivity().getPoints();
 		}
-		return(sum)
+		cachedPoints = sum;
+		save(flush: true);
 	}
 
 	def void attemptToAddToTeamContribution(int points) {

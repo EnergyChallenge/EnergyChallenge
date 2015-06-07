@@ -27,7 +27,7 @@ class TestController {
 			teamId = team.getId();
 		}
 		String institute = user.getInstitute().getName();
-		user.setCachedPoints(42)
+		//user.setCachedPoints(42)
 		int cachedPoints = user.getCachedPoints();
 		int cachedPosition = user.getCachedRankingPosition();
 		//int cachedRanking = user.getCachedRanking();
