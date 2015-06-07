@@ -81,7 +81,6 @@ class User extends Profile {
 	def completeActivityNow(Activity activity) {
 		def completedActivity = new CompletedActivity(activity: activity, date: new Date());
 		this.addToCompletedActivities(completedActivity);
-		calculatePoints();
 	}
 
 

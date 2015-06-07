@@ -34,6 +34,7 @@ class ActivityService {
 			currentUser.attemptToAddToTeamContribution(activity.getPoints())
 			completedActivity.save(flush: true)
 			currentUser.save(flush: true)
+			currentUser.calculatePoints();
 			return true
 		} else {
 			return false
