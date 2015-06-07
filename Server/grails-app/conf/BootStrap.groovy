@@ -19,13 +19,13 @@ class BootStrap {
 		//InitService.initCauInstitutions()
 
 		//define the user and admin role
-		//def userRole = new Role(name: "benutzer")
-		//userRole.addToPermissions("*:*")
-		//userRole.save(flush: true);
+		def userRole = new Role(name: "benutzer")
+		userRole.addToPermissions("*:*")
+		userRole.save(flush: true);
 		//def userRole = Role.findByName("benutzer")
-		//def adminRole = new Role(name: "admin")
-		//adminRole.addToPermissions("*:*")
-		//adminRole.save(flush: true);
+		def adminRole = new Role(name: "admin")
+		adminRole.addToPermissions("*:*")
+		adminRole.save(flush: true);
 		//def adminRole = Role.findByName("admin")
 		
 		if (currentEnv == Environment.DEVELOPMENT) {

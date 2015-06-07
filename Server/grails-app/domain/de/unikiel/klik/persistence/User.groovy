@@ -10,6 +10,8 @@ class User extends Profile {
 	Team team
 	Institute institute
 	int pointsCollectedForTeam
+	int cachedPoints
+	int cachedRankingPosition
     
 	// other
 	String firstName
