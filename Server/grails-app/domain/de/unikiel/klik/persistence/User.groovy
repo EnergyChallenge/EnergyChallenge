@@ -10,6 +10,8 @@ class User extends Profile {
 	Team team
 	Institute institute
 	int pointsCollectedForTeam
+	int cachedPoints
+	int cachedRankingPosition
     
 	// other
 	String firstName
@@ -77,17 +79,23 @@ class User extends Profile {
 	
 	// Move to 
 	def completeActivityNow(Activity activity) {
-		def completedActivity = new CompletedActivity(activity: activity, date: new Date())
-		this.addToCompletedActivities(completedActivity)
+		def completedActivity = new CompletedActivity(activity: activity, date: new Date());
+		this.addToCompletedActivities(completedActivity);
 	}
 
 
 	def int getPoints() {
-		int sum = 0
+		//calculatePoints() //TODO Remove later
+		return cachedPoints;
+	}
+	
+	def calculatePoints() {
+		int sum = 0;
 		for(completedActivity in completedActivities) {
-			sum += completedActivity.getActivity().getPoints()
+			sum += completedActivity.getActivity().getPoints();
 		}
-		return(sum)
+		cachedPoints = sum;
+		save(flush: true);
 	}
 
 	def void attemptToAddToTeamContribution(int points) {
