@@ -161,53 +161,16 @@ class AdminService {
     void sendGlobalEmail(String messageSubject, String message) {
 
         //Get all users
-        def allUsers = User.getAll();
-
+        def allUsers = User.getAll().email;
 		
-		
-		//Debug
 		mailService.sendMail {
 			async true
 			from "admin@energy-challenge.uni-kiel.de"
-			to "post@soeren-henning.de"
-			subject "Neue Rundmail erzeugt"
-			body "Es wurde eine neue Rundmail erzeugt. Betreff: " + messageSubject + "\nInhalt:\n" + message + "\n\n Sie wird nun an alle gesendet..." 
+			to "admin@energy-challenge.uni-kiel.de"
+			bcc allUsers
+			subject messageSubject
+			body message
 		}
-		def devAllEmails = [];
-		
-		
-		
-        //Send an email to each user
-        def i
-        for (i = 0; i < allUsers.size; i++) {
-			
-			//Debug
-			devAllEmails << allUsers[i].email; 
-			
-            mailService.sendMail {
-                async true
-				from "admin@energy-challenge.uni-kiel.de"
-                to allUsers[i].email
-                subject messageSubject
-                body message
-            }
-        }
-		
-		
-		
-		//Debug
-		def devMess = ""
-		for (i = 0; i < devAllEmails.size; i++) {
-			devMess = devMess + "\n" + devAllEmails[i];
-		}
-		mailService.sendMail {
-			async true
-			from "admin@energy-challenge.uni-kiel.de"
-			to "post@soeren-henning.de"
-			subject "Neue Rundmail verschickt"
-			body "Es wurde eine neue Rundmail verschickt. Betreff: " + messageSubject + "\nInhalt:\n" + message + "\n\n Sie wurde versendet an:\n" + devMess
-		}
-		
 	
     }
 	

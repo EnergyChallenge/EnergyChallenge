@@ -39,9 +39,11 @@ class BootStrap {
 			Institute institute = new Institute(name: "development")
 			institute.save()
 			def user = new User(email:"user@example.com", passwordHash: new Sha256Hash("password").toHex(), firstName: "Max", lastName: "Mustermann", institute: institute)
+			//def user = new User(email:"user.ec.web@soeren-henning.de", passwordHash: new Sha256Hash("password").toHex(), firstName: "Max", lastName: "Mustermann", institute: institute)
 			user.addToRoles(userRole)
 			user.save(flush: true)
 			def admin = new User(email:"admin@example.com", passwordHash: new Sha256Hash("password").toHex(), firstName: "Matilda", lastName: "Mustermann", institute: institute)
+			//def admin = new User(email:"admin.ec.web@soeren-henning.de", passwordHash: new Sha256Hash("password").toHex(), firstName: "Matilda", lastName: "Mustermann", institute: institute)
 			admin.addToRoles(adminRole)
 			admin.save(flush: true)
 
