@@ -106,6 +106,8 @@ class AdminController {
 			}
 		} catch(Exception e) {
 			redirect(action: "activities")
+			flash.message = e	//TODO Temp. for dev
+			println e			//TODO Temp. for dev
 			flash.message = "Die Beschreibung muss zwischen 1 und 255 Zeichen lang sein! Bitte versuchen Sie es erneut."
 		}
     }

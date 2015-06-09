@@ -30,6 +30,7 @@ class AdminService {
 		author.completedActivities.add(completedActivity)
 		completedActivity.save(flush: true, failOnError: true)
 		author.save(flush: true, failOnError: true)
+		author.calculatePoints()
 
         //Then delete the old proposal
         deleteProposal(proposalId)
