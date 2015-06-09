@@ -47,12 +47,10 @@
 				<div class="value big">${collectedPoints}</div>
 				<div class="label">Gesammelte Punkte</div>
 			</div>
-			<%--
-				<div class="card position">
-					<div class="value big">${rankingPosition}.</div>
-					<div class="label">Platz in der Rangliste</div>
-				</div>
-			 --%>
+			<div class="card position">
+				<div class="value big">${rankingPosition}.</div>
+				<div class="label">Platz in der Rangliste</div>
+			</div>
 			<div class="clear"></div>
 		</div>
 		

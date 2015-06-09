@@ -15,9 +15,9 @@ class RankingController {
 	}
 	
 	def users() {
-		render(view: "notAvailable")
+		//render(view: "notAvailable")
 		
-		/*
+		
 		int offset = params.offset == null ? 0 : Integer.parseInt(params.offset);
 		
 		def ranking = [];
@@ -45,13 +45,13 @@ class RankingController {
 			count: User.count(),
 			paginateMax: PAGINATE_RANKINGS_MAX];
 		render(view: "index", model: model);
-		*/
+		
 	}
 	
 	def teams() {
-		render(view: "notAvailable")
+		//render(view: "notAvailable")
 		
-		/*
+		
 		int offset = params.offset == null ? 0 : Integer.parseInt(params.offset);
 	
 		def ranking = [];
@@ -79,7 +79,7 @@ class RankingController {
 			count: Team.count(),
 			paginateMax: PAGINATE_RANKINGS_MAX];
 		render(view: "index", model: model);
-		*/
+		
 	}
 
 	def notAvailable() {

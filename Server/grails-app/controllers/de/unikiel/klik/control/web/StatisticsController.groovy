@@ -25,8 +25,8 @@ class StatisticsController {
 		Subject currentUser = SecurityUtils.getSubject();
 		
 		
-		render(view: "notAvailable")
-		/*
+		//render(view: "notAvailable")
+		
 		def mostPopularActivities = getTop10Activities();
 		def pageVisitsIndex = getVisitsOf("/index")	// TODO fix visitor counts 
 		def pageVisitsSignIn = getVisitsOf("/auth/signIn")	// TODO fix visitor counts 
@@ -36,7 +36,7 @@ class StatisticsController {
 			pageVisitsIndex: pageVisitsIndex as JSON,
 			pointsOverDays: pointsOverDays as JSON,
 			pageVisitsSignIn: pageVisitsSignIn as JSON];
-		*/
+		
 	}
 	def download(){
 		def sw = new StringWriter()

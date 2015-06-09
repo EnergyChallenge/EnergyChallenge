@@ -16,18 +16,18 @@ class SearchController {
 			for (user in matchingUsers) {
 				results << [id: user.getId(), 
 								name: user.getName(), 
-								type: "user" /*, WEGEN SPEICHERPROBLEMEN
-								points: user.getPoints(),
-								rankingPosition: RankingService.getPositionOfUser(user) */
+								type: "user" , 
+								/*points: user.getPoints(),*/
+								rankingPosition: RankingService.getPositionOfUser(user) 
 							];
 			}
 			def matchingTeams = Team.findAllByNameIlike("%" + params.query + "%")
 			for (team in matchingTeams) {
 				results << [id: team.getId(),
 								name: team.getName(),
-								type: "team" /*, WEGEN SPEICHERPROBLEMEN
-								points: team.getPoints(),
-								rankingPosition: RankingService.getPositionOfTeam(team) */
+								type: "team",
+								/*points: team.getPoints(),*/
+								rankingPosition: RankingService.getPositionOfTeam(team) 
 							];
 			}
 			//results.sort { -it.points } //Sort DESC
