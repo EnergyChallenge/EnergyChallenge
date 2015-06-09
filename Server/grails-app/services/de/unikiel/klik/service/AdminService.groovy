@@ -160,19 +160,22 @@ class AdminService {
 
     void sendGlobalEmail(String messageSubject, String message) {
 
-        //Get all users
-        def allUsers = User.getAll().email;
+		//To all users
+		sendGlobalEmail(messageSubject, message, User.getAll().email);
+    }
+	
+	void sendGlobalEmail(String messageSubject, String message, def receivers) {
 		
 		mailService.sendMail {
 			async true
 			from "admin@energy-challenge.uni-kiel.de"
 			to "admin@energy-challenge.uni-kiel.de"
-			bcc allUsers
+			bcc receivers
 			subject messageSubject
 			body message
 		}
 	
-    }
+	}
 	
 	void sendSingleEmail(String receiver, String messageSubject, String message) {
 

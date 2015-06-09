@@ -28,6 +28,14 @@
             </td>
         </tr>
         <tr>
+            <td style="width: 100px; vertical-align: top;">
+            	Empfänger:
+            </td>
+            <td>
+            	<input type="text" name="receivers" value="${receivers}"  style="width: 100%;"/>
+            </td>
+        </tr>
+        <tr>
             <td />
             <td><input type="submit" value="Abschicken" /></td>
         </tr>

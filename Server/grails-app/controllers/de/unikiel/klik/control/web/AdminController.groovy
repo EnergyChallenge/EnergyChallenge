@@ -179,7 +179,11 @@ class AdminController {
 
         //Get the admin service to send a global email
 		try {
-			AdminService.sendGlobalEmail(params.subject as String, params.message as String)
+			if (params.receiver == "") {
+				AdminService.sendGlobalEmail(params.subject as String, params.message as String)
+			} else {
+				AdminService.sendGlobalEmail(params.subject as String, params.message as String, params.receivers.split(', '))
+			}
 			flash.message ="Nachricht wurde verschickt"
 		} catch (Exception e) {
 			//GrailsMailException instead of Exception
