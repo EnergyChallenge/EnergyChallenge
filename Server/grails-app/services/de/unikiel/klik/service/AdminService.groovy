@@ -17,23 +17,43 @@ class AdminService {
     }
 	
 	void createActivityFromProposal(String description, int points, Duration duration, long proposalId) {
-
+		
+		println "DEBUG <ENTER METHODE>"
+		println "DEBUG 0"
+		
         //Create the new activity from the proposal information
+		println "DEBUG 'Create the new activity from the proposal information'"
+		println "DEBUG 1"
 		def newActivity = new Activity(description: description, points: points, duration: duration)
+		println "DEBUG 2"
         newActivity.save(failOnError: true)
 		
 		//reward the author of the proposal with points
+		println "DEBUG 'reward the author of the proposal with points'"
+		println "DEBUG 3"
 		def proposal = Proposal.get(proposalId)
+		println "DEBUG 4"
 		def author = proposal.getAuthor()
+		println "DEBUG 5"
 		def activity = Activity.find{visible == false}
+		println "DEBUG 6"
 		def completedActivity = new CompletedActivity(activity: activity)
+		println "DEBUG 7"
 		author.completedActivities.add(completedActivity)
+		println "DEBUG 8"
 		completedActivity.save(flush: true, failOnError: true)
+		println "DEBUG 9"
 		author.save(flush: true, failOnError: true)
+		println "DEBUG 10"
 		author.calculatePoints()
+		println "DEBUG 11"
 
         //Then delete the old proposal
+		println "DEBUG 'Then delete the old proposal'"
+		println "DEBUG 12"
         deleteProposal(proposalId)
+		println "DEBUG 13"
+		println "DEBUG <EXIT METHODE>"
 	}
 
 	void editActivity(String description, int points, Duration duration, long activityId) {
