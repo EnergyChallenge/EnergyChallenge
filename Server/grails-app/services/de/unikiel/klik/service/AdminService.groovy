@@ -35,7 +35,8 @@ class AdminService {
 		println "DEBUG 4"
 		def author = proposal.getAuthor()
 		println "DEBUG 5"
-		def activity = Activity.find{visible == false}
+		//def activity = Activity.find{visible == false}
+		def activity = Activity.findAll{points == 3}[0] //TEST
 		println "DEBUG 6"
 		def completedActivity = new CompletedActivity(activity: activity)
 		println "DEBUG 7"
