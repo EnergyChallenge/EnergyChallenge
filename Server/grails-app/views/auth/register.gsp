@@ -190,8 +190,7 @@
 					d)  Ökologischster Vorschlag (bewertet nach CO2 -Einsparpotenzial)
 				</li>
 				<li>
-					e)  Kategoriewertung (Preis für den Teilnehmenden, der die meisten
-					Aktivitäten innerhalb einer Kategorie ausgeführt hat)
+					e)  Ziehung und Verlosung unter 5 Teilnehmenden mit mindestens 100 gesammelten Punkten
 				</li>
 			</ol>
 			<p>
