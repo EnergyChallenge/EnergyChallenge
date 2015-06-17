@@ -17,7 +17,7 @@ class AdminService {
     }
 	
 	void createActivityFromProposal(String description, int points, Duration duration, long proposalId) {
-
+		
         //Create the new activity from the proposal information
 		def newActivity = new Activity(description: description, points: points, duration: duration)
         newActivity.save(failOnError: true)
@@ -25,7 +25,7 @@ class AdminService {
 		//reward the author of the proposal with points
 		def proposal = Proposal.get(proposalId)
 		def author = proposal.getAuthor()
-		def activity = Activity.find{visible == false}
+		def activity = Activity.findAll{visible == false}[0]
 		def completedActivity = new CompletedActivity(activity: activity)
 		author.completedActivities.add(completedActivity)
 		completedActivity.save(flush: true, failOnError: true)
