@@ -49,5 +49,44 @@
 				</tbody>
 			</table>   
 		</p>
+		<%-- TODO Temp --%>
+		<div style="display: none;">
+		<h2>TEMP-DATEN</h2>
+		<table>
+				<thead>
+					<tr>
+						<th>Benutzer</th>
+						<th>E-Mail</th>
+						<th>Team</th>
+						<th>Institut</th>
+						<th>Punkte</th>
+					</tr>
+				</thead>
+				<tbody>
+					<g:each in="${users}" var="user">
+						<tr>
+							<td>
+								${user.getName()}
+							</td>
+							<td>
+								${user.getEmail()}
+							</td>
+							<td>
+								<g:if test="${user.getTeam()}">
+									${user.getTeam().getName()}
+								</g:if>
+							</td>
+							<td>
+								${user.getInstitute().getName()}
+							</td>
+				
+							<td>
+								${user.getPoints()}
+							</td>
+						</tr>
+					</g:each>
+				</tbody>
+			</table>
+			</div>
 	</body>
 </html>

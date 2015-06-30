@@ -47,5 +47,37 @@
 				</tbody>
 			</table>
 		</p>
+		<%-- TODO Temp --%>
+		 <div style="display: none;">
+		<h2>TEMP-DATEN</h2>
+		<table>
+				<thead>
+				<tr>
+					<th>Name</th>
+					<th>Mitglieder</th>
+					<th>Punkte</th>
+				</tr>
+				</thead>
+				<tbody>
+				<g:each in="${teams}" var="team">
+					<tr>
+						<td>
+							${team.getName()}
+						</td>
+						<td>
+							<ul>
+							<g:each in="${team.getMembers().sort { it.id }}" var="member">
+								${member.getName()}
+							</g:each>
+							</ul>
+						</td>
+						<td>
+							${team.getPoints()}
+						</td>
+					</tr>
+				</g:each>
+				</tbody>
+			</table>
+			</div>
 	</body>
 </html>
