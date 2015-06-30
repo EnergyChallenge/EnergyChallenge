@@ -6,7 +6,25 @@
 		<asset:javascript src="countdownStart.js" />
 	</head>
 	<body>
-		<div id="right">
+		<g:if test="${challengeIsOver}">
+			<div id="center">
+				<h1>Ende der Energy|Challenge</h1>
+				<p>
+					Die EnergyChallenge ist nun beendet und wir möchten allen Teilnehmern
+					nochmals herzlich für ihr Mitwirken und ihr Engagement danken!
+					Mit über 400 Mitspielern und Tausenden gesammelten Punkten hoffen
+					wir, dass die EnergyChallenge einen Beitrag dazu leisten konnte,
+					Energiesparmöglichkeiten auf dem Campus aufzuzeigen und Interesse
+					für das Thema zu wecken.
+				</p>
+				<p>
+					Wir werden die Daten nun auswerten und die Gewinner und Gewinnerinnen
+					am 2. Juli 2015 bekannt geben. 
+				</p>
+			</div>
+		</g:if>
+		<g:else>
+			<div id="right">
 			<%-- TODO: create an include of the login form --%>
 			<g:if test="${enableLogin}">
 				<div id="login" >
@@ -103,9 +121,6 @@
 					</span>
 				</div>
 			</g:elseif>
-			<g:elseif test="${challengeIsOver}">
-				<%-- Meldung, wenn der ganze Spaß vorbei ist --%>
-			</g:elseif>
 			<g:if test="${enableReg}">
 				<div id="register" >
 					<g:form name="registerFrom" url="[action:'register',controller:'auth']">
@@ -177,5 +192,7 @@
 				<h3>Mit Untersützung der:</h3>
 				<asset:image src="EKSH-logo.jpg" alt="EKSH" />
 			</div>
+		</g:else>
+
 	</body>
 </html>
