@@ -32,3 +32,11 @@ Password: ``password``
 To adjust the dates when registration/login should be enabled/disbaled, edit lines 30-32 in file:
 ``EnergyChallenge/Server/grails-app/controllers/de/unikiel/klik/control/web/AuthController.groovy``
 
+
+## Usage at Kiel University
+
+This application was developed by computer science students at Kiel University´s [Software Engineering Group](http://www.se.uni-kiel.de/en). In June 2015 Kiel University organized the EnergyChallenge project.
+Further informations can be found in this articles:
+* [Kieler Universität startet Energiesparwettbewerb](http://www.uni-kiel.de/pressemeldungen/index.php?pmid=2015-169-energiesparen) *(in german)*
+* [Preisverleihung EnergyChallenge](http://www.uni-kiel.de/pressemeldungen/index.php?pmid=2015-253-energy-challenge) *(in german)*
+* [CAU fordert zur EnergyChallenge heraus!](http://www.einfachgutelehre.uni-kiel.de/allgemein/energychallenge) *(in german)*
