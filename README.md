@@ -13,17 +13,20 @@ Further features are:
 * Some statictics about common acitivities
 * Full administration user interface
 
-## Setup ##
+## Getting started
 
-Zum Ausprobieren des Webinterface ``energy_challenge_server_dev.war`` aus dem Download-Bereich dieses Projekts verwenden.
-Hier können die folgende Dummy-Anmeldeinformationen (Username [UN] und Passwort [PW]) genutzt werden:
+The web application is build with [Grails](https://grails.org/), a powerful web framework for the Java platform. It is located in the the ``Server`` directory.
 
-UN: ``user@example.com``
+The following users are generated:
 
-PW: ``password``
+User:
+Username: ``user@example.com``
+Password: ``password``
 
-oder
+Administrator:
+Username: ``admin@example.com``
+Password: ``password``
 
-UN: ``admin@example.com``
+To adjust the dates when registration/login should be enabled/disbaled, edit lines 30-32 in file:
+``EnergyChallenge/Server/grails-app/controllers/de/unikiel/klik/control/web/AuthController.groovy``
 
-PW: ``password``
