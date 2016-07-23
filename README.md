@@ -12,6 +12,8 @@ Further features are:
 * Users can suggest new activities; These suggestions can be commented and rated by other users
 * Some statictics about common acitivities
 * Full administration user interface
+* Full responsive design
+* A *beta version* of an andorid app
 
 ## Getting started
 
