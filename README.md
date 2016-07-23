@@ -19,15 +19,25 @@ Further features are:
 
 The web application is build with [Grails](https://grails.org/), a powerful web framework for the Java platform. It is located in the the ``Server`` directory.
 
+The ``app`` directory contains a beta version of an android app (android >= 5.0).
+
+#### Login data for development
+
 The following users are generated:
 
-User:
+* (Default) user:
 Username: ``user@example.com``
 Password: ``password``
 
-Administrator:
+* Administrator:
 Username: ``admin@example.com``
 Password: ``password``
+
+#### Layout and design
+
+The current design was created for the EnergyChallenge at Kiel University fits in the universities corporate design. To create something that fits better to your organization please edit style cheats, images,... accordingly.
+
+#### Date constants
 
 To adjust the dates when registration/login should be enabled/disbaled, edit lines 30-32 in file:
 ``EnergyChallenge/Server/grails-app/controllers/de/unikiel/klik/control/web/AuthController.groovy``
