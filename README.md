@@ -1,6 +1,6 @@
 # EnergyChallenge
 
-The **EnergyChallenge** is a web application to motivate members of organizations (like universities, companies,...) to save in their daily environment.
+The **EnergyChallenge** is a web application to motivate members of organizations (like universities, companies,...) to save energy in their daily environment.
 
 Organization members can log in to the app and select what acitivies they did to save energy. (e.g. using the stairs instead of the elevator) The users are getting points for every acitivity they did and based on this a ranging can be generated.
 
@@ -35,7 +35,7 @@ Password: ``password``
 
 #### Layout and design
 
-The current design was created for the EnergyChallenge at Kiel University fits in the universities corporate design. To create something that fits better to your organization please edit style cheats, images,... accordingly.
+The current design was created for the EnergyChallenge at Kiel University and fits in the universities corporate design (this is the reason for the purple color). To create something that fits better to your organization please edit style cheats, images,... accordingly.
 
 #### Date constants
 
