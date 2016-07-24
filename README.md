@@ -15,6 +15,8 @@ Further features are:
 * Full responsive design
 * A *beta version* of an andorid app
 
+To get an impression of the **EnergyChallenge** web application layout used at university Kiel, have a look at the screenshots below.
+
 ## Getting started
 
 The web application is build with [Grails](https://grails.org/), a powerful web framework for the Java platform. It is located in the the ``Server`` directory.
@@ -50,3 +52,21 @@ Further informations can be found in this articles:
 * [Kieler Universität startet Energiesparwettbewerb](http://www.uni-kiel.de/pressemeldungen/index.php?pmid=2015-169-energiesparen) *(in german)*
 * [Preisverleihung EnergyChallenge](http://www.uni-kiel.de/pressemeldungen/index.php?pmid=2015-253-energy-challenge) *(in german)*
 * [CAU fordert zur EnergyChallenge heraus!](http://www.einfachgutelehre.uni-kiel.de/allgemein/energychallenge) *(in german)*
+
+## Screenshots
+
+Landing Page:
+![landing page](ec_landing_page.png)
+
+Activity List:
+![activity list](ec_activity_list_1.jpg)
+![activity list](ec_activity_list_2.jpg)
+
+Ranking:
+![ranking](ec_ranking.png)
+
+Mobile Views:
+![mobile view](ec_mobile_view_1.png)
+![mobile view](ec_mobile_view_2.png)
+![mobile view](ec_mobile_view_3.png)
+![mobile view](ec_mobile_view_4.png)
