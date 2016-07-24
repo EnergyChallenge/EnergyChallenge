@@ -55,18 +55,26 @@ Further informations can be found in this articles:
 
 ## Screenshots
 
-Landing Page:
+### Landing Page
+
 ![landing page](ec_landing_page.png)
 
-Activity List:
+### Activity List
+
 ![activity list](ec_activity_list_1.jpg)
+
 ![activity list](ec_activity_list_2.jpg)
 
-Ranking:
+### Ranking
+
 ![ranking](ec_ranking.png)
 
-Mobile Views:
+### Mobile Views
+
 ![mobile view](ec_mobile_view_1.png)
+
 ![mobile view](ec_mobile_view_2.png)
+
 ![mobile view](ec_mobile_view_3.png)
+
 ![mobile view](ec_mobile_view_4.png)
