@@ -10,7 +10,7 @@ Further features are:
 * Search function for profiles
 * Timeout for activities, so they can only be selected once in a specific time interval
 * Users can suggest new activities; These suggestions can be commented and rated by other users
-* Some statictics about common acitivities
+* Some statistics about common acitivities
 * Full administration user interface
 * Full responsive design
 * A *beta version* of an andorid app
